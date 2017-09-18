@@ -1,3 +1,18 @@
+**/node_modules
+**/.vscode
+**/bin
+**/build
+**/.gradle/
+**/temp/
+**/Debug
+**/Release
+
+*.DS_Store
+
+*.classpath
+
+!build.gradle
+
 # Compiled class file
 *.class
 
