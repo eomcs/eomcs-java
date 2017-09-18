@@ -1,4 +1,7 @@
-/* 코드와 주석 */
+/* 코드와 주석
+ * - 자바 명령을 작성할 때 컴파일에 포함되지 않는 주석을 작성하는 방법을 알아보자.
+ * - 주석을 붙이는 이유는 무엇인가?
+ */
 
 /* "multi-line comment"
    여러 줄에 걸쳐서 
@@ -21,7 +24,7 @@
  * @author eomjinyoung
  *
  */
-public class Exam02 {
+public class Exam06 {
     /**
      * 변수에 대한 설명
      */
