@@ -38,5 +38,17 @@ public class Exam06 {
         // 코드를 이해하는 데 필요한 정보
         System.out.println(message);
     }
-
 }
+
+/*  [java document 만들기]
+ *  1) 프로젝트 컨텍스트 메뉴 > Export... 메뉴 클릭
+ *  2) Java 노드 > Javadoc > Next 버튼 클릭
+ *  3) javadoc command ... > Next 버튼 클릭
+ *  4) Basic options ... > Next 버튼 클릭
+ *  5) VM options에 문자집합에 대한 정보 추가
+ *      -charset UTF-8 -encoding UTF-8
+ *      => -charset [생성될 HTML 파일의 문자집합]
+ *      => -encoding [소스 파일의 문자집합]  
+ *  6) Finish 버튼 클릭  
+ *  
+ */
