@@ -8,6 +8,7 @@
 **/Release
 **/gradle
 **/.settings
+**/doc
 
 *.DS_Store
 *.classpath
