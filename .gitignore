@@ -1,13 +1,12 @@
 **/node_modules
 **/.vscode
+**/.gradle/
+**/.settings
 **/bin
 **/build
-**/.gradle/
 **/temp/
 **/Debug
 **/Release
-**/gradle
-**/.settings
 **/doc
 
 *.DS_Store
