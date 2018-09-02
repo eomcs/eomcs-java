@@ -22,7 +22,7 @@
 - 람다 표현식 
 - 상수 열거형 클래스
 
-## 제네릭(eomcs-java-generics)
+## 제네릭(eomcs-java-generic)
 한 클래스로 다양한 종류의 데이터를 다루는 방법을 설명한다.
 - 제네릭 용도
 - 제네릭 정의와 적용
@@ -50,7 +50,7 @@
 - 바이트 스트림과 문자 스트림 
 - 데이터 싱크 스트림과 데이터 프로세싱 스트림
 
-## 통신(eomcs-java-networking)
+## 통신(eomcs-java-net)
 원격의 프로그램과 데이터를 주고 받는 방법을 설명한다.
 - 소켓을 이용한 통신
 - 데이터그램을 이용한 통신
@@ -58,7 +58,7 @@
 - HTTP 쿠키 다루기
 - 시스템에 설치된 통신 매체의 정보 보기 
 
-## 병행처리(eomcs-java-concurrency)
+## 병행처리(eomcs-java-concurrent)
 메인 코드에서 일부 코드를 분리하여 동시에 실행시키는 방법을 설명한다.
 - 스레드 생성과 생명주기
 - Runnable 인터페이스 구현
@@ -68,13 +68,13 @@
 - wait()와 nofify()/notifyAll()
 - 고수준의 동시성 다루기 
 
-## 클래스 정보 분석(eomcs-java-reflection)
+## 클래스 정보 분석(eomcs-java-reflect)
 클래스의 타입, 이름, 수퍼 클래스, 변수, 메서드 등을 알아내는 방법을 설명한다.
 - 클래스 기본 정보 추출
 - 클래스 정보를 이용하여 인스턴스 생성
 - 메서드 정보 추출 및 메서드 호출
 
-## 애너테이션(eomcs-java-annotations)
+## 애너테이션(eomcs-java-annotation)
 프로그램 코드에 컴파일러나 자바 가상 머신이 사용할 부가 데이터 붙이는 방법을 설명한다.
 - 애너테이션 정의와 유지 정책
 - 애너테이션 사용
@@ -97,7 +97,13 @@ JDBC API를 이용하여 DBMS와 연동하는 방법을 설명한다.
 - Mybatis 트랜잭션
 - 동적 SQL 사용
 
-## Spring IoC 컨테이너(eomcs-java-spring)
+# IoC 컨테이너(eomcs-java-ioc)
+Spring IoC를 흉내내어 직접 IoC 컨테이너(빈 컨테이너)를 제작해 본다.
+- Reflection API를 이용하여 객체를 생성하고 다루는 방법을 연습하기
+- 애노테이션을 응용하기
+- 빈 컨테이너와 의존성 주입에 대한 개념을 이해하기
+- 
+## Spring IoC 컨테이너(eomcs-java-spring-ioc)
 스프링 IoC 컨테이너를 사용하여 객체의 생성과 의존 객체 주입을 자동화하는 방법을 설명한다.
 - 스프링 IoC 컨테이너와 ApplicationContext
 - XML 파일을 이용하여 스프링 컨테이너 설정하기
