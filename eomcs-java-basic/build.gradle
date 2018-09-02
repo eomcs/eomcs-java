@@ -1,37 +1,10 @@
+println 'eomcs-java-basic 빌드'
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'application'
-
-sourceCompatibility = '9'
-targetCompatibility = '9'  
-
-eclipse {
-    jdt {
-        sourceCompatibility = 9
-        targetCompatibility = 9
-        javaRuntimeName = "JavaSE-9"
-        
-        file {
-            whenMerged { jdt
-                //you can tinker with the Jdt here
-            }
-        
-            withProperties { properties ->
-                //you can tinker with the Properties here
-                properties['org.eclipse.jdt.core.compiler.codegen.targetPlatform'] = '9'
-                properties['org.eclipse.jdt.core.compiler.source'] = '9'
-                properties['org.eclipse.jdt.core.compiler.compliance'] = '9'
-            }
-        }
-    
-    }
-}
 
 compileJava {
     options.encoding = 'UTF-8'
-    sourceCompatibility = '9'
-    targetCompatibility = '9'  
-     
 }
 
 javadoc {
@@ -46,6 +19,3 @@ dependencies {
     compile 'com.google.guava:guava:22.0'
     testCompile 'junit:junit:4.12'
 }
-
-mainClassName = 'App'
-

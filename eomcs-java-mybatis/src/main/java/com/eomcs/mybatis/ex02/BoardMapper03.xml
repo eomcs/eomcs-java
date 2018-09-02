@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="BoardMapper">
+
+  <!-- 컬럼명과 자바 객체의 프로퍼티 명을 미리 연결한다.
+       type: 자바 객체의 클래스명 또는 별명
+       id: 연결 정보를 가리키는 식별자 
+  -->
+  <resultMap type="Board" id="BoardMap">
+    <!-- 컬럼명과 자바 객체의 프로퍼티명을 연결한다.
+         column="테이블 컬럼명"
+         property="자바 객체의 프로퍼티명"
+         시작태그와 끝태그 사이에 추가 내용이 없다면 끝태그를 생략하고
+         대신에 시작태그의 끝에 /를 붙인다.
+    -->
+    <!-- 주의! primary key 컬럼인 경우 id 태그를 사용하라! -->
+    <id column="bno" property="no"/>
+    <result column="titl" property="title"/>
+    <result column="cont" property="content"/>
+    <result column="rdt" property="registeredDate"/>
+  </resultMap>
+  
+  <!-- 위에서 정의한 연결 정보를 사용하고 싶다면,
+       resultMap="연결정보아이디" 를 설정하라! -->
+  <select id="selectBoard" resultMap="BoardMap">
+    select 
+      bno, <!-- BoardMap의 연결정보를 참조하기 때문에 별명을 주지 않아도 된다. -->
+      titl, 
+      cont, 
+      rdt 
+    from ex_board
+  </select>
+  
+</mapper>
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+println 'eomcs-java 빌드'
+
+subprojects { project -> 
+    println project.name
+}

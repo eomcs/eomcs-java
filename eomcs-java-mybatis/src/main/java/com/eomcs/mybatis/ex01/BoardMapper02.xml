@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="BoardMapper">
+
+  <!-- mybatis 설정 파일에 클래스명의 별명이 설정되어 있다면,
+       그 별명을 사용할 수 있다. 
+       별명은 대소문자를 구분하지 않는다.-->
+  <select id="selectBoard" resultType="Board">
+    select 
+      bno as no,
+      titl as title,
+      cont as content,
+      rdt as registeredDate
+    from ex_board
+  </select>
+  
+</mapper>
+
+
+
+
+
+
+

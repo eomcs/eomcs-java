@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- SQL 문장을 찾을 때 사용할 그룹명을 설정한다. 
+     보통 그룹명은 SQL 맵퍼 파일이 있는 경로를 그룹명으로 지정한다.
+     또는 SQL을 사용할 인터페이스나 클래스 경로를 그룹명으로 지정한다.
+     물론 어떤 이름으로 지정해도 상관없지만, 가능한 위의 규칙을 준수하여 
+     유지보수의 일관성을 유지하라!-->
+<mapper namespace="BoardMapper">
+
+  <select id="selectBoard" resultType="step25.ex5.Board">
+    select 
+      bno as no,
+      titl as title,
+      cont as content,
+      rdt as registeredDate
+    from ex_board
+  </select>
+  
+</mapper>
+
+
+
+
+
+
+

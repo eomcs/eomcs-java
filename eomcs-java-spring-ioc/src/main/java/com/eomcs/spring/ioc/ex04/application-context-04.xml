@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- 의존 객체 주입할 때 직접 객체를 만들어 주입할 수 있다.-->
+    
+    <bean id="c1" class="bitcamp.java106.step04.Car">
+        <property name="model" value="티코A"/>
+        <property name="maker" value="비트자동차"/>
+        <property name="cc" value="890"/>
+        <property name="engine">
+		    <bean class="bitcamp.java106.step04.Engine">
+		        <property name="maker" value="비트자동차"/>
+		        <property name="valve" value="16"/>
+		        <property name="cylinder" value="8"/>
+		    </bean>
+        </property>
+    </bean>
+    
+    <bean id="c2" class="bitcamp.java106.step04.Car">
+        <property name="model" value="소나타"/>
+        <property name="maker" value="비트자동차"/>
+        <property name="cc" value="1980"/>
+        <property name="engine">
+            <bean class="bitcamp.java106.step04.Engine">
+                <property name="maker" value="비트자동차"/>
+                <property name="valve" value="16"/>
+                <property name="cylinder" value="8"/>
+            </bean>
+        </property>
+    </bean>
+    
+</beans>
+
+
+
+
+
+

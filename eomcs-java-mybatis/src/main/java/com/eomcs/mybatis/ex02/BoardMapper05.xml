@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="BoardMapper">
+
+  <resultMap type="Board" id="BoardMap">
+    <id column="bno" property="no"/>
+    <result column="titl" property="title"/>
+    <result column="cont" property="content"/>
+    <result column="rdt" property="registeredDate"/>
+  </resultMap>
+  
+  <!-- SQL 문에 SQL을 삽입하기
+       => ${key이름}
+       => 외부의 값을 이용하여 SQL 문장을 만들지 말라! 
+          SQL 삽입 공격에 취약하다!
+   -->
+  <select id="selectBoard" 
+          resultMap="BoardMap" parameterType="map">
+    select 
+      bno,
+      titl, 
+      cont, 
+      rdt 
+    from ex_board
+    ${limitSQL}
+  </select>
+  
+</mapper>
+
+
+
+
+
+
+

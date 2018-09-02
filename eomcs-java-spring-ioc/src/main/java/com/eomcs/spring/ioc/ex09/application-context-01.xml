@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- 애노테이션을 처리할 도우미 객체를 등록한다. -->
+    <context:annotation-config/>
+    
+    <!-- 다음과 같이 객체를 생성하기 위해 bean 태그를 사용하지 않고도
+         객체를 자동 생성할 수 있다.
+         방법은?
+         클래스 선언에 @Component 애노테이션을 붙이는 것이다.
+         단 이 애노테이션을 처리할 객체를 등록해야 한다.
+    -->
+    <!-- component-scan 태그는 @Component, @Service, @Repository, @Controller 
+         애노테이션이 붙은 객체를 자동 생성시키는 작업자를 등록한다.
+         base-package 속성 => 어느 패키지의 클래스를 등록할 것인지 지정하는 속성이다.
+    -->
+    <context:component-scan base-package="bitcamp.java106.step09"></context:component-scan>
+<!--  
+    <bean id="c1" class="bitcamp.java106.step09.Car">
+        <property name="model" value="티코"/>
+        <property name="maker" value="비트자동차"/>
+        <property name="cc" value="890"/>
+        <property name="auto" value="true"/>
+    </bean>
+    
+    <bean id="e1" class="bitcamp.java106.step09.Engine">
+        <property name="maker" value="비트자동차"/>
+        <property name="valve" value="16"/>
+        <property name="cylinder" value="4"/>
+    </bean>
+-->
+</beans>
+
+
+
+
+
+

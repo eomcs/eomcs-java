@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- 호출할 생성자 지정하기 II -->
+    
+    <!-- 생성자의 파라미터 값을 지정하는 간단한 방법 -->
+    <bean id="c1" class="bitcamp.java106.step03.Car">
+        <constructor-arg type="java.lang.String" value="티코"/>
+    </bean>
+    
+    <!-- index로 파라미터의 순서를 지정하기 -->
+    <bean id="c2" class="bitcamp.java106.step03.Car">
+        <constructor-arg index="0" type="java.lang.String" value="티코"/>
+        <constructor-arg index="1" type="int" value="890"/>
+    </bean>
+    
+    <!-- value 속성에 지정한 값은 문자열이다.
+         생성자를 호출하여 값을 넣을 때 
+         IoC 컨테이너는 이 문자열을 파라미터 타입으로 형변환하여 넣는다. 
+         단 primitive type에 대해서만 형변환할 수 있다.
+         다른 타입은 불가하다 -->
+    <bean id="c3" class="bitcamp.java106.step03.Car">
+        <constructor-arg index="0" value="티코"/>
+        <constructor-arg index="1" value="890"/>
+    </bean>
+    
+    <!-- 만약 value 속성에 설정한 문자열 값을 생성자의 파라미터 타입의 값으로 
+         형변환 할 수 없다면 실행 오류가 발생할 것이다.
+         즉 다음에서 value="aaa"는 cc 파라미터의 int 값으로 바꿀 수 없기 때문에 오류 발생! -->
+    <bean id="c4" class="bitcamp.java106.step03.Car">
+        <constructor-arg index="0" value="티코"/>
+        <constructor-arg index="1" value="aaa"/>
+    </bean>
+</beans>
+
+
+
+
+
+
+

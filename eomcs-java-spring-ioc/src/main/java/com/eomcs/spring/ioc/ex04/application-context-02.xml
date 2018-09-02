@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- 의존 객체 주입하기 -->
+    
+    <bean id="e1" class="bitcamp.java106.step04.Engine">
+        <property name="maker" value="비트자동차"/>
+        <property name="valve" value="16"/>
+        <property name="cylinder" value="8"/>
+    </bean>
+    
+    <bean id="e2" class="bitcamp.java106.step04.Engine">
+        <property name="maker" value="캠프자동차"/>
+        <property name="valve" value="8"/>
+        <property name="cylinder" value="4"/>
+    </bean>
+    
+    <bean id="c1" class="bitcamp.java106.step04.Car">
+        <property name="model" value="티코A"/>
+        <property name="maker" value="비트자동차"/>
+        <property name="cc" value="890"/>
+        <!-- 의존 객체 설정하기 
+             ref="객체이름"
+        -->
+        <property name="engine" ref="e1"/>
+    </bean>
+    
+    <!-- p 속성으로 프로퍼티에 객체를 주입할 때는 
+         p:프로퍼티명-ref="객체이름" -->
+    <bean id="c2" class="bitcamp.java106.step04.Car"
+          p:model="티코" p:maker="비트자동차" p:cc="890" p:engine-ref="e2"/>
+          
+</beans>
+
+
+
+
+
+

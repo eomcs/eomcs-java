@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+    <context:component-scan base-package="bitcamp.java106.step13.ex3"/>
+    
+    <!-- AOP 필터 객체 생성 -->
+    <bean id="myAdvice" class="bitcamp.java106.step13.ex3.MyAdvice"/> 
+    
+    <!-- AOP 적용 -->
+    <aop:config>
+        <!-- 어느 pointcut에 어떤 advice를 끼워 넣을 지 설정한다. -->
+        <aop:aspect id="aspect1" ref="myAdvice">
+            
+            <!-- 필터를 끼워 넣을 위치를 지정한다. -->
+            <aop:pointcut id="pointcut1"
+                expression="execution(* bitcamp.java106.step13.ex3.X.*(..))"/>
+            
+            <!-- 해당 포인트컷 앞뒤로 필터를 꼽는다. -->
+            <aop:before pointcut-ref="pointcut1" method="doBefore"/>
+            <aop:after pointcut-ref="pointcut1" method="doAfter"/>
+            <aop:after-returning pointcut-ref="pointcut1" method="doAfterReturning"/>
+            <aop:after-throwing pointcut-ref="pointcut1" method="doAfterThrowing"/>
+            <!-- <aop:around pointcut-ref="pointcut1" method="doAround"/> -->
+        </aop:aspect>
+    </aop:config>
+</beans>
+
+
+
+
+
+

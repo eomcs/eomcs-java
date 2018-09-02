@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="BoardMapper">
+
+  <!-- SQL문은 태그 안에 작성한다.
+       <select> 태그에는 select 문장을, 
+       <insert> 태그에는 insert 문장을,
+       <update> 태그에는 update 문장을,
+       <delete> 태그에는 delete 문장을 작성한다.
+       그런데 insert/update/delete 인 경우 
+       <insert>/<update>/<delete> 구분없이 태그를 사용해도 된다.
+       그 이유는 SQL문을 찾을 때 id 속성 값으로 찾기 때문이다.
+       그럼에도 불구하고 유지보수의 일관성을 위해 
+       SQL 문의 따라 적절한 태그를 사용하라!
+   -->
+   
+  <!-- select 태그
+       id : SQL문을 찾을 때 사용할 식별자이다.
+       resultType : select 결과를 저장할 클래스이름이나 별명이다. 
+       클래스이름을 경우 반드시 fully-qualified class name을 사용하라! 
+  -->
+  
+  <!-- 
+       값을 자바 객체에 넣는 규칙:
+       => 컬럼명과 일치하는 셋터를 호출한다.
+          컬럼명 ==> set컬럼명()
+       => 예) 
+          bno ==> setBno(값)
+          즉, 
+          Board board = new Board();
+          board.setBno(rs.getNo("bno"));
+          만약 컬럼 이름에 해당하는 셋터를 못 찾으면 호출하지 않는다.
+   -->
+  <select id="selectBoard" resultType="Board">
+    select 
+        bno, <!-- Board.setBno() 호출 -->
+        titl, <!-- Board.setTitl() 호출 -->
+        cont, <!-- Board.setCont() 호출 -->
+        rdt  <!-- Board.setRdt() 호출 -->
+    from ex_board
+  </select>
+  
+  <!-- 위의 SQL문을 mybatis 다음과 같은 코드로 실행한다.
+       ArrayList<Board> list = new ArrayList<>();
+       
+       while (rs.next()) {
+           Board board = new Board();
+           board.setBno(rs.getNo("bno")); // 이런 셋터가 없다.
+           board.setTitl(rs.getString("titl")); // 이런 셋터가 없다.
+           board.setCont(rs.getString("cont")); // 이런 셋터가 없다.
+           board.setRdt(rs.getDate("rdt")); // 이런 셋터가 없다.
+           list.add(board);
+       } 
+       return list;
+       
+       그러나 안타깝게도 Board 클래스에는 컬럼 이름과 일치하는 셋터가 없다.
+       그래서 객체에 값을 한 개도 저장할 수 없다.
+       객체에 값을 한 개도 저장할 수 없으면 List에 null을 저장한다.
+       해결책?
+       => 셋터의 이름과 같은 이름으로 컬럼의 별명을 설정하라! 
+  -->
+</mapper>
+
+
+
+
+
+
+

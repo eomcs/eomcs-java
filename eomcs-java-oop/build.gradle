@@ -1,0 +1,21 @@
+println 'eomcs-java-oop 빌드'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+javadoc {
+    options.encoding = "UTF-8"
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:22.0'
+    testCompile 'junit:junit:4.12'
+}

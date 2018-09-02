@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="BoardMapper">
+
+  <!-- INSERT를 실행한 후 자동으로 생성된 PK 값을 가져오는 방법?
+       => 파라미터로 넘겨준 객체에 담아 달라고 요청하라!
+        -->
+  <insert id="insertBoard" parameterType="Board"
+          useGeneratedKeys="true" keyColumn="bno" keyProperty="no">
+    insert into ex_board(titl,cont,rdt) 
+    values(#{title},#{content},now())
+  </insert>  
+</mapper>
+
+
+
+
+
+
+

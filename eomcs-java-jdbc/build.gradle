@@ -1,0 +1,23 @@
+println 'eomcs-java-jdbc 빌드'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+javadoc {
+    options.encoding = "UTF-8"
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    // MySQL JDBC Driver 라이브러리
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.47'
+    compile 'com.google.guava:guava:22.0'
+    testCompile 'junit:junit:4.12'
+}

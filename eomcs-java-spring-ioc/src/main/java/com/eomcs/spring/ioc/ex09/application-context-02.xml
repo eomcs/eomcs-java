@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:component-scan base-package="bitcamp.java106.step09"></context:component-scan>
+    
+    <!-- component-scan 태그를 추가하면 내부적으로 annotation-config 태그가 
+         자동으로 추가된다. 따라서 다음과 같이 명시할 필요가 없다. -->
+<!-- 
+    <context:annotation-config/> 
+-->
+</beans>
+
+
+
+
+
+

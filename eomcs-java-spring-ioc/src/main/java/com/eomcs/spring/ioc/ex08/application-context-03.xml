@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- BeanPostProcessor 인터페이스 구현체 만들고 등록하기 -->
+    <bean class="bitcamp.java106.step08.MyBeanPostProcessor"/>
+    
+    <bean id="c1" class="bitcamp.java106.step08.Car2">
+        <property name="model" value="티코"/>
+        <property name="maker" value="비트자동차"/>
+        <property name="cc" value="890"/>
+        <property name="auto" value="true"/>
+    </bean>
+    
+    <bean id="e1" class="bitcamp.java106.step08.Engine">
+        <property name="maker" value="비트자동차"/>
+        <property name="valve" value="16"/>
+        <property name="cylinder" value="4"/>
+    </bean>
+    
+</beans>
+
+
+
+
+
+
