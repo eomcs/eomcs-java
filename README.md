@@ -97,7 +97,7 @@ JDBC API를 이용하여 DBMS와 연동하는 방법을 설명한다.
 - Mybatis 트랜잭션
 - 동적 SQL 사용
 
-# IoC 컨테이너(eomcs-java-ioc)
+## IoC 컨테이너(eomcs-java-ioc)
 Spring IoC를 흉내내어 직접 IoC 컨테이너(빈 컨테이너)를 제작해 본다.
 - Reflection API를 이용하여 객체를 생성하고 다루는 방법을 연습하기
 - 애노테이션을 응용하기
