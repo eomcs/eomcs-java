@@ -8,6 +8,9 @@ public class Exam01<T> {
     int index = 0;
     
     public Exam01(Class<?> clazz) {
+        
+        //final T[] arr = new T[10]; // 컴파일 오류!
+        
         @SuppressWarnings("unchecked")
         final T[] arr = (T[])Array.newInstance(clazz, 10);
         this.arr = arr;
