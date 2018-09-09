@@ -1,14 +1,10 @@
-println 'eomcs-java-annotation 빌드'
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-compileJava {
+tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-}
-
-javadoc {
-    options.encoding = "UTF-8"
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
 }
 
 repositories {
@@ -19,3 +15,4 @@ dependencies {
     compile 'com.google.guava:guava:22.0'
     testCompile 'junit:junit:4.12'
 }
+

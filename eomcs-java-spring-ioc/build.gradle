@@ -1,23 +1,16 @@
-println 'eomcs-java-spring-ioc 빌드'
+apply plugin: 'java'
+apply plugin: 'eclipse'
 
-plugins {
-    id: 'java'
-    id: 'eclipse'
-}
-
-compileJava {
+tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-}
-
-javadoc {
-    options.encoding = "UTF-8"
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
 }
 
 repositories {
     jcenter()
 }
 
-// => 의존 라이브러리 정보 
 dependencies {
     // MySQL JDBC Driver 라이브러리
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.47'
