@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'io.netty', name: 'netty-all', version: '4.1.29.Final'
+    compile 'com.google.guava:guava:22.0'
+    testCompile 'junit:junit:4.12'
+}
