@@ -13,20 +13,14 @@ public class Exam02_1 {
         list.add(s2);
         list.add(s3);
         print(list);
-        
+
         System.out.println(list.contains(s4));
     }
-    
+
     static void print(ArrayList list) {
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i) + ", ");
         }
         System.out.println();
     }
-}   
-
-
-
-
-
-
+}
