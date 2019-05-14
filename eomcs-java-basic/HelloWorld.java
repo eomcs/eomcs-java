@@ -43,10 +43,10 @@
 //- VM과 유사한 일을 하는 프로그램을 부르는 용어: player, interpreter, engine, viewer 등
 //  예) MP3 플레이어, 동영상 플레이어, 플래시 플레이어, 코볼 인터프리터, JSP 엔진, HWP 뷰어, PPT 뷰어 등
 //
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, world!");
-    }
+class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello, world!");
+  }
 }
 
 //## 실습

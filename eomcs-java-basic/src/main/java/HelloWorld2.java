@@ -14,17 +14,18 @@
 //              webapp/     <-- 자바 웹 애플리케이션 리소스 파일(HTML, CSS, JavaScript 등)을 두는 폴더
 //          test/           <-- 단위 테스트 소스 파일을 두는 폴더
 //              java/       <-- 단위 테스트 할 때 사용할 파일을 두는 폴더
-//              resources/  <-- 단위 테스트를 실행하는 도안 사용할 파일을 두는 폴더
+//              resources/  <-- 단위 테스트를 실행하는 동안 사용할 파일을 두는 폴더
 //      build/              <-- gradle 빌드의 실행 결과를 두는 폴더
 //      bin/                <-- 개발 도구에 따라 이 이름의 폴더에 컴파일 결과 파일을 두기도 한다.
 //          main/           <-- src/main 의 빌드 결과 파일을 두는 폴더
 //          test/           <-- src/test 의 빌드 결과 파일을 두는 폴더
 //      out/                <-- 개발 도구에 따라 이 이름의 폴더에 컴파일 결과 파일을 두기도 한다.
 //
-public class HelloWorld2 {
-    public static void main(String[] args) {
-        System.out.println("Hello, world!");
-    }
+
+class HelloWorld2 {
+  public static void main(String[] args) {
+    System.out.println("Hello, world!");
+  }
 }
 
 //## 실습
