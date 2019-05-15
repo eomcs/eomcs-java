@@ -1,7 +1,8 @@
-// 정수의 리터럴 - 크기
-package com.eomcs.basic.ex02;
+package com.eomcs.basic.ch03.solution;
 
-public class Exam05_3 {
+//# 정수의 리터럴 - 크기에 따른 표기법
+
+public class Exam023 {
     public static void main(String[] args) {
         // 정수를 표기할 때
         // 크기에 따라 표기방법이 다르다.

@@ -5,7 +5,7 @@
 //- main() 메서드가 없으면 실행 오류가 발생한다.
 //
 //## JVM이 클래스를 실행하는 과정
-//1) 실행할 클래스 파일을 CLASSPATH에 등록된 폴더에서 찾는다.
+//1) 실행할 클래스 파일을 CLASSPATH에 등록된 디렉토리 경로에서 찾는다.
 //2) 클래스 파일이 유효한 바이트코드(bytecode) 인지 검사한다.
 //3) 메모리에 바이트코드를 적재(load)한다.
 //4) public static void main(String[] args) {} 블록을 찾는다.
@@ -15,7 +15,6 @@ package com.eomcs.basic.ch01.solution;
 
 public class Exam06 {
   public static void main(String[] args) {
-    System.out.println("Exam06");
   }
 }
 
