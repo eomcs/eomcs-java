@@ -4,7 +4,7 @@ package com.eomcs.basic.ch03.solution;
 //
 //- 정수를 읽기 쉽도록 밑줄(underscore; _)을 숫자 사이에 삽입할 수 있다. 
 //
-public class Exam022 {
+public class Exam21 {
   public static void main(String[] args) {
     
     //## 10진수에 _ 문자를 삽입하기
@@ -48,8 +48,8 @@ public class Exam022 {
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam022.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam21.java
 //
 //2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam022
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam21
 //

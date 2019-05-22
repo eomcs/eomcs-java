@@ -13,7 +13,7 @@ package com.eomcs.basic.ch02.solution;
  * @author eomjinyoung
  *
  */
-public class Exam02 {
+public class Exam11 {
   /**
    * 변수에 대한 설명
    * 변수 선언 앞에 설명을 붙여 놓으면 나중에 HTML 문서를 만들 때 추출할 수 있다.

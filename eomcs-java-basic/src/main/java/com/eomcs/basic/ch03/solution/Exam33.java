@@ -2,7 +2,7 @@ package com.eomcs.basic.ch03.solution;
 
 //# 부동소수점 리터럴 - 유효자릿수
 
-public class Exam034 {
+public class Exam33 {
   public static void main(String[] args) {
     
     //## 4byte(float) 부동소수점의 유효자릿수
@@ -45,10 +45,10 @@ public class Exam034 {
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam034.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam33.java
 //
 //2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam034
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam33
 //
 
 //## 결론!

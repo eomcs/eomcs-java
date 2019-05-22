@@ -5,7 +5,7 @@ package com.eomcs.basic.ch03.solution;
 //- 자바에서는 정수를 저장할 때 2의 보수 방법을 사용한다.
 //
 
-public class Exam024 {
+public class Exam23 {
   public static void main(String[] args) {
     System.out.println(5 - 3);
     System.out.println(5 + (-3));
@@ -14,10 +14,10 @@ public class Exam024 {
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam024.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam23.java
 //
 //2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam024
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam23
 //
 
 //## 정수를 2진수로 표현하는 방법

@@ -1,7 +1,7 @@
 //# JVM과 main() 메서드
 //
 //- 다음과 같이 JVM을 통해 클래스를 실행하면 JVM은 main() 메서드를 찾는다.
-//    eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch01.solution.Exam06
+//    eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch01.solution.Exam3
 //- main() 메서드가 없으면 실행 오류가 발생한다.
 //
 //## JVM이 클래스를 실행하는 과정
@@ -13,17 +13,17 @@
 //
 package com.eomcs.basic.ch01.solution;
 
-public class Exam06 {
+public class Exam3 {
   public static void main(String[] args) {
   }
 }
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch01/solution/Exam06.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch01/solution/Exam3.java
 //
 //2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch01.solution.Exam06
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch01.solution.Exam3
 //
 //3) main() 메서드를 주석으로 막은 다음에 컴파일하고 실행한다.
 //- 실행 오류 메시지를 확인한다.

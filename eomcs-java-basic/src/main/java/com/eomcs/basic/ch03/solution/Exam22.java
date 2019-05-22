@@ -4,7 +4,7 @@ package com.eomcs.basic.ch03.solution;
 //
 //- 크기에 따라 표기방법이 다르다.
 //
-public class Exam023 {
+public class Exam22 {
   public static void main(String[] args) {
     //## 4바이트 정수
     //- 기본이 4바이트 크기의 정수이다.
@@ -38,8 +38,8 @@ public class Exam023 {
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam023.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam22.java
 //
 //2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam023
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam22
 //

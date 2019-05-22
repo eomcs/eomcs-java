@@ -11,7 +11,7 @@
 //       
 package com.eomcs.basic.ch01.test;
 
-public class Exam02 {
+public class Exam2 {
   public static void main(String[] args) {
     System.out.println("안녕하세요!");
   }

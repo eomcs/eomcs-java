@@ -11,7 +11,7 @@
 //
 package com.eomcs.basic.ch01.solution;
 
-class Exam02 {
+class Exam2 {
   public static void main(String[] args) {
     System.out.println("안녕하세요!");
   }
@@ -20,6 +20,6 @@ class Exam02 {
 //## 실습
 //1) 컴파일하기
 //     eomcs-java-basic$ javac -encoding [문자집합] [소스파일명]
-//     예) eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch01/solution/Exam02.java
+//     예) eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch01/solution/Exam2.java
 //2) 실행하기
-//     eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch01.solution.Exam02
+//     eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch01.solution.Exam2

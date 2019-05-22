@@ -17,21 +17,25 @@ package com.eomcs.basic.ch01.solution;
 
 //## 비공개 클래스인 경우
 //- 다음과 같이 클래스명과 소스 파일명이 다르더라도 괜찮다. 
-class Exam04_Test1 {}
+class Exam12_Test1 {}
 
 //## 공개 클래스인 경우
 //- 다음과 같이 클래스명과 소스 파일명이 같아야 한다.
-public class Exam04 {}
+public class Exam12 {}
 
 //- 클래스명과 소스 파일명이 다르면 컴파일 오류가 발생한다.
-//public class Exam04_Test2 {} // 컴파일 오류!
+//public class Exam12_Test2 {} // 컴파일 오류!
+
+//## 클래스와 소스 파일
+//- 클래스의 공개 여부와 상관없이 보통 한 소스 파일에 한 클래스를 작성한다.
+//- 클래스명과 소스 파일명을 같게 하여 유지보수할 때 클래스를 찾기 쉽게 한다. 
 
 //## 실습
 //1) 컴파일하기
-//     eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch01/solution/Exam04.java
+//     eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch01/solution/Exam12.java
 //
 //2) 생성된 클래스 파일 확인하기
-//- bin/main/com/eomcs/basic/ch01/solution 디렉토리에 Exam04_Test1.class와 Exam04.class 파일이 생성된다
+//- bin/main/com/eomcs/basic/ch01/solution 디렉토리에 Exam12_Test1.class와 Exam12.class 파일이 생성된다
 //
-//3) Exam04_Test2 클래스 선언의 주석을 제거한 후 컴파일 한다.
+//3) Exam12_Test2 클래스 선언의 주석을 제거한 후 컴파일 한다.
 //- 컴파일 오류 메시지를 확인한다.

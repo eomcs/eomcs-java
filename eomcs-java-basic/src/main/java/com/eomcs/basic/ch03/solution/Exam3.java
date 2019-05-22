@@ -6,7 +6,7 @@ package com.eomcs.basic.ch03.solution;
 //- 실수 값을 부동소수점 방식으로 저장하려면 1과 0으로 변환해야 한다.
 //- 자바는 전기전자기술자협회(IEEE)에서 개발한 IEEE 754 명세에 따라 2진수로 변환한다.
 //
-public class Exam031 {
+public class Exam3 {
   public static void main(String[] args) {
     
     //## 10진수 표기법
@@ -26,8 +26,8 @@ public class Exam031 {
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam031.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam3.java
 //
 //2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam031
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam3
 //

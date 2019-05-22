@@ -4,7 +4,7 @@ package com.eomcs.basic.ch03.solution;
 //
 //- 자바에서 정수 값을 표현하는 방법
 //
-public class Exam021 {
+public class Exam2 {
   public static void main(String[] args) {
     //## 정수 값 100을 다양한 진법으로 표현하기
 
@@ -42,8 +42,8 @@ public class Exam021 {
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam021.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam2.java
 //
 //2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam021
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam2
 //

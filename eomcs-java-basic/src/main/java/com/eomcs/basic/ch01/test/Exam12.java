@@ -8,4 +8,7 @@ package com.eomcs.basic.ch01.test;
 
 
 //2) 컴파일 오류가 발생하지 않도록 클래스 정의를 변경하라.
-public class Exam04_Test2 {}
+public class Exam12_Test2 {}
+
+//3) 이 소스 파일의 이름을 참고하여 public 클래스를 정의하라.
+//- 클래스 블록을 비워둔다.

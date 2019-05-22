@@ -15,7 +15,7 @@
 //
 package com.eomcs.basic.ch02.solution;
 
-public class Exam03 {
+public class Exam12 {
   public static void main(String[] args) {
     System.out.println("애노테이션");
   }
@@ -27,13 +27,13 @@ public class Exam03 {
   //
   @Override
   public String toString() {
-    return "Exam03";
+    return "Exam12";
   }
 }
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch02/solution/Exam03.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch02/solution/Exam12.java
 //
 //2) toString() 메서드 이름을 toString2()로 변경한 다음에 컴파일 해 보라.
 //- 오버라이딩 규칙을 어겼음을 알리는 컴파일 오류가 발생한다.

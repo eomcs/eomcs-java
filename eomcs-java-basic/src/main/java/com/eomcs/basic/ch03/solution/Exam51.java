@@ -1,7 +1,8 @@
-// 논리값 리터럴 - 크기
-package com.eomcs.basic.ex02;
+package com.eomcs.basic.ch03.solution;
 
-public class Exam08_2 {
+//# 논리값 리터럴 - 크기
+
+public class Exam51 {
     public static void main(String[] args) {
         
         // 다음과 같이 개별적으로 논리 값을 표현할 때는

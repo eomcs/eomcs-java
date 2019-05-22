@@ -5,7 +5,7 @@ package com.eomcs.basic.ch02.test;
 //1) 현재 상태의 소스 파일을 그대로 컴파일하라.
 //- 컴파일 오류가 발생하지 않는다.
 
-public class Exam03 {
+public class Exam12 {
   public static void main(String[] args) {
     System.out.println("애노테이션");
   }
@@ -15,6 +15,6 @@ public class Exam03 {
   //- 컴파일 오류가 발생했는가? 이유는 무엇인가?
   
   public String toString2() {
-    return "Exam03";
+    return "Exam12";
   }
 }

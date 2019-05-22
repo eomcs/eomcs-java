@@ -2,7 +2,7 @@ package com.eomcs.basic.ch03.solution;
 
 //# 부동소수점 리터럴 - 크기에 따른 표기법
 
-public class Exam032 {
+public class Exam31 {
   public static void main(String[] args) {
     
     //## 8바이트 크기의 부동소수점
@@ -21,8 +21,8 @@ public class Exam032 {
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam032.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam31.java
 //
 //2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam032
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam31
 //

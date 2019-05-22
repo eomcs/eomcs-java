@@ -5,7 +5,7 @@ package com.eomcs.basic.ch02.test;
 
 //1) 클래스에 대한 간단한 설명을 Javadoc 주석으로 작성하라.
 
-public class Exam02 {
+public class Exam11 {
   
   //2) 필드에 대한 간단한 설명을 Javadoc 주석으로 작성하라.
 

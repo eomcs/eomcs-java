@@ -4,7 +4,7 @@ package com.eomcs.basic.ch02.test;
 
 //1) 클래스에 대한 설명을 한 줄 주석으로 작성하라.
 
-public class Exam01 {
+public class Exam1 {
   //2) 클래스 실행 과정을 여러 줄 주석으로 작성하라.
 
   

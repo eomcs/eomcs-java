@@ -17,7 +17,7 @@
 
 package com.eomcs.basic.ch02.solution;
 
-public class Exam01 {
+public class Exam1 {
   public static void main(String[] args/* 이 주석은 코드 중간에 삽입하기 좋다.*/) {
     System.out.println("일반주석!");
   }
@@ -25,8 +25,8 @@ public class Exam01 {
 
 //## 실습
 //1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch02/solution/Exam01.java
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch02/solution/Exam1.java
 //
 //2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch02.solution.Exam01
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch02.solution.Exam1
 //
