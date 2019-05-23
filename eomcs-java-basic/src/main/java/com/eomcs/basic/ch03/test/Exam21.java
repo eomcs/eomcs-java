@@ -2,19 +2,54 @@ package com.eomcs.basic.ch03.test;
 
 //# 정수 리터럴 - 자릿수 표기
 //
+//- 정수를 읽기 쉽도록 밑줄(underscore; _)을 숫자 사이에 삽입할 수 있다. 
+//
 public class Exam21 {
   public static void main(String[] args) {
     
-    //1) 밑줄(_)을 사용하여 다음 리터럴을 세자리 단위로 끊어 표현하라. 
-    System.out.println(12345678);
+    //## 10진수에 _ 문자를 삽입하기
+    System.out.println(12783406);
+    System.out.println(1278_3406);
+    System.out.println(12_783_406);
 
-    //2) 다음 정수 리터럴은 무엇이 잘못되었는가?
-    System.out.println(_12783406); 
+    //- 숫자 맨 앞에 삽입할 수 없다.
+    //System.out.println(_12783406); 
     
-    //3) 다음 2진수 리터럴을 네자리 마다 끊어서 표현하라.
-    System.out.println(0b1100100);
+    //- 숫자 맨 뒤에 삽입할 수 없다.
+    //System.out.println(12783406_);
+    
+    //## 8진수에 _ 문자를 삽입하기
+    System.out.println(077);
+    System.out.println(0_77);
+    System.out.println(07_7);
 
-    //4) 다음 2진수 리터럴은 무엇이 잘못되었는가?
-    System.out.println(0b1100100_);
+    //- 숫자 맨 앞 또는 맨 뒤에 삽입할 수 없다.
+    //System.out.println(_077);
+    //System.out.println(077_);
+
+    //## 2진수에 _ 문자를 삽입하기
+    System.out.println(0b1100100);
+    System.out.println(0b110_0100);
+    System.out.println(0b1_1_0_0_1_0_0);
+
+    //- 숫자 맨 앞 또는 맨 뒤에 삽입할 수 없다.
+    //System.out.println(0b_1100100);
+    //System.out.println(0b1100100_);
+
+    //## 16진수에 _ 문자를 삽입하기
+    System.out.println(0xffaa);
+    System.out.println(0xff_aa);
+
+    //- 숫자 맨 앞 또는 맨 뒤에 삽입할 수 없다.
+    //System.out.println(0x_ffaa);
+    //System.out.println(0xffaa_);
   }
 }
+
+//## 실습
+//1) 컴파일하기
+//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam21.java
+//
+//2) 실행하기
+//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam21
+//
