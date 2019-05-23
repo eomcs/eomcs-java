@@ -3,7 +3,7 @@ package com.eomcs.basic.ch03.test;
 //# 리터럴(literal)
 //
 
-public class Exam01 {
+public class Exam1 {
   public static void main(String[] args) {
     //1) 음의 정수 -100을 출력하라.
     System.out.println();
@@ -24,11 +24,3 @@ public class Exam01 {
     String name = ;
   }
 }
-
-//## 실습
-//1) 컴파일하기
-//   eomcs-java-basic$ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ch03/solution/Exam01.java
-//
-//2) 실행하기
-//   eomcs-java-basic$ java -cp bin/main com.eomcs.basic.ch03.solution.Exam01
-//
