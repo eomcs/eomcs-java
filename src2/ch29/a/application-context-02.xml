@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- 스프링 IoC 컨테이너에게 빈 생성을 요구하는 설정 -->
+  <bean id="b1" class="ch29.a.Student"/>
+  
+  <!-- 스프링 IoC 컨테이너가 위 태그를 읽고 내부적으로 수행하는 일:
+    Class<?> clazz = Class.forName("ch29.a.Studnet");
+    Constructor<?> constructor = clazz.getConstructor();
+    beanContainer.put("b1", constructor.newInstance());
+  -->
+  
+</beans>

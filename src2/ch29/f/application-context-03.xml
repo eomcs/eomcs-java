@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- 팩토리 클래스로부터 객체를 생성하기 III 
+     => 스프링 IoC 컨테이너의 공장 클래스 만드는 규칙(FactoryBean)에 따라서 
+        공장 클래스를 만든 경우 객체 생성하기
+     class : 팩토리 클래스의 이름
+     id : 팩토리 객체의 getObject()가 리턴한 값을 저장할 때 사용할 이름
+     => 주의!
+        factory-method 가 없다고 해서 팩토리 클래스의 객체가 저장되는 것이 아니다.
+     => 객체 생성 원리
+        - 스프링 IoC 컨테이너는 class 속성에 지정된 클래스를 조사한다.
+        - 만약 일반 클래스라면 그대로 객체를 생성하여 id 값으로 저장한다.
+        - 만약 FactoryBean 규칙에 따라 만든 클래스라면,
+          해당 클래스의 객체를 생성한다.
+          IoC 컨테이너에 대해 getBean()을 호출하면,
+          그 공장 객체에 대해 getObject()를 호출한다.
+          그리고 getObject()의 리턴 값을 id에 지정한 이름으로 저장하고 객체를 리턴한다.
+          한 번 객체를 생성하면 getBean()을 호출할 때 마다 
+          기존에 생성한 객체를 리턴한다.
+          공장 클래스의 isSingleton() 리턴 값이 true 인 경우에 이렇게 동작한다.
+  -->
+
+  <!-- BlackBox는 일반 클래스이기 때문에
+       스프링 IoC 컨테이너는 BlackBox 객체를 만들어 "blackBox"이름으로 저장한다. -->  
+  <bean id="blackBox" class="ch29.f.BlackBox">
+    <property name="maker" value="비트오토"/>
+    <property name="model" value="daynight"/>
+  </bean>
+
+  <!-- CarFactory2는 일반 클래스이기 때문에
+       스프링 IoC 컨테이너는 CarFactory2 객체를 만들어 "carFactory"이름으로 저장한다. -->
+  <bean id="carFactory" class="ch29.f.CarFactory2">
+    <constructor-arg ref="blackBox"/>
+  </bean>
+  
+  <bean id="c1" class="ch29.f.CarFactoryBean">
+    <constructor-arg ref="blackBox"/>
+    <constructor-arg value="sonata"/>
+  </bean>
+  <!-- 
+    Class<?> clazz = CarFactoryBean.class;
+    Class<?>[] interfaces = clazz.getInterfaces();
+    boolean isFactoryBean = false;
+    for (Class<?> c : interfaces) {
+      if (c == FactoryBean.class) {
+        isFactoryBean = true;
+        break;
+      }
+    }
+    if (isFactoryBean) {
+      CarFactoryBean factory = new CarFactoryBean(blackBox, "sonata");
+      Car c1 = factory.getObject();
+    } else {
+      CarFactoryBean c1 = new CarFactoryBean(blackBox, "sonata");
+    }
+   -->
+   
+  <bean id="bb" class="ch29.f.BlackBoxFactoryBean">
+    <constructor-arg value="비트비트"/>
+    <constructor-arg value="하루종일"/>
+  </bean>
+  
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

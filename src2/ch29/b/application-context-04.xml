@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- 익명으로 빈을 생성할 경우
+       => 이름을 지정하지 않으면 기본으로 "패키지명.클래스명#번호" 형태로 이름이 지정된다.
+          번호는 0부터 시작한다. 
+          같은 타입의 객체가 또 있으면 번호가 1 증가한다. 
+       => 첫 번째 객체는 "패키지명.클래스명"을 별명으로 갖는다.
+       => 그러나 같은 타입에 대해 두 번째 객체부터는 별명이 붙지 않는다.
+       => @Component 애노테이션으로 빈을 생성할 때는 
+          빈의 기본 이름이 "클래스명"이다. 단 첫 번째 알파벳은 소문자이다. 
+  -->
+  <bean class="ch29.b.Car"/> <!-- 이름="ch29.b.Car#0" 별명="ch29.b.Car" -->
+  <bean class="ch29.b.Car"/> <!-- 이름="ch29.b.Car#1" -->
+  <bean class="ch29.b.Car"/> <!-- 이름="ch29.b.Car#2" -->
+  
+</beans>
+
+
+
+
+
+
+
+
+

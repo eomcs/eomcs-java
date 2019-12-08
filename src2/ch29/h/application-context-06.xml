@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <!-- @Autowired + 필수/선택 의존 객체 
+       => @Autowired의 required 기본 값은 true 이다.
+          즉 필수 입력임을 지정한다.
+          만약 해당 객체가 없다면 생성 오류가 발생할 것이다.
+       => 해당 의존 객체를 선택 항목으로 만들고 싶다면 
+          required 를 false로 설정하라!
+  -->
+  <context:annotation-config/>
+
+  <bean id="c1" class="ch29.h.Car4"/>
+  
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

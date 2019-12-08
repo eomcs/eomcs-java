@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <!-- 스프링 IoC 컨테이너가 생성해야 할 빈을 애노테이션으로 지정하기
+       => @Component 애노테이션이 붙은 클래스는 XML에서 지정할 필요가 없다.
+       => 스프링 IoC 컨테이너가 자동으로 생성하기 때문이다.
+       
+       @Component 애노테이션을 처리하려면 <context:component-scan> 태그를 사용해야 한다.
+  -->
+  
+  <!-- 
+    base-package : 스프링 IoC 컨테이너가 탐색해야 할 패키지를 지정한다.
+                   스프링 IoC 컨테이너는 이 속성에 지정된 패키지와 그 하위 패키지를 모두 뒤져서
+                   @Component, @Controller, @Repository, @RestController 가 붙은 
+                   클래스를 찾아 인스턴스를 생성한다.
+                   물론 생성자에서 요구하는 객체를 자동으로 주입한다.
+                   또 @Autowired가 붙은 필드나 셋터에 대해 의존 객체를 자동 주입한다.
+    <context:compoment-scan> 태그는 
+    <context:annotation-config> 태그를 자동으로 활성화시킨다.
+    따라서 <context:annotation-config> 태그를 선언하지 않아도 된다.  
+  -->
+  <context:component-scan base-package="ch29.i"></context:component-scan>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

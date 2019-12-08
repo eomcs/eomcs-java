@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+  <resultMap type="board" id="boardMap">
+    <id column="board_id"         property="no"/>
+    <result column="created_date" property="createdDate"/>
+    <result column="view_count"   property="viewCount"/>
+    <!-- 나머지 컬럼은 같은 이름을 갖는 프로퍼티에 저장하라는 의미! -->
+  </resultMap>
+
+
+<!-- 조건문 만들기 
+=> <if test="조건">
+=> 조건은 true/false를 리턴하는 계산식이어야 한다.
+=> 파라미터 타입이 자바 원시 타입, String, 래퍼 클래스의 경우
+   값을 꺼낼 때 프로퍼티 이름은 #{아무이름} 이 가능했다.
+   그러나 <if> 태그의 test 속성 안에서 프로퍼티명을 지정할 때는
+   value 이름을 사용해야 한다.
+=> 
+-->
+  <select id="select1" resultMap="boardMap" parameterType="int">
+    select * 
+    from x_board
+    <if test="value != null"> <!-- test 속성 안에서는 okok 안된다. value라고 해야 한다. -->
+    where 
+      board_id = #{okok} <!-- 값을 꺼낼 때는 프로퍼티 이름으로 아무거나 가능하다. -->
+    </if>
+  </select>
+
+<!-- 파라미터 타입이 자바 원시 타입, String, 래퍼 클래스가 아닌 일반 클래스인 경우, 
+     원래 했던 것 처럼 프로퍼티 이름을 사용하면 된다. -->
+  <select id="select2" resultMap="boardMap" parameterType="map">
+    select * 
+    from x_board
+    <if test="no != null">
+    where 
+      board_id = #{no}
+    </if>
+  </select>
+
+<!-- 여러 개의 조건을 처리하기 
+=> where 절에 조건을 붙일 때 or나 and를 앞에 붙이는 경우가 있다.
+   문제는 where 절에 아무 조건문이 없는 상태에서 
+   or 조건이나 and 조건문 등이 붙는다면 SQL 오류가 발생한다.
+      예) where or title = #{title}
+   그래서 보통 이런 경우 임의의 조건을 추가하여 문제가 발생하지 않도록 한다.
+      예) where 1=0  <=== 임의의 조건 
+            or title = #{title}
+-->
+  <select id="select3" resultMap="boardMap" parameterType="map">
+    select * 
+    from x_board
+    where 1=0
+    <if test="no != null">
+      or board_id = #{no}
+    </if>
+    <if test="title != null">
+      or title like concat('%', #{title}, '%')
+    </if>
+    <if test="contents != null">
+      or contents like concat('%', #{contents}, '%')
+    </if>
+  </select>
+
+<!--  <where> 태그를 사용하면 굳이 임의의 조건을 where 절에 추가할 필요가 없다.
+=> 즉 위의 select3 보다 편하게 처리할 수 있다.
+ -->
+  <select id="select4" resultMap="boardMap" parameterType="map">
+    select * 
+    from x_board
+    <where>
+	    <if test="no != null">
+	      or board_id = #{no}
+	    </if>
+	    <if test="title != null">
+	      or title like concat('%', #{title}, '%')
+	    </if>
+	    <if test="contents != null">
+	      or contents like concat('%', #{contents}, '%')
+	    </if>
+    </where>
+  </select>
+
+<!-- 여러 개의 조건 중에 한 개의 조건에 대해 SQL문을 처리하고 싶다면,
+    <choose>,<when>,<otherwise> 태그를 사용하라!
+    자바의 switch 문과 용도가 같다. -->
+  <select id="select5" resultMap="boardMap" parameterType="map">
+    select * 
+    from x_board
+    where
+      <choose> 
+	      <when test="no != null">
+	        board_id = #{no}
+	      </when>
+	      <when test="title != null">
+	        title like concat('%', #{title}, '%')
+	      </when>
+	      <when test="contents != null">
+	        contents like concat('%', #{contents}, '%')
+	      </when>
+	      <otherwise>
+	        1=1
+	      </otherwise>
+      </choose>
+  </select>
+
+<!-- <where> 태그 대신에 <trim> 태그를 사용하여 문장에 앞에 오는 OR 나 AND 를 제거할 수 있다. -->
+  <select id="select6" resultMap="boardMap" parameterType="map">
+    select * 
+    from x_board
+    <trim prefix="where" prefixOverrides="OR |AND">
+	    <if test="no != null">
+	      board_id = #{no}
+	    </if>
+	    <if test="title != null">
+	      or title like concat('%', #{title}, '%')
+	    </if>
+	    <if test="contents != null">
+	      or contents like concat('%', #{contents}, '%')
+	    </if>
+    </trim>
+  </select>
+  
+<!-- 정렬 키워드에 따라 order by 조건을 다루기: 
+    in-parameter 는 컬럼의 값을 지정할 때 사용한다. 
+    그리고 in-parameter 자리에 값을 놓을 때는 #{프로퍼티명} 문법을 사용한다.
+      select *
+      from x_board
+      where title = #{value}
+      
+    그러나 테이블 이름이나 컬럼 이름, 
+    SQL 키워드(예: select, from, insert, values, into, set, asc, desc, order, by 등)가 들어갈 자리는 
+    in-parameter로 지정할 수 없다. 
+    in-parameter로 지정할 수 없는 자리에 #{프로퍼티명}을 사용할 수 없다.
+      select *
+      from #{name} <==== 안된다!
+      where title = #{value}
+      order by 
+        #{column} #{sort}  <==== 둘 다 안된다.
+    -->  
+  <select id="select7_error" resultMap="boardMap" parameterType="map">
+    select * 
+    from x_board
+    order by
+      <if test="column != null">
+        #{column} #{sort}
+      </if>
+  </select>
+
+<!-- SQL 키워드(테이블 이름과 컬럼 이름 포함)가 들어갈 자리에 in-parameter 처럼 값을 넣고 싶다면 
+     ${프로퍼티명} 을 사용하라! 
+     경고!
+     => 사용자가 입력한 값을 직접 SQL 코드에 삽입하는 경우 "SQL 삽입 공격"을 받을 수 있다.
+     => 따라서 ${프로퍼티명} 문법을 사용할 때는 절대로 사용자가 입력한 값을 그대로 전달하지 말라!
+     => 사용자가 입력한 값을 자바 코드에서 판단하여 자바 코드로 입력한 값을 전달하라!
+     -->
+  <select id="select7_ok" resultMap="boardMap" parameterType="map">
+    select * 
+    from x_board
+    order by 
+      <if test="column != null">
+        ${column} ${sort}
+      </if>
+  </select>
+
+<!-- udpate를 실행할 때 
+     값을 변경하는 컬럼에 대해서만 update를 수행하게 할 수 있다. 
+     <set>과 <if> 태그를 조합하면 된다.
+     -->
+  <update id="update1" parameterType="map">
+    update x_board 
+      <set>
+        <if test="title != null">title = #{title},</if>
+        <if test="contents != null">contents = #{contents}</if>
+      </set>
+    where
+      board_id = #{no}
+  </update>
+  
+<!-- Array 또는 Interable 객체를 사용하여 값을 반복적으로 꺼내기 -->  
+  <select id="select9" resultMap="boardMap" parameterType="map">
+    select *
+    from x_board
+    where 
+      board_id in /*(10, 12, 15, 28, 39)*/
+        <foreach collection="noList" item="value" open="(" close=")" separator=",">
+          #{value}
+        </foreach>
+  </select>
+  
+  <select id="select9_2" resultMap="boardMap" parameterType="map">
+    select *
+    from x_board
+    where 
+        <foreach collection="list" item="value" separator="or">
+          title like concat('%', #{value}, '%') 
+        </foreach>
+  </select>
+  
+  <select id="select9_3" resultMap="boardMap" parameterType="map">
+    select *
+    from x_board
+    where 
+        <foreach collection="list" item="b" separator="or">
+          title like concat('%', #{b.title}, '%') 
+        </foreach>
+  </select>
+</mapper>
+
+
+
+
+

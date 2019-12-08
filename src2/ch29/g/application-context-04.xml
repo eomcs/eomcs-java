@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- String 값을 BlackBox 객체로 자동 변환시키기 
+  -->
+  
+  <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+    <property name="customEditors">
+      <map>
+        <entry key="java.util.Date" value="ch29.g.MyCustomDateEditor"/>
+        <entry key="ch29.g.BlackBox" value="ch29.g.MyCustomBlackBoxEditor"/>
+      </map>
+    </property>
+  </bean>  
+
+  
+  <bean id="c1" class="ch29.g.Car">
+    <property name="maker" value="비트자동차"/>
+    <property name="model" value="모델1"/>
+    <property name="cc" value="1980"/>
+    <property name="valve" value="16"/>
+    <property name="auto" value="true"/>
+    <property name="createdDate" value="2019-3-19"/>
+    <property name="blackBox" value="비트오토,오호라박스"/>
+    <!-- 자바 코드 표현
+      => 스프링 IoC 컨테이너는 String 을 BlackBox로 변환시켜줄 프로퍼티 에디터를 찾는다.
+      => 그 에디터를 사용하여 문자열을 BlackBox 객체로 바꾼다.
+         myCustomBlackBoxEditor.setAsText("비트오토,오호라박스");
+      => 변환된 값을 꺼낸다.
+         BlackBox temp = myCustomBlackBoxEditor.getObject();
+      => blackBox 프로퍼티에 값을 넣는다.
+         c1.setBlackBox(temp);
+     -->
+  </bean>
+  
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

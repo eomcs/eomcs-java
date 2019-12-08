@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+  <resultMap type="board" id="boardMap">
+    <id column="board_id"         property="no"/>
+    <result column="created_date" property="createdDate"/>
+    <result column="view_count"   property="viewCount"/>
+  </resultMap>
+
+  <select id="select" resultMap="boardMap">
+    select * from x_board
+  </select>
+  
+  <insert id="insert" parameterType="board">
+    insert into x_board(title,contents) 
+    values(#{title},#{contents})
+  </insert>
+
+</mapper>
+
+
+
+
+

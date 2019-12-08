@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 네임스페이스 이름은 인터페이스명과 같게 하라! -->
+<mapper namespace="ch29.k1.dao.BoardDao">
+  
+  <resultMap type="board" id="boardMap">
+    <id column="board_id" property="no"/>
+    <result column="title" property="title"/>
+    <result column="contents" property="contents"/>
+    <result column="created_date" property="createdDate"/>
+    <result column="view_count" property="viewCount"/>
+  </resultMap>
+  
+  <sql id="select1">
+      board_id, 
+      title, 
+      created_date, 
+      view_count
+  </sql>
+  
+  <select id="findAll" resultMap="boardMap">
+    select
+      <include refid="select1"/>
+    from
+      x_board
+    order by 
+      board_id desc
+  </select>
+  
+  <select id="findByNo" resultMap="boardMap" parameterType="int">
+    select 
+      <include refid="select1"/>,
+      contents
+    from
+      x_board
+    where 
+      board_id = #{value}
+  </select>
+  
+  <update id="increaseCount" parameterType="int">
+    update x_board 
+    set 
+      view_count = view_count + 1 
+    where board_id = #{value}
+  </update>
+  
+  <insert id="insert" parameterType="board">
+    insert into x_board(title,contents) 
+    values(#{title},#{contents})
+  </insert>
+  
+  <update id="update" parameterType="board">
+    update x_board 
+    <set>
+      <if test="title != null">title = #{title},</if>
+      <if test="contents != null">contents = #{contents}</if>
+    </set> 
+    where board_id = #{no}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from x_board 
+    where board_id = #{no}
+  </delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+

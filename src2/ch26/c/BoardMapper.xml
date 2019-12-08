@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+<!-- 
+mybatis 설정 파일에서 클래스 이름에 대해 별명을 지정되어 있으면, 
+SQL 매퍼 파일에서는 그 별명을 사용할 수 있다.
+-->
+  <select id="select1" resultType="board">
+    select * from x_board
+  </select>
+</mapper>
+
+
+
+
+

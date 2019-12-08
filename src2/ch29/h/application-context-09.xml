@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <!-- 생성자를 통해 의존 객체 주입하기
+       => @Autowired 나 @Resource를 사용할 필요가 없다.
+       => 스프링 전문가들 사이에서는 이 방식을 권고하기도 한다.
+          왜?
+          생성자의 파라미터로 선언하면 해당 의존 객체가 필수가 된다.
+          즉 그 의존 객체없이 사용할 수 없게 만든다.
+  -->
+  <context:annotation-config/>
+
+  <!-- <bean> 태그를 선언할 때,
+       <constructor-arg> 태그를 이용하여 생성자의 파라미터 값을 지정하지 않으면 
+       스프링 IoC 컨테이너는 기본 생성자를 호출한다.
+       그러나,
+       <context:annotation-config>를 선언하면 기타 객체 생성을 보조해줄 도우미 객체들이 
+       여러 개 스프링 IoC 컨테이너에 추가된다. 
+       그 객체 중에 한 개가
+       '기본 생성자가 없을 때 다른 생성자를 찾아서 호출'하는 일을 한다.
+       따라서 다음 Car7 클래스는 기본 생성자가 없기 때문에
+       Car7(BlackBox) 생성자가 호출된다.
+       주의!
+       <context:annotation-config/> 태그를 선언하지 않으면 
+       이런 일을 해줄 객체가 등록되지 않기 때문에 
+       Car7 객체를 생성할 수 없을 것이다.
+        -->
+  <bean id="c1" class="ch29.h.Car7"/>
+
+  <!-- 설정 파일에서 직접 객체를 언급할 일이 없다면 이름을 생략하라.
+       그러면 내부에서 정한 규칙에 따라 이름이 자동으로 부여될 것이다. -->   
+  <bean class="ch29.h.BlackBox">
+    <property name="maker" value="비트오토"/>
+    <property name="model" value="오호라박스"/>
+  </bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

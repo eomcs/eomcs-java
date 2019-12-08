@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+  <resultMap type="board" id="boardMap">
+    <id column="board_id"         property="no"/>
+    <result column="created_date" property="createdDate"/>
+    <result column="view_count"   property="viewCount"/>
+    <!-- 나머지 컬럼은 같은 이름을 갖는 프로퍼티에 저장하라는 의미! -->
+  </resultMap>
+
+<!-- 여러 SQL 문에서 반복적으로 사용하는 코드를 별도의 블록으로 분리시키기.
+     <sql>SQL 코드 조각</sql> 문법을 사용한다. -->
+  <sql id="sql01">
+    select * 
+    from x_board
+  </sql>
+
+  <select id="select1" resultMap="boardMap" parameterType="int">
+    <include refid="sql01"/>
+    <if test="value != null"> <!-- test 속성 안에서는 okok 안된다. value라고 해야 한다. -->
+    where 
+      board_id = #{okok} <!-- 값을 꺼낼 때는 프로퍼티 이름으로 아무거나 가능하다. -->
+    </if>
+  </select>
+
+  <select id="select2" resultMap="boardMap" parameterType="map">
+    <include refid="sql01"/>
+    <if test="no != null">
+    where 
+      board_id = #{no}
+    </if>
+  </select>
+
+  <select id="select3" resultMap="boardMap" parameterType="map">
+    <include refid="sql01"/>
+    <where>
+	    <if test="no != null">
+	      or board_id = #{no}
+	    </if>
+	    <if test="title != null">
+	      or title like concat('%', #{title}, '%')
+	    </if>
+	    <if test="contents != null">
+	      or contents like concat('%', #{contents}, '%')
+	    </if>
+    </where>
+  </select>
+
+</mapper>
+
+
+
+
+

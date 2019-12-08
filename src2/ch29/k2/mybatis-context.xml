@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://mybatis.org/schema/mybatis-spring
+        http://mybatis.org/schema/mybatis-spring.xsd">
+  
+  <!-- SqlSessionFactory 객체 준비 -->
+  <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <property name="mapperLocations" 
+              value="classpath*:ch29/k2/mapper/**/*.xml" />
+    <property name="typeAliasesPackage" value="ch29.k2.vo"/>
+  </bean>
+  
+  <!-- DAO 구현체를 자동으로 생성해주는 객체 준비 
+       => 다음과 같이 직접 객체를 준비할 수 있지만,
+          mybatis 전용 태그를 사용하여 설정을 단순화시킬 수 있다.
+  -->
+  
+  <!--  
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="ch29.k2.dao" />
+  </bean>
+  -->
+
+  <mybatis:scan base-package="ch29.k2.dao"/>
+  
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

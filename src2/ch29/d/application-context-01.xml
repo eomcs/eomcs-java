@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- 프로퍼티 값 설정하기 : 세터 호출하기
+  -->
+  <bean id="c1" class="ch29.d.Car">
+    <property name="maker"><value>비트자동차</value></property>
+    <property name="model"><value>모델1</value></property>
+    <property name="cc"><value>1980</value></property>
+    <property name="valve"><value>16</value></property>
+    <property name="auto"><value>true</value></property>
+  </bean>
+  <!-- 자바 코드로 표현해보면,
+       Car obj = new Car();
+       obj.setMaker("비트자동차");
+       obj.setModel("모델1");
+       obj.setCc(Integer.parseInt("1980")); <== 문자열은 primitive type인 경우 자동 변환.
+       obj.setValve(Integer.parseInt("16"));
+       obj.setAuto(Boolean.parseBoolean("true")); 
+       beanContainer.put("c1", obj); -->
+   
+  <!-- 프로퍼티 값을 설정할 때 타입을 지정할 수 있다. 
+       타입을 지정하지 않으면 셋터의 파라미터 타입으로 간주한다.
+       만약 파라미터 타입이 String 이 아니고 primitive type 이면 
+       문자열을 자동으로 primitive type으로 변환한다.
+       primitive type 아니면, 
+       변환할 수 없다는 오류가 발생한다.-->
+  <bean id="c2" class="ch29.d.Car">
+    <property name="maker"><value type="java.lang.String">비트자동차</value></property>
+    <property name="model"><value type="java.lang.String">모델1</value></property>
+    <property name="cc"><value type="int">1980</value></property>
+    <property name="valve"><value type="int">16</value></property>
+    <property name="auto"><value type="boolean">true</value></property>
+    <!-- 프로퍼티의 타입이 자바 원시 타입일 경우에만 자동으로 변환해 준다. 
+         XML 파일에 설정한 값(문자열)을 primitive type으로 변환하는 것.-->
+    <!-- 자바 원시 타입이 아니기 때문에 오류 발생! 별도의 프로퍼티 변환기가 있어야 한다.-->
+    <!--  
+    <property name="createdDate"><value type="java.sql.Date">2019-1-1</value></property>
+    -->
+  </bean>
+
+  <!-- 프로퍼티 값을 value 속성으로 지정할 수 있다. -->
+  <bean id="c3" class="ch29.d.Car">
+    <property name="maker" value="비트자동차"/>
+    <property name="model" value="모델1"/>
+    <property name="cc" value="1980"/>
+    <property name="valve" value="16"/>
+    <property name="auto" value="true"/>
+  </bean>
+  
+  <!-- 프로퍼티 값도 생성자의 c 네임스페이스처럼 p 네임스페이스로 설정할 수 있다. 
+       => p:프로퍼티명="값"
+       => c 네임스페이스와 마찬가지로 <beans> 엘리먼트에 p 네임스페이스를 선언해야 한다.
+          물론 스키마를 정의한 파일의 URL을 지정할 필요는 없다.
+  -->
+  <bean id="c4" class="ch29.d.Car"
+        p:maker="비트자동차" p:model="모델3" p:cc="2500" p:valve="16" p:auto="true"/>
+</beans>
+
+
+
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans.xsd   
+      http://www.springframework.org/schema/context 
+      http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <!-- 스프링 IoC 컨테이너에게 자동으로 객체를 생성할 클래스가 들어 있는 패키지를 알려준다.
+       스프링 IoC 컨테이너는 지정된 패키지와 그 하위 패키지를 탐색하여 
+       @Component, @Service, @Repository, @Controller 등이 붙은 클래스를 찾아 
+       인스턴스를 생성하여 보관한다.
+       애노테이션에 빈의 이름을 따로 지정해두지 않았다면 
+       빈을 저장할 때 클래스 이름으로 저장한다. 
+   -->
+  <context:component-scan base-package="ch29.a"/>
+    
+</beans>
+
+
+

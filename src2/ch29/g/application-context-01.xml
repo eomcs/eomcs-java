@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- XML에서 프로퍼티 값으로 지정한 것은 String이다.
+       이것을 프로퍼티의 타입으로 변환하여 세터를 호출한다.
+       단 스프링 IoC 컨테이너는 자바 원시 타입에 대해서만 자동 변환해준다.
+  -->
+  
+  <bean id="c1" class="ch29.g.Car">
+    <property name="maker" value="비트자동차"/> <!-- String ==> String -->
+    <property name="model" value="모델1"/> <!-- String ==> String -->
+    <property name="cc" value="1980"/> <!-- String ==> int -->
+    <property name="valve" value="16"/> <!-- String ==> int -->
+    <property name="auto" value="true"/> <!-- String ==> boolean -->
+    
+    <!-- 자바 원시 타입이 아닌 경우 String을 그 타입으로 자동 변환하지 못한다. 예외 발생! -->
+    <property name="createdDate" value="2019-3-19"/>
+  </bean>
+  
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

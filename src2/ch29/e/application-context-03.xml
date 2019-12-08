@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- Map 프로퍼티 값 설정하기
+  -->
+  <bean id="c1" class="ch29.e.Car3">
+    <property name="model"><value>모델1</value></property>
+    <property name="options">
+      <map>
+        <entry> <!-- map.put("sunroof", "yes") -->
+          <key>
+            <value>sunroof</value>
+          </key>
+          <value>yes</value>
+        </entry>
+        <entry key="front-airbag">
+          <value>yes</value>
+        </entry>
+        <entry key="rear-airbag" value="no"/>
+        <entry key="blackbox">
+          <bean class="ch29.e.BlackBox" p:maker="비트오토" p:model="모두기록1"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

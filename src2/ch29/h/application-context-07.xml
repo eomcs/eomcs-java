@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <!-- @Autowired + 같은 타입에 대해 여러 개의 의존 객체가 있을 때? 
+       => 어떤 것을 꼽아야 할 지 알 수 없기 때문에 Car4 객체를 생성하지 못한다. 오류 발생!
+       => 해결책! 
+          Car5를 확인하라!
+          @Qualifier("객체이름")을 사용하여 어떤 객체를 꼽을 것인지 지정하라!
+  -->
+  <context:annotation-config/>
+
+  <!-- 객체 생성 오류! -->
+  <!--
+  <bean id="c1" class="ch29.h.Car4"/>
+  -->
+  
+  <bean id="c2" class="ch29.h.Car5"/>
+   
+  <bean id="bb1" class="ch29.h.BlackBox">
+    <property name="maker" value="비트오토"/>
+    <property name="model" value="오호라박스"/>
+  </bean>
+  
+  <bean id="bb2" class="ch29.h.BlackBox">
+    <property name="maker" value="현대오토"/>
+    <property name="model" value="헐박스"/>
+  </bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+namespace 속성 : SQL문이 소속된 그룹. 자바의 패키지명과 같은 역할을 한다.
+-->  
+<mapper namespace="board">
+
+<!-- select 엘리먼트
+=> select 문을 지정하는 태그이다.
+=> id : SQL을 찾을 때 사용할 식별 값.
+=> resultType : 한 개의 결과(row)를 저장할 객체의 타입. 반드시 fully-qualified name을 사용하라.
+=> FQName(fully-qualified name) : 패키지명을 포함한 클래스 이름.
+-->
+  <select id="select1" resultType="ch26.a.Board">
+    select * from x_board
+  </select>
+</mapper>
+
+
+
+
+

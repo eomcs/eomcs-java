@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+  
+  <context:component-scan base-package="ch30.c"/>
+  
+  <!-- 충고를 수행할 객체를 준비한다. 
+       => 어떤 메서드의 호출 전/후에 작업을 수행할 객체를 준비한다.-->
+  <bean id="myAdvice" class="ch30.c.MyAdvice"/>
+  <bean id="myAdvice2" class="ch30.c.MyAdvice2"/>
+  
+  <!-- AOP 설정
+       => 어떤 메서드에 어떤 작업을 추가할 지 설정한다. -->
+  <aop:config>
+    
+    <!-- pointcut을 여러 곳에서 사용한다면 별도로 정의하는 것이 유지보수에 좋다. -->
+    <aop:pointcut expression="execution(* ch30.c.X.m1(..))" id="pointcut1"/>
+    
+    <!-- 어떤 관점으로 어떤 의도를 가지고 작업을 추가할 것인지 설정한다. -->
+    <aop:aspect id="aspect1" ref="myAdvice">
+      <aop:before pointcut-ref="pointcut1" method="advice1" />
+    </aop:aspect>
+    
+    <aop:aspect id="aspect2" ref="myAdvice2">
+      <aop:after pointcut-ref="pointcut1" method="advice1" />
+    </aop:aspect>
+  
+  </aop:config>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

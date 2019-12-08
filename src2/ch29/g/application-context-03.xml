@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- String 값을 java.sql.Date 타입의 값으로 변환시켜주는 객체를 
+       스프링 IoC 컨테이너에 등록한다.
+       String을 특정 타입의 값으로 변환시키는 객체를 "프로퍼티 에디터"라 부른다. 
+  -->
+  
+  <!-- CustomEditorConfigurer 
+       => 스프링 IoC 컨테이너가 사용할 프로퍼티 에디터를 등록하는 일을 한다.
+       => 기존에는 String을 자바 원시 타입으로 변환시켜주는 프로퍼티 에디터만 등록되어 있다.
+       => 다른 프로퍼티 에디터를 등록하고 싶으면 이 클래스의 객체를 생성해야 한다.
+       => 그리고 이 객체에 등록하고 싶은 프로퍼티 에디터를 지정해야 한다. -->
+  <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+    <property name="customEditors">
+      <!-- setCustomEditor(Map<Class,Class> param) {...} -->
+      <map>
+        <!-- 프로퍼티 에디터 지정하기
+             key : String을 바꿀 목표 타입
+             value : key에 지정한 타입으로 바꿀 때 사용할 프로퍼티 에디터  -->
+        <entry key="java.util.Date" value="ch29.g.MyCustomDateEditor"/>
+      </map>
+    </property>
+  </bean>  
+
+  
+  <bean id="c1" class="ch29.g.Car">
+    <property name="maker" value="비트자동차"/>
+    <property name="model" value="모델1"/>
+    <property name="cc" value="1980"/>
+    <property name="valve" value="16"/>
+    <property name="auto" value="true"/>
+    <!-- java.sql.Date 타입의 프로퍼티 값을 지정할 때 그냥 String을 넣는다.
+         그러면 String을 java.util.Date 객체로 바꾸기 위해 
+         위에서 등록한 MyCustomDateEditor를 사용할 것이다.
+         이 방식의 장점은 String을 특정 타입의 값으로 바꾸기 위해 
+         개발자가 직접 객체를 생성할 필요가 없다는 것이다.-->
+    <property name="createdDate" value="2019-3-19"/>
+  </bean>
+  <!-- 
+    CustomerEditorConfigurer configurer = beanContainer.getBean(CustomEditorConfigurer.class);
+    Map<Class,Class> map = configurer.getCustomEditors();
+    Class editorClass = map.get(Date.class);
+    Constructor const = editorClass.getConstructor();
+    PropertyEditor propEditor = const.newInstance(); // MyCustomDateEditor 리턴
+    propEditor.setAsText("2019-3-19");
+    Date value = propEditor.getValue();
+    
+    c1.setCreatedDate(value);
+   -->
+  
+  
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

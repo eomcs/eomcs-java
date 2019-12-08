@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!-- XML 선언. 반드시 첫 번째로 와야 한다. -->
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+  
+  <properties resource="ch26/f/jdbc.properties"/>
+  
+  <typeAliases>
+    <package name="ch26.f"/> 
+  </typeAliases>
+
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+    <mapper resource="ch26/f/BoardMapper.xml"/>
+  </mappers>
+</configuration>
+
+
+
+
+
+

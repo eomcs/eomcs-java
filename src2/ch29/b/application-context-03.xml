@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- 빈의 생성 정책
+    scope: singleton(기본) | prototype | request | session | application | websocket
+    => singleton : 스프링 IoC 컨테이너를 준비할 때 객체를 생성한다. 그리고 객체를 한 개만 생성. 
+    => prototype : getBean()을 호출할 때 마다 생성
+    => request : (웹) 요청마다 생성
+    => session : (웹) 센션 당 한 개
+    => application : (웹) 웹 애플리케이션 당 한 개
+  -->
+  <bean id="c1" class="ch29.b.Car"/>
+  <bean id="c2" class="ch29.b.Car2" scope="singleton"/>
+  <bean id="c3" class="ch29.b.Car3" scope="prototype"/>
+  
+</beans>
+
+
+
+
+
+
+
+
+

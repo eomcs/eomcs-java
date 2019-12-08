@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+<!-- 컬럼의 이름과 자바 인스턴스의 프로퍼티 이름을 연결하기 
+ 다음은 ch26.d.Board2 클래스의 프로퍼티 이름과 
+ x_board 테이블의 컬럼 이름을 연결하는 설정이다.
+ 
+ type 속성 =>  자바 클래스 전체 이름 또는 별명
+ id 속성 => SQL 문을 설정할 때 사용할 식별자
+-->
+  <resultMap type="board2" id="board2Map">
+    <!-- PK 컬럼을 지정할 때는 id 엘리먼트를 사용하고, 
+         일반 컬럼을 지정할 때는 result 엘리먼트를 사용하라! -->
+    <id column="board_id"         property="no"/>
+    
+    <!-- 컬럼명과 프로퍼티명이 같을 경우 연결 정보를 생략해도 된다. 
+    <result column="title"        property="title"/>
+    <result column="contents"     property="contents"/>
+    -->
+    
+    <result column="created_date" property="createdDate"/>
+    <result column="view_count"   property="viewCount"/>
+  </resultMap>
+
+
+<!-- 
+mybatis 설정 파일에서 클래스 이름에 대해 별명이 지정되어 있으면, 
+SQL 매퍼 파일에서는 그 별명을 사용할 수 있다.
+별명은 대소문자를 구분하지 않는다.
+그러나 주로 소문자를 사용한다.
+-->
+  <select id="select1" resultType="BOARD">
+    select * from x_board
+  </select>
+  
+  <select id="select2" resultType="board">
+    select * from x_board where board_id = 5
+  </select>
+  
+  <select id="select3" resultType="board2">
+    select * from x_board where board_id = 5
+  </select>
+  
+  <select id="select4" resultType="board2">
+    select
+      board_id as no, /* 컬럼명이 프로퍼티명과 다르면 별명으로 프로퍼티명을 지정한다.*/ 
+      title,
+      contents,
+      created_date as createdDate, /* 컬럼명이 프로퍼티명과 다르면 별명으로 프로퍼티명을 지정한다.*/
+      view_count as viewCount  /* 컬럼명이 프로퍼티명과 다르면 별명으로 프로퍼티명을 지정한다.*/
+    from 
+      x_board 
+    where 
+      board_id = 5
+  </select>  
+  
+<!-- 컬럼명과 프로퍼티명을 연결한 정보를 사용하고 싶다면 
+     resultType 속성 대신에 resultMap 속성을 사용하라.
+     resultMap 속성에 위에서 정의한 resultMap 엘리먼트의 id 값을 지정하라.
+     이렇게 미리 컬럼 이름과 프로퍼티 이름이 연결된 정보를 사용하면 
+     select 문을 작성할 때 컬럼 이름에 대해 일일이 별명을 부여할 필요가 없어 
+     유지보수에 좋다.-->
+  <select id="select5" resultMap="board2Map">
+    select * from x_board where board_id = 5
+  </select>
+  
+<!-- select의 row 값을 담을 클래스를 지정할 때 Map 구현체를 지정해도 된다.
+     그러면 Map 구현체를 생성하여 그 맵 객체에 컬럼 값을 담을 것이다. 
+     컬럼의 이름이 맵 객체의 key로 사용된다.-->
+  <select id="select6" resultType="map">
+    select * from x_board where board_id = 5
+  </select>
+  
+<!-- select의 row가 여러 개일 경우, 
+     각 row의 값은 Map 객체에 저장되고,
+     Map 객체는 List 객체에 추가된다.  -->
+  <select id="select7" resultType="map">
+    select * from x_board
+  </select>
+</mapper>
+
+
+
+
+

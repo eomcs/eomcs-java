@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <!-- @Autowired + @Qualifier = @Resource
+  -->
+  <context:annotation-config/>
+
+  <bean id="c1" class="ch29.h.Car6"/>
+   
+  <bean id="bb1" class="ch29.h.BlackBox">
+    <property name="maker" value="비트오토"/>
+    <property name="model" value="오호라박스"/>
+  </bean>
+  
+  <bean id="bb2" class="ch29.h.BlackBox">
+    <property name="maker" value="현대오토"/>
+    <property name="model" value="헐박스"/>
+  </bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

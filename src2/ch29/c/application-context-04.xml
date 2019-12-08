@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- 생성자 호출
+    => <constructor-arg/> 엘리먼트 대신에 c 네임스페이스 사용하기. 
+    => 다른 네임스페이스와 달리 c 네임스페이스는 스키마 규칙에 대한 URL을 설정할 필요가 없다.
+    => 사용법
+       c:생성자의파라미터명="값" 
+       파라미터명을 지정하기 때문에 속성을 지정하는 순서는 상관없다.-->
+  <bean id="c1" class="ch29.c.Car" 
+        c:model="비트모델2" c:maker="비트자동차"/> <!-- Car(String,String) -->
+  
+  <bean id="c2" class="ch29.c.Car" 
+        c:model="비트모델2" c:cc="1980"/> <!-- Car(String,int) -->
+        
+  <bean id="c3" class="ch29.c.Car" 
+        c:maker="비트자동차" c:valve="16"/> <!-- Car(int,String) -->      
+  
+  <!-- 파라미터 이름 대신에 순서를 지정할 수 있다.
+       => c:_파라미터순서="값"
+       => 순서는 0부터 시작한다. -->
+  <bean id="c4" class="ch29.c.Car" 
+        c:_0="비트자동차" c:_1="모델3" c:_2="1980" c:_3="16" c:_4="true"/>     
+</beans>
+
+ 
+
+
+
+
+

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+  <resultMap type="board" id="boardMap">
+    <id column="board_id"         property="no"/>
+    <result column="created_date" property="createdDate"/>
+    <result column="view_count"   property="viewCount"/>
+    <!-- 나머지 컬럼은 같은 이름을 갖는 프로퍼티에 저장하라는 의미! -->
+  </resultMap>
+
+  <resultMap type="attachFile" id="attachFileMap">
+    <id column="board_file_id"    property="no"/>
+    <result column="file_path"    property="filePath"/>
+    <result column="board_id"     property="boardNo"/>
+  </resultMap>
+  
+  <resultMap type="board" id="boardAttachFileMap">
+    <!-- mybatis는 <id> 태그로 지정한 PK 컬럼을 기준으로 자바 객체를 만들어 컬럼값을 저장한다. 
+         조인 결과에서 PK 값이 같은 결과가 여러 개 있을 경우 한 개의 데이터만 자바 객체에 저장된다.  
+    -->
+    <id column="board_id"         property="no"/>
+    <result column="created_date" property="createdDate"/>
+    <result column="view_count"   property="viewCount"/>
+    
+    <!-- 조인 데이터를 가져올 때는 컬럼 이름과 프로퍼티 이름이 같더라도 정확하게 명시해야 한다. 
+         즉 명시하지 않은 컬럼 값은 자바 객체에 저장되지 않는다.-->
+    <result column="title"   property="title"/>
+    <result column="contents"   property="contents"/>
+    
+    <!-- 자식 테이블의 데이터를 받을 필드를 선언 -->
+    <collection property="attachFiles" ofType="attachFile">
+      <!-- 같은 부모의 자식 테이블의 데이터는 자바 객체에 저장한 후
+           부모 객체 필드에 주입된다.
+           select 결과로 생성된 자바 객체는 <id> 태그에 지정된 프로퍼티 값을 기준을 
+           내부적으로 중복 생성되지 않게 캐시에 보관된다. 
+           따라서 자식 테이블의 데이터를 저장할 때도 자식 테이블의 PK 컬럼을 <id> 태그로 지정하라!-->
+      <id column="board_file_id" property="no"/>
+      <result column="file_path" property="filePath"/>
+      
+      <!-- 조인 데이터를 가져올 때는 컬럼 이름과 프로퍼티 이름이 같더라도 정확하게 명시해야 한다. 
+           즉 명시하지 않은 컬럼 값은 자바 객체에 저장되지 않는다.-->
+      <result column="board_id" property="boardNo"/>
+    </collection>
+  </resultMap>
+  
+
+  <select id="selectBoard" resultMap="boardMap" parameterType="int">
+    select *
+    from x_board
+    where 
+      board_id = #{value}
+  </select>
+
+  <select id="selectAttachFile" resultMap="attachFileMap" parameterType="int">
+    select *
+    from x_board_file
+    where 
+      board_id = #{value}
+  </select>
+  
+  <select id="selectBoardWithAttachFile" 
+          resultMap="boardAttachFileMap" 
+          parameterType="int">
+    select
+      b.board_id,
+      b.title,
+      b.contents,
+      b.created_date,
+      b.view_count,
+      f.board_file_id,
+      f.file_path
+    from x_board b
+      left outer join x_board_file f on b.board_id = f.board_id
+    where
+      b.board_id = #{value}
+  </select>
+</mapper>
+
+
+
+
+

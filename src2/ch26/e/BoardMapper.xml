@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+  <resultMap type="board" id="boardMap">
+    <id column="board_id"         property="no"/>
+    <result column="created_date" property="createdDate"/>
+    <result column="view_count"   property="viewCount"/>
+    <!-- 나머지 컬럼은 같은 이름을 갖는 프로퍼티에 저장하라는 의미! -->
+  </resultMap>
+
+
+  <select id="select1" resultMap="boardMap">
+    select * from x_board
+  </select>
+  
+  <!-- mybatis에서 in-parameter 지정하기 
+    1) in-parameter의 값을 담고 있는 객체의 타입을 지정한다.
+       => parameterType="클래스명 또는 별명"
+    2) SQL문에 in-parameter를 지정한다.
+       => #{프로퍼티명}
+    
+    정수 값을 지정할 때 _int(int 타입)나 int(java.lang.Integer) 둘 중 어떤 것을 사용해도 상관없다.
+    파라미터 타입이 자바 원시 타입(byte, short, int 등)이거나 
+    String, wrapper 클래스(java.lang.Byte, java.lang.Short 등)인 경우 
+    프로퍼티명은 아무거나 상관없다.
+  -->
+  <select id="select2" resultMap="boardMap" parameterType="int">
+    select * from x_board where board_id = #{amuguna}
+  </select>
+
+  <select id="select3" resultMap="boardMap" parameterType="string">
+    select * from x_board where title like concat('%', #{amuguna}, '%')
+  </select>  
+  
+<!-- insert 문을 작성할 때는 insert 엘리먼트에 작성한다.
+     그러나 update, delete 엘리먼트에 작성해도 문제없다.
+     하지만 insert 문은 insert 엘리먼트에 작성하는 것이 유지보수에 좋지 않을까? 
+     파라미터 타입이 일반 클래스일 때 
+     in-parameter의 이름은 그 클래스의 프로퍼티 이름으로 지정한다.
+     #{프로퍼티명}
+     -->
+  <insert id="insert1" parameterType="board">
+    insert into x_board(title,contents) 
+    values(#{title},#{contents})
+  </insert>
+
+<!-- 파라미터 타입의 map인 경우,
+     in-parameter를 지정할 때 #{key} 로 사용하면 된다. -->
+  <insert id="insert2" parameterType="map">
+    insert into x_board(title,contents) 
+    values(#{title},#{contents})
+  </insert>
+  
+  <update id="update" parameterType="board">
+    update x_board set
+      title = #{title},
+      contents = #{contents}
+    where
+      board_id = #{no}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from x_board
+    where
+      board_id = #{value}
+  </delete>
+  
+<!-- insert 실행 후 자동 생성된 PK값 리턴 받기
+=> 파라미터로 전달된 객체를 통해 리턴 받는다.
+-->  
+  <insert id="insert3" parameterType="board"
+    useGeneratedKeys="true" keyColumn="board_id" keyProperty="no">
+    insert into x_board(title,contents) 
+    values(#{title},#{contents})
+  </insert>
+</mapper>
+
+
+
+
+

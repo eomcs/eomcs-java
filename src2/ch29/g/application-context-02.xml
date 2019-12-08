@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- String 값을 java.util.Date 타입 프로퍼티에 넣기
+  -->
+  
+  <bean id="c1" class="ch29.g.Car">
+    <property name="maker" value="비트자동차"/>
+    <property name="model" value="모델1"/>
+    <property name="cc" value="1980"/>
+    <property name="valve" value="16"/>
+    <property name="auto" value="true"/>
+    
+    <!-- 개발자가 직접 해당 타입으로 값을 변환해서 주입한다. -->
+    <property name="createdDate"> <!-- String ==> java.sql.Date ==> java.util.Date -->
+      <!-- 다음은 valueOf()의 리턴 값이다. -->
+      <bean class="java.sql.Date" factory-method="valueOf">
+        <constructor-arg value="2019-3-19"/>
+      </bean> 
+    </property>
+  </bean>
+  
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
