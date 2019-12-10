@@ -24,27 +24,11 @@ public class Exam62 {
     // 
     arr1 = new int[5];
 
-    arr1[0] = 100; // arr1에 저장된 주소로 찾아가서 
-    // 0번째 항목에 값을 넣어라!
-    arr1[1] = 200; // arr1에 저장된 추소로 찾아가서
-    // 1번째 항목에 값을 넣어라!
+    arr1[0] = 100; // arr1에 저장된 주소로 찾아가서 0번째 항목에 값을 넣어라!
+    arr1[1] = 200; // arr1에 저장된 추소로 찾아가서 1번째 항목에 값을 넣어라!
 
     System.out.println(arr1[0]);
     System.out.println(arr1[1]);
-
-    // 단 한 번이라도 메모리에 값을 넣지 않은 상태에서 
-    // 그 메모리의 값을 사용하려 하면 컴파일 오류가 발생한다.
-    int a;
-    //System.out.println(a); // 컴파일 오류!
-
-    // 하지만, 
-    // new 명령으로 확보된 메모리는 종류에 상관없이
-    // 자동으로 0 으로 초기화 된다.
-    // 따라서 값을 넣지 않고 바로 사용할 수 있다.
-    System.out.println(arr1[2]);
-    System.out.println(arr1[3]);
-    System.out.println(arr1[4]);
-
   }
 }
 
