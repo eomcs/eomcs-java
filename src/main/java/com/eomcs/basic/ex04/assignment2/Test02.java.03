@@ -33,24 +33,7 @@ public class Test02 {
     
     System.out.printf("컴퓨터: %s\n", computer);
     
-    if (user.equals("가위")) {
-      if (computer.equals("보")) {
-        System.out.println("=> 당신이 이겼습니다.");
-        return;
-      }
-    } else if (user.equals("바위")) {
-      if (computer.equals("가위")) {
-        System.out.println("=> 당신이 이겼습니다.");
-        return;
-      }
-    } else {
-      if (computer.equals("바위")) {
-        System.out.println("=> 당신이 이겼습니다.");
-        return;
-      }
-    }
-    
-    System.out.println("=> 당신은 비기거나 졌습니다.");
+    System.out.println("=> 당신이 졌습니다.");
     
     keyScan.close();
   }
