@@ -9,7 +9,7 @@
 // 컴퓨터: 가위
 // => 이겼습니다.
 //
-package com.eomcs.basic.ex04.assignment;
+package com.eomcs.basic.ex04.assignment2;
 
 public class Test02 {
   public static void main(String[] args) {

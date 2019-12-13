@@ -34,8 +34,7 @@ public class Test01 {
     } else if (op.equals("/")) {
       result = a / b;
     } else {
-      System.out.println("=> 사용할 수 없는 연산자입니다.");
-      return;
+      System.out.println("사용할 수 없는 연산자입니다.");
     }
 
     System.out.printf("=> %d %s %d = %d\n", a, op, b, result);
