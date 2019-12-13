@@ -1,13 +1,13 @@
-// 키보드로 입력한 값을 받기 III - int 값 읽기
-package ch03;
+package com.eomcs.basic.ex99;
 
-public class Test08 {
+//# 키보드 입력 받기 - int, float, boolean 값 읽기
+//
+public class Exam23 {
   public static void main(String[] args) { 
     java.util.Scanner keyboard = new java.util.Scanner(System.in);
     
-    System.out.print("a? ");
-    int a;
-    a = keyboard.nextInt();
+    System.out.print("int: ");
+    int i = keyboard.nextInt();
     // nextInt()는 한 개의 토큰(token)을 읽을 때가지 기다린다.
     // 한 개의 token을 읽으면 4바이트 정수 값으로 바꾼 다음에 리턴한다.
     // 토큰(token)?
@@ -17,10 +17,15 @@ public class Test08 {
     // 예) aaa    bbb cc ==> aaa, bbb, cc
     // 중간에 여러 개의 공백이 들어가더라도 한 개의 공백으로 간주한다.
     
-    System.out.print("b? ");
-    int b = keyboard.nextInt();
+    System.out.print("float: ");
+    float f = keyboard.nextFloat();
     
-    System.out.printf("%d * %d = %d\n", a, b, a * b);
+    System.out.print("boolean: ");
+    boolean b = keyboard.nextBoolean();
+    
+    keyboard.close();
+    
+    System.out.printf("%d, %f, %b\n", i, f, b);
   }
 }
 

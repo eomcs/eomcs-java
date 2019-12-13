@@ -1,7 +1,8 @@
-// 키보드로 입력한 값을 받기 IV - int와 문자열을 섞어 읽기
-package ch03;
+package com.eomcs.basic.ex99;
 
-public class Test09 {
+//# 키보드 입력 받기 - 여러 종류의 데이터를 섞어 입력 받기
+//
+public class Exam24 {
   public static void main(String[] args) { 
     java.util.Scanner keyboard = new java.util.Scanner(System.in);
     
@@ -12,10 +13,12 @@ public class Test09 {
     // 읽는 상황이 된다. 
     // nextInt() 다음에 nextLine()을 호출할 때 이런 상황이 발생한다.
     // 해결 방법? nextInt()를 호출한 후 남아있는 엔터 코드를 읽어서 제거하라.
-    keyboard.nextLine(); // 남아 있는 빈 문자열의 한 줄(LF 코드)을 읽어서 버린다.
+    //keyboard.nextLine(); // 남아 있는 빈 문자열의 한 줄(LF 코드)을 읽어서 버린다.
 
     System.out.print("이름? ");
     String name = keyboard.nextLine();
+    
+    keyboard.close();
     
     System.out.printf("%d(%s)\n", age, name);
   }
