@@ -1,6 +1,7 @@
-// 비트 이동 연산자 : >>, >>>, << 
 package com.eomcs.basic.ex05;
 
+//# 비트 이동 연산자 : >>, >>>, <<
+//
 public class Exam04_1 {
     public static void main(String[] args) {
         int i = 1;

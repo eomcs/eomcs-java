@@ -1,6 +1,7 @@
-// 논리 연산자 : &&, ||, !(not), ^(XOR; exclusive-OR)
 package com.eomcs.basic.ex05;
 
+//# 논리 연산자 : &&, ||, !(not), ^(XOR; exclusive-OR)
+//
 public class Exam03_1 {
     public static void main(String[] args) {
         // AND 연산자 

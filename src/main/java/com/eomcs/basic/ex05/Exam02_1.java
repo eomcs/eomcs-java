@@ -1,6 +1,7 @@
-// 관계 연산자 : <, <=, >, >=, ==, !=  
 package com.eomcs.basic.ex05;
 
+//# 관계 연산자 : <, <=, >, >=, ==, !=
+//
 public class Exam02_1 {
     public static void main(String[] args) {
         // 비교의 결과는 true 또는 false이다.
