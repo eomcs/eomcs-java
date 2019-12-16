@@ -1,6 +1,7 @@
-// 증감 연산자 : 후위(post-fix) 증가 연산자 
 package com.eomcs.basic.ex05;
 
+//# 증감 연산자 : 후위(post-fix) 증가 연산자
+//
 public class Exam6_1 {
   public static void main(String[] args) {
     int i = 2;

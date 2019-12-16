@@ -1,6 +1,7 @@
-// 비트 이동 연산자 : 응용 III
 package com.eomcs.basic.ex05;
 
+//# 비트 이동 연산자 : 응용 III
+//
 public class Exam4_6 {
   public static void main(String[] args) {
     // 다음 변수의 값을 조사하여 개발자가 

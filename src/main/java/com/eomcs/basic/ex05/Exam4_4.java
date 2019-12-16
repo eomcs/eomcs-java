@@ -1,6 +1,7 @@
-// 비트 이동 연산자 : 응용 I
 package com.eomcs.basic.ex05;
 
+//# 비트 이동 연산자 : 응용 I
+//
 public class Exam4_4 {
   public static void main(String[] args) {
     int i = 0x27a130ff;

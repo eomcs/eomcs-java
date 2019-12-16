@@ -1,6 +1,7 @@
-// 비트 이동 연산자 : 응용 II
 package com.eomcs.basic.ex05;
 
+//# 비트 이동 연산자 : 응용 II
+//
 public class Exam4_5 {
   public static void main(String[] args) {
     // Yes/No 또는 true/false 값을 저장할 때 
