@@ -13,15 +13,21 @@ public class Test02 {
   public static void main(String[] args) {
     Scanner keyScan = new Scanner(System.in);
     
-    int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+    int[] no = new int[5];
     
     System.out.print("입력? ");
-    while (true) {
-      int no = keyScan.nextInt();
-      if (no == 0) // 입력값으로 0을 사용할 수 없는 문제가 있다.
-        break;
-      min = no < min ? no : min;
-      max = no > max ? no : max;
+    for (int i = 0; i < 5; i++) {
+      no[i] = keyScan.nextInt();
+    }
+    
+    int min = no[0], max = no[0];
+    
+    for (int i = 1; i < 5; i++) {
+      if (no[i] < min) {
+        min = no[i];
+      } else if (no[i] > max) {
+        max = no[i];
+      }
     }
     
     System.out.printf("최소값: %d\n", min);

@@ -13,19 +13,17 @@ public class Test02 {
   public static void main(String[] args) {
     Scanner keyScan = new Scanner(System.in);
     
-    int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
-    
     System.out.print("입력? ");
-    while (true) {
-      int no = keyScan.nextInt();
-      if (no == 0) // 입력값으로 0을 사용할 수 없는 문제가 있다.
-        break;
-      min = no < min ? no : min;
-      max = no > max ? no : max;
-    }
+    int no1 = keyScan.nextInt();
+    int no2 = keyScan.nextInt();
+    int no3 = keyScan.nextInt();
+    int no4 = keyScan.nextInt();
+    int no5 = keyScan.nextInt();
     
-    System.out.printf("최소값: %d\n", min);
-    System.out.printf("최대값: %d\n", max);
+    System.out.printf("%d, %d, %d, %d, %d\n", no1, no2, no3, no4, no5);
+    
+    System.out.println("최소값: -1");
+    System.out.println("최대값: 17");
     
     keyScan.close();
   }
