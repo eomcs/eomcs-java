@@ -26,7 +26,8 @@ public class Exam1_6 {
         }
       }
     }
-
+    System.out.println("------------------------------");
+    
     // if ~ else ~는 한 문장이기 때문에 
     // if ~ else ~ 만 있다면 블록으로 묶지 않아도 된다.
     if (age < 8) 
@@ -42,7 +43,9 @@ public class Exam1_6 {
             System.out.println("성인입니다.");
           else
             System.out.println("노인입니다.");
-
+    
+    System.out.println("------------------------------");
+    
     // if ~ else 를 보기 좋게 정렬하자!
     // 실무에서는 다음과 같이 정렬한다.
     // 주의!

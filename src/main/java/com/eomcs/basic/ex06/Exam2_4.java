@@ -32,6 +32,9 @@ public class Exam2_4 {
     }
 
     // 상수를 사용하면 주석없이 바로 이해할 수 있다.
+    // => case 문자의 값으로 변수를 사용할 수 없다.
+    // => 단 값이 변경되지 않는 final 변수라면 사용할 수 있다.
+    //
     final int GUEST = 0, MEMBER = 1, ADMIN = 2;
     switch (level) {
       case GUEST:

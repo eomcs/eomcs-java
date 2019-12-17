@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //# 흐름 제어문 - switch 사용 후
 //
-public class Exam2_2 {
+public class Exam2_2_1 {
   public static void main(String[] args) {
     Scanner keyScan = new Scanner(System.in);
     System.out.println("[지원부서]");
@@ -18,16 +18,19 @@ public class Exam2_2 {
     switch (no) {
       case 1:
         System.out.println("정보처리자격증");
+        System.out.println("졸업증명서");
+        System.out.println("이력서");
+        break; // 여기까지만 실행한다.
       case 2:
         System.out.println("졸업증명서");
+        System.out.println("이력서");
+        break; // 여기까지만 실행한다.
       case 3:
         System.out.println("이력서");
         break; // 여기까지만 실행한다.
       default:
         System.out.println("올바른 번호를 입력하세요!");
     }
-    // no의 값이 case에 해당되는 경우
-    // break 명령을 만날 때까지 아래로 계속 실행한다.
     keyScan.close();
   }
 }
