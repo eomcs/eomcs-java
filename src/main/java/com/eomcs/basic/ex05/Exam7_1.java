@@ -1,6 +1,6 @@
 package com.eomcs.basic.ex05;
 
-//# 할당 연산자  : +=  -=  *=  /=  %=  &=  |=  ^=  <<=  >>=  >>>=
+//# 할당 연산자  : +=  -=  *=  /=  %=  &=  |=  ^=  <<=  >>=  >>>= 
 //
 public class Exam7_1 {
   public static void main(String[] args) {
@@ -13,5 +13,6 @@ public class Exam7_1 {
     i = 2;
     i *= 5;
     System.out.println(i);
+    
   }
 }
