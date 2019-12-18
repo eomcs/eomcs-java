@@ -22,3 +22,11 @@ public class Exam0420 {
     System.out.printf("x = %d\n", x);
   }
 }
+
+
+
+
+
+
+
+

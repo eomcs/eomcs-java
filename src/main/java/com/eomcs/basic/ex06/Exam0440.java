@@ -28,3 +28,11 @@ public class Exam0440 {
       System.out.println(value);
   }
 }
+
+
+
+
+
+
+
+
