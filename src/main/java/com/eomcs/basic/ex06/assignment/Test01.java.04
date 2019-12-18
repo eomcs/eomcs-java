@@ -10,13 +10,10 @@ public class Test01 {
     System.out.print("밑변 길이? ");
     int width = keyScan.nextInt();
     
-    int line = 0; 
-    while (line++ < width) {
-      int x = 0;
-      while (x++ < line) {
-        System.out.print("*");
-      }
-      System.out.println();
+    int i = 0;
+    while (i < width) {
+      System.out.println("*");
+      i++;
     }
     
     keyScan.close();
