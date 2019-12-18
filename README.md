@@ -1,6 +1,6 @@
 # [엄진영의 코딩스쿨] 자바 프로그래밍
 
-## 기초 문법(eomcs-java-basic)
+## 기초 문법(com.eomcs.basic)
 자바 애플리케이션의 구동원리와 만드는 방법, 기본 문법을 설명한다.
 - 자바 애플리케이션의 구동 원리
 - 컴파일러와 자바 가상 머신
@@ -10,7 +10,7 @@
 - 조건문과 반복문
 - 메서드
 
-## 객체지향 프로그래밍(eomcs-java-oop)
+## 객체지향 프로그래밍(com.eomcs.oop)
 자바 언어의 객체지향 프로그래밍 기법을 설명한다.
 - 클래스 정의와 용도
 - 클래스 변수, 스태틱 블록, 클래스 메서드
@@ -22,12 +22,12 @@
 - 람다 표현식 
 - 상수 열거형 클래스
 
-## 제네릭(eomcs-java-generic)
+## 제네릭(com.eomcs.generic)
 한 클래스로 다양한 종류의 데이터를 다루는 방법을 설명한다.
 - 제네릭 용도
 - 제네릭 정의와 적용
 
-## 주요 클래스(eomcs-java-corelib)
+## 주요 클래스(com.eomcs.corelib)
 자바에서 제공하는 클래스 중에서 가장 많이 사용하는 클래스의 사용법을 설명한다.
 - Object 클래스와 주요 메서드
 - String 클래스와 불변/가변 객체
@@ -36,7 +36,7 @@
 - 컬렉션 클래스
 - 시스템 프로퍼티 다루기
 
-## 예외처리(eomcs-java-exception)
+## 예외처리(com.eomcs.exception)
 실행 중 예외가 발행했을 때 시스템을 멈추지 않고 처리하는 방법을 설명한다.
 - 예외처리 구동원리
 - 예외를 처리하는 방법
@@ -44,13 +44,13 @@
 - 사용자 정의 예외 만들고 사용하기
 - try-with-resources 문법
 
-## 파일과 데이터 입출력(eomcs-java-io)
+## 파일과 데이터 입출력(com.eomcs.io)
 파일과 디렉토리를 다루는 방법을 설명한다. 스트림 클래스를 이용하여 파일에 데이터를 입출력하는 방법을 설명한다.
 - 파일과 디렉토리 다루기
 - 바이트 스트림과 문자 스트림 
 - 데이터 싱크 스트림과 데이터 프로세싱 스트림
 
-## 통신(eomcs-java-net)
+## 통신(com.eomcs.net)
 원격의 프로그램과 데이터를 주고 받는 방법을 설명한다.
 - 소켓을 이용한 통신
 - 데이터그램을 이용한 통신
@@ -58,7 +58,7 @@
 - HTTP 쿠키 다루기
 - 시스템에 설치된 통신 매체의 정보 보기 
 
-## 병행처리(eomcs-java-concurrent)
+## 병행처리(com.eomcs.concurrent)
 메인 코드에서 일부 코드를 분리하여 동시에 실행시키는 방법을 설명한다.
 - 스레드 생성과 생명주기
 - Runnable 인터페이스 구현
@@ -68,19 +68,19 @@
 - wait()와 nofify()/notifyAll()
 - 고수준의 동시성 다루기 
 
-## 클래스 정보 분석(eomcs-java-reflect)
+## 클래스 정보 분석(com.eomcs.reflect)
 클래스의 타입, 이름, 수퍼 클래스, 변수, 메서드 등을 알아내는 방법을 설명한다.
 - 클래스 기본 정보 추출
 - 클래스 정보를 이용하여 인스턴스 생성
 - 메서드 정보 추출 및 메서드 호출
 
-## 애너테이션(eomcs-java-annotation)
+## 애너테이션(com.eomcs.annotation)
 프로그램 코드에 컴파일러나 자바 가상 머신이 사용할 부가 데이터 붙이는 방법을 설명한다.
 - 애너테이션 정의와 유지 정책
 - 애너테이션 사용
 - 리플렉션 API를 이용하여 애너테이션 정보를 추출
 
-## 데이터베이스 연동(eomcs-java-jdbc)
+## 데이터베이스 연동(com.eomcs.jdbc)
 JDBC API를 이용하여 DBMS와 연동하는 방법을 설명한다.
 - DBMS와 SQL 개요
 - JDBC Driver의 종류
@@ -89,7 +89,7 @@ JDBC API를 이용하여 DBMS와 연동하는 방법을 설명한다.
 - Statement와 PreparedStatement
 - 트랜잭션 다루기
 
-## Mybatis 퍼시스턴스 프레임워크(eomcs-java-mybatis)
+## Mybatis 퍼시스턴스 프레임워크(com.eomcs.mybatis)
 단순하고 반복적인 JDBC 코드를 캡슐화하여 데이터베이스 프로그래밍을 단순화시키기 위해 만든 "Mybatis"라는 퍼시스턴스 프레임워크의 사용법을 설명한다.
 - Mybatis 설정하기
 - SqlSessionFactory와 SqlSession
@@ -97,13 +97,13 @@ JDBC API를 이용하여 DBMS와 연동하는 방법을 설명한다.
 - Mybatis 트랜잭션
 - 동적 SQL 사용
 
-## IoC 컨테이너(eomcs-java-ioc)
+## IoC 컨테이너(com.eomcs.ioc)
 Spring IoC를 흉내내어 직접 IoC 컨테이너(빈 컨테이너)를 제작해 본다.
 - Reflection API를 이용하여 객체를 생성하고 다루는 방법을 연습하기
 - 애노테이션을 응용하기
 - 빈 컨테이너와 의존성 주입에 대한 개념을 이해하기
-- 
-## Spring IoC 컨테이너(eomcs-java-spring-ioc)
+
+## Spring IoC 컨테이너(com.eomcs.spring.ioc)
 스프링 IoC 컨테이너를 사용하여 객체의 생성과 의존 객체 주입을 자동화하는 방법을 설명한다.
 - 스프링 IoC 컨테이너와 ApplicationContext
 - XML 파일을 이용하여 스프링 컨테이너 설정하기
