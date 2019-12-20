@@ -1,7 +1,5 @@
 package com.eomcs.basic.ex07;
 
-import java.util.Scanner;
-
 //# 메서드 : 개념 및 기본 문법
 //
 public class Exam0210 {
@@ -64,6 +62,7 @@ public class Exam0210 {
 // 메서드(method) = 함수(function)?
 // - 명령어를 기능 단위로 관리하기 쉽게 별도로 분리하여 묶어 놓은 것.
 // - 반복적으로 자주 사용하는 명령어를 재사용하기 쉽도록 별도로 분리하여 묶어 놓은 것.
+// - "코드를 관리하기 쉽고 재사용하기 쉽도록 기능 단위로 묶어 놓는 문법"
 //
 // 메서드 종류?
 // - 클래스 메서드
