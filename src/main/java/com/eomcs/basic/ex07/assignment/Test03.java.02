@@ -14,13 +14,10 @@ public class Test03 {
   
   static void reverse(int[] values) {
     int count = values.length >> 1;
-    int temp = 0;
-    int endPos = values.length - 1;
     for (int i = 0; i < count; i++) {
-      temp = values[i];
-      values[i] = values[endPos - i];
-      values[endPos - i] = temp;
+      System.out.printf("%3d ", values[i]);
     }
+    System.out.println();
   }
   
   static void printValues(int[] values) {

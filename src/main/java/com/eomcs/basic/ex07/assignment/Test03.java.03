@@ -15,11 +15,10 @@ public class Test03 {
   static void reverse(int[] values) {
     int count = values.length >> 1;
     int temp = 0;
-    int endPos = values.length - 1;
-    for (int i = 0; i < count; i++) {
+    for (int i = 0, j = values.length - 1; i < count; i++, j--) {
       temp = values[i];
-      values[i] = values[endPos - i];
-      values[endPos - i] = temp;
+      values[i] = values[j];
+      values[j] = temp;
     }
   }
   
