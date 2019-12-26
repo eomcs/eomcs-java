@@ -1,6 +1,6 @@
 package com.eomcs.oop.ex02;
 
-//# 사용자 정의 데이터 타입 - 인스턴스 메서드
+//# 사용자 정의 데이터 타입 - 연산자를 instance method 문법으로 정의
 //
 public class Score3 {
   String name;
