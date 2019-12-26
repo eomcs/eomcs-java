@@ -16,9 +16,9 @@ public class Exam0110 {
     name = "홍길동";
     kor = 100;
     eng = 90;
-    math = 80;
+    math = 85;
     sum = kor + eng + math;
-    aver = sum / 3;
+    aver = (float)sum / 3;
 
     System.out.printf("이름: %s\n", name);
     System.out.printf("국어: %d\n", kor);

@@ -5,7 +5,7 @@ package com.eomcs.oop.ex01;
 public class Exam0220 {
   public static void main(String[] args) {
     // 여러 개의 인스턴스 주소 저장하기
-
+    //
     class Score {
       String name;
       int kor;
@@ -39,3 +39,11 @@ public class Exam0220 {
 // 결론!
 // - 여러 개의 인스턴스의 주소를 관리할 때는 
 //   레퍼런스 배열을 사용하는 게 편하다.
+
+
+
+
+
+
+
+
