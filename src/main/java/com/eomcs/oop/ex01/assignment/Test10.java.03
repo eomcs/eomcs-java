@@ -34,10 +34,8 @@ public class Test01 {
     
     for (int i = 0; i < arr.length; i++) {
       Score s = arr[i];
-      int sum = s.kor + s.eng + s.math;
-      float aver = sum / 3f;
-      System.out.printf("%s %d %d %d %d %.1f\n", 
-          s.name, s.kor, s.eng, s.math, sum, aver);
+      System.out.printf("%s %d %d %d\n", 
+          s.name, s.kor, s.eng, s.math);
     }
   }
 }
