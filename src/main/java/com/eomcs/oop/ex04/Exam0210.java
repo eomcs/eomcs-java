@@ -18,7 +18,7 @@ public class Exam0210 {
     System.out.println(s1.contains("ee"));
 
     // 두 문자열을 연결하여 새 문자열을 만들자!
-    String s2 = s1.concat(" ,world!");
+    String s2 = s1.concat(", world!");
     System.out.println(s1); // 기존 인스턴스의 값은 변경하지 않는다.
     System.out.println(s2); // 새로 문자열을 만든다.
 
@@ -26,14 +26,14 @@ public class Exam0210 {
     System.out.println(s1.equals("aaa"));
     System.out.println(s1.equals("Hello"));
 
-    // 인스턴스에 들어 있는 문자 코드를 바이트 배열로 만들어 리턴한다.
     String s3 = new String("ABC가각");
 
+    // 인스턴스에 들어 있는 문자 코드를 바이트 배열로 만들어 리턴한다.
+    byte[] bytes = s3.getBytes(); 
     // => 인스턴스에 들어 있는 각 문자를 바이트 배열에 저장할 때 
     //    인코딩 문자집합을 지정하지 않으면 JVM의 기본 문자집합으로 인코딩 한다. 
     //    이클립스에서 JVM을 실행하면 JVM은 기본으로 UTF-8 문자표를 사용하여 
     //    바이트 배열에 코드 값을 저장한다. 
-    byte[] bytes = s3.getBytes(); 
     for (int i = 0; i < bytes.length; i++)
       System.out.printf("%x,", bytes[i]);
     System.out.println();
@@ -44,7 +44,7 @@ public class Exam0210 {
       System.out.printf("%x,", bytes[i]);
     System.out.println();
 
-    // String 클래스에도 특정 인스턴스가 아닌 일반 목적으로 
+    // String 클래스에도 특정 인스턴스가 아닌 일반용으로 
     // 문자열을 다룰 수 있는 메서드를 제공한다.
     // 즉 "클래스 메서드=스태틱 메서드"를 제공한다.
 
