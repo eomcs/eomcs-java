@@ -24,7 +24,6 @@ public class Exam0631 {
       System.out.println("A(int)");
       this.a = a;
     }
-    // 필드 초기화 문장(variable initializer)
 
     // 인스턴스 초기화 블록(initializer block)
     {
@@ -32,6 +31,7 @@ public class Exam0631 {
       System.out.println("초기화 블록");
     }
 
+    // 필드 초기화 문장(variable initializer)
     int a = 100;
   }
 
