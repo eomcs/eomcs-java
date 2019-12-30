@@ -2,5 +2,5 @@
 package com.eomcs.oop.ex09.d;
 
 public interface A {
-    void m1();
+  void m1();
 }

@@ -1,4 +1,5 @@
-// 클래스 변수와 인스턴스 변수 응용
+//# 클래스 변수와 인스턴스 변수 응용
+//
 package com.eomcs.oop.ex03;
 
 public class Exam0150 {

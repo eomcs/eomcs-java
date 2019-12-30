@@ -2,7 +2,7 @@
 package com.eomcs.oop.ex04.singleton;
 
 public class Car {
-    public Car() {
-        System.out.println("Car()");
-    }
+  public Car() {
+    System.out.println("Car()");
+  }
 }

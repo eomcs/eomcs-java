@@ -1,4 +1,5 @@
-// 인스턴스 변수 응용 - 성적 데이터 저장할 메모리 만들기
+//# 인스턴스 변수 응용 - 성적 데이터 저장할 메모리 만들기
+//
 package com.eomcs.oop.ex03;
 
 public class Exam0120 {

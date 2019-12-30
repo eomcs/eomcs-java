@@ -16,9 +16,9 @@ package com.eomcs.oop.ex08.a;
 // 두 클래스는 이렇게 새로 만든 Car 클래스를 상속 받도록 한다.
 public class Exam01 {
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
 
-    }
+  }
 
 }
