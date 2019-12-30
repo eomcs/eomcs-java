@@ -2,6 +2,7 @@
 package com.eomcs.oop.ex03;
 
 public class Exam0610 {
+  
   static class A {
     int a;
     int b;

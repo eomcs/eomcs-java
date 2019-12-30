@@ -1,61 +1,46 @@
-// 내장 변수 this
+// 클래스 메서드 응용
 package com.eomcs.oop.ex03;
 
+import java.util.Scanner;
+
 public class Exam0310 {
-  static class A {
-    int value;
 
-    static void m1() {
-      // 클래스 메서드는 인스턴스 주소 없이 호출되기 때문에 
-      // 인스턴스 주소를 받는 내장 변수가 없다.
-      //this.value = 100; // 컴파일 오류!
-    }
-
-    void m2() {
-      // 인스턴스 메서드는 인스턴스 주소가 있어야만 호출되기 때문에
-      // 인스턴스 주소를 받을 변수가 내장되어 있다.
-      this.value = 100;
-    }
-
-    void m3() {
-      // 인스턴스 변수를 사용할 때 this를 생략할 수 있다.
-      //this.value = 200;
-      value = 200; // 앞에 자동으로 this가 붙는다.
-    }
-
-    void m4(int value) {
-      // 로컬 변수의 이름이 인스턴스 이름과 같을 경우 
-      // this를 붙이지 않으면 로컬 변수를 가리킨다.
-      value = 200; // 로컬 변수이다.
-
-      this.value = 300; // 인스턴스 변수이다.
-      // 따라서 로컬 변수가 아닌 인스턴스 변수를 가리키고 싶으면 this를 붙여야 한다.
+  static class Math {
+    // 다음 메서드와 같이 인스턴스 변수를 사용하지 않고 
+    // 파라미터 값을 가지고 작업하는 경우에 보통 클래스 메서드로 정의한다.
+    public static int abs(int value) {
+      if (value < 0)
+        return value * -1;
+      return value;
     }
   }
+
   public static void main(String[] args) {
-    // 클래스 메서드는 인스턴스 주소 없이 클래스 이름으로 호출한다.
-    // 그래서 클래스 메서드는 this라는 내장 변수가 없는 것이다.
-    A.m1();
+    Scanner keyScan = new Scanner(System.in);
+    System.out.print("숫자를 입력하세요> ");
+    int value = keyScan.nextInt();
 
-    A obj1 = new A();
+    // 이렇게 특정 인스턴스의 변수를 다루는 것이 아니라
+    // 외부에서 전달한 파라미터 값을 가지고 작업을 수행하는 메서드인 경우
+    // 클래스 메서드로 정의하면 사용하기 편하다!
+    int result = Math.abs(value);
 
-    // 인스턴스 메서드는 인스턴스 주소가 있어야만 호출할 수 있기 때문에
-    // 인스턴스 메서드에는 인스턴스 주소를 받을 수 있는 내장 변수 this가 있다.
-    obj1.m2();
+    // 만약 abs() 메서드가 인스턴스 메서드라면,
+    // 다음과 같이 인스턴스를 만든 후에 호출해야 한다.
+    // abs()는 인스턴스 변수를 사용하지도 않는데 
+    // 이렇게 인스턴스를 생성해야 한다면 얼마나 낭비적인가!
+    /*
+        Math m = new Math();
+        int result = m.abs(value);
+     */
 
-    // 물론 클래스 메서드도 레퍼런스를 가지고 호출할 수 있지만,
-    // 인스턴스 주소가 메서드에 전달되지 않는다.
-    // 그래서 클래스 메서드는 내장 변수 this가 없다.
-    obj1.m1();
-
-    A obj2 = new A();
-
-    // 인스턴스 메서드의 this 변수는 메서드를 호출할 때 전달한 인스턴스 주소 값을 가진다.
-    // 그래서 메서드가 호출될 때 마다 this 변수의 값이 바뀐다.
-    obj2.m2();
-
+    System.out.printf("절대값=%d\n", result);
   }
 }
+
+
+
+
 
 
 
