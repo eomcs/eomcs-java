@@ -1,7 +1,7 @@
 // 캡슐화(encapsulation) - 응용
-package com.eomcs.oop.ex07.a;
+package com.eomcs.oop.ex07.b;
 
-import com.eomcs.oop.ex07.a.sub.C;
+import com.eomcs.oop.ex07.b.sub.C;
 
 public class Exam0220 extends C {
 

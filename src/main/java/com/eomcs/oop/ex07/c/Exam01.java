@@ -1,5 +1,5 @@
 // 다형적 변수와 오버라이딩
-package com.eomcs.oop.ex07.b;
+package com.eomcs.oop.ex07.c;
 
 public class Exam01 {
   public static void main(String[] args) {

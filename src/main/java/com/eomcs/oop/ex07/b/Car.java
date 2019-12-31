@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex07.a;
+package com.eomcs.oop.ex07.b;
 
 public class Car {
   String model;

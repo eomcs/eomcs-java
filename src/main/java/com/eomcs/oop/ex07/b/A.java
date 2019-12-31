@@ -1,7 +1,8 @@
 package com.eomcs.oop.ex07.b;
 
 public class A {
-  public void m() {
-    System.out.println("A의 m() 호출!");
-  }
+  private int privateVar;
+  int defaultVar;
+  protected int protectedVar;
+  public int publicVar;
 }

@@ -1,60 +1,70 @@
-// 캡슐화(encapsulation) - 접근 범위 테스트
+//# 캡슐화 문법 사용 후 - 개발자가 특정 필드를 직접 접근하지 못하게 막기
 package com.eomcs.oop.ex07.a;
 
-import com.eomcs.oop.ex07.a.sub.B;
-import com.eomcs.oop.ex07.a.sub.C;
-
-public class Exam0210 extends C {
-
-  public static void main(String[] args) {
-    A obj1 = new A();
-
-    //obj1.privateVar = 100; // 접근 불가! 오직 그 클래스 안에서만 사용가능.
-    obj1.defaultVar = 100; // OK! 이 클래스는 A 클래스와 같은 패키지에 소속되어 있다.
-    obj1.protectedVar = 100; // OK! 비록 이 클래스가 자식클래스는 아니지만
-    // 같은 패키지에 소속되어 있다.
-    obj1.publicVar = 100; // OK! 모두 다 접근 가능!
-
-    B obj2 = new B();
-
-    //obj2.privateVar = 100; // 접근 불가! 오직 그 클래스 안에서만 사용 가능.
-    //obj2.defaultVar = 100; // 접근 불가! 같은 패키지까지만 접근 가능.
-    //obj2.protectedVar = 100; // 접근 불가! 같은 패키지 또는 자식 클래스 접근 가능
-    obj2.publicVar = 100; // OK! 모두 다 접근 가능.
-
-
-    C obj3 = new C();
-
-    //obj3.privateVar = 100; // 접근 불가! 오직 그 클래스 안에서만 사용 가능.
-    //obj3.defaultVar = 100; // 접근 불가! 같은 패키지까지만 접근 가능.
-    //obj3.protectedVar = 100; // 접근 불가! 같은 패키지 또는 자식 클래스 접근 가능
-    // 자식 클래스인데 접근 불가?
-    // 이유 => 자기의 인스턴스 변수가 아니다.
-    obj2.publicVar = 100; // OK! 모두 다 접근 가능.
-
-    Exam0210 obj4 = new Exam0210();
-    //obj4.privateVar = 100; // 접근 불가! C 클래스에서만 접근 가능
-    //obj4.defaultVar = 100; // 접근 불가! C 클래스와 같은 패키지가 아니다.
-    obj4.protectedVar = 100; // OK! Exam02_1는 C의 자식 클래스이며,
-    // 또한 C로부터 상속 받아서 만든 자기 변수이다.
-    obj4.publicVar = 100;
+class Score2 {
+  String name;
+  int kor;
+  int eng;
+  int math;
+  
+  // sum 이나 aver 필드는 kor, eng, math 값을 연산한 결과를 보관하기 때문에 
+  // 직접 접근하여 값을 변경하는 것을 허용해서는 안된다.
+  // 허용하는 순간 개발자의 잘못된 명령으로 
+  // 국,영,수 점수와 합계, 평균이 서로 맞지 않는 문제가 발생할 수 있다.
+  // 그래서 자바는 필드나 메서드의 외부 접근 범위를 조정하는 문법을 제공한다.
+  // 그 문법을 '캡슐화(encapsulation)'라 부른다.
+  // 
+  private int sum;
+  private float aver;
+  
+  // sum과 aver의 값을 직접 변경하지는 못하더라고
+  // 외부에서 이 값들을 조회할 수 있는 방법/수단(method)은 제공해야 한다.
+  // => 보통 이렇게 필드의 값을 조회하는 용도로 사용하는 메서드의 경우 
+  //    메서드의 용도를 이해하기 쉽도록 getXxx() 형태로 이름을 짓는다.
+  //       get필드명() {...}
+  // => 메서드의 이름이 get 으로 시작한다고 해서 "게터(getter)"라고 부른다.
+  // => 그리고 이런 getter는 공개 모드로 설정한다.
+  //
+  public int getSum() {
+    return this.sum;
+  }
+  
+  public float getAver() {
+    return this.aver;
+  }
+  
+  void compute() {
+    this.sum = this.kor + this.eng + this.math;
+    this.aver = this.sum / 3f;
   }
 }
 
-// private      : 클래스 안에서만 접근 가능
-// (default)    : private + 같은 패키지 소속
-// protected    : (default) + 자식 클래스에서 자신이 만든 변수일 경우
-// public       : 모두 접근 가능
-//
-// 실무
-// => 인스턴스 변수는 보통 private으로 접근을 제한한다.
-// => 겟터,셋터는 public으로 접근을 모두에게 공개한다.
-// => 일반 메서드도 public으로 접근을 모두에게 공개한다.
-// => 그 클래스 내부에서만 사용되는 메서드는 private으로 접근을 제한한다.
-// => 자식 클래스의 접근을 허용할 필요가 있을 경우에만 protected로 만든다. 
-// => 다른 개발자가 사용할 클래스 모음을 만들 때 
-//    그 모음집 내에서만 사용될 변수나 메서드인 경우 (default)로 접근을 제한한다.
-//    즉 라이브러리를 만드는 개발자인 경우 (default)를 사용하는 경우가 있다.
+public class Exam0210 {
+  public static void main(String[] args) {
+    Score2 s1 = new Score2();
+    s1.name = "홍길동";
+    s1.kor = 100;
+    s1.eng = 90;
+    s1.math = 80;
+    s1.compute();
+    
+    // 계산을 한 후에 임의적으로 합계나 평균을 변경한다면?
+    // => sum과 aver 필드는 private 접근만 허용한다.
+    // => 즉 클래스의 멤버만 접근할 수 있고 클래스 외부에서는 접근할 수 없다.
+    // => 그래서 다음과 같이 임의로 접근하여 값을 변경할 수 없다.
+    // 
+    //s1.sum = 300; // 컴파일 오류!
+    //s1.aver = 100f; // 컴파일 오류!
+    
+    System.out.printf("%s, %d, %d, %d, %d, %.1f\n",
+        s1.name, s1.kor, s1.eng, s1.math, s1.getSum(), s1.getAver());
+  }
+}
+
+
+
+
+
 
 
 

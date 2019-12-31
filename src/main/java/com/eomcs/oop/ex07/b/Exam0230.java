@@ -1,9 +1,8 @@
 // 캡슐화(encapsulation) - 응용 II
-package com.eomcs.oop.ex07.a;
+package com.eomcs.oop.ex07.b;
 
 import java.util.Calendar;
-
-import com.eomcs.oop.ex07.a.sub.C;
+import com.eomcs.oop.ex07.b.sub.C;
 
 public class Exam0230 extends C {
 

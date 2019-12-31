@@ -1,5 +1,5 @@
 // 캡슐화(encapsulation) - 셋터와 겟터 
-package com.eomcs.oop.ex07.a;
+package com.eomcs.oop.ex07.b;
 
 public class Exam0130 {
 

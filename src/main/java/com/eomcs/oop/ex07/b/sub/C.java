@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex07.a.sub;
+package com.eomcs.oop.ex07.b.sub;
 
 public class C {
   private int privateVar;

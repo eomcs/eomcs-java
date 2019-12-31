@@ -1,5 +1,5 @@
 // 캡슐화(encapsulation) - 접근 제한
-package com.eomcs.oop.ex07.a;
+package com.eomcs.oop.ex07.b;
 
 public class Exam0120 {
 

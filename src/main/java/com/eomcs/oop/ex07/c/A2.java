@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex07.b;
+package com.eomcs.oop.ex07.c;
 
 public class A2 extends A {
   @Override // 컴파일러에게 오버라이딩을 제대로 했는 지 검사하라고 명령한다.

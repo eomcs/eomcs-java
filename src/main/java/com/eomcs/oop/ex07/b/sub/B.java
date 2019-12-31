@@ -1,6 +1,6 @@
-package com.eomcs.oop.ex07.a;
+package com.eomcs.oop.ex07.b.sub;
 
-public class A {
+public class B {
   private int privateVar;
   int defaultVar;
   protected int protectedVar;
