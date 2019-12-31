@@ -1,15 +1,15 @@
 package com.eomcs.generic.ex03;
 
 public class Teacher extends Member {
-    int payPerHour;
+  int payPerHour;
 
-    public int getPayPerHour() {
-        return payPerHour;
-    }
+  public int getPayPerHour() {
+    return payPerHour;
+  }
 
-    public void setPayPerHour(int payPerHour) {
-        this.payPerHour = payPerHour;
-    }
-    
-    
+  public void setPayPerHour(int payPerHour) {
+    this.payPerHour = payPerHour;
+  }
+
+
 }
