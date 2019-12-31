@@ -17,17 +17,34 @@ class Score3 {
   // 보통 필드의 값을 설정하는 메서드는 set필드명()으로 이름을 짓는다.
   // => 이런 메서드를 "세터(setter)"라 부른다.
   // => 외부에서 호출할 수 있도록 공개 모드로 설정한다.
+  // => 필드를 비공개로 막으면 값을 조회할 수 없기 때문에
+  //    getter를 추가해야 한다.
   //
   public void setKor(int kor) {
     this.kor = kor;
+    this.compute();
+  }
+  
+  public int getKor() {
+    return this.kor;
   }
  
   public void setEng(int eng) {
     this.eng = eng;
+    this.compute();
+  }
+  
+  public int getEng() {
+    return this.eng;
   }
   
   public void setMath(int math) {
     this.math = math;
+    this.compute();
+  }
+  
+  public int getMath() {
+    return this.math;
   }
   
   
@@ -50,23 +67,28 @@ class Score3 {
 
 public class Exam0310 {
   public static void main(String[] args) {
-    Score2 s1 = new Score2();
+    Score3 s1 = new Score3();
     s1.name = "홍길동";
-    s1.kor = 100;
-    s1.eng = 90;
-    s1.math = 80;
-    s1.compute();
+    s1.setKor(100);
+    s1.setEng(90);
+    s1.setMath(80);
     
-    // 계산을 한 후에 임의적으로 합계나 평균을 변경한다면?
-    // => sum과 aver 필드는 private 접근만 허용한다.
-    // => 즉 클래스의 멤버만 접근할 수 있고 클래스 외부에서는 접근할 수 없다.
-    // => 그래서 다음과 같이 임의로 접근하여 값을 변경할 수 없다.
-    // 
-    //s1.sum = 300; // 컴파일 오류!
-    //s1.aver = 100f; // 컴파일 오류!
+    // 세터를 통해서 국, 영, 수 값을 설정할 때마다 
+    // 합계와 평균을 자동으로 계산하기 때문에 직접 compute()를 호출할 필요가 없다. 
+    //s1.compute();
+
+    // 다음과 같이 언제든지 국, 영, 수 점수를 변경하더라도 
+    // 합계와 평균이 자동계산될 것이다.
+    s1.setEng(100);
+    s1.setMath(100);
     
+    // 이제 kor, eng, math 도 비공개 모드이기 때문에 
+    // 값을 조회하려면 게터를 사용해야 한다.
+    //
     System.out.printf("%s, %d, %d, %d, %d, %.1f\n",
-        s1.name, s1.kor, s1.eng, s1.math, s1.getSum(), s1.getAver());
+        s1.name, 
+        s1.getKor(), s1.getEng(), s1.getMath(), 
+        s1.getSum(), s1.getAver());
   }
 }
 
