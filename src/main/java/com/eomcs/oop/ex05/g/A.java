@@ -8,7 +8,7 @@ public class A /*extends Object*/ {
   // 
   A(int value) {
     this.v1 = value;
-    System.out.println("A() 생성자!");
+    System.out.println("A(int) 생성자!");
   }
 }
 

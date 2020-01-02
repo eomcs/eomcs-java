@@ -10,6 +10,13 @@ public class Exam01 {
     obj.v2 = 200;
     obj.v1 = 100;
     System.out.printf("v2=%d, v1=%d\n", obj.v2, obj.v1);
+    
+    // 클래스는 오직 한 번만 로딩된다.
+    // => 그래서 static 블록도 위에서 한 번 실행되면 다시 실행하지 않는다.
+    B obj2 = new B();
+    obj2.v2 = 2000;
+    obj2.v1 = 1000;
+    System.out.printf("v2=%d, v1=%d\n", obj2.v2, obj2.v1);
 
     // 인스턴스 생성 절차
     // 1) B 클래스가 사용한다고 선언한 클래스를 먼저 메모리에 로딩한다.

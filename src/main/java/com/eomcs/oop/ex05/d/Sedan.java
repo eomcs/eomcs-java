@@ -3,9 +3,11 @@
 package com.eomcs.oop.ex05.d;
 
 // 상속
+// => 기존 클래스의 코드를 손대지 않고 기능을 확장하게 도와주는 문법이다.
 // => 재사용할 기존 클래스를 지정한다.
 // => 새 클래스에는 추가할 기능을 덧붙인다.
-public class Sedan extends com.eomcs.oop.ex05.a.Car {
+public class Sedan extends Car {
+  
   // 인스턴스 변수 추가 
   boolean sunroof;
   boolean auto;
