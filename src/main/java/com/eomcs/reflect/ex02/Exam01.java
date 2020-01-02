@@ -3,15 +3,15 @@ package com.eomcs.reflect.ex02;
 
 public class Exam01 {
 
-    public static void main(String[] args) throws Exception {
-        Class clazz = Class.forName("java.lang.String");
-        
-        System.out.println(clazz.getSimpleName()); // String
-        System.out.println(clazz.getName()); // java.lang.String
-        System.out.println(clazz.getCanonicalName()); // java.lang.String
-        System.out.println(clazz.getTypeName()); // java.lang.String
-        
+  public static void main(String[] args) throws Exception {
+    Class clazz = Class.forName("java.lang.String");
 
-    }
+    System.out.println(clazz.getSimpleName()); // String
+    System.out.println(clazz.getName()); // java.lang.String
+    System.out.println(clazz.getCanonicalName()); // java.lang.String
+    System.out.println(clazz.getTypeName()); // java.lang.String
+
+
+  }
 
 }

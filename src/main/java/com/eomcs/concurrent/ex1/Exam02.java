@@ -3,24 +3,24 @@ package com.eomcs.concurrent.ex1;
 
 public class Exam02 {
 
-    static class MyThread extends Thread {
-        @Override
-        public void run() {
-            // 기존 실행 흐름과 분리하여 따로 실행시킬 코드를 이 메서드에 둔다.
-            for (int i = 0; i < 1000; i++) {
-                System.out.println("==> " + i );
-            }
-        }
+  static class MyThread extends Thread {
+    @Override
+    public void run() {
+      // 기존 실행 흐름과 분리하여 따로 실행시킬 코드를 이 메서드에 둔다.
+      for (int i = 0; i < 1000; i++) {
+        System.out.println("==> " + i );
+      }
     }
-    
-    public static void main(String[] args) {
-        // 코드 실행 라인을 새로 만들어 따로 실행한다.
-        new MyThread().start();
-        
-        for (int i = 0; i < 1000; i++) {
-            System.out.println(">>> " + i );
-        }
+  }
+
+  public static void main(String[] args) {
+    // 코드 실행 라인을 새로 만들어 따로 실행한다.
+    new MyThread().start();
+
+    for (int i = 0; i < 1000; i++) {
+      System.out.println(">>> " + i );
     }
+  }
 
 }
 

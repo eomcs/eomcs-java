@@ -2,14 +2,14 @@
 package com.eomcs.ioc.ex08;
 
 public class Car2 {
-    Engine engine;
+  Engine engine;
 
-    public Car2(Engine engine) {
-        System.out.println("===> Car2(Engine)");
-        this.engine = engine;
-    }
-    
-    public void move() {
-        this.engine.run();
-    }
+  public Car2(Engine engine) {
+    System.out.println("===> Car2(Engine)");
+    this.engine = engine;
+  }
+
+  public void move() {
+    this.engine.run();
+  }
 }

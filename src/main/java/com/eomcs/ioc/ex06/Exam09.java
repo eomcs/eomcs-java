@@ -6,15 +6,15 @@ import java.util.List;
 // => 인스턴스를 꺼내 그 클래스 이름을 출력한다.
 public class Exam09 {
 
-    public static void main(String[] args) throws Exception {
-        ApplicationContext7 appContext = new ApplicationContext7("step19.ex1");
-        List<Object> objects = appContext.getObjects();
-        for (Object obj : objects) {
-            System.out.println(obj.getClass().getName());
-        }
+  public static void main(String[] args) throws Exception {
+    ApplicationContext7 appContext = new ApplicationContext7("step19.ex1");
+    List<Object> objects = appContext.getObjects();
+    for (Object obj : objects) {
+      System.out.println(obj.getClass().getName());
     }
-    
-    
+  }
+
+
 
 }
 

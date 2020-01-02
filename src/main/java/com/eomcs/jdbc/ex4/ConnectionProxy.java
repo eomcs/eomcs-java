@@ -24,235 +24,235 @@ import java.util.concurrent.Executor;
 // => close()를 호출할 때 DB 연결을 끊는 대신,
 //    DataSource에 커넥션을 반납하기 위해!
 public class ConnectionProxy implements Connection {
-    DataSource dataSource;
-    Connection con;
-    
-    public ConnectionProxy(DataSource dataSource, Connection con) {
-        this.dataSource = dataSource;
-        this.con = con;
-    }
+  DataSource dataSource;
+  Connection con;
 
-    public <T> T unwrap(Class<T> iface) throws SQLException {
-        return con.unwrap(iface);
-    }
+  public ConnectionProxy(DataSource dataSource, Connection con) {
+    this.dataSource = dataSource;
+    this.con = con;
+  }
 
-    public boolean isWrapperFor(Class<?> iface) throws SQLException {
-        return con.isWrapperFor(iface);
-    }
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    return con.unwrap(iface);
+  }
 
-    public Statement createStatement() throws SQLException {
-        return con.createStatement();
-    }
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return con.isWrapperFor(iface);
+  }
 
-    public PreparedStatement prepareStatement(String sql) throws SQLException {
-        return con.prepareStatement(sql);
-    }
+  public Statement createStatement() throws SQLException {
+    return con.createStatement();
+  }
 
-    public CallableStatement prepareCall(String sql) throws SQLException {
-        return con.prepareCall(sql);
-    }
+  public PreparedStatement prepareStatement(String sql) throws SQLException {
+    return con.prepareStatement(sql);
+  }
 
-    public String nativeSQL(String sql) throws SQLException {
-        return con.nativeSQL(sql);
-    }
+  public CallableStatement prepareCall(String sql) throws SQLException {
+    return con.prepareCall(sql);
+  }
 
-    public void setAutoCommit(boolean autoCommit) throws SQLException {
-        con.setAutoCommit(autoCommit);
-    }
+  public String nativeSQL(String sql) throws SQLException {
+    return con.nativeSQL(sql);
+  }
 
-    public boolean getAutoCommit() throws SQLException {
-        return con.getAutoCommit();
-    }
+  public void setAutoCommit(boolean autoCommit) throws SQLException {
+    con.setAutoCommit(autoCommit);
+  }
 
-    public void commit() throws SQLException {
-        con.commit();
-    }
+  public boolean getAutoCommit() throws SQLException {
+    return con.getAutoCommit();
+  }
 
-    public void rollback() throws SQLException {
-        con.rollback();
-    }
+  public void commit() throws SQLException {
+    con.commit();
+  }
 
-    public void close() throws SQLException {
-        dataSource.returnConnection(this);
-    }
+  public void rollback() throws SQLException {
+    con.rollback();
+  }
 
-    public boolean isClosed() throws SQLException {
-        return con.isClosed();
-    }
+  public void close() throws SQLException {
+    dataSource.returnConnection(this);
+  }
 
-    public DatabaseMetaData getMetaData() throws SQLException {
-        return con.getMetaData();
-    }
+  public boolean isClosed() throws SQLException {
+    return con.isClosed();
+  }
 
-    public void setReadOnly(boolean readOnly) throws SQLException {
-        con.setReadOnly(readOnly);
-    }
+  public DatabaseMetaData getMetaData() throws SQLException {
+    return con.getMetaData();
+  }
 
-    public boolean isReadOnly() throws SQLException {
-        return con.isReadOnly();
-    }
+  public void setReadOnly(boolean readOnly) throws SQLException {
+    con.setReadOnly(readOnly);
+  }
 
-    public void setCatalog(String catalog) throws SQLException {
-        con.setCatalog(catalog);
-    }
+  public boolean isReadOnly() throws SQLException {
+    return con.isReadOnly();
+  }
 
-    public String getCatalog() throws SQLException {
-        return con.getCatalog();
-    }
+  public void setCatalog(String catalog) throws SQLException {
+    con.setCatalog(catalog);
+  }
 
-    public void setTransactionIsolation(int level) throws SQLException {
-        con.setTransactionIsolation(level);
-    }
+  public String getCatalog() throws SQLException {
+    return con.getCatalog();
+  }
 
-    public int getTransactionIsolation() throws SQLException {
-        return con.getTransactionIsolation();
-    }
+  public void setTransactionIsolation(int level) throws SQLException {
+    con.setTransactionIsolation(level);
+  }
 
-    public SQLWarning getWarnings() throws SQLException {
-        return con.getWarnings();
-    }
+  public int getTransactionIsolation() throws SQLException {
+    return con.getTransactionIsolation();
+  }
 
-    public void clearWarnings() throws SQLException {
-        con.clearWarnings();
-    }
+  public SQLWarning getWarnings() throws SQLException {
+    return con.getWarnings();
+  }
 
-    public Statement createStatement(int resultSetType, int resultSetConcurrency) throws SQLException {
-        return con.createStatement(resultSetType, resultSetConcurrency);
-    }
+  public void clearWarnings() throws SQLException {
+    con.clearWarnings();
+  }
 
-    public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency)
-            throws SQLException {
-        return con.prepareStatement(sql, resultSetType, resultSetConcurrency);
-    }
+  public Statement createStatement(int resultSetType, int resultSetConcurrency) throws SQLException {
+    return con.createStatement(resultSetType, resultSetConcurrency);
+  }
 
-    public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency) throws SQLException {
-        return con.prepareCall(sql, resultSetType, resultSetConcurrency);
-    }
+  public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency)
+      throws SQLException {
+    return con.prepareStatement(sql, resultSetType, resultSetConcurrency);
+  }
 
-    public Map<String, Class<?>> getTypeMap() throws SQLException {
-        return con.getTypeMap();
-    }
+  public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency) throws SQLException {
+    return con.prepareCall(sql, resultSetType, resultSetConcurrency);
+  }
 
-    public void setTypeMap(Map<String, Class<?>> map) throws SQLException {
-        con.setTypeMap(map);
-    }
+  public Map<String, Class<?>> getTypeMap() throws SQLException {
+    return con.getTypeMap();
+  }
 
-    public void setHoldability(int holdability) throws SQLException {
-        con.setHoldability(holdability);
-    }
+  public void setTypeMap(Map<String, Class<?>> map) throws SQLException {
+    con.setTypeMap(map);
+  }
 
-    public int getHoldability() throws SQLException {
-        return con.getHoldability();
-    }
+  public void setHoldability(int holdability) throws SQLException {
+    con.setHoldability(holdability);
+  }
 
-    public Savepoint setSavepoint() throws SQLException {
-        return con.setSavepoint();
-    }
+  public int getHoldability() throws SQLException {
+    return con.getHoldability();
+  }
 
-    public Savepoint setSavepoint(String name) throws SQLException {
-        return con.setSavepoint(name);
-    }
+  public Savepoint setSavepoint() throws SQLException {
+    return con.setSavepoint();
+  }
 
-    public void rollback(Savepoint savepoint) throws SQLException {
-        con.rollback(savepoint);
-    }
+  public Savepoint setSavepoint(String name) throws SQLException {
+    return con.setSavepoint(name);
+  }
 
-    public void releaseSavepoint(Savepoint savepoint) throws SQLException {
-        con.releaseSavepoint(savepoint);
-    }
+  public void rollback(Savepoint savepoint) throws SQLException {
+    con.rollback(savepoint);
+  }
 
-    public Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability)
-            throws SQLException {
-        return con.createStatement(resultSetType, resultSetConcurrency, resultSetHoldability);
-    }
+  public void releaseSavepoint(Savepoint savepoint) throws SQLException {
+    con.releaseSavepoint(savepoint);
+  }
 
-    public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency,
-            int resultSetHoldability) throws SQLException {
-        return con.prepareStatement(sql, resultSetType, resultSetConcurrency, resultSetHoldability);
-    }
+  public Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability)
+      throws SQLException {
+    return con.createStatement(resultSetType, resultSetConcurrency, resultSetHoldability);
+  }
 
-    public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency,
-            int resultSetHoldability) throws SQLException {
-        return con.prepareCall(sql, resultSetType, resultSetConcurrency, resultSetHoldability);
-    }
+  public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency,
+      int resultSetHoldability) throws SQLException {
+    return con.prepareStatement(sql, resultSetType, resultSetConcurrency, resultSetHoldability);
+  }
 
-    public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys) throws SQLException {
-        return con.prepareStatement(sql, autoGeneratedKeys);
-    }
+  public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency,
+      int resultSetHoldability) throws SQLException {
+    return con.prepareCall(sql, resultSetType, resultSetConcurrency, resultSetHoldability);
+  }
 
-    public PreparedStatement prepareStatement(String sql, int[] columnIndexes) throws SQLException {
-        return con.prepareStatement(sql, columnIndexes);
-    }
+  public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys) throws SQLException {
+    return con.prepareStatement(sql, autoGeneratedKeys);
+  }
 
-    public PreparedStatement prepareStatement(String sql, String[] columnNames) throws SQLException {
-        return con.prepareStatement(sql, columnNames);
-    }
+  public PreparedStatement prepareStatement(String sql, int[] columnIndexes) throws SQLException {
+    return con.prepareStatement(sql, columnIndexes);
+  }
 
-    public Clob createClob() throws SQLException {
-        return con.createClob();
-    }
+  public PreparedStatement prepareStatement(String sql, String[] columnNames) throws SQLException {
+    return con.prepareStatement(sql, columnNames);
+  }
 
-    public Blob createBlob() throws SQLException {
-        return con.createBlob();
-    }
+  public Clob createClob() throws SQLException {
+    return con.createClob();
+  }
 
-    public NClob createNClob() throws SQLException {
-        return con.createNClob();
-    }
+  public Blob createBlob() throws SQLException {
+    return con.createBlob();
+  }
 
-    public SQLXML createSQLXML() throws SQLException {
-        return con.createSQLXML();
-    }
+  public NClob createNClob() throws SQLException {
+    return con.createNClob();
+  }
 
-    public boolean isValid(int timeout) throws SQLException {
-        return con.isValid(timeout);
-    }
+  public SQLXML createSQLXML() throws SQLException {
+    return con.createSQLXML();
+  }
 
-    public void setClientInfo(String name, String value) throws SQLClientInfoException {
-        con.setClientInfo(name, value);
-    }
+  public boolean isValid(int timeout) throws SQLException {
+    return con.isValid(timeout);
+  }
 
-    public void setClientInfo(Properties properties) throws SQLClientInfoException {
-        con.setClientInfo(properties);
-    }
+  public void setClientInfo(String name, String value) throws SQLClientInfoException {
+    con.setClientInfo(name, value);
+  }
 
-    public String getClientInfo(String name) throws SQLException {
-        return con.getClientInfo(name);
-    }
+  public void setClientInfo(Properties properties) throws SQLClientInfoException {
+    con.setClientInfo(properties);
+  }
 
-    public Properties getClientInfo() throws SQLException {
-        return con.getClientInfo();
-    }
+  public String getClientInfo(String name) throws SQLException {
+    return con.getClientInfo(name);
+  }
 
-    public Array createArrayOf(String typeName, Object[] elements) throws SQLException {
-        return con.createArrayOf(typeName, elements);
-    }
+  public Properties getClientInfo() throws SQLException {
+    return con.getClientInfo();
+  }
 
-    public Struct createStruct(String typeName, Object[] attributes) throws SQLException {
-        return con.createStruct(typeName, attributes);
-    }
+  public Array createArrayOf(String typeName, Object[] elements) throws SQLException {
+    return con.createArrayOf(typeName, elements);
+  }
 
-    public void setSchema(String schema) throws SQLException {
-        con.setSchema(schema);
-    }
+  public Struct createStruct(String typeName, Object[] attributes) throws SQLException {
+    return con.createStruct(typeName, attributes);
+  }
 
-    public String getSchema() throws SQLException {
-        return con.getSchema();
-    }
+  public void setSchema(String schema) throws SQLException {
+    con.setSchema(schema);
+  }
 
-    public void abort(Executor executor) throws SQLException {
-        con.abort(executor);
-    }
+  public String getSchema() throws SQLException {
+    return con.getSchema();
+  }
 
-    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
-        con.setNetworkTimeout(executor, milliseconds);
-    }
+  public void abort(Executor executor) throws SQLException {
+    con.abort(executor);
+  }
 
-    public int getNetworkTimeout() throws SQLException {
-        return con.getNetworkTimeout();
-    }
-  
-    
+  public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+    con.setNetworkTimeout(executor, milliseconds);
+  }
+
+  public int getNetworkTimeout() throws SQLException {
+    return con.getNetworkTimeout();
+  }
+
+
 }
 
 

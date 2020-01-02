@@ -7,31 +7,31 @@ import java.net.Socket;
 // 서버(server)?
 // => 네트워크 연결을 기다리는 쪽을 가리킨다.
 public class Server1 {
-    public static void main(String[] args) throws Exception {
-        System.out.println("서버 대기 중...");
-        //1) 네트워크 연결을 기다리는 역할을 수행할 객체를 준비
-        // => new ServerSocket(포트번호)
-        ServerSocket ss = new ServerSocket(8888);
-        // 포트번호
-        // => 한 컴퓨터에서 네트워크 연결을 기다리는 프로그램의 식별번호이다.
-        // => OS는 이 번호를 가지고 데이터를 받을 프로그램을 결정한다. 
-        
-        System.out.println("클라이언트 연결을 기다리는 중...");
-        
-        //2) 대기중인 클라이언트에 연결을 허락한다.
-        // => 클라이언트가 서버에 연결을 요청하면, 서버는 대기열에 추가한다.
-        // => 서버소켓에서 연결을 승인하면 클라이언트와 통신할 수 있는 소켓을 리턴한다.
-        Socket socket = ss.accept();
-        
-        System.out.println("대기 중인 클라이언트 중 한 개의 클라이언트에 대해 연결 승인!");
-        
-        // 자원 해제
-        socket.close();
-        System.out.println("클라이언트와의 연결 해제!");
-        
-        ss.close();
-        System.out.println("서버 종료!");
-    }
+  public static void main(String[] args) throws Exception {
+    System.out.println("서버 대기 중...");
+    //1) 네트워크 연결을 기다리는 역할을 수행할 객체를 준비
+    // => new ServerSocket(포트번호)
+    ServerSocket ss = new ServerSocket(8888);
+    // 포트번호
+    // => 한 컴퓨터에서 네트워크 연결을 기다리는 프로그램의 식별번호이다.
+    // => OS는 이 번호를 가지고 데이터를 받을 프로그램을 결정한다. 
+
+    System.out.println("클라이언트 연결을 기다리는 중...");
+
+    //2) 대기중인 클라이언트에 연결을 허락한다.
+    // => 클라이언트가 서버에 연결을 요청하면, 서버는 대기열에 추가한다.
+    // => 서버소켓에서 연결을 승인하면 클라이언트와 통신할 수 있는 소켓을 리턴한다.
+    Socket socket = ss.accept();
+
+    System.out.println("대기 중인 클라이언트 중 한 개의 클라이언트에 대해 연결 승인!");
+
+    // 자원 해제
+    socket.close();
+    System.out.println("클라이언트와의 연결 해제!");
+
+    ss.close();
+    System.out.println("서버 종료!");
+  }
 }
 
 // 포트번호
