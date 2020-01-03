@@ -8,22 +8,22 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.FactoryBean;
 
 public class SqlSessionFactoryFactoryBean 
-        implements FactoryBean<SqlSessionFactory> {
+implements FactoryBean<SqlSessionFactory> {
 
-    String configLocation;
-    
-    public void setConfigLocation(String configLocation) {
-        this.configLocation = configLocation;
-    }
-    
-    @Override
-    public SqlSessionFactory getObject() throws Exception {
-        InputStream in = Resources.getResourceAsStream(configLocation);
-        return new SqlSessionFactoryBuilder().build(in);
-    }
+  String configLocation;
 
-    @Override
-    public Class<?> getObjectType() {
-        return SqlSessionFactory.class;
-    }
+  public void setConfigLocation(String configLocation) {
+    this.configLocation = configLocation;
+  }
+
+  @Override
+  public SqlSessionFactory getObject() throws Exception {
+    InputStream in = Resources.getResourceAsStream(configLocation);
+    return new SqlSessionFactoryBuilder().build(in);
+  }
+
+  @Override
+  public Class<?> getObjectType() {
+    return SqlSessionFactory.class;
+  }
 }

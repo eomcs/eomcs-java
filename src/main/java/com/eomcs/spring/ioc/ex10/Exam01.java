@@ -8,12 +8,12 @@ import com.eomcs.spring.ioc.BeanUtils;
 
 public class Exam01 {
 
-    public static void main(String[] args) {
-        ApplicationContext iocContainer = 
-                new AnnotationConfigApplicationContext(AppConfig01.class);
-        
-        BeanUtils.printBeanNames(iocContainer);
-    }
+  public static void main(String[] args) {
+    ApplicationContext iocContainer = 
+        new AnnotationConfigApplicationContext(AppConfig01.class);
+
+    BeanUtils.printBeanNames(iocContainer);
+  }
 
 }
 

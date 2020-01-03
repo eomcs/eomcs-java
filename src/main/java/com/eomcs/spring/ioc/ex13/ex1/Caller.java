@@ -5,16 +5,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Caller {
-    
-    @Autowired X x;
-    @Autowired Y y;
-    @Autowired Z z;
-    
-    public void test() {
-        System.out.println("test()..... 시작");
-        x.m();
-        y.m();
-        z.m();
-        System.out.println("test()..... 끝");
-    }
+
+  @Autowired X x;
+  @Autowired Y y;
+  @Autowired Z z;
+
+  public void test() {
+    System.out.println("test()..... 시작");
+    x.m();
+    y.m();
+    z.m();
+    System.out.println("test()..... 끝");
+  }
 }

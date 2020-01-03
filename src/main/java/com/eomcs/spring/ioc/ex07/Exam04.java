@@ -8,16 +8,16 @@ import com.eomcs.spring.ioc.BeanUtils;
 
 public class Exam04 {
 
-    public static void main(String[] args) {
-        ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
-                "bitcamp/java106/step07/application-context-04.xml");
-        
-        System.out.println(iocContainer.getBean("c1"));
-        
-        System.out.println("----------------------------");
-        
-        BeanUtils.printBeanNames(iocContainer);
-    }
+  public static void main(String[] args) {
+    ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
+        "bitcamp/java106/step07/application-context-04.xml");
+
+    System.out.println(iocContainer.getBean("c1"));
+
+    System.out.println("----------------------------");
+
+    BeanUtils.printBeanNames(iocContainer);
+  }
 
 }
 

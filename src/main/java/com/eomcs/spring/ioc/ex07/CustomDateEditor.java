@@ -14,29 +14,29 @@ import java.sql.Date;
 // 1) java.beans.PropertyEditorSupports를 상속 받는다.
 //
 public class CustomDateEditor extends PropertyEditorSupport {
-    // 이 메서드는 스프링 IoC 컨테이너가 String 타입의 프로퍼티 값을
-    // 다른 타입의 값으로 바꿀 때 호출하는 메서드이다.
-    @Override
-    public void setAsText(String text) throws IllegalArgumentException {
-        System.out.println("CustomDateEditor.setAsText()");
-        // 파라미터로 넘어온 String 타입의 프로퍼티 값을
-        // 원하는 타입(java.sql.Date)의 값으로 바꿔 내부에 저장한다.
-        // => 그러면 스프링 IoC 컨테이너를 이 값을 꺼내서 객체에 주입할 것이다.
-        this.setValue(Date.valueOf(text));
-    }
+  // 이 메서드는 스프링 IoC 컨테이너가 String 타입의 프로퍼티 값을
+  // 다른 타입의 값으로 바꿀 때 호출하는 메서드이다.
+  @Override
+  public void setAsText(String text) throws IllegalArgumentException {
+    System.out.println("CustomDateEditor.setAsText()");
+    // 파라미터로 넘어온 String 타입의 프로퍼티 값을
+    // 원하는 타입(java.sql.Date)의 값으로 바꿔 내부에 저장한다.
+    // => 그러면 스프링 IoC 컨테이너를 이 값을 꺼내서 객체에 주입할 것이다.
+    this.setValue(Date.valueOf(text));
+  }
 
-    // 언제 어떤 메서드가 호출되는지 확인하기 위해 상속 받은 메서드를 오버라이딩 해보자!
-    @Override
-    public void setValue(Object value) {
-        // 이 메서드는 호출되었을 때 그것을 표시하기 위해 오버라이딩 했다.
-        System.out.println("CustomDateEditor.setValue()");
-        super.setValue(value); // 원래 하던 일을 수행한다.
-    }
+  // 언제 어떤 메서드가 호출되는지 확인하기 위해 상속 받은 메서드를 오버라이딩 해보자!
+  @Override
+  public void setValue(Object value) {
+    // 이 메서드는 호출되었을 때 그것을 표시하기 위해 오버라이딩 했다.
+    System.out.println("CustomDateEditor.setValue()");
+    super.setValue(value); // 원래 하던 일을 수행한다.
+  }
 
-    @Override
-    public Object getValue() {
-        // 이 메서드는 호출되었을 때 그것을 표시하기 위해 오버라이딩 했다.
-        System.out.println("CustomDateEditor.getValue()");
-        return super.getValue(); // 원래 하던 일을 수행한다.
-    }
+  @Override
+  public Object getValue() {
+    // 이 메서드는 호출되었을 때 그것을 표시하기 위해 오버라이딩 했다.
+    System.out.println("CustomDateEditor.getValue()");
+    return super.getValue(); // 원래 하던 일을 수행한다.
+  }
 }

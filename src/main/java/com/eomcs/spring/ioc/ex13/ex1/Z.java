@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component 
 public class Z {
-    public void m() {
-        System.out.println("Z.m()");
-    }
+  public void m() {
+    System.out.println("Z.m()");
+  }
 }

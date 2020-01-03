@@ -8,11 +8,11 @@ import com.eomcs.spring.ioc.BeanUtils;
 
 public class Exam04 {
 
-    public static void main(String[] args) {
-        ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
-                "bitcamp/java106/step04/application-context-04.xml");
-        
-    }
+  public static void main(String[] args) {
+    ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
+        "bitcamp/java106/step04/application-context-04.xml");
+
+  }
 
 }
 

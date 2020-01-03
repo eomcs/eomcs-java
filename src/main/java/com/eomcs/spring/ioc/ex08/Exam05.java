@@ -8,13 +8,13 @@ import com.eomcs.spring.ioc.BeanUtils;
 
 public class Exam05 {
 
-    public static void main(String[] args) {
-        ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
-                "bitcamp/java106/step08/application-context-05.xml");
-        
-        // Car 객체를 꺼내 Engine 객체가 주입되었는지 확인해보자!
-        System.out.println(iocContainer.getBean("c1"));
-    }
+  public static void main(String[] args) {
+    ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
+        "bitcamp/java106/step08/application-context-05.xml");
+
+    // Car 객체를 꺼내 Engine 객체가 주입되었는지 확인해보자!
+    System.out.println(iocContainer.getBean("c1"));
+  }
 
 }
 

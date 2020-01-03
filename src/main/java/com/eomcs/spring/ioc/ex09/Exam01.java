@@ -8,14 +8,14 @@ import com.eomcs.spring.ioc.BeanUtils;
 
 public class Exam01 {
 
-    public static void main(String[] args) {
-        ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
-                "bitcamp/java106/step09/application-context-01.xml");
-        
-        BeanUtils.printBeanNames(iocContainer);
-        
-        System.out.println(iocContainer.getBean("car"));
-    }
+  public static void main(String[] args) {
+    ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
+        "bitcamp/java106/step09/application-context-01.xml");
+
+    BeanUtils.printBeanNames(iocContainer);
+
+    System.out.println(iocContainer.getBean("car"));
+  }
 
 }
 
