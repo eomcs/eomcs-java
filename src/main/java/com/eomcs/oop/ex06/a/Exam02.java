@@ -27,6 +27,7 @@ public class Exam02 {
     ((Sedan)v1).valve = 16;
     ((Sedan)v1).sunroof = true;
     ((Sedan)v1).auto = true;
+    
     System.out.printf("%s, %d, %d, %d, %b, %b\n", 
         v1.model, v1.capacity,
         ((Sedan)v1).cc, ((Sedan)v1).valve,
@@ -39,6 +40,7 @@ public class Exam02 {
     s.valve = 16;
     s.sunroof = true;
     s.auto = true;
+    
     System.out.printf("%s, %d, %d, %d, %b, %b\n", 
         s.model, s.capacity,
         s.cc, s.valve,

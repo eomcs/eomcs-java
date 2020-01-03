@@ -19,6 +19,7 @@ public class Exam03 {
     s.valve = 16;
     s.sunroof = true;
     s.auto = true;
+    
     System.out.printf("%s, %d, %d, %d, %b, %b\n", 
         s.model, s.capacity,
         s.cc, s.valve,
