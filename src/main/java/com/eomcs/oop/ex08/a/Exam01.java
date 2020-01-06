@@ -4,7 +4,7 @@ package com.eomcs.oop.ex08.a;
 // 상속의 종류
 // 1) specialization
 //    => 가장 많이 사용하는 방법으로 수퍼 클래스를 상속 받아 서브 클래스를 만드는 것이다.
-//    => 수퍼클래스에 특징을 추가하여 더 특별한 기능을 수행하는 서브클래스를 만든다.
+//    => 수퍼클래스에 새 특징을 추가하거나 새 기능을 추가하여 더 특별한 일을 수행하는 서브클래스를 만든다.
 //       그래서 이런 상속을 "특수화/전문화(specialization)"이라 부른다.
 // 2) generalization
 //    => 리팩토링 과정에 수행하는 방법이다.
@@ -17,8 +17,6 @@ package com.eomcs.oop.ex08.a;
 public class Exam01 {
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
-    System.out.println(1 + 2 << 65);
   }
 
 }

@@ -19,6 +19,9 @@ public class Exam01 {
 
     // generalization 과정에서 정의한 수퍼 클래스에 대해 
     // 직접 사용하지 못하도록 보통 추상클래스로 선언한다.
+    
+    Sedan s = new Sedan();
+    Truck t = new Truck();
   }
 
 }

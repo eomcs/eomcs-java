@@ -8,7 +8,7 @@ public class Sedan {
     System.out.println("시동 끈다!");
   }
   public void run() {
-    System.out.println("달린다.");
+    System.out.println("쌩쌩 달린다.");
   }
   public void doSunroof(boolean open) {
     if (open) {
