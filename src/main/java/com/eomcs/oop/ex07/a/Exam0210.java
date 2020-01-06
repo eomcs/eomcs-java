@@ -41,11 +41,14 @@ class Score2 {
 
 public class Exam0210 {
   public static void main(String[] args) {
+    
     Score2 s1 = new Score2();
+    
     s1.name = "홍길동";
     s1.kor = 100;
     s1.eng = 90;
     s1.math = 80;
+    
     s1.compute();
     
     // 계산을 한 후에 임의적으로 합계나 평균을 변경한다면?

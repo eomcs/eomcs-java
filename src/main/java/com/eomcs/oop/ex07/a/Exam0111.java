@@ -3,7 +3,9 @@ package com.eomcs.oop.ex07.a;
 
 public class Exam0111 {
   public static void main(String[] args) {
+    
     Score s1 = new Score();
+    
     s1.name = "홍길동";
     s1.kor = 100;
     s1.eng = 90;

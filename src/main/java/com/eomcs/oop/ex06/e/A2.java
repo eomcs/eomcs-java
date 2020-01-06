@@ -1,7 +1,7 @@
-package com.eomcs.oop.ex07.c;
+package com.eomcs.oop.ex06.e;
 
 public class A2 extends A {
-  @Override // 컴파일러에게 오버라이딩을 제대로 했는 지 검사하라고 명령한다.
+  @Override // 컴파일러에게 오버라이딩을 제대로 했는지 검사하라고 명령한다.
   public void m() {
     System.out.println("A2의 m() 호출!");
   }

@@ -6,6 +6,7 @@ import com.eomcs.oop.ex07.b.sub.C;
 public class Exam0220 extends C {
 
   public static void main(String[] args) {
+    
     //Car c1 = new Car(); // 컴파일 오류!
     // 생성자가 private이기 때문에 다른 클래스에서 호출할 수 없다.
     // 따라서 인스턴스를 생성할 수 없다.

@@ -39,6 +39,29 @@ public class Exam0210 extends C {
     // 또한 C로부터 상속 받아서 만든 자기 변수이다.
     obj4.publicVar = 100;
   }
+  
+  void m1(C obj) {
+    //obj.privateVar = 100;
+    //obj.defaultVar = 100;
+    //obj.protectedVar = 100;
+    obj.publicVar = 100;
+  }
+  
+  void m2(Exam0210 obj) {
+    //obj.privateVar = 100;
+    //obj.defaultVar = 100;
+    obj.protectedVar = 100;
+    obj.publicVar = 100;
+  }
+ 
+  void m3() {
+    //this.privateVar = 100;
+    //this.defaultVar = 100;
+    this.protectedVar = 100;
+    this.publicVar = 100;
+  }
+  
+  
 }
 
 // private      : 클래스 안에서만 접근 가능

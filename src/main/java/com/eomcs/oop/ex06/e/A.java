@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex07.c;
+package com.eomcs.oop.ex06.e;
 
 public class A {
   public void m() {
