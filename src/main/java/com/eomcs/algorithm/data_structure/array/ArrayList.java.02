@@ -1,0 +1,8 @@
+package com.eomcs.algorithm.data_structure.array;
+
+public class ArrayList {
+  
+  Object[] elementData = new Object[100];
+  int size;
+  
+}

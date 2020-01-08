@@ -105,13 +105,10 @@ public class ArrayList<E> {
   }
   
   private Object[] grow() {
-    return this.elementData = Arrays.copyOf(this.elementData, 
-        newCapacity());
-  }
-  
-  private int newCapacity() {
     int oldSize = this.elementData.length;
-    return oldSize + (oldSize >> 1);
+    int newSize = oldSize + (oldSize >> 1);
+    
+    return this.elementData = Arrays.copyOf(this.elementData, newSize);
   }
 }
 
