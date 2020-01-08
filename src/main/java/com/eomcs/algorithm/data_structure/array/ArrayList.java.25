@@ -100,7 +100,7 @@ public class ArrayList<E> {
   }
   
   public void add(int index, E value) {
-    if (index < 0 || index >= size)
+    if (index < 0 || index >= this.size)
       return;
 
     if (this.size == this.elementData.length) {

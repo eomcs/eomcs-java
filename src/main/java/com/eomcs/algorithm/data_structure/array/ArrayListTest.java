@@ -35,6 +35,19 @@ public class ArrayListTest {
     System.out.println("---------------");
     
     print(a1);
+    
+    System.out.println("---------------");
+    
+    a1.add(0, "1111");
+    a1.add(3, "2222");
+    a1.add(6, "3333");
+    a1.add(-1, "4444");
+    a1.add(8, "5555");
+    print(a1);
+    
+    System.out.println("---------------");
+    
+    
   }
   
   static void print(ArrayList<String> arr) {
