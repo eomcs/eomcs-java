@@ -1,4 +1,4 @@
-// 제네릭(Generic) - 사용 전
+// 제네릭(Generic) 문법 정리 - 레퍼런스와 인스턴스 생성 
 package com.eomcs.generic.ex01;
 
 import java.util.ArrayList;
@@ -6,23 +6,20 @@ import java.util.HashSet;
 
 public class Exam0210 {
   public static void main(String[] args) {
-    // ArrayList에 어떤 종류(타입,클래스)의 객체를 저장할 지 지정하지 않으면
-    // 기본으로 Object 타입의 객체를 다루는 것으로 간주한다.
-    // 즉 Object 타입이라면 어떤 클래스든지 저장하고 꺼낼 수 있다.
-    ArrayList list = new ArrayList();
-    list.add(new Member("홍길동", 20));
-    list.add(new String("Hello"));
-    list.add(new Integer(100));
-    list.add(new HashSet());
+    // 문법
+    // => 클래스명 옆에 다루고자 하는 타입의 이름을 지정한다.
+    //    클래스명<타입명>
+    ArrayList<Member> list = new ArrayList<Member>();
 
-    // 값 꺼내기
-    // 객체의 값을 꺼낼 때는 보통 해당 클래스로 형변환 한 다음에 사용해야 한다.
-    // 왜? get() 메서드의 리턴 타입이 Object이기 때문이다.
-    //
-    Member member = (Member) list.get(0);
-    System.out.println(member.name);
-    System.out.println(member.age);
-    // => 이렇게 값을 꺼낼 때 마다 그 객체의 원래 클래스로 형변환해야 하는 것은 매우 번거롭다.
+    // => 레퍼런스 선언에 제레릭 정보가 있다면 new 연산자에서는 생략할 수 있다.
+    ArrayList<Member> list2 = new ArrayList</*Member*/>(); // OK!
+
+    ArrayList<Member> list3;
+    list3 = new ArrayList<>(); // OK!
+
+    // 제네릭 문법으로 레퍼런스 변수를 선언할 때는 타입명을 생략할 수 없다.
+    //ArrayList<> list4; // 컴파일 오류!
+    
   }
 }
 
