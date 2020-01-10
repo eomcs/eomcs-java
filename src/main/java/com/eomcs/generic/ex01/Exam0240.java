@@ -3,7 +3,7 @@ package com.eomcs.generic.ex01;
 
 import java.util.HashMap;
 
-public class Exam0140 {
+public class Exam0240 {
   public static void main(String[] args) {
     // 제네릭 정보가 필요한 클래스를 사용할 때는 
     // 어떤 클래스를 다룰 것인지 타입이름을 알려줘야 한다.

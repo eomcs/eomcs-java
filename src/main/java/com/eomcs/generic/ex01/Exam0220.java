@@ -4,7 +4,7 @@ package com.eomcs.generic.ex01;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Exam0120 {
+public class Exam0220 {
   public static void main(String[] args) {
     // Generic 사용
     // 특징 1: 다루는 타입을 제한할 수 있다.

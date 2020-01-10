@@ -4,7 +4,7 @@ package com.eomcs.generic.ex01;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Exam0130 {
+public class Exam0230 {
   public static void main(String[] args) {
     // 문법
     // => 클래스명 옆에 다루고자 하는 타입의 이름을 지정한다.

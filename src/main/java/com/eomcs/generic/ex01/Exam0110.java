@@ -1,28 +1,77 @@
 // 제네릭(Generic) - 사용 전
 package com.eomcs.generic.ex01;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-
 public class Exam0110 {
+  
+  // 제네릭 문법이 없다면 각 타입의 객체를 저장하기 위해 
+  // 다음과 같이 각 타입에 대한 클래스를 정의해야 한다.
+  //
+  static class MemberBox {
+    Member value;
+    
+    public void set(Member value) {
+      this.value = value;
+    }
+    
+    public Member get() {
+      return value;
+    }
+  }
+  
+  static class StringBox {
+    String value;
+    
+    public void set(String value) {
+      this.value = value;
+    }
+    
+    public String get() {
+      return value;
+    }
+  }
+  
+  static class IntegerBox {
+    Integer value;
+    
+    public void set(Integer value) {
+      this.value = value;
+    }
+    
+    public Integer get() {
+      return value;
+    }
+  }
+  
   public static void main(String[] args) {
-    // ArrayList에 어떤 종류(타입,클래스)의 객체를 저장할 지 지정하지 않으면
-    // 기본으로 Object 타입의 객체를 다루는 것으로 간주한다.
-    // 즉 Object 타입이라면 어떤 클래스든지 저장하고 꺼낼 수 있다.
-    ArrayList list = new ArrayList();
-    list.add(new Member("홍길동", 20));
-    list.add(new String("Hello"));
-    list.add(new Integer(100));
-    list.add(new HashSet());
-
-    // 값 꺼내기
-    // 객체의 값을 꺼낼 때는 보통 해당 클래스로 형변환 한 다음에 사용해야 한다.
-    // 왜? get() 메서드의 리턴 타입이 Object이기 때문이다.
-    //
-    Member member = (Member) list.get(0);
-    System.out.println(member.name);
-    System.out.println(member.age);
-    // => 이렇게 값을 꺼낼 때 마다 그 객체의 원래 클래스로 형변환해야 하는 것은 매우 번거롭다.
+    
+    // Member 객체를 저장하려면 MemberBox를 사용해야 한다.
+    MemberBox box1 = new MemberBox();
+    box1.set(new Member("홍길동", 20)); // 값 저장
+    Member m = box1.get(); // 값 꺼내기
+    System.out.println(m);
+    
+    // String 객체를 저장하려면 StringBox를 사용해야 한다.
+    StringBox box2 = new StringBox();
+    box2.set(new String("Hello"));
+    String str = box2.get();
+    System.out.println(str);
+    
+    // Integer 객체는 IntegerBox를 사용해서 저장한다.
+    IntegerBox box3 = new IntegerBox();
+    box3.set(100); // auto-boxing ==> Integer.valueOf(100)
+    int i = box3.get(); // auto-unboxing ==> box3.get().intValue() 
+    System.out.println(i);
+    
+    // 이렇게 객체를 저장하려면 각 객체의 타입 별로 Box 클래스를 생성해야 한다.
+    // 문제는 이런 식으로 코딩을 하면 타입 별로 만들어야 할 Box 클래스가 무한정으로 늘어난다.
+    // 즉 같은 일을 하는 클래스임에도 불구하고 
+    // 다루는 객체의 타입이 다르다는 이유만으로 
+    // 여러 개의 유사 클래스를 반복적으로 정의해야 하는 문제가 발생한다.
+    // 해결책?
+    // => 다양한 타입의 객체를 저장할 수 있도록 다형성의 다형적 변수 특징을 이용하여 
+    //    값을 저장하는 인스턴스 변수를 Object 타입으로 정의한다.
+    // => Exam0111.java 소스를 확인해보라!
+    
   }
 }
 
