@@ -9,6 +9,13 @@ public class Exam0130 {
     Z v3;
   }
   
+  // 자바에서 제안하는 "타입 파라미터"의 이름으로 정의한다면,
+  static class A2<T,S,U> {
+    T v1;
+    S v2;
+    U v3;
+  }
+  
   public static void main(String[] args) {
     A<String,Integer,Member> obj = new A<>();
     
