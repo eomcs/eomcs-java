@@ -1,4 +1,4 @@
-// 제네릭(Generic) - 사용 전: 다형적 변수 활용
+// 제네릭(Generic) - 사용 전: 다형적 변수 활용의 문제점
 package com.eomcs.generic.ex01;
 
 public class Exam0112 {
@@ -21,29 +21,28 @@ public class Exam0112 {
   
   public static void main(String[] args) {
     
+    // Member 객체를 저장하기 위해 다음과 같이 Box를 준비했다고 가정하자!
     ObjectBox box1 = new ObjectBox();
-    box1.set(new Member("홍길동", 20)); // 값 저장
-    Member m = (Member) box1.get(); // 값을 꺼낼 때 형변환해야 한다.
-    System.out.println(m);
     
-    ObjectBox box2 = new ObjectBox();
-    box2.set(new String("Hello"));
-    String str = (String) box2.get(); // 값을 꺼낼 때 원래의 타입으로 형변환 한다.
-    System.out.println(str);
+    // 원래는 다음과 같이 Member 객체를 넣으려고 box1을 준비한 것이다.
+    box1.set(new Member("홍길동", 20));
     
-    ObjectBox box3 = new ObjectBox();
-    box3.set(100); // auto-boxing ==> Integer.valueOf(100)
-    int i = (int) box3.get(); // 값을 꺼낼 때 primitive date type을 지정하면 
-                              // 자동으로 auto-unboxing으로 바꾼다.
-    System.out.println(i);
+    // 원래의 목적과 다르게 다음과 같이 Member가 아닌 String 객체를 넣어도 막을 방법이 없다.  
+    box1.set(new String("Helllo"));
     
-    // 객체의 타입 별로 Box 클래스를 구분해서 쓰지 않으니 코딩이 편하다. 
-    // 단 값을 꺼낼 때 원래의 타입으로 바꾸기 위해 형변환(type casting) 해야 하는 불편함이 있다.
-    //
-    // Object 레퍼런스의 치명적 단점:
-    // => 의도와 다른 타입의 값을 저장하는 것을 막을 수 없다.
+    // 이유?
+    // => set()의 파라미터 타입은 Object 이기 때문이다.
+    // => Object는 모든 자바 객체를 받을 수 있다.
     // 
-    
+    // 이렇게 Box 클래스의 인스턴스 변수를 Object로 선언하면 
+    // 다양한 객체를 보관할 수는 있지만,
+    // MemberBox나 StringBox, IntegerBox 처럼 특정 타입의 객체로 제한할 수 없다.
+    // 그렇다고 이전처럼 각 타입 별로 Box 클래스를 정의하는 것은 바람직하지 않다.
+    //
+    // 이런 문제점을 해결하기 위해 나온 문법이 "제네릭(Generic)"이다.
+    // 제네릭 문법을 이용하면 한 개의 클래스가 다양한 타입의 객체를 제한적으로 다룰 수 있다.
+    // 즉 각 타입 별로 클래스를 정의해야 하는 것을 한 개의 클래스로 만들 수 있다.
+    // => Exam0113.java 를 확인해보라!
   }
 }
 
