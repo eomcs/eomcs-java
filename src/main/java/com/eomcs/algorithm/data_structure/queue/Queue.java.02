@@ -1,0 +1,4 @@
+package com.eomcs.algorithm.data_structure.queue;
+
+public class Queue<E> extends LinkedList<E> {
+}

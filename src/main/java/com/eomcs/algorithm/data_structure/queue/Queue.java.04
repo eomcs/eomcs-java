@@ -1,0 +1,12 @@
+package com.eomcs.algorithm.data_structure.queue;
+
+public class Queue extends LinkedList<Object> {
+  
+  public void offer(Object value) {
+    this.add(value);
+  }
+  
+  public Object poll() {
+    return this.remove(0);
+  }
+}
