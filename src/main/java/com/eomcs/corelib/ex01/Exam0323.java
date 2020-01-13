@@ -1,7 +1,7 @@
 // Wrapper 클래스 - auto-boxing/auto-unboxing 응용 
 package com.eomcs.corelib.ex01;
 
-public class Exam0223 {
+public class Exam0323 {
   
   static class Member {
     String name;

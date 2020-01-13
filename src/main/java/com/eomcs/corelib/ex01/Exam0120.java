@@ -1,28 +1,45 @@
-// String - 문자열 비교
+// Object 클래스 - toString() 메서드에 대하여
 package com.eomcs.corelib.ex01;
 
+
+
 public class Exam0120 {
-  public static void main(String[] args) {
-    String s1 = new String("Hello");
-    String s2 = new String("Hello");
-    String s3 = "Hello";
+
+  static class My {
     
-    // equals()?
-    // => Object에 정의되어 있는 메서드이다.
-    // => 인스턴스가 같은지 비교한다.
-    //
-    System.out.println(s1.equals(s2)); // 결과: true
-    System.out.println(s1.equals(s3)); // 결과: true
-    
-    // s1, s2, s3 가 서로 다른 인스턴스를 가리키는데 왜 결과가 true 인가?
-    // => String 클래스에서 equals()를 오버라이딩 했기 때문이다.
-    // => 인스턴스를 비교하는 것이 아니라 인스턴스의 내용물을 비교하도록 변경하였다.
-    // => s1, s2, s3의 내용물이 같기 때문에 equals()의 리턴 값은 true이다.
-    // 결론!
-    // => String 인스턴스의 데이터가 같은 지 비교할 때는
-    //    equals()라는 메서드를 사용하라!
   }
+  
+  public static void main(String[] args) {
+    
+    My obj = new My();
+    
+    // Object에서 상속 받은 메서드 
+    //
+    // 1) toString()
+    //    - 클래스 정보를 간단히 출력한다.
+    //    - 패키지명.클래스명@16진수해시값
+    //    - 예) ch15.My1@1e81f4dc
+    //
+    System.out.println(obj.toString());
+    // 해시값?
+    // - 인스턴스 마다 부여된 고유의 식별자이다.
+    // - 주의! 주소 아니다!
+    // - 인스턴스가 같은지 검사할 때 사용할 수 있다.
+    // - toString()을 재정의하지 않고 원래 메서드를 그대로 사용하면
+    //   무조건 인스턴스마다 새 해시값이 부여된다.
+    
+    My obj2 = new My();
+    My obj3 = new My();
+    
+    System.out.println(obj2 == obj3);
+
+    System.out.println(obj2.toString());
+    System.out.println(obj3.toString());
+  }
+
 }
+
+
 
 
 

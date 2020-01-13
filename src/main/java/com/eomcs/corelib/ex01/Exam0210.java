@@ -1,42 +1,27 @@
-// Wrapper 클래스 - 종류
+// String - "Hello" vs new String("Hello")
 package com.eomcs.corelib.ex01;
 
 public class Exam0210 {
   public static void main(String[] args) {
-    // 자바는 primitive data type의 값을 다룰 때 기본 연산자 외에  
-    // 좀 더 다양한 방법으로 다루기 위해 
-    // primitive data type에 대응하는 클래스를 제공한다.
-    // 예)
-    Byte b = new Byte((byte)100);               // ==> byte
-    Short s = new Short((short)20000);          // ==> short
-    Integer i = new Integer(3000000);           // ==> int
-    Long l = new Long(60000000000L);            // ==> long
-    Float f = new Float(3.14f);                 // ==> float
-    Double d = new Double(3.14159);             // ==> double
-    Boolean bool = new Boolean(true);           // ==> boolean
-    Character c = new Character((char)0x41);    // ==> char
+    // Heap 메모리 영역에 String 인스턴스를 생성하는 방법
+    String s1 = new String("Hello");
+    String s2 = new String("Hello");
+    // => 내용물의 동일 여부를 검사하지 않고 무조건 인스턴스를 생성한다.
+    // => 가비지가 되면 가비지 컬렉터에 의해 제거된다.
+    System.out.println(s1 == s2); // false
 
-    // 이렇게 primitive data type에 대응하여 만든 클래스를 
-    // primitive data를 포장하는 객체라고 해서 
-    // "랩퍼(wrapper) 클래스"라 부른다.
-
-    // 래퍼 클래스의 주요 용도:
-    // => primitive data type의 값을 객체로 주고 받을 때 사용한다.
-    // => primitive data type의 값을 객체에 담아 전달하고 싶다면
-    //    언제든 wrapper 클래스의 인스턴스를 만들면 된다.
-
-    // Wrapper 클래스의 인스턴스를 생성할 때는 생성자 대신 클래스 메서드를 사용하라.
-    Byte b2 = Byte.valueOf((byte)100);          
-    Short s2 = Short.valueOf((short)20000);         
-    Integer i2 = Integer.valueOf(3000000);          
-    Long l2 = Long.valueOf(60000000000L);            
-    Float f2 = Float.valueOf(3.14f);                 
-    Double d2 = Double.valueOf(3.14159);            
-    Boolean bool2 = Boolean.valueOf(true);           
-    Character c2 = Character.valueOf((char)0x41);    
+    // string constant pool 메모리 영역에 String 인스턴스를 생성하는 방법
+    String x1 = "Hello"; // String 인스턴스의 주소를 리턴한다.
+    String x2 = "Hello"; // 기존의 String 인스턴스 주소를 리턴한다.
+    
+    // 문자열 리터럴은 내부적으로 new String()을 실행한다.
+    // => 다만 인스턴스를 Heap 이 아닌 String 상수풀에 생성한다.
+    // => 내용물이 같으면 기존 인스턴스의 주소를 리턴한다.
+    //    즉 메모리 절약을 위해 중복 데이터를 갖는 인스턴스를 생성하지 않는다.
+    // => JVM이 끝날 때까지 메모리에 유지된다.
+    System.out.println(x1 == x2);
   }
 }
-
 
 
 

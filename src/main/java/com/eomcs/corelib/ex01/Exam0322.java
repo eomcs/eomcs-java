@@ -1,7 +1,7 @@
 // Wrapper 클래스 - auto-boxing/auto-unboxing 
 package com.eomcs.corelib.ex01;
 
-public class Exam0222 {
+public class Exam0322 {
   public static void main(String[] args) {
 
     // 자바는 Wrapper 객체의 값을 primitive data type 변수에 직접 할당할 수 있다.

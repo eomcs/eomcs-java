@@ -1,27 +1,53 @@
-// String - "Hello" vs new String("Hello")
+// Object 클래스 - 자바 최상위 클래스
 package com.eomcs.corelib.ex01;
 
-public class Exam0110 {
-  public static void main(String[] args) {
-    // Heap 메모리 영역에 String 인스턴스를 생성하는 방법
-    String s1 = new String("Hello");
-    String s2 = new String("Hello");
-    // => 내용물의 동일 여부를 검사하지 않고 무조건 인스턴스를 생성한다.
-    // => 가비지가 되면 가비지 컬렉터에 의해 제거된다.
-    System.out.println(s1 == s2); // false
 
-    // string constant pool 메모리 영역에 String 인스턴스를 생성하는 방법
-    String x1 = "Hello"; // String 인스턴스의 주소를 리턴한다.
-    String x2 = "Hello"; // 기존의 String 인스턴스 주소를 리턴한다.
-    
-    // 문자열 리터럴은 내부적으로 new String()을 실행한다.
-    // => 다만 인스턴스를 Heap 이 아닌 String 상수풀에 생성한다.
-    // => 내용물이 같으면 기존 인스턴스의 주소를 리턴한다.
-    //    즉 메모리 절약을 위해 중복 데이터를 갖는 인스턴스를 생성하지 않는다.
-    // => JVM이 끝날 때까지 메모리에 유지된다.
-    System.out.println(x1 == x2);
+
+//클래스를 정의할 때 수퍼 클래스를 지정하지 않으면 
+//컴파일러는 자동으로 Object를 상속 받는다.
+public class Exam0110 /*extends Object*/ {
+  
+  static class My /*extends Object*/ {
   }
+
+  public static void main(String[] args) {
+    
+    // instanceof 연산자를 사용하여 해당 인스턴스가 Object 타입인지 확인해 보자.
+    // instanceof 연산자?
+    // => 레퍼런스가 가리키는 인스턴스가 지정한 클래스를 인스턴스 이거나 또는 조상으로 갖는지 검사한다.
+    My obj = new My();
+    
+    System.out.println(obj instanceof My);
+    //System.out.println(obj instanceof String); // 오류!
+    System.out.println(obj instanceof Object);
+    
+    // Object를 조상으로 갖는다면 당연히 Object의 메서드를 사용할 수 있을 것이다.
+    System.out.println(obj.toString());
+    System.out.println(obj.hashCode());
+    System.out.println(obj.equals("Hello"));
+    
+    // 결론!
+    // => 자바의 모든 클래스는 Object의 자손이다.
+  }
+
 }
+
+// Object 클래스의 주요 메서드
+// 1) toString()
+//    => 클래스이름과 해시코드를 리턴한다.
+// 2) equals()
+//    => 같은 인스턴스인지 검사한다. 
+// 3) hashCode()
+//    => 인스턴스를 식별하는 값을 리턴한다.
+// 4) getClass()
+//    => 인스턴스의 클래스 정보를 리턴한다.
+// 5) clone()
+//    => 인스턴스를 복제한 후 그 복제 인스턴스를 리턴한다.
+// 6) finalize()
+//    => 가비지 컬렉터에 의해 메모리에서 해제되기 직전에 호출된다.
+// 
+
+
 
 
 

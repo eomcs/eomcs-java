@@ -1,24 +1,42 @@
-// StringBuffer - 문자열 비교
+// Object 클래스 - toString() 을 오버라이딩 할 때 
 package com.eomcs.corelib.ex01;
 
+
+
 public class Exam0121 {
-  public static void main(String[] args) {
-    StringBuffer b1 = new StringBuffer("Hello");
-    StringBuffer b2 = new StringBuffer("Hello");
+  
+  static class My {
+    String name;
+    int age;
     
-    System.out.println(b1 == b2); // 결과: false
-    //=> b1, b2 인스턴스가 다르니까 당연히 결과는 false이다.
+    // 개발을 하다 보면 인스턴스의 현재 값을 간단히 확인하고 싶을 경우가 있다.
+    // 그럴 경우 toString()을 오버라이딩 하라!
+    @Override
+    public String toString() {
+      return "My3 [name=" + name + ", age=" + age + "]";
+    }
     
-    System.out.println(b1.equals(b2)); // 결과: false
-    //=> StringBuffer는 Object에서 상속 받은 equals()를 오버라이딩 하지 않았다.
-    //=> 따라서 원래 Object의 equals()를 사용한다. 그러니 결과는 false이다.
-    // 
-      
-    // 해결책?
-    // => StringBuffer에서 String을 꺼내 비교하라!
-    System.out.println(b1.toString().equals(b2.toString()));
   }
+  
+  public static void main(String[] args) {
+    
+    My obj1 = new My();
+    
+    obj1.name = "홍길동";
+    obj1.age = 20;
+    
+    System.out.println(obj1.toString());
+    
+    // println()의 파라미터 값으로 문자열을 넘겨주지 않으면,
+    // println() 내부에서 파라미터로 넘어온 객체에 대해 toString() 호출한 후 
+    // 그 리턴 값을 출력한다.
+    // 따라서 그냥 객체(주소)를 넘겨줘도 된다.
+    System.out.println(obj1);
+  }
+
 }
+
+
 
 
 
