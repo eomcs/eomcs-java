@@ -1,0 +1,34 @@
+package com.eomcs.algorithm.data_structure.stack;
+
+import java.util.Arrays;
+
+public class Stack {
+  
+  private static final int DEFAULT_CAPACITY = 10;
+  
+  Object[] elementData;
+  int size;
+  
+  public Stack() {
+    this.elementData = new Object[DEFAULT_CAPACITY];
+    this.size = 0;
+  }
+  
+  public void push(Object value) {
+    if (this.size == elementData.length) {
+      grow();
+    }
+    this.elementData[size++] = value;
+  }
+  
+  private void grow() {
+    int oldCapacity = elementData.length;
+    int newCapacity = oldCapacity + (oldCapacity >> 1);
+    this.elementData = Arrays.copyOf(elementData, newCapacity);
+  }
+  
+}
+
+
+
+
