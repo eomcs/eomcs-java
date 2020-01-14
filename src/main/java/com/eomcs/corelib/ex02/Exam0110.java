@@ -1,58 +1,27 @@
-// 객체(의 주소) 목록을 다루는 클래스 - 컬렉션 클래스(collection class) 정의
+// String - "Hello" vs new String("Hello")
 package com.eomcs.corelib.ex02;
 
-// 배열을 이용하여 컬렉션 클래스 만들기 : ArrayList
-// => 단점: 배열의 크기가 고정되기 때문에 배열을 초과하여 값을 넣으려면
-//         더 큰 새 배열을 만들고, 기존 값을 복사해야 한다.
-//         배열의 크기가 늘 때마다 가비지(garbage)가 생기는 문제가 있다.
-//         기본 배열의 값을 복사하기 때문에 속도가 느린 문제도 있다.
 public class Exam0110 {
   public static void main(String[] args) {
-    ArrayList list = new ArrayList();
-    list.add("aaa"); // aaa,
-    list.add("bbb"); // aaa, bbb,
-    list.add("ccc"); // aaa, bbb, ccc,
-    list.add("ddd"); // aaa, bbb, ccc, ddd,
+    // Heap 메모리 영역에 String 인스턴스를 생성하는 방법
+    String s1 = new String("Hello");
+    String s2 = new String("Hello");
+    // => 내용물의 동일 여부를 검사하지 않고 무조건 인스턴스를 생성한다.
+    // => 가비지가 되면 가비지 컬렉터에 의해 제거된다.
+    System.out.println(s1 == s2); // false
 
-    print(list); 
-
-    list.remove(2); // aaa, bbb, ddd,
-
-    print(list); 
-
-    list.remove(0); // bbb, ddd,
-
-    print(list);
-
-    list.remove(4); // bbb, ddd,
-
-    print(list);
-
-    list.add(1, "xxx"); // bbb, xxx, ddd,
-    list.add(1, "yyy"); // bbb, yyy, xxx, ddd
-    list.add(0, "zzz"); // zzz, bbb, yyy, xxx, ddd
-    list.add(5, "ttt"); // zzz, bbb, yyy, xxx, ddd
-
-    print(list);
-
-    list.set(1, "aaa"); // zzz, aaa, yyy, xxx, ddd
-
-    print(list);
-
-    list.add("ccc"); // zzz, aaa, yyy, xxx, ddd, ccc
-    list.add("eee"); // zzz, aaa, yyy, xxx, ddd, ccc, eee
-
-    print(list);
+    // string constant pool 메모리 영역에 String 인스턴스를 생성하는 방법
+    String x1 = "Hello"; // String 인스턴스의 주소를 리턴한다.
+    String x2 = "Hello"; // 기존의 String 인스턴스 주소를 리턴한다.
+    
+    // 문자열 리터럴은 내부적으로 new String()을 실행한다.
+    // => 다만 인스턴스를 Heap 이 아닌 String 상수풀에 생성한다.
+    // => 내용물이 같으면 기존 인스턴스의 주소를 리턴한다.
+    //    즉 메모리 절약을 위해 중복 데이터를 갖는 인스턴스를 생성하지 않는다.
+    // => JVM이 끝날 때까지 메모리에 유지된다.
+    System.out.println(x1 == x2);
   }
-
-  static void print(ArrayList list) {
-    for (int i = 0; i < list.size(); i++) {
-      System.out.print(list.get(i) + ", ");
-    }
-    System.out.println();
-  }
-}   
-
+}
 
 
 

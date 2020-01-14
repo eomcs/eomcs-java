@@ -1,36 +1,61 @@
-// java.util.HashSet vs ArrayList
+// java.util.concurrent.ArrayBlockingQueue 사용
 package com.eomcs.corelib.ex06;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.concurrent.ArrayBlockingQueue;
 
-// ArrayList는 중복을 허용한다.
 public class Exam0120 {
+
   public static void main(String[] args) {
-    String v1 = new String("aaa");
-    String v2 = new String("bbb");
-    String v3 = new String("ccc");
-    String v4 = new String("ddd");
-    String v5 = new String("ccc");
+    String s1 = new String("aaa");
+    String s2 = new String("bbb");
+    String s3 = new String("ccc");
+    String s4 = new String("ddd");
+    String s5 = new String("eee");
 
-    ArrayList list = new ArrayList();
-    list.add(v1);
-    list.add(v2);
-    list.add(v3);
-    list.add(v4);
-    list.add(v5); 
+    ArrayBlockingQueue queue = new ArrayBlockingQueue(100);
+    queue.offer(s1); // aaa,
+    print(queue); 
+    queue.offer(s2); // aaa, bbb,
+    print(queue);
+    queue.offer(s3); // aaa, bbb, ccc,
+    print(queue);
 
-    print(list);
+    System.out.println("==>" + queue.poll()); // bbb, ccc,
+    print(queue);
+    System.out.println("==>" + queue.poll()); // ccc,
+    print(queue);
+
+    queue.offer(s4); // ccc, ddd,
+    print(queue);
+    queue.offer(s5); // ccc, ddd, eee,
+    print(queue);
+
+    String value;
+    while ((value = (String) queue.poll()) != null) {
+      System.out.println(value);
+    }
   }
 
-  static void print(ArrayList set) {
-    Object[] values = set.toArray();
-    for (Object value : values) {
+  static void print(ArrayBlockingQueue list) {
+    Object[] arr = list.toArray();
+    for (Object value : arr) {
       System.out.print(value + ", ");
     }
     System.out.println();
-  }
+  }    
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

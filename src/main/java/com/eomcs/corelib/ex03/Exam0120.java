@@ -1,50 +1,55 @@
-// java.util.LinkedList 사용하기
+// java.util.ArrayList와 비교
 package com.eomcs.corelib.ex03;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Exam0120 {
-
   public static void main(String[] args) {
-    String s1 = new String("aaa");
-    String s2 = new String("bbb");
-    String s3 = new String("ccc");
-    String s4 = new String("ddd");
-    String s5 = new String("eee");
+    ArrayList list = new ArrayList();
+    list.add("aaa"); // aaa,
+    list.add("bbb"); // aaa, bbb,
+    list.add("ccc"); // aaa, bbb, ccc,
+    list.add("ddd"); // aaa, bbb, ccc, ddd,
 
-    LinkedList list = new LinkedList();
-    list.add(s1);
-    list.add(s2);
-    list.add(s3);
-
-    System.out.println(list.get(0));
-    System.out.println(list.get(1));
-    System.out.println(list.get(2));
-
-    System.out.println(list.size());
-
-    System.out.println(list.remove(1)); // aaa, ccc, 
     print(list); 
 
-    list.add(s4); // aaa, ccc, ddd
-    list.add(1, s5); // aaa, eee, ccc, ddd
+    list.remove(2); // aaa, bbb, ddd,
+
+    print(list); 
+
+    list.remove(0); // bbb, ddd,
+
     print(list);
 
-    list.add(0, s2); // bbb, aaa, eee, ccc, ddd
+    // 유효한 인덱스가 아니면 예외 발생시킨다!
+    //list.remove(4); // 실행 오류!
+
     print(list);
 
-    list.add(5, "xxx"); // bbb, aaa, eee, ccc, ddd, xxx
+    list.add(1, "xxx"); // bbb, xxx, ddd,
+    list.add(1, "yyy"); // bbb, yyy, xxx, ddd
+    list.add(0, "zzz"); // zzz, bbb, yyy, xxx, ddd
+    list.add(5, "ttt"); // zzz, bbb, yyy, xxx, ddd
+
+    print(list);
+
+    list.set(1, "aaa"); // zzz, aaa, yyy, xxx, ddd
+
+    print(list);
+
+    list.add("ccc"); // zzz, aaa, yyy, xxx, ddd, ccc
+    list.add("eee"); // zzz, aaa, yyy, xxx, ddd, ccc, eee
+
     print(list);
   }
 
-  static void print(LinkedList list) {
+  static void print(ArrayList list) {
     for (int i = 0; i < list.size(); i++) {
       System.out.print(list.get(i) + ", ");
     }
     System.out.println();
   }
-
-}
+}   
 
 
 

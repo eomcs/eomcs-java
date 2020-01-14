@@ -1,36 +1,29 @@
-// java.util.HashMap - value 목록만 꺼내기  
+// Iterator 의 사용
 package com.eomcs.corelib.ex07;
 
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Stack;
 
 public class Exam0230 {
   public static void main(String[] args) {
-    Member v1 = new Member("홍길동", 20);
-    Member v2 = new Member("임꺽정", 30);
-    Member v3 = new Member("유관순", 16);
-    Member v4 = new Member("안중근", 20);
-    Member v5 = new Member("윤봉길", 25);
+    String s1 = new String("aaa");
+    String s2 = new String("bbb");
+    String s3 = new String("ccc");
+    String s4 = new String("ddd");
+    String s5 = new String("eee");
 
-    HashMap map = new HashMap();
-    map.put("s01", v1);
-    map.put("s02", v2);
-    map.put("s03", v3);
-    map.put("s04", v4);
-    map.put("s05", v5);
+    Stack stack = new Stack();
+    stack.add(s1);
+    stack.add(s2);
+    stack.add(s3);
+    stack.add(s4);
+    stack.add(s5);
 
-    Collection values = map.values();
-    for (Object value : values) {
-      System.out.println(value);
+    Iterator 컬렉션에서값을꺼내주는객체 = stack.iterator();
+    while (컬렉션에서값을꺼내주는객체.hasNext()) {
+      System.out.print(컬렉션에서값을꺼내주는객체.next() + ", ");
     }
+    System.out.println();
 
   }
-
 }
-
-
-
-
-
-
-

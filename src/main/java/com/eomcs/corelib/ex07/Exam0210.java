@@ -1,53 +1,60 @@
-// java.util.HashMap - key 목록을 사용하여 맵에서 값을 꺼내기
+// java.util.HashSet 클래스 사용 - 값을 꺼내는 방법
 package com.eomcs.corelib.ex07;
 
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 
 public class Exam0210 {
   public static void main(String[] args) {
-    Member v1 = new Member("홍길동", 20);
-    Member v2 = new Member("임꺽정", 30);
-    Member v3 = new Member("유관순", 16);
-    Member v4 = new Member("안중근", 20);
-    Member v5 = new Member("윤봉길", 25);
+    String v1 = new String("aaa");
+    String v2 = new String("bbb");
+    String v3 = new String("ccc");
+    String v4 = new String("ddd");
+    String v5 = new String("ccc");
 
-    HashMap map = new HashMap();
-    map.put("s01", v1);
-    map.put("s02", v2);
-    map.put("s03", v3);
-    map.put("s04", v4);
-    map.put("s05", v5);
+    HashSet set = new HashSet();
+    set.add(v1);
+    set.add(v2);
+    set.add(v3);
+    set.add(v4);
+    set.add(v5); 
 
-    // => HashMap에서 key 목록을 꺼내기
-    java.util.Set keys = map.keySet(); // key 객체들이 들어있는 집합(컬렉션)을 리턴한다.
+    // 저장한 순서대로 꺼낼 수 없기 때문에 index를 이용하여 값을 꺼낼 수 없다.
+    //set.get(0); <== 이런 메서드가 없다.
 
-    // key가 들어있는 Set에서 값을 꺼내는 방법
-    // 1) Iterator 사용 
-    Iterator 키를꺼내주는객체 = keys.iterator();
-    while (키를꺼내주는객체.hasNext()) {
-      Object key = 키를꺼내주는객체.next();
-      System.out.println(map.get(key)); // key를 사용하여 값을 꺼낸다.
+    // 값을 꺼내는 방법
+    // 1) HashSet에 들어있는 값을 배열로 받아 사용한다.
+    Object[] values = set.toArray();
+    for (Object value : values) {
+      System.out.print(value + ", ");
     }
-    System.out.println("---------------------");
+    System.out.println();
 
-    // 2) 배열을 사용
-    Object[] keyArray = keys.toArray();
-    for (Object key : keyArray) {
-      System.out.println(map.get(key)); // key를 사용하여 값을 꺼낸다.
-    }
-    System.out.println("---------------------");
+    // 2) 창고에서 값을 꺼내주는 객체의 도움을 받는다.
+    // => HashSet에서 값을 꺼내는 객체를 얻는다.
+    Iterator 컬렉션에서값을꺼내주는객체 = set.iterator();
 
-    // 3) 만약 컬렉션 객체가 java.util.Collection 규칙을 따라 만든 클래스라면 
-    //    for(:) 반복문을 바로 사용할 수 있다.
-    for (Object key : keys/* 배열 또는 Collection 객체 */) {
-      System.out.println(map.get(key));
+    // => 값을 꺼내주는 객체를 통해 값을 꺼낸다.
+    while (컬렉션에서값을꺼내주는객체.hasNext()) {
+      // => 꺼낼 데이터가 있다면 값을 꺼내달라고 명령한다.
+      System.out.print(컬렉션에서값을꺼내주는객체.next() + ", ");
     }
-    System.out.println("---------------------");
+    System.out.println();
+
 
   }
 
 }
+
+// Iterator 패턴
+// => 컬렉션에서 값을 꺼내는 기능을 객체화시키는 방법
+// => 즉 별도의 클래스로 정의하여 사용한다.
+// => 이점
+//    컬렉션의 타입에 상관없이 일관된 방식으로 값을 꺼낼 수 있다.
+//    예) ArrayList => get(), Stack => pop(), Queue => poll()
+//    Iterator를 사용하면 hasNext(), next()만 사용하면 된다.
+
+
 
 
 
