@@ -63,6 +63,10 @@ public class Exam0174 {
     System.out.println(car2);
     System.out.println(car.engine == car2.engine);
     
+    // car의 엔진과 car2의 엔진이 다른 엔진인지 확인해보자!
+    car.engine.cc = 2000;
+    System.out.println(car2.engine.cc);
+    
   }
 }
 
