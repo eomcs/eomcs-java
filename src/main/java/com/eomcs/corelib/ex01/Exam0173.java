@@ -1,7 +1,7 @@
 // Object 클래스 - clone() : shallow copy
 package com.eomcs.corelib.ex01;
  
-public class Exam0163 {
+public class Exam0173 {
   
   static class Engine implements Cloneable {
     int cc;

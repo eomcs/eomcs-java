@@ -1,6 +1,7 @@
-package com.eomcs.oop.ex06.d;
+// String - equals(), hashCode()
+package com.eomcs.corelib.ex01;
 
-public class Exam0400 {
+public class Exam0211 {
   
   static class Member {
     String name;

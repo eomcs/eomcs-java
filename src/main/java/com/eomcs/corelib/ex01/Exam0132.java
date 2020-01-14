@@ -1,7 +1,7 @@
 // Object 클래스의 메서드를 오버라이딩 하기 - equals()
-package com.eomcs.oop.ex06.d;
+package com.eomcs.corelib.ex01;
 
-public class Exam0310 {
+public class Exam0132 {
 
   static class Member /*extends Object */{
     String name;

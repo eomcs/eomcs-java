@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex06.e;
+package com.eomcs.oop.ex06.d;
 
 public class A3 extends A2 {
   public void y() {

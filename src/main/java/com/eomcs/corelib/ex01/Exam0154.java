@@ -3,7 +3,7 @@ package com.eomcs.corelib.ex01;
 
 import java.util.HashMap;
 
-public class Exam0147 {
+public class Exam0154 {
   public static void main(String[] args) {
     // hash 코드는 Map에서 값을 저장하기 위해 key로 사용한다.
     HashMap<Integer,Student> map = new HashMap<>();

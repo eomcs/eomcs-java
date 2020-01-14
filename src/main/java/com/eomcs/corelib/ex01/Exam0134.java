@@ -1,7 +1,7 @@
 // Object 클래스의 메서드를 오버라이딩 하기 - equals()
-package com.eomcs.oop.ex06.d;
+package com.eomcs.corelib.ex01;
 
-public class Exam0330 {
+public class Exam0134 {
 
   public static void main(String[] args) {
     

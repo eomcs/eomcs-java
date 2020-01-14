@@ -1,93 +1,60 @@
-// hash code 응용 - 문제 해결!
+// Object 클래스의 메서드를 오버라이딩 하기 - hashCode()
 package com.eomcs.corelib.ex01;
 
-import java.util.HashSet;
-
 public class Exam0144 {
-  
-  static class Student {
+
+  static class Score {
     String name;
-    int age;
-    boolean working;
-    
-    public Student(String name, int age, boolean working) {
+    int kor;
+    int eng;
+    int math;
+    int sum;
+    float aver;
+
+    public Score(String name, int kor, int eng, int math) {
       this.name = name;
-      this.age = age;
-      this.working = working;
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+      this.sum = kor + eng + math;
+      this.aver = this.sum / 3f;
     }
 
+    // hashCode()를 오버라이딩하면 원하는 값을 리턴할 수 있다.
     @Override
     public int hashCode() {
-      final int prime = 31;
-      int result = 1;
-      result = prime * result + age;
-      result = prime * result + ((name == null) ? 0 : name.hashCode());
-      result = prime * result + (working ? 1231 : 1237);
-      return result;
+      // 무조건 모든 Score 인스턴스가 같은 해시코드를 갖게 하자!
+      return 1000;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (this == obj)
-        return true;
-      if (obj == null)
-        return false;
-      if (getClass() != obj.getClass())
-        return false;
-      Student other = (Student) obj;
-      if (age != other.age)
-        return false;
-      if (name == null) {
-        if (other.name != null)
-          return false;
-      } else if (!name.equals(other.name))
-        return false;
-      if (working != other.working)
-        return false;
-      return true;
-    }
-    
   }
-  
+
   public static void main(String[] args) {
-    Student s1 = new Student("홍길동", 20, false);
-    Student s2 = new Student("홍길동", 20, false);
-    Student s3 = new Student("임꺽정", 21, true);
-    Student s4 = new Student("유관순", 22, true);
-    
-    System.out.println(s1 == s2);
-    
+    Score s1 = new Score("홍길동", 100, 100, 100);
+    Score s2 = new Score("홍길동", 100, 100, 100);
+    Score s3 = new Score("임꺽정", 90, 80, 70);
+
     System.out.println(s1.hashCode());
     System.out.println(s2.hashCode());
     System.out.println(s3.hashCode());
-    System.out.println(s4.hashCode());
-    System.out.println("--------------------");
     
-    // 해시셋(집합)에 객체를 보관한다.
-    HashSet<Student> set = new HashSet<Student>();
-    set.add(s1);
-    set.add(s2);
-    set.add(s3);
-    set.add(s4);
     
-    // 해시셋에 보관된 객체를 꺼낸다.
-    Object[] list = set.toArray();
-    for (Object obj : list) {
-      Student student = (Student) obj;
-      System.out.printf("%s, %d, %s\n", 
-          student.name, student.age, student.working ? "재직중" : "실업중");
-    }
-    
-    // 인스턴스가 다르더라도 인스턴스의 필드 값이 같을 경우 
-    // HashSet에 중복 저장되지 않도록 하려면,
-    // hashCode()와 equals() 모두 오버라이딩 하라!
-    // => hashCode()는 같은 필드 값을 갖는 경우 같은 해시코드를 리턴하도록 변경하고,
-    // => equals()는 필드 값이 같을 경우 true를 리턴하도록 변경한다.
+    // 해시코드?
+    // => 데이터를 식별할 때 사용하는 고유 아이디이다.
+    // => 보통 데이터를 특별한 공식(ex: MD4, MD5, SHA-1, SHA-256 등)으로
+    //    계산해서 나온 정수 값을 해시코드로 사용한다.
+    // => 그래서 해시코드를 데이터를 구분하는 지문과 같다고 해서
+    //    '디지털 지문'이라고 부른다.
     //
+    // hashCode()를 오버라이딩 할 때?
+    // => 인스턴스(메모리)가 다르더라도 같은 데이터를 갖는 경우 
+    //    같은 것으로 취급하기 위해 이 메서드를 재정의한다.
+    // => 따라서 위의 예처럼 데이터가 같은지 따지지도 않고 
+    //    모든 인스턴스에 대해 같은 해시코드를 리턴하는 것은 
+    //    아무 의미없다!
+    //    이런 식으로 오버라이딩하는 것은 부질없는 짓이다!
+
   }
-
 }
-
 
 
 

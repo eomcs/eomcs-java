@@ -3,7 +3,7 @@ package com.eomcs.corelib.ex01;
 
 import java.util.HashMap;
 
-public class Exam0148 {
+public class Exam0155 {
   public static void main(String[] args) {
     HashMap<String,Student> map = new HashMap<>();
     

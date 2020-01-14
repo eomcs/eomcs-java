@@ -4,7 +4,7 @@ package com.eomcs.corelib.ex01;
 import java.util.HashMap;
 
 
-public class Exam0146 {
+public class Exam0153 {
   
   static class MyKey2 {
     String contents;
