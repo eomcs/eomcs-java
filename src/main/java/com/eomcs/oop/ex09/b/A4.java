@@ -11,6 +11,8 @@ public interface A4 {
   //    final 변수는 선언과 동시에 특정 값으로 초기화해야 한다.
   public static final int v1 = 100;
 
+  //static {} // 스태틱 블록을 둘 수 없다.
+  
   // 인터페이스의 모든 변수는 무조건 public이고 static이고 final이기 때문에 
   // 생략해도 된다.
   /*public static final*/ int v2 = 200;
