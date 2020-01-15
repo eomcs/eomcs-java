@@ -2,6 +2,7 @@
 package com.eomcs.oop.ex10.c;
 
 public class Restautant extends Building {
+  
   public void startEffect() {
     System.out.println("뚝딱...뚝딱~~~~");
   }

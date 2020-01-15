@@ -4,15 +4,21 @@ package com.eomcs.oop.ex10.c;
 public class Exam01 {
 
   public static void main(String[] args) {
-    Restautant obj1 = new Restautant();
-    Farm obj2 = new Farm();
+    
+    Restautant r = new Restautant();
+    Farm f = new Farm();
 
-    // 레스토랑이나 농장 거축의 기본 흐름은 이미 정해져 있다.
-    // 단지 착수와 완료에 대한 것만 다르다.
-    obj1.build();
+    work(r);
+    
     System.out.println("---------------------");
-    obj2.build();
-
+    
+    work(f);
+  }
+  
+  static void work(Building obj) {
+    // 레스토랑이나 농장 건축의 기본 흐름은 이미 수퍼 클래스에 정의되어 있다.
+    // 착수와 완료는 서브 클래스 마다 다르다.
+    obj.build();
   }
 
 }

@@ -5,6 +5,7 @@ package com.eomcs.oop.ex10.c;
 // 즉 수퍼 클래스에서 전체적인 논리 흐름을 정의하고,
 // 서브 클래스에서 각 흐름에 따라 구체적인 동작을 정의한다. 
 public abstract class Building {
+  
   // 다음과 같이 일반 메서드에서 
   // 전체적인 논리 흐름(명령어 처리의 흐름)을 정의한다.
   // 서브 클래스들은 이 메서드를 그대로 상속 받기 때문에 재정의하지 않는 이상에는
@@ -12,6 +13,7 @@ public abstract class Building {
   public void build() {
     System.out.println("건축하겠습니다!");
     startEffect();
+    
     System.out.println("건축이 완료되었습니다!");
     endEffect();
   }
