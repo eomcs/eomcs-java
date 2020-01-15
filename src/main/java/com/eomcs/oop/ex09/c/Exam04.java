@@ -11,6 +11,8 @@ package com.eomcs.oop.ex09.c;
 public class Exam04 implements C, D2 {
   // 리턴 타입만 다른 메서드를 여러 개 만들 수 없기 때문에
   // C인터페이스와 D2 인터페이스를 한 클래스에서 동시에 구현할 수 없다!
+  // => C 규칙과 D2 규칙을 동시에 만족시킬 수 없다.
+  //
   // 다음과 같이 정의하면 컴파일 오류이다!
   public void m3() {} // C의 인터페이스 구현 
   public int m3() {} // D2의 인터페이스 구현 

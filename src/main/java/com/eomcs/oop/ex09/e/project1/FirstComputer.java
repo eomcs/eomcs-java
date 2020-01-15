@@ -1,4 +1,6 @@
-package com.eomcs.oop.ex09.e;
+package com.eomcs.oop.ex09.e.project1;
+
+import com.eomcs.oop.ex09.e.Computer;
 
 public class FirstComputer implements Computer {
   public void compute() {
