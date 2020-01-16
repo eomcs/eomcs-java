@@ -1,8 +1,10 @@
-// 배열 - 일반 변수를 여러 개 사용할 때와 배열을 사용할 때의 차이점
-package ch03;
+package com.eomcs.basic.ex04;
 
-public class Test12 {
+//# 배열 - 배열이 필용할 때: 같은 종류의 메모리를 많이 다룰 경우 
+//
+public class Exam0521 {
   public static void main(String[] args) {
+    
     int a1, a2, a3, a4, a5;
     a1 = 100;
     a2 = 90;
@@ -28,23 +30,6 @@ public class Test12 {
     }
     
     // 어? 배열 보다 위에 있는 코드가 편한데요?
-    // => 만명의 국어 점수를 담을 변수를 선언해 보세요! 
-    
+    // => 만명의 국어 점수를 담을 변수를 선언하고 합계를 구한다고 생각해 보자. 
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
