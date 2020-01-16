@@ -1,7 +1,7 @@
 // static nested class
 package com.eomcs.oop.ex11.a;
 
-public class Exam0111 {
+public class Exam0120 {
 
   static class A {
     void m1() {
