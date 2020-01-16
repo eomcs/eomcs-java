@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex11.b;
+package com.eomcs.oop.ex11.c;
 
 public class Product2 {
   int category;

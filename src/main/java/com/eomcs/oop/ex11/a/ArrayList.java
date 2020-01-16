@@ -1,5 +1,5 @@
 // non-static 중첩 클래스 응용
-package com.eomcs.oop.ex11.c;
+package com.eomcs.oop.ex11.a;
 
 public class ArrayList {
 

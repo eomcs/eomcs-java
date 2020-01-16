@@ -1,5 +1,5 @@
 // 클래스의 종류 : 중첩 클래스(nested class) 사용
-package com.eomcs.oop.ex11.a;
+package com.eomcs.oop.ex11.b;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -14,6 +14,11 @@ public class Exam0120 {
   //    중첩 클래스를 여러 클래스 안에 만들 수 있다.
   // 1) static nested class
   // 2) non-static nested class = inner class
+  
+  // static nested class
+  // => 바깥 클래스의 인스턴스를 사용하지 않는다면 static nested class 로 정의하라! 
+  // => 인스턴스 필드를 사용하지 않는 메서드를 스태틱으로 선언하는 것과 같다.
+  //
   static class JavaFilter implements FilenameFilter {
     public boolean accept(File dir, String name) {
       if (name.endsWith(".java")) 

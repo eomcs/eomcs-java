@@ -1,5 +1,5 @@
 // 클래스의 종류 : anonymous class II
-package com.eomcs.oop.ex11.a;
+package com.eomcs.oop.ex11.b;
 
 import java.io.File;
 import java.io.FilenameFilter;

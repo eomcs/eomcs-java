@@ -1,5 +1,5 @@
 // 상수 코드를 스태틱 중첩 클래스로 다루기
-package com.eomcs.oop.ex11.b;
+package com.eomcs.oop.ex11.c;
 
 public class Exam0310 {
   public static void main(String[] args) {

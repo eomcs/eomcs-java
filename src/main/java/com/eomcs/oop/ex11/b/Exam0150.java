@@ -1,5 +1,5 @@
 // 클래스의 종류 : anonymous class
-package com.eomcs.oop.ex11.a;
+package com.eomcs.oop.ex11.b;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -9,8 +9,7 @@ public class Exam0150 {
   public static void main(String[] args) throws Exception {
 
     // anonymous class
-    // => 인스턴스를 여러 개 만들 게 아니라면 클래스 이름 없이 
-    //    중첩 클래스를 정의한다.
+    // => 인스턴스를 여러 개 만들 게 아니라면 클래스 이름 없이 중첩 클래스를 정의한다.
     // => 클래스 이름이 없기 때문에 나중에 new 연산자로 따로 인스턴스를 생성할 수 없다.
     //    그래서 중첩클래스를 정의하는 순간 즉시 인스턴스를 만든다.
     FilenameFilter javaFilter = new FilenameFilter() {

@@ -1,7 +1,7 @@
 // non-static nested class == inner class 객체 사용
-package com.eomcs.oop.ex11.c;
+package com.eomcs.oop.ex11.a;
 
-import com.eomcs.oop.ex11.c.ArrayList.MyIterator;
+import com.eomcs.oop.ex11.a.ArrayList.MyIterator;
 
 public class Exam04 {
 

@@ -1,11 +1,9 @@
 // 스태틱 멤버와 import 
-package com.eomcs.oop.ex11.b;
+package com.eomcs.oop.ex11.c;
 
-// 스태틱 중첩 클래스 이름까지도 생략하여 단지 스태틱 변수명이나 스태틱 함수명만 사용하고 싶다면   
-// 다음과 같이 import static을 사용하여 미리 컴파일러에게 알려줘라!
-import static com.eomcs.oop.ex11.b.Category2.appliance.*;
-import static com.eomcs.oop.ex11.b.Category2.computer.*;
-import static com.eomcs.oop.ex11.b.Category2.book.*;
+import static com.eomcs.oop.ex11.c.Category2.appliance.*;
+import static com.eomcs.oop.ex11.c.Category2.book.*;
+import static com.eomcs.oop.ex11.c.Category2.computer.*;
 
 public class Exam0510 {
   public static void main(String[] args) {

@@ -1,9 +1,7 @@
 // 스태틱 멤버와 import 
-package com.eomcs.oop.ex11.b;
+package com.eomcs.oop.ex11.c;
 
-// 스태틱 중첩 클래스를 사용할 때 바깥 클래스를 지정하지 싶지 않다면  
-// 다음과 같이 미리 스태틱 중첩 클래스가 들이 있는 바깥 클래스를 컴파일러에게 알려줘라!
-import com.eomcs.oop.ex11.b.Category2.*;
+import com.eomcs.oop.ex11.c.Category2.*;
 
 public class Exam0410 {
   public static void main(String[] args) {
