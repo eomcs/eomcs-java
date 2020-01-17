@@ -3,12 +3,16 @@ package com.eomcs.oop.ex06.e;
 
 public final class Exam0210 {
   // 필드에 final 을 붙이면 상수 필드가 된다.
-  // 필드를 선언할 때 즉시 값을 저장해야 한다.
+  // 생성자에서 초기화시켜야 한다.
   //
-  final int a = 100;
+  final int a;
+
+  public Exam0210() {
+    a = 100;
+  }
 
   public void m1() {
     // 상수 필드는 값을 변경할 수 없다.
-    a = 200; // 컴파일 오류!
+    // a = 200; // 컴파일 오류!
   }
 }
