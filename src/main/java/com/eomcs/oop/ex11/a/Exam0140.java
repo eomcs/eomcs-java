@@ -10,7 +10,7 @@ package com.eomcs.oop.ex11.a;
 import static com.eomcs.oop.ex11.a.Exam0130_X.sValue;
 import static com.eomcs.oop.ex11.a.Exam0130_X.m1;
 
-// static nested class는 static 없이 지정해도 된다. 
+// static nested class는 static 없이 지정한다. 
 import com.eomcs.oop.ex11.a.Exam0130_X.A;
 
 // 각각 멤버를 지정하는 대신 
@@ -18,6 +18,7 @@ import com.eomcs.oop.ex11.a.Exam0130_X.A;
 //import static com.eomcs.oop.ex11.a.Exam0130_X.*;
 
 public class Exam0140 {
+  
   public static void main(String[] args) {
     // import static 을 이용하면 패키지 멤버 클래스를 사용하는 것과 똑 같은 방법으로 
     // 클래스 이름을 생략할 수 있다.
