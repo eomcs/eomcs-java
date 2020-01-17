@@ -20,9 +20,10 @@ public class Exam0360 {
     // 즉 createRunner()의 name 파라미터가 제거된다는 것이다.
   }
 
-  Runner createRunner(final String name) {
+  Runner createRunner(String name) {
 
     class A implements Runner {
+
       @Override
       public void run() {
         System.out.printf("%s님이 달립니다!", name);
