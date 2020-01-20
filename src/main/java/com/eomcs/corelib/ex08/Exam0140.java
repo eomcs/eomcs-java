@@ -3,7 +3,7 @@ package com.eomcs.corelib.ex08;
 
 import java.util.HashMap;
 
-public class Exam0130 {
+public class Exam0140 {
 
   static class MyKey {
     String major;
@@ -20,22 +20,12 @@ public class Exam0130 {
     }
 
     @Override
-    public boolean equals(Object obj) {
-      if (this == obj)
-        return true;
-      if (obj == null)
-        return false;
-      if (getClass() != obj.getClass())
-        return false;
-      MyKey other = (MyKey) obj;
-      if (major == null) {
-        if (other.major != null)
-          return false;
-      } else if (!major.equals(other.major))
-        return false;
-      if (no != other.no)
-        return false;
-      return true;
+    public int hashCode() {
+      final int prime = 31;
+      int result = 1;
+      result = prime * result + ((major == null) ? 0 : major.hashCode());
+      result = prime * result + no;
+      return result;
     }
   }
 
@@ -75,7 +65,7 @@ public class Exam0130 {
     System.out.printf("hashCode(): %d, %d\n", k3.hashCode(), k6.hashCode());
     System.out.println("-----------------------------------");
 
-    // equals()의 리턴 값이 true라고 해서 같은 key로 간주하지 않는다.
+    // hashCode()의 리턴 값이 같다고 해서 같은 key로 간주하지 않는다.
     System.out.println(map.get(k6));
   }
 
