@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex11.c;
+package com.eomcs.oop.ex11.c.step6;
 
 public class Computer {
   public static final int CPU = 1;

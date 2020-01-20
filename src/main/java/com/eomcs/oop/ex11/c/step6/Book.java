@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex11.c;
+package com.eomcs.oop.ex11.c.step6;
 
 public class Book {
   public static final int POET = 100;
