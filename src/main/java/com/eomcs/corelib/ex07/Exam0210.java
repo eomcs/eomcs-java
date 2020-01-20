@@ -17,10 +17,10 @@ public class Exam0210 {
     set.add(v2);
     set.add(v3);
     set.add(v4);
-    set.add(v5); 
+    set.add(v5);
 
     // 저장한 순서대로 꺼낼 수 없기 때문에 index를 이용하여 값을 꺼낼 수 없다.
-    //set.get(0); <== 이런 메서드가 없다.
+    // set.get(0); //<== 이런 메서드가 없다.
 
     // 값을 꺼내는 방법
     // 1) HashSet에 들어있는 값을 배열로 받아 사용한다.
@@ -50,15 +50,8 @@ public class Exam0210 {
 // => 컬렉션에서 값을 꺼내는 기능을 객체화시키는 방법
 // => 즉 별도의 클래스로 정의하여 사용한다.
 // => 이점
-//    컬렉션의 타입에 상관없이 일관된 방식으로 값을 꺼낼 수 있다.
-//    예) ArrayList => get(), Stack => pop(), Queue => poll()
-//    Iterator를 사용하면 hasNext(), next()만 사용하면 된다.
-
-
-
-
-
-
-
+// 컬렉션의 타입에 상관없이 일관된 방식으로 값을 꺼낼 수 있다.
+// 예) ArrayList => get(), Stack => pop(), Queue => poll()
+// Iterator를 사용하면 hasNext(), next()만 사용하면 된다.
 
 

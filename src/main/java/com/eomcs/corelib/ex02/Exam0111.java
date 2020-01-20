@@ -2,7 +2,7 @@
 package com.eomcs.corelib.ex02;
 
 public class Exam0111 {
-  
+
   static class Member {
     String name;
     int age;
@@ -12,14 +12,14 @@ public class Exam0111 {
       this.age = age;
     }
   }
-  
+
   public static void main(String[] args) {
-    
+
     Member m1 = new Member("홍길동", 20);
     Member m2 = new Member("홍길동", 20);
 
     // 비록 m1과 m2는 같은 값을 갖고 있지만 인스턴스가 다르다.
-    System.out.println(m1 == m2);
+    System.out.println(m1 == m2); // false
 
     // Object로부터 상속 받은 hashCode()는 인스턴스 마다 고유의 해시값을 리턴한다.
     System.out.printf("%x, %x\n", m1.hashCode(), m2.hashCode());
@@ -28,7 +28,7 @@ public class Exam0111 {
     System.out.printf("%s, %s\n", m1.toString(), m2.toString());
 
     // Object로부터 상속 받은 equals()는 인스턴스가 같은지 검사한다.
-    System.out.printf("%b\n", m1.equals(m2));
+    System.out.printf("%b\n", m1.equals(m2)); // false
 
     System.out.println("-------------------------------------");
 
@@ -51,12 +51,5 @@ public class Exam0111 {
     System.out.printf("%b\n", s1.equals(s2));
   }
 }
-
-
-
-
-
-
-
 
 

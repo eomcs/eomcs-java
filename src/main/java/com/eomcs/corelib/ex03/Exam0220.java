@@ -1,14 +1,31 @@
-// java.util.ArrayList와 비교 : contains() 와 hashCode(), equals()의 관계
+// java.util.ArrayList의 contains()의 동작 원리 확인
 package com.eomcs.corelib.ex03;
 
 import java.util.ArrayList;
 
 public class Exam0220 {
+
+  // equals()를 오버라이딩 하지 않았다.
+  static class Member {
+    String name;
+    int age;
+
+    public Member(String name, int age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    @Override
+    public String toString() {
+      return String.format("[%s,%d]", this.name, this.age);
+    }
+  }
+
   public static void main(String[] args) {
-    String s1 = new String("aaa");
-    String s2 = new String("bbb");
-    String s3 = new String("ccc");
-    String s4 = new String("bbb"); // s2 != s4
+    Member s1 = new Member("홍길동", 20);
+    Member s2 = new Member("임꺽정", 30);
+    Member s3 = new Member("유관순", 16);
+    Member s4 = new Member("임꺽정", 30);
 
     ArrayList list = new ArrayList();
     list.add(s1);
@@ -16,13 +33,12 @@ public class Exam0220 {
     list.add(s3);
     print(list);
 
-    // java.util.ArrayList의 contains() 메서드는
-    // 목록에 들어있는 객체를 찾을 때 equals()로 두 객체가 같은지 비교한다.
-    // equals()리턴 값이 true라면 
-    // 같은 객체가 있다면 뜻으로 true를 리턴하고, 못찾았다면 false를 리턴한다.
-    // 그래서 s2와 s4가 비록 다른 인스턴스이지만, 같은 객체로 판단한 것이다.
-    // 
-    System.out.println(list.contains(s4)); // true
+    System.out.println(list.contains(s4)); // false
+    // Member 클래스는 equals()를 오버라이딩 하지 않았다.
+    // 따라서 같은 값을 갖더라도 인스턴스가 다르면
+    // equals()의 검사 결과도 false가 될 것이다.
+    // 그래서 contains()로 s4 객체와 같은 객체가 있는지 검사해보면,
+    // 같은 객체가 없다고 나온다.
   }
 
   static void print(ArrayList list) {
@@ -31,10 +47,6 @@ public class Exam0220 {
     }
     System.out.println();
   }
-}   
-
-
-
-
+}
 
 
