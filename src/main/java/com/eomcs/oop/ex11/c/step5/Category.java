@@ -1,6 +1,6 @@
-package com.eomcs.oop.ex11.c;
+package com.eomcs.oop.ex11.c.step5;
 
-public class Product {
+public class Category {
   public static final int COMPUTER_CPU = 1;
   public static final int COMPUTER_VGA = 2;
   public static final int COMPUTER_RAM = 3;
@@ -17,9 +17,4 @@ public class Product {
   public static final int BOOK_ESSAY = 102;
   public static final int BOOK_IT = 103;
   public static final int BOOK_LANG = 104;
-
-  int category;
-  String name;
-  String maker;
-  int price;
 }

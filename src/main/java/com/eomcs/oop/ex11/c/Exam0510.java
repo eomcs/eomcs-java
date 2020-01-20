@@ -4,10 +4,11 @@ package com.eomcs.oop.ex11.c;
 import static com.eomcs.oop.ex11.c.Category2.appliance.*;
 import static com.eomcs.oop.ex11.c.Category2.book.*;
 import static com.eomcs.oop.ex11.c.Category2.computer.*;
+import com.eomcs.oop.ex11.c.step5.Product;
 
 public class Exam0510 {
   public static void main(String[] args) {
-    Product2 p = new Product2();
+    Product p = new Product();
 
     // 위에서 import로 스태틱 멤버(변수,메서드,중첩클래스)가 들어 있는 
     // 바깥 클래스의 정보를 컴파일러에게 미리 알려줬기 때문에 

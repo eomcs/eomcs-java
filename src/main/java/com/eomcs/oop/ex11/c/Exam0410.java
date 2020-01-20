@@ -2,10 +2,11 @@
 package com.eomcs.oop.ex11.c;
 
 import com.eomcs.oop.ex11.c.Category2.*;
+import com.eomcs.oop.ex11.c.step5.Product;
 
 public class Exam0410 {
   public static void main(String[] args) {
-    Product2 p = new Product2();
+    Product p = new Product();
 
     //p.category = Category2.appliance.TV;
 
