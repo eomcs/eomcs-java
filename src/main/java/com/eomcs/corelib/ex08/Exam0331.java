@@ -2,9 +2,10 @@
 package com.eomcs.corelib.ex08;
 
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Set;
 
-public class Exam0330 {
+public class Exam0331 {
   public static void main(String[] args) {
     Member v1 = new Member("홍길동", 20);
     Member v2 = new Member("임꺽정", 30);
@@ -20,16 +21,14 @@ public class Exam0330 {
     table.put("s05", v5);
 
     Set keys = table.keySet();
+    Iterator iterator = keys.iterator();
 
     table.remove("s01");
     table.remove("s02");
     table.remove("s03");
 
-    // Set 객체를 통해 key 를 꺼낼 때,
-    // 그 순간의 HashSet에 있는 key를 꺼낸다.
-    // 즉 keySet()을 호출할 때 모든 key를 미리 목록을 만들어 리턴하지 않는다.
-    for (Object key : keys) {
-      System.out.println(key);
+    while (iterator.hasNext()) {
+      System.out.println(iterator.next());
     }
   }
 
