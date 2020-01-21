@@ -5,7 +5,7 @@ public interface A {
   // => 특정 인스턴스에 종속되지 않고 작업하는 경우에 static 메서드로 정의한다.
   static String m1() {
     // 인스턴스 없이 수행하는 작업을 여기에 작성한다.
-    return "Player2입니다.";
+    return "안녕하세요!";
   }
 
   // 인터페이스는 디폴트 메서드를 가질 수 있다.
