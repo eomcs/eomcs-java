@@ -1,6 +1,6 @@
 package com.eomcs.basic.ex05;
 
-//# 관계 연산자 : <, <=, >, >=, ==, !=
+//# 관계 연산자(relational operators: <, <=, >, >=), 등위 연산자(equality operators: ==, !=)
 //
 public class Exam0210 {
   public static void main(String[] args) {

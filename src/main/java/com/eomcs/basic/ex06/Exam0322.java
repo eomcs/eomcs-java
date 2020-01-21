@@ -1,23 +1,14 @@
 package com.eomcs.basic.ex06;
 
-//# 흐름 제어문 - break와 continue
+//# 흐름 제어문 - break와 continue 활용
 //
 public class Exam0322 {
   public static void main(String[] args) {
     int count = 0;
     int sum = 0;
 
-    // 1부터 100까지의 합은?
-    while (count < 100) {
-      //count++;
-      //sum += count;
-      sum += ++count;
-    }
-    System.out.printf("count=%d, sum=%d\n", count, sum);
-    System.out.println("------------------------");
-    
-    // break 사용 전 
-    // 0부터 99까지의 카운트를 하는데 단 합은 50까지만 계산한다.
+    // 1부터 100까지의 카운트를 하는데 단 합은 50까지만 계산한다.
+    // => break 사용 전
     count = 0;
     sum = 0;
     while (count < 100) {
@@ -27,15 +18,15 @@ public class Exam0322 {
       sum += count;
     }
     System.out.printf("count=%d, sum=%d\n", count, sum);
+
     System.out.println("------------------------");
 
-    // break 사용 후 
-    // 0부터 99까지의 카운트를 하는데 단 합은 50까지만 계산한다.
+    // => break 사용 후
     count = 0;
     sum = 0;
     while (count < 100) {
       count++;
-      if (count > 50) 
+      if (count > 50)
         break; // 즉시 반복문을 종료하고 나간다.
       sum += count;
     }

@@ -31,3 +31,7 @@ public class Exam0222 {
     keyScan.close();
   }
 }
+//if vs switch
+//- 복잡한 조건으로 프로그램 흐름을 제어해야 하는 상황이라면, if 문을 사용하라!
+//- int나 문자열처럼 단순한 값으로 프로그램을 제어할 수 있다면, switch문을 사용하는 게 낫다.
+//

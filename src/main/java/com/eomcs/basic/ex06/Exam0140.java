@@ -7,14 +7,40 @@ public class Exam0140 {
     int age = 17;
 
     // if 문은 else 문 없이 단독으로 사용할 수 있다.
-    if (age < 19) 
+    if (age < 19)
       System.out.println("미성년입니다.");
 
     // else문을 사용하는 아주 모범적인 예!
     if (age >= 19) // 조건이 거짓이면 다음 else 문을 실행한다.
       System.out.println("성인입니다.");
-    else 
+    else
       System.out.println("미성년입니다.");
+
+    // 여러 문장을 실행할 때 블록으로 묶어야 한다.
+    if (age >= 20) {
+      System.out.println("--------------");
+      System.out.println("성인입니다.");
+    }
+    else {
+      System.out.println("--------------");
+      System.out.println("미성년입니다.");
+    }
+
+    // if, else 둘 중 하나만 블록으로 묶을 수 있다.
+    if (age >= 19) { // OK!
+      System.out.println("성인입니다.");
+      System.out.println("--------------------------");
+    }
+    else
+      System.out.println("미성년입니다.");
+
+    // if, else 둘 중 하나만 블록으로 묶을 수 있다.
+    if (age >= 19)
+      System.out.println("성인입니다.");
+    else {
+      System.out.println("미성년입니다.");
+      System.out.println("--------------------------");
+    }
 
     // 잘못 사용한 예:
     // => else 문만 단독으로 사용할 수 없다.
@@ -26,21 +52,14 @@ public class Exam0140 {
 
     // => if 문과 else 문 사이에 다른 문장이 올 수 없다.
     /*
-        if (age >= 19) 
+        if (age >= 19)
             System.out.println("성인입니다.");
         System.out.println("--------------------------");
-        else 
+        else
             System.out.println("미성년입니다.");
      */
 
-    // => 블록에 들어 있는 문장은 if 문에 소속되기 때문에 
-    //    블록 안에 여러 개의 문장이 와도 상관없다.
-    if (age >= 19) { // OK!
-      System.out.println("성인입니다.");
-      System.out.println("--------------------------");
-    }
-    else 
-      System.out.println("미성년입니다.");
+
 
   }
 }

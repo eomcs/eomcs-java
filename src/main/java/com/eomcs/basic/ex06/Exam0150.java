@@ -28,7 +28,7 @@ public class Exam0150 {
     // => 그런 이유로, 위의 if (age >= 70) ~ else ~ 는 한 문장으로 간주한다.
     //    굳이 다음과 같이 중괄호를 사용할 필요 없다.
 
-    if (age >= 19) {
+    if (age >= 19) { 
       if (age >= 70) 
         System.out.println("지하철 무임승차 가능합니다.");
       else 

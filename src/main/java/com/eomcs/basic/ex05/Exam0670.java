@@ -4,11 +4,15 @@ package com.eomcs.basic.ex05;
 //
 public class Exam0670 {
   public static void main(String[] args) {
-    int i = 2;
-    i = ++i;
-    // 1) i = i + 1  => i = 3 이다.
-    // 2) i = 3 => i는 이미 3인데 또 3을 넣는다. 부질없는 짓!
-
-    System.out.println(i); // 3
+    int a = 5;
+    int r = ++a;
+    System.out.printf("%d, %d\n", a, r);
+    // r = ++a 연산 순서
+    // 1) ++a 연산을 먼저 수행 => a 변수의 값을 1 증가시킨다.
+    // 2) a 값을 리턴한다. => r = 6;
+    // 3) = 연산자 수행 => r 변수에 6 값을 넣는다.
+    // 결론!
+    // => 전위 연산자는 먼저 변수의 값을 -- 하거나 ++ 한 후에 
+    //    그 자리에 변수의 값을 놓는다.
   }
 }
