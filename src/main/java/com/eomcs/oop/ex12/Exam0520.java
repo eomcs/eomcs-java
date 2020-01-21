@@ -1,67 +1,62 @@
-// 메서드 레퍼런스(method reference) - 인스턴스 메서드 레퍼런스
+// 메서드 레퍼런스 - 스태틱 메서드 레퍼런스 구현 원리
 package com.eomcs.oop.ex12;
+
 
 public class Exam0520 {
 
-  static interface Interest {
-    double compute(int money);
+  static class MyCalculator {
+    public static int plus(int a, int b) {
+      return a + b;
+    }
+
+    public static int minus(int a, int b) {
+      return a - b;
+    }
+
+    public static int multiple(int a, int b) {
+      return a * b;
+    }
+
+    public static int divide(int a, int b) {
+      return a / b;
+    }
   }
 
-  static class Calculator {
-    double rate;
-
-    public Calculator(double rate) {
-      this.rate = rate;
-    }
-
-    public double year(int money) {
-      return money * rate / 100;
-    }
-
-    public double month(int money) {
-      return money * rate / 100 / 12;
-    }
-
-    public double day(int money) {
-      return money * rate / 100 / 365;
-    }
+  static interface Calculator {
+    int compute(int a, int b);
   }
 
   public static void main(String[] args) {
-    // '람다'는 새로 메서드를 구현해야 하지만,
-    // '메서드 레퍼런스'는 기존 클래스의 메서드를 재활용 할 수 있다.
+    // 스태틱 메서드 레퍼런스로 Calculator 구현체를 만드는 방법
     //
+    // Calculator c1 = MyCalculator::plus;
 
-    // 인스턴스 메서드 레퍼런스
-    // - 특정 인스턴스의 값을 바탕으로 작업을 수행하는 메서드를 지정할 수 있다.
-    // 문법:
-    // => 객체::메서드명
+    // 위의 코드는 내부적으로 다음과 같다.
     //
-    Calculator c1 = new Calculator(1.5);
+    Calculator c1 = new Calculator() {
+      @Override
+      public int compute(int a, int b) {
+        // 기존 메서드가 메서드 레퍼런스로 전달 가능한지 여부는
+        // 다음 코드를 참고하라.
+        // 인터페이스에 정의된 메서드(예: compute())가 호출되었을 때,
+        //
+        // 그 파라미터 값은 메서드 레퍼런스로 지정된
+        // 스태틱 메서드(예: plus())에게 전달될 것이다.
+        // => 그래서 스태틱 메서드의 파라미터는 항상
+        // 인터페이스 메서드에 정의된 파라미터 값을 받을 수 있어야 한다.
+        //
+        // 스태틱 메서드의 리턴 값은
+        // 인터페이스 메서드에 정의된 대로 리턴할 수 있어야 한다.
+        // => 그래서 스태틱 메서드의 리턴 타입은
+        // 인터페이스 메서드의 리턴 타입과 일치하거나
+        // 그 타입으로 바꿀 수 있어야 한다.
+        //
+        return MyCalculator.plus(a, b);
+      }
+    };
 
-    Interest i1 = c1::year;
-    System.out.printf("년 이자: %.1f\n", i1.compute(1_0000_0000));
-
-    i1 = c1::month;
-    System.out.printf("월 이자: %.1f\n", i1.compute(1_0000_0000));
-
-    i1 = c1::month;
-    System.out.printf("일 이자: %.1f\n", i1.compute(1_0000_0000));
-
-    System.out.println("--------------------------");
-
-    Calculator c2 = new Calculator(2.5);
-
-    Interest i2 = c2::year;
-    System.out.printf("년 이자: %.1f\n", i2.compute(1_0000_0000));
-
-    i2 = c2::month;
-    System.out.printf("월 이자: %.1f\n", i2.compute(1_0000_0000));
-
-    i2 = c2::month;
-    System.out.printf("일 이자: %.1f\n", i2.compute(1_0000_0000));
+    System.out.println(c1.compute(200, 17));
   }
-
 }
 
 

@@ -12,8 +12,14 @@ public class Exam0312 {
   }
 
   public static void main(String[] args) {
-    // 아규먼트 자리에 lambda 문법을 사용하면 더 편하다!
-    testPlayer(() -> System.out.println("실행~~~~"));
+    // 아규먼트 부분에 바로 익명 클래스를 정의하는 코드를 두면
+    // 코드를 해석하기가 편하다.
+    testPlayer(new Player() {
+      @Override
+      public void play() {
+        System.out.println("실행~~~~");
+      }
+    });
   }
 
 }
