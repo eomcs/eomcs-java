@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Exam0610 {
 
-  static void m() {
+  public static void main(String[] args) {
     // 키보드 입력을 읽어 들이는 도구 준비
     Scanner keyScan = new Scanner(System.in);
 
@@ -43,9 +43,4 @@ public class Exam0610 {
     // 제대로 자원을 해제시키지도 못한다는 것이다.
     // 이것을 해결하는 방법은 finally 블록을 사용하는 것이다.
   }
-
-  public static void main(String[] args) {
-    m();
-  }
-
 }

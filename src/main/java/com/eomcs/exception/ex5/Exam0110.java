@@ -1,10 +1,11 @@
-// 예외 처리 전 
+// 예외 처리 전
 package com.eomcs.exception.ex5;
 
 import java.sql.Date;
 import java.util.Scanner;
 
 public class Exam0110 {
+
   static Board read() {
     try (Scanner keyScan = new Scanner(System.in)) {
       Board board = new Board();
@@ -24,6 +25,7 @@ public class Exam0110 {
       return board;
     }
   }
+
   public static void main(String[] args) {
     Board board = read();
     System.out.println("---------------------");
@@ -33,8 +35,5 @@ public class Exam0110 {
     System.out.printf("등록일: %s\n", board.getCreatedDate());
   }
 }
-
-
-
 
 

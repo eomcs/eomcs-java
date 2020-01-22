@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Exam0620 {
 
-  static void m() {
+  public static void main(String[] args) {
     Scanner keyScan = null;
     try {
       keyScan = new Scanner(System.in);
@@ -15,14 +15,11 @@ public class Exam0620 {
       System.out.println(value * value);
 
     } finally {
-      // 이렇게 정상적으로 실행되든 예외가 발생하든 상관없이 
+      // 이렇게 정상적으로 실행되든 예외가 발생하든 상관없이
       // 자원해제 같은 일은 반드시 실행해야 한다.
       keyScan.close();
       System.out.println("스캐너 자원 해제!");
-    } 
-  }
-  public static void main(String[] args) {
-    m();
+    }
   }
 
 }
