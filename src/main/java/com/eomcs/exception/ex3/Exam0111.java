@@ -6,7 +6,7 @@
 // 2) 예외가 발생하더라도 시스템을 멈추지 않고 적절한 조치를 취한 후 계속 실행하기 위해
 package com.eomcs.exception.ex3;
 
-public class Exam0110 {
+public class Exam0111 {
 
   static void m() {
     // 예외를 호출자에게 알려주는 문법
@@ -17,16 +17,10 @@ public class Exam0110 {
 
   public static void main(String[] args) {
 
-    // 예외를 받았을 때 처리하는 문법
-    try {
-      m();
-    } catch (RuntimeException e) {
-      // 예외가 발생하면 catch 블록이 실행된다.
-      // 코드에서 던진 예외 객체는 catch의 파라미터가 받는다.
-      // catch 블록에는 예외에 대한 적절한 조치를 수행하는 코드를 둔다.
-      // 예) 다음과 같이 예외가 발생된 이유를 간단히 출력할 수 있다.
-      System.out.println(e.getMessage());
-    }
+    // 예외를 받지 않으면?
+    m();
+    // 즉시 현재 메서드의 실행을 멈추고 호출자에게 예외 처리를 위임한다.
+    // 만약에 그 호출자가 JVM이라면 프로그램 실행을 종료한다.
 
     System.out.println("시스템을 종료합니다.");
 
