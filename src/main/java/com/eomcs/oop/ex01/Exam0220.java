@@ -5,7 +5,7 @@ package com.eomcs.oop.ex01;
 public class Exam0220 {
   public static void main(String[] args) {
     // 여러 개의 인스턴스 주소 저장하기
-    //
+    
     class Score {
       String name;
       int kor;
@@ -15,21 +15,24 @@ public class Exam0220 {
       float aver;
     }
 
-    // Score 레퍼런스를 여러 개 준비한다. 
-    // => 레퍼런스 배열 준비 (인스턴스 배열이 아니다!)
+    // 배열 문법을 이용하면 한 번에 여러 개의 레퍼런스를 선언할 수 있다.
+    // - 문법:
+    //     클래스명[] 배열명 = new 클래스명[레퍼런스개수];
+    // - 주의!
+    //   레퍼런스 배열이다. 인스턴스 배열이 아니다!
+    // 
     Score[] arr = new Score[3];
 
-    // 인스턴스를 만들어 레퍼런스 배열의 각 방에 그 주소를 저장한다.
+    // 배열 레퍼런스의 각 항목에 인스턴스를 저장한 후 사용해야 한다.
     arr[0] = new Score();
     arr[1] = new Score();
     arr[2] = new Score();
 
-    // 레퍼런스를 이용하여 인스턴스에 접근한 다음에 항목에 값 넣는다.
+    // 배열에 저장된 인스턴스는 '배열명[인덱스]'를 사용하여 지정할 수 있다. 
     arr[0].name = "홍길동";
     arr[1].name = "임꺽정";
     arr[2].name = "유관순";
 
-    // 레퍼런스를 통해 인스턴스의 각 항목 값을 꺼낸다.
     System.out.printf("이름: %s\n", arr[0].name);
     System.out.printf("이름: %s\n", arr[1].name);
     System.out.printf("이름: %s\n", arr[2].name);
