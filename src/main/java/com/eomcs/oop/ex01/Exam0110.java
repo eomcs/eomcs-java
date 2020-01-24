@@ -1,6 +1,6 @@
 package com.eomcs.oop.ex01;
 
-// # 클래스 - 사용 전
+// # 클래스 사용 전
 //
 public class Exam0110 {
   public static void main(String[] args) {

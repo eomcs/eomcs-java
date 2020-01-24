@@ -26,13 +26,30 @@ public class Exam0210 {
 
     // 4) 각각의 레퍼런스를 통해 인스턴스에 접근하여 특정 항목에 값을 넣는다.
     s1.name = "홍길동";
+    s1.kor = 100;
+    s1.eng = 100;
+    s1.math = 100;
+    s1.sum = s1.kor + s1.eng + s1.math;
+    s1.aver = s1.sum / 3f;
+
     s2.name = "임꺽정";
+    s2.kor = 90;
+    s2.eng = 90;
+    s2.math = 90;
+    s2.sum = s2.kor + s2.eng + s2.math;
+    s2.aver = s2.sum / 3f;
+
     s3.name = "유관순";
+    s3.kor = 100;
+    s3.eng = 100;
+    s3.math = 100;
+    s3.sum = s3.kor + s3.eng + s3.math;
+    s3.aver = s3.sum / 3f;
 
     // 5) 각각의 레퍼런스를 통해 인스턴스에 접근하여 특정 항목의 값을 꺼낸다.
-    System.out.printf("이름: %s\n", s1.name);
-    System.out.printf("이름: %s\n", s2.name);
-    System.out.printf("이름: %s\n", s3.name);
+    System.out.printf("%s: %d, %d, %d, %d, %.1f\n", s1.name, s1.kor, s1.eng, s1.math, s1.sum, s1.aver);
+    System.out.printf("%s: %d, %d, %d, %d, %.1f\n", s2.name, s2.kor, s2.eng, s2.math, s2.sum, s2.aver);
+    System.out.printf("%s: %d, %d, %d, %d, %.1f\n", s3.name, s3.kor, s3.eng, s3.math, s3.sum, s3.aver);
   }
 }
 
