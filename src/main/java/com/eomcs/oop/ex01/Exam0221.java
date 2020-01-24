@@ -15,23 +15,8 @@ public class Exam0221 {
       float aver;
     }
 
-    // 배열 문법을 이용하면 한 번에 여러 개의 레퍼런스를 선언할 수 있다.
-    // - 문법:
-    //     클래스명[] 배열명 = new 클래스명[레퍼런스개수];
-    // - 주의!
-    //   레퍼런스 배열이다. 인스턴스 배열이 아니다!
-    //
     Score[] arr = new Score[3];
-    // 강사님, 인스턴스 배열을 만들 수는 없나요?
-    // => 없다!
 
-    // 레퍼런스 배열을 생성하면 모든 항목이 null로 초기화 된다.
-    // 아직 레퍼런스 배열의 각 항목에 인스턴스 주소가 없는 상태이다.
-    System.out.println(arr[0]);
-    System.out.println(arr[1]);
-    System.out.println(arr[2]);
-
-    // 레퍼런스 배열의 각 항목에 인스턴스를 저장한 후 사용해야 한다.
     arr[0] = new Score();
     arr[1] = new Score();
     arr[2] = new Score();
@@ -66,10 +51,6 @@ public class Exam0221 {
         arr[2].name, arr[2].kor, arr[2].eng, arr[2].math, arr[2].sum, arr[2].aver);
   }
 }
-
-// 결론!
-// - 여러 개의 인스턴스의 주소를 관리할 때는
-//   레퍼런스 배열을 사용하는 게 편하다.
 
 
 

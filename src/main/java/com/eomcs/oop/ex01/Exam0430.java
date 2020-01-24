@@ -5,14 +5,19 @@ package com.eomcs.oop.ex01;
 public class Exam0430 {
   public static void main(String[] args) {
 
-    // 다른 패키지의 클래스 사용
+    // 같은 패키지에 소속된 클래스 사용
+    // - 공개, 비공개 상관없이 사용할 수 있다.
+    com.eomcs.oop.ex01.X obj1;
+    com.eomcs.oop.ex01.Y obj2;
 
-    // => A 클래스는 public 이 아니다.
-    // => 따라서 다른 패키지의 클래스는 A를 사용할 수 없다.
-    //com.eomcs.oop.ex01.test.A v1; // 컴파일 오류!
 
-    // => B 클래스는 public 이다.
-    // => 그래서 다른 패키지에 소속된 클래스도 B를 사용할 수 있다.
-    com.eomcs.oop.ex01.test.B v2;
+    // 다른 패키지에 소속된 클래스 사용
+    //
+    // - X2 클래스는 public 이 아니다.
+    // - 따라서 다른 패키지의 클래스는 X2를 사용할 수 없다.
+    //com.eomcs.oop.ex01.sub.X2 obj3; // 컴파일 오류!
+
+    // - Y2 클래스는 public으로 공개된 클래스이다.
+    com.eomcs.oop.ex01.sub.Y2 obj4;
   }
 }
