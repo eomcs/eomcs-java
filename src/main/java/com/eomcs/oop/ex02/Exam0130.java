@@ -1,6 +1,6 @@
 package com.eomcs.oop.ex02;
 
-// # 사용자 정의 데이터 타입 - 인스턴스 메서드
+// # 사용자 정의 데이터 타입 + 인스턴스 메서드
 //
 public class Exam0130 {
 
@@ -17,8 +17,8 @@ public class Exam0130 {
     // - 매우 번거롭다.
     //
     // public static void calculate(Score score) {
-    // score.sum = score.kor + score.eng + score.math;
-    // score.average = score.sum / 3f;
+    //   score.sum = score.kor + score.eng + score.math;
+    //   score.average = score.sum / 3f;
     // }
     // - 그래서 자바는 "인스턴스 메서드"라는 것을 제공한다.
     //

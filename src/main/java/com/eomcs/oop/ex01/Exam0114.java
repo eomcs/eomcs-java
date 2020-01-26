@@ -1,8 +1,8 @@
 package com.eomcs.oop.ex01;
 
-//# 클래스 사용 후 - 메서드 활용 II
+// # 클래스 사용 : 5) 메서드 활용 II
 //
-public class Exam0122 {
+public class Exam0114 {
 
   static class Score {
     String name;

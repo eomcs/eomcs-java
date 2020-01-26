@@ -1,6 +1,6 @@
 package com.eomcs.oop.ex01;
 
-//# 클래스 사용 - 사용 범위
+// # 패키지 멤버 클래스와 중첩 클래스
 //
 
 // 패키지 멤버 클래스
@@ -14,7 +14,7 @@ package com.eomcs.oop.ex01;
 class A {}
 
 // => bin/main/com/eomcs/oop/ex01/Exam0420.class
-public class Exam0420 {
+public class Exam0510 {
 
   // 중첩 클래스(nested class)
   // - 다른 클래스 안에 정의된 클래스

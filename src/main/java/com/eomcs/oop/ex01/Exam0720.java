@@ -1,12 +1,12 @@
 package com.eomcs.oop.ex01;
 
-//# 클래스 사용 - import 사용 후
+// # import : 사용 후
 //
 // - import 명령은 package 명령 다음에 와야 한다.
 // - 클래스 선언 전에 와야 한다.
 import com.eomcs.oop.ex01.sub.Y2;
 
-public class Exam0450 {
+public class Exam0720 {
   public static void main(String[] args) {
 
     // 다른 패키지의 클래스를 사용할 때 마다

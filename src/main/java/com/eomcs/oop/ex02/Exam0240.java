@@ -1,34 +1,33 @@
 package com.eomcs.oop.ex02;
 
-// # 메서드 분류 - 인스턴스 변수
+// # 관련된 기능(메서드)을 묶어 분류하기 - 클래스 변수의 한계
 //
 public class Exam0240 {
 
   static class Calculator {
-    // 인스턴스 변수
-    // - 작업 결과를 개별적으로 관리하고 싶을 때 인스턴스 변수로 선언한다.
-    // - 인스턴스 변수는 클래스가 로딩 될 때 만들어지지 않는다.
-    // - new 명령을 사용해서 만들어야 한다.
-    // - 변수 선언 앞에 static이 붙지 않는다.
-    int result = 0;
 
-    public static void plus(Calculator obj, int value) {
-      // 인스턴스 변수를 다루는 메서드는 작업을 수행할 때 그 인스턴스 주소를 받아야 한다.
-      // result 는 더이상 클래스 변수가 아니기 때문에 직접 접근할 수 없다.
-      // 오직 인스턴스 주소를 통해서만 접근 할 수 있다.
-      obj.result += value;
+    // 클래스 변수는 클래스가 로딩될 때 한 번 생성된다.
+    static int result = 0;
+
+    static void plus(int value) {
+      result += value; // result = result + value
     }
 
-    public static void minus(Calculator obj, int value) {
-      obj.result -= value;
+    static void minus(int value) {
+      result -= value; // result = result - value
     }
 
-    public static void multiple(Calculator obj, int value) {
-      obj.result *= value;
+    static void multiple(int value) {
+      result *= value; // result = result * value
     }
 
-    public static void divide(Calculator obj, int value) {
-      obj.result /= value;
+    static void divide(int value) {
+      result /= value; // result = result / value
+    }
+
+    // 인스턴스를 사용하지 않는 메서드라면 그냥 클래스 메서드로 두어라.
+    static int abs(int a) {
+      return a >= 0 ? a : a * -1;
     }
   }
 
@@ -38,34 +37,33 @@ public class Exam0240 {
     // - 연산자 우선 순위를 고려하지 않고 순서대로 계산하라!
     // 식1) 2 + 3 - 1 * 7 / 3 = ?
     // 식2) 3 * 2 + 7 / 4 - 5 = ?
-    //
 
-    // 두 개의 식을 동시에 계산하고 싶은가?
-    // 그럴려면 계산 결과를 개별적으로 관리할 수 있어야 한다.
-    // 다음과 같이 각 식의 계산 결과를 보관할 메모리를 준비한다.
-    Calculator c1 = new Calculator(); // 식1의 계산 결과를 보관할 메모리 준비
-    Calculator c2 = new Calculator(); // 식2의 계산 결과를 보관할 메모리 준비
+    // 클래스 변수는 오직 한 개만 존재하기 때문에
+    // 여러 개의 작업을 동시에 진행할 수 없다.
+    // 한 개의 식을 계산한 후에 다른 식을 계산해야 한다.
 
-    // 계산을 수행할 때 계산 결과를 보관할 메모리를 전달한다.
-    Calculator.plus(c1, 2); // + 2
-    Calculator.plus(c2, 3); // + 3
+    // 식1 계산:
+    Calculator.plus(2); // + 2
+    Calculator.plus(3); // + 2 + 3
+    Calculator.minus(1); // + 2 + 3 - 1
+    Calculator.multiple(7); // + 2 + 3 - 1 * 7
+    Calculator.divide(3); // + 2 + 3 - 1 * 7 / 3 = ?
 
-    Calculator.plus(c1, 3); // + 2 + 3
-    Calculator.multiple(c2, 2); // + 3 * 2
+    System.out.printf("result = %d\n", Calculator.result);
+    // 이렇게 계산을 완료한 후 다음 식을 계산해야 한다.
 
-    Calculator.minus(c1, 1); // + 2 + 3 - 1
-    Calculator.plus(c2, 7); // + 3 * 2 + 7
+    // 식2 계산:
+    // 다른 식을 계산하기 전에 기존의 계산 결과를 갖고 있는
+    // result 변수를 0으로 초기화시켜야 한다.
+    Calculator.result = 0;
 
-    Calculator.multiple(c1, 7); // + 2 + 3 - 1 * 7
-    Calculator.divide(c2, 4); // + 3 * 2 + 7 / 4
+    Calculator.plus(3); // + 3
+    Calculator.multiple(2); // + 3 * 2
+    Calculator.plus(7); // + 3 * 2 + 7
+    Calculator.divide(4); // + 3 * 2 + 7 / 4
+    Calculator.minus(5); // + 3 * 2 + 7 / 4 - 5 = ?
 
-    Calculator.divide(c1, 3); // + 2 + 3 - 1 * 7 / 3 = ?
-    Calculator.minus(c2, 5); // + 3 * 2 + 7 / 4 - 5 = ?
-
-    // 식1의 계산 결과는 c1 인스턴스의 result 변수에 들어 있고,
-    // 식2의 계산 결과는 c2 인스턴스의 result 변수에 들어 있다.
-    System.out.printf("c1.result = %d\n", c1.result);
-    System.out.printf("c2.result = %d\n", c2.result);
+    System.out.printf("result = %d\n", Calculator.result);
   }
 }
 

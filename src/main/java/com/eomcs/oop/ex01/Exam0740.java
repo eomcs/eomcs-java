@@ -1,8 +1,8 @@
 package com.eomcs.oop.ex01;
 
-//# 클래스 사용 - import III
+// # import - java.lang 패키지
 //
-public class Exam0470 {
+public class Exam0740 {
   public static void main(String[] args) {
     java.lang.Integer obj1; // OK!
     java.lang.System obj2; // OK!

@@ -1,8 +1,8 @@
 package com.eomcs.oop.ex01;
 
-//# 클래스 사용 후 - 메서드 활용
+// # 클래스 사용 : 4) 메서드 활용
 //
-public class Exam0121 {
+public class Exam0113 {
 
   // 여러 메서드에서 클래스를 사용한다면
   // 이렇게 메서드 밖에 선언해야 한다.

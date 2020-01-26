@@ -1,8 +1,8 @@
 package com.eomcs.oop.ex01;
 
-//# 클래스 사용 - import 사용 전
+// # import : 사용 전
 //
-public class Exam0440 {
+public class Exam0710 {
   public static void main(String[] args) {
 
     // 다른 패키지의 클래스 사용

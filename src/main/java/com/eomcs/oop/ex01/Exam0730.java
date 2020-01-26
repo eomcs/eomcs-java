@@ -1,10 +1,10 @@
 package com.eomcs.oop.ex01;
 
-//# 클래스 사용 - import 사용 후 II
+// # import - 사용 후 II
 //
-import com.eomcs.oop.ex01.sub.Y2;
+import com.eomcs.oop.ex01.sub.*;
 
-public class Exam0460 {
+public class Exam0730 {
   public static void main(String[] args) {
 
     // 특정 패키지의 클래스를 많이 사용한다면 다음과 같이 패키지명 다음에 wildcard(*)를 지정할 수 있다.

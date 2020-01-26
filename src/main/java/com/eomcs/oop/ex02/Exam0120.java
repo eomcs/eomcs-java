@@ -1,6 +1,6 @@
 package com.eomcs.oop.ex02;
 
-// # 사용자 정의 데이터 타입 - 데이터를 다룰 연산자(메서드) 정의
+// # 사용자 정의 데이터 타입 + 클래스 메서드
 //
 public class Exam0120 {
 

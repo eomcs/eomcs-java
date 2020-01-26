@@ -1,8 +1,8 @@
 package com.eomcs.oop.ex01;
 
-//# 클래스 사용 - public 클래스와 기본 클래스
+// # public 클래스와 기본 클래스
 //
-public class Exam0430 {
+public class Exam0610 {
   public static void main(String[] args) {
 
     // 같은 패키지에 소속된 클래스 사용
