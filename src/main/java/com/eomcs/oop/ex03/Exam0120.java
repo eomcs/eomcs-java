@@ -1,13 +1,15 @@
-//# 인스턴스 변수 응용 - 성적 데이터 저장할 메모리 만들기
+// # 인스턴스 변수 응용 - 성적 데이터 저장할 메모리 만들기
 //
 package com.eomcs.oop.ex03;
 
 public class Exam0120 {
   public static void main(String[] args) {
+
     // 1) 성적 데이터를 설계할 클래스이기 때문에 그에 맞는 클래스명을 사용하라!
     class Score {
+
       // 2) 여러 명의 구별되는 성적 데이터를 저장해야 하기 때문에
-      //    인스턴스 변수로 메모리를 설계하라!
+      // 인스턴스 변수로 메모리를 설계하라!
       String name;
       int kor;
       int eng;
@@ -45,11 +47,5 @@ public class Exam0120 {
 
   }
 }
-
-
-
-
-
-
 
 
