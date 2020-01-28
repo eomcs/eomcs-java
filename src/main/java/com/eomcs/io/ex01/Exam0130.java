@@ -3,20 +3,16 @@ package com.eomcs.io.ex01;
 
 import java.io.File;
 
-public class Exam0110 {
+public class Exam0130 {
 
   public static void main(String[] args) throws Exception {
     // File 클래스
     // => 파일이나 디렉토리 정보를 관리
     // => 파일이나 디렉토리를 생성,삭제,변경
 
-    // 현재 폴더 정보 조회
-    // - "." 으로 경로를 표시한다.
-    // - 이클립스에서 프로그램을 실행한다면 . 은 프로젝트 폴더를 가리킨다.
-    // - 콘솔에서 프로그램을 실행한다면 . 은 현재 명령어를 실행하는 위치를 가리킨다.
-    // - 상위 경로는 ".."으로 표시한다.
+    // 존재하지 않는 폴더를 조회
     //
-    File currentDir = new File(".");
+    File currentDir = new File("./haha");
     System.out.printf("폴더명: %s\n", currentDir.getName());
     System.out.printf("경로: %s\n", currentDir.getPath());
     System.out.printf("절대경로: %s\n", currentDir.getAbsolutePath());
