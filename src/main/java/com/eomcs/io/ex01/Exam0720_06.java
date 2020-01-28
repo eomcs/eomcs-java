@@ -3,7 +3,7 @@ package com.eomcs.io.ex01;
 
 import java.io.File;
 
-public class Exam0720 {
+public class Exam0720_06 {
 
   public static void main(String[] args) throws Exception {
 
