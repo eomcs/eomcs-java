@@ -1,7 +1,7 @@
 // String - 문자열 비교
 package com.eomcs.corelib.ex02;
 
-public class Exam0120 {
+public class Exam0120x {
   public static void main(String[] args) {
     String s1 = new String("Hello");
     String s2 = new String("Hello");

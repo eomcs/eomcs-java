@@ -11,7 +11,9 @@ public class Exam0110 {
     // => 파일이나 디렉토리를 생성,삭제,변경
 
     // 1) 현재 폴더 정보 조회
-    // "."  - 현재 폴더
+    // "." : 현재 폴더
+    // : 이클립스에서는 프로젝트 폴더를 가리킨다.
+    // : 콘솔에서는 현재 명령어를 실행하는 위치를 가리킨다.
     // ".." - 상위 폴더
     File currentDir = new File("./src/main");
     System.out.printf("폴더명: %s\n", currentDir.getName());
@@ -50,10 +52,5 @@ public class Exam0110 {
   }
 
 }
-
-
-
-
-
 
 

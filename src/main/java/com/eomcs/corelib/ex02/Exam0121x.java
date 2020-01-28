@@ -1,7 +1,7 @@
 // StringBuffer - 문자열 비교
 package com.eomcs.corelib.ex02;
 
-public class Exam0121 {
+public class Exam0121x {
   public static void main(String[] args) {
     StringBuffer b1 = new StringBuffer("Hello");
     StringBuffer b2 = new StringBuffer("Hello");
