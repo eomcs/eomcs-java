@@ -9,7 +9,7 @@ public class Exam0330 {
 
     File dir = new File("temp");
 
-    if (dir.delete()) { 
+    if (dir.delete()) {
       System.out.println("temp 디렉토리를 삭제하였습니다.");
     } else {
       // 디렉토리 안에 파일이나 다른 하위 디렉토리가 있다면 삭제할 수 없다.

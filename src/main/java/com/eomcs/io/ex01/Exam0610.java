@@ -6,15 +6,27 @@ import java.io.FilenameFilter;
 
 public class Exam0610 {
 
-  static class JavaFilter implements FilenameFilter {
-    public boolean accept(File dir, String name) {
-      if (name.endsWith(".java")) 
-        return true; // 조회 결과에 포함시켜라!
-      return false; // 조회 결과에서 제외하라!
-    }
-  }
 
   public static void main(String[] args) throws Exception {
+
+    class JavaFilter implements FilenameFilter {
+      @Override
+      public boolean accept(File dir/* 부모 경로 */, String name /* 파일,디렉토리 이름 */) {
+        // 이 메서드는 list()에서 호출한다.
+        // 해당 폴더에 들어 있는 파일이나 디렉토리를 찾을 때 마다 호출한다.
+        // (하위 폴더 아래는 뒤지지 않는다)
+        // 이 메서드에서 해야 할 일은 찾은 파일이나 디렉토리를
+        // 리턴할 배열에 포함시킬지 여부이다.
+        // true를 리턴하면 배열에 포함되고,
+        // false를 리턴하면 배열에 포함되지 않는다.
+
+        // 파일,디렉토리 이름이 .java 로 끝나는 경우만 리턴 배열에 포함시키다.
+        if (name.endsWith(".java"))
+          return true; // 조회 결과에 포함시켜라!
+        return false; // 조회 결과에서 제외하라!
+      }
+    }
+
     File dir = new File(".");
 
     // => 확장자가 .java 인 파일의 이름만 추출하기
@@ -27,14 +39,15 @@ public class Exam0610 {
     for (String name : names) {
       System.out.println(name);
     }
-
+    
+    // 문제점:
+    // - temp.java 는 디렉토리이다.
+    // - 현재의 필터는 파일 이름으로만 검사한다.
+    // - 파일인지 디렉토리인지 여부는 검사하지 않는다.
+    // - 해결책?
+    //   다음 예제를 보라!
   }
 
 }
-
-
-
-
-
 
 
