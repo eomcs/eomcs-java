@@ -16,7 +16,7 @@ public class Exam0220 {
     value += (in.read() << 16);    // 00000005 => 00050000 +
     value += (in.read() << 8);     // 00000057 => 00005700 +
     value += in.read();            // 000000d2 => 000000d2 +
-    //             080557d2
+    // 080557d2
 
     in.close();
 

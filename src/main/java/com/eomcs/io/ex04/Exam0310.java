@@ -14,7 +14,7 @@ public class Exam0310 {
     // long 메모리의 모든 바이트를 출력하려면,
     // 각 바이트를 맨 끝으로 이동한 후 write()로 출력한다.
     // 왜? write()는 항상 변수의 마지막 1바이트만 출력하기 때문이다.
-    out.write((int)(money >> 56)); // 0000000000000001|6bcc41e90000
+    out.write((int)(money >> 56)); // 0000000000000000|016bcc41e90000
     out.write((int)(money >> 48)); // 0000000000000001|6bcc41e90000
     out.write((int)(money >> 40)); // 000000000000016b|cc41e90000
     out.write((int)(money >> 32)); // 0000000000016bcc|41e90000
