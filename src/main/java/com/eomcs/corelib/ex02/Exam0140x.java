@@ -1,7 +1,7 @@
 // String - 다형적 변수와 형변환, toString()
 package com.eomcs.corelib.ex02;
 
-public class Exam0140 {
+public class Exam0140x {
   public static void main(String[] args) {
     String s1 = new String("Hello");
     System.out.println(s1); // println(String) 호출

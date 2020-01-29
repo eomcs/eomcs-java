@@ -1,24 +1,24 @@
-// String - mutable vs immutable 객체
+// String - hashCode()
 package com.eomcs.corelib.ex02;
 
 public class Exam0130 {
   public static void main(String[] args) {
-    // String 객체는 immutable 객체이다.
-    // 즉 한 번 객체에 값을 담으면 변경할 수 없다.
 
     String s1 = new String("Hello");
+    String s2 = new String("Hello");
 
-    // String 클래스의 메서드는 원본 인스턴스의 데이터를 변경하지 않는다. 
-    // 다만 새로 String 객체를 만들 뿐이다.
-    String s2 = s1.replace('l', 'x');
-    System.out.printf("%s : %s\n", s1, s2); // 원본은 바뀌지 않는다.
+    // Object의 hashCode()는 인스턴스 마다 다르다.
+    System.out.println(s1.hashCode() == s2.hashCode()); // true
+    //
+    // 그러나, String의 hashCode()은
+    // 문자열이 같으면 같은 hashCode()를 리턴하도록 오버라이딩 하였다.
+    // 이유?
+    // - 문자열이 같은 경우 같은 객체로 다루기 위함이다.
+    // - HashSet 에서 객체를 저장할 때 이 메서드의 리턴 값으로 저장 위치를 계산한다.
+    // - HashMap이나 Hashtable에서는 Key를 다룰 때 이 메서드의 리턴 값을 사용한다.
+    // - 보통 equals()를 함께 오버라이딩 한다.
 
-    String s3 = s1.concat(", world!");
-    System.out.printf("%s : %s\n", s1, s3); // 원본은 바뀌지 않는다.
   }
 }
-
-
-
 
 

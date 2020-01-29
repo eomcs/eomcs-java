@@ -1,7 +1,7 @@
 // String - 다형적 변수와 형변환, toString()
 package com.eomcs.corelib.ex02;
 
-public class Exam0141 {
+public class Exam0141x {
   public static void main(String[] args) {
 
     Object obj = new String("Hello"); // 인스턴스 주소가 100이라 가정하자;

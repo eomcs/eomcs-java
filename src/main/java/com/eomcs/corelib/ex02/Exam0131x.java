@@ -1,7 +1,7 @@
 // String - mutable vs immutable 객체
 package com.eomcs.corelib.ex02;
 
-public class Exam0131 {
+public class Exam0131x {
   public static void main(String[] args) {
     // StringBuffer 객체는 mutable 객체이다.
     // 인스턴스의 데이터를 변경할 수 있다.

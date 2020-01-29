@@ -1,7 +1,7 @@
 // String - 다형적 변수와 형변환, toLowerCase()
 package com.eomcs.corelib.ex02;
 
-public class Exam0142 {
+public class Exam0142x {
   public static void main(String[] args) {
     
     Object obj = new String("Hello");
