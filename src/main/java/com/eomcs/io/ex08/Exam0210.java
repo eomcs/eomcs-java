@@ -6,7 +6,8 @@ import java.io.FileInputStream;
 public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
-    FileInputStream fileIn = new FileInputStream("temp/jls8.pdf");
+
+    FileInputStream fileIn = new FileInputStream("temp/jls11.pdf");
     BufferedInputStream in = new BufferedInputStream(fileIn);
 
     int b;
@@ -14,7 +15,8 @@ public class Exam0210 {
     long startTime = System.currentTimeMillis(); // 밀리초
 
     int callCount = 0;
-    while ((b = in.read()) != -1) callCount++; // 파일을 끝까지 읽는다.
+    while ((b = in.read()) != -1)
+      callCount++; // 파일을 끝까지 읽는다.
 
     long endTime = System.currentTimeMillis();
 
