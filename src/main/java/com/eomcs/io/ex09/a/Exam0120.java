@@ -1,5 +1,5 @@
 // Java I/O API 사용하기 - BufferedOutputStream
-package com.eomcs.io.ex09;
+package com.eomcs.io.ex09.a;
 
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
-    FileOutputStream fileOut = new FileOutputStream("temp/test9_2.data");
+    FileOutputStream fileOut = new FileOutputStream("temp/test9.data");
     BufferedOutputStream bufOut = new BufferedOutputStream(fileOut);
     DataOutputStream out = new DataOutputStream(bufOut);
 
@@ -21,7 +21,7 @@ public class Exam0120 {
     long startTime = System.currentTimeMillis();
 
     for (int i = 0; i < 100000; i++) {
-      out.writeUTF(member.name); 
+      out.writeUTF(member.name);
       out.writeInt(member.age);
       out.writeBoolean(member.gender);
     }

@@ -4,6 +4,7 @@ package com.eomcs.io.ex09;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import com.eomcs.io.ex09.c.Member;
 
 public class Exam0240 {
 
@@ -15,7 +16,7 @@ public class Exam0240 {
     // 실행하기 전 해야할 일: 
     // 1) test9_3.data 파일을 읽기 전에 
     //    Member2 클래스에 전화 번호를 저장할 수 있는 인스턴스 변수를 추가한다.
-    Member2 member = (Member2) in.readObject();
+    Member member = (Member) in.readObject();
     // serialize 데이터를 읽어 Member2 인스턴스를 생성하려고 하면 
     // 실행 오류가 발생한다.
     // 이유?
