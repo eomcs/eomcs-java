@@ -1,12 +1,13 @@
-// DataOutputStream을 이용하여 객체 출력 - 버퍼 사용 전
+// Java I/O API 사용하기 - DataOutputStream
 package com.eomcs.io.ex09;
 
+import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 
 public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
-    FileOutputStream fileOut = new FileOutputStream("temp/test8.data");
+    FileOutputStream fileOut = new FileOutputStream("temp/test9.data");
     DataOutputStream out = new DataOutputStream(fileOut);
 
     Member member = new Member();

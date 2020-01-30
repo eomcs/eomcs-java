@@ -1,5 +1,5 @@
 // Java I/O API 사용하기 - java.io.Serializable 인터페이스와 serialVersionUID 변수
-package com.eomcs.io.ex10;
+package com.eomcs.io.ex09;
 
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;

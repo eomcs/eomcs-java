@@ -1,4 +1,4 @@
-package com.eomcs.io.ex10;
+package com.eomcs.io.ex09;
 
 public class Member3 implements java.io.Serializable {
 

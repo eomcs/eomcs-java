@@ -1,5 +1,5 @@
 // Java I/O API 사용하기 - Serialize의 대상 클래스가 변경된 경우
-package com.eomcs.io.ex10;
+package com.eomcs.io.ex09;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

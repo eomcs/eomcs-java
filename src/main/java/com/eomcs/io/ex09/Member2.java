@@ -1,4 +1,4 @@
-package com.eomcs.io.ex10;
+package com.eomcs.io.ex09;
 
 // 인스턴스의 값을 바이트 배열로 자동 변환(Serialize)할 수 있도록 허가한다.
 // => java.io.Serializable 인터페이스를 구현한다.

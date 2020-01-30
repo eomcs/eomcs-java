@@ -1,5 +1,5 @@
 // Java I/O API 사용하기 - ObjectInputStream으로 Serialize 데이터를 읽기 
-package com.eomcs.io.ex10;
+package com.eomcs.io.ex09;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

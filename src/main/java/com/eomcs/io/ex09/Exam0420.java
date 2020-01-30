@@ -1,5 +1,5 @@
 // Java I/O API 사용하기 - serialize와 transient
-package com.eomcs.io.ex10;
+package com.eomcs.io.ex09;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
