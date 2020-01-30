@@ -2,55 +2,46 @@ package com.eomcs.io.ex08;
 
 import java.io.OutputStream;
 
-public class DataOutputStream {
-
-  OutputStream out;
+public class DataOutputStream extends DecoratorOutputStream {
 
   public DataOutputStream(OutputStream out) {
-    this.out = out;
+    super(out); // 연결할 부품을 수퍼 클래스 생성자를 통해 보관해 둔다.
   }
 
   public void writeUTF(String str) throws Exception {
-    // 생성자에서 받은 출력 객체의 write() 메서드를 사용하여 문자열 출력
+    // 실제 쓰기 작업은 이 객체와 연결된 부품을 통해 수행한다.
     byte[] bytes = str.getBytes("UTF-8");
-    out.write(bytes.length);
-    out.write(bytes);
+    연결된부품.write(bytes.length);
+    연결된부품.write(bytes);
   }
 
   public void writeInt(int value) throws Exception {
-    // 생성자에서 받은 출력 객체의 write() 메서드를 사용하여 int 값 출력
-    out.write(value >> 24);
-    out.write(value >> 16);
-    out.write(value >> 8);
-    out.write(value);
+    // 실제 쓰기 작업은 이 객체와 연결된 부품을 통해 수행한다.
+    연결된부품.write(value >> 24);
+    연결된부품.write(value >> 16);
+    연결된부품.write(value >> 8);
+    연결된부품.write(value);
   }
 
   public void writeLong(long value) throws Exception {
-    // 생성자에서 받은 출력 객체의 write() 메서드를 사용하여 long 값 출력
-    out.write((int)(value >> 56));
-    out.write((int)(value >> 48));
-    out.write((int)(value >> 40));
-    out.write((int)(value >> 32));
-    out.write((int)(value >> 24));
-    out.write((int)(value >> 16));
-    out.write((int)(value >> 8));
-    out.write((int)value);
+    // 실제 쓰기 작업은 이 객체와 연결된 부품을 통해 수행한다.
+    연결된부품.write((int) (value >> 56));
+    연결된부품.write((int) (value >> 48));
+    연결된부품.write((int) (value >> 40));
+    연결된부품.write((int) (value >> 32));
+    연결된부품.write((int) (value >> 24));
+    연결된부품.write((int) (value >> 16));
+    연결된부품.write((int) (value >> 8));
+    연결된부품.write((int) value);
   }
 
   public void writeBoolean(boolean value) throws Exception {
-    // 생성자에서 받은 출력 객체의 write() 메서드를 사용하여 boolean 값 출력
-    if (value) 
-      out.write(1);
-    else 
-      out.write(0);
-  }
-
-  public void close() throws Exception {
-    out.close();
+    // 실제 쓰기 작업은 이 객체와 연결된 부품을 통해 수행한다.
+    if (value)
+      연결된부품.write(1);
+    else
+      연결된부품.write(0);
   }
 }
-
-
-
 
 
