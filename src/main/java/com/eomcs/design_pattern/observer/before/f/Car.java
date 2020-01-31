@@ -1,4 +1,4 @@
-package com.eomcs.design_pattern.observer.before;
+package com.eomcs.design_pattern.observer.before.f;
 
 public class Car {
   public void start() {
