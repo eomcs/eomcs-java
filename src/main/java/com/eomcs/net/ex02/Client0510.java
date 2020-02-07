@@ -1,12 +1,13 @@
-// 대기열 테스트
+// 서버와 입출력 테스트
 package com.eomcs.net.ex02;
 
 import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Client2 {
+public class Client0510 {
   public static void main(String[] args) throws Exception {
+    // 실행을 잠시 중단시키기 위해 사용
     Scanner keyScan = new Scanner(System.in);
     System.out.println("클라이언트 실행!");
 
@@ -15,7 +16,7 @@ public class Client2 {
     System.out.println("서버에 연결을 요청 중...");
     Socket socket = new Socket("localhost", 8888);
     System.out.println("서버에 연결됨!");
-    // 서버의 대기열에 접속 순서대로 대기한다. 
+    // 서버의 대기열에 접속 순서대로 대기한다.
     // 서버에서 연결이 승인되면, 비로서 입출력을 할 수 있다.
 
     PrintStream out = new PrintStream(socket.getOutputStream());
@@ -30,15 +31,9 @@ public class Client2 {
     System.out.println(in.nextLine());
     System.out.println("서버로부터 데이터 수신 완료!");
 
-    // 자원해제 
+    // 자원해제
     socket.close();
   }
 }
-
-
-
-
-
-
 
 
