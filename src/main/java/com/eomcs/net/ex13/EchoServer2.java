@@ -1,5 +1,5 @@
 // 응용 - 에코 서버 만들기 + 여러 클라이언트의 요청을 처리하기
-package com.eomcs.net.ex03;
+package com.eomcs.net.ex13;
 
 import java.io.PrintStream;
 import java.net.ServerSocket;

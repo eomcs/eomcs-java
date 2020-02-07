@@ -1,5 +1,5 @@
 // 응용 - 에코 서버 만들기
-package com.eomcs.net.ex03;
+package com.eomcs.net.ex13;
 
 import java.io.PrintStream;
 import java.net.ServerSocket;

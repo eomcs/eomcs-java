@@ -1,12 +1,12 @@
 // 클라이언트와 입출력 테스트
-package com.eomcs.net.ex02;
+package com.eomcs.net.ex03;
 
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Server0510 {
+public class Server011x {
   public static void main(String[] args) throws Exception {
     Scanner keyScan = new Scanner(System.in);
     System.out.println("서버 실행!");
