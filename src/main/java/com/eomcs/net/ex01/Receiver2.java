@@ -9,6 +9,8 @@ import java.util.Scanner;
 public class Receiver2 {
 
   public static void main(String[] args) throws Exception {
+    System.out.println("서버 실행!");
+
     Scanner keyScan = new Scanner(System.in);
 
     ServerSocket serverSocket = new ServerSocket(8888);
@@ -34,8 +36,5 @@ public class Receiver2 {
   }
 
 }
-
-
-
 
 
