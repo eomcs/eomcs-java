@@ -1,4 +1,4 @@
-// 클라이언트와 입출력 테스트
+// 클라이언트와 입출력 테스트 - byte stream
 package com.eomcs.net.ex03;
 
 import java.io.InputStream;
@@ -32,12 +32,8 @@ public class Server0110 {
         // 클라이언트에서 한 줄의 문자열을 보내면
         // 서버는 한 줄의 문자열을 읽은 후에 응답해야 한다.
 
-        // 서버에서 한 줄의 데이터를 읽기 전에는 클라이언트의 write()가 리턴하지 않음을
-        // 확인하기 위해 클라이언트가 보낸 데이터를 읽지 않도록 잠시 실행을 중단한다.
-        System.out.print("데이터를 읽기 전에 잠깐!");
-        keyboard.nextLine(); // 사용자가 콘솔창에서 엔터를 칠 때까지 리턴하지 않는다.
-
-        // => 클라이언트가 1바이트를 때까지 리턴하지 않는다.
+        System.out.println("클라이언트가 보낸 1바이트를 기다리고 있음!");
+        // => 클라이언트가 1바이트를 보낼 때까지 리턴하지 않는다.
         int request = in.read(); // blocking 모드로 작동한다.
         System.out.println(request);
 
@@ -49,6 +45,9 @@ public class Server0110 {
         // => 클라이언트에게 받은 문자열을 그대로 보낸다.
         // 물론 클라이언트가 보낸 데이터를 다 읽을 때까지 리턴하지 않는다.
         out.write(request);
+        // out.flush();
+        // byte stream 을 사용할 때는 바로 출력한다.
+        // 따라서 flush()를 호출하지 않아도 된다.
         System.out.println("클라인트에게 데이터를 보냈음.");
 
       }
