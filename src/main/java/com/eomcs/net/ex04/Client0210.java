@@ -45,7 +45,7 @@ import java.util.Scanner;
 // |<------------------| 데이터 전송
 // |--------X--------->| 끊기
 // - 서버에 요청할 때 마다 연결하고 응답을 받으면 즉시 연결을 끊는다.
-//
+// - 따라서 비영속적인 단일 작업을 처리할 때 적합한 통신 방식이다.
 
 public class Client0210 {
   public static void main(String[] args) {
