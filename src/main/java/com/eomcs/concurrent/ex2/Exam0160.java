@@ -12,15 +12,14 @@ public class Exam0160 {
     int count = systemGroup.enumerate(groups, false);
 
     System.out.println("system 스레드 그룹의 자식 그룹들:");
-    for (int i = 0; i < count; i++) { 
+    for (int i = 0; i < count; i++) {
       System.out.println("   =>" + groups[i].getName());
     }
-
-    // "system" 스레드 그룹: 
-    //      => 다른 하위 그룹은 없다!
-    //      =>"main" 스레드 그룹:
-    //          =>"main" 스레드
-    //          =>다른 하위 그룹은 없다!
   }
-
 }
+
+// JVM의 스레드 계층도:
+// system(TG)
+// => main(TG)
+// ...=> main(T) : main() 메서드를 호출한다.
+// => InnocuousThreadGroup(TG)

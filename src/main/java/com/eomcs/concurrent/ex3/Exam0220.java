@@ -1,7 +1,7 @@
 // Runnable 인터페이스 구현 + Thread - 익명 클래스로 구현하기
 package com.eomcs.concurrent.ex3;
 
-public class Exam0410 {
+public class Exam0220 {
 
   public static void main(String[] args) {
 

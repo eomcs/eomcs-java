@@ -12,19 +12,17 @@ public class Exam0170 {
     int count = systemGroup.enumerate(arr, false);
 
     System.out.println("system 스레드 그룹에 소속된 스레드들:");
-    for (int i = 0; i < count; i++) { 
+    for (int i = 0; i < count; i++) {
       System.out.println("   =>" + arr[i].getName());
     }
-
-    // [JVM 프로세스]
-    // "system" 스레드 그룹: 
-    //      => 다른 하위 그룹은 없다!
-    //      =>"main" 스레드 그룹:
-    //          =>"main" 스레드 : main() 메서드 호출
-    //          =>다른 하위 그룹은 없다!
-    //      =>"Reference Handler" 스레드 : 인스턴스의 참조 관리
-    //      =>"Finalizer" 스레드 : 가비지 관리
-    //      =>"Signal Dispatcher" 스레드 : 외부 신호 관리
   }
-
 }
+
+// JVM의 스레드 계층도:
+// system(TG)
+// => Reference Handler(T)
+// => Finalizer(T)
+// => Signal Dispatcher(T)
+// => main(TG)
+// ...=> main(T) : main() 메서드를 호출한다.
+// => InnocuousThreadGroup(TG)
