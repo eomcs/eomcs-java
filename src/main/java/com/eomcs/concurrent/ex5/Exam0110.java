@@ -1,7 +1,7 @@
 // 비동기 방식으로 인한 문제 및 해결책  
 package com.eomcs.concurrent.ex5;
 
-public class Exam01 {
+public class Exam0110 {
 
   public static void main(String[] args) {
     Account account = new Account("111-11-1111-111", 100_0000);
