@@ -1,5 +1,5 @@
 // 계산기 서버 만들기 - 4단계: 입력 값 예외 처리
-package ch23.c;
+package com.eomcs.net.ex11.v4;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

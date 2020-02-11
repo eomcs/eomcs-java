@@ -1,5 +1,5 @@
 // 계산기 서버 만들기 - 6단계: 소스 코드 리팩토링
-package ch23.c;
+package com.eomcs.net.ex11.v6;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

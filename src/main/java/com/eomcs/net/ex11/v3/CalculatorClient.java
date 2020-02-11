@@ -1,5 +1,5 @@
 // 계산기 클라이언트 만들기 - 2단계: 키보드에서 입력 받은 값을 서버에 보낸다.
-package ch23.c;
+package com.eomcs.net.ex11.v3;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

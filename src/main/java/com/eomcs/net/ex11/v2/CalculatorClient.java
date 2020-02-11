@@ -1,5 +1,5 @@
-// 계산기 클라이언트 만들기 - 6단계: 서버의 인사말을 출력하기
-package ch23.c;
+// 계산기 클라이언트 만들기 - 2단계: 키보드에서 입력 받은 값을 서버에 보낸다.
+package com.eomcs.net.ex11.v2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -36,27 +36,15 @@ public class CalculatorClient {
         BufferedReader in = new BufferedReader(
             new InputStreamReader(socket.getInputStream()))) {
       
-      // 서버에서 빈 문자열을 보낼 때까지 읽어서 화면에 출력한다.
-      while (true) {
-        String input = in.readLine();
-        System.out.println(input);
-        if (input.length() == 0)
-          break;
-      }
+      System.out.print("> ");
+      String input = keyboard.nextLine();
       
-      while (true) {
-        System.out.print("> ");
-        String input = keyboard.nextLine();
-        
-        out.println(input);
-        out.flush();
-        
-        String response = in.readLine();
-        System.out.println(response);
-        
-        if (input.equalsIgnoreCase("quit"))
-          break;
-      }
+      out.println(input);
+      out.flush();
+      
+      String response = in.readLine();
+      System.out.println(response);
+      
     } catch (Exception e) {
       e.printStackTrace();
     }

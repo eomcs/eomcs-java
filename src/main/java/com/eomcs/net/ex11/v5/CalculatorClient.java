@@ -1,10 +1,11 @@
-// 계산기 클라이언트 만들기 - 1단계: 단순히 서버에 요청하고 응답을 받아 출력한다.
-package ch23.c;
+// 계산기 클라이언트 만들기 - 5단계: 사용자가 quit을 입력하기 전까지 계속 서버와 연결된 상태로 있기
+package com.eomcs.net.ex11.v5;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
+import java.util.Scanner;
 
 /*
 구현 조건:
@@ -29,17 +30,25 @@ import java.net.Socket;
 public class CalculatorClient {
   public static void main(String[] args) {
     
-    try (Socket socket = new Socket("localhost", 8888);
+    try (Scanner keyboard = new Scanner(System.in);
+        Socket socket = new Socket("localhost", 8888);
         PrintStream out = new PrintStream(socket.getOutputStream());
         BufferedReader in = new BufferedReader(
             new InputStreamReader(socket.getInputStream()))) {
       
-      out.println("10 + 30");
-      out.flush();
-      
-      String input = in.readLine();
-      System.out.println(input);
-      
+      while (true) {
+        System.out.print("> ");
+        String input = keyboard.nextLine();
+        
+        out.println(input);
+        out.flush();
+        
+        String response = in.readLine();
+        System.out.println(response);
+        
+        if (input.equalsIgnoreCase("quit"))
+          break;
+      }
     } catch (Exception e) {
       e.printStackTrace();
     }

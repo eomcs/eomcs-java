@@ -1,5 +1,5 @@
 // 계산기 서버 만들기 - 5단계: 클라이언트에서 종료하기 전까지는 계속 연결된 상태로 요청 처리하기
-package ch23.c;
+package com.eomcs.net.ex11.v5;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
