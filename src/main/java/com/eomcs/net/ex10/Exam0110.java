@@ -1,11 +1,11 @@
 // Base64 인코딩
-package ch23.i;
+package com.eomcs.net.ex10;
 
 import java.util.Base64;
 import java.util.Base64.Decoder;
 import java.util.Base64.Encoder;
 
-public class Test01 {
+public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
     String str = "ABC012가각간";

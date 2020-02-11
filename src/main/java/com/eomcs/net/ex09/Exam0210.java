@@ -1,5 +1,5 @@
 // Apache HttpClient 라이브러리를 이용하여 웹서버 만들기 II
-package ch23.k;
+package com.eomcs.net.ex09;
 
 import java.io.IOException;
 import java.net.SocketTimeoutException;
@@ -20,7 +20,7 @@ import org.apache.http.impl.bootstrap.ServerBootstrap;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.protocol.HttpRequestHandler;
 
-public class HttpServer02 {
+public class Exam0210 {
   
   public static void main(String[] args) throws Exception {
     SocketConfig socketConfig = SocketConfig.custom()
