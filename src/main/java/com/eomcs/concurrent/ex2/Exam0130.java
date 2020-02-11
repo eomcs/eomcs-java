@@ -1,7 +1,7 @@
 // 스레드 그룹에 소속된 스레드들
 package com.eomcs.concurrent.ex2;
 
-public class Exam03 {
+public class Exam0130 {
 
   public static void main(String[] args) {
     Thread main = Thread.currentThread();

@@ -1,18 +1,17 @@
-// Runnable 인터페이스 구현 + Thread - 익명 클래스로 구현하기
+// Thread를 상속 받기 - 익명 클래스로 구현하기
 package com.eomcs.concurrent.ex3;
 
-public class Exam04 {
+public class Exam0310 {
 
   public static void main(String[] args) {
-
-    new Thread(new Runnable() {
+    new Thread() {
       @Override
       public void run() {
         for (int i = 0; i < 1000; i++) {
           System.out.println("===> " + i);
         }
       }
-    }).start();
+    }.start();
 
     for (int i = 0; i < 1000; i++) {
       System.out.println(">>>> " + i);

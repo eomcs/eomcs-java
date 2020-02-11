@@ -1,7 +1,7 @@
 // 스레드 그룹의 부모 그룹
 package com.eomcs.concurrent.ex2;
 
-public class Exam05 {
+public class Exam0150 {
 
   public static void main(String[] args) {
     Thread main = Thread.currentThread();

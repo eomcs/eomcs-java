@@ -1,7 +1,7 @@
 // 스레드의 생명주기(lifecycle)
 package com.eomcs.concurrent.ex4;
 
-public class Exam01 {
+public class Exam0110 {
   public static void main(String[] args) {
     // 스레드의 생명주기
     // new Thread()    start()              sleep()/wait()

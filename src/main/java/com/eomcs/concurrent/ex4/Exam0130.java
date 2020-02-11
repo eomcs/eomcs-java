@@ -1,7 +1,7 @@
 // 스레드의 생명주기(lifecycle) - sleep()
 package com.eomcs.concurrent.ex4;
 
-public class Exam03 {
+public class Exam0130 {
   public static void main(String[] args) throws Exception {
     System.out.println("스레드 실행 전");
     new Thread() {

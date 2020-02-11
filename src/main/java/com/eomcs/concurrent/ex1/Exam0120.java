@@ -1,7 +1,7 @@
 // 멀티 스레드 적용 후
 package com.eomcs.concurrent.ex1;
 
-public class Exam02 {
+public class Exam0120 {
 
   static class MyThread extends Thread {
     @Override

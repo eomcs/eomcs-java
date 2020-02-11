@@ -1,7 +1,7 @@
 // 스레드의 생명주기(lifecycle) - running 상태 : CPU 쟁탈전(racing)
 package com.eomcs.concurrent.ex4;
 
-public class Exam04 {
+public class Exam0140 {
   public static void main(String[] args) throws Exception {
     class MyThread extends Thread {
       public MyThread(String name) {

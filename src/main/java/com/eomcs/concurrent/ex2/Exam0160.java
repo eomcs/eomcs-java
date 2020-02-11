@@ -1,7 +1,7 @@
 // "system" 스레드 그룹의 자식 그룹들
 package com.eomcs.concurrent.ex2;
 
-public class Exam06 {
+public class Exam0160 {
 
   public static void main(String[] args) {
     Thread main = Thread.currentThread();

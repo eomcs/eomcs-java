@@ -1,7 +1,7 @@
 // 현재의 실행 라인을 알아내기
 package com.eomcs.concurrent.ex2;
 
-public class Exam01 {
+public class Exam0110 {
 
   public static void main(String[] args) {
     // 이 순간 실행중인 흐름이 무엇인지 알고 싶다면?

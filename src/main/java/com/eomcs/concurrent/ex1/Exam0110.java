@@ -1,7 +1,7 @@
 // 멀티 스레드 적용 전
 package com.eomcs.concurrent.ex1;
 
-public class Exam01 {
+public class Exam0110 {
 
   public static void main(String[] args) {
     // 코드는 위에서 아래로 순서대로 실행한다.

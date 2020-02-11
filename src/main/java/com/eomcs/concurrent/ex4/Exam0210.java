@@ -1,7 +1,7 @@
 // 스레드의 생명주기(lifecycle) - 우선 순위 조회
 package com.eomcs.concurrent.ex4;
 
-public class Exam05 {
+public class Exam0210 {
   public static void main(String[] args) throws Exception {
     class MyThread extends Thread {
       public MyThread(String name) {
