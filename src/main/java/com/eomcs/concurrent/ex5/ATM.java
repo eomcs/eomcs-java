@@ -19,9 +19,8 @@ public class ATM extends Thread {
         break;
       sum += money;
     }
-    System.out.printf("%s가 찾은 돈: %d원\n", this.getName(), sum);
+    System.out.printf("%s에서 찾은 돈: %d원\n", this.getName(), sum);
   }
 }
-
 
 
