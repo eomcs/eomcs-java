@@ -1,4 +1,4 @@
-// 멀티 스레드 재사용
+// 멀티 스레드 재사용 - Pooling 기법을 이용하여 생성된 객체를 재활용하기
 package com.eomcs.concurrent.ex6;
 
 import java.util.ArrayList;
@@ -6,70 +6,86 @@ import java.util.Scanner;
 
 public class Exam0210 {
 
-  public static void main(String[] args) {
+  static class MyThread extends Thread {
+    ThreadPool pool;
+    int count;
 
-    class MyThread extends Thread {
-      int count;
+    public MyThread(String name, ThreadPool pool) {
+      super(name);
+      this.pool = pool;
+    }
 
-      public MyThread(String name) {
-        super(name);
+    public void setCount(int count) {
+      this.count = count;
+      synchronized (this) {
+        notify();
       }
+    }
 
-      public void setCount(int count) {
-        this.count = count;
-        synchronized (this) {
-          notify();
-        }
-      }
+    @Override
+    public void run() {
+      synchronized (this) {
+        try {
+          while (true) {
+            // 작업하라는 알림이 올 때까지 기다린다.
+            wait();
 
-      @Override
-      public void run() {
-        synchronized (this) {
-          try {
-            while (true) {
-              wait();
-              for (int i = count; i > 0; i--) {
-                System.out.printf("[%s] %d\n", getName(), i);
-                Thread.sleep(1000);
-              }
+            // 알림이 오면 작업을 실행한다.
+            for (int i = count; i > 0; i--) {
+              System.out.printf("[%s] %d\n", getName(), i);
+              Thread.sleep(2000);
             }
-          } catch (Exception e) {
-            e.printStackTrace();
+
+            // 작업이 끝났으면 스레드풀로 돌아간다.
+            pool.add(this);
           }
+        } catch (Exception e) {
+          e.printStackTrace();
         }
       }
     }
+  }
 
-    class MyThreadPool {
-      ArrayList<MyThread> list = new ArrayList<>();
+  interface ThreadPool {
+    Thread get();
 
-      public MyThreadPool() {
-        MyThread t1 = new MyThread("=>");
-        t1.start();
-        list.add(t1);
+    void add(Thread obj);
+  }
 
-        MyThread t2 = new MyThread("------");
-        t2.start();
-        list.add(t2);
+  static class MyThreadPool implements ThreadPool {
+    ArrayList<MyThread> list = new ArrayList<>();
 
-        MyThread t3 = new MyThread("$$$");
-        t3.start();
-        list.add(t3);
-      }
+    public MyThreadPool() {
+      MyThread t1 = new MyThread("1번 스레드=>", this);
+      t1.start();
+      list.add(t1);
 
-      // 스레드 풀에서 한 개의 스레드를 꺼낸다.
-      public MyThread get() {
-        if (list.size() > 0) {
-          return list.remove(0);
-        }
-        return null;
-      }
+      MyThread t2 = new MyThread("2번 스레드***>", this);
+      t2.start();
+      list.add(t2);
 
-      // 스레드를 다 쓴 후에는 다시 스레드 풀에 돌려준다.
-      public void add(MyThread t) {
-        list.add(t);
-      }
+      MyThread t3 = new MyThread("3번 스레드-->", this);
+      t3.start();
+      list.add(t3);
     }
+
+    // 스레드 풀에서 한 개의 스레드를 꺼낸다.
+    @Override
+    public MyThread get() {
+      if (list.size() > 0) {
+        return list.remove(0);
+      }
+      return null;
+    }
+
+    // 스레드를 다 쓴 후에는 다시 스레드 풀에 돌려준다.
+    @Override
+    public void add(Thread t) {
+      list.add((MyThread) t);
+    }
+  }
+
+  public static void main(String[] args) {
 
     // 스레드풀 준비!
     MyThreadPool threadPool = new MyThreadPool();
@@ -92,7 +108,7 @@ public class Exam0210 {
         continue;
       }
 
-      // 스레드풀에서 스레드를 받았다면 카운트를 시작시킨다.
+      // 스레드의 카운트를 설정한다. 그러면 카운트를 시작할 것이다.
       t.setCount(count);
     }
 
