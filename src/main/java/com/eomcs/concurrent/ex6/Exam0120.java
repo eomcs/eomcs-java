@@ -46,6 +46,7 @@ public class Exam0120 {
     while (true) {
       System.out.print("카운트? ");
       String str = keyScan.nextLine();
+
       if (str.equals("quit")) {
         break;
       }
@@ -63,6 +64,7 @@ public class Exam0120 {
     }
 
     System.out.println("main 스레드 종료!");
+    keyScan.close();
   }
 }
 

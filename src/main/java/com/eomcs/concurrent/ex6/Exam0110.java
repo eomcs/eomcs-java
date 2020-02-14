@@ -49,6 +49,7 @@ public class Exam0110 {
     }
 
     System.out.println("main 스레드 종료!");
+    keyScan.close();
   }
 }
 
