@@ -1,26 +1,43 @@
-// JDBC 프로그래밍 개요 - JDBC 드라이버 준비
+// JDBC 드라이버 준비 - 드라이버 다운로드 및 로딩
 package com.eomcs.jdbc.ex1;
 
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
-// JDBC 드라이버 다운로드 및 설정
-// 1) 직접 설정하기
-// - java-basic/lib 폴더 생성
-// - c:\Program Files (x86)\MySQL\Connector J x.x\mysql-connector-java-x.x.jar 복사
-// - java-basic/lib 폴더에 붙여넣기
-// - 컴파일과 실행할 때 .jar 파일을 사용할 수 있도록 CLASSPATH에 추가한다.
-//   project 컨텍스트 메뉴/build path/configure build path.../Libraries/Add Jars...
+// DBMS에 연결하기
+// => MariaDB에 연결을 대행하는 클래스를 사용한다.
+// => 이 클래스는 JDBC API 규칙에 따라 작성되었다.
+// => 이 클래스는 JDBC Driver 파일(*.jar)에 들어 있다.
+// => 이 클래스를 사용하려면 먼저 이 JDBC Driver 파일을 다운로드 받아
+// 프로젝트의 CLASSPATH에 등록해야 한다.
+// => 절차
+// 1) mvnrepository.com 또는 search.maven.org에서 mariadb jdbc driver를 검색한다.
+// 2) 라이브러리 정보를 build.gradle 파일에 설정한다.
+// 3) gradle을 이용하여 eclipse 설정 파일을 갱신한다.
+// > gradle eclipse
+// - 다운로드 받지 않은 라이브러리가 있다면 자동으로 서버에서 받을 것이다.
+// - 라이브러리 정보가 변경되었다면 해당 라이브러리를 서버에서 받을 것이다.
+// 4) 이클립스 프로젝트를 리프래시 한다.
+// - 프로젝트에 mariadb jdbc driver 라이브러리가 추가되었는지 확인한다.
 //
 public class Exam0110 {
 
-  public static void main(String[] args) throws Exception {
-    // 1) JDBC 드라이버 로딩 
-    // => java.sql.Driver 인터페이스 구현체를 만들어 
-    //    DriverManager가 찾을 수 있도록 등록해야 한다.
-    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-    System.out.println("JDBC 드라이버 로딩 및 등록 완료!");
+  public static void main(String[] args) {
+    // JDBC 드라이버 로딩 방법1: 직접 Driver 구현 객체를 생성하고 직접 등록하기
+    // => java.sql.Driver 구현체를 생성하여 JDBC 드라이버 관리자에 등록한다.
+    // => Driver 구현체는 JDBC의 정보를 제공한다.
+    // => 또한 DBMS에 연결 작업을 수행하는 Connection 객체를 생성한다.
+    // => MariaDB의 JDBC 드라이버에서는 org.mariadb.jdbc.Driver 클래스가 이 구현체이다.
+    try {
+      DriverManager.registerDriver(new org.mariadb.jdbc.Driver());
 
-    // 위 mysql 드라이버는 구형 드라이버로서 사용하지 말도록 권고되고 있다. 
+      // DriverManager에 자동 등록된 것을 확인해보자!
+      java.sql.Driver driver = DriverManager.getDriver("jdbc:mariadb:");
+      System.out.println("JDBC 드라이버 로딩 및 등록 완료!");
+
+    } catch (SQLException e) {
+      System.out.println("MariaDB의 java.sql.Driver 구현체를 등록하는 중에 오류 발생!");
+      e.printStackTrace();
+    }
   }
-
 }
