@@ -8,11 +8,12 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.11'
-    implementation group: 'org.springframework', name: 'spring-context', version: '5.2.2.RELEASE'
-    implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
-    implementation group: 'org.mybatis', name: 'mybatis', version: '3.5.3'
+  implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.5.4'
+  implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.11'
+  implementation group: 'org.springframework', name: 'spring-context', version: '5.2.2.RELEASE'
+  implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
+  implementation group: 'org.mybatis', name: 'mybatis', version: '3.5.3'
     
-    implementation 'com.google.guava:guava:28.0-jre'
-    testImplementation 'junit:junit:4.12'
+  implementation 'com.google.guava:guava:28.0-jre'
+  testImplementation 'junit:junit:4.12'
 }

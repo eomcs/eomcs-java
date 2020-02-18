@@ -23,6 +23,7 @@ import java.sql.SQLException;
 public class Exam0110 {
 
   public static void main(String[] args) {
+
     // JDBC 드라이버 로딩 방법1: 직접 Driver 구현 객체를 생성하고 직접 등록하기
     // => java.sql.Driver 구현체를 생성하여 JDBC 드라이버 관리자에 등록한다.
     // => Driver 구현체는 JDBC의 정보를 제공한다.

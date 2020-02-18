@@ -6,19 +6,29 @@ import java.sql.DriverManager;
 public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
-    // 1) JDBC 드라이버 로딩 
+    // 1) JDBC 드라이버 로딩
     Class.forName("com.mysql.jdbc.Driver");
     System.out.println("JDBC 드라이버 로딩 및 등록 완료!");
-
+    // 2) Driver 구현체를 이용하여 DBMS에 연결한다.
+    // => DBMS에 연결되면 소켓 정보를 갖고 있는 java.sql.Connection 구현체를 리턴한다.
+    // => DriverManager에게 요청한다. 어느 서버에 접속할 것인지 정보를 제공해야 한다.
+    // => DriverManager는 이전에 등록된 Driver 구현체에게 위임한다.
+    // => Driver 구현체(org.mariadb.jdbc.Driver 객체)는 DBMS와 연결한 후 소켓 정보를
+    // java.sql.Connection 구현체에 담아 리턴한다.
+    // => DriverManager.getConnection(jdbcUrl, username, password)
+    // jdbcUrl => jdbc:(mysql 또는 mariadb)://서버주소:포트번호/데이터베이스명
+    // 포트번호를 지정하지 않으면 기본이 3306이다.
+    // username => 데이터베이스를 사용할 수 있는 DBMS에 등록된 사용자.
+    // password => 암호
+    //
     // 2) DBMS에 연결하기
     // => DriverManager를 통해 등록된 Driver 객체를 사용하여 DBMS와 연결한다.
-    //    jdbc url : DBMS 서버 정보. 예) jdbc:mysql://서버:포트/데이터베이스명
-    //    username : DBMS 사용자 아이디
-    //    password : DBMS 사용자 암호
+    // jdbc url : DBMS 서버 정보. 예) jdbc:mysql://서버:포트/데이터베이스명
+    // username : DBMS 사용자 아이디
+    // password : DBMS 사용자 암호
     // => 리턴 : Driver가 DBMS와 연결한 후 연결 정보를 다루는 객체를 리턴한다.
     java.sql.Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/java106db?serverTimezone=UTC&useSSL=false",
-        "java106", "1111");
+        "jdbc:mysql://localhost:3306/java106db?serverTimezone=UTC&useSSL=false", "java106", "1111");
     System.out.println("DBMS와 연결됨!");
 
     // 자원해제
@@ -26,10 +36,5 @@ public class Exam0210 {
     con.close();
   }
 }
-
-
-
-
-
 
 

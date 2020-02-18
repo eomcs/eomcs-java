@@ -1,4 +1,4 @@
-// JDBC 드라이버 준비 - Driver 객체 생성과 등록
+// JDBC 드라이버 준비 - Driver 객체 생성 및 자동 등록
 package com.eomcs.jdbc.ex1;
 
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ public class Exam0120 {
     // => 실제는 Driver 구현 클래스를 로딩하는 과정에서 자동 등록된다.
 
     try {
-      new com.mysql.jdbc.Driver();
+      new org.mariadb.jdbc.Driver();
 
       // DriverManager에 자동 등록된 것을 확인해보자!
       java.sql.Driver driver = DriverManager.getDriver("jdbc:mariadb:");
