@@ -1,0 +1,84 @@
+// 트랜잭션 다루기 - commit & rollback
+package com.eomcs.jdbc.ex2;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Exam0510 {
+
+  public static void main(String[] args) throws Exception {
+    String title = null;
+    String contents = null;
+    String filename = null;
+
+    try (Scanner keyScan = new Scanner(System.in)) {
+
+      // 사용자로부터 제목, 내용을 입력 받는다.
+      System.out.print("제목? ");
+      title = keyScan.nextLine();
+
+      System.out.print("내용? ");
+      contents = keyScan.nextLine();
+
+      System.out.print("첨부파일명? ");
+      filename = keyScan.nextLine();
+
+      System.out.print("입력하시겠습니까?(Y/n) ");
+      String input = keyScan.nextLine();
+
+      if (!input.equalsIgnoreCase("y") && input.length() != 0) {
+        System.out.println("등록을 취소 하였습니다.");
+        return;
+      }
+    }
+
+    try (Connection con = DriverManager.getConnection( //
+        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        PreparedStatement stmt = con.prepareStatement( //
+            "insert into x_board(title,contents) values(?,?)", //
+            Statement.RETURN_GENERATED_KEYS);) {
+
+      // 1) 트랜잭션 시작 - 커넥션 객체의 오토커밋을 false로 지정한다.
+      con.setAutoCommit(false);
+
+      stmt.setString(1, title);
+      stmt.setString(2, contents);
+      int count = stmt.executeUpdate();
+      System.out.printf("%d 개 입력 성공!\n", count);
+
+      int no = 0;
+      try (ResultSet rs = stmt.getGeneratedKeys()) {
+        rs.next();
+        no = rs.getInt(1);
+      }
+      System.out.printf("입력된 게시글 번호: %d\n", no);
+
+      try (PreparedStatement stmt2 = con.prepareStatement( //
+          "insert into x_board_file(file_path,board_id) values(?,?)")) {
+        stmt2.setString(1, filename);
+        stmt2.setInt(2, no);
+        stmt2.execute();
+        System.out.println("첨부파일 등록 완료!");
+
+        // 트랜잭션 작업 승인 - 서버의 요청한 작업을 처리할 것을 명령한다.
+        // => commit()을 호출하지 않으면 서버에 요청한 데이터 변경 작업은 자동 취소된다.
+        con.commit();
+
+      } catch (Exception e) {
+        System.out.printf("첨부파일 등록 오류: %s\n", e.getMessage());
+        // 트랜잭션 작업 취소 - 서버의 요청한 작업을 취소할 것을 명령한다.
+        // => rollback()은 명시적으로 작업 취소를 명령하는 것이다.
+        // => 커넥션을 공유하는 상황에서는 이렇게 명시적으로 작업 취소를 명령하는 것이 좋다.
+        // => 왜냐하면 같은 커넥션으로 다른 작업을 처리하는 경우 영향을 받을 수 있기 때문이다.
+        //
+        con.rollback();
+      }
+    }
+  }
+}
+
+
