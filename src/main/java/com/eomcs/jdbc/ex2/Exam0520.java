@@ -1,4 +1,4 @@
-// 트랜잭션 다루기 - autocommit
+// 트랜잭션 다루기 - commit & rollback
 package com.eomcs.jdbc.ex2;
 
 import java.sql.Connection;
@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class Exam0510 {
+public class Exam0520 {
 
   public static void main(String[] args) throws Exception {
     String title = null;
@@ -42,9 +42,16 @@ public class Exam0510 {
             "insert into x_board(title,contents) values(?,?)", //
             Statement.RETURN_GENERATED_KEYS);) {
 
-      // DriverManager가 리턴한 커넥션은 Auto Commit의 기본 상태가 true로 설정되어 있다.
-      // Auto Commit?
-      // => insert, update, delete을 실행한 후 그 결과를 즉시 테이블에 적용하는 것.
+      // 1) 트랜잭션 시작 - 커넥션 객체의 오토커밋을 false로 지정한다.
+      con.setAutoCommit(false);
+      // 이후부터 이 커넥션으로 실행하는 모든 SQL은
+      // commit을 요청하기 전에는 테이블에 그 결과를 적용하지 않는다.
+      // 데이터를 변경하는 모든 작업은(insert|update|delete)
+      // DBMS의 임시 테이블에 보관된다.
+      // 연결이 끊어지면 임시 테이블에 보관된 데이터는 버려진다.
+      // 따라서 연결을 끊기 전에 작업한 내용을 적용하고 싶다면,
+      // 반드시 commit을 요청해야 한다.
+      //
 
       stmt.setString(1, title);
       stmt.setString(2, contents);
@@ -65,10 +72,18 @@ public class Exam0510 {
         stmt2.execute();
         System.out.println("첨부파일 등록 완료!");
 
+        // 트랜잭션 작업 승인 - 서버의 요청한 작업을 처리할 것을 명령한다.
+        // => commit()을 호출하지 않으면 서버에 요청한 데이터 변경 작업은 자동 취소된다.
+        con.commit();
+
       } catch (Exception e) {
         System.out.printf("첨부파일 등록 오류: %s\n", e.getMessage());
-        // 첨부파일 데이터를 입력하는 중에 오류가 발생하더라도
-        // 기존에 입력한 게시글은 계속 유효하다.
+        // 트랜잭션 작업 취소 - 서버의 요청한 작업을 취소할 것을 명령한다.
+        // => rollback()은 명시적으로 작업 취소를 명령하는 것이다.
+        // => 커넥션을 공유하는 상황에서는 이렇게 명시적으로 작업 취소를 명령하는 것이 좋다.
+        // => 왜냐하면 같은 커넥션으로 다른 작업을 처리하는 경우 영향을 받을 수 있기 때문이다.
+        //
+        con.rollback();
       }
     }
   }
