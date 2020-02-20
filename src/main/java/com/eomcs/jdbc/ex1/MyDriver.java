@@ -1,14 +1,13 @@
 package com.eomcs.jdbc.ex1;
 
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-public class MyDriver implements Driver {
+public class MyDriver implements java.sql.Driver {
 
   static {
     System.out.println("com.eomcs.jdbc.ex1.MyDriver 클래스 로딩!");

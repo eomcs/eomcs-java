@@ -24,20 +24,38 @@ public class Exam0110 {
 
   public static void main(String[] args) {
 
+    // JDBC 드라이버 로딩
+    // => java.sql.Driver 규칙에 따라 정의된 클래스를 로딩한다.
+    // => Driver 구현체는 JDBC에 대한 정보를 제공한다.
+    // => 또한 DBMS에 연결작업을 수행한다.
+    // => Driver 구현체는 DriverManager가 관리한다.
+    // => 따라서 접속할 DBMS의 Driver 구현체를 생성하여 DriverManager에게 등록해야 한다.
+    //
+    // DriverManager
+    // => java.sql.Driver 구현 객체를 관리하는 일을 한다.
+    // => DBMS 연결 요청이 들어오면 해당 DBMS의 Driver 구현체를 찾아 작업을 위임한다.
+    //
+    //
     // JDBC 드라이버 로딩 방법1: 직접 Driver 구현 객체를 생성하고 직접 등록하기
     // => java.sql.Driver 구현체를 생성하여 JDBC 드라이버 관리자에 등록한다.
-    // => Driver 구현체는 JDBC의 정보를 제공한다.
-    // => 또한 DBMS에 연결 작업을 수행하는 Connection 객체를 생성한다.
-    // => MariaDB의 JDBC 드라이버에서는 org.mariadb.jdbc.Driver 클래스가 이 구현체이다.
+    // => MariaDB의 JDBC 드라이버에는 org.mariadb.jdbc.Driver 클래스가 이 구현체이다.
     try {
-      DriverManager.registerDriver(new org.mariadb.jdbc.Driver());
 
-      // DriverManager에 자동 등록된 것을 확인해보자!
-      java.sql.Driver driver = DriverManager.getDriver("jdbc:mariadb:");
+      // 1) Driver 구현체의 인스턴스를 생성한다.
+      java.sql.Driver mariadbDriver = new org.mariadb.jdbc.Driver();
+
+      // 2) Driver 인스턴스를 드라이버 관리자에 등록한다.
+      DriverManager.registerDriver(mariadbDriver);
       System.out.println("JDBC 드라이버 로딩 및 등록 완료!");
 
+      // DriverManager에 등록된 Driver 인스턴스를 확인해보자!
+      // => DriverManager.getDriver(jdbcUrl);
+      // => jdbcUrl
+      // jdbc:[DBMS]://서버주소:포트번호/데이터베이스명
+      java.sql.Driver driver = DriverManager.getDriver("jdbc:mariadb:");
+      System.out.println(driver);
+
     } catch (SQLException e) {
-      System.out.println("MariaDB의 java.sql.Driver 구현체를 등록하는 중에 오류 발생!");
       e.printStackTrace();
     }
   }
