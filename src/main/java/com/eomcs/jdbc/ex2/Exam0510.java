@@ -1,4 +1,4 @@
-// 트랜잭션 다루기 - autocommit
+// 트랜잭션 다루기 - autocommit = true 일 경우의 문제
 package com.eomcs.jdbc.ex2;
 
 import java.sql.Connection;
