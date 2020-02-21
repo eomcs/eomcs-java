@@ -1,7 +1,7 @@
 // String - 다양한 생성자 활용
 package com.eomcs.corelib.ex02;
 
-public class Exam0150x {
+public class Exam0180 {
   public static void main(String[] args) throws Exception {
     // String 인스턴스 생성
     String s1 = new String();

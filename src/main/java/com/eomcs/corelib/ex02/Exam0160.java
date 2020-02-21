@@ -1,7 +1,7 @@
 // String - mutable vs immutable 객체
 package com.eomcs.corelib.ex02;
 
-public class Exam0130x {
+public class Exam0160 {
   public static void main(String[] args) {
     // String 객체는 immutable 객체이다.
     // 즉 한 번 객체에 값을 담으면 변경할 수 없다.

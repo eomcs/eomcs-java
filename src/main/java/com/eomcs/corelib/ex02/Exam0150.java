@@ -1,7 +1,7 @@
 // String - equals(), hashCode()
 package com.eomcs.corelib.ex02;
 
-public class Exam0139 {
+public class Exam0150 {
 
   static class Member {
     String name;
