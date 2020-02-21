@@ -62,7 +62,7 @@ public class Exam0510 {
           "insert into x_board_file(file_path,board_id) values(?,?)")) {
         stmt2.setString(1, filename);
         stmt2.setInt(2, no);
-        stmt2.execute();
+        stmt2.executeUpdate();
         System.out.println("첨부파일 등록 완료!");
 
       } catch (Exception e) {
