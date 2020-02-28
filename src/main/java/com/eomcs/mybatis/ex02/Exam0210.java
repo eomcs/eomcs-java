@@ -1,8 +1,7 @@
-// Mybatis - SQL에 파라미터 지정하기
+// Mybatis - SQL에 파라미터 지정하기: 값 한 개를 넘길 때
 package com.eomcs.mybatis.ex02;
 
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -23,12 +22,10 @@ public class Exam0210 {
     // 두 번째 파라미터로 전달해야 한다.
     // 여러 개의 값을 전달해야 한다면,
     // Map 객체에 담아 전달하라!
-    HashMap<String, Object> paramMap = new HashMap<>();
-    paramMap.put("startIndex", 9); // key는 SQL 맵퍼 파일에 지정된 이름과 같아야 한다.
-    paramMap.put("pageSize", 3);
 
+    // 예) 3번 이상 게시물을 가져온다.
     List<Board> list = sqlSession.selectList(//
-        "BoardMapper.selectBoard", paramMap);
+        "BoardMapper.selectBoard1", 5);
 
     for (Board board : list) {
       System.out.printf("%d, %s, %s, %s\n", //

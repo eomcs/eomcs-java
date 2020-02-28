@@ -6,26 +6,72 @@
 <mapper namespace="BoardMapper">
 
   <resultMap type="Board" id="BoardMap">
-    <id column="bno" property="no"/>
-    <result column="titl" property="title"/>
-    <result column="cont" property="content"/>
-    <result column="rdt" property="registeredDate"/>
+    <id column="board_id" property="no"/>
+    <result column="title" property="title"/>
+    <result column="contents" property="content"/>
+    <result column="created_date" property="registeredDate"/>
+    <result column="view_count" property="viewCount"/>
   </resultMap>
   
-  <!-- SQL 문에 값 삽입하기
-       => #{key이름}
-       => 값이 들어 있는 객체를 태그 속성에 지정한다.
-          parameterType="값이들어있는객체의타입명 또는 별명"
+  <!-- SQL 문에 값 삽입하기 : in-parameter 지정하기
+       => parameterType에 지정된 객체의 프로퍼티 명을 사용하여 값을 삽입한다.
+          예) #{프로퍼티명}
+       => paramterType이 primitive/String/wrapper class 인 경우 아무 이름을 적어도 된다.
+          예) #{아무이름}
+       => parameterType이 Map 객체인 경우는 Map에 저장된 값의 key를 적는다.
+          예) #{key} 
+       => parameterType에 지정할 수 있는 타입:
+       int      => _int
+       Integer  => int
+       String   => string
+       Map      => map
+       HashMap  => hashmap
+       Board    => board
+       ...
    -->
-  <select id="selectBoard" 
-          resultMap="BoardMap" parameterType="map">
+  <!-- selectList(sqlid, int) --> 
+  <select id="selectBoard1" 
+          resultMap="BoardMap" 
+          parameterType="int">
     select 
-      bno,
-      titl, 
-      cont, 
-      rdt 
-    from ex_board
-    limit #{startIndex}, #{pageSize}
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    where board_id > #{ohora}
+  </select>
+  
+  <!-- selectList(sqlid, String) -->
+  <select id="selectBoard2" 
+          resultMap="BoardMap" 
+          parameterType="string">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    where title like #{haha}
+  </select>
+  
+  <!-- selectList(sqlid, HashMap) 
+    => Map에서 값을 꺼낼 때는 값을 저장할 때 사용한 key를 이용한다.
+    => #{key}
+  -->
+  <select id="selectBoard3" 
+          resultMap="BoardMap" 
+          parameterType="map">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    limit #{startIndex}, #{size}
   </select>
   
 </mapper>
