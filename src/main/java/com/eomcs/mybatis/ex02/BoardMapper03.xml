@@ -17,21 +17,26 @@
          대신에 시작태그의 끝에 /를 붙인다.
     -->
     <!-- 주의! primary key 컬럼인 경우 id 태그를 사용하라! -->
-    <id column="bno" property="no"/>
-    <result column="titl" property="title"/>
-    <result column="cont" property="content"/>
-    <result column="rdt" property="registeredDate"/>
+    <id column="board_id" property="no"/>
+    <result column="title" property="title"/>
+    <result column="contents" property="content"/>
+    <result column="created_date" property="registeredDate"/>
+    <result column="view_count" property="viewCount"/>
   </resultMap>
   
   <!-- 위에서 정의한 연결 정보를 사용하고 싶다면,
-       resultMap="연결정보아이디" 를 설정하라! -->
+       resultMap="컬럼과 프로퍼티의 연결을 정의한 resultMap 아이디" 를 설정하라! 
+       참고!
+       resultType="클래스명 또는 별명"
+  -->
   <select id="selectBoard" resultMap="BoardMap">
     select 
-      bno, <!-- BoardMap의 연결정보를 참조하기 때문에 별명을 주지 않아도 된다. -->
-      titl, 
-      cont, 
-      rdt 
-    from ex_board
+      board_id, <!-- BoardMap의 연결정보를 참조하기 때문에 별명을 주지 않아도 된다. -->
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
   </select>
   
 </mapper>
