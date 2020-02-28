@@ -5,7 +5,7 @@
 <configuration>
   <!-- jdbc.properties 파일의 내용을 읽어온다.
        읽어온 정보는 ${프로퍼티명} 문법을 이용하여 그 값을 사용할 수 있다. -->
-  <properties resource="step25/ex5/jdbc.properties"></properties>
+  <properties resource="com/eomcs/mybatis/ex01/jdbc.properties"></properties>
 
   <!-- DBMS에 연결할 때 사용할 정보를 설정한다.
        여러 개의 연결 정보를 설정해두고 그 중에 사용할 정보를 지정할 수 있다.
@@ -33,11 +33,11 @@
   </environments>
   
   <!-- SQL문을 모아둔 파일(SQL 맵퍼 파일이라 부른다)을 지정한다.
-       SQL 맵퍼 파일의 작성한 SQL문을 mybatis가 사용할 것이다. -->
+       SQL 맵퍼 파일에 작성해 둔 SQL문을 mybatis가 사용할 것이다. -->
   <mappers>
     <!-- 맵퍼 파일의 경로를 지정할 때 classpath 경로를 사용해야 한다.
          단 패키지명을 구분할 때 '.' 대신에 '/'를 사용해야 한다. -->
-    <mapper resource="step25/ex5/BoardMapper.xml"/>
+    <mapper resource="com/eomcs/mybatis/ex01/BoardMapper.xml"/>
   </mappers>
 </configuration>
 
