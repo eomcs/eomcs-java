@@ -3,7 +3,6 @@ package com.eomcs.mybatis.ex02;
 
 import java.io.InputStream;
 import java.util.List;
-
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -12,21 +11,17 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class Exam0130 {
 
   public static void main(String[] args) throws Exception {
-    InputStream inputStream = Resources.getResourceAsStream(
-        "step25/ex6/mybatis-config03.xml");
-    SqlSessionFactory factory = 
+    InputStream inputStream = Resources.getResourceAsStream(//
+        "com/eomcs/mybatis/ex02/mybatis-config01.xml");
+    SqlSessionFactory factory = //
         new SqlSessionFactoryBuilder().build(inputStream);
 
     SqlSession sqlSession = factory.openSession();
 
-    List<Board> list = 
-        sqlSession.selectList("BoardMapper.selectBoard");
+    List<Board> list = sqlSession.selectList("BoardMapper.selectBoard");
 
     for (Board board : list) {
-      System.out.printf("%d, %s, %s, %s\n", 
-          board.getNo(), 
-          board.getTitle(), 
-          board.getContent(),
+      System.out.printf("%d, %s, %s, %s\n", board.getNo(), board.getTitle(), board.getContent(),
           board.getRegisteredDate());
     }
 
@@ -34,14 +29,5 @@ public class Exam0130 {
   }
 
 }
-
-
-
-
-
-
-
-
-
 
 

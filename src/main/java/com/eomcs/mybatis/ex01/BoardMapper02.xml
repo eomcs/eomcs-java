@@ -8,13 +8,14 @@
   <!-- mybatis 설정 파일에 클래스명의 별명이 설정되어 있다면,
        그 별명을 사용할 수 있다. 
        별명은 대소문자를 구분하지 않는다.-->
-  <select id="selectBoard" resultType="Board">
+  <select id="selectBoard" resultType="board">
     select 
-      bno as no,
-      titl as title,
-      cont as content,
-      rdt as registeredDate
-    from ex_board
+      board_id as no,
+      title,
+      contents as content,
+      created_date registeredDate,
+      view_count viewCount
+    from x_board
   </select>
   
 </mapper>

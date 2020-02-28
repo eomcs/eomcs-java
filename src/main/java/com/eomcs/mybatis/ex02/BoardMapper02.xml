@@ -7,16 +7,17 @@
 
   <!-- 컬럼명을 자바 객체의 프로퍼티명(셋터명)과 일치시키기:
        컬럼의 이름이 프로퍼티 이름과 다르다면,
-       셋터를 호출할 수 없기 때문에 
-       컬럼 이름을 프로퍼티 이름과 일치시켜야 한다.
+       셋터를 호출할 수 없다.
+       컬럼 이름을 프로퍼티 이름과 일치시켜야만 정확하게 호출할 수 있다.
        select 문에서 컬럼의 별명을 프로퍼티명과 같게 하라! --> 
   <select id="selectBoard" resultType="Board">
     select 
-      bno as no, <!-- Board.setNo() 호출 -->
-      titl as title, <!-- Board.setTitle() 호출 -->
-      cont as content, <!-- Board.setContent() 호출 -->
-      rdt as registeredDate <!-- Board.setRegisteredDate() -->
-    from ex_board
+      board_id as no,     <!-- Board.setNo() 호출 -->
+      title,              <!-- Board.setTitle() 호출 -->
+      contents content,   <!-- Board.setContent() 호출 -->
+      created_date as registeredDate, <!-- Board.setRegisteredDate() 호출 -->
+      view_count viewCount            <!-- Board.setViewCount() 호출 -->
+    from x_board
   </select>
   
 </mapper>
