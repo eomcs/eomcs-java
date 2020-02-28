@@ -20,6 +20,15 @@
     from x_board
   </select>
   
+  <select id="selectBoard2" resultType="com.eomcs.mybatis.ex01.Board">
+    select 
+      board_id as no,
+      title,
+      contents as content,
+      created_date registeredDate,
+      view_count viewCount
+    from x_board
+  </select>
 </mapper>
 
 
