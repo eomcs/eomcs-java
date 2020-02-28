@@ -18,7 +18,12 @@
     -->
     <!-- 주의! primary key 컬럼인 경우 id 태그를 사용하라! -->
     <id column="board_id" property="no"/>
+    
+    <!--  컬럼명과 프로퍼티명이 같을 때는 result 로 지정하지 않아도 된다. -->
+    <!-- 
     <result column="title" property="title"/>
+    -->
+    
     <result column="contents" property="content"/>
     <result column="created_date" property="registeredDate"/>
     <result column="view_count" property="viewCount"/>

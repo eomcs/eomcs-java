@@ -43,27 +43,22 @@
     order by ${colname} asc
   </select>
   
-  
-  
-  
-  
-  
-  
-  
   <!-- SQL 문에 SQL을 삽입하기
-       => ${key이름}
-       => 외부의 값을 이용하여 SQL 문장을 만들지 말라! 
-          SQL 삽입 공격에 취약하다!
+       => ${파라미터명}
+       => 외부의 값을 이용하여 SQL 문장을 만들 수 있다.
+       => 하지만 SQL 삽입 공격에 취약하다!
    -->
+  <!-- selectList(sqlid, string) -->
   <select id="selectBoard3" 
-          resultMap="BoardMap" parameterType="map">
+          resultMap="BoardMap" parameterType="string">
     select 
-      bno,
-      titl, 
-      cont, 
-      rdt 
-    from ex_board
-    ${limitSQL}
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    ${sql}
   </select>
   
 </mapper>

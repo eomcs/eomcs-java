@@ -11,7 +11,7 @@ public class Exam0230 {
 
   public static void main(String[] args) throws Exception {
     InputStream inputStream = Resources.getResourceAsStream(//
-        "com/eomcs/mybatis/ex02/mybatis-config01.xml");
+        "com/eomcs/mybatis/ex02/mybatis-config06.xml");
     SqlSessionFactory factory = //
         new SqlSessionFactoryBuilder().build(inputStream);
 
@@ -20,8 +20,8 @@ public class Exam0230 {
     // Board 객체에 값을 저장하여 전달하기
     // => 단 값을 꺼낼 수 있도록 겟터(프로퍼티)가 있어야 한다.
     Board board = new Board();
-    board.setTitle("제목이래요!");
-    board.setContent("내용이래요!");
+    board.setTitle("제목이래요!2");
+    board.setContent("내용이래요!2");
 
     System.out.printf("번호: %d\n", board.getNo());
     System.out.printf("제목: %s\n", board.getTitle());
@@ -31,6 +31,9 @@ public class Exam0230 {
     int count = sqlSession.insert("BoardMapper.insertBoard", board);
     System.out.println(count);
 
+    // Mybatis가 Board 객체의 내용을 테이블에 저장한 뒤에도
+    // Board 객체의 번호는 계속 0인 채로 있다.
+    //
     System.out.printf("번호: %d\n", board.getNo());
     System.out.printf("제목: %s\n", board.getTitle());
     System.out.printf("내용: %s\n", board.getContent());
