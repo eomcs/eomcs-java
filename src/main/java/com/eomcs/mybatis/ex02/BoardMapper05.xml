@@ -6,18 +6,56 @@
 <mapper namespace="BoardMapper">
 
   <resultMap type="Board" id="BoardMap">
-    <id column="bno" property="no"/>
-    <result column="titl" property="title"/>
-    <result column="cont" property="content"/>
-    <result column="rdt" property="registeredDate"/>
+    <id column="board_id" property="no"/>
+    <result column="title" property="title"/>
+    <result column="contents" property="content"/>
+    <result column="created_date" property="registeredDate"/>
+    <result column="view_count" property="viewCount"/>
   </resultMap>
+  
+  <!-- selectList(sqlid, string) --> 
+  <select id="selectBoard1" 
+          resultMap="BoardMap" 
+          parameterType="string">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    order by #{colname} asc
+    <!-- #{}는 값을 삽입할 때 사용하고, 
+         ${}는 SQL문을 삽입할 때 사용한다. -->
+  </select>
+  
+  <!-- selectList(sqlid, string) --> 
+  <select id="selectBoard2" 
+          resultMap="BoardMap" 
+          parameterType="string">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    order by ${colname} asc
+  </select>
+  
+  
+  
+  
+  
+  
+  
   
   <!-- SQL 문에 SQL을 삽입하기
        => ${key이름}
        => 외부의 값을 이용하여 SQL 문장을 만들지 말라! 
           SQL 삽입 공격에 취약하다!
    -->
-  <select id="selectBoard" 
+  <select id="selectBoard3" 
           resultMap="BoardMap" parameterType="map">
     select 
       bno,
