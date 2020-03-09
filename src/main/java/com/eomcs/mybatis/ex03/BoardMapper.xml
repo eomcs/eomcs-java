@@ -68,9 +68,115 @@
       where title like concat('%', #{keyword}, '%')
     </if>
     <if test="item == 3">
-      where content = #{keyword}
+      where contents like concat('%', #{keyword}, '%')
     </if>
   </select>
+  
+  <select id="select5" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    where
+    <if test="no != null">
+      board_id = #{no}
+    </if>
+    <if test="title != null">
+      or title like concat('%', #{title}, '%')
+    </if>
+    <if test="content != null">
+      or contents like concat('%', #{content}, '%')
+    </if>
+  </select>
+  
+  <select id="select6" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    where 1=0  <!-- or 앞에 조건이 없을 경우를 대비하여 임의 조건을 삽입
+                    단 임의 조건은 실행을 영향을 끼치지 않아야 한다. -->
+    <if test="no != null">
+      or board_id = #{no}
+    </if>
+    <if test="title != null">
+      or title like concat('%', #{title}, '%')
+    </if>
+    <if test="content != null">
+      or contents like concat('%', #{content}, '%')
+    </if>
+  </select>  
+  
+  <select id="select7" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    <where> <!-- or/and 앞에 아무것도 없을 때 or/and 를 자동으로 제거한다. -->
+	    <if test="no != null">
+	      board_id = #{no}
+	    </if>
+	    <if test="title != null">
+	      or title like concat('%', #{title}, '%')
+	    </if>
+	    <if test="content != null">
+	      or contents like concat('%', #{content}, '%')
+	    </if>
+    </where>
+  </select>  
+  
+  <select id="select8" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    <trim prefix="where" prefixOverrides="OR | AND"> 
+      <!-- or/and 앞에 아무것도 없을 때 or/and 를 자동으로 제거한다. -->
+      <if test="no != null">
+        board_id = #{no}
+      </if>
+      <if test="title != null">
+        or title like concat('%', #{title}, '%')
+      </if>
+      <if test="content != null">
+        or contents like concat('%', #{content}, '%')
+      </if>
+    </trim>
+  </select>  
+  
+  <select id="select21" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    where
+    <choose>
+	    <when test="item == 'no'">
+	      board_id = #{keyword}
+	    </when>
+	    <when test='item == "title"'>
+	      title like concat('%', #{keyword}, '%')
+	    </when>
+	    <otherwise>
+	      contents like concat('%', #{keyword}, '%')
+	    </otherwise>
+	  </choose>
+  </select>  
 </mapper>
 
 

@@ -1,4 +1,4 @@
-// dynamic sql 다루기 - 조건문 사용 II
+// dynamic sql 다루기 - <choose> 사용 법
 package com.eomcs.mybatis.ex03;
 
 import java.io.InputStream;
@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class Exam0130 {
+public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
     InputStream inputStream = Resources.getResourceAsStream(//
@@ -26,7 +26,7 @@ public class Exam0130 {
 
     Scanner keyScan = new Scanner(System.in);
 
-    System.out.print("항목(1:번호, 2:제목, 3: 내용, 그 외: 전체)? ");
+    System.out.print("항목(1:번호, 2:제목, 그 외: 내용)? ");
     String item = keyScan.nextLine();
 
     System.out.print("검색어? ");
@@ -36,10 +36,16 @@ public class Exam0130 {
 
     // SQL 매퍼에 여러 개의 파라미터 값을 넘길 때 주로 Map을 사용한다.
     HashMap<String, Object> params = new HashMap<>();
-    params.put("item", item);
+    if (item.equals("1")) {
+      params.put("item", "no");
+    } else if (item.equals("2")) {
+      params.put("item", "title");
+    } else {
+      params.put("item", "content");
+    }
     params.put("keyword", keyword);
 
-    List<Board> list = sqlSession.selectList("BoardMapper.select4", //
+    List<Board> list = sqlSession.selectList("BoardMapper.select21", //
         params);
 
     for (Board board : list) {
