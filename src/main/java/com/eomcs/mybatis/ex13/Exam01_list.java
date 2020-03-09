@@ -1,5 +1,5 @@
-// mybatis + spring IoC - 트랜잭션 정책 적용
-package com.eomcs.mybatis.ex06;
+// mybatis + spring IoC - 트랜잭션 적용 전
+package com.eomcs.mybatis.ex13;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ public class Exam01_list {
   public static void main(String[] args) throws Exception {
     ClassPathXmlApplicationContext iocContainer = 
         new ClassPathXmlApplicationContext(
-            "step25/ex11/application-context.xml");
+            "step25/ex8/application-context.xml");
 
     BoardDao boardDao = iocContainer.getBean(BoardDao.class);
 

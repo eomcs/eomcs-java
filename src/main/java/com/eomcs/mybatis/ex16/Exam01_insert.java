@@ -1,5 +1,5 @@
 // mybatis + spring IoC - 트랜잭션 정책 테스트
-package com.eomcs.mybatis.ex06;
+package com.eomcs.mybatis.ex16;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

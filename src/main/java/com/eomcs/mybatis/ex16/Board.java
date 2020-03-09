@@ -1,4 +1,4 @@
-package com.eomcs.mybatis.ex03;
+package com.eomcs.mybatis.ex16;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -10,52 +10,40 @@ public class Board implements Serializable {
   String title;
   String content;
   Date registeredDate;
-  int viewCount;
 
   @Override
   public String toString() {
-    return "Board [no=" + no + ", title=" + title + ", content=" + content + ", registeredDate="
-        + registeredDate + ", viewCount=" + viewCount + "]";
+    return "Board [no=" + no + ", title=" + title + ", content=" + content + ", registeredDate=" + registeredDate
+        + "]";
   }
 
+  // 셋터와 겟터 생성
   public int getNo() {
     return no;
   }
-
-  public void setNo(int no) {
+  public Board setNo(int no) {
     this.no = no;
+    return this;
   }
-
   public String getTitle() {
     return title;
   }
-
-  public void setTitle(String title) {
+  public Board setTitle(String title) {
     this.title = title;
+    return this;
   }
-
   public String getContent() {
     return content;
   }
-
-  public void setContent(String content) {
+  public Board setContent(String content) {
     this.content = content;
+    return this;
   }
-
   public Date getRegisteredDate() {
     return registeredDate;
   }
-
-  public void setRegisteredDate(Date registeredDate) {
+  public Board setRegisteredDate(Date registeredDate) {
     this.registeredDate = registeredDate;
+    return this;
   }
-
-  public int getViewCount() {
-    return viewCount;
-  }
-
-  public void setViewCount(int viewCount) {
-    this.viewCount = viewCount;
-  }
-
 }

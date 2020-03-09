@@ -1,4 +1,4 @@
-package com.eomcs.mybatis.ex06;
+package com.eomcs.mybatis.ex15;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -21,29 +21,25 @@ public class Board implements Serializable {
   public int getNo() {
     return no;
   }
-  public Board setNo(int no) {
+  public void setNo(int no) {
     this.no = no;
-    return this;
   }
   public String getTitle() {
     return title;
   }
-  public Board setTitle(String title) {
+  public void setTitle(String title) {
     this.title = title;
-    return this;
   }
   public String getContent() {
     return content;
   }
-  public Board setContent(String content) {
+  public void setContent(String content) {
     this.content = content;
-    return this;
   }
   public Date getRegisteredDate() {
     return registeredDate;
   }
-  public Board setRegisteredDate(Date registeredDate) {
+  public void setRegisteredDate(Date registeredDate) {
     this.registeredDate = registeredDate;
-    return this;
   }
 }
