@@ -177,6 +177,32 @@
 	    </otherwise>
 	  </choose>
   </select>  
+  
+  <update id="update1" parameterType="map">
+    update x_board set
+      title=#{title}
+    where board_id=#{no}
+  </update>
+  <update id="update2" parameterType="map">
+    update x_board set
+      contents=#{content}
+    where board_id=#{no}
+  </update>
+  <update id="update3" parameterType="map">
+    update x_board set
+      title=#{title},
+      contents=#{content}
+    where board_id=#{no}
+  </update>
+  
+  <update id="update4" parameterType="map">
+    update x_board 
+    <set>
+      <if test="title != null">title=#{title},</if>   
+      <if test="content != null">contents=#{content}</if>  
+    </set> 
+    where board_id=#{no}
+  </update>
 </mapper>
 
 
