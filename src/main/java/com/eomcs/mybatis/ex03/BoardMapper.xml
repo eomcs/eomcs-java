@@ -230,6 +230,20 @@
       </if>
     </where>
   </select>  
+  <select id="select23" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    <where>
+      <foreach collection="noList" item="no">
+        or board_id = #{no}
+      </foreach>
+    </where>
+  </select>  
 </mapper>
 
 
