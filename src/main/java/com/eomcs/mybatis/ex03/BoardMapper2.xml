@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="BoardMapper">
+<mapper namespace="BoardMapper2">
 
   <resultMap type="Board" id="BoardMap">
     <id column="board_id" property="no"/>
@@ -15,7 +15,8 @@
     <result column="view_count" property="viewCount"/>
   </resultMap>
   
-  <select id="select1" resultMap="BoardMap" parameterType="int">
+  <!-- 중복해서 사용되는 SQL을 별도로 정의하기 -->
+  <sql id="sql1">
     select 
       board_id,
       title, 
@@ -23,17 +24,15 @@
       created_date,
       view_count 
     from x_board
+  </sql>
+  
+  <select id="select1" resultMap="BoardMap" parameterType="int">
+    <include refid="sql1"/>
     where board_id = #{value}
   </select>
   
   <select id="select2" resultMap="BoardMap" parameterType="int">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
   </select>
   
   <!-- if 조건문
@@ -41,26 +40,14 @@
   => 문법) <if test="조건">SQL문</if>
    -->
   <select id="select3" resultMap="BoardMap" parameterType="int">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
     <if test="no != null">
       where board_id = #{no}
     </if>
   </select>
   
   <select id="select4" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
     <if test="item == 1">
       where board_id = #{keyword}
     </if>
@@ -73,13 +60,7 @@
   </select>
   
   <select id="select5" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
     where
     <if test="no != null">
       board_id = #{no}
@@ -93,13 +74,7 @@
   </select>
   
   <select id="select6" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
     where 1=0  <!-- or 앞에 조건이 없을 경우를 대비하여 임의 조건을 삽입
                     단 임의 조건은 실행을 영향을 끼치지 않아야 한다. -->
     <if test="no != null">
@@ -114,13 +89,7 @@
   </select>  
   
   <select id="select7" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
     <where> <!-- or/and 앞에 아무것도 없을 때 or/and 를 자동으로 제거한다. -->
 	    <if test="no != null">
 	      board_id = #{no}
@@ -135,13 +104,7 @@
   </select>  
   
   <select id="select8" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
     <trim prefix="where" prefixOverrides="OR | AND"> 
       <!-- or/and 앞에 아무것도 없을 때 or/and 를 자동으로 제거한다. -->
       <if test="no != null">
@@ -157,13 +120,7 @@
   </select>  
   
   <select id="select21" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
     where
     <choose>
 	    <when test="item == 'no'">
@@ -205,13 +162,7 @@
   </update>
   
   <select id="select22" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
     <where>
       <if test="no0 != null">
         board_id = #{no0}
@@ -231,13 +182,7 @@
     </where>
   </select>  
   <select id="select23" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count 
-    from x_board
+    <include refid="sql1"/>
     <where>
       <foreach collection="noList" item="no">
         or board_id = #{no}
@@ -245,13 +190,7 @@
     </where>
   </select>
   <select id="select24" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date, <!-- comments -->
-      view_count /* comments */
-    from x_board
+    <include refid="sql1"/>
     <where>
       board_id in /* (1, 2, 11, 12) */
       <foreach collection="noList" item="no" open="(" separator="," close=")">
@@ -260,13 +199,7 @@
     </where>
   </select>
   <select id="select25" resultMap="BoardMap" parameterType="map">
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date, <!-- comments -->
-      view_count /* comments */
-    from x_board
+    <include refid="sql1"/>
     <where>
       <foreach collection="words" item="word">
         or title like concat('%', #{word}, '%')
@@ -275,13 +208,7 @@
   </select>
   <select id="select26" resultMap="BoardMap" parameterType="map">
     <bind name="titlePattern" value="'%' + _parameter.title + '%'"/>
-    select 
-      board_id,
-      title, 
-      contents, 
-      created_date,
-      view_count
-    from x_board
+    <include refid="sql1"/>
     <where>
         title like #{titlePattern}
     </where>
