@@ -203,6 +203,33 @@
     </set> 
     where board_id=#{no}
   </update>
+  
+  <select id="select22" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    <where>
+      <if test="no0 != null">
+        board_id = #{no0}
+      </if>
+      <if test="no1 != null">
+        or board_id = #{no1}
+      </if>
+      <if test="no2 != null">
+        or board_id = #{no2}
+      </if>
+      <if test="no3 != null">
+        or board_id = #{no3}
+      </if>
+      <if test="no4 != null">
+        or board_id = #{no4}
+      </if>
+    </where>
+  </select>  
 </mapper>
 
 
