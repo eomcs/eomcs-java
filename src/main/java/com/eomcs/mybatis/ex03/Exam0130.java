@@ -1,7 +1,8 @@
-// dynamic sql 다루기 - 조건문 사용 전
+// dynamic sql 다루기 - 조건문 사용 II
 package com.eomcs.mybatis.ex03;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import org.apache.ibatis.io.Resources;
@@ -9,7 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class Exam0110 {
+public class Exam0130 {
 
   public static void main(String[] args) throws Exception {
     InputStream inputStream = Resources.getResourceAsStream(//
@@ -20,27 +21,26 @@ public class Exam0110 {
     SqlSession sqlSession = factory.openSession();
 
     // 실행 예:
-    // => 사용자로부터 게시글의 번호를 입력 받아 조회한다.
-    // => 만약 오류가 발생하면 전체 게시글을 출력한다.
+    // => 사용자로부터 검색 키워드를 입력 받아 조회한다.
+    // => 제목, 내용, 번호로 검색하기
 
     Scanner keyScan = new Scanner(System.in);
-    System.out.print("게시글 번호? ");
-    String str = keyScan.nextLine();
+
+    System.out.print("항목(1:번호, 2:제목, 3: 내용, 그 외: 전체)? ");
+    String item = keyScan.nextLine();
+
+    System.out.print("검색어? ");
+    String keyword = keyScan.nextLine();
+
     keyScan.close();
 
-    List<Board> list = null;
+    // SQL 매퍼에 여러 개의 파라미터 값을 넘길 때 주로 Map을 사용한다.
+    HashMap<String, Object> params = new HashMap<>();
+    params.put("item", item);
+    params.put("keyword", keyword);
 
-    try {
-      // dynamic SQL 문법을 사용하기 전:
-      // => 게시글 번호가 주어지면 특정 게시글만 조회하는
-      // select1 SQL을 실행한다.
-      list = sqlSession.selectList("BoardMapper.select1", Integer.parseInt(str));
-
-    } catch (Exception e) {
-      // => 게시글 번호가 없으면 전체 게시글을 조회하는
-      // select2 SQL을 실행한다.
-      list = sqlSession.selectList("BoardMapper.select2");
-    }
+    List<Board> list = sqlSession.selectList("BoardMapper.select4", //
+        params);
 
     for (Board board : list) {
       System.out.printf("%d, %s, %s, %d\n", //

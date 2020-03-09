@@ -36,6 +36,41 @@
     from x_board
   </select>
   
+  <!-- if 조건문
+  => 조건에 따라 생성할 SQL문을 제어할 수 있다.
+  => 문법) <if test="조건">SQL문</if>
+   -->
+  <select id="select3" resultMap="BoardMap" parameterType="int">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    <if test="no != null">
+      where board_id = #{no}
+    </if>
+  </select>
+  
+  <select id="select4" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    <if test="item == 1">
+      where board_id = #{keyword}
+    </if>
+    <if test="item == 2">
+      where title like concat('%', #{keyword}, '%')
+    </if>
+    <if test="item == 3">
+      where content = #{keyword}
+    </if>
+  </select>
 </mapper>
 
 
