@@ -24,6 +24,7 @@
   
   <mappers>
     <mapper resource="com/eomcs/mybatis/ex04/BoardMapper.xml"/>
+    <mapper resource="com/eomcs/mybatis/ex04/BoardMapper2.xml"/>
   </mappers>
 </configuration>
 
