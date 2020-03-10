@@ -2,6 +2,7 @@ package com.eomcs.mybatis.ex04;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 public class Board implements Serializable {
   private static final long serialVersionUID = 1L;
@@ -11,11 +12,20 @@ public class Board implements Serializable {
   String content;
   Date registeredDate;
   int viewCount;
+  List<AttachFile> files;
 
   @Override
   public String toString() {
     return "Board [no=" + no + ", title=" + title + ", content=" + content + ", registeredDate="
         + registeredDate + ", viewCount=" + viewCount + "]";
+  }
+
+  public List<AttachFile> getFiles() {
+    return files;
+  }
+
+  public void setFiles(List<AttachFile> files) {
+    this.files = files;
   }
 
   public int getNo() {
