@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="BoardMapper">
+
+  <resultMap type="Board" id="BoardMap">
+    <id column="board_id" property="no"/>
+    <!-- 
+    <result column="title" property="title"/>
+    -->
+    <result column="contents" property="content"/>
+    <result column="created_date" property="registeredDate"/>
+    <result column="view_count" property="viewCount"/>
+  </resultMap>
+  
+  <resultMap type="AttachFile" id="AttachFileMap">
+    <id column="board_file_id" property="no"/>
+    <result column="file_path" property="filePath"/>
+    <result column="board_id" property="boardNo"/>
+  </resultMap>
+  
+  <select id="selectBoard" resultMap="BoardMap" parameterType="int">
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    <if test="no != null">
+      where board_id = #{no}
+    </if>
+  </select>
+  
+  <select id="selectFile" 
+          resultMap="AttachFileMap" 
+          parameterType="int">
+    select 
+      board_file_id,
+      file_path
+    from x_board_file
+    where board_id = #{no}
+  </select>
+
+</mapper>
+
+
+
+
+
+
+
