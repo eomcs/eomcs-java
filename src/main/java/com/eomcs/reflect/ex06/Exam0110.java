@@ -1,11 +1,11 @@
 // 인터페이스 구현체를 자동으로 생성하기
-package ch27.a;
+package com.eomcs.reflect.ex06;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-public class Test01 {
+public class Exam0110 {
 
   public static void main(String[] args) {
     // java.lang.reflect.Proxy
