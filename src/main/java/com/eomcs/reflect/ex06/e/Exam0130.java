@@ -1,5 +1,5 @@
 // 여러 개의 인터페이스를 구현한 객체를 자동 생성하기 - 람다(lambda) 적용=
-package com.eomcs.reflect.ex06;
+package com.eomcs.reflect.ex06.e;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;

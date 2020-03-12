@@ -1,5 +1,5 @@
 // 여러 개의 인터페이스를 구현한 객체를 자동 생성하기
-package com.eomcs.reflect.ex06;
+package com.eomcs.reflect.ex06.e;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
