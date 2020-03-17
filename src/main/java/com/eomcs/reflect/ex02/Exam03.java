@@ -2,25 +2,41 @@
 package com.eomcs.reflect.ex02;
 
 public class Exam03 {
+
   static class A {
-    static class B {} // static nested class
-    class C {} // non-static nested class == inner class
+
+    static class B {
+    } // static nested class
+
+    class C {
+    } // non-static nested class == inner class
+
     public void m() {
-      class D {} // local class
+      class D {
+      } // local class
     }
+
     public void m2() {
-      Object obj = new Object() {}; // anonymous class 
+      Object obj = new Object() {}; // anonymous class
     }
-    public static class E {}
-    public class F {}
+
+    public static class E {
+    }
+
+    public class F {
+    }
+
+    public interface X {
+    }
   }
 
   public static void main(String[] args) throws Exception {
-    Class clazz = Class.forName("step18.ex2.Exam03$A");
+    Class<?> clazz = Class.forName("com.eomcs.reflect.ex02.Exam03$A");
 
     // public 으로 공개된 중첩 클래스 및 인터페이스 정보를 가져온다.
-    Class[] nestedList = clazz.getClasses();
-    for (Class nested : nestedList) {
+    Class<?>[] nestedList = clazz.getClasses();
+
+    for (Class<?> nested : nestedList) {
       System.out.println(nested.getName());
     }
 

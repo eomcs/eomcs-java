@@ -2,14 +2,21 @@
 package com.eomcs.reflect.ex02;
 
 public class Exam06 {
-  static interface A {}
-  static interface B {}
-  static interface C {}
 
-  static class D implements A, B, C {}
+  static interface A {
+  }
+
+  static interface B {
+  }
+
+  static interface C {
+  }
+
+  static class D implements A, B, C {
+  }
 
   public static void main(String[] args) throws Exception {
-    Class clazz = Class.forName("step18.ex2.Exam06$D");
+    Class<?> clazz = Class.forName("com.eomcs.reflect.ex02.Exam06$D");
 
     // 해당 클래스의 패키지 정보를 가져온다.
     Package p = clazz.getPackage();
