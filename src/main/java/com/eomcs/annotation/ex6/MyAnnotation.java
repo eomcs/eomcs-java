@@ -1,4 +1,4 @@
-// 애노테이션 적용 범위 
+// 애노테이션 적용 범위
 package com.eomcs.annotation.ex6;
 
 import java.lang.annotation.ElementType;
@@ -10,13 +10,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MyAnnotation {
-    String v1() default "가나다";
+  String v1() default "가나다";
 }
-
-
-
-
-
-
 
 
