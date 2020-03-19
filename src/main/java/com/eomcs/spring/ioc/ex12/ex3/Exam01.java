@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.eomcs.spring.ioc.BeanUtils;
+import com.eomcs.spring.ioc.SpringUtils;
 import com.eomcs.spring.ioc.ex12.Board;
 
 public class Exam01 {
@@ -24,7 +24,7 @@ public class Exam01 {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
         "bitcamp/java106/step12/ex3/application-context.xml");
 
-    BeanUtils.printBeanNames(iocContainer);
+    SpringUtils.printBeanNames(iocContainer);
 
     BoardDao boardDao = iocContainer.getBean(BoardDao.class);
 

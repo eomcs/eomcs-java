@@ -2,7 +2,7 @@ package com.eomcs.spring.ioc;
 
 import org.springframework.context.ApplicationContext;
 
-public class BeanUtils {
+public class SpringUtils {
   public static void printBeanList(ApplicationContext iocContainer) {
     // IoC 컨테이너에 들어있는 객체 알아내기
     // 빈(bean) = 객체(object) = 인스턴스(instance)

@@ -4,7 +4,7 @@ package com.eomcs.spring.ioc.ex10;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.eomcs.spring.ioc.BeanUtils;
+import com.eomcs.spring.ioc.SpringUtils;
 
 public class Exam02 {
 
@@ -20,7 +20,7 @@ public class Exam02 {
         new AnnotationConfigApplicationContext(
             "bitcamp.java106.step10");
 
-    BeanUtils.printBeanNames(iocContainer);
+    SpringUtils.printBeanNames(iocContainer);
   }
 
 }

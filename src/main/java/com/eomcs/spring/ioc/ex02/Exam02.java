@@ -4,7 +4,7 @@ package com.eomcs.spring.ioc.ex02;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.eomcs.spring.ioc.BeanUtils;
+import com.eomcs.spring.ioc.SpringUtils;
 
 public class Exam02 {
 
@@ -12,7 +12,7 @@ public class Exam02 {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
         "bitcamp/java106/step02/application-context-02.xml");
 
-    BeanUtils.printBeanList(iocContainer);
+    SpringUtils.printBeanList(iocContainer);
 
     // 빈의 아이디로 객체를 꺼내기
     Car c1 = (Car) iocContainer.getBean("c1");
@@ -25,14 +25,14 @@ public class Exam02 {
     if (c2 == c3) System.out.println("c2 == c3");
 
     System.out.println("----------------------------");
-    BeanUtils.printBeanAliases(iocContainer, "c1");
-    BeanUtils.printBeanAliases(iocContainer, "c2");
-    BeanUtils.printBeanAliases(iocContainer, "c4");
-    BeanUtils.printBeanAliases(iocContainer, "c5");
-    BeanUtils.printBeanAliases(iocContainer, "c6");
-    BeanUtils.printBeanAliases(iocContainer, "c7");
-    BeanUtils.printBeanAliases(iocContainer, "c8");
-    BeanUtils.printBeanAliases(iocContainer, "c91");
+    SpringUtils.printBeanAliases(iocContainer, "c1");
+    SpringUtils.printBeanAliases(iocContainer, "c2");
+    SpringUtils.printBeanAliases(iocContainer, "c4");
+    SpringUtils.printBeanAliases(iocContainer, "c5");
+    SpringUtils.printBeanAliases(iocContainer, "c6");
+    SpringUtils.printBeanAliases(iocContainer, "c7");
+    SpringUtils.printBeanAliases(iocContainer, "c8");
+    SpringUtils.printBeanAliases(iocContainer, "c91");
   }
 
 }

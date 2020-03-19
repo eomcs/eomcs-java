@@ -4,7 +4,7 @@ package com.eomcs.spring.ioc.ex08;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.eomcs.spring.ioc.BeanUtils;
+import com.eomcs.spring.ioc.SpringUtils;
 
 public class Exam08 {
 
@@ -16,7 +16,7 @@ public class Exam08 {
     System.out.println(iocContainer.getBean("c1"));
     System.out.println("---------------------------");
 
-    BeanUtils.printBeanNames(iocContainer);
+    SpringUtils.printBeanNames(iocContainer);
   }
 
 }

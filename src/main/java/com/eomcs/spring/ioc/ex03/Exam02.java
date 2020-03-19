@@ -4,7 +4,7 @@ package com.eomcs.spring.ioc.ex03;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.eomcs.spring.ioc.BeanUtils;
+import com.eomcs.spring.ioc.SpringUtils;
 
 public class Exam02 {
 
@@ -12,7 +12,7 @@ public class Exam02 {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
         "bitcamp/java106/step03/application-context-02.xml");
 
-    BeanUtils.printBeanNames(iocContainer);
+    SpringUtils.printBeanNames(iocContainer);
   }
 
 }

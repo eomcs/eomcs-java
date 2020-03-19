@@ -4,7 +4,7 @@ package com.eomcs.spring.ioc.ex11;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.eomcs.spring.ioc.BeanUtils;
+import com.eomcs.spring.ioc.SpringUtils;
 
 public class Exam01 {
 
@@ -12,7 +12,7 @@ public class Exam01 {
     ApplicationContext iocContainer = 
         new AnnotationConfigApplicationContext(AppConfig01.class);
 
-    BeanUtils.printBeanNames(iocContainer);
+    SpringUtils.printBeanNames(iocContainer);
 
     System.out.println(iocContainer.getBean("car"));
   }

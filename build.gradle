@@ -10,8 +10,8 @@ repositories {
 dependencies {
   implementation 'org.mybatis:mybatis:3.5.4'
   implementation 'org.mariadb.jdbc:mariadb-java-client:2.5.4'
+  implementation 'org.springframework:spring-context:5.2.4.RELEASE'
   implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.11'
-  implementation group: 'org.springframework', name: 'spring-context', version: '5.2.2.RELEASE'
   implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
   implementation group: 'org.mybatis', name: 'mybatis', version: '3.5.3'
     

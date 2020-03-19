@@ -4,7 +4,7 @@ package com.eomcs.spring.ioc.ex02;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.eomcs.spring.ioc.BeanUtils;
+import com.eomcs.spring.ioc.SpringUtils;
 
 public class Exam03 {
 
@@ -12,7 +12,7 @@ public class Exam03 {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
         "bitcamp/java106/step02/application-context-03.xml");
 
-    BeanUtils.printBeanNames(iocContainer);
+    SpringUtils.printBeanNames(iocContainer);
 
     // scope=singleton : 객체를 한 개만 생성해서 공유한다. 
     Car obj1 = (Car) iocContainer.getBean("c1");
