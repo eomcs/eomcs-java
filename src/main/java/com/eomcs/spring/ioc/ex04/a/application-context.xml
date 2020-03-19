@@ -7,8 +7,8 @@
     
     <!-- 프로퍼티 설정하기 = 셋터 호출하기 -->
     
-    <bean id="c1" class="bitcamp.java106.step04.Car">
-        <property name="model"><value type="java.lang.String">티코</value></property>
+    <bean id="c1" class="com.eomcs.spring.ioc.ex04.Car">
+        <property name="model"><value type="java.lang.String">티코1</value></property>
         <property name="maker"><value type="java.lang.String">비트자동차</value></property>
         <property name="cc"><value type="int">890</value></property>
     </bean>
@@ -21,17 +21,18 @@
         objPool.put("c1", c1);
     -->
     
-    <!-- 프로퍼티의 타입을 생략하면 IoC 컨테이너가 프로퍼티의 타입에 맞춰서 
-         String을 형변환한다. -->
-    <bean id="c2" class="bitcamp.java106.step04.Car">
-        <property name="model"><value>티코</value></property>
+    <!-- 프로퍼티의 타입을 생략하면 IoC 컨테이너가 
+         String을 프로퍼티의 타입에 맞춰서 자동 형변환한다. 
+    -->
+    <bean id="c2" class="com.eomcs.spring.ioc.ex04.Car">
+        <property name="model"><value>티코2</value></property>
         <property name="maker"><value>비트자동차</value></property>
         <property name="cc"><value>890</value></property>
     </bean>
     
     <!-- value 태그 대신에 property 태그의 value 속성으로 값을 지정할 수 있다. -->
-    <bean id="c3" class="bitcamp.java106.step04.Car">
-        <property name="model" value="티코"/>
+    <bean id="c3" class="com.eomcs.spring.ioc.ex04.Car">
+        <property name="model" value="티코3"/>
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="890"/>
     </bean>
@@ -47,8 +48,8 @@
          설정하는 방법:
          p:프로퍼티명="값"
           -->
-    <bean id="c4" class="bitcamp.java106.step04.Car"
-          p:model="티코" p:maker="비트자동차" p:cc="890"/>
+    <bean id="c4" class="com.eomcs.spring.ioc.ex04.Car"
+          p:model="티코4" p:maker="비트자동차" p:cc="890"/>
           
 </beans>
 
