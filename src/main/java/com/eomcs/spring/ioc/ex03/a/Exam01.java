@@ -1,5 +1,5 @@
 // 생성자 호출 
-package com.eomcs.spring.ioc.ex03;
+package com.eomcs.spring.ioc.ex03.a;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

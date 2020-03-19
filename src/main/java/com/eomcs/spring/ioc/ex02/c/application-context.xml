@@ -14,11 +14,11 @@
     
     <!-- scope 속성의 기본 값은 singleton -->
     <!-- singleton 객체는 IoC 컨테이너가 생성될 때 미리 준비된다. -->
-    <bean id="c1" class="bitcamp.java106.step02.Car" />
-    <bean id="c2" class="bitcamp.java106.step02.Car" scope="singleton"/>
+    <bean id="c1" class="com.eomcs.spring.ioc.ex02.Car" />
+    <bean id="c2" class="com.eomcs.spring.ioc.ex02.Car" scope="singleton"/>
     
     <!-- prototype 객체는 getBean()을 호출할 때 생성된다. -->
-    <bean id="c3" class="bitcamp.java106.step02.Car" scope="prototype"/>
+    <bean id="c3" class="com.eomcs.spring.ioc.ex02.Car" scope="prototype"/>
 </beans>
 
 
