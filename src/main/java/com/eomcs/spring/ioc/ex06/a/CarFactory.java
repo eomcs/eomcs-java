@@ -1,4 +1,6 @@
-package com.eomcs.spring.ioc.ex06;
+package com.eomcs.spring.ioc.ex06.a;
+
+import com.eomcs.spring.ioc.ex06.Car;
 
 public class CarFactory {
   public static Car create(String model) {
@@ -16,7 +18,7 @@ public class CarFactory {
         return c;
       case "SM5":
         c.setMaker("르노삼성자동차");
-        c.setMaker("SM5");
+        c.setModel("SM5");
         c.setCc(1990);
         return c;
       default:

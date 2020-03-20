@@ -1,5 +1,5 @@
-// 프로퍼티 에디터 만들기 
-package com.eomcs.spring.ioc.ex07;
+// 프로퍼티 에디터 만들기
+package com.eomcs.spring.ioc.ex07.c;
 
 import java.beans.PropertyEditorSupport;
 import java.sql.Date;
@@ -7,9 +7,9 @@ import java.sql.Date;
 // 프로퍼티 에디터 만드는 방법
 // => java.beans.PropertyEditor 인터페이스를 구현하면 된다.
 // => 그러나 이 인터페이스를 직접 구현하려면 많은 메서드(12개의 메서드)를 모두 구현해야 한다.
-//    너무 번거롭다.
+// 너무 번거롭다.
 // => 그래서 자바는 PropertyEditor를 미리 구현한 PropertyEditorSupport 라는 클래스를 제공한다.
-//    따라서 인터페이스를 직접 구현하지 말고 이 클래스를 상속 받아라!
+// 따라서 인터페이스를 직접 구현하지 말고 이 클래스를 상속 받아라!
 //
 // 1) java.beans.PropertyEditorSupports를 상속 받는다.
 //

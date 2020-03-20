@@ -6,21 +6,19 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <!-- 팩토리 메서드를 통해 객체를 만들기 : 스프링 규칙에 따라 만들기 -->
-    <bean id="c1" class="bitcamp.java106.step06.CarFactory3">
+    <bean id="c1" class="com.eomcs.spring.ioc.ex06.d.CarFactory">
         <property name="model" value="소나타"/>
     </bean>
     <!-- 자바 코드:
-            CarFactory3 carFactory = new CarFactory3();
+            CarFactory carFactory = new CarFactory();
             carFactory.setModel("소나타");
             
-            Object obj = null;
             // FactoryBean의 구현체 여부에 따라 "c1" 이라는 이름으로 저장할 객체가 다르다.
             if (carFactory instanceof FactoryBean) {
-                obj = carFactory.getObject();
+                objPool.put("c1", carFactory.getObject());
             } else {
-                obj = carFactory;
+                objPool.put("c1", carFactory);
             }
-            objPool.put("c1", obj);
      -->
     
 </beans>

@@ -1,31 +1,34 @@
-package com.eomcs.spring.ioc.ex06;
+package com.eomcs.spring.ioc.ex06.d;
 
 import org.springframework.beans.factory.FactoryBean;
+import com.eomcs.spring.ioc.ex06.Car;
 
 // 스프링 IoC 컨테이너가 정한 규칙에 따라 공장 클래스를 만들면,
-// 스프링 기법을 사용하여 보다 쉽게 객체 생성을 설정할 수 있다.
-// 
+// 구현할 때 복잡한 면이 있다.
+// 하지만 빈 생성을 설정할 때는 기존 방식 보다 쉽다.
+//
 // 스프링에서 공장 클래스를 만들 때 제안한 규칙?
-// => org.springframework.beans.factory.FactoryBean 인터페이스 
-// 
-public class CarFactory3 implements FactoryBean<Car>{
+// => org.springframework.beans.factory.FactoryBean 인터페이스
+//
+public class CarFactory implements FactoryBean<Car> {
+
   String model;
 
-  public CarFactory3() {
-    System.out.println("CarFactory3() 생성자 호출됨.");
+  public CarFactory() {
+    System.out.println("CarFactory() 생성자 호출됨.");
   }
 
   public void setModel(String model) {
-    System.out.println("CarFactory3.setModel() 호출됨.");
+    System.out.println("CarFactory.setModel() 호출됨.");
     this.model = model;
   }
 
   @Override
   public Car getObject() throws Exception {
-    System.out.println("CarFactory3.getObject() 호출됨.");
-    // 객체를 생성해서 리턴하는 메서드이다. 
+    System.out.println("CarFactory.getObject() 호출됨.");
+    // 객체를 생성해서 리턴하는 팩토리 메서드이다.
     // 스프링 IoC 컨테이너는 이 메서드를 호출할 것이다.
-    // 이 방식으로는 객체를 생성할 때 추가적으로 필요한 값을 파라미터로 받을 수 없기 때문에 
+    // 이 방식으로는 객체를 생성할 때 추가적으로 필요한 값을 파라미터로 받을 수 없기 때문에
     // 프로퍼티로 받도록 해야 한다.
     Car c = new Car();
     switch (model) {
@@ -54,10 +57,11 @@ public class CarFactory3 implements FactoryBean<Car>{
 
   @Override
   public Class<?> getObjectType() {
-    System.out.println("CarFactory3.getObjectType() 호출됨.");
+    // getObject()가 생성해주는 객체의 타입 정보를 리턴한다.
+    // 이 메서드는 Spring IoC 컨테이너가 타입으로 객체를 찾을 때 사용한다.
+    System.out.println("CarFactory.getObjectType() 호출됨.");
     return Car.class;
   }
 }
-
 
 

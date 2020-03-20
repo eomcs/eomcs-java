@@ -1,6 +1,11 @@
-package com.eomcs.spring.ioc.ex06;
+package com.eomcs.spring.ioc.ex06.c;
 
-public class CarFactory2 {
+import com.eomcs.spring.ioc.ex06.Car;
+
+public class CarFactory {
+
+  // 팩토리 메서드가 인스턴스 메서드이다.
+  // => 팩토리 메서드가 non-static 메서드이다.
   public Car create(String model) {
     Car c = new Car();
     switch (model) {
@@ -16,7 +21,7 @@ public class CarFactory2 {
         return c;
       case "SM5":
         c.setMaker("르노삼성자동차");
-        c.setMaker("SM5");
+        c.setModel("SM5");
         c.setCc(1990);
         return c;
       default:

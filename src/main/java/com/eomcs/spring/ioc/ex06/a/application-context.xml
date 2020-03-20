@@ -7,8 +7,10 @@
     
     <!-- 팩토리 메서드를 통해 객체를 만들기 -->
     
-    <bean id="c1" class="bitcamp.java106.step06.CarFactory"
+    <bean id="c1" 
+          class="com.eomcs.spring.ioc.ex06.a.CarFactory"
           factory-method="create">
+        <!-- create() 메서드를 호출할 때 넘겨줄 파라미터 값 -->
         <constructor-arg value="티코"/>
     </bean>
     <!--
@@ -18,14 +20,16 @@
         자바 코드:
             Object obj = CarFactory.create("티코");
             objPool.put("c1", obj);
+        => 'c1' 이라는 이름으로 저장되는 것은 CarFactory 객체가 아니라 
+           create()가 리턴한 Car 객체이다.
      -->
     
-    <bean id="c2" class="bitcamp.java106.step06.CarFactory"
+    <bean id="c2" class="com.eomcs.spring.ioc.ex06.a.CarFactory"
           factory-method="create">
         <constructor-arg value="소나타"/>
     </bean>
     
-    <bean id="c3" class="bitcamp.java106.step06.CarFactory"
+    <bean id="c3" class="com.eomcs.spring.ioc.ex06.a.CarFactory"
           factory-method="create">
         <constructor-arg value="오호라"/>
     </bean>
