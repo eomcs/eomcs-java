@@ -1,38 +1,46 @@
-package com.eomcs.spring.ioc.ex05;
+package com.eomcs.spring.ioc.ex05.d;
 
-import java.util.Map;
+import java.util.Properties;
 
-public class Car3 {
+public class Car {
   String model;
   String maker;
   int cc;
-  Map<String,Object> options;
+  Properties options;
 
   @Override
   public String toString() {
-    return "Car3 [model=" + model + ", maker=" + maker + ", cc=" + cc + ", options=" + options + "]";
+    return "Car [model=" + model + ", maker=" + maker + ", cc=" + cc + ", options=" + options + "]";
   }
-  public Map<String, Object> getOptions() {
+
+  public Properties getOptions() {
     return options;
   }
-  public void setOptions(Map<String, Object> options) {
+
+  public void setOptions(Properties options) {
     this.options = options;
   }
+
   public String getModel() {
     return model;
   }
+
   public void setModel(String model) {
     this.model = model;
   }
+
   public String getMaker() {
     return maker;
   }
+
   public void setMaker(String maker) {
     this.maker = maker;
   }
+
   public int getCc() {
     return cc;
   }
+
   public void setCc(int cc) {
     this.cc = cc;
   }

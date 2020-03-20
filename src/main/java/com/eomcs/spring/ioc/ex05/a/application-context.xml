@@ -7,38 +7,40 @@
     
     <!-- 컬렉션 타입의 프로퍼티 값 설정하기 -->
     
-    <bean id="c1" class="bitcamp.java106.step05.Car">
+    <bean id="c1" class="com.eomcs.spring.ioc.ex05.a.Car">
         <!-- 배열 프로퍼티 값 설정하기 -->
         <property name="tires">
             <array>
-                <bean class="bitcamp.java106.step05.Tire" 
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire" 
                       p:maker="금호타이어" p:width="180"/>
-                <bean class="bitcamp.java106.step05.Tire" 
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire" 
                       p:maker="금호타이어" p:width="180"/>
-                <bean class="bitcamp.java106.step05.Tire" 
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire" 
                       p:maker="한국타이어" p:width="180"/>
-                <bean class="bitcamp.java106.step05.Tire" 
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire" 
                       p:maker="한국타이어" p:width="180"/>
-                <bean class="bitcamp.java106.step05.Tire" 
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire" 
                       p:maker="비트타이어" p:width="100"/>
             </array>
         </property>
     </bean>
     
-    <bean id="c2" class="bitcamp.java106.step05.Car">
+    <bean id="c2" class="com.eomcs.spring.ioc.ex05.a.Car">
         <!-- 배열 프로퍼티 값 설정하기 -->
         <property name="tires">
             <list> <!-- array 태그 대신에 list 태그를 사용해도 된다. -->
-                <bean class="bitcamp.java106.step05.Tire" 
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire" 
                       p:maker="금호타이어" p:width="180"/>
-                <bean class="bitcamp.java106.step05.Tire" 
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire" 
                       p:maker="금호타이어" p:width="180"/>
-                <bean class="bitcamp.java106.step05.Tire" 
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire" 
                       p:maker="한국타이어" p:width="180"/>
-                <bean class="bitcamp.java106.step05.Tire" 
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire" 
                       p:maker="한국타이어" p:width="180"/>
-                <bean class="bitcamp.java106.step05.Tire" 
-                      p:maker="비트타이어" p:width="100"/>
+                <bean class="com.eomcs.spring.ioc.ex05.a.Tire">
+                  <property name="maker" value="비트타이어"/>
+                  <property name="width" value="100"/>
+                </bean> 
             </list>
         </property>
     </bean>

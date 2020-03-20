@@ -7,7 +7,7 @@
     
     <!-- 컬렉션 타입의 프로퍼티 값 설정하기 -->
     
-    <bean id="c1" class="bitcamp.java106.step05.Car3">
+    <bean id="c1" class="com.eomcs.spring.ioc.ex05.c.Car">
         <!-- Map 프로퍼티 값 설정하기 : 배열과 똑같다.  -->
         <property name="options">
             <map>
@@ -18,14 +18,14 @@
                 <entry key="auto" value="true"/>
                 <entry key="spareTire"> 
                     <!-- 객체를 바로 만들어 넣고 싶다면 bean 태그를 사용하라! -->
-                    <bean class="bitcamp.java106.step05.Tire" p:maker="비트타이"/>
+                    <bean class="com.eomcs.spring.ioc.ex05.c.Tire" p:maker="비트타이"/>
                 </entry>
                 <entry key="engine" value-ref="e1"/>
             </map>
         </property>
     </bean>
     
-    <bean id="e1" class="bitcamp.java106.step05.Engine" p:maker="비트자동차"/>  
+    <bean id="e1" class="com.eomcs.spring.ioc.ex05.c.Engine" p:maker="비트자동차"/>  
 </beans>
 
 
