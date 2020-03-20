@@ -1,13 +1,12 @@
-// 프로퍼티 에디터 만들기 
-package com.eomcs.spring.ioc.ex07;
+// 프로퍼티 에디터 만들기
+package com.eomcs.spring.ioc.ex07.d;
 
 import java.beans.PropertyEditorSupport;
-import java.sql.Date;
+import com.eomcs.spring.ioc.ex07.Engine;
 
 public class CustomEngineEditor extends PropertyEditorSupport {
   @Override
   public void setAsText(String text) throws IllegalArgumentException {
-    System.out.println("CustomEngineEditor.setAsText()");
     String[] values = text.split(",");
 
     Engine engine = new Engine();
@@ -18,12 +17,5 @@ public class CustomEngineEditor extends PropertyEditorSupport {
     this.setValue(engine);
   }
 }
-
-
-
-
-
-
-
 
 

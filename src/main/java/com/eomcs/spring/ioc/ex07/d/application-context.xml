@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     
-    <bean id="c1" class="bitcamp.java106.step07.Car">
+    <bean id="c1" class="com.eomcs.spring.ioc.ex07.Car">
         <property name="model" value="티코"/>
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="890"/>
@@ -18,9 +18,9 @@
 	    <property name="customEditors">
 	        <map>
 	            <entry key="java.sql.Date" 
-	                   value="bitcamp.java106.step07.CustomDateEditor"/>
-	            <entry key="bitcamp.java106.step07.Engine" 
-                       value="bitcamp.java106.step07.CustomEngineEditor"/>
+	                   value="com.eomcs.spring.ioc.ex07.c.CustomDateEditor"/>
+	            <entry key="com.eomcs.spring.ioc.ex07.Engine" 
+                     value="com.eomcs.spring.ioc.ex07.d.CustomEngineEditor"/>
 	        </map>
 	    </property>
 	</bean>
