@@ -31,24 +31,23 @@
          => 이 태그를 추가하면 @Qualifier 애노테이션을 처리할 BeanPostProcessor가 
             자동 등록된다!
     -->
-    
-    <bean id="c1" class="bitcamp.java106.step08.Car6">
+    <bean id="c1" class="com.eomcs.spring.ioc.ex08.h.Car">
         <property name="model" value="티코"/>
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="890"/>
         <property name="auto" value="true"/>
     </bean>
     
-    <bean id="e1" class="bitcamp.java106.step08.Engine">
+    <bean id="e1" class="com.eomcs.spring.ioc.ex08.h.Engine">
         <property name="maker" value="비트자동차"/>
         <property name="valve" value="16"/>
         <property name="cylinder" value="4"/>
     </bean>
     
-    <bean id="e2" class="bitcamp.java106.step08.Engine">
-        <property name="maker" value="캠프자동차"/>
-        <property name="valve" value="32"/>
-        <property name="cylinder" value="8"/>
+    <bean id="e2" class="com.eomcs.spring.ioc.ex08.h.Engine">
+        <property name="maker" value="비트자동차"/>
+        <property name="valve" value="16"/>
+        <property name="cylinder" value="4"/>
     </bean>
 </beans>
 
