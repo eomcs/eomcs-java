@@ -2,11 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:p="http://www.springframework.org/schema/p"
     xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://mybatis.org/schema/mybatis-spring
+        http://mybatis.org/schema/mybatis-spring.xsd">
     
     <context:component-scan base-package="com.eomcs.spring.ioc.ex12.d"/>
 
@@ -41,15 +44,11 @@
     <context:property-placeholder 
         location="com/eomcs/spring/ioc/ex12/jdbc.properties"/>	
         
-<!-- DAO 구현체를 자동으로 만들어 주는 객체를 준비
+<!-- DAO 구현체를 자동으로 만들어 주는 객체를 준비 II
      => 개발자는 DAO를 직접 구현할 필요가 없다.
      => 단지 인터페이스만 선언하면 된다.
  -->
-  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <!-- DAO 인터페이스가 선언된 패키지를 지정한다. -->
-    <property name="basePackage" 
-              value="com.eomcs.spring.ioc.ex12.d" />
-  </bean>    
+  <mybatis:scan base-package="com.eomcs.spring.ioc.ex12.d" />
 </beans>
 
 

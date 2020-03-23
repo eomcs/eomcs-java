@@ -1,5 +1,5 @@
 // Spring과 Mybatis 연동 : mybatis가 구현한 DAO 객체 사용하기
-package com.eomcs.spring.ioc.ex12.d;
+package com.eomcs.spring.ioc.ex12.e;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
