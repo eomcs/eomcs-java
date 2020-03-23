@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex12.ex3;
+package com.eomcs.spring.ioc.ex12.a;
 
 import java.util.HashMap;
 import java.util.List;

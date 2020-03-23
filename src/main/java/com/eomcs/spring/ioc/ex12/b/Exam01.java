@@ -1,5 +1,5 @@
 // Spring과 Mybatis 연동 : 설정이 아니라 객체를 통해 SqlSessionFactory 만들기 
-package com.eomcs.spring.ioc.ex12.ex2;
+package com.eomcs.spring.ioc.ex12.b;
 
 import java.util.List;
 

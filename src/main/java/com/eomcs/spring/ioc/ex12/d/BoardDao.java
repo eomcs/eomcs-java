@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex12.ex4;
+package com.eomcs.spring.ioc.ex12.d;
 
 import java.util.List;
 import java.util.Map;

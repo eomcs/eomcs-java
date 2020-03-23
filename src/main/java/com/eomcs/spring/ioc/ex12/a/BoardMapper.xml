@@ -6,29 +6,32 @@
 <mapper namespace="BoardMapper">
 
   <resultMap type="Board" id="BoardMap">
-    <id column="bno" property="no"/>
-    <result column="titl" property="title"/>
-    <result column="cont" property="content"/>
-    <result column="rdt" property="registeredDate"/>
+    <id column="board_id" property="no"/>
+    <result column="title" property="title"/>
+    <result column="contents" property="content"/>
+    <result column="created_date" property="registeredDate"/>
+    <result column="view_count" property="viewCount"/>
   </resultMap>
   
   <select id="selectList" resultMap="BoardMap" parameterType="map">
     select 
-      bno, 
-      titl, 
-      cont, 
-      rdt 
-    from ex_board
-    order by bno desc
+      board_id, 
+      title, 
+      contents, 
+      created_date 
+    from x_board
+    order by board_id desc
     limit #{startIndex}, #{pageSize}
   </select>
+  
   <insert id="insert" parameterType="Board">
-    insert into ex_board(titl,cont,rdt) 
-    values(#{title},#{content},now())
+    insert into x_board(title,contents) 
+    values(#{title},#{content})
   </insert>
+  
   <delete id="delete" parameterType="int">
-    delete from ex_board 
-    where bno=#{value}
+    delete from x_board 
+    where board_id=#{no}
   </delete>
 </mapper>
 

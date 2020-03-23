@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex12.ex2;
+package com.eomcs.spring.ioc.ex12.b;
 
 import java.io.InputStream;
 

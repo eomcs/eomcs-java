@@ -8,18 +8,38 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <context:component-scan base-package="bitcamp.java106.step12.ex1"></context:component-scan>
+    <context:component-scan base-package="com.eomcs.spring.ioc.ex12.a"/>
 
 <!-- Mybatis SqlSessionFactory 준비하기 -->
+<!--  
+SqlSessionFactory를 만들 때 사용할 설정 파일 읽기 도구를 준비한다.
+자바 코드 예:
+  InputStream mybatisConfigInputStream = Resources.getResourceAsStream(
+        "com/eomcs/spring/ioc/ex12/a/mybatis-config.xml");
+-->
     <bean id="mybatisConfigInputStream"
           class="org.apache.ibatis.io.Resources"
           factory-method="getResourceAsStream">
-      <constructor-arg value="bitcamp/java106/step12/ex1/mybatis-config.xml"/>
+      <constructor-arg 
+        value="com/eomcs/spring/ioc/ex12/a/mybatis-config.xml"/>
     </bean>
-    
+
+
+<!--  
+SqlSessionFactory를 만들어주는 공장 객체를 준비한다.
+자바 코드 예:
+  SqlSessionFactoryBuilder sqlSessionFactoryBuilder = 
+    new SqlSessionFactoryBuilder(); 
+-->
     <bean id="sqlSessionFactoryBuilder"
           class="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
-          
+
+<!-- 
+BoardDao가 사용할 SqlSessionFactory 객체를 준비한다. 
+자바 코드 예:
+  SqlSesssionFactory sqlSessionFactory = 
+    sqlSessionFactoryBuilder.build(mybatisConfigInputStream);  
+-->
     <bean id="sqlSessionFactory"
           factory-bean="sqlSessionFactoryBuilder"
           factory-method="build">
