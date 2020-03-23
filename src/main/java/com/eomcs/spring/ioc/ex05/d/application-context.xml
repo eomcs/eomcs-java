@@ -13,8 +13,8 @@
             <props>
                 <prop key="sunroof">true</prop>
                 <prop key="auto">true</prop>
-                <prop key="jdbc.username">java106</prop>
-                <prop key="jdbc.password">1111</prop>
+                <prop key="color">black</prop>
+                <prop key="blackbox">false</prop>
             </props>
         </property>
     </bean>

@@ -12,6 +12,15 @@
         <property name="auto" value="true"/>
         <property name="createdDate" value="2018-5-8"/>
         <property name="engine" value="비트자동차,16,4"/>
+        <!-- 자바 코드 표현
+		      => 스프링 IoC 컨테이너는 String 을 Engine 객체로 변환시켜줄 프로퍼티 에디터를 찾는다.
+		      => 그 에디터를 사용하여 문자열을 Engine 객체로 바꾼다.
+		         customEngineEditor.setAsText("비트자동차,16,4");
+		      => 변환된 값을 꺼낸다.
+		         Engine temp = customEngineEditor.getObject();
+		      => engine 프로퍼티에 값을 넣는다.
+		         c1.setEngine(temp);
+		    -->
     </bean>
     
     <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">

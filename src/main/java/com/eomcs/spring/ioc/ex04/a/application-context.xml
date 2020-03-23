@@ -16,7 +16,7 @@
         Car c1 = new Car();
         c1.setModel("티코");
         c1.setMaker("비트자동차");
-        c1.setCc(Integer.parseInt("890"));
+        c1.setCc(Integer.parseInt("890")); <== 문자열을 primitive type으로 자동 변환한다.
         
         objPool.put("c1", c1);
     -->

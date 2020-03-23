@@ -9,6 +9,10 @@
     <!-- id: 빈의 이름 -->
     <bean id="c1" class="com.eomcs.spring.ioc.ex02.Car"/>
     
+    <!-- id 전체가 하나의 문자열로 취급된다.  
+       즉 "c11 c12 c13" 문자열이 객체 아이디로 사용된다.-->
+    <bean id="c11 c12 c13" class="com.eomcs.spring.ioc.ex02.Car"/>
+  
     <!-- name: 빈의 별명 -->
     <bean id="c2" name="c3" class="com.eomcs.spring.ioc.ex02.Car"/>   
     
@@ -27,6 +31,8 @@
     <!-- id 없이 name에 여러 개의 별명을 지정할 때는 그 중에서 첫 번째 별명이 
          id로 사용된다. -->
     <bean name="c91 c92 c93" class="com.eomcs.spring.ioc.ex02.Car"/>
+    
+    
 </beans>
 
 

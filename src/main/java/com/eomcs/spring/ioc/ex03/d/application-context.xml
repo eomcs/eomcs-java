@@ -22,8 +22,9 @@
     <bean id="c3" class="com.eomcs.spring.ioc.ex03.Car" c:model="티코" c:cc="890"/>
 
     <!-- 물론 순서를 지정할 수 있다. 
-         방법:
-         c:_인덱스번호="값"
+         => 방법:
+           c:_인덱스번호="값"
+         => 인덱스는 0부터 시작한다.
     -->
     <bean id="c4" class="com.eomcs.spring.ioc.ex03.Car" c:_1="티코" c:_0="890"/>
 

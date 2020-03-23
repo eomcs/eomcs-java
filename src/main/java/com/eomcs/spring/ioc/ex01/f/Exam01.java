@@ -1,20 +1,17 @@
-// IoC 컨테이너에 객체를 보관하기 II
+// 패키지를 탐색하여 빈을 자동 생성하기
 package com.eomcs.spring.ioc.ex01.f;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.eomcs.spring.ioc.SpringUtils;
 
 public class Exam01 {
   public static void main(String[] args) {
-    ApplicationContext iocContainer = new AnnotationConfigApplicationContext(//
-        AppConfig.class);
+    ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
+        "com/eomcs/spring/ioc/ex01/f/application-context.xml");
 
     // 현재 IoC 컨테이너에 들어 있는 객체를 출력해 보자.
     SpringUtils.printBeanList(iocContainer);
-
-    // 애노테이션을 처리하는 기본 도구 외에
-    // AppConfig에서 설정한 객체(Car)도 포함하고 있다.
 
     System.out.println("실행 완료!");
   }

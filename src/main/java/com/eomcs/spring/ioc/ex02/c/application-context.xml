@@ -10,6 +10,8 @@
          => prototype: getBean() 호출할 때마다 생성
          => request: (웹) 요청이 들어올 때마다 생성
          => session: (웹) 세션이 생성될 때마다 생성
+         => application: (웹) 애플리케이션을 시작할 때 생성
+         => websocket: (웹) 웹소켓이 연결될 때 생성
     -->
     
     <!-- scope 속성의 기본 값은 singleton -->

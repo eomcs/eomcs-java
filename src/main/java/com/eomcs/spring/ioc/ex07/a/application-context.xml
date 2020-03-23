@@ -6,11 +6,13 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <bean id="c1" class="com.eomcs.spring.ioc.ex07.Car">
-        <property name="model" value="티코"/>
-        <property name="maker" value="비트자동차"/>
-        <property name="cc" value="890"/>
-        <property name="auto" value="true"/>
-        <property name="createdDate" value="2018-5-8"/>
+        <property name="model" value="티코"/> <!-- String ===> String -->
+        <property name="maker" value="비트자동차"/> <!-- String ===> String -->
+        <property name="cc" value="890"/> <!-- String ===> int -->
+        <property name="auto" value="true"/> <!-- String ===> boolean -->
+        
+        <!-- 자바 원시 타입이 아닌 경우 String을 그 타입으로 자동 변환하지 못한다. 예외 발생! -->
+        <property name="createdDate" value="2018-5-8"/> <!-- String ===> Date -->
     </bean>
 </beans>
 
