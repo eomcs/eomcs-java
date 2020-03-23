@@ -9,9 +9,11 @@ import org.springframework.stereotype.Component;
 // 문법: 
 //      @Component(value="객체이름")
 //      @Component("객체이름")
-// 만약 다음과 같이 객체의 이름을 생략하면 클래스 이름을 객체 이름으로 사용한다.
+// 만약 다음과 같이 객체의 이름을 생략하면 
+// 클래스 이름을 객체 이름으로 사용한다.
 //      예) bitcamp.java106.step09.Car => "car"
-// 즉 클래스 이름에서 첫 알파벳을 소문자로 한 이름을 객체 이름으로 사용한다.
+// 즉 클래스 이름에서 첫 알파벳을 소문자로 한 이름을 
+// 객체 이름으로 사용한다.
 // 
 @Component
 public class Car {
