@@ -3,10 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-  <properties resource="bitcamp/java106/step12/jdbc.properties"></properties>
+  <properties resource="com/eomcs/spring/ioc/ex12/jdbc.properties"></properties>
 
   <typeAliases>
-    <typeAlias type="bitcamp.java106.step12.Board" alias="Board"/>
+    <typeAlias type="com.eomcs.spring.ioc.ex12.Board" alias="Board"/>
   </typeAliases>
 
   <environments default="development">
@@ -22,7 +22,7 @@
   </environments>
   
   <mappers>
-    <mapper resource="bitcamp/java106/step12/ex2/BoardMapper.xml"/>
+    <mapper resource="com/eomcs/spring/ioc/ex12/b/BoardMapper.xml"/>
   </mappers>
 </configuration>
 

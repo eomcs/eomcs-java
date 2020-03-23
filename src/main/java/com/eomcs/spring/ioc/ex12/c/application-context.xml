@@ -8,9 +8,18 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <context:component-scan base-package="bitcamp.java106.step12.ex3"></context:component-scan>
+    <context:component-scan base-package="com.eomcs.spring.ioc.ex12.c"/>
 
-<!-- Mybatis SqlSessionFactory 준비하기 -->
+<!-- Mybatis SqlSessionFactory 준비하기 
+  => 보통 클래스 이름이 XxxFactoryBean 이라면 
+     생성되는 객체는 Xxx 이다.
+  => 그런데 SqlSessionFactoryBean 클래스가 생성하는 객체는 
+     SqlSession 이 아니라 SqlSessionFactory 이다.
+  => 왜?
+     SqlSessionFactory 객체를 만드는 클래스는 
+     이름을 SqlSessionFactoryFactoryBean 이라고 짓는 것이 일반적인데,
+     Mybatis 개발자는 이름 중간에 Factory가 두 번 들어가는 것이 싫었던 가보다.
+-->
     <bean id="sqlSessionFactory"
           class="org.mybatis.spring.SqlSessionFactoryBean">
 
@@ -22,14 +31,15 @@
       <!-- SQL 맵퍼 파일이 있는 경로를 설정하면, 
            SqlSessionFactory에서 그 경로에서 SQL 맵퍼 파일을 찾을 것이다. -->           
       <property name="mapperLocations" 
-                value="classpath*:bitcamp/java106/step12/ex3/*Mapper.xml" />  
+                value="classpath*:com/eomcs/spring/ioc/ex12/c/*Mapper.xml" />  
                 
       <!-- Board 클래스 처럼 데이터를 담는 객체(Value Object = Domain Object)의 
            별명을 자동으로 등록하기
            => 패키지를 지정하면 그 패키지에 있는 모든 클래스에 대해 
               클래스 이름을 별명으로 자동 부여한다. 
             -->
-      <property name="typeAliases" value="bitcamp.java106.step12.Board"/>   
+      <property name="typeAliases" 
+                value="com.eomcs.spring.ioc.ex12.Board"/>   
     </bean>
     
 <!-- mybatis가 사용할 DataSource 객체 준비하기 
@@ -46,7 +56,7 @@
 	
 <!-- 스프링 설정 파일에서 사용할 .properties 파일을 로딩하는 객체 준비 -->
     <context:property-placeholder 
-        location="bitcamp/java106/step12/jdbc.properties"/>	
+        location="com/eomcs/spring/ioc/ex12/jdbc.properties"/>	
 </beans>
 
 
