@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.eomcs.spring.ioc.ex12.d.BoardDao">
+<mapper namespace="com.eomcs.spring.ioc.ex12.e.BoardDao">
 
   <resultMap type="Board" id="BoardMap">
     <id column="board_id" property="no"/>
