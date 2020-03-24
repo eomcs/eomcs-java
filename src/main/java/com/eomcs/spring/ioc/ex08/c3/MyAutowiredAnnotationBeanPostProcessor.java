@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex08.c2;
+package com.eomcs.spring.ioc.ex08.c3;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -41,15 +41,6 @@ public class MyAutowiredAnnotationBeanPostProcessor implements BeanPostProcessor
     return objList.get(0); // 객체 목록에서 첫 번째 객체를 꺼낸다.
   }
 
-  private int countBean(Class<?> type) {
-    List<Object> objList = beans.get(type); // 해당 타입의 객체 목록을 꺼낸다.
-    if (objList == null) { // 해당 타입의 객체 목록이 없다면,
-      return 0;
-    }
-    return objList.size();
-  }
-
-
   // 객체에 대해 모든 초기화가 끝난 후에 @Autowired 애노테이션을 처리하자!
   // 따라서 다음 메서드만 오버라이딩 한다.
   @Override
@@ -57,7 +48,7 @@ public class MyAutowiredAnnotationBeanPostProcessor implements BeanPostProcessor
     System.out.println("MyAutowiredAnnotationBeanPostProcessor.postProcessAfterInitialization()");
 
     // 새로 생성된 객체를 기록한다.
-    this.addBean(bean.getClass(), bean);
+    addBean(bean.getClass(), bean);
 
     // 해당 빈에서 @Autowired가 붙은 메서드를 찾아 호출하거나 호출을 연기시킨다.
     callAutowiredMethod(bean);

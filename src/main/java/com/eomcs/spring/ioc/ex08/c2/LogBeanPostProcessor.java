@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex08.d;
+package com.eomcs.spring.ioc.ex08.c2;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
