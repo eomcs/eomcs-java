@@ -1,5 +1,5 @@
 // 특정 메서드 호출 전후에 실행되는 클래스
-package com.eomcs.spring.ioc.ex13.ex3;
+package com.eomcs.spring.ioc.ex13.c;
 
 public class MyAdvice {
 

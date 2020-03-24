@@ -24,7 +24,7 @@
             
             <!-- 필터를 끼워 넣을 위치를 지정한다. -->
             <aop:pointcut id="pointcut1"
-                expression="execution(* com.eomcs.spring.ioc.ex13.b.*.m2(..))"/>
+                expression="execution(* com.eomcs.spring.ioc.ex13.b.Z.m2(..))"/>
             
             <!-- 해당 포인트컷을 실행하기 전에 필터의 어떤 메서드를 먼저 실행할 것인지 지정한다. -->
             <aop:before pointcut-ref="pointcut1" method="advice2"/>

@@ -6,9 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Exam01 {
 
   public static void main(String[] args) {
-    ClassPathXmlApplicationContext iocContainer = 
-        new ClassPathXmlApplicationContext(
-            "bitcamp/java106/step13/ex4/application-context-01.xml");
+    ClassPathXmlApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
+        "com/eomcs/spring/ioc/c/application-context.xml");
 
     String[] names = iocContainer.getBeanDefinitionNames();
     System.out.println("---------------------------------------");
@@ -18,7 +17,7 @@ public class Exam01 {
     System.out.println("---------------------------------------");
 
     try {
-      Caller caller = (Caller) iocContainer.getBean(Caller.class);
+      Caller caller = iocContainer.getBean(Caller.class);
       caller.test();
     } catch (Exception e) {
       System.err.println("오류 발생!");
@@ -26,6 +25,5 @@ public class Exam01 {
   }
 
 }
-
 
 
