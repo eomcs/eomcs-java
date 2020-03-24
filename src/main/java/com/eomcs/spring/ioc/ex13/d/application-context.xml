@@ -11,10 +11,10 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
     
-    <context:component-scan base-package="bitcamp.java106.step13.ex4"/>
+    <context:component-scan base-package="com.eomcs.spring.ioc.ex13.d"/>
     
     <!-- AOP 필터 객체 생성 -->
-    <bean id="myAdvice" class="bitcamp.java106.step13.ex4.MyAdvice"/> 
+    <bean id="myAdvice" class="com.eomcs.spring.ioc.ex13.d.MyAdvice"/> 
     
     <!-- AOP 적용 -->
     <aop:config>
@@ -23,18 +23,18 @@
             
             <!-- 필터에서 호출하려는 메서드의 파라미터 값 받기 -->
             <aop:before 
-                pointcut="execution(* bitcamp.java106.step13.ex4.X.*(..)) and args(a,b)" 
+                pointcut="execution(* com.eomcs.spring.ioc.ex13.d.X.*(..)) and args(y,x)" 
                 method="doBefore"/>
             
             <!-- 메서드를 호출한 후 그 메서드가 리턴한 값 받기 -->
             <aop:after-returning 
-                pointcut="execution(* bitcamp.java106.step13.ex4.X.*(..))" 
+                pointcut="execution(* com.eomcs.spring.ioc.ex13.d.X.*(..))" 
                 method="doAfterReturning"
                 returning="returnValue"/>
                 
             <!-- 메서드를 호출할 때 예외가 발생했다면 그 예외 정보를 받기 -->
             <aop:after-throwing 
-                pointcut="execution(* bitcamp.java106.step13.ex4.X.*(..))" 
+                pointcut="execution(* com.eomcs.spring.ioc.ex13.d.X.*(..))" 
                 method="doAfterThrowing"
                 throwing="error"/>    
         </aop:aspect>

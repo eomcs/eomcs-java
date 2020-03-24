@@ -11,10 +11,20 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:component-scan base-package="bitcamp.java106.step13.ex5"/>
+    <context:component-scan base-package="com.eomcs.spring.ioc.ex13.e"/>
 
-    <!-- 애노테이션으로 AOP를 설정하려면 AOP 관련 애노테이션을 처리해주는 객체를 등록해야 한다.
-         다음 태그를 선언하면 AOP 관련 애노테이션을 처리해주는 객체를 자동으로 등록한다.
+    <!-- 애노테이션으로 AOP를 설정하려면 
+         AOP 관련 애노테이션을 처리해주는 객체를 등록해야 한다.
+         다음 태그를 선언하면 
+         AOP 관련 애노테이션을 처리해주는 객체를 자동으로 등록한다.
     -->
     <aop:aspectj-autoproxy/>
 </beans>
+
+
+
+
+
+
+
+

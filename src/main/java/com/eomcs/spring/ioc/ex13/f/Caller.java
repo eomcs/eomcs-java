@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex13.ex5;
+package com.eomcs.spring.ioc.ex13.f;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
