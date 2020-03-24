@@ -1,5 +1,5 @@
 // AOP(Aspect-Oriented Programming) - AOP 필터 적용 후
-package com.eomcs.spring.ioc.ex13.ex2;
+package com.eomcs.spring.ioc.ex13.b;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -29,12 +29,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 // => Aspect        : 어느 pointcut 에 어떤 advice를 삽입할 것인지 가리키는 정보이다.
 //                    예) 설정 정보 
 //
-public class Exam01 {
+public class Exam05 {
 
   public static void main(String[] args) {
     ClassPathXmlApplicationContext iocContainer = 
         new ClassPathXmlApplicationContext(
-            "bitcamp/java106/step13/ex2/application-context-01.xml");
+            "bitcamp/java106/step13/ex2/application-context-05.xml");
 
     String[] names = iocContainer.getBeanDefinitionNames();
     System.out.println("---------------------------------------");

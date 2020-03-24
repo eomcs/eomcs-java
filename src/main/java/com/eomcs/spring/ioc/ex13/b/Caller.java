@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex13.ex1;
+package com.eomcs.spring.ioc.ex13.b;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,9 +12,9 @@ public class Caller {
 
   public void test() {
     System.out.println("test()..... 시작");
-    x.m();
-    y.m();
-    z.m();
+    x.m1();
+    y.m2();
+    z.m2();
     System.out.println("test()..... 끝");
   }
 }

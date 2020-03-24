@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <context:component-scan base-package="bitcamp.java106.step13.ex1"/>
+    <context:component-scan base-package="com.eomcs.spring.ioc.ex13.a"/>
     
 </beans>
 
