@@ -30,7 +30,8 @@ dependencies {
   implementation 'org.springframework:spring-context:5.2.4.RELEASE'
   
   // Apache HTTP 통신 라이브러리
-  implementation 'org.apache.httpcomponents.client5:httpclient5:5.0'
+  //implementation 'org.apache.httpcomponents.client5:httpclient5:5.0'
+  implementation 'org.apache.httpcomponents.client5:httpclient5-fluent:5.0'
   
   // AOP 라이브러리
   implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'

@@ -1,4 +1,4 @@
-// Apache HttpComponents 사용법 : HttpClient5 - GET 요청하기 II
+// Apache HttpComponents 사용법 : HttpClient5 - GET 요청하기
 package com.eomcs.httpcomponents.client;
 
 import org.apache.hc.client5.http.classic.methods.HttpGet;
