@@ -150,8 +150,14 @@ public class Exam0110 {
         final HttpCoreContext coreContext = HttpCoreContext.adapt(context);
         final EndpointDetails endpoint = coreContext.getEndpointDetails();
         response.setCode(HttpStatus.SC_OK);
+        String contentType = null;
+        if (path.equals("/favicon.ico")) {
+          contentType = "image/x-icon";
+        } else {
+          contentType = "text/html";
+        }
         final FileEntity body =
-            new FileEntity(file, ContentType.create("text/html", (Charset) null));
+            new FileEntity(file, ContentType.create(contentType, (Charset) null));
         response.setEntity(body);
         System.out.println(endpoint + ": serving file " + file.getPath());
       }
