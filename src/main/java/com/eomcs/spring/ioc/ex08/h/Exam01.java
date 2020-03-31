@@ -1,4 +1,4 @@
-// 의존 객체 주입 자동화하기 - 같은 타입의 의존 객체가 여러개 있을 때
+// 의존 객체 주입 자동화하기 - @Resource = @Autowired + @Qualifier
 package com.eomcs.spring.ioc.ex08.h;
 
 import org.springframework.context.ApplicationContext;
@@ -9,21 +9,15 @@ public class Exam01 {
 
   public static void main(String[] args) {
 
-    // 같은 타입의 의존 객체가 여러 개 있을 때
-    // 그 중 어떤 객체를 주입해야 할 지 알 수 없기 때문에
-    // Spring IoC 컨테이너는 예외를 발생시킨다.
-    //
-    // 해결책?
-    // => @Qualifier 애노테이션을 사용하여 주입할 객체를 지정한다.
-    //
-    // 주의!
-    // => AutowiredAnnotationBeanPostProcessor는
-    // @Qualifier 애노테이션을 처리하지 못한다.
-    // => 따라서 @Qualifier 애노테이션을 처리할 BeanPostProcessor를
-    // 따로 등록해야 한다.
+    // @Autowired와 @Qualifier를 묶어서 사용하는 대신에
+    // 자바 언어 확장 명세서 'JSR-250'에 정의된 @Resource를 사용할 수 있다.
+    // 단 이 애노테이션을 사용하려면
+    // 이 애노테이션이 정의된 라이브러리를 별도로 다운로드 받아야 한다.
+    // 이 애노테이션은 자바 확장 라이브러리에 포함되어 있다.
+    // search.maven.org 에서 'javax.annotation' 으로 검색해 보라.
     //
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex08/h/application-context.xml");
+        "com/eomcs/spring/ioc/ex08/i/application-context.xml");
 
     // Spring IoC 컨테이너에 들어 있는 객체 출력
     SpringUtils.printBeanList(iocContainer);

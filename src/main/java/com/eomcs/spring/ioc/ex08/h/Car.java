@@ -1,10 +1,9 @@
 package com.eomcs.spring.ioc.ex08.h;
 
 import java.sql.Date;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.Resource;
 
-// 의존 객체 Engine 주입 - 필수 또는 선택
+// 의존 객체 Engine 주입 - @Autowired + @Qualifier = @Resource
 public class Car {
 
   private String model;
@@ -13,11 +12,12 @@ public class Car {
   private boolean auto;
   private Date createdDate;
 
-  @Autowired
-  @Qualifier("e2")
-  // 의존 객체가 여러 개 있을 경우, 주입할 의존 객체의 이름을 지정하라!
-  // 주의!
-  // @Qualifier 애노테이션을 처리할 BeanPostProcessor를 등록해야 한다.
+  // => 이 애노테이션은 스프링 프레임워크가 아닌 자바에서 제공한다.
+  // => 자바 기본 라이브러리에 포함되어 있지 않다.
+  // => 따로 라이브러리를 다운로드 받아 포함시켜야 한다.
+  // => search.maven.org 에서 'javax.annotation'으로 검색하라.
+  // 1.3.2 이상의 버전 사용.
+  @Resource(name = "e1")
   private Engine engine;
 
   public Car() {

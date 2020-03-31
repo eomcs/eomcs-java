@@ -1,9 +1,8 @@
 package com.eomcs.spring.ioc.ex08.e;
 
 import java.sql.Date;
-import org.springframework.beans.factory.annotation.Autowired;
 
-// 의존 객체 Engine 주입 - 필드에 @Autowired로 표시하라!
+// 의존 객체 Engine 주입 - 생성자를 통해 의존 객체 주입
 public class Car {
 
   private String model;
@@ -11,19 +10,18 @@ public class Car {
   private int cc;
   private boolean auto;
   private Date createdDate;
-
-  // 필드에 @Autowired를 붙인 경우,
-  // 셋터를 통해 값을 넣는 것이 아니라,
-  // 인스턴스 필드에 직접 값을 넣는다.
-  // private 이라도 상관없다.
-  // 따라서 셋터를 정의하지 않아도 된다.
-  @Autowired
   private Engine engine;
 
-  public Car() {
-    System.out.println("Car()");
+  // Spring IoC 컨테이너로부터 의존 객체를 주입 받고 싶다면,
+  // 생성자에 파라미터를 선언하라.
+  // @Autowired 는 붙일 필요가 없다. (붙여도 된다)
+  // 주의!
+  // => 이 일 또한 AutowiredAnnotationBeanPostProcessor 객체가 처리한다.
+  //
+  public Car(Engine engine) {
+    System.out.println("Car(Engine)");
+    this.engine = engine;
   }
-
 
   @Override
   public String toString() {

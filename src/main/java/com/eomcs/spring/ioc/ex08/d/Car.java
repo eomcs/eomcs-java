@@ -1,9 +1,9 @@
-package com.eomcs.spring.ioc.ex08.i;
+package com.eomcs.spring.ioc.ex08.d;
 
 import java.sql.Date;
-import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 
-// 의존 객체 Engine 주입 - @Autowired + @Qualifier = @Resource
+// 의존 객체 Engine 주입 - 필드에 @Autowired로 표시하라!
 public class Car {
 
   private String model;
@@ -12,17 +12,18 @@ public class Car {
   private boolean auto;
   private Date createdDate;
 
-  // => 이 애노테이션은 스프링 프레임워크가 아닌 자바에서 제공한다.
-  // => 자바 기본 라이브러리에 포함되어 있지 않다.
-  // => 따로 라이브러리를 다운로드 받아 포함시켜야 한다.
-  // => search.maven.org 에서 'javax.annotation'으로 검색하라.
-  // 1.3.2 이상의 버전 사용.
-  @Resource(name = "e1")
+  // 필드에 @Autowired를 붙인 경우,
+  // 셋터를 통해 값을 넣는 것이 아니라,
+  // 인스턴스 필드에 직접 값을 넣는다.
+  // private 이라도 상관없다.
+  // 따라서 셋터를 정의하지 않아도 된다.
+  @Autowired
   private Engine engine;
 
   public Car() {
     System.out.println("Car()");
   }
+
 
   @Override
   public String toString() {

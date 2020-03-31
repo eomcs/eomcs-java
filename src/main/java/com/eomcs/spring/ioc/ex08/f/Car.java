@@ -1,8 +1,9 @@
 package com.eomcs.spring.ioc.ex08.f;
 
 import java.sql.Date;
+import org.springframework.beans.factory.annotation.Autowired;
 
-// 의존 객체 Engine 주입 - 생성자를 통해 의존 객체 주입
+// 의존 객체 Engine 주입 - 필수 또는 선택
 public class Car {
 
   private String model;
@@ -10,17 +11,16 @@ public class Car {
   private int cc;
   private boolean auto;
   private Date createdDate;
+
+  // @Autowired의 required 값은 기본이 true이다.
+  // => 즉 의존객체 주입이 필수사항이다.
+  // => 선택사항으로 바꾸고 싶으면 false로 설정하라!
+  // => required를 false로 설정하면 해당 객체가 없더라도 오류가 발생하지 않는다.
+  @Autowired(required = false)
   private Engine engine;
 
-  // Spring IoC 컨테이너로부터 의존 객체를 주입 받고 싶다면,
-  // 생성자에 파라미터를 선언하라.
-  // @Autowired 는 붙일 필요가 없다. (붙여도 된다)
-  // 주의!
-  // => 이 일 또한 AutowiredAnnotationBeanPostProcessor 객체가 처리한다.
-  //
-  public Car(Engine engine) {
-    System.out.println("Car(Engine)");
-    this.engine = engine;
+  public Car() {
+    System.out.println("Car()");
   }
 
   @Override

@@ -2,6 +2,7 @@ package com.eomcs.spring.ioc.ex08.g;
 
 import java.sql.Date;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 // 의존 객체 Engine 주입 - 필수 또는 선택
 public class Car {
@@ -12,10 +13,11 @@ public class Car {
   private boolean auto;
   private Date createdDate;
 
-  // @Autowired의 required 값은 기본이 true이다.
-  // => 즉 의존객체 주입이 필수사항이다.
-  // => 선택사항으로 바꾸고 싶으면 false로 설정하라!
-  @Autowired(required = false)
+  @Autowired
+  @Qualifier("e2")
+  // 의존 객체가 여러 개 있을 경우, 주입할 의존 객체의 이름을 지정하라!
+  // 주의!
+  // @Qualifier 애노테이션을 처리할 BeanPostProcessor를 등록해야 한다.
   private Engine engine;
 
   public Car() {

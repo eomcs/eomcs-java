@@ -5,25 +5,22 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     
-    <!-- AutowiredAnnotationBeanPostProcessor는
-         기본 생성자가 없으면 파라미터를 받는 다른 생성자를 호출하여 
-         객체를 생성한다.  
-    -->
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
     
-    <bean id="c1" class="com.eomcs.spring.ioc.ex08.f.Car">
+    <bean id="c1" class="com.eomcs.spring.ioc.ex08.g.Car">
         <property name="model" value="티코"/>
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="890"/>
         <property name="auto" value="true"/>
     </bean>
     
-    <bean id="e1" class="com.eomcs.spring.ioc.ex08.f.Engine">
+    <!--  
+    <bean id="e1" class="com.eomcs.spring.ioc.ex08.g.Engine">
         <property name="maker" value="비트자동차"/>
         <property name="valve" value="16"/>
         <property name="cylinder" value="4"/>
     </bean>
-    
+    -->
 </beans>
 
 
