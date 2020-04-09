@@ -21,6 +21,14 @@
         <!-- 특정 애노테이션이 붙은 클래스는 객체 생성에서 제외시킨다. -->
         <context:exclude-filter type="annotation" 
             expression="org.springframework.stereotype.Controller"/>
+            
+        <!-- 특정 패키지만 제외하기 -->
+        <context:exclude-filter type="regex" 
+            expression="com.eomcs.spring.ioc.ex09.p4.*"/>
+            
+        <!-- 특정 패키지에서 지정된 패턴의 이름을 가진 클래스를 제외하기 -->
+        <context:exclude-filter type="regex" 
+            expression="com.eomcs.spring.ioc.ex09.p5.*Truck"/>
     </context:component-scan>
     
 </beans>
