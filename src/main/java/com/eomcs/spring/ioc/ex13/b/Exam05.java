@@ -12,8 +12,14 @@ public class Exam05 {
 
     SpringUtils.printBeanList(iocContainer);
 
-    Caller caller = iocContainer.getBean(Caller.class);
-    caller.test();
+    X x = iocContainer.getBean(X.class);
+    x.m1();
+    System.out.println();
+
+    x.m2();
+    System.out.println();
+
+    x.m3();
   }
 
 }

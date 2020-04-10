@@ -19,25 +19,25 @@ import com.eomcs.spring.ioc.SpringUtils;
 // => XML 또는 자바 코드로 필터를 설정한다.
 //
 // AOP 용어:
-// [Advice] 
+// [Advice]
 // => 메서드(join point) 호출 앞뒤에 삽입될 코드를 담고 있는 필터 객체이다.
-//    예) MyAdvice 클래스
-// 
-// [Join Point] 
+// 예) MyAdvice 클래스
+//
+// [Join Point]
 // => Advice가 삽입될 메서드이다.
-//    예) m2() 메서드
-// 
-// [Pointcut] 
+// 예) m2() 메서드
+//
+// [Pointcut]
 // => Advice를 삽입할 위치 정보이다.
-//    예) execution(* com.eomcs.spring.ioc.ex13.b.*.*(..))
-// 
+// 예) execution(* com.eomcs.spring.ioc.ex13.b.*.*(..))
+//
 // [Target Object]
 // => Advice를 삽입할 대상 객체이다.
-//    예) Y, Z 클래스
-// 
+// 예) Y, Z 클래스
+//
 // [Aspect]
 // => 어느 pointcut 에 어떤 advice를 삽입할 것인지 가리키는 정보이다.
-//    예) 설정 정보
+// 예) 설정 정보
 //
 public class Exam01 {
 
@@ -47,8 +47,14 @@ public class Exam01 {
 
     SpringUtils.printBeanList(iocContainer);
 
-    Caller caller = iocContainer.getBean(Caller.class);
-    caller.test();
+    X x = iocContainer.getBean(X.class);
+    x.m1();
+    System.out.println();
+
+    x.m2();
+    System.out.println();
+
+    x.m3();
   }
 
 }

@@ -22,7 +22,7 @@
         <aop:aspect id="aspect1" ref="myAdvice">
             
             <!-- 한 포인트 컷에 여러 개의 필터 꼽기(advice 지정하기)  -->
-            <aop:before pointcut="execution(* com.eomcs.spring.ioc.ex13.b.Y.m2(..))" 
+            <aop:before pointcut="execution(* com.eomcs.spring.ioc.ex13.b.*.m1(..))" 
                         method="advice1"/>
             <aop:before pointcut="execution(* com.eomcs.spring.ioc.ex13.b.*.m2(..))" 
                         method="advice2"/>            
