@@ -7,8 +7,9 @@ package com.eomcs.basic;
 //
 //## 패키지란?
 //- 클래스의 이름 충돌을 방지하는 문법이다.
-//- 클래스를 관리하기 쉽게 서로 밀접하게 관련된 클래스를 그룹으로 분류하는 문법이다.
+//- 클래스가 소속된 폴더를 가리키는 용어이다.
 //- 패키지는 폴더로 표현한다.
+//- 클래스를 관리하기 쉽게 서로 밀접하게 관련된 클래스를 그룹으로 분류하는 문법이다.
 //
 //## 문법
 //- 소스 파일의 첫 번째 문장으로 선언해야 한다.
@@ -48,7 +49,7 @@ class Hello3 {
 //- 프로젝트 폴더에서 실행 할 때:
 //  예) $ javac -d bin/main src/main/java/com/eomcs/basic/Hello3.java
 //- 클래스 파일은 패키지 폴더에 생성된다.
-//  예) /bin/main/com/eomcs/basic//Hello3.class
+//  예) /bin/main/com/eomcs/basic/Hello3.class
 //
 //4) 실행하기
 //- 프로젝트 폴더에서 실행 할 때:
