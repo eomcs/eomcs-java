@@ -14,13 +14,16 @@ package com.eomcs.basic.ex05.assignment;
 //3
 //2
 //
-public class Test04 {
+public class Test04_2 {
 
   public static void main(String[] args) {
     int value = 23459876;
 
     // 코드를 완성하시오!
-
+    while (value > 0) {
+      System.out.println(value % 10);
+      value = value / 10; // = 2345987
+    }
   }
 
 }
