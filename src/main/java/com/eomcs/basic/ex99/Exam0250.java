@@ -12,7 +12,7 @@ public class Exam0250 {
     // 한 개의 토큰을 읽을 때 유용하다.
     String name = keyboard.next();
     
-    boolean working = keyboard.hasNextBoolean();
+    boolean working = keyboard.nextBoolean();
     
     keyboard.close();
     
