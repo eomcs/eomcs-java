@@ -7,7 +7,7 @@ public class Exam0690 {
     static float pi;
 
     static float area(int r) {
-      return 2 * pi * r;
+      return pi * r * r;
     }
 
     // 스태틱 블록은 클래스 멤버를 사용하기 전에 유효한 값으로 초기화시키는 것.
