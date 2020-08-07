@@ -49,7 +49,7 @@ public class Exam0910 {
     m1.bright = 50;
     m1.contrast = 50;
     m1.widthRes = 1920;
-    m1.bright = 1080;
+    m1.heightRes = 1080;
 
     m1.display();
 
