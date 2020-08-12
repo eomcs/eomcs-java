@@ -1,14 +1,12 @@
 package com.eomcs.oop.ex06.c;
 
 public class C2 extends C {
-  
+
   // 다음은 C의 메서드를 오버라이딩 한 게 아니다!
   // 왜? C의 m1()은 private이기 때문에 오직 C에서만 사용할 수 있다.
   //    C2에서 접근할 수 없다. 접근할 수 없으니, 오버라이딩은 불가능하다!
-  /*
-    @Override
-    private void m1() {} // 컴파일 오류!
-   */ 
+  //@Override
+  //private void m1() {} // 컴파일 오류!
 
   // 어? 강사님, @Override 빼니까 m1() 정의할 수 있는데요?
   // => 이건 오버라이딩이 아니라 C2에 새로 메서드가 추가된 것이다.
