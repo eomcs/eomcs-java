@@ -37,6 +37,7 @@ public class Exam0133 {
     Member m3 = new Member("홍길동", 21);
 
     System.out.println(m1 == m2);
+    System.out.println(m1 == m3);
 
     System.out.println(m1.equals(m2));
     System.out.println(m1.equals(m3));

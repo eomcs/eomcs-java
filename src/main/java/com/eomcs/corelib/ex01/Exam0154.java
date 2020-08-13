@@ -21,11 +21,20 @@ public class Exam0154 {
     Integer k2 = new Integer(102);
     Integer k3 = new Integer(103);
     
+    System.out.println(k1 == k2);
+    System.out.println(k1 == k3);
+    System.out.println(k2 == k3);
+
     // 위에서 준비한 key 객체를 가지고 Student 객체를 보관한다.
     map.put(k1, new Student("홍길동", 20, false));
     map.put(k2, new Student("임꺽정", 30, true));
     map.put(k3, new Student("유관순", 17, true));
     
+    String str = new String("ohora");
+    //map.put(str, new Student("김구", 50, true)); // 컴파일 오류!
+    // HashMap 객체를 만들 때 key 타입으로 Integer를 사용하기로
+    // 선언했기 때문에 다른 타입을 키로 사용할 수 없다.
+
     // put(Object key, Object value)
     // => put() 메서드는 key로 넘겨받은 객체에 대해 hashCode()를 호출하여 
     //    정수 값을 얻는다.
@@ -34,12 +43,12 @@ public class Exam0154 {
     // 
     
     
-    // 다음과 같이 int를 key로 사용할 수 있다. 
-    // => key 값으로 int를 넘겨준다면, 
-    //    내부적으로 auto-boxing을 수행하여 Integer 객체를 만든다.
+    // 다음과 같이 int를 key로 사용할 수 있다.
+    // => key 값으로 int를 넘겨준다면,
+    //    컴파일러가 컴파일 할 때 auto-boxing을 수행하여 Integer 객체를 만든다.
     //    그리고 그 객체를 넘겨주는 것이다.
-    map.put(104, new Student("안중근", 24, true));
-    map.put(105, new Student("윤봉길", 22, false));
+    map.put(104 /* new Integer(104)*/, new Student("안중근", 24, true));
+    map.put(105 /* new Integer(105)*/, new Student("윤봉길", 22, false));
     
     // 값을 저장할 때 사용한 key로 다시 값을 꺼내보자!
     System.out.println(map.get(k2));
