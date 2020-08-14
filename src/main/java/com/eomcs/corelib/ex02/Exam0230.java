@@ -41,6 +41,10 @@ public class Exam0230 {
     System.out.println(obj7 == obj8); // false
     System.out.println(obj7 == obj9); // false
     System.out.println(obj8 == obj9); // false
+
+    // 따라서 auto-boxing 된 wrapper 객체의 값을 비교할 때도
+    // String 처럼 equals()로 비교하라!
+    System.out.println(obj7.equals(obj8));
   }
 }
 
