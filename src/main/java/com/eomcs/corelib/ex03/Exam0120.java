@@ -32,7 +32,7 @@ public class Exam0120 {
     list.add(5, "ttt"); // zzz, bbb, yyy, xxx, ddd, ttt
     print(list);
 
-    list.set(1, "aaa"); // zzz, aaa, yyy, xxx, ddd
+    list.set(1, "aaa"); // zzz, aaa, yyy, xxx, ddd, ttt
     print(list);
 
     list.add("ccc"); // zzz, aaa, yyy, xxx, ddd, ttt, ccc
