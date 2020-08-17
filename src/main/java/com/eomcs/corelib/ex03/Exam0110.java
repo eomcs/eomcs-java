@@ -1,6 +1,8 @@
 // 객체(의 주소) 목록을 다루는 클래스 - 컬렉션 클래스(collection class) 정의
 package com.eomcs.corelib.ex03;
 
+import java.util.ArrayList;
+
 // 배열을 이용하여 컬렉션 클래스 만들기 : ArrayList
 // => 단점: 배열의 크기가 고정되기 때문에 배열을 초과하여 값을 넣으려면
 // 더 큰 새 배열을 만들고, 기존 값을 복사해야 한다.

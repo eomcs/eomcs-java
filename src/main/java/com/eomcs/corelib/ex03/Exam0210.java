@@ -1,6 +1,8 @@
 // contains() 와 equals()의 관계
 package com.eomcs.corelib.ex03;
 
+import java.util.ArrayList;
+
 public class Exam0210 {
   public static void main(String[] args) {
     String s1 = new String("aaa");
@@ -14,11 +16,13 @@ public class Exam0210 {
     list.add(s3);
     print(list);
 
-    // contains() 가 값을 비교할 때는
-    // equals()의 결과가 true 인지 비교한다.
+    // contains()
+    // - 해당 인스턴스와 같은 객체가 있는지 알아낸다.
+    // - 단 인스턴스 주소를 비교하는 것이 아니라
+    //   equals()의 결과가 true 인지 비교한다.
     // 결론!
     // => String 클래스의 경우 equals()를 오버라이딩 했기 때문에
-    // 서로 다른 개체(s2와 s4)라도 값이 같으면 같은 객체로 간주한다.
+    //    서로 다른 개체(s2와 s4)라도 값이 같으면 같은 객체로 간주한다.
     // => 그래서 다음 코드의 실행 결과는 true 이다.
     System.out.println(list.contains(s4)); // true
   }
