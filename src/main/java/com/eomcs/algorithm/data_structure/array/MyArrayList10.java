@@ -1,4 +1,4 @@
-package com.eomcs.corelib.ex03;
+package com.eomcs.algorithm.data_structure.array;
 
 //테스트1 - MyArrayListTest
 //1) 인스턴스/객체 (의 주소)를 담을 레퍼런스 배열을 준비한다.
@@ -16,6 +16,7 @@ package com.eomcs.corelib.ex03;
 //9) get(int)으로 유효하지 않은 인덱스의 값을 꺼낼 때 예외를 발생시킨다.
 //10) remove()를 수행한 다음에 맨 끝에 남아 있는 주소를 null로 설정하여
 //   인스턴스의 레퍼런스 카운트를 한 개 줄인다.
+//   - 인덱스가 유효하지 않으면 예외를 발생시킨다.
 public class MyArrayList10 {
 
   static Object[] elementData = new Object[5];
@@ -67,6 +68,10 @@ public class MyArrayList10 {
   }
 
   static public Object remove(int index) {
+    if (index < 0 || index >= size) {
+      throw new ArrayIndexOutOfBoundsException("인덱스가 유효하지 않습니다.");
+    }
+
     Object old = elementData[index];
 
     for (int i = index; i < size - 1; i++) {

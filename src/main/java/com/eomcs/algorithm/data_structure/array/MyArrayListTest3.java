@@ -1,4 +1,4 @@
-package com.eomcs.corelib.ex03;
+package com.eomcs.algorithm.data_structure.array;
 
 public class MyArrayListTest3 {
 

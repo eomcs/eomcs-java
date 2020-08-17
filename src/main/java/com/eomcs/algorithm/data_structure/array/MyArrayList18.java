@@ -1,4 +1,4 @@
-package com.eomcs.corelib.ex03;
+package com.eomcs.algorithm.data_structure.array;
 
 import java.util.Arrays;
 
@@ -18,6 +18,7 @@ import java.util.Arrays;
 //9) get(int)으로 유효하지 않은 인덱스의 값을 꺼낼 때 예외를 발생시킨다.
 //10) remove()를 수행한 다음에 맨 끝에 남아 있는 주소를 null로 설정하여
 //   인스턴스의 레퍼런스 카운트를 한 개 줄인다.
+//   - 인덱스가 유효하지 않으면 예외를 발생시킨다.
 //11) set()을 호출할 때 인덱스가 유효하지 않으면 예외를 발생시킨다.
 //
 //테스트3 - MyArrayListTest3
@@ -101,6 +102,10 @@ public class MyArrayList18 {
   }
 
   public Object remove(int index) {
+    if (index < 0 || index >= size) {
+      throw new ArrayIndexOutOfBoundsException("인덱스가 유효하지 않습니다.");
+    }
+
     Object old = elementData[index];
 
     for (int i = index; i < size - 1; i++) {
