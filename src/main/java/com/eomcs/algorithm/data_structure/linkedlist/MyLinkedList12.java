@@ -22,7 +22,7 @@ import java.lang.reflect.Array;
 // 테스트3: MyLinkedListTest3
 // 12) 파라미터로 받은 배열에 값을 채워주는 toArray(E[]) 메서드를 추가한다.
 //
-public class MyLinkedList<E> {
+public class MyLinkedList12<E> {
 
   // 값을 찾을 때는 첫 번째 노드부터 따라간다.
   private Node<E> first;
