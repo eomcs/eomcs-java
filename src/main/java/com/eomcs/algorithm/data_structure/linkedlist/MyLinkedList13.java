@@ -25,10 +25,7 @@ import java.lang.reflect.Array;
 // 테스트4: MyLinkedListTest4
 // 13) Object.clone()을 오버라이딩: shallow copy
 //
-// 테스트5: MyLinkedListTest5
-// 14) Object.clone()을 오버라이딩: deep copy
-
-public class MyLinkedList<E> implements Cloneable {
+public class MyLinkedList13<E> implements Cloneable {
 
   // 값을 찾을 때는 첫 번째 노드부터 따라간다.
   private Node<E> first;
@@ -191,20 +188,17 @@ public class MyLinkedList<E> implements Cloneable {
     return arr;
   }
 
-  // Object.clone()을 오버라이딩 할 때 'deep copy' 이용하여 스택 객체 복사하기
-  // => 새 연결 리스트를 만들어 원본에 보관된 값을 복사한다.
-  // => 따라서 복사본의 Node 객체는 원본의 Node 객체와 다르다. 
-  //    복사본의 상태 변경에 원본은 영향 받지 않는다.
+  // Object.clone()의 'shallow copy' 이용하여 스택 객체 복사하기
+  // => 객체의 인스턴스 변수를 그대로 복제한다.
+  // => 인스턴스 변수가 가리키는 객체는 복제하지 않는다.
+  // 
+  // 문제점?
+  // => 따라서 Node 객체들을 공유하기 때문에 Node 객체의 상태가 변경되면 원본 연결 리스트도 영향을 받는다.
   //
   @SuppressWarnings("unchecked")
   @Override
-  public MyLinkedList<E> clone() throws CloneNotSupportedException {
-    MyLinkedList<E> newList = new MyLinkedList<>();
-    Object[] values = this.toArray();
-    for (Object value : values) {
-      newList.add((E) value);
-    }
-    return newList;
+  public MyLinkedList13<E> clone() throws CloneNotSupportedException {
+    return (MyLinkedList13<E>) super.clone();
   }
 }
 

@@ -1,11 +1,15 @@
 # Queue 만들기
 
-- 1) 최소 클래스를 작성한다.
-- 2) LinkedList를 상속 받는다.
-- 3) offer() 추가 
-- 4) poll() 추가
-- 5) Object의 clone() 메서드 재정의 : shallow copy 
-- 6) Object의 clone() 메서드 변경 : deep copy
-- 7) 제네릭 적용
+1) Queue 를 구현하기 위해 기존에 작성한 MyLinkedList를 상속 받는다.
+2) Queue에 값을 추가하는 offer(Object)를 정의한다.
+3) Queue에서 값을 꺼내는 poll()을 정의한다.
+4) Queue에서 제일 앞에 있는 값을 조회하는 peek()을 정의한다.
+
+테스트2: MyQueueTest2
+5) Queue.clone() 오버라이딩 : deep copy
+
+테스트3: MyQueueTest3
+6) 제네릭 적용
+
 
 

@@ -28,7 +28,7 @@ import java.lang.reflect.Array;
 // 테스트5: MyLinkedListTest5
 // 14) Object.clone()을 오버라이딩: deep copy
 
-public class MyLinkedList<E> implements Cloneable {
+public class MyLinkedList14<E> implements Cloneable {
 
   // 값을 찾을 때는 첫 번째 노드부터 따라간다.
   private Node<E> first;
@@ -198,8 +198,8 @@ public class MyLinkedList<E> implements Cloneable {
   //
   @SuppressWarnings("unchecked")
   @Override
-  public MyLinkedList<E> clone() throws CloneNotSupportedException {
-    MyLinkedList<E> newList = new MyLinkedList<>();
+  public MyLinkedList14<E> clone() throws CloneNotSupportedException {
+    MyLinkedList14<E> newList = new MyLinkedList14<>();
     Object[] values = this.toArray();
     for (Object value : values) {
       newList.add((E) value);
