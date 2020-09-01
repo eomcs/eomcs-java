@@ -23,6 +23,7 @@ public class Exam0221 {
     // m1(ArrayList<Object>)
     // => Object 로 지정된 ArrayList 만 파라미터로 넘길 수 있다.
     // => Object의 하위 클래스는 안된다.
+
     m1(new ArrayList());
     m1(new ArrayList<Object>());
 
@@ -33,6 +34,11 @@ public class Exam0221 {
   }
 
   static void m1(ArrayList<Object> list) {
+    list.add(new Object());
+    list.add(new A());
+    list.add(new B1());
+    list.add(new B2());
+    list.add(new C());
   }
 }
 

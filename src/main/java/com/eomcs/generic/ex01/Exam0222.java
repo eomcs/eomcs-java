@@ -22,6 +22,8 @@ public class Exam0222 {
   public static void main(String[] args) {
     // m1(ArrayList<?>)
     // => 모든 타입에 대해 ArrayList 객체를 파라미터로 넘길 수 있다.
+    // => 다만 메서드 내부에서는 타입 검사를 할 수 없기 때문에 
+    //    add() 메서드 호출 같은 타입 검사가 필요한 코드를 사용한 경우에는 컴파일 오류가 발생한다.
     //
     //m1(new ArrayList());
     //m1(new ArrayList<Object>());
@@ -33,7 +35,11 @@ public class Exam0222 {
     my1.add(new B1());
     my1.add(new B1());
 
-    m1(my1);
+    m1(my1); // OK
+    m1(new ArrayList<A>());  // OK
+    m1(new ArrayList<B1>()); // OK
+    m1(new ArrayList<B2>()); // OK
+    m1(new ArrayList<C>()); // OK
   }
 
   static void m1(ArrayList<?> list) {
