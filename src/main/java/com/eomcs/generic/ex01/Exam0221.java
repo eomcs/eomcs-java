@@ -2,10 +2,9 @@
 package com.eomcs.generic.ex01;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class Exam0221 {
-  
+
   static class A {}
   static class B1 extends A {}
   static class B2 extends A {}
@@ -19,20 +18,20 @@ public class Exam0221 {
    *   |
    *   C
    */
-  
+
   public static void main(String[] args) {
     // m1(ArrayList<Object>)
     // => Object 로 지정된 ArrayList 만 파라미터로 넘길 수 있다.
     // => Object의 하위 클래스는 안된다.
     m1(new ArrayList());
     m1(new ArrayList<Object>());
-    
+
     //m1(new ArrayList<A>());  // 컴파일 오류!
     //m1(new ArrayList<B1>()); // 컴파일 오류!
     //m1(new ArrayList<B2>()); // 컴파일 오류!
     //m1(new ArrayList<C>());  // 컴파일 오류!
   }
-  
+
   static void m1(ArrayList<Object> list) {
   }
 }
