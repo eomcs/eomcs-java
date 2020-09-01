@@ -31,10 +31,10 @@ public class Exam0120 {
     //ArrayList<Member> obj = new ArrayList<>(Member.class); // 컴파일 오류!
     //ArrayList<Teacher> obj = new ArrayList<>(Teacher.class); // 컴파일 오류!
     //ArrayList<Student> obj = new ArrayList<>(Student.class); // 컴파일 오류!
-    
+
     ArrayList<Manager> obj = new ArrayList<>(Manager.class); // OK!
     //ArrayList<Administrator> obj = new ArrayList<>(Administrator.class); // OK!
-    
+
     obj.add(new Manager());
     obj.add(new Administrator());
 
