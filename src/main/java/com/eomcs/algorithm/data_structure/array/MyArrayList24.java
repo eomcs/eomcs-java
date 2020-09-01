@@ -161,6 +161,10 @@ public class MyArrayList24<E> {
   public E[] toArray(E[] arr) {
     if (arr.length < this.size) {
       // 파라미터로 받은 배열이 작을 때는 새 배열을 만들어 리턴.
+      // 방법1: 새 배열을 만들고 System.arraycopy()로 값을 복사한다.
+      // arr = (E[]) Array.newInstance(arr.getClass().getComponentType(), this.size);
+      
+      // 방법2: 새 배열을 만들고 값을 복사하는 것도 함께 한다.
       return (E[]) Arrays.copyOf(this.elementData, this.size, arr.getClass());
     }
     System.arraycopy(this.elementData, 0, arr, 0, this.size);
