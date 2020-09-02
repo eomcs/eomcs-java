@@ -173,7 +173,18 @@ public class MyLinkedList12<E> {
   public E[] toArray(E[] arr) {
 
     if (arr.length < size) {
-      arr = (E[]) Array.newInstance(arr.getClass().getComponentType(), size);
+      // => 다음과 같이 배열의 타입을 엄격히 형변환 해도 된다.
+      //Class<E[]> arrayClassInfo = (Class<E[]>)arr.getClass();
+      //Class<E> arrayItemClassInfo = (Class<E>)arrayClassInfo.getComponentType();
+
+      // => 그러나 조회 용으로 사용할 거라면 굳이 리턴 값에 대해 제네릭 형변환을 엄격히 할 필요가 없다.
+      Class<?> arrayClassInfo = arr.getClass();
+      Class<?> arrayItemClassInfo = arrayClassInfo.getComponentType();
+
+      arr = (E[]) Array.newInstance(arrayItemClassInfo, this.size());
+
+      // => 그냥 다음과 같이 간략하게 표현하는 것이 코드를 읽기 쉽게 한다.
+      //arr = (E[]) Array.newInstance(arr.getClass().getComponentType(), this.size());
     }
 
     Node<E> cursor = first;
