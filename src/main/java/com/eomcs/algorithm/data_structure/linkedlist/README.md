@@ -20,3 +20,8 @@
 테스트3: MyLinkedListTest3
 12) 파라미터로 받은 배열에 값을 채워주는 toArray(E[]) 메서드를 추가한다.
 
+테스트4: MyLinkedListTest4
+13) Object.clone()을 오버라이딩: shallow copy
+
+테스트5: MyLinkedListTest5
+14) Object.clone()을 오버라이딩: deep copy
