@@ -4,11 +4,11 @@ package com.eomcs.oop.ex09.a.before;
 public class Exam01 {
 
   public static void main(String[] args) {
-  
+
     BlueWorker w1 = new BlueWorker();
     WhiteWorker w2 = new WhiteWorker();
     JubuWorker w3 = new JubuWorker();
-    
+
     // 각 노동자에게 일을 시키는 방법이 다르다.
     // 왜? 
     // => 메서드 호출 방법이 다르기 때문에
@@ -42,7 +42,7 @@ public class Exam01 {
     //    코딩하기가 훨씬 편해지고, 
     //    유지보수가 쉬워진다.
     //
-    // 이렇게 객체의 사용 규칙을 정의하는 문법이 "인터페이스(interface)"이다.
+    // 이렇게 객체의 사용 규칙(호출 규칙)을 정의하는 문법이 "인터페이스(interface)"이다.
     //
     // 
   }
