@@ -9,7 +9,7 @@ public class Exam01 {
 
   public static void main(String[] args) {
 
-    Restautant r = new Restautant();
+    Restaurant r = new Restaurant();
     Farm f = new Farm();
 
     work(r);
