@@ -12,7 +12,12 @@ public interface A4 {
   public static final int v1 = 100;
 
   //static {} // 스태틱 블록을 둘 수 없다.
-  
+
+  // 스태틱 메서드는 둘 수 있다.
+  public static void m1() {
+    System.out.println("인터페이스의 스태틱 메서드!");
+  }
+
   // 인터페이스의 모든 변수는 무조건 public이고 static이고 final이기 때문에 
   // 생략해도 된다.
   /*public static final*/ int v2 = 200;

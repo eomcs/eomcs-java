@@ -8,10 +8,14 @@ public class Exam01 {
 
     // 인터페이스의 모든 변수는 스태틱 변수이다. 
     System.out.println(A4.v1);
+    System.out.println(A4.v2);
 
     // 그런데 final이기 때문에 값을 바꿀 수 없다.
     //A4.v1 = 300; // 컴파일 오류!
     //A4.v2 = 400; // 컴파일 오류!
+
+    // 인터페이스의 스태틱 메서드 호출!
+    A4.m1();
   }
 
 }
