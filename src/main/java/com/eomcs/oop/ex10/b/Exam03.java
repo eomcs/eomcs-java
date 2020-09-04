@@ -6,11 +6,13 @@ package com.eomcs.oop.ex10.b;
 // 서브 클래스는 좀 더 쉽게 인터페이스를 구현할 수 있다.
 //
 public class Exam03 extends AbstractServlet {
-  
+
   // Servlet 인터페이스에 선언된 메서드 중에서 
   // 추상 클래스가 구현하지 않은 메서드만 정의하면 된다.
   // 매우 편리하다.
+  @Override
   public void service() {}
+
 }
 // 즉 이렇게 인터페이스의 메서드가 많을 경우 
 // 일부 메서드를 미리 구현함으로써 

@@ -2,6 +2,7 @@
 package com.eomcs.oop.ex09.g;
 
 public class Exam0120 implements A {
+
   @Override
   public void m2() {
     // default 메서드는 구현해도 되고 안해도 된다.
