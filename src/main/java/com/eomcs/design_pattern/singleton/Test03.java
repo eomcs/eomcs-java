@@ -12,7 +12,7 @@ public class Test03 {
 
     Kimbap bap2 = Kimbap.getInstance();
     Kimbap bap3 = Kimbap.getInstance();
-    System.out.println(bap2 == bap3); // true;
+    System.out.println(bap2 == bap3); // true
   }
 }
 
