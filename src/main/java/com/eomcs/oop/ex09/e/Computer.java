@@ -8,7 +8,7 @@ public interface Computer {
   // 컴퓨터에서 터치가 가능한 단계로 업그레이드 하게 되었다.
   // 그래서 컴퓨터라면 이제 터치도 가능해야 한다고 결론을 내렸고,
   // 규칙을 추가하게 된다.
-  
+
   //void touch(); // 추가하는 순간 기존 클래스들에서 컴파일 오류 발생!
 
   // 문제점
@@ -28,9 +28,9 @@ public interface Computer {
   // 바로 다음 문법을 사용하라!
   // "디폴트 메서드(default method)" - JDK8에서 추가한 문법이다.
   //
-  default void touch() {
-    // 구현할 코드 있으면 작성하고, 없으면 빈 채로 둔다. 
-  }
+  //default void touch() {
+  // 구현할 코드 있으면 작성하고, 없으면 빈 채로 둔다. 
+  //}
 
   // 위에 touch()라는 새 규칙을 추가하더라도
   // 기존에 작성한 FirstComputer, SecondComputer, ThirdComputer 클래스 모두 
