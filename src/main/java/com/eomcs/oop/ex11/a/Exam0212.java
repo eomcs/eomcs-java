@@ -17,8 +17,9 @@ public class Exam0212 {
     //2) 바깥 클래스의 인스턴스 주소를 사용하여 inner class의 인스턴스 생성
     obj2 = outer.new B();
 
-    outer.iValue = 100; // 바깥 클래스의  인스턴스 멤버를 사용하는 경우와 같다.
-    outer.im(); // 바깥 클래스의 인스턴스 멤버를 사용하는 경우와 같다.
+    // 다음과 같이 바깥 클래스의  인스턴스 멤버를 사용하는 경우와 같다.
+    outer.iValue = 100; 
+    outer.im();
   }
 
 }
