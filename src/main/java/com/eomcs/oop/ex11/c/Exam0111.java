@@ -17,6 +17,11 @@ class A2 {
 
 public class Exam0111 {
   public static void main(String[] args) {
+
+    //    A2 outer = new A2();
+    //    A2.X obj = outer.new X();
+
+    // 위의 두 줄을 다음 한 줄로 표현할 수 있다.
     A2.X obj = new A2().new X();
   }
 }
