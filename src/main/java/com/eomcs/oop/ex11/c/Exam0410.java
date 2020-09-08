@@ -3,7 +3,7 @@ package com.eomcs.oop.ex11.c;
 
 import com.eomcs.oop.ex11.c.D.X;
 import com.eomcs.oop.ex11.c.sub.M;
-import com.eomcs.oop.ex11.c.sub.M.*;
+import com.eomcs.oop.ex11.c.sub.M.Y;
 
 class D {
   class X {
