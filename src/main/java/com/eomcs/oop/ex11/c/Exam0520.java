@@ -22,7 +22,8 @@ public class Exam0520 {
     F outer = new F();
 
     // 중첩 클래스의 인스턴스를 생성할 때,
-    // 컴파일러는 바깥 클래스의 객체 주소를 받는 파라미터가 추가된 생성자를 호출한다. 
+    // 컴파일러는 바깥 클래스의 객체 주소를 생성자의 첫 번째 파라미터로 전달한다.
+    // 즉 컴파일러가 만든 생성자를 호출하도록 코드를 변환한다.
     // 
     F.X obj = outer.new X();
     // => invokespecial com.eomcs.oop.ex11.c.F$X(com.eomcs.oop.ex11.c.F) [25] 
