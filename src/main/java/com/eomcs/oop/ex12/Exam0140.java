@@ -3,7 +3,7 @@ package com.eomcs.oop.ex12;
 
 public class Exam0140 {
 
-  static interface Player {
+  interface Player {
     void play(String name, int age);
   }
 

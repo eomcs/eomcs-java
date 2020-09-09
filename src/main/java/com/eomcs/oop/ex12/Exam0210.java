@@ -4,7 +4,7 @@ package com.eomcs.oop.ex12;
 public class Exam0210 {
 
   // 추상 메서드가 한 개이어야 한다.
-  static interface Player {
+  interface Player {
     void play();
   }
 

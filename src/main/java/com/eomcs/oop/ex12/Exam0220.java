@@ -3,25 +3,17 @@ package com.eomcs.oop.ex12;
 
 public class Exam0220 {
 
-  // 여러 개의 메서드가 있다 하더라도 추상 메서드가 한 개이면 된다.
-  static interface Player {
-
-    static String info() {
-      return "Player입니다.";
-    }
-
-    default void stop() {}
-
+  // 추상 메서드가 두 개 이상이면 람다 문법으로 구현할 수 없다.
+  interface Player {
     void play();
+    void stop();
   }
 
   public static void main(String[] args) {
-    // static 메서드나 default 메서드가 몇개이든 그 개수는 중요하지 않다.
-    // 추상 메서드가 한 개이면 람다 문법을 사용할 수 있다.
-    Player p = () -> System.out.println("Player...");
-    p.play();
-    System.out.println(Player.info());
+    // 추상 메서드가 두 개 이상인 경우 람다 문법을 사용할 수 없다.
+    // Player p = () -> System.out.println("Player..."); // 컴파일 오류!
   }
+
 }
 
 
