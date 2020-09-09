@@ -1,26 +1,27 @@
-// local class : 변수를 찾는 순서
+// local class : 스태틱 메서드와 로컬 클래스
 package com.eomcs.oop.ex11.d;
 
-class D {
+class C2 {
   int v1 = 1;
 
-  void m1() {
-    //int v1 = 10;
+  static void m1() {
+    // 스태틱 메서드는 C 인스턴스 주소를 변수가 없다.
 
     class X {
-      //int v1 = 100;
-
+      // 그래서 바깥 클래스의 인스턴스를 사용할 수 없다.
+      // .class 파일을 확인해보면 바깥 클래스의 인스턴스를 보관한 필드가 선언되어 있지 않다.
+      // 또한 생성자도 바깥 클래스의 인스턴스를 받는 파라미터가 선언되어 있지 않다.
+      //
+      //      class com.eomcs.oop.ex11.d.C2$1X {
+      //
+      //        C2$1X();
+      //          0  aload_0 [this]
+      //          1  invokespecial java.lang.Object() [8]
+      //
       void f() {
-        //int v1 = 1000;
-        System.out.printf("v1 = %d\n", v1);
-        // this 를 생략하면 다음 순서로 변수를 찾는다.
-        // 1) 로컬 변수
-        // 2) 인스턴스 변수
-        // 3) 메서드의 선언된 로컬 변수
-        // 4) 바깥 클래스의 인스턴스 변수 또는 스태틱 변수
+        //System.out.printf("v1 = %d\n", C2.this.v1); // 컴파일 오류!
       }
     }
-
     X obj = new X();
     obj.f();
   }
@@ -29,8 +30,8 @@ class D {
 public class Exam0220 {
 
   public static void main(String[] args) {
-    D d = new D();
-    d.m1();
+    C2 c = new C2();
+    c.m1();
   }
 
 }

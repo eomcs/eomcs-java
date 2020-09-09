@@ -1,10 +1,10 @@
-// non-static nested class = inner class 응용 II
-package com.eomcs.oop.ex11.x;
+// inner class : 응용 II
+package com.eomcs.oop.ex11.c;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Exam0241 {
+public class Exam0720 {
   public static void main(final String[] args) {
     final Musics2 m1 = new Musics2();
     m1.add("aaa.mp3");
