@@ -1,0 +1,28 @@
+// anonymous class : 로컬 클래스 vs 익명 클래스
+package com.eomcs.oop.ex11.e;
+
+public class Exam0120 {
+  // 인터페이스의 경우 static으로 선언하지 않아도 스태틱 멤버에서 사용할 수 있다.
+  interface A {
+    void print();
+  }
+
+  public static void main(final String[] args) {
+    // 익명 클래스로 인터페이스 구현하기
+    // 문법:
+    // => 인터페이스명 레퍼런스 = new 인터페이스명() {}
+    //
+    // 4단계 : 클래스 이름이 없기 때문에 따로 인스턴스를 생성할 수 가 없다. 
+    //       바로 생성해야 한다.
+    // => 인터페이스 이름 바로 앞에 'new' 키워드를 둔다.
+    new A {
+      @Override
+      public void print() {
+        System.out.println("Hello!");
+      }
+    };
+    
+    A obj = new ();
+    obj.print();
+  }
+}
