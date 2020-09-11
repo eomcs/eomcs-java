@@ -22,7 +22,6 @@ public class Exam0320 {
 
   public static void main(final String[] args) {
     final A obj = new A() {
-
       // 수퍼 클래스의 메서드를 오버라이딩 한다.
       @Override
       public void print() {

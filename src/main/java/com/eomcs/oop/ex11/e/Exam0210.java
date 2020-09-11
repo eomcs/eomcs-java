@@ -15,7 +15,7 @@ public class Exam0210 {
     A obj = new A() {
       @Override
       public void print() {
-        System.out.println("Hello2!");
+        System.out.println("Hello!");
       }
     };
     obj.print();
