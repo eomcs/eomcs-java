@@ -3,7 +3,7 @@ package com.eomcs.exception.ex3;
 
 public class Exam0220 {
 
-  // RuntimeException은 클래스는 Exception의 서브클래스이다.
+  // RuntimeException 클래스는 Exception의 서브클래스이다.
   static void m() throws RuntimeException {
     throw new RuntimeException(); // OK!
   }
