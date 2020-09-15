@@ -12,7 +12,7 @@ public class Exam0210 {
 
     // 현재 파일 정보 조회
     //
-    File file1 = new File("./build.gradle");
+    File file1 = new File("./src/main/java/Hello2.java");
     System.out.printf("파일명: %s\n", file1.getName());
     System.out.printf("파일크기: %d\n", file1.length());
     System.out.printf("경로: %s\n", file1.getPath());
