@@ -16,7 +16,7 @@ public class Exam0110 {
     // - 콘솔에서 프로그램을 실행한다면 . 은 현재 명령어를 실행하는 위치를 가리킨다.
     // - 상위 경로는 ".."으로 표시한다.
     //
-    File currentDir = new File(".");
+    File currentDir = new File("./src/main/java");
     System.out.printf("폴더명: %s\n", currentDir.getName());
     System.out.printf("경로: %s\n", currentDir.getPath());
     System.out.printf("절대경로: %s\n", currentDir.getAbsolutePath());

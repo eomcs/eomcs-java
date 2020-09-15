@@ -13,7 +13,7 @@ public class Exam0120 {
     // 상위 폴더 정보 조회
     // - ".." 으로 경로를 표시한다.
     //
-    File currentDir = new File("..");
+    File currentDir = new File("./src/main/java/../../test/java");
     System.out.printf("폴더명: %s\n", currentDir.getName());
     System.out.printf("경로: %s\n", currentDir.getPath());
     System.out.printf("절대경로: %s\n", currentDir.getAbsolutePath());
