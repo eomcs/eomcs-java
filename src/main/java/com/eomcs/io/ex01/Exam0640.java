@@ -28,9 +28,7 @@ public class Exam0640 {
       System.out.printf("%s %12d %s\n", file.isDirectory() ? "d" : "-", file.length(),
           file.getName());
     }
-
   }
-
 }
 
 
