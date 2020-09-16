@@ -2,9 +2,8 @@
 package com.eomcs.io.ex01;
 
 import java.io.File;
-import java.io.FileFilter;
 
-public class Exam0650 {
+public class Exam0652 {
 
 
   public static void main(String[] args) throws Exception {
@@ -13,12 +12,8 @@ public class Exam0650 {
 
     // 메서드 한 개짜리 인터페이스인 경우 
     // 람다(lambda) 문법을 사용하면 훨씬 더 간결하게 코드를 작성할 수 있다.
-    //
-    File[] files = dir.listFiles(file -> {
-      if (file.isFile() && file.getName().endsWith(".java"))
-        return true;
-      return false;
-    });
+    // => expression 은 return 문장을 생략할 수 있다.
+    File[] files = dir.listFiles(file -> file.isFile() && file.getName().endsWith(".java"));
 
     for (File file : files) {
       System.out.printf("%s %12d %s\n", file.isDirectory() ? "d" : "-", file.length(),
