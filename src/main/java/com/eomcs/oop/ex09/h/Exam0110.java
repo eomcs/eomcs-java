@@ -1,3 +1,4 @@
+// 인터페이스 : 스태틱 메서드의 활용 예
 package com.eomcs.oop.ex09.h;
 
 public class Exam0110 {

@@ -19,7 +19,7 @@ public class Exam0120 {
     p2.play();
 
     // => 파라미터가 없다고 괄호를 생략할 수는 없다.
-    //Player p1 = -> System.out.println("테스트3"); // 컴파일 오류!
+    //    Player p3 = -> System.out.println("테스트3"); // 컴파일 오류!
   }
 }
 
