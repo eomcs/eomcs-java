@@ -39,42 +39,6 @@ public class Exam0750 {
     // => 스태틱 메서드 레퍼런스, 인스턴스 메서드 레퍼런스, 생성자 레퍼런스 
     Collection<String> c1 = prepareNames(ArrayList<String>::new, 
         "홍길동", "임꺽정", "유관순", "임꺽정");
-
-    // 위의 문장은 다음 문장과 같다.
-    // 1) 로컬 클래스 사용하여 Supplier 구현체 만들기
-    class MySupplier<T> implements Supplier<T> {
-      @Override
-      public T get() {
-        return (T) new ArrayList<>();
-      }
-    };
-    Supplier<Collection<String>> supplier1 = new MySupplier<Collection<String>>();
-    Collection<String> cx = prepareNames(supplier1, "홍길동", "임꺽정", "유관순", "임꺽정");
-
-    // 2) 익명 클래스 사용하여 Supplier 구현체 만들기
-    Supplier<Collection<String>> supplier2 = new Supplier<Collection<String>>() {
-      @Override
-      public Collection<String> get() {
-        return new ArrayList<>();
-      }
-    };
-    Collection<String> cy = prepareNames(supplier1, "홍길동", "임꺽정", "유관순", "임꺽정");
-
-    // 3) 익명 클래스 사용하여 Supplier 구현체 만들기 II
-    Collection<String> cz = prepareNames(
-        new Supplier<Collection<String>>() {
-          @Override
-          public Collection<String> get() {
-            return new ArrayList<>();
-          }
-        }, 
-        "홍길동", "임꺽정", "유관순", "임꺽정");
-
-    // 4) 람다 문법으로 Supplier 구현체 만들기
-    Collection<String> cc = prepareNames(
-        () -> new ArrayList<String>(), 
-        "홍길동", "임꺽정", "유관순", "임꺽정");
-
     print(c1.iterator());
 
     System.out.println("------------------------");

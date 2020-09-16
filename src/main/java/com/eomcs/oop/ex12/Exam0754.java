@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.function.Supplier;
 
-public class Exam0751 {
+public class Exam0754 {
 
   @SuppressWarnings("unchecked")
   static <T> Collection<T> prepareNames(Supplier<Collection<T>> factory, T... values) {
@@ -26,15 +26,11 @@ public class Exam0751 {
   }
 
   public static void main(String[] args) {
-    // 1) 로컬 클래스 사용하여 Supplier 구현체 만들기
-    class MySupplier<T> implements Supplier<T> {
-      @Override
-      public T get() {
-        return (T) new ArrayList<>();
-      }
-    };
-    Supplier<Collection<String>> supplier = new MySupplier<Collection<String>>();
-    Collection<String> list = prepareNames(supplier, "홍길동", "임꺽정", "유관순", "임꺽정");
+
+    // 4) 람다 문법으로 Supplier 구현체 만들기
+    Collection<String> list = prepareNames(
+        () -> new ArrayList<String>(), 
+        "홍길동", "임꺽정", "유관순", "임꺽정");
     print(list.iterator());
 
   }
