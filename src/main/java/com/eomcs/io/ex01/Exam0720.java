@@ -11,18 +11,18 @@ public class Exam0720 {
     File dir = new File("temp");
 
     deleteFile(dir);
-
-    System.out.println("삭제하였습니다!");
   }
 
   static void deleteFile(File dir) {
+    // 주어진 파일이 디렉토리라면 하위 파일이나 디렉토리를 찾아 지운다.
     if (dir.isDirectory()) {
       File[] files = dir.listFiles();
       for (File file : files) {
         deleteFile(file);
       }
     }
-    dir.delete(); // 디렉토리 삭제
+
+    dir.delete(); // 현재 파일이나 폴더 지우기
   }
 
 }
