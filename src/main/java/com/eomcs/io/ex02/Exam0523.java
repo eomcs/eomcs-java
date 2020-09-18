@@ -17,7 +17,7 @@ public class Exam0523 {
     // 읽은 바이트를 정상적인 UCS2로 변환하여 String 객체를 생성해보자.
     // - 예) 
     //   utf8.txt  => 41 42 ea b0 80 ea b0 81
-    //   UCS2      => 0041 0042 ac00 ac02  <== 한글이 UCS2로 정상적으로 변환되었다.
+    //   UCS2      => 0041 0042 ac00 ac01  <== 한글이 UCS2로 정상적으로 변환되었다.
     String str = new String(buf, 0, count, "UTF-8");
     System.out.println(str);
   }

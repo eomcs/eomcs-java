@@ -21,7 +21,7 @@ public class Exam0522 {
     // - 그러면 MS949 인코딩 데이터를 정상적으로 UCS2 인코딩 문자로 변환할 것이다.
     // - 예) 
     //   ms949.txt => 41 42 b0 a1 b0 a2
-    //   UCS2      => 0041 0042 ac00 ac02  <== 한글이 UCS2로 정상적으로 변환되었다.
+    //   UCS2      => 0041 0042 ac00 ac01  <== 한글이 UCS2로 정상적으로 변환되었다.
     String str = new String(buf, 0, count, "MS949");
     System.out.println(str);
   }
