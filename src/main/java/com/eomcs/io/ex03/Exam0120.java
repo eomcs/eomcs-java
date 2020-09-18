@@ -1,4 +1,4 @@
-// 텍스트 파일 쓰기 - FileOutputStream 사용할 때 불편한 점
+// character stream - 문자 단위로 읽기 
 package com.eomcs.io.ex03;
 
 import java.io.FileReader;
@@ -27,8 +27,12 @@ public class Exam0120 {
     // => 그래서 이미지 파일이나 동영상 파일과 같이 바이너리 데이터는 
     ///   FileReader를 사용하여 읽어서는 안된다.
     //    왜? 문자라고 간주하고 값을 변경하기 때문이다.
-    int ch1 = in.read(); 
-    int ch2 = in.read();
+
+    // 현재 JVM 환경 변수 'file.encoding' 값 알아내기
+    System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
+
+    int ch1 = in.read(); // 한글 '가' 읽기
+    int ch2 = in.read(); // 영어 'A' 읽기
 
     // 3) 읽기 도구를 닫는다.
     in.close();

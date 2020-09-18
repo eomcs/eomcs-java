@@ -6,31 +6,50 @@ import java.io.FileInputStream;
 public class Exam0521 {
 
   public static void main(String[] args) throws Exception {
-    FileInputStream in = new FileInputStream("sample/ms949.txt");
+    // JVM 환경 변수 'file.encoding' 값
+    System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
+
+    FileInputStream in = new FileInputStream("sample/utf8.txt");
 
     // 파일의 데이터를 한 번에 읽어보자.
-    byte[] buf = new byte[1000];
-    int count = in.read(buf);
+    byte[] buf = new byte[1000]; 
+    int count = in.read(buf); // <== 41 42 ea b0 80 ea b0 81 (AB가각)
 
     in.close();
 
     // 읽은 바이트를 String 객체로 만들어보자.
-    String str = new String(buf, 0, count);
+    String str = new String(buf, 0, count); // => 바이트가 어떤 문자 집합으로 인코딩 되었는지 알려주지 않는다면?
     System.out.println(str);
 
-    // 한글이 깨진 이유?
-    // - 파일에서 읽어 들인 바이트는 MS949로 인코딩 된 텍스트 파일이다.
-    // - String 객체를 만들 때 바이트 배열의 인코딩을 알려주지 않으면 
-    //   문자가 ISO-8859-1(영어)로 인코딩 되었다고  가정하고
-    //   각 바이트 앞에 00 1바이트를 붙여 UCS2 인코딩으로 변환한다.
-    // - 예)
-    //   ms949.txt => 41 42 b0 a1 b0 a2
-    //   UCS2      => 0041 0042 00b0 00a1 00b0 00a2   <== 한글이 정상적인 UCS2로 변환되지 않았다.
-    // - 영어인 경우 앞에 00 1바이트를 붙이면 정상적인 UCS2 문자가 되지만,
-    //   한글인 경우는 별도의 규칙에 따라 변환해야 한다. 
-    //   그렇게 하지 않았기 때문에 한글만 깨진 것이다.
-
-
+    // 바이트가 어떤 문자 집합으로 인코딩 되었는지 알려주지 않는다면?
+    // String 객체를 생성할 때 다음의 규칙에 따라 변환한다.
+    // => JVM 환경 변수 'file.encoding' 에 설정된 문자집합으로 가정하고 UCS2 문자 코드로 변환한다.
+    //
+    // 1) 이클립스에서 실행 => 성공!
+    // - JVM 실행 옵션에 '-Dfile.encoding=UTF-8' 환경 변수가 자동으로 붙는다. 
+    // - 그래서 String 클래스는 바이트 배열의 값을 UCS2로 바꿀 때 UTF-8 문자표를 사용하여 UCS2 로 변환한다.
+    // - 예1)
+    //   utf8.txt  => 41 42 ea b0 80 ea b0 81
+    //   UCS2      => 0041 0042 ac00 ac01  <== 정상적으로 바뀐다.
+    //
+    // 2) Windows 콘솔에서 실행 => 실패!
+    // - JVM을 실행할 때 file.encoding을 설정하지 않으면 
+    //   OS의 기본 문자집합으로 설정한다.
+    // - Windows의 기본 문자집합은 MS949 이다.
+    // - 따라서 file.encoding 값은 MS949가 된다.
+    // - 바이트 배열은 UTF-8로 인코딩 되었는데, 
+    //   MS949 문자표를 사용하여 UCS2로 변환하려 하니까 
+    //   잘못된 문자로 변환되는 것이다.
+    // - 해결책?
+    //   JVM을 실행할 때 file.encoding 옵션에 정확하게 해당 파일의 인코딩을 설정하라.
+    //   즉 utf8.txt 파일은 UTF-8로 인코딩 되었기 때문에 
+    //     '-Dfile.encoding=UTF-8' 옵션을 붙여서 실행해야 UCS2로 정상 변환된다.
+    //
+    // 3) Linux/macOS 콘솔에서 실행 => 성공!
+    // - Linux와 macOS의 기본 문자 집합은 UTF-8이다. 
+    // - 따라서 JVM을 실행할 때 '-Dfile.encoding=UTF-8' 옵션을 지정하지 않아도 
+    //   해당 파일을 UTF-8 문자로 간주하여 UTF-8 문자표에 따라 UCS2로 변환한다.
+    // 
   }
 
 }
