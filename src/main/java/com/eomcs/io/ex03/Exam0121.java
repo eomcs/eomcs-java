@@ -1,9 +1,9 @@
-// 텍스트 파일 쓰기 - FileOutputStream 사용할 때 불편한 점
+// character stream - 문자 단위로 읽기 
 package com.eomcs.io.ex03;
 
 import java.io.FileReader;
 
-public class Exam0120 {
+public class Exam0121 {
 
   public static void main(String[] args) throws Exception {
     // 1) 파일의 데이터를 읽을 객체를 준비한다. 
@@ -29,7 +29,7 @@ public class Exam0120 {
     //    왜? 문자라고 간주하고 값을 변경하기 때문이다.
     int ch1 = in.read(); 
     int ch2 = in.read();
-
+    
     // 3) 읽기 도구를 닫는다.
     in.close();
 

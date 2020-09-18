@@ -1,9 +1,9 @@
-// 텍스트 파일 읽기 - FileInputStream 사용할 때 불편한 점
+// character stream - 문자 단위로 출력하기
 package com.eomcs.io.ex03;
 
 import java.io.FileWriter;
 
-public class Exam0110 {
+public class Exam0111 {
   public static void main(String[] args) throws Exception {
     // 1) 문자 단위로 출력할 도구 준비
     FileWriter out = new FileWriter("temp/test2.txt");
