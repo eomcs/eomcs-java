@@ -2,15 +2,18 @@
 package com.eomcs.io.ex03;
 
 import java.io.FileReader;
+import java.nio.charset.Charset;
 
-public class Exam0120 {
+public class Exam0121 {
 
   public static void main(String[] args) throws Exception {
     // 1) 파일의 데이터를 읽을 객체를 준비한다. 
-    FileReader in = new FileReader("sample/utf8.txt"); // 41 42 ea b0 81 ea b0 81
+    // => 파일의 문자집합을 명시할 수 있다.
+    Charset charset = Charset.forName("UTF-8");
+    FileReader in = new FileReader("sample/utf8.txt", charset); // 41 42 ea b0 81 ea b0 81
 
-    // 2) JVM 환경 변수 'file.encoding'에 설정된 문자코드표에 따라 
-    //    바이트를 읽어서 UCS2로 바꾼 후에 리턴한다.
+    // 2) 출력 스트림 객체를 생성할 때 파일의 문자 집합을 지정하면 
+    //    JVM 환경 변수 'file.encoding'에 설정된 값은 무시한다. 
 
     // 현재 JVM 환경 변수 'file.encoding' 값 알아내기
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));

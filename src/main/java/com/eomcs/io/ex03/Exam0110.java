@@ -19,22 +19,33 @@ public class Exam0110 {
     // 2) 문자 출력하기
     // => 자바는 문자 데이터를 다룰 때 UCS2(2바이트) 유니코드를 사용한다.
     // => 그래서 출력할 때 UCS2 유니코드값을
-    // JVM에 설정된 기본 문자코드표의 값으로 변환하여 출력한다.
+    //    JVM에 설정된 기본 문자코드표의 값으로 변환하여 출력한다.
     // => JVM을 실행할 때 출력 데이터의 문자 코드표를 지정하지 않으면
-    // OS의 기본 문자코드표에 따라 변환한다.
-    // 예) Windows OS(MS949), Unix(UTF-8)
+    //    OS의 기본 문자코드표에 따라 변환한다.
+    //    예) Windows OS(MS949), Unix(UTF-8)
     // => JVM을 실행할 때 출력 데이터의 문자 코드표를 지정하는 방법
     // > java -Dfile.encoding=문자코드표 -cp 클래스경로 클래스명
     //
     // [이클립스에서 실행]
-    // - 출력할 때 UCS2를 UTF-8 코드로 변환하여 파일에 쓴다.
+    // - JVM을 실행할 때 '-Dfile.encoding=UTF-8' 옵션을 자동으로 붙인다.
+    // - 그래서 출력할 때, UCS2를 UTF-8 코드로 변환하여 파일에 쓴다.
     //
     // [콘솔창에서 실행]
+    // 1) file.encoding 환경 변수를 지정하지 않으면,
     // - OS가 기본으로 사용하는 문자 코드로 변환하여 파일에 쓴다.
     // - windows : MS949
     // - linux/unix/macOS : UTF-8
-    // - 만약 JVM을 실행할 때 '-Dfile.encoding=문자코드표' 옵션을 지정했다면,
+    //
+    // 2) JVM을 실행할 때 '-Dfile.encoding=문자코드표' 옵션을 지정한다면,
     // - 해당 옵션에 지정된 문자 코드로 변환하여 파일에 쓴다.
+    //
+    // [결론]
+    // - OS에 영향 받지 않으려면,
+    //   JVM을 실행할 때 반드시 file.encoding JVM 환경 변수를 설정하라.
+    // - 문자집합은 UTF-8을 사용하라.
+    //   - 국제 표준이다.
+    //   - linux, macOS의 기본 문자 집합이다.
+    //
 
     // 현재 JVM 환경 변수 'file.encoding' 값 알아내기
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
