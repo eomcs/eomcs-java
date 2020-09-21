@@ -1,4 +1,4 @@
-// 포함 관계로 기능 확장하기 - BufferedInputStream
+// 포함 관계로 기능 확장하기 - FileInputStream + BufferedInputStream
 package com.eomcs.io.ex08;
 
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-// 포함 관계로 기능 확장하기 - DataInputStream을 사용하여 String, int, boolean 값 읽기
+// 포함 관계로 기능 확장하기 - FileInputStream + DataInputStream
 package com.eomcs.io.ex08;
 
 import java.io.FileInputStream;

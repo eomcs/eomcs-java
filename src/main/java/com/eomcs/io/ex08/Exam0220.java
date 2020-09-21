@@ -1,4 +1,4 @@
-// DataBufferedInputStream으로 객체 읽기 - 파일이 데이터를 읽어 인스턴스로 만들기
+// 포함 관계로 기능 확장하기 - BufferedInputStream, BufferedOutputStream
 package com.eomcs.io.ex08;
 
 import java.io.FileInputStream;

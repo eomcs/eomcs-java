@@ -1,4 +1,4 @@
-// 메모리에서 데이터를 읽기 - DataInputStream을 사용하여 String, int, boolean 값 읽기
+// 포함 관계로 기능 확장하기 - ByteArrayInputStream + DataInputStream
 package com.eomcs.io.ex08;
 
 import java.io.ByteArrayInputStream;
