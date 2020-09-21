@@ -1,10 +1,10 @@
-// DataOutputStream을 이용하여 객체 출력 - 인스턴스의 값을 출력
+// DataFileOutputStream을 이용하여 객체 출력 - 인스턴스의 값을 출력
 package com.eomcs.io.ex05;
 
 public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
-    DataOutputStream out = new DataOutputStream("temp/test4_2.data");
+    DataFileOutputStream out = new DataFileOutputStream("temp/test4_2.data");
 
     Member member = new Member();
     member.name = "AB가각간";

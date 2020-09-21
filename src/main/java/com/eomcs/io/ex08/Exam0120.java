@@ -1,4 +1,4 @@
-// DataInputStream으로 객체 읽기 - 파일이 데이터를 읽어 인스턴스로 만들기
+// 포함 관계로 기능 확장하기 - DataInputStream을 사용하여 String, int, boolean 값 읽기
 package com.eomcs.io.ex08;
 
 import java.io.FileInputStream;
@@ -7,28 +7,25 @@ public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
 
-    // 첫 번째 부품
-    FileInputStream fileIn = new FileInputStream("temp/test6.data");
+    // 바이트 배열 입력 스트림 대신 파일 입력 스트림으로 교체하기
+    FileInputStream in = new FileInputStream("temp/test4.data");
 
-    // 첫 번째 부품에 다른 부품 연결
-    // - FileInputStream 객체에 String,int,boolean 값을 읽는
-    // 플러그인/장신구/보조장치(decorator)를 장착한다.
-    // - 이 장신구는 첫 번째 부품을 통해 읽은 데이터를 가공하는 일을 한다.
-    // - 따라서 실제 데이터를 읽는 일은 이 장신구와 연결된 객체가 한다.
-    //
-    DataInputStream in = new DataInputStream(fileIn);
+    // 문자열, int, long, boolean 값을 읽는 것은 DataInputStream 에 맡긴다.
+    // => DataInputStream에 ByteArrayInputStream을 포함시킨다.
+    DataInputStream in2 = new DataInputStream(in);
 
     Member member = new Member();
 
-    // 플러그인을 통해 String, int, boolean 값을 읽는다.
-    member.name = in.readUTF();
-    member.age = in.readInt();
-    member.gender = in.readBoolean();
+    member.name = in2.readUTF();
+    member.age = in2.readInt();
+    member.gender = in2.readBoolean();
 
     in.close();
 
-    System.out.printf("%s\n", member);
+    System.out.println(member);
+
+    // DataInputStream 의 생성자에 ByteArrayInputStream 대신 
+    // 위 예제와 같이 FileInputStream 클래스처럼 다른 클래스로 쉽게 교체할 수 있다.
   }
+
 }
-
-

@@ -1,4 +1,4 @@
-// 플러그인으로 전환한 BufferedInputStream 사용하기 - 읽기 시간 측정
+// 포함 관계로 기능 확장하기 - BufferedInputStream
 package com.eomcs.io.ex08;
 
 import java.io.FileInputStream;
@@ -7,15 +7,19 @@ public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
 
-    FileInputStream fileIn = new FileInputStream("temp/jls11.pdf");
-    BufferedInputStream in = new BufferedInputStream(fileIn);
+    FileInputStream in = new FileInputStream("temp/jls11.pdf");
+
+    // 기존의 FileInputStream에 버퍼 기능을 덧붙이기 위해서 상속 대신 포함하는 방식을 사용한다.
+    // 다음과 BufferedInputStream 은 FileInputStream을 포함한다.
+    // 즉 파일에서 데이터를 읽을 때 FileInputStream을 사용하는 것이다.
+    BufferedInputStream in2 = new BufferedInputStream(in);
 
     int b;
 
     long startTime = System.currentTimeMillis(); // 밀리초
 
     int callCount = 0;
-    while ((b = in.read()) != -1)
+    while ((b = in2.read()) != -1)
       callCount++; // 파일을 끝까지 읽는다.
 
     long endTime = System.currentTimeMillis();

@@ -1,10 +1,14 @@
-// BufferedFileInputStream 사용 후 - 데이터 읽는데 걸린 시간 측정
-package com.eomcs.io.ex06;
+// 플러그인으로 전환한 BufferedInputStream 사용하기 - 읽기 시간 측정
+package com.eomcs.io.ex09;
 
-public class Exam0310 {
+import java.io.FileInputStream;
+
+public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
-    BufferedFileInputStream in = new BufferedFileInputStream("temp/jls11.pdf");
+
+    FileInputStream fileIn = new FileInputStream("temp/jls11.pdf");
+    BufferedInputStream in = new BufferedInputStream(fileIn);
 
     int b;
 

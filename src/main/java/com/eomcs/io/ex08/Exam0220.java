@@ -1,4 +1,4 @@
-// BufferedInputStream과 BufferedOutputStream을 사용하여 파일 복사 및 시간 측정
+// DataBufferedInputStream으로 객체 읽기 - 파일이 데이터를 읽어 인스턴스로 만들기
 package com.eomcs.io.ex08;
 
 import java.io.FileInputStream;
@@ -7,18 +7,23 @@ import java.io.FileOutputStream;
 public class Exam0220 {
 
   public static void main(String[] args) throws Exception {
-    FileInputStream fileIn = new FileInputStream("temp/jls11.pdf");
-    BufferedInputStream in = new BufferedInputStream(fileIn);
 
-    FileOutputStream fileOut = new FileOutputStream("temp/jls11_5.pdf");
-    BufferedOutputStream out = new BufferedOutputStream(fileOut);
+    FileInputStream in = new FileInputStream("temp/jls11.pdf");
+    BufferedInputStream in2 = new BufferedInputStream(in);
+
+    FileOutputStream out = new FileOutputStream("temp/jls11_3.pdf");
+    BufferedOutputStream out2 = new BufferedOutputStream(out);
 
     int b;
 
     long startTime = System.currentTimeMillis(); // 밀리초
 
-    while ((b = in.read()) != -1)
-      out.write(b);
+    while ((b = in2.read()) != -1)
+      out2.write(b);
+
+    // 아직 파일로 출력되지 않고 버퍼 남아 있는 데이터를
+    // 마무리로 출력한다.
+    out2.flush();
 
     long endTime = System.currentTimeMillis();
 
@@ -27,5 +32,6 @@ public class Exam0220 {
     in.close();
     out.close();
   }
-
 }
+
+
