@@ -22,7 +22,7 @@ public class Exam0210 {
     // 그러나 실행하면 오류가 발생한다.
     // => java.io.NotSerializableException
     // => 인스턴스의 값을 자동으로 바이트 배열로 만들 수 있도록 허락하지 않아서
-    // 발생한 실행 오류이다.
+    //    발생한 실행 오류이다.
 
     out.close();
   }

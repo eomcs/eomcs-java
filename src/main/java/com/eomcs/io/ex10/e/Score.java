@@ -24,7 +24,7 @@ public class Score implements Serializable {
   // 데이터 왜곡? kor, eng, math 에 저장된 값과 sum과 aver에 저장된 값이 일치하지 않는 경우를 말한다.
   // 이런 변수는 serialize 대상에서 제외해야 하는데,
   // 그 명령어가 transient(일시적인)이다.
-  // transient는 변수의 성질을 변경한다.
+  // transient는 변수의 성질을 변경(modifier)한다.
   // 즉 serialize 되지 않도록 변경한다.
   transient int sum;
   transient float aver;
