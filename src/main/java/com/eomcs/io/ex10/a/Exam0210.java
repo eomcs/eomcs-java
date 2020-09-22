@@ -1,11 +1,11 @@
 // Java I/O API : FileInputStream --> BufferedInputStream --> DataInputStream
-package com.eomcs.io.ex09.step4;
+package com.eomcs.io.ex10.a;
 
 import java.io.BufferedInputStream; // Data Processing Stream Class = Decorator
 import java.io.DataInputStream; // Data Processing Stream Class = Decorator
 import java.io.FileInputStream; // Data Sink Stream Class = Concrete Component
 
-public class Exam0120 {
+public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
 
