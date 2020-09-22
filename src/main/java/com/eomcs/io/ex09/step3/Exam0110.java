@@ -1,5 +1,5 @@
 // DataOutputStream을 이용하여 객체 출력 - 인스턴스의 값을 출력
-package com.eomcs.io.ex09;
+package com.eomcs.io.ex09.step3;
 
 import java.io.FileOutputStream;
 

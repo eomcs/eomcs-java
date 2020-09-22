@@ -1,5 +1,5 @@
 // 부품 연결 예 : FileInputStream --> BufferedInputStream --> DataInputStream
-package com.eomcs.io.ex09;
+package com.eomcs.io.ex09.step3;
 
 import java.io.FileInputStream;
 

@@ -1,6 +1,6 @@
 // DataInputStream을 FileInputStream이나 ByteArrayInputStream에 붙일 수 있도록
 // 기능을 변경한다. 즉 DataInputStream을 장신구(decorator)로 만든다.
-package com.eomcs.io.ex09;
+package com.eomcs.io.ex09.step3;
 
 import java.io.InputStream;
 

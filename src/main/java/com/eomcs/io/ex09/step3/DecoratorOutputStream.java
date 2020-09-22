@@ -1,4 +1,4 @@
-package com.eomcs.io.ex09;
+package com.eomcs.io.ex09.step3;
 
 import java.io.IOException;
 import java.io.OutputStream;

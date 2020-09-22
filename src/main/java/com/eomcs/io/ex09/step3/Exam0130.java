@@ -1,5 +1,5 @@
 // 메모리에서 데이터를 읽기 - 바이트 배열에서 String, int, boolean 값 읽기
-package com.eomcs.io.ex09;
+package com.eomcs.io.ex09.step3;
 
 import java.io.ByteArrayInputStream;
 

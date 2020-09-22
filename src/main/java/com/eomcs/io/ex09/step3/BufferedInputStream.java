@@ -1,5 +1,5 @@
 // 버퍼 기능을 입출력 플러그인/장신구(decorator)로 전환한다.
-package com.eomcs.io.ex09;
+package com.eomcs.io.ex09.step3;
 
 import java.io.IOException;
 import java.io.InputStream;
