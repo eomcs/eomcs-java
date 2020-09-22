@@ -26,6 +26,8 @@ public class Exam0110 {
       out.writeBoolean(member.gender);
     }
 
+    out.flush();
+
     long end = System.currentTimeMillis();
 
     System.out.println(end - start);
