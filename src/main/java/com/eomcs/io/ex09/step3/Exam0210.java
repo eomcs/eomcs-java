@@ -7,8 +7,11 @@ public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
 
-    FileInputStream fileIn = new FileInputStream("temp/jls11.pdf");
-    BufferedInputStream in = new BufferedInputStream(fileIn);
+    //    FileInputStream fileIn = new FileInputStream("temp/jls11.pdf");
+    //    BufferedInputStream in = new BufferedInputStream(fileIn);
+
+    BufferedInputStream in = new BufferedInputStream(
+        new FileInputStream("temp/jls11.pdf"));
 
     int b;
 
@@ -24,6 +27,8 @@ public class Exam0210 {
     System.out.println(callCount);
 
     in.close();
+
+    //fileIn.close();
   }
 
 }
