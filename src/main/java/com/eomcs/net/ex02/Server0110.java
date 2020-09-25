@@ -14,6 +14,7 @@ public class Server0110 {
     System.out.println("서버 실행!");
     // 1) 네트워크 연결을 기다리는 역할을 수행할 객체를 준비
     // => new ServerSocket(포트번호)
+    // => 현재 실행 중인 프로그램과 포트 번호가 중복되어서는 안된다.
     ServerSocket ss = new ServerSocket(8888);
     // 포트번호
     // => 한 컴퓨터에서 네트워크 연결을 기다리는 프로그램의 식별번호이다.
