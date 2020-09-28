@@ -18,6 +18,8 @@ public class Server0130 {
           DataOutputStream out = new DataOutputStream(socket.getOutputStream());
           DataInputStream in = new DataInputStream(socket.getInputStream())) {
 
+        System.out.println("클라이언트와 연결되었고, 입출력 스트림도 준비되었음!");
+
         System.out.println("클라이언트가 보낸 int 값을 기다리고 있음!");
 
         int value = in.readInt();
