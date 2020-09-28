@@ -1,4 +1,4 @@
-// 서버와 입출력 테스트 - byte stream
+// 서버와 입출력 테스트 - byte stream + try with resource 문법 사용
 package com.eomcs.net.ex03;
 
 import java.io.InputStream;
@@ -8,9 +8,10 @@ import java.util.Scanner;
 
 public class Client0111 {
   public static void main(String[] args) {
-    Scanner keyScan = new Scanner(System.in);
+    try (Scanner keyScan = new Scanner(System.in);
 
-    try (Socket socket = new Socket("localhost", 8888);
+        // 서버와 연결
+        Socket socket = new Socket("localhost", 8888);
 
         // 서버랑 데이터를 주고 받을 수 있도록 입출력 스트림 객체를 준비한다.
         // => 출력 스트림 객체를 준비하기
@@ -19,7 +20,7 @@ public class Client0111 {
         // => 입력 스트림 객체를 준비하기
         InputStream in = socket.getInputStream()) {
 
-      System.out.println("서버와 연결되었음!");
+      System.out.println("서버와 연결되었고, 입출력 스트림도 준비되었음!");
 
       // 서버에 데이터를 보내기 전에 잠깐 멈춤!
       System.out.print(">");
@@ -44,8 +45,6 @@ public class Client0111 {
     } catch (Exception e) {
       e.printStackTrace();
     }
-
-    keyScan.close();
   }
 }
 

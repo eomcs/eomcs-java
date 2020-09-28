@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 public class Server0111 {
   public static void main(String[] args) {
-    Scanner keyboard = null;
-    ServerSocket serverSocket = null; 
-    try {
-      keyboard = new Scanner(System.in);
-      serverSocket = new ServerSocket(8888);
+
+
+    try (Scanner keyboard = new Scanner(System.in);
+        ServerSocket serverSocket = new ServerSocket(8888)) {
+
       System.out.println("클라이언트의 연결을 기다리고 있음.");
 
       try (Socket socket = serverSocket.accept();
@@ -51,15 +51,12 @@ public class Server0111 {
         // byte stream 을 사용할 때는 바로 출력한다.
         // 따라서 flush()를 호출하지 않아도 된다.
         System.out.println("클라인트에게 데이터를 보냈음.");
-
       }
       System.out.println("클라이언트와의 연결을 끊었음.");
 
     } catch (Exception e) {
       e.printStackTrace();
-    } finally {
-      try { keyboard.close(); } catch (Exception e) {}
-      try { serverSocket.close();} catch (Exception e) {}
+
     }
     System.out.println("서버 종료!");
   }
