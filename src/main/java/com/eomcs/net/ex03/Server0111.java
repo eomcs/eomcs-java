@@ -7,40 +7,29 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Server0110 {
+public class Server0111 {
   public static void main(String[] args) {
     Scanner keyboard = null;
     ServerSocket serverSocket = null; 
-
     try {
       keyboard = new Scanner(System.in);
       serverSocket = new ServerSocket(8888);
       System.out.println("클라이언트의 연결을 기다리고 있음.");
 
-      Socket socket = null;
-      OutputStream out = null;
-      InputStream in = null;
+      try (Socket socket = serverSocket.accept();
 
-      try {
-        // accept()
-        // - 대기열에서 클라이언트 정보를 한 개 꺼내 소켓을 만들어 클라이언트와 연결한다.
-        // - 만약 대기열에 클라이언트 정보가 없다면 클라이언트가 접속할 때까지 기다리다.
-        socket = serverSocket.accept();
+          // 클라이언트와 데이터를 주고 받을 입출력 스트림 객체를 준비한다.
+          // => 출력 스트림 객체를 준비하기
+          OutputStream out = socket.getOutputStream();
+
+          // => 입력 스트림 객체를 준비하기
+          InputStream in = socket.getInputStream()) {
+
         System.out.println("대기열에서 클라이언트 정보를 꺼내 소켓을 생성하였음.");
-
-        // 클라이언트와 데이터를 주고 받을 입출력 스트림 객체를 준비한다.
-        // => 출력 스트림 객체를 준비하기
-        out = socket.getOutputStream();
-
-        // => 입력 스트림 객체를 준비하기
-        in = socket.getInputStream();
         System.out.println("클라이언트와 통신할 입출력 스트림이 준비되었음.");
 
         // Client와 Server의 통신 규칙에 따라 순서대로 입출력 해야 한다.
-        // 왜? 
-        // 입출력은 blocking 모드로 작동하기 때문이다.
-        // 즉 read()라는 메서드는 클라이언트가 보낸 데이터를 읽기 전까지 리턴하지 않는다.
-        //
+        // 왜? 입출력은 blocking 모드로 작동하기 때문이다.
         // 클라이언트와 서버 간의 데이터를 주고 받는 통신 규칙을 "프로토콜(protocol)"이라 한다.
         // 클라이언트에서 한 줄의 문자열을 보내면
         // 서버는 한 줄의 문자열을 읽은 후에 응답해야 한다.
@@ -48,7 +37,6 @@ public class Server0110 {
         System.out.println("클라이언트가 보낸 1바이트를 기다리고 있음!");
         // => 클라이언트가 1바이트를 보낼 때까지 리턴하지 않는다.
         int request = in.read(); // blocking 모드로 작동한다.
-
         System.out.println(request);
 
         // 서버가 데이터를 보내지 않으면 클라이언트의 read()는 리턴하지 않는다.
@@ -64,20 +52,11 @@ public class Server0110 {
         // 따라서 flush()를 호출하지 않아도 된다.
         System.out.println("클라인트에게 데이터를 보냈음.");
 
-      } catch (Exception e) {
-        e.printStackTrace();
-
-      } finally {
-        try {out.close();} catch (Exception e) {}
-        try {in.close();} catch (Exception e) {}
-        try {socket.close();} catch (Exception e) {}
-        System.out.println("클라이언트와의 연결을 끊었음.");
       }
-
+      System.out.println("클라이언트와의 연결을 끊었음.");
 
     } catch (Exception e) {
       e.printStackTrace();
-
     } finally {
       try { keyboard.close(); } catch (Exception e) {}
       try { serverSocket.close();} catch (Exception e) {}

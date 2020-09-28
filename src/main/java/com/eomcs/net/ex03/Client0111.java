@@ -6,25 +6,20 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Client0110 {
+public class Client0111 {
   public static void main(String[] args) {
-    Scanner keyScan = null;
-    Socket socket = null;
-    OutputStream out = null;
-    InputStream in = null;
+    Scanner keyScan = new Scanner(System.in);
 
-    try {
-      keyScan = new Scanner(System.in);
-      socket = new Socket("localhost", 8888);
+    try (Socket socket = new Socket("localhost", 8888);
+
+        // 서버랑 데이터를 주고 받을 수 있도록 입출력 스트림 객체를 준비한다.
+        // => 출력 스트림 객체를 준비하기
+        OutputStream out = socket.getOutputStream();
+
+        // => 입력 스트림 객체를 준비하기
+        InputStream in = socket.getInputStream()) {
+
       System.out.println("서버와 연결되었음!");
-
-      // 서버랑 데이터를 주고 받을 수 있도록 입출력 스트림 객체를 준비한다.
-      // => 출력 스트림 객체를 준비하기
-      out = socket.getOutputStream();
-
-      // => 입력 스트림 객체를 준비하기
-      in = socket.getInputStream();
-      System.out.println("소켓을 통해 입출력 스트림을 준비하였음!");
 
       // 서버에 데이터를 보내기 전에 잠깐 멈춤!
       System.out.print(">");
@@ -48,11 +43,6 @@ public class Client0110 {
 
     } catch (Exception e) {
       e.printStackTrace();
-
-    } finally {
-      try {out.close();} catch (Exception e) {}
-      try {in.close();} catch (Exception e) {}
-      try {socket.close();} catch (Exception e) {}
     }
 
     keyScan.close();
