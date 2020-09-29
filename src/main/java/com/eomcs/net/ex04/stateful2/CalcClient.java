@@ -23,7 +23,7 @@ public class CalcClient {
       String str = in.nextLine();
       System.out.println(str);
 
-      if (str.equals("quit"))
+      if (str.equals("Goodbye!"))
         break;
     }
 

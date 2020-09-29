@@ -57,7 +57,7 @@ public class CalcServer {
 
         out.printf("계산 결과: %d\n", result);
       }
-      out.println("quit");
+      out.println("Goodbye!");
     }
   }
 }
