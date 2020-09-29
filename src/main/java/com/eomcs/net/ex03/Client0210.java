@@ -18,11 +18,11 @@ public class Client0210 {
       System.out.println("서버와 연결되었음!");
 
       // 서버에 데이터를 보내기 전에 잠깐 멈춤!
-      System.out.print(">");
-      keyScan.nextLine();
+      System.out.print("데이터를 보내기 전에 잠깐!>");
+      keyScan.nextLine(); // blocking : 키보드에서 한 줄을 읽을 때까지
 
       out.println("ABC가각간");
-      // out.flush();
+      out.flush();
       // character stream 클래스의 경우
       // 출력 데이터를 내부 버퍼에 보관하고 있다가
       // flush()가 호출되면 비로서 출력을 수행한다.

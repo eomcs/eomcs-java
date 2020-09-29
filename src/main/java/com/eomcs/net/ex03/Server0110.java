@@ -45,6 +45,9 @@ public class Server0110 {
         // 클라이언트에서 한 줄의 문자열을 보내면
         // 서버는 한 줄의 문자열을 읽은 후에 응답해야 한다.
 
+        System.out.print("데이터를 읽기 전에 잠깐!");
+        keyboard.nextLine();
+
         System.out.println("클라이언트가 보낸 1바이트를 기다리고 있음!");
         // => 클라이언트가 1바이트를 보낼 때까지 리턴하지 않는다.
         int request = in.read(); // blocking 모드로 작동한다.
