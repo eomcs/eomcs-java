@@ -54,7 +54,7 @@ public class CalcServer {
 
         out.printf("%d %s %d = %d\n", a, op, b, result);
       }
-      out.println("quit");
+    out.println("Goodbye!");
     }
   }
 }
