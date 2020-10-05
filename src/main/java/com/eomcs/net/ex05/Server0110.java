@@ -13,12 +13,16 @@ import java.util.Scanner;
 // 
 public class Server0110 {
   public static void main(String[] args) throws Exception {
-    System.out.println("서버 실행 중...");
+    Scanner keyboardScanner = new Scanner(System.in);
 
+    System.out.println("서버 실행 중...");
     ServerSocket ss = new ServerSocket(8888);
 
+    System.out.println("엔터를 치면 대기열에서 기다리고 있는 클라이언트의 소캣을 생성한다.>");
+    keyboardScanner.nextLine();
+
     Socket socket = ss.accept();
-    System.out.println("클라이언트가 연결되었음!");
+    System.out.println("클라이언트와 통신할 소캣을 준비하였다!");
 
     Scanner in = new Scanner(socket.getInputStream());
     PrintStream out = new PrintStream(socket.getOutputStream());
@@ -35,6 +39,7 @@ public class Server0110 {
     System.out.println("클라이언트 연결 끊기!");
 
     ss.close();
+    keyboardScanner.close();
   }
 }
 
