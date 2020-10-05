@@ -11,7 +11,8 @@ public class Exam0110 {
   public static void main(String[] args) throws Exception {
     // URL 클래스를 이용하면 HTTP 프로토콜을 신경쓰지 않고
     // HTTP 요청을 수행할 수 있다.
-    //
+    // 특히 HTTPS까지도 처리할 수 있다.
+
     // => URL 주소를 검증하고 준비한다.
     URL url = new URL("https://www.daum.net");
 
