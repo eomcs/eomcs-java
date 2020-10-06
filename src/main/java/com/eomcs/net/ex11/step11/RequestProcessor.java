@@ -36,7 +36,7 @@ public class RequestProcessor {
       int result = 0;
 
       switch (op) {
-        case "+": result = a + b; break;
+        case "+": result = a + b; Thread.sleep(5000); break;
         case "-": result = a - b; break;
         case "*": result = a * b; break;
         case "/": result = a / b; break;

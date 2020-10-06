@@ -16,6 +16,12 @@ public class CalculatorServer {
       while (true) {
         requestProcessor.setSocket(serverSocket.accept());
         requestProcessor.service();
+        // Stateless 방식도 완벽한 것은 아니다.
+        // 클라이언트의 특정한 요청을 처리하는 동안에는 
+        // 다른 클라이언트의 요청을 처리하지 못하는 것은 마찬가지이다.
+        // 예)
+        // - 더하기를 실행할 때 5초 정도 실행을 지연시켜보자.
+        // - 그리고 클라이언트의 실행을 테스트 해보라.
       }
     } catch (Exception e) {
       e.printStackTrace();
