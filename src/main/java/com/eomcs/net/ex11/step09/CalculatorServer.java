@@ -10,6 +10,10 @@ public class CalculatorServer {
     try (ServerSocket serverSocket = new ServerSocket(8888)) {
       System.out.println("서버 실행 중...");
 
+      //      Socket socket = serverSocket.accept();
+      //      RequestProcessor requestProcessor = new RequestProcessor(socket);
+      //      requestProcessor.service();
+
       new RequestProcessor(serverSocket.accept()).service();
 
     } catch (Exception e) {

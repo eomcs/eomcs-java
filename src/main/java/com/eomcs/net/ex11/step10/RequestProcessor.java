@@ -1,4 +1,4 @@
-package com.eomcs.net.ex11.step09;
+package com.eomcs.net.ex11.step10;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,7 +10,7 @@ import java.net.Socket;
 public class RequestProcessor {
   Socket socket;
 
-  public RequestProcessor(Socket socket) {
+  public void setSocket(Socket socket) {
     this.socket = socket;
   }
 
