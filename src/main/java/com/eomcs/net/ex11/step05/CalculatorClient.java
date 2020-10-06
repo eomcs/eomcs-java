@@ -1,5 +1,5 @@
-// 계산기 클라이언트 만들기 - 4단계: 사용자로부터 계산식을 입력 받아서 서버에 전달한다.
-package com.eomcs.net.ex11.step04;
+// 계산기 클라이언트 만들기 - 5단계: 코드 리팩토링
+package com.eomcs.net.ex11.step05;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,13 +16,12 @@ public class CalculatorClient {
         PrintStream out = new PrintStream(socket.getOutputStream());
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-      readResponse(in); // 서버의 인사말을 읽기
+      receiveResponse(in); // 서버의 인사말을 받기
 
       while (true) {
         String input = keyboardScanner.nextLine();
-        out.println(input);
-        out.flush();
-        readResponse(in); // 서버의 실행 결과를 출력
+        sendRequest(out, input); // 서버에 요청을 보내기
+        receiveResponse(in); // 서버의 실행 결과를 받기
       }
 
     } catch (Exception e) {
@@ -31,7 +30,12 @@ public class CalculatorClient {
 
   }
 
-  static void readResponse(BufferedReader in) throws Exception {
+  static void sendRequest(PrintStream out, String message) throws Exception {
+    out.println(message);
+    out.flush();
+  }
+
+  static void receiveResponse(BufferedReader in) throws Exception {
     while (true) {
       String input = in.readLine();
       if (input.length() == 0) {
