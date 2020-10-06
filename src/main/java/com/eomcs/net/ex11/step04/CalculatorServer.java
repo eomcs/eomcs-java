@@ -1,6 +1,5 @@
-// 계산기 서버 만들기 - 3단계: 안내 메시지 전송 코드를 별도의 메서드로 분리한다.
-// - 클라이언트가 접속했을 때 안내하는 문구를 보내는 코드를 별도의 메서드로 분리한다.
-package com.eomcs.net.ex11.step03;
+// 계산기 서버 만들기 - 4단계: 클라이언트가 보낸 요청을 받아 그대로 되돌려 준다.
+package com.eomcs.net.ex11.step04;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -19,6 +18,13 @@ public class CalculatorServer {
           PrintStream out = new PrintStream(socket.getOutputStream());) {
 
         sendIntroMessage(out);
+
+        while (true) {
+          String request = in.readLine();
+          out.println(request);
+          out.println();
+          out.flush();
+        }
       }
 
     } catch (Exception e) {
