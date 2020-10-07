@@ -9,12 +9,15 @@ public class Exam0150 {
 
     // 스레드 그룹의 부모 그룹을 알고 싶다면?
     ThreadGroup parentGroup = mainGroup.getParent();
-    System.out.println(parentGroup.getName());
+    System.out.printf("main 스레드 그룹의 부모: %s\n", parentGroup.getName());
+
 
     // "system" 그룹의 부모 그룹은?
     ThreadGroup grandparentGroup = parentGroup.getParent();
     if (grandparentGroup != null) {
-      System.out.println(grandparentGroup.getName());
+      System.out.printf("%s 스레드 그룹의 부모: %s\n", 
+          parentGroup.getName(), 
+          grandparentGroup.getName());
     }
   }
 }

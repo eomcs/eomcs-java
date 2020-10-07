@@ -23,6 +23,7 @@ public class Exam0170 {
 // => Reference Handler(T)
 // => Finalizer(T)
 // => Signal Dispatcher(T)
+// => Attach Listener(T)
 // => main(TG)
 // ...=> main(T) : main() 메서드를 호출한다.
 // => InnocuousThreadGroup(TG)

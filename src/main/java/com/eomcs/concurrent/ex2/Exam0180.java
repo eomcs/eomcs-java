@@ -31,12 +31,13 @@ public class Exam0180 {
   }
 }
 
-// JVM의 스레드 계층도:
+// JVM의 스레드 계층도: (openjdk 11 기준)
 // system(TG)
-// => Reference Handler(T)
-// => Finalizer(T)
-// => Signal Dispatcher(T)
-// => main(TG)
-// ...=> main(T) : main() 메서드를 호출한다.
-// => InnocuousThreadGroup(TG)
-// ...=> Common-Cleaner(T)
+//   ==> Reference Handler(T)
+//   ==> Finalizer(T)
+//   ==> Signal Dispatcher(T)
+//   ==> Attach Listener(T)
+//   ==> main(TG)
+//         ==> main(T)
+//   ==> InnocuousThreadGroup(TG)
+//         ==> Common-Cleaner(T)
