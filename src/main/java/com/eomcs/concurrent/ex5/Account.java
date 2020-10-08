@@ -31,19 +31,29 @@ public class Account {
     // 한 번에 한 스레드만 진입할 수 있도록 lock을 건다.
     //
     long b = this.balance;
-    // for (int i = 0; i < 1000; i++)
-    // Math.asin(45.765); // CPU를 뺏길 기회를 제공
+
+    delay();  // CPU를 뺏길 기회를 제공
+
     b -= money;
-    // for (int i = 0; i < 1000; i++)
-    // Math.asin(45.765); // CPU를 뺏길 기회를 제공
+
+    delay();  // CPU를 뺏길 기회를 제공
+
     if (b < 0)
       return 0;
-    // for (int i = 0; i < 1000; i++)
-    // Math.asin(45.765); // CPU를 뺏길 기회를 제공
+
+    delay();  // CPU를 뺏길 기회를 제공
+
     this.balance = b;
-    // for (int i = 0; i < 1000; i++)
-    // Math.asin(45.765); // CPU를 뺏길 기회를 제공
+
+    delay();  // CPU를 뺏길 기회를 제공
+
     return money;
+  }
+
+  private void delay() {
+    int delayCount = (int)(Math.random() * 1000);
+    for (int i = 0; i < delayCount; i++)
+      Math.asin(45.765); // CPU를 뺏길 기회를 제공
   }
 }
 
