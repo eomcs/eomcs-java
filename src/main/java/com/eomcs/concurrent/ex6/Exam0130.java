@@ -14,7 +14,7 @@ public class Exam0130 {
       public void setCount(int count) {
         this.count = count;
 
-        // 카운트를 설정하면 스레드의 작업을 허락하게 하자!
+        // 카운트 값을 설정할 때 작업을 활성화시킨다.
         this.enable = true;
       }
 
@@ -35,10 +35,8 @@ public class Exam0130 {
             System.out.println("카운트 시작!");
             for (int i = count; i > 0; i--) {
               System.out.println("==> " + i);
-              Thread.sleep(1000);
             }
-            // 스레드에게 맡겨진 작업이 끝나면 비활성 상태로 설정한 후
-            // 10초 동안 잠든다.
+            // 스레드에게 맡겨진 작업이 끝나면 비활성 상태로 설정한다.
             enable = false;
           }
         } catch (Exception e) {

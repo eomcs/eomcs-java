@@ -7,19 +7,25 @@ public class Exam0140 {
 
   public static void main(String[] args) {
 
-    class MyThread extends Thread {
+    class ValueBox {
       int count;
 
-      public void setCount(int count) {
+      synchronized public void setCount(int count) {
         this.count = count;
 
-        synchronized (this) {
-          // synchnorized 블록에서 지정한 객체의 사용을 기다리는 스레드에게
-          // 작업을 시작할 것을 알린다.
-          notify();
-          // notify()도 동기화 영역에서 호출해야 한다.
-          // 안그러면 IllegalMonitorStateException 예외가 발생한다.
-        }
+        // 이 객체의 사용을 기다리는 스레드에게 작업을 시작할 것을 알린다.
+        this.notify();
+        // 문법 주의!
+        // => notify()도 동기화 영역에서 호출해야 한다.
+        // => 안그러면 IllegalMonitorStateException 예외가 발생한다.
+      }
+    }
+
+    class MyThread extends Thread {
+      ValueBox valueBox;
+
+      public void setValueBox(ValueBox valueBox) {
+        this.valueBox = valueBox;
       }
 
       @Override
@@ -30,14 +36,23 @@ public class Exam0140 {
         // 동기화 블록 문법:
         // => synchronized(접근대상) {...}
         //
-        synchronized (this) {
+        synchronized (valueBox) {
           System.out.println("스레드 시작했음!");
           try {
             while (true) {
               System.out.println("스레드 대기중...");
-              wait();
-              // 스레드를 시작하자 마다 일단 작업 지시를 기다리게 한다.
-              // wait()는 반드시 동기화 영역 안에서 호출해야 한다.
+
+              valueBox.wait();
+              // valueBox 객체에 대해 사용하라는 신호가 올 때까지 이 스레드에게 기다리라는 명령이다.
+              // 즉 wait()를 호출한 스레드는 Not Runnable 상태에 진입한다.
+              // => 실행을 멈추고 CPU 사용권을 받지 않는 상태가 된다.
+              // 
+              // 이 스레드를 잠에서 깨우는 방법?
+              // => 다른 스레드가 valueBox에 대해 notify()를 호출하면,
+              //    wait() 로 신호를 기다리고 있는 스레드가 잠에서 깨어나 실행을 시작한다.
+              //
+              // 문법 주의!
+              // => wait()/notify() 는 반드시 동기화 영역 안에서 호출해야 한다.
               // 동기화 영역?
               // => synchronized로 선언된 메서드
               // => synchronized로 묶인 블록
@@ -46,9 +61,8 @@ public class Exam0140 {
               // => notify()를 통해 기다림이 끝났다는 것을 알림 받아야 한다.
               //
               System.out.println("카운트 시작!");
-              for (int i = count; i > 0; i--) {
+              for (int i = valueBox.count; i > 0; i--) {
                 System.out.println("==> " + i);
-                Thread.sleep(1000);
               }
             }
           } catch (Exception e) {
@@ -58,8 +72,11 @@ public class Exam0140 {
       }
     }
 
+    ValueBox valueBox = new ValueBox();
+
     MyThread t = new MyThread();
-    t.start();
+    t.setValueBox(valueBox);
+    t.start(); // 이 스레드는 main 스레드가 실행하라고 신호를 줄 때까지 기다린다
 
     Scanner keyScan = new Scanner(System.in);
 
@@ -69,9 +86,12 @@ public class Exam0140 {
       if (str.equals("quit")) {
         break;
       }
-
-      int count = Integer.parseInt(str);
-      t.setCount(count);
+      valueBox.setCount(Integer.parseInt(str));
+      // setCount()
+      // - 사용자가 입력한 카운트 값을 설정할 때
+      // - main 스레드는 이 객체의 사용을 간절히 기다리는 다른 스레드에게 
+      //   즉시 사용하라고 신호를 보낸다.
+      // - setCount() 메서드의 코드를 확인해 보라!
     }
 
     System.out.println("main 스레드 종료!");
