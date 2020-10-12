@@ -18,6 +18,8 @@ public class Car {
     observers.remove(observer);
   }
 
+  // 리팩토링: 메서드 추출 (extract method) 
+  // - 특정 기능을 수행하는 코드를 이해하기 쉽도록 외부 메서드로 추출하는 것.
   private void notifyObserversOnStarted() {
     for (CarObserver observer : observers) {
       observer.carStarted();

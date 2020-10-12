@@ -7,7 +7,7 @@ public class Test01 {
 
     car.addCarObserver(new SafeBeltCarObserver());
     car.addCarObserver(new EngineOilCarObserver());
-    car.addCarObserver(new BreakOilCarObserver());
+    car.addCarObserver(new BrakeOilCarObserver());
     car.addCarObserver(new LightOffCarObserver());
 
     // 썬루프를 닫는 옵저버를 추가한다.

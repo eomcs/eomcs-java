@@ -27,7 +27,7 @@ public class Test01 {
 
     car.addCarObserver(new SafeBeltCarObserver());
     car.addCarObserver(new EngineOilCarObserver());
-    car.addCarObserver(new BreakOilCarObserver());
+    car.addCarObserver(new BrakeOilCarObserver());
     car.addCarObserver(new LightOffCarObserver());
     car.addCarObserver(new SunRoofCloseCarObserver());
 
