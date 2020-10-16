@@ -46,9 +46,10 @@ public class Exam0210 {
     }
   }
 
+  // MyThreadPool 과 MyThread 상호간에 참조를 피하기 위해
+  // 인터페이스를 준비했다.
   interface ThreadPool {
     Thread get();
-
     void add(Thread obj);
   }
 
@@ -56,26 +57,32 @@ public class Exam0210 {
     ArrayList<MyThread> list = new ArrayList<>();
 
     public MyThreadPool() {
+      // 사용할 스레드 객체를 미리 생성한다.
+      // - 나중에 MyThread가 Pool로 다시 리턴될 수 있도록
+      //   스레드 객체를 생성할 때 Pool의 주소를 알려준다.
       MyThread t1 = new MyThread("1번 스레드=>", this);
-      t1.start();
-      list.add(t1);
-
       MyThread t2 = new MyThread("2번 스레드***>", this);
-      t2.start();
-      list.add(t2);
-
       MyThread t3 = new MyThread("3번 스레드-->", this);
-      t3.start();
+
+      // 생성된 스레드를 컬렉션에 보관한다.
+      list.add(t1);
+      list.add(t2);
       list.add(t3);
+
+      // 일단 무조건 스레드를 미리 실행해 놓는다.
+      t1.start();
+      t2.start();
+      t3.start();
     }
 
     // 스레드 풀에서 한 개의 스레드를 꺼낸다.
     @Override
     public MyThread get() {
-      if (list.size() > 0) {
+      if (list.size() > 0) { // 컬렉션에 남아 있는 스레드가 있다면,
         return list.remove(0);
       }
-      return null;
+      return null; // 없으면, null을 리턴한다.
+      // 현재 이 예제에서는 오직 3개의 스레드만 쓰도록 하였다.
     }
 
     // 스레드를 다 쓴 후에는 다시 스레드 풀에 돌려준다.
