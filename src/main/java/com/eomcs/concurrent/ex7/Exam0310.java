@@ -32,8 +32,10 @@ public class Exam0310 {
     ExecutorService executorService = Executors.newFixedThreadPool(3);
 
     // 스레드풀에 수행할 작업을 등록한다.
-    // 스레드풀은 등록된 순서대로 큐에 작업을 보관한다.
-    // 그리고 놀고 있는 스레드를 통해 작업을 수행시킨다.
+    // 스레드풀은 execute()를 호출한 순서대로 작업큐에 작업을 보관한다.
+    // 그리고 놀고 있는 스레드가 있다면, 작업큐에서 작업을 꺼내 수행시킨다.
+    // 놀고 있는 스레드가 없으면, 새로 스레드를 생성한다.
+    // 스레드가 최대 개수라면 기존 스레드가 작업을 끝낼 때까지 기다린다.
     // => 수행한 작업의 종료 여부를 확인할 수 없다.
     executorService.execute(new MyRunnable(6000));
 

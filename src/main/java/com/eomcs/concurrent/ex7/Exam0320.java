@@ -39,14 +39,14 @@ public class Exam0320 {
     Future<?> future2 = executorService.submit(new MyRunnable(4000));
 
     // Future.get()
-    // => 요청한 작업이 완료될 때 까지 기다린다.(peding)
+    // => 요청한 작업이 완료될 때 까지 기다린다.(pending)
     // => 요청한 작업이 완료되면 null을 리턴한다.
     //
-    if (future2.get() == null)
-      System.out.println("두 번째 작업이 끝났음");
+    future2.get();
+    System.out.println("두 번째 작업이 끝났음");
 
-    if (future1.get() == null)
-      System.out.println("첫 번째 작업이 끝났음");
+    future1.get();
+    System.out.println("첫 번째 작업이 끝났음");
 
     System.out.println("main() 종료!");
   }

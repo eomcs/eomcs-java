@@ -16,22 +16,22 @@ public class Exam0210 {
     @Override
     public void run() {
       try {
-        System.out.printf("%s 스레드 실행 중...\n",
+        System.out.printf("[%s] - 스레드 실행 중...\n",
             Thread.currentThread().getName());
 
         Thread.sleep(millisec);
 
-        System.out.printf("%s 스레드 종료!\n",
+        System.out.printf("[%s] - 스레드 종료!\n",
             Thread.currentThread().getName());
       } catch (Exception e) {
-        System.out.printf("%s 스레드 실행 중 오류 발생!\n", Thread.currentThread().getName());
+        System.out.printf("[%s] 스레드 실행 중 오류 발생!\n", Thread.currentThread().getName());
       }
     }
   }
   public static void main(String[] args) {
     ExecutorService executorService = Executors.newFixedThreadPool(3);
 
-    // 일단 스레드풀의 크기만큼 작업 수행을 요청한다.
+    // 일단 스레드풀의 크기(3 개)만큼 작업 수행을 요청한다.
     // - 작업은 큐에 등록된 순서대로 보관된다.
     // - 스레드풀은 큐에서 작업을 꺼내 스레드에게 일을 시킨다.
     //
