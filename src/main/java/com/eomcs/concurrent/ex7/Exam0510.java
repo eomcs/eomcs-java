@@ -35,13 +35,13 @@ public class Exam0510 {
     executorService.execute(new MyRunnable(6000));
     executorService.execute(new MyRunnable(2000));
     executorService.execute(new MyRunnable(4000));
-    executorService.execute(new MyRunnable(15000));
+    executorService.execute(new MyRunnable(13000));
 
     executorService.shutdown();
 
-    // 스레드풀의 모든 스레드가 종료될 때까지 기다린다.
-    // => 만약 10초가 경과될 때까지 종료되지 않으면,
-    //    더이상 기다리지 않고 리턴한다.
+    // 스레드풀의 모든 스레드가 종료되면 즉시 true를 리턴한다.
+    // 만약 지정된 시간(예: 10초)이 경과할 때까지 종료되지 않았다면 false를 리턴한다.
+    //
     if (!executorService.awaitTermination(10, TimeUnit.SECONDS)) {
       System.out.println("아직 종료 안된 작업이 있다.");
     } else {
