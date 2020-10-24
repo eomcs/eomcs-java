@@ -100,7 +100,7 @@ public class CalcServer {
           break;
         case "*":
           result *= value;
-          Thread.currentThread().sleep(10000);
+          Thread.sleep(10000);
           break;
         case "/":
           result /= value;
