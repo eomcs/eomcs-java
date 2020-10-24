@@ -1,37 +1,36 @@
+// contains() 와 equals()의 관계
 package com.eomcs.basic.ex03;
 
-//# 정수 리터럴 - 다양한 기수법으로 정수를 표현하기
-//
+import java.util.ArrayList;
 
 public class Exam0210 {
   public static void main(String[] args) {
-    //10진수 리터럴 
-    //- 코드에서 일반적으로 정수 값을 표현할 때 사용한다.
-    System.out.println(100);
-    
-    //8진수 리터럴
-    //- 코드를 작성할 때 잘 사용하지 않는다.
-    //- 0으로 시작해야 한다.
-    System.out.println(0144);
-    
-    //2진수 리터럴
-    //- 메모리의 상태를 직설적으로 보여주고 싶을 때 사용한다.
-    //- 0b 또는 0B로 시작한다.
-    System.out.println(0b1100100);
-    System.out.println(0B1100100);
-    
-    //- 숫자 앞에 0이 있어도 된다.
-    System.out.println(0b01100100);
-    System.out.println(0B01100100);
-    
-    //16진수 리터럴
-    //- 2진수를 간결하게 표현하기 위해 사용한다.
-    //- 0x 또는 0X 로 시작한다.
-    System.out.println(0x64);
-    System.out.println(0X64);
-    
-    //- 숫자 앞에 0이 있어도 된다.
-    System.out.println(0x064);
-    System.out.println(0X064);
+    String s1 = new String("aaa");
+    String s2 = new String("bbb");
+    String s3 = new String("ccc");
+    String s4 = new String("bbb"); // s2 != s4
+
+    ArrayList list = new ArrayList();
+    list.add(s1);
+    list.add(s2);
+    list.add(s3);
+    print(list);
+
+    // contains()
+    // - 해당 인스턴스와 같은 객체가 있는지 알아낸다.
+    // - 단 인스턴스 주소를 비교하는 것이 아니라
+    //   equals()의 결과가 true 인지 비교한다.
+    // 결론!
+    // => String 클래스의 경우 equals()를 오버라이딩 했기 때문에
+    //    서로 다른 개체(s2와 s4)라도 값이 같으면 같은 객체로 간주한다.
+    // => 그래서 다음 코드의 실행 결과는 true 이다.
+    System.out.println(list.contains(s4)); // true
+  }
+
+  static void print(ArrayList list) {
+    for (int i = 0; i < list.size(); i++) {
+      System.out.print(list.get(i) + ", ");
+    }
+    System.out.println();
   }
 }

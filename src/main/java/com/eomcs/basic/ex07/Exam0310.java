@@ -1,33 +1,59 @@
+// HashSet과 사용자 정의 데이터 타입
 package com.eomcs.basic.ex07;
 
-//# 메서드 : call by value
-//
+import java.util.HashSet;
+
 public class Exam0310 {
 
-  static void swap(int a, int b) {
-    System.out.printf("swap(): a=%d, b=%d\n", a, b);
-    int temp = a;
-    a = b;
-    b = temp;
-    System.out.printf("swap(): a=%d, b=%d\n", a, b);
+  // 사용자 정의 데이터 타입
+  static class Member {
+    String name;
+    int age;
+
+    public Member(String name, int age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    @Override
+    public String toString() {
+      return "Member [name=" + name + ", age=" + age + "]";
+    }
   }
 
   public static void main(String[] args) {
-    int a = 100;
-    int b = 200;
+    Member v1 = new Member("홍길동", 20);
+    Member v2 = new Member("임꺽정", 30);
+    Member v3 = new Member("유관순", 16);
+    Member v4 = new Member("안중근", 20);
+    Member v5 = new Member("유관순", 16);
 
-    // swap() 호출할 때 a 변수의 값과 b 변수의 값을 넘긴다.
-    // => 그래서 "call by value"라 부른다.
-    // => 비록 swap()에서 a와 b라는 이름의 변수가 있지만,
-    //    이 변수는 main()에 있는 변수와 다른 변수이다.
-    swap(a, b);
-    System.out.printf("main(): a=%d, b=%d\n", a, b);
+    HashSet set = new HashSet();
+    set.add(v1);
+    set.add(v2);
+    set.add(v3);
+    set.add(v4);
+    set.add(v5); // 기대? v3와 같은 값이기 때문에 저장되지 않을 것이다!
+
+    // 출력해보면 "유관순, 16" 데이터가 중복해서 저장되었음을 알 수 있다.
+    // 이유?
+    // => HashSet이 중복여부를 검사할 때 hashCode()와 equals()의 리턴값으로 판단한다.
+    // => Member 클래스에서 hashCode()와 equals()를 오버라이딩 하지 않았기 때문에
+    // Object로부터 상속 받은 hashCode()와 equals()를 그대로 사용하였고,
+    // Object의 hashCode()는 인스턴스가 다르면 무조건 다른 해시값을 리턴한다.
+    // Object의 equals()는 인스턴스의 주소가 같은 지 검사한다.
+    // => 그래서 "유관순,16" 데이터가 같더라도 인스턴스가 다르기 때문에
+    // 같은 값으로 간주하지 않은 것이다.
+
+    print(set);
+  }
+
+  static void print(HashSet set) {
+    Object[] values = set.toArray();
+    for (Object value : values) {
+      System.out.println(value);
+    }
   }
 }
 
-// call by value
-// => 아규먼트가 primitive data type인 경우,
-//    메서드를 호출할 때 값을 넘긴다.
-// => 자바에서는 primitive data type에 대해서 
-//    메모리(변수) 주소를 넘기는 방법이 없다.
-// 
+

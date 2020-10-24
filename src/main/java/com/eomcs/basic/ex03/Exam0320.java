@@ -1,32 +1,51 @@
+// indexOf()에서 객체를 찾을 때 equals()로 비교하여 찾는다.
 package com.eomcs.basic.ex03;
 
-//# 부동소수점 리터럴 - 메모리 크기에 따른 표기법
+import java.util.ArrayList;
 
 public class Exam0320 {
-  public static void main(String[] args) {
-    
-    //## 8바이트 크기의 부동소수점
-    //- 숫자 맨 뒤에 d 또는 D를 붙인다.
-    //- 생략해도 된다.
-    System.out.println(3.14);
-    System.out.println(3.14d);
-    System.out.println(3.14D);
+  // equals()를 오버라이딩 하지 않았다.
+  static class Member {
+    String name;
+    int age;
 
-    //## 4바이트 크기의 부동소수점
-    //- 숫자 맨 뒤에 f 또는 F를 붙인다.
-    System.out.println(3.14f); // 주로 소문자 f를 많이 붙인다.
-    System.out.println(3.14F);
+    public Member(String name, int age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    @Override
+    public String toString() {
+      return String.format("[%s,%d]", this.name, this.age);
+    }
+  }
+
+  public static void main(String[] args) {
+    Member s1 = new Member("홍길동", 20);
+    Member s2 = new Member("임꺽정", 30);
+    Member s3 = new Member("유관순", 16);
+    Member s4 = new Member("임꺽정", 30);
+
+    ArrayList list = new ArrayList();
+    list.add(s1);
+    list.add(s2);
+    list.add(s3);
+    print(list);
+
+    System.out.println(list.indexOf(s4)); // -1
+    // indexOf()는 equals()를 사용하여 객체가 같은지 비교한다.
+    // Member 클래스는 equals()를 오버라이딩 하지 않았다.
+    // 따라서 같은 값을 갖더라도 인스턴스가 다르면
+    // equals()의 검사 결과도 false가 될 것이다.
+    System.out.println(s2.equals(s4)); // false
+  }
+
+  static void print(ArrayList list) {
+    for (int i = 0; i < list.size(); i++) {
+      System.out.print(list.get(i) + ", ");
+    }
+    System.out.println();
   }
 }
 
-//## 정리
-//4바이트 부동소수점
-//  3.14F
-//  3.14f (주로 사용)
-//  31.4e-1f
-//  31.4e-1F
-//  
-//8바이트 부동소수점
-//  3.14
-//  31.4e-1
-//
+

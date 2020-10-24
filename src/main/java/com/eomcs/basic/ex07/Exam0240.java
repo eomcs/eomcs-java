@@ -1,23 +1,29 @@
+// Iterator 의 사용
 package com.eomcs.basic.ex07;
 
-//# 메서드 : 개념 및 기본 문법 IV
-//
+import java.util.Iterator;
+import java.util.concurrent.ArrayBlockingQueue;
+
 public class Exam0240 {
-
-  // 4) 메서드 : 리턴값(O), 파라미터(O)
-  // => "이 돈 갖고 과자좀 사와!"
-  static String hello(String name, int age) {
-    String retVal = String.format("%d살 %s님을 환영합니다!", age, name);
-    return retVal;
-  }
-
   public static void main(String[] args) {
+    String s1 = new String("aaa");
+    String s2 = new String("bbb");
+    String s3 = new String("ccc");
+    String s4 = new String("ddd");
+    String s5 = new String("eee");
 
-    // hello() 메서드를 실행하고, 그 리턴 값을 변수에 담는다.
-    String r = hello("홍길동", 20);
-    System.out.println(r);
+    ArrayBlockingQueue queue = new ArrayBlockingQueue(100);
+    queue.offer(s1);
+    queue.offer(s2);
+    queue.offer(s3);
+    queue.offer(s4);
+    queue.offer(s5);
 
-    // 리턴 값을 안 받아도 된다.
-    hello("임꺽정", 30); // 리턴 값은 버려진다.
+    Iterator 컬렉션에서값을꺼내주는객체 = queue.iterator();
+    while (컬렉션에서값을꺼내주는객체.hasNext()) {
+      System.out.print(컬렉션에서값을꺼내주는객체.next() + ", ");
+    }
+    System.out.println();
+
   }
 }

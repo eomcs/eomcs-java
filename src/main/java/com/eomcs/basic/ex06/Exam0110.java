@@ -1,41 +1,65 @@
+// Queue 구현과 사용
 package com.eomcs.basic.ex06;
 
-//# 흐름 제어문 - 조건문 if
-//
+import java.util.concurrent.ArrayBlockingQueue;
+
 public class Exam0110 {
+
   public static void main(String[] args) {
-    int age = 17;
+    String s1 = new String("aaa");
+    String s2 = new String("bbb");
+    String s3 = new String("ccc");
+    String s4 = new String("ddd");
+    String s5 = new String("eee");
 
-    // => if (조건) 문장;
-    if (age >= 19) System.out.println("성인이다.");
+    ArrayBlockingQueue queue = new ArrayBlockingQueue(10);
+    queue.offer(s1); // aaa,
+    queue.offer(s2); // aaa, bbb,
+    queue.offer(s3); // aaa, bbb, ccc,
+    print(queue);
 
-    // => 문장을 다른 줄에 놓는 경우가 많다.
-    if (age >= 19); // if 문에 빈 문장을 넣을 수 있다.
-    System.out.println("성인이다.");
-    // 이런 경우 개발자가 오해할 수 있다.
-    // if (조건) 뒤에 문자의 끝을 표시하는 세미콜론을 사용하지 않도록 조심하라!
+    System.out.println("==>" + queue.poll()); // bbb, ccc,
+    System.out.println("==>" + queue.poll()); // ccc,
+    print(queue);
 
-    // 참고!
-    // => 문장을 작성할 때 연산자, 피연산자, 문장 기호에 따라 여러 줄에 걸쳐 작성할 수 있다.
-    // => 단 문장을 여러 줄로 나누어 작성할 때, 읽기 쉽게 작성하라.
-    // => 다음과 같이 하지 말라!
-    if (age
-        >=
-        19) System
-    .
-    out.
-    println(
-        "성인이다.")
-    ;
+    queue.offer(s4); // ccc, ddd,
+    queue.offer(s5); // ccc, ddd, eee,
+    print(queue);
+
+    System.out.println("------------------------");
+
+    String value;
+    while ((value = (String) queue.poll()) != null) {
+      System.out.println(value);
+    }
+  }
+
+  static void print(ArrayBlockingQueue queue) {
+    Object[] arr = queue.toArray();
+    for (int i = 0; i < arr.length; i++) {
+      System.out.print(arr[i] + ", ");
+    }
+    System.out.println();
   }
 }
-/*
-# if 조건문
-문법1:
-  if (조건) 문장1;
-  => 조건이 참일 때 문장1을 수행한다.
 
-문법2:
-  if (조건) 문장1; else 문장2;
-  => 조건이 참일 때 문장1을 수행하고, 거짓이면 문장2를 수행한다.
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

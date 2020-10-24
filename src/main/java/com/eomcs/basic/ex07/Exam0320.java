@@ -1,22 +1,73 @@
+// HashSet과 사용자 정의 데이터 타입 - equals()만 오버라이딩
 package com.eomcs.basic.ex07;
 
-//# 메서드 : call by reference
-//
+import java.util.HashSet;
+
 public class Exam0320 {
 
-  static void swap(int[] arr) {
-    System.out.printf("swap(): arr[0]=%d, arr[1]=%d\n", arr[0], arr[1]);
-    int temp = arr[0];
-    arr[0] = arr[1];
-    arr[1] = temp;
-    System.out.printf("swap(): arr[0]=%d, arr[1]=%d\n", arr[0], arr[1]);
+  // 사용자 정의 데이터 타입
+  static class Member {
+    String name;
+    int age;
+
+    public Member(String name, int age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    @Override
+    public String toString() {
+      return "Member [name=" + name + ", age=" + age + "]";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj)
+        return true;
+      if (obj == null)
+        return false;
+      if (getClass() != obj.getClass())
+        return false;
+      Member other = (Member) obj;
+      if (age != other.age)
+        return false;
+      if (name == null) {
+        if (other.name != null)
+          return false;
+      } else if (!name.equals(other.name))
+        return false;
+      return true;
+    }
+
+
   }
 
   public static void main(String[] args) {
-    int[] arr = new int[] {100, 200};
-    swap(arr); // 배열 인스턴스(메모리)를 넘기는 것이 아니다. 
-    // 주소를 넘기는 것이다.
-    // 그래서 "call by reference" 라 부른다.
-    System.out.printf("main(): arr[0]=%d, arr[1]=%d\n", arr[0], arr[1]);
+    Member v1 = new Member("홍길동", 20);
+    Member v2 = new Member("임꺽정", 30);
+    Member v3 = new Member("유관순", 16);
+    Member v4 = new Member("안중근", 20);
+    Member v5 = new Member("유관순", 16);
+
+    System.out.printf("equals(): %b\n", v3.equals(v5));
+    System.out.println("-----------------------------------");
+
+    HashSet set = new HashSet();
+    set.add(v1);
+    set.add(v2);
+    set.add(v3);
+    set.add(v4);
+    set.add(v5);
+
+    print(set);
+  }
+
+  static void print(HashSet set) {
+    Object[] values = set.toArray();
+    for (Object value : values) {
+      System.out.println(value);
+    }
   }
 }
+
+
