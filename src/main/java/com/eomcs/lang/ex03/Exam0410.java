@@ -1,11 +1,11 @@
 package com.eomcs.lang.ex03;
 
-//# 문자의 리터럴 
+//# 문자의 리터럴
 //- 작은 따옴표 ''를 사용하여 문자를 표현한다.
 
 public class Exam0410 {
   public static void main(String[] args) {
-    // 자바는 문자를 메모리에 저장할 때 Unicode 규칙에 따라 
+    // 자바는 문자를 메모리에 저장할 때 Unicode 규칙에 따라
     // 2바이트 코드로 저장한다.
     // => 'A' : 0x0041
     // => 'B' : 0x0042
@@ -13,30 +13,43 @@ public class Exam0410 {
     // => '가': 0xac00
     //
     // println()
-    // - 출력 값으로 문자 코드가 주어지면 해당 코드의 문자를 
+    // - 출력 값으로 문자 코드가 주어지면 해당 코드의 문자를
     //   폰트 파일에서 찾아 출력한다.
     // - 만약 폰트 파일에 해당 코드의 문자가 없으면 출력하지 못한다.
     //
     //작은 따옴표를 사용하여 문자를 표현한다.
-    System.out.println('A'); 
-    System.out.println('가'); 
-    
-    //키보드로 직접 입력할 수 없는 문자를 표현할 때는 그 문자에 대해 정의된 값을 지정한다.
-    //문자에 대해 정의된 값을 '문자 코드(character code)'라 부른다.
-    //코드값 앞에 \ u 문자를 붙인다. 
-    
-    //사람을 뜻하는 '인'이라는 한자를 출력해 보자.
-    System.out.println('\u4eba');
+    System.out.println('A');
+    System.out.println('가');
 
-    //키보드로 입력 가능한 문자도 문자 코드로 지정할 수 있다.
-    System.out.println('\u0041');
-    System.out.println('\uac00');
+    // 직접 문자를 적는 대신에 그 문자에 부여된 코드 값을 지정할 수 있다.
+    // 문자에 대해 부여된 값을 '문자 코드(character code)'라 부른다.
+    // 코드 값은 사용하는 문자 집합에 따라 다르다.
+    // 자바는 '유니코드(UTF-16BE; UCS2)' 라는 문자집합을 사용한다.
+    // \ u 뒤에 문자에 부여된 코드 값을 16진수로 적는다.
+    // u는 소문자로 적어야 한다.
+    System.out.println('\u0041');  // A
+    System.out.println('\uac00');  // 가
+    System.out.println('\uAC00');  // 가 (16진수는 대소문자를 구분하지 않는다)
+
+    // \ 바로 뒤에 8진수로 적을 수 있다.
+    // 단, 0 ~ 377 범위의 8진수만 가능하다.
+    System.out.println('\101'); // A
+    System.out.println('\122'); // z
+    System.out.println('\377'); // ÿ
+    //System.out.println('\477'); // 컴파일 오류!
+
+    // 유니코드 값을 직접 적는 경우는
+    // 보통 키보드로 문자를 직접 입력할 수 없을 때이다.
+    System.out.println('\u4eba'); // 사람을 뜻하는 '인(人)'이라는 한자의 문자 코드
+    System.out.println('\u00a9'); // copyright를 뜻하는 '©' 문자 코드
+    System.out.println('\u03c0'); // 수학의 파이 기호 'π'
+    System.out.println('\u03a3'); // 수학의 시그마 기호 'Σ'
   }
 }
 
-// - 문자를 메모리에 저장하려면 
+// - 문자를 메모리에 저장하려면
 //   2진수로 바꿀 수 있어야 한다.
-// - 문자를 2진수로 바꾸는 규칙을 
+// - 문자를 2진수로 바꾸는 규칙을
 //   "문자집합(Character Set)"이라 한다.
 // - 문자 집합에는 여러 규칙이 있다.
 //   - 1) ASCII(7비트,American Standard Code for Information Interchange)
@@ -72,7 +85,7 @@ public class Exam0410 {
 //       - '1' => 0x31
 //     - 한글: 3바이트로 표현한다.
 //       - 1110xxxx 10xxxxxx 10xxxxxx
-//       - '가' => 0xac00(10101100_00000000, Unicode) 
+//       - '가' => 0xac00(10101100_00000000, Unicode)
 //              => 1110xxxx 10xxxxxx 10xxxxxx (변환규칙)
 //              => 11101010 10110000 10000000 (규칙에 값 적용)
 //              => 0xEAB080(UTF-8)
