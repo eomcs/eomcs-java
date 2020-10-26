@@ -46,7 +46,7 @@ public class CalcServer {
       String op = in.readUTF();
       int value = in.readInt();
 
-      // 클라이언트는 위한 기존 값 꺼내기
+      // 클라이언트를 위한 기존 값 꺼내기
       Integer obj = resultMap.get(clientId);
       int result = 0;
 
@@ -73,6 +73,10 @@ public class CalcServer {
           result /= value;
           break;
       }
+
+      // 계산 결과를 resultMap에 보관한다.
+      resultMap.put(clientId, result);
+
       // 클라이언트로 응답할 때 항상 클라이언트 아이디와 결과를 출력한다.
       // => 클라이언트 아이디 출력
       out.writeLong(clientId);
@@ -82,8 +86,6 @@ public class CalcServer {
 
       out.flush();
 
-      // 계산 결과를 다시 resultMap에 보관한다.
-      resultMap.put(clientId, result);
     }
   }
 }
