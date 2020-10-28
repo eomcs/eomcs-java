@@ -21,7 +21,7 @@ dependencies {
   implementation 'org.mybatis:mybatis-spring:2.0.4'
   
   // MariaDB JDBC 드라이버
-  implementation 'org.mariadb.jdbc:mariadb-java-client:2.5.4'
+  implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.0'
   
   // Apache commons-dbcp 라이브러리
   implementation 'commons-dbcp:commons-dbcp:1.4'
