@@ -14,7 +14,7 @@ public class Exam0220 {
         "jdbc:mysql://localhost:3306/studydb", // jdbcURL
         "study", // username
         "1111" // password
-    );) {
+        );) {
 
       System.out.println("DBMS와 연결됨!");
 

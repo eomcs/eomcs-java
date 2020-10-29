@@ -19,6 +19,10 @@ public class Exam0141 {
     // => mariadb JDBC 드라이버 jar 파일은 이 정보가 들어 있다.
     // 따라서 java.sql.Driver를 구현한 클래스를 로딩하거나 생성할 필요가 없다.
     //
+
+    // 현재 jdbc.drivers 에 등록된 클래스 이름이 없다.
+    System.out.printf("jdbc.drivers=%s\n", System.getProperty("jdbc.drivers"));
+
     try {
       // Driver 구현체를 명시적으로 로딩하지 않는다!
       // 그래도 'service-provider loading' 절차에 따라

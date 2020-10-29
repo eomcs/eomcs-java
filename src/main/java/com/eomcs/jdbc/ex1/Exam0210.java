@@ -8,6 +8,7 @@ public class Exam0210 {
   public static void main(String[] args) throws Exception {
 
     java.sql.Connection con = null;
+
     try {
       // DBMS에 연결하기
       // => DriverManager에게 DBMS와의 연결을 요청한다. 어느 서버에 접속할 것인지 정보를 제공해야 한다.
@@ -20,7 +21,7 @@ public class Exam0210 {
           "jdbc:mariadb://localhost:3306/studydb", // jdbcURL
           "study", // username
           "1111" // password
-      );
+          );
       // => DriverManager는 등록된 java.sql.Driver 구현체 중에서
       // jdbc url에 지정된 Driver 객체를 찾는다.
       // 예) MariaDB: org.mariadb.jdbc.Driver 클래스의 객체
@@ -34,7 +35,7 @@ public class Exam0210 {
       // ..|--------------------------->|............................|
       // ..|............................|......connect().............|
       // ..|............................|--------------------------->|
-      // ..|............................|............................|-> new Connection()
+      // ..|............................|............................|-> new MariaDbConnection()
       // ..|............................|..........return............|
       // ..|........return..............|<---------------------------|
       // ..|<---------------------------|............................|

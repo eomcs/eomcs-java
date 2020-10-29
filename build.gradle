@@ -8,6 +8,12 @@ repositories {
 }
 
 dependencies {
+  // Oracle JDBC Driver
+  implementation 'com.oracle.database.jdbc:ojdbc10-production:19.8.0.0'
+  
+  // MSSQL JDBC Driver
+  implementation 'com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre11'
+   
   // Reflection API를 좀 더 쉽게 사용하게 도와주는 유틸리티
   implementation 'org.reflections:reflections:0.9.12'
 

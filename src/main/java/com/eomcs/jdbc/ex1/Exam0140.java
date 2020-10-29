@@ -26,7 +26,7 @@ public class Exam0140 {
     // 예2) 프로그램 코드에서 설정하는 방법
     // - System.setProperty("jdbc.drivers", "com.eomcs.jdbc.ex1.MyDriver");
     //
-    System.setProperty("jdbc.drivers", "com.eomcs.jdbc.ex1.MyDriver:org.mariadb.jdbc.Driver");
+    System.setProperty("jdbc.drivers", "org.mariadb.jdbc.Driver:com.eomcs.jdbc.ex1.MyDriver");
     System.out.printf("jdbc.drivers=%s\n", System.getProperty("jdbc.drivers"));
 
     try {
