@@ -1,4 +1,4 @@
-// insert 한 후 auto increment PK 값을 사용하기
+// auto_increment PK 값을 알아내어 자식 테이블의 데이터를 입력할 때 사용하기
 package com.eomcs.jdbc.ex2;
 
 import java.sql.Connection;
@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Exam0420 {
@@ -13,62 +14,60 @@ public class Exam0420 {
   public static void main(String[] args) throws Exception {
     String title = null;
     String contents = null;
-    String[] filenames = new String[3];
+    ArrayList<String> files = new ArrayList<>();
 
     try (Scanner keyScan = new Scanner(System.in)) {
 
-      // 사용자로부터 제목, 내용을 입력 받는다.
       System.out.print("제목? ");
       title = keyScan.nextLine();
 
       System.out.print("내용? ");
       contents = keyScan.nextLine();
 
-      System.out.print("파일1? ");
-      filenames[0] = keyScan.nextLine();
-
-      System.out.print("파일2? ");
-      filenames[1] = keyScan.nextLine();
-
-      System.out.print("파일3? ");
-      filenames[2] = keyScan.nextLine();
-
-      System.out.print("입력하시겠습니까?(Y/n) ");
-      String input = keyScan.nextLine();
-
-      if (!input.equalsIgnoreCase("y") && input.length() != 0) {
-        System.out.println("등록을 취소 하였습니다.");
-        return;
+      while (true) {
+        System.out.print("첨부파일:(완료는 그냥 엔터!) ");
+        String filename = keyScan.nextLine();
+        if (filename.length() == 0) {
+          break;
+        }
+        files.add(filename);
       }
     }
 
     try (Connection con = DriverManager.getConnection( //
         "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
-        PreparedStatement stmt = con.prepareStatement( //
-            "insert into x_board(title,contents) values(?,?)", //
-            Statement.RETURN_GENERATED_KEYS);) {
 
-      stmt.setString(1, title);
-      stmt.setString(2, contents);
-      int count = stmt.executeUpdate();
-      System.out.printf("%d 개 입력 성공!\n", count);
+        // => 게시글을 입력할 때 자동 생성된 PK 값을 받겠다고 설정한다.
+        PreparedStatement boardStmt = con.prepareStatement(
+            "insert into x_board(title,contents) values(?,?)",
+            Statement.RETURN_GENERATED_KEYS);
 
-      try (ResultSet rs = stmt.getGeneratedKeys()) {
-        rs.next();
-        int no = rs.getInt(1);
-        System.out.printf("입력된 게시글 번호: %d\n", no);
+        PreparedStatement fileStmt = con.prepareStatement(
+            "insert into x_board_file(file_path,board_id) values(?,?)")) {
 
-        for (int i = 0; i < filenames.length; i++) {
-          if (filenames[i].length() == 0)
-            continue;
-          try (PreparedStatement stmt2 = con.prepareStatement( //
-              "insert into x_board_file(file_path,board_id) values(?,?)")) {
-            stmt2.setString(1, filenames[i]);
-            stmt2.setInt(2, no);
-            stmt2.executeUpdate();
-          }
-        }
+      // 게시글 입력
+      boardStmt.setString(1, title);
+      boardStmt.setString(2, contents);
+      int count = boardStmt.executeUpdate();
+      System.out.printf("%d 개 게시글 입력 성공!\n", count);
+
+      // 위에서 입력한 게시글의 PK 값을 알아내기
+      ResultSet keyRS = boardStmt.getGeneratedKeys();
+      keyRS.next(); // PK가 들어있는 레코드를 한 개 가져온다.
+      int boardId = keyRS.getInt(1); // 레코드에서 컬럼 값을 꺼낸다.
+
+      // 첨부파일 입력
+      int fileCount = 0;
+      for (String filename : files) {
+        fileStmt.setString(1, filename);
+
+        // 위에서 게시글 입력 후에 자동 생성된 PK 값을 사용한다.
+        fileStmt.setInt(2, boardId);
+
+        fileStmt.executeUpdate();
+        fileCount++;
       }
+      System.out.printf("%d 개 첨부파일 입력 성공!\n", fileCount);
     }
   }
 }
