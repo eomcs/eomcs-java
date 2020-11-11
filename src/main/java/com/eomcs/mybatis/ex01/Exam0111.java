@@ -30,7 +30,7 @@ public class Exam0111 {
     // => JVM은 현재 실행하는 애플리케이션의 자바 클래스 경로를 알고 있다.
     // => 주의!
     // 자바 패키지 경로에서 찾기 때문에 mybatis 설정 파일은 반드시
-    // 자바 패키지 경로에 있어야 하다.
+    // 자바 패키지 경로에 있어야 한다.
     //
 
     SqlSessionFactoryBuilder factoryBuilder = new SqlSessionFactoryBuilder();

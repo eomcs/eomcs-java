@@ -17,14 +17,27 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 // 그러면 이 별명을 어디에 사용하는가?
 // => SQL 맵퍼 파일에서 클래스를 지정할 때 사용한다.
 // <select id="selectBoard2" resultType="abc">
-// select
-// board_id as no,
-// title,
-// contents as content,
-// created_date registeredDate,
-// view_count viewCount
-// from x_board
+//  select
+//      board_id as no,
+//      title,
+//      contents as content,
+//      created_date registeredDate,
+//      view_count viewCount
+//  from x_board
 // </select>
+//
+// 참고!
+// => 자바 primitive type과 wrapper 클래스, String 클래스,
+//    일부 유틸리티 클래스 등에 대해서는 mybatis가 미리 별명을 지정하였다.
+// => 예)
+//    int       ->  _int
+//    float     ->  _float
+//    java.lang.Integer     -> int
+//    java.lang.Float       -> float
+//    java.lang.String      -> string
+//    java.util.Map         -> map
+//    java.util.HashMap     -> hashMap
+//
 //
 public class Exam0210 {
 
