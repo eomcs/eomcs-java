@@ -18,7 +18,7 @@ public class Exam0110 {
 
     SqlSession sqlSession = factory.openSession();
 
-    Board board = sqlSession.selectOne("BoardMapper.selectBoard", 1);
+    Board board = sqlSession.selectOne("BoardMapper.selectBoard", 26);
 
     System.out.println("[게시글 조회]");
     System.out.printf("번호: %d\n", board.getNo());
@@ -31,7 +31,7 @@ public class Exam0110 {
     // 조인을 사용하지 않으면 다음과 같이
     // 게시글의 첨부파일 데이터를 따로 조회해야 한다.
 
-    List<AttachFile> files = sqlSession.selectList("BoardMapper.selectFile", 1);
+    List<AttachFile> files = sqlSession.selectList("BoardMapper.selectFile", 26);
 
     System.out.println("[첨부파일]");
     for (AttachFile file : files) {

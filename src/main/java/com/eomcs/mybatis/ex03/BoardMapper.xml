@@ -198,8 +198,8 @@
   <update id="update4" parameterType="map">
     update x_board 
     <set>
-      <if test="title != null">title=#{title},</if>   
-      <if test="content != null">contents=#{content}</if>  
+      <if test="title != null">title=#{title}</if>   
+      <if test="content != null">,contents=#{content}</if>  
     </set> 
     where board_id=#{no}
   </update>
@@ -240,8 +240,18 @@
     from x_board
     <where>
       <foreach collection="noList" item="no">
+        <if test="no != ''">
         or board_id = #{no}
+        </if>
       </foreach>
+      <!-- 자바코드:
+      ArrayList<Object> list = map.get("noList");
+      for (Object no : list) {
+        if (!no.equals("")) {
+          sql += " or board_id = " + no;
+        }
+      }
+       -->
     </where>
   </select>
   <select id="select24" resultMap="BoardMap" parameterType="map">

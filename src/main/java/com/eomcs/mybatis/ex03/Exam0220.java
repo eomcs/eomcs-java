@@ -42,7 +42,7 @@ public class Exam0220 {
 
     keyScan.close();
 
-    params.put("no", 1); // 1번 게시글 변경
+    params.put("no", 15); // 1번 게시글 변경
 
     int count = 0;
     if (params.get("title") != null && params.get("content") != null) {
