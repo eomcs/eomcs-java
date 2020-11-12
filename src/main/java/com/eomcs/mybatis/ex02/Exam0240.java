@@ -18,8 +18,8 @@ public class Exam0240 {
     SqlSession sqlSession = factory.openSession();
 
     Board board = new Board();
-    board.setTitle("제목이래요!4");
-    board.setContent("내용이래요!4");
+    board.setTitle("제목이래요!2");
+    board.setContent("내용이래요!2");
 
     System.out.printf("번호: %d\n", board.getNo());
     System.out.printf("제목: %s\n", board.getTitle());

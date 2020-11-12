@@ -39,7 +39,7 @@ public class Exam0120 {
       // 게시글 번호가 주어지면 해당 게시글만 출력한다.
       list = sqlSession.selectList("BoardMapper.select3", Integer.parseInt(str));
     } catch (Exception e) {
-      e.printStackTrace();
+      //e.printStackTrace();
 
       // 게시글 번호가 없거나 예외가 발생하면 전체 게시글을 출력한다.
       list = sqlSession.selectList("BoardMapper.select3");

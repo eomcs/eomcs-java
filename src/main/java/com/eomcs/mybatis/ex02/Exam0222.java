@@ -26,7 +26,7 @@ public class Exam0222 {
     // 개발자가 지정한 값을 전달한다면
     // 안전하게 사용할 수 있다.
     List<Board> list = sqlSession.selectList(//
-        "BoardMapper.selectBoard3", "where title like '%oh%'");
+        "BoardMapper.selectBoard3", "where title like '%ok%'");
 
     for (Board board : list) {
       System.out.printf("%d, %s, %s, %s\n", //

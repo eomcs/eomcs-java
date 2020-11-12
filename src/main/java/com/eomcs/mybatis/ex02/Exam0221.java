@@ -21,7 +21,7 @@ public class Exam0221 {
     // 예) 파라미터로 컬럼 이름을 넘겨주면
     // 해당 컬럼의 값을 오름차순으로 정렬한다.
     List<Board> list = sqlSession.selectList(//
-        "BoardMapper.selectBoard2", "title");
+        "BoardMapper.selectBoard2", "contents");
     // ${} 문법은 값을 SQL 문에 그대로 삽입한다.
 
     for (Board board : list) {

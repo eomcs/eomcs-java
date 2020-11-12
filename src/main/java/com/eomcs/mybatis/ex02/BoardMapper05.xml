@@ -26,6 +26,10 @@
     from x_board
     order by #{colname} asc
     <!-- #{}는 값을 삽입할 때 사용하고, 
+           예) 위 문장에 파라미터 값을 넣으면 다음과 같다.
+               order by 'title' asc
+           mariaDB 는 order by 절에 문자열이 오면 무시한다.
+           SQL 오류는 아니다. 
          ${}는 SQL문을 삽입할 때 사용한다. -->
   </select>
   

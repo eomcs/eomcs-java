@@ -18,12 +18,12 @@ public class Exam0260 {
     SqlSession sqlSession = factory.openSession();
 
     // 먼저 자식 테이블의 데이터를 지운다.
-    int count = sqlSession.delete("BoardMapper.deleteBoardFile", 3);
+    int count = sqlSession.delete("BoardMapper.deleteBoardFile", 21);
     System.out.println(count);
 
     // 그런 후 부모 테이블의 데이터를 지운다.
-    count = sqlSession.delete("BoardMapper.deleteBoard", 3);
-    System.out.println(count);
+    int count2 = sqlSession.delete("BoardMapper.deleteBoard", 21);
+    System.out.println(count2);
 
     sqlSession.commit();
     // commit 명령을 내리지 않으면 insert/update/delete을 테이블에 반영하지 않는다.

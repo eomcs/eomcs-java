@@ -26,7 +26,7 @@
     where board_id = #{value}
   </select>
   
-  <select id="select2" resultMap="BoardMap" parameterType="int">
+  <select id="select2" resultMap="BoardMap">
     select 
       board_id,
       title, 

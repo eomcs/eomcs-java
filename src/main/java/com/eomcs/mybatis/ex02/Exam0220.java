@@ -38,6 +38,16 @@ public class Exam0220 {
     }
 
     sqlSession.close();
+
+    // mybatis는 private 셋터도 호출한다!
+    // 어떻게?
+    //
+    /*
+    Board b = new Board();
+    Method m = Board.class.getDeclaredMethod("setTitle", String.class);
+    m.setAccessible(true);
+    m.invoke(b, "오호라!");
+     */
   }
 
 }

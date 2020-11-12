@@ -20,8 +20,8 @@ public class Exam0230 {
     // Board 객체에 값을 저장하여 전달하기
     // => 단 값을 꺼낼 수 있도록 겟터(프로퍼티)가 있어야 한다.
     Board board = new Board();
-    board.setTitle("제목이래요!2");
-    board.setContent("내용이래요!2");
+    board.setTitle("제목이래요!");
+    board.setContent("내용이래요!");
 
     System.out.printf("번호: %d\n", board.getNo());
     System.out.printf("제목: %s\n", board.getTitle());

@@ -31,6 +31,7 @@ public class Board implements Serializable {
   }
 
   public void setTitle(String title) {
+    //System.out.printf("setTitle(%s)\n", title);
     this.title = title;
   }
 

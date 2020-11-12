@@ -19,7 +19,7 @@ public class Exam0250 {
 
     // 변경할 데이터를 객체에 담아서 넘긴다.
     Board board = new Board();
-    board.setNo(5);
+    board.setNo(22);
     board.setTitle("aaaa");
     board.setContent("bbbb");
 
