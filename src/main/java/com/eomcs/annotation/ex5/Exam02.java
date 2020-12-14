@@ -7,16 +7,35 @@ public class Exam02 {
     Class<?> clazz = MyClass2.class;
     MyAnnotation2 obj = clazz.getAnnotation(MyAnnotation2.class);
 
-    System.out.println(obj.v1()[0]);
-    System.out.println(obj.v2()[0]);
+    printValues(obj.v1());
+    System.out.println("----------------------");
 
-    float[] values = obj.v3();
-    System.out.println(values[0]);
+    printValues(obj.v2());
+    System.out.println("----------------------");
 
-    System.out.println(obj.v1()[1]);
-    System.out.println(obj.v2()[1]);
-    System.out.println(values[1]);
+    printValues(obj.v3());
 
+  }
+
+  static void printValues(String[] values) {
+    for (String value : values) {
+      System.out.print(value + ",");
+    }
+    System.out.println();
+  }
+
+  static void printValues(int[] values) {
+    for (int value : values) {
+      System.out.print(value + ",");
+    }
+    System.out.println();
+  }
+
+  static void printValues(float[] values) {
+    for (float value : values) {
+      System.out.print(value + ",");
+    }
+    System.out.println();
   }
 }
 

@@ -11,6 +11,11 @@ public class Exam05 {
   }
 
   public static void main(String[] args) throws Exception {
+    // 1) 일반적인 인스턴스 생성
+    //    A obj1 = new A();
+
+    // 2) 클래스 정보를 가지고 인스턴스 생성
+    // => 클래스 정보를 로딩한다.
     Class clazz = Class.forName("com.eomcs.reflect.ex01.Exam05$A");
 
     // 타입(클래스) 정보만 있다면 인스턴스 생성할 수 있다.

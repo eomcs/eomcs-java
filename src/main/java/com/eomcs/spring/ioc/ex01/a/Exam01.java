@@ -16,11 +16,11 @@ public class Exam01 {
     // Spring IoC 컨테이너
     // => spring.io 사이트에서 제공하는 프레임워크이다.
     // => 프로젝트에 Spring IoC 컨테이너 포함하기
-    // mvnrepository.com 또는 search.maven.org에서
-    // spring-context 로 라이브러리를 검색한다.
+    //    mvnrepository.com 또는 search.maven.org에서
+    //    spring-context 로 라이브러리를 검색한다.
     // => build.gradle 에 의존 라이브러리 정보를 추가한다.
     // => '$ gradle eclipse'를 실행하여 라이브러리 파일을 다운로드 받고
-    // 이클립스 설정 파일을 갱신한다.
+    //    이클립스 설정 파일을 갱신한다.
     // => 이클립스에서 프로젝트 정보를 갱신한다.
     //
     // ApplicationContext 인터페이스
@@ -40,10 +40,11 @@ public class Exam01 {
     // 예를 들면 /Users/eomjinyoung/git/bitcamp-study/java-basic/bin/main
     // 즉, JVM이 자바 클래스 파일(.class)을 로딩하기 위해 찾는 경로이다.
     // 보통 JVM을 실행할 때 -classpath 옵션이나 -cp 옵션으로 경로를 지정한다.
-    // 물론 JVM이 클래스 파일을 찾을 JVM의 기본 경로($JAVA_HOME/lib)를 가장 먼저 뒤진다.
+    // 물론 JVM이 클래스 파일을 찾을 때
+    // JVM의 기본 경로($JAVA_HOME/lib)를 가장 먼저 뒤진다.
     // => 설정 파일 경로를 지정할 때 자바 패키지 경로를 지정한다.
     // 파일 경로이기 때문에 패키지와 패키지 사이에는 . 대신에 /를 사용해야 한다.
-    ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
+    ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
         "com/eomcs/spring/ioc/ex01/a/application-context.xml");
 
     System.out.println("실행 완료!");

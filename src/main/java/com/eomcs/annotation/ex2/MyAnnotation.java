@@ -8,9 +8,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 // 애노테이션의 유지 정책을 지정하지 않으면 기본이 CLASS이다.
+// => 컴파일 할 때 .class 파일에 포함된다.
+// => 단, 리플랙션 API로 추출할 수 없다.
 @Retention(RetentionPolicy.CLASS)
 public @interface MyAnnotation {
-    String value();
+  String value();
 }
 
 

@@ -7,10 +7,34 @@ public class Exam05 {
     Class<?> clazz = MyClass5.class;
     MyAnnotation3 obj = clazz.getAnnotation(MyAnnotation3.class);
 
-    System.out.println(obj.v1()[0]);
-    System.out.println(obj.v2()[0]);
-    System.out.println(obj.v3()[0]);
+    printValues(obj.v1());
+    System.out.println("----------------------");
 
+    printValues(obj.v2());
+    System.out.println("----------------------");
+
+    printValues(obj.v3());
+  }
+
+  static void printValues(String[] values) {
+    for (String value : values) {
+      System.out.print(value + ",");
+    }
+    System.out.println();
+  }
+
+  static void printValues(int[] values) {
+    for (int value : values) {
+      System.out.print(value + ",");
+    }
+    System.out.println();
+  }
+
+  static void printValues(float[] values) {
+    for (float value : values) {
+      System.out.print(value + ",");
+    }
+    System.out.println();
   }
 }
 

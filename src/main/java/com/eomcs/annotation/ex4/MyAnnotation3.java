@@ -6,9 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MyAnnotation3 {
-  String value();
-
-  String tel();
+  String value(); // 필수 프로퍼티
+  String tel(); // 필수 프로퍼티
 }
 
 

@@ -32,10 +32,11 @@ public class Exam05 {
     m = clazz.getMethod("minus", int.class, int.class);
 
     // => 인스턴스 메서드를 호출할 때는 반드시 인스턴스 주소를 넘겨야 한다.
-    // m.invoke(null, 10, 20); // 예외 발생!
+    //    m.invoke(null, 10, 20); // 예외 발생!
 
     Exam05 obj = new Exam05();
-    m.invoke(obj, 10, 20); // OK!
+    obj.minus(10, 20); // 인스턴스 메서드를 일반적으로 호출할 때
+    m.invoke(obj, 10, 20); // 리플렉션 API를 사용하여 인스턴스 메서드 호출
   }
 
 }

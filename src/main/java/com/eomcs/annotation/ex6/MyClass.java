@@ -5,7 +5,7 @@ package com.eomcs.annotation.ex6;
 @MyAnnotation // OK!
 public class MyClass {
 
-  // @MyAnnotation
+  //  @MyAnnotation
   int i; // 컴파일 오류!
 
   @MyAnnotation

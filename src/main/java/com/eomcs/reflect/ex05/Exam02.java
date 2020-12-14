@@ -3,7 +3,10 @@ package com.eomcs.reflect.ex05;
 
 import java.io.File;
 import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Exam02 {
 
@@ -21,6 +24,10 @@ public class Exam02 {
 
   public void m4() {}
 
+  public Map<String,File> m5() {
+    return null;
+  }
+
   public static void main(String[] ok) {
     Class<?> clazz = Exam02.class;
 
@@ -32,6 +39,18 @@ public class Exam02 {
       // 메서드의 리턴 타입 가져오기
       Class<?> returnType = m.getReturnType();
       System.out.printf("    리턴: %s\n", returnType.getName());
+
+      // 메서드의 제네릭 리턴 타입 가져오기
+      Type returnType2 = m.getGenericReturnType();
+      System.out.printf("    리턴: %s\n", returnType2.getTypeName());
+      if (returnType2 instanceof ParameterizedType) {
+        Type[] actualTypes = ((ParameterizedType) returnType2).getActualTypeArguments();
+        System.out.print("         => ");
+        for (Type actualType : actualTypes) {
+          System.out.print(actualType.getTypeName() + ", ");
+        }
+        System.out.println();
+      }
     }
   }
 

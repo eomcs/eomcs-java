@@ -17,8 +17,8 @@ public class MyClass {
     int local;
 
     // 일반 문장 앞에 선언할 수 없다!
-    // @MyAnnotation(value="값")
-    // if (true)
-    //   System.out.println("ok"); // 컴파일 오류!
+    //    @MyAnnotation(value="값")
+    //    if (true)
+    //      System.out.println("ok"); // 컴파일 오류!
   }
 }

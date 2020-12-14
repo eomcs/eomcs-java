@@ -16,7 +16,7 @@ public class Exam01 {
   public static void main(String[] ok) {
     Class<?> clazz = Exam01.class;
 
-    // 클래스에 정의된 메서드를 모두 가져온다.
+    // 해당 클래스에 정의된 메서드를 모두 가져온다.
     Method[] methods = clazz.getDeclaredMethods();
     for (Method m : methods) {
       System.out.printf("%s:\n", m.getName());
@@ -36,8 +36,10 @@ public class Exam01 {
         // 꺼낼 수 있다.
         // > javac -d bin/main -encoding UTF-8 -parameters src/com/eomcs/reflect/ex05/Exam01.java
         // 그런데 일반적으로 이 옵션을 붙여 컴파일 하지 않는다.
-        // 그럼에도불구하고 Spring Framework에서는 메서드의 파라미터 이름을 알아내는데
-        // 그것은 Spring 프레임워크가 직접 .class 파일을 읽어서 해당 정보를 추출하기 때문이다.
+        // 그럼에도불구하고 Spring Framework나 eclipse IDE에서는
+        // 메서드의 파라미터 이름을 정확하게 추출한다.
+        // 그것은 Spring 프레임워크나 eclipse IDE가
+        // 직접 .class 파일을 읽고 분석해서 해당 정보를 추출하기 때문이다.
         //
       }
     }

@@ -35,7 +35,7 @@ public class Exam04 {
     m = clazz.getMethod("m3", stringType, intType);
     System.out.println(m.getName());
 
-
+    System.out.println(clazz.getMethod("m3", String.class, int.class).getName());
   }
 
 }
