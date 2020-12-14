@@ -14,7 +14,7 @@ public class SpringUtils {
 
     String[] beanNames = iocContainer.getBeanDefinitionNames();
     for (String name : beanNames) {
-      System.out.printf("%s = %s\n", 
+      System.out.printf("%s = %s\n",
           name, iocContainer.getBean(name).getClass().getName());
     }
     System.out.println("--------------------------------");
@@ -25,7 +25,7 @@ public class SpringUtils {
     System.out.printf("['%s' 빈의 별명 목록]\n", beanName);
     String[] aliases = iocContainer.getAliases(beanName);
     for (String alias : aliases) {
-      System.out.println(alias);
+      System.out.println("  => " + alias);
     }
   }
 
