@@ -11,14 +11,14 @@
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
     
     
-    <bean id="c1" class="com.eomcs.spring.ioc.ex08.e.Car">
+    <bean id="c1" class="com.eomcs.spring.ioc.ex08.d.Car">
         <property name="model" value="티코"/>
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="890"/>
         <property name="auto" value="true"/>
     </bean>
     
-    <bean id="e1" class="com.eomcs.spring.ioc.ex08.e.Engine">
+    <bean id="e1" class="com.eomcs.spring.ioc.ex08.d.Engine">
         <property name="maker" value="비트자동차"/>
         <property name="valve" value="16"/>
         <property name="cylinder" value="4"/>

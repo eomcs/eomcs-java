@@ -13,9 +13,9 @@ public class Exam01 {
     // 1) 스프링 IoC 컨테이너는 객체를 만든다.
     // 2) 프로퍼티 값을 설정한다.
     // 3) 객체 생성 후 IoC 컨테이너에 등록된
-    // 리스너(BeanPostProcessor)에게 통보한다.
+    //    리스너(BeanPostProcessor)에게 통보한다.
     // 4) AutowiredAnnotationBeanPostProcessor 리스너가 있다면,
-    // @Autowired 애노테이션을 처리한다.
+    //    @Autowired 애노테이션을 처리한다.
     //
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
         "com/eomcs/spring/ioc/ex08/b/application-context.xml");

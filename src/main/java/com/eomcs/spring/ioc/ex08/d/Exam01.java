@@ -17,7 +17,7 @@ public class Exam01 {
     // 이 방식은 "객체지향을 파괴하는 방식"이라는 비난을 받는다.
     //
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex08/e/application-context.xml");
+        "com/eomcs/spring/ioc/ex08/d/application-context.xml");
 
     // Spring IoC 컨테이너에 들어 있는 객체 출력
     SpringUtils.printBeanList(iocContainer);

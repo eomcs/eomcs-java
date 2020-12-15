@@ -5,9 +5,11 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="java.util.ArrayList"/>
-    <bean class="java.util.HashSet"/>
-    <bean class="java.lang.Math"/>
+    <bean id="c" class="com.eomcs.spring.ioc.ex08.c2.C"/>
+
+    <bean id="b" class="com.eomcs.spring.ioc.ex08.c2.B"/>
+
+    <bean id="a" class="com.eomcs.spring.ioc.ex08.c2.A"/>
     
     <!-- BeanPostProcessor 인터페이스 구현체 만들고 등록하기 -->
     <bean class="com.eomcs.spring.ioc.ex08.c2.LogBeanPostProcessor"/>

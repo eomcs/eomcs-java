@@ -17,7 +17,7 @@ public class Exam01 {
     // search.maven.org 에서 'javax.annotation' 으로 검색해 보라.
     //
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex08/i/application-context.xml");
+        "com/eomcs/spring/ioc/ex08/h/application-context.xml");
 
     // Spring IoC 컨테이너에 들어 있는 객체 출력
     SpringUtils.printBeanList(iocContainer);

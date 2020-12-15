@@ -10,6 +10,8 @@ public class Car {
   private int cc;
   private boolean auto;
   private Date createdDate;
+
+  //@Autowired
   private Engine engine;
 
   // Spring IoC 컨테이너로부터 의존 객체를 주입 받고 싶다면,
@@ -33,10 +35,11 @@ public class Car {
     return engine;
   }
 
-  // public void setEngine(Engine engine) {
-  // System.out.println("Car.setEngine()");
-  // this.engine = engine;
-  // }
+  //  @Autowired
+  //  public void setEngine(Engine engine) {
+  //    System.out.println("Car.setEngine()");
+  //    this.engine = engine;
+  //  }
 
   public boolean isAuto() {
     return auto;

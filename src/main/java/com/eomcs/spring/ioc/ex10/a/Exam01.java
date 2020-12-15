@@ -8,7 +8,7 @@ import com.eomcs.spring.ioc.SpringUtils;
 public class Exam01 {
 
   public static void main(String[] args) {
-    ApplicationContext iocContainer = //
+    ApplicationContext iocContainer =
         new AnnotationConfigApplicationContext(AppConfig.class);
 
     SpringUtils.printBeanList(iocContainer);

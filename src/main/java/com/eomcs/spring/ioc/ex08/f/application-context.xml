@@ -7,7 +7,7 @@
     
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
     
-    <bean id="c1" class="com.eomcs.spring.ioc.ex08.g.Car">
+    <bean id="c1" class="com.eomcs.spring.ioc.ex08.f.Car">
         <property name="model" value="티코"/>
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="890"/>
@@ -15,7 +15,7 @@
     </bean>
     
     <!--  
-    <bean id="e1" class="com.eomcs.spring.ioc.ex08.g.Engine">
+    <bean id="e1" class="com.eomcs.spring.ioc.ex08.f.Engine">
         <property name="maker" value="비트자동차"/>
         <property name="valve" value="16"/>
         <property name="cylinder" value="4"/>

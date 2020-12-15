@@ -35,10 +35,11 @@ public class Car {
     return engine;
   }
 
-  // public void setEngine(Engine engine) {
-  // System.out.println("Car.setEngine()");
-  // this.engine = engine;
-  // }
+  //  @Autowired
+  //  public void setEngine(Engine engine) {
+  //    System.out.println("Car.setEngine()");
+  //    this.engine = engine;
+  //  }
 
   public boolean isAuto() {
     return auto;

@@ -24,7 +24,7 @@ dependencies {
   //implementation 'org.reflections:reflections:0.9.12'
 
   // @Resource 애노테이션이 들어 있는 API
-  //implementation 'javax.annotation:javax.annotation-api:1.3.2'
+  implementation 'javax.annotation:javax.annotation-api:1.3.2'
 
   // Mybatis 퍼시스턴스 프레임워크
   implementation 'org.mybatis:mybatis:3.5.6'

@@ -8,9 +8,8 @@ import com.eomcs.spring.ioc.SpringUtils;
 public class Exam01 {
 
   public static void main(String[] args) {
-    ApplicationContext iocContainer = //
-        new AnnotationConfigApplicationContext(//
-            "com.eomcs.spring.ioc.ex10.c");
+    ApplicationContext iocContainer = new AnnotationConfigApplicationContext(
+        "com.eomcs.spring.ioc.ex10.c");
 
     SpringUtils.printBeanList(iocContainer);
   }

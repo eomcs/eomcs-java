@@ -4,7 +4,7 @@ import java.sql.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-// 의존 객체 Engine 주입 - 필수 또는 선택
+// 의존 객체 Engine 주입 - 여러 개 중에서 한 개의 의존 객체를 지정하는 방법
 public class Car {
 
   private String model;

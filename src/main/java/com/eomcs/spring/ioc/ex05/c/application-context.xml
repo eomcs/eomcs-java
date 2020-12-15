@@ -12,7 +12,7 @@
         <property name="options">
             <map>
                 <entry>
-                    <key><value>sunroof</value></key>
+                    <key><value>sunroof</value></key> 
                     <value>true</value>
                 </entry>
                 <entry key="auto" value="true"/>

@@ -17,9 +17,8 @@ public class Exam01 {
     // 그리고 그 클래스에 @Bean 애노테이션이 붙은 메서드를 호출하여
     // 그 리턴 값을 저장한다.
     //
-    ApplicationContext iocContainer = //
-        new AnnotationConfigApplicationContext(//
-            "com.eomcs.spring.ioc.ex10");
+    ApplicationContext iocContainer = new AnnotationConfigApplicationContext(
+        "com.eomcs.spring.ioc.ex10.b");
 
     SpringUtils.printBeanList(iocContainer);
   }

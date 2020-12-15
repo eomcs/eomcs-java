@@ -4,15 +4,15 @@
     xmlns:context="http://www.springframework.org/schema/context"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
+        https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        https://www.springframework.org/schema/context/spring-context.xsd">
     
     <context:component-scan base-package="com.eomcs.spring.ioc.ex09"/>
     
     <!-- component-scan 태그를 추가하면 
          내부적으로 annotation-config 태그가 자동으로 추가된다. 
-         따라서 다음과 같이 명시할 필요가 없다. -->
+         따라서 다음과 같이 생략해도 된다. -->
 <!-- 
     <context:annotation-config/> 
 -->

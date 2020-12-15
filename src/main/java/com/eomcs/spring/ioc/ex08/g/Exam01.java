@@ -23,7 +23,7 @@ public class Exam01 {
     // 따로 등록해야 한다.
     //
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex08/h/application-context.xml");
+        "com/eomcs/spring/ioc/ex08/g/application-context.xml");
 
     // Spring IoC 컨테이너에 들어 있는 객체 출력
     SpringUtils.printBeanList(iocContainer);

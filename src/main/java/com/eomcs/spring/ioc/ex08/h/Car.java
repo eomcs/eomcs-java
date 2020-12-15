@@ -16,8 +16,10 @@ public class Car {
   // => 자바 기본 라이브러리에 포함되어 있지 않다.
   // => 따로 라이브러리를 다운로드 받아 포함시켜야 한다.
   // => search.maven.org 에서 'javax.annotation'으로 검색하라.
-  // 1.3.2 이상의 버전 사용.
+  //    1.3.2 이상의 버전 사용.
   @Resource(name = "e1")
+  //  @Autowired
+  //  @Qualifier("e1")
   private Engine engine;
 
   public Car() {
