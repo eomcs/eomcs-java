@@ -1,14 +1,12 @@
 package com.eomcs.spring.ioc.ex12.b;
 
 import java.io.InputStream;
-
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.FactoryBean;
 
-public class SqlSessionFactoryFactoryBean 
-implements FactoryBean<SqlSessionFactory> {
+public class SqlSessionFactoryFactoryBean implements FactoryBean<SqlSessionFactory> {
 
   String configLocation;
 

@@ -19,8 +19,11 @@ public class Exam01 {
     // 4) 이클립스 프로젝트 갱신
     // 5) 이 라이브러리에서 제공하는 FactoryBean 사용!
     //
-    // 만약 apache 'commons-dbcp' 라이브러리가 없다면 추가해야 한다.
-    // DB 커넥션 풀을 사용하려면 'spring-jdbc' 라이브러리를 추가해야 한다.
+    // mybatis의 SqlSessionFactoryBean 클래스에서 사용할 DataSource 구현체를 추가한다.
+    // => Apache의 DataSource 구현체를 사용한다면,
+    //    - apache 'commons-dbcp' 라이브러리를 추가해야 한다.
+    // => Spring의 DataSource 구현체를 사용한다면,
+    //    - 'spring-jdbc' 라이브러리를 추가해야 한다.
     //
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
         "com/eomcs/spring/ioc/ex12/c/application-context.xml");
