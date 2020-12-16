@@ -12,7 +12,12 @@ dependencies {
   implementation 'org.springframework:spring-context:5.3.2'
 
   // Spring JDBC 보조 라이브러리
+  // - DataSource 구현체가 들어 있다.
   implementation 'org.springframework:spring-jdbc:5.3.2'
+
+  // Apache commons-dbcp 라이브러리
+  // - DataSource 구현체가 들어 있다.
+  implementation 'commons-dbcp:commons-dbcp:1.4'
 
   // Oracle JDBC Driver
   implementation 'com.oracle.database.jdbc:ojdbc10-production:19.8.0.0'
@@ -35,8 +40,6 @@ dependencies {
   // MariaDB JDBC 드라이버
   implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.0'
 
-  // Apache commons-dbcp 라이브러리
-  //implementation 'commons-dbcp:commons-dbcp:1.4'
 
 
 

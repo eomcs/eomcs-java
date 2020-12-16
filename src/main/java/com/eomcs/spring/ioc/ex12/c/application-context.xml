@@ -24,34 +24,30 @@
           class="org.mybatis.spring.SqlSessionFactoryBean">
 
       <!-- mybatis 설정 파일의 경로를 프로퍼티에 저장한다. -->
+      <!--  
       <property name="configLocation">
         <bean class="org.springframework.core.io.ClassPathResource">
           <constructor-arg value="com/eomcs/spring/ioc/ex12/c/mybatis-config.xml"/>
         </bean>
       </property>
+      -->
       
       <!-- mybatis를 스프링과 연동하면, 
            DataSource는 스프링에서 관리하는 객체를 사용해야 한다.
            mybatis가 만든 DataSource를 사용할 수 없다. --> 
       <property name="dataSource" ref="dataSource" />
 
-      
       <!-- SQL 맵퍼 파일이 있는 경로를 설정하면, 
            SqlSessionFactory에서 그 경로에서 SQL 맵퍼 파일을 찾을 것이다. -->           
-      <!--  
       <property name="mapperLocations" 
                 value="classpath*:com/eomcs/spring/ioc/ex12/c/*Mapper.xml" />  
-      -->
-                
+
       <!-- Board 클래스 처럼 데이터를 담는 객체(Value Object = Domain Object)의 
            별명을 자동으로 등록하기
            => 패키지를 지정하면 그 패키지에 있는 모든 클래스에 대해 
-              클래스 이름을 별명으로 자동 부여한다. 
-            -->
-      <!--  
+              클래스 이름을 별명으로 자동 부여한다. --> 
       <property name="typeAliases" 
-                value="com.eomcs.spring.ioc.ex12.Board"/>
-      -->   
+                value="com.eomcs.spring.ioc.ex12.Board"/> 
     </bean>
     
 <!-- mybatis가 사용할 DataSource 객체 준비하기
