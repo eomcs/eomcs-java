@@ -13,5 +13,6 @@ public class Exam0110 {
 
     System.out.println(obj.m1());
     System.out.println(obj.m2());
+    obj.m3();
   }
 }

@@ -11,8 +11,9 @@ import com.eomcs.spring.ioc.ex12.Board;
 public class Exam01 {
 
   public static void main(String[] args) {
-    ApplicationContext iocContainer = //
+    ApplicationContext iocContainer =
         new AnnotationConfigApplicationContext(AppConfig.class);
+    //new AnnotationConfigApplicationContext("com.eomcs.spring.ioc.ex12.e");
 
     SpringUtils.printBeanList(iocContainer);
 
