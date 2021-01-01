@@ -1,55 +1,46 @@
-// 다형성 - 다형적 변수와 형변환
+// 다형성 - 다형적 변수와 형변환(type casting)
 package com.eomcs.oop.ex06.a;
 
 public class Exam0210 {
 
   public static void main(String[] args) {
-    Vehicle v1 = new Sedan();
 
-    // model과 capacity 변수는 원래 Vehicle 설계도에 있는 변수이기 때문에
-    // 당연히 레퍼런스를 통해 사용할 수 있다.
-    v1.model = "티코";
-    v1.capacity = 5;
+    // 상위 클래스의 레퍼런스로 하위 클래스의 인스턴스를 가리킬 때
+    Car c = new Sedan();
 
-    // 자바 컴파일러는 레퍼런스의 클래스를 보고 사용할 수 있는 변수/메서드 인지 아닌지 
-    // 판단한다. 비록 v1 변수에 Sedan 객체의 주소가 들어 있다 할지라도,
-    // 실제 들어 있는 객체의 주소로 판단하지 않고 레퍼런스가 어떤 클래스냐에 따라 판단한다.
-    /*
-        v1.cc = 1980; // 컴파일 오류!
-        v1.valve = 16; // 컴파일 오류!
-        v1.sunroof = true; // 컴파일 오류!
-        v1.auto = true; // 컴파일 오류!
-     */
+    c.model = "티코"; // Vehicle의 인스턴스 변수
+    c.capacity = 5;  // Vehicle의 인스턴스 변수
+    c.cc = 890;      // Car의 인스턴스 변수
+    c.valve = 16;    // Car의 인스턴스 변수
 
-    // 그럼에도 불구하고 레퍼런스가 실제 가리키는 객체의 모든 메모리에 접근하고 싶은가?
-    // => 형변환 하라!
-    ((Sedan)v1).cc = 1980;
-    ((Sedan)v1).valve = 16;
-    ((Sedan)v1).sunroof = true;
-    ((Sedan)v1).auto = true;
-    
-    System.out.printf("%s, %d, %d, %d, %b, %b\n", 
-        v1.model, v1.capacity,
-        ((Sedan)v1).cc, ((Sedan)v1).valve,
-        ((Sedan)v1).sunroof, ((Sedan)v1).auto);
+    // 레퍼런스가 실제 하위 인스턴스를 가리키고 있다 하더라도,
+    // 레퍼런스 타입의 범위를 벗어나서 사용할 수 없다.
+    //    c.sunroof = true; // 컴파일 오류!
+    //    c.auto = true;    // 컴파일 오류!
 
-    // 각각의 변수에 대해 일일이 형변환해서 사용하기가 불편한가?
-    // => 그냥 레퍼런스를 형변환 해서 사용하라!
-    Sedan s = (Sedan)v1;
-    s.cc = 1980; 
-    s.valve = 16;
+    // 왜?
+    // => 자바 컴파일러는 레퍼런스가 실제 어떤 인스턴스를 가리키는지 따지지 않고
+    //    레퍼런스의 타입에 한정하여 인스턴스나 클래스의 멤버 사용을 허락한다.
+
+    // 해결책?
+    // => 레퍼런스 변수가 실제 가리키는 것이 무엇인지 알려줘야 한다.
+    // => ((원래인스턴스타입) 레퍼런스).멤버
+    ((Sedan)c).sunroof = true; // OK!
+    ((Sedan)c).auto = true;    // OK!
+
+    // => 또는 인스턴스의 원래 클래스 레퍼런스에 저장한 다음에 사용.
+    Sedan s = (Sedan)c;
     s.sunroof = true;
     s.auto = true;
-    
-    System.out.printf("%s, %d, %d, %d, %b, %b\n", 
-        s.model, s.capacity,
-        s.cc, s.valve,
-        s.sunroof, s.auto);
-
-
   }
 
 }
+
+
+
+
+
+
 
 
 

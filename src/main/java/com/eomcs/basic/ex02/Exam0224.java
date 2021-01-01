@@ -1,4 +1,4 @@
-// Wrapper 클래스 - auto-boxing/auto-unboxing 응용
+// Wrapper 클래스 - 오토박싱(auto-boxing)/오토언박싱(auto-unboxing) 응용
 package com.eomcs.basic.ex02;
 
 public class Exam0224 {
@@ -14,39 +14,27 @@ public class Exam0224 {
   }
 
   public static void main(String[] args) {
-    // auto-boxing, auto-unboxing 기능이 없다면
-    // print() 처럼 primitive data type 과 클래스를 구분하여
-    // 메서드를 정의해야 한다.
-    print(100);
-    print(new Member());
 
-    // auto-boxing, auto-unboxing 기능이 있기 때문에
-    // printObject()처럼 한 개의 메서드로
-    // primitive data type과 클래스를 모두 처리할 수 있는 것이다.
-    printObject(100);
-    // 파라미터 타입이 Object 이면
-    // 자바 컴파일러는 auto-boxing 코드로 변환한다.
-    // 즉 Integer.valueOf(100) 으로 바꾼다.
+    // wrapper 클래스를 이용하면,
+    // primitive data type의 값을 객체로 다룰 수 있다.
+    Object obj;
 
-    printObject(new Member());
-  }
+    String str = new String("Hello");
+    obj = str; // 다형적 변수 문법에 따라 상위 클래스의 레퍼런스에 저장할 수 있다.
 
-  static void print(int i) {
-    System.out.print("정수: ");
-    System.out.println(i);
-  }
+    Member member = new Member();
+    member.name = "홍길동";
+    member.tel = "010-1111-2222";
+    obj = member; // 다형적 변수 문법에 따라 상위 클래스의 레퍼런스에 저장할 수 있다.
 
-  static void print(Member m) {
-    System.out.print("회원: ");
-    System.out.println(m);
-  }
+    // 위의 코드에서 String이나 Member 처럼
+    // primitive type의 값을 객체로 다룰 수 있다.
+    int i = 100;
+    obj = i; // auto-boxing 규칙에 따라 Integer.valueOf(i) 문장으로 변환한다.
 
-  // auto-boxing/auto-unboxing 기능이 제공되기 때문에
-  // 다음과 같이 primitive type의 값과 객체를 구분하지 않고
-  // Object 파라미터를 사용하여 처리할 수 있다.
-  //
-  static void printObject(Object obj) {
-    System.out.println(obj);
+    // obj 레퍼런스에 들어 있는 값이
+    // int의 wrapper 클래스인지 확인해보자!
+    System.out.println(obj instanceof Integer);
   }
 }
 

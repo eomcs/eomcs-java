@@ -1,47 +1,57 @@
-// Wrapper 클래스 - 생성자 vs valueOf()
+// Wrapper 클래스 - primitive type 을 객체로 다루기
 package com.eomcs.basic.ex02;
 
 public class Exam0211 {
   public static void main(String[] args) {
 
-    // new 명령을 사용하여 Integer 객체를 만들면
-    // 무조건 새 인스턴스를 생성한다.
-    Integer i1 = new Integer(127);
-    Integer i2 = new Integer(127);
-    System.out.println(i1 == i2); // false
+    // Wrapper 클래스의 가장 큰 목적!
+    // => primitive 값을 포함하여 모든 값을 쉽게 주고 받기 위함이다.
 
-    // -128 ~ 127 범위의 수를 가지고 valueOf()를 호출하면
-    // String 리터럴의 경우처럼 상수 풀에 Integer 객체를 생성한다.
-    // 같은 값의 Integer 객체가 여러 개 생성되지 않도록 한다.
-    Integer i3 = Integer.valueOf(127);
-    Integer i4 = Integer.valueOf(127);
-    System.out.println(i3 == i4); // true
-    System.out.println(i1 == i3); // false
+    // wapper 클래스가 없다면,
+    // 다음과 같이 각 타입에 대한 메서드가 따로 있어야 한다.
+    long l = 100L;
+    double d = 3.14;
+    boolean bool = true;
 
-    Integer x = Integer.valueOf(-128);
-    Integer y = Integer.valueOf(-128);
-    System.out.println(x == y); // true
-    // 이유?
-    // -128 ~ 127 범위의 수는 자주 사용되는 수이기 때문이다.
+    m(l);
+    m(d);
+    m(bool);
 
+    // 이렇게 wrapper 클래스를 사용하면
+    // 객체로 다룰 수 있다.
+    Long obj1 = Long.valueOf(l);
+    Double obj2 = Double.valueOf(d);
+    Boolean obj3 = Boolean.valueOf(bool);
 
-    // 그 범위 외의 수는 무조건 새 인스턴스를 생성한다.
-    // => 다루는 숫자가 너무 많기 때문에 무조건 상수 풀에 만들기에는
-    //    오히려 메모리 낭비가 심해지기 때문이다.
-    // => 상수풀에 생성된 객체는 JVM이 종료되기 전까지 유지된다.
-    //    가비지가 되지 않는다.
-    // => 그러나 heap에 생성된 객체는 주소를 잃어 버리면 가비지가 되기 때문에
-    //    메모리를 좀 더 효율적으로 사용할 수 있다.
-    Integer i5 = Integer.valueOf(128);
-    Integer i6 = Integer.valueOf(128);
-    System.out.println(i5 == i6); // false
+    m(obj1);
+    m(obj2);
+    m(obj3);
+  }
 
-    // 결론!
-    // => wrapper 객체의 값을 비교할 때 == 연산자를 사용하지 말라!
-    // => -128 ~ 127 범위 내의 값이라면 == 연산자를 사용하여 비교할 수도 있지만,
-    // 매번 비교할 때 마다 범위의 유효성을 생각하는 것이 번거롭다.
-    // => 그냥 equals() 메서드를 사용하여 값을 비교하라!
+  // 만약에 Wrapper 클래스가 없다면 다음과 같이
+  // 정수를 받는 메서드와 부동소수점을 받는 메서드,
+  // 논리값을 받는 메서드를 따로따로 정의해야 한다.
+  // => 이런 불편함을 없애기 위해 Wrapper 클래스를 만든 것이다.
+  // => 즉 primitive type을 객체처럼 다룰 수 있도록 만든 문법이다.
+  static void m(long value) { // byte, short, int, long, char
+    System.out.printf("long value=%s\n", value);
+  }
+  static void m(double value) {// float, double
+    System.out.printf("double value=%s\n", value);
+  }
+  static void m(boolean value) {// boolean
+    System.out.printf("boolean value=%s\n", value);
+  }
+
+  // wapper 클래스는 primitive type의 값을 객체로 다룰 수 있게 해준다.
+  // primitive type에 상관없이 Object 타입의 파라미터로 값을 받을 수 있다.
+  static void m(Object value) { // 모든 객체를 받을 수 있다.
+    System.out.printf("wrapper value=%s\n", value);
   }
 }
+
+
+
+
 
 
