@@ -1,45 +1,50 @@
-// 제네릭(Generic) - 응용 
+// 제네릭(Generic) - 여러 개의 타입 파라미터
 package com.eomcs.generic.ex01;
 
-import java.util.HashMap;
+import com.eomcs.generic.ex02.Member;
 
-public class Exam0310 {
-  public static void main(String[] args) {
-    // 제네릭 정보가 필요한 클래스를 사용할 때는 
-    // 어떤 클래스를 다룰 것인지 타입이름을 알려줘야 한다.
-    // 그런데 다음 코드처럼 "key 값으로 어떤 클래스를 사용할 것이고"
-    // "value 값으로 어떤 클래스를 사용할 것인지" 알려주지 않으면
-    // 컴파일러가 경고를 띄운다. 물론 경고시 무시해도 실행에 문제가 없다.
-    // Object 타입으로 지정하더라도 클래스 이름을 명시하는 것이 좋다.
-    HashMap map = new HashMap(); // Object key, Object value를 다룬다.
-    map.put("aaa", "문자열");
-    map.put(new Integer(100), new Member("홍길동", 20));
-
-    // 위와 같이 제네릭 정보를 넘기지 않는 것 보다,
-    // 차라리 다음과 같이 명확하게 Object 타입을 지정하는 것이 좋다. 
-    // => 어떤 타입의 key와 어떤 타입의 value를 저장할 것인지
-    //    다른 개발자에게 명확하게 알려주는 효과가 있기 때문에 다음을 권장한다.
-    HashMap<Object,Object> map2 = new HashMap<>();
-    map2.put("aaa", "문자열");
-    map2.put(new Integer(100), new Member("홍길동", 20));
-
-    // key: String
-    // value: Member
-    HashMap<String,Member> map3 = new HashMap<>();
-    //map3.put("aaa", "문자열"); // 컴파일 오류!
-    //map3.put(new Integer(100), new Member("홍길동", 20)); // 컴파일 오류!
-    map3.put("aaa", new Member("홍길동", 20)); // OK!
-
-    // 제네릭을 지정하면 값을 꺼낼 때 형변환할 필요가 없다.
-    Member m = map3.get("aaa"); // OK!
-
-  }
+// 여러 개의 타입 파라미터를 지정하기
+class A<X,Y,Z> {
+  X v1;
+  Y v2;
+  Z v3;
 }
 
 
+// # 제네릭의 타입 파라미터로 많이 사용하는 이름
+// - 보통 긴 이름을 사용하지 않고 다음과 같이 한 개의 대문자로 된 이름을 많이 사용한다.
+//
+// T : Type이라는 의미를 표현할 수 있어 많이 사용하는 이름이다.
+// E : Element라는 의미로 목록의 항목을 가리킬 때 사용한다.
+// K : Key 객체를 가리킬 때 사용한다.
+// N : Number의 의미로 숫자 타입을 가리킬 때 주로 사용한다.
+// V : Value의 의미로 값의 타입을 가리킬 때 사용한다.
+// S,U,V 등 : 한 번에 여러 타입을 가리킬 때 두 번째, 세 번째, 네 번째 이름으로 주로 사용한다.
+//
+// 그러나 이름을 짓는 것은 개발자 마음이다.
+// 다만, 다른 개발자와의 원활한 소통을 위하여
+// 가능한 위의 규칙에 따라 이름을 사용하기 바란다.
 
 
+// 자바에서 제안하는 "타입 파라미터"의 이름으로 정의한다면,
+class A2<T,S,U> {
+  T v1;
+  S v2;
+  U v3;
+}
 
+public class Exam0310 {
 
+  public static void main(String[] args) {
+    A<String,Integer,Member> obj = new A<>();
 
+    obj.v1 = new String("Hello");
+    obj.v2 =  Integer.valueOf(100);
+    obj.v3 = new Member("홍길동", 20);
 
+    // 지정된 타입이 아닌 타입의 값을 설정한다면,
+    //    obj.v1 = new Member("홍길동", 20); // 컴파일 오류!
+    //    obj.v2 = new String("Hello"); // 컴파일 오류!
+    //    obj.v3 =  Integer.valueOf(100); // 컴파일 오류!
+  }
+}
