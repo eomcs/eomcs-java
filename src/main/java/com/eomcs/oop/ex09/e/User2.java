@@ -4,9 +4,9 @@ package com.eomcs.oop.ex09.e;
 import com.eomcs.oop.ex09.e.project1.FirstComputer;
 import com.eomcs.oop.ex09.e.project2.SecondComputer;
 import com.eomcs.oop.ex09.e.project3.ThirdComputer;
-import com.eomcs.oop.ex09.e.project4.NewComputer1;
+import com.eomcs.oop.ex09.e.project4.NewComputer2;
 
-public class User {
+public class User2 {
   public static void main(String[] args) {
     // 1970년대:
     play(new FirstComputer());
@@ -18,23 +18,18 @@ public class User {
     play(new ThirdComputer());
 
     // 2000년대:
-    play(new NewComputer1());
+    play(new NewComputer2());
 
   }
 
+  // 새 규칙을 추가할 때,
+  // - 기존 인터페이스를 계속 사용할 수 있다.
   static void play(Computer computer) {
-    computer.compute();
-    System.out.println("------------------------");
-  }
-
-  // 상속을 이용하여 규칙을 추가할 때,
-  // - 서브 인터페이스를 통해 새 규칙을 추가한다.
-  // - 새 인터페이스에 맞는 메서드를 따로 정의해야 한다.
-  static void play(Computer2 computer) {
     computer.compute();
     computer.touch();
     System.out.println("------------------------");
   }
+
 }
 
 

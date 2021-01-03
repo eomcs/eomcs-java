@@ -1,9 +1,9 @@
-// 인터페이스 : 스태틱 메서드의 활용 예
+// 인터페이스 활용: 스태틱 메서드의 활용
 package com.eomcs.oop.ex09.h;
 
 public class Exam0110 {
   public static void main(String[] args) {
-    Car c1 = new Tico();
+    Tico c1 = new Tico();
 
     if (CarCheckInfo.validate(c1)) {
       c1.start();
