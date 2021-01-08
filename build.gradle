@@ -1,12 +1,56 @@
+// gradle 빌드 도구에 플러그인 장착
 plugins {
-    id 'java'
-    id 'eclipse'
+    // 자바 소스를 컴파일할 때 사용할 도구를 추가한다.
+    // 뿐만 아니라 eclipse 플러그인과 결합해서
+    // eclipse IDE의 자바 관련 설정 파일을 생성할 때도 사용한다.
+    // 예) .classpath, .settings/*
+    id 'java'  
+
+    // 이클립스 관련 파일을 다룰 때 사용할 도구를 추가한다.
+    // 예) .project
+    id 'eclipse' 
 }
 
+// 자바 소스를 컴파일 할 때 적용할 옵션
+tasks.withType(JavaCompile) {
+    // $javac -encoding UTF-8 ...
+    options.encoding = 'UTF-8';
+}
+
+// .class 파일을 둘 폴더를 지정하지 않으면 
+// Gradle 은 기본 출력 폴더의 경로로 'bin/default' 를 사용한다.
+// 
+// 그러나 이클립스 설정 파일을 만드는 과정에서 
+// 각 소스 경로에 대한 기본 출력 폴더가 bin/main 으로 따로 설정되어 있다.
+// 그래서 실제 자바 소스 파일을 컴파일하면 bin/default 가 아니라 
+// bin/main 폴더에 .class 파일이 저장된다.
+// 
+/*
+eclipse {
+	classpath {
+        defaultOutputDir = file('myokok')
+        
+		file {
+        	whenMerged { 
+    	    	// use default Output for all source-folders. see also defaultOutputDir per project
+	        	entries.each { source ->
+					if (source.kind == 'src' && !source.path.startsWith('/')) { // only Source-folders in the project starting with '/' are project-references
+						source.output = null
+        			}
+				}
+    	    }
+	    }
+        
+	}
+}
+*/
+
+// 프로젝트에서 사용할 자바 라이브러리를 다운로드 받을 때 접속할 서버
 repositories {
-    jcenter()
+    jcenter()  // => https://jcenter.bintray.com/ 서버를 가리킨다.
 }
 
+// 프로젝트에서 사용할 자바 라이브러리 목록
 dependencies {
   // Spring IoC 컨테이너
   implementation 'org.springframework:spring-context:5.3.2'
