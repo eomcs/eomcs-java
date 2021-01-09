@@ -43,30 +43,26 @@ public class Exam0320 {
   }
 
   public static void main(String[] args) {
+
     Member v1 = new Member("홍길동", 20);
     Member v2 = new Member("임꺽정", 30);
     Member v3 = new Member("유관순", 16);
     Member v4 = new Member("안중근", 20);
     Member v5 = new Member("유관순", 16);
 
-    System.out.printf("equals(): %b\n", v3.equals(v5));
-    System.out.println("-----------------------------------");
+    System.out.println(v3.equals(v5)); // true
 
-    HashSet set = new HashSet();
+    HashSet<Member> set = new HashSet<>();
     set.add(v1);
     set.add(v2);
     set.add(v3);
     set.add(v4);
+
+    // equals()와 hashCode()를 함께 비교하기 때문에
+    // equals() 만 오버라이딩 해봐야 소용없다.
     set.add(v5);
 
-    print(set);
-  }
-
-  static void print(HashSet set) {
-    Object[] values = set.toArray();
-    for (Object value : values) {
-      System.out.println(value);
-    }
+    System.out.println(set);
   }
 }
 

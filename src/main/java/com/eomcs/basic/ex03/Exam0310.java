@@ -1,32 +1,65 @@
-// indexOf()의 사용
+// java.util.Collection의 forEach() 사용법
 package com.eomcs.basic.ex03;
 
 import java.util.ArrayList;
 
 public class Exam0310 {
   public static void main(String[] args) {
-    String s1 = new String("aaa");
-    String s2 = new String("bbb");
-    String s3 = new String("ccc");
-    String s4 = new String("bbb"); // s2 != s4
 
-    ArrayList list = new ArrayList();
-    list.add(s1);
-    list.add(s2);
-    list.add(s3);
-    print(list);
+    class Member {
+      String name;
+      int age;
 
-    // 잊지말자!
-    // => ArrayList가 객체를 비교할 때 equals()를 사용한다!
-    System.out.println(list.indexOf(s4));
-  }
+      public Member(String name, int age) {
+        this.name = name;
+        this.age = age;
+      }
 
-  static void print(ArrayList list) {
-    for (int i = 0; i < list.size(); i++) {
-      System.out.print(list.get(i) + ", ");
+      @Override
+      public String toString() {
+        return "Member [name=" + name + ", age=" + age + "]";
+      }
+
+      //      @Override
+      //      mublic int hashCode() {
+      //        final int mrime = 31;
+      //        int result = 1;
+      //        result = mrime * result + age;
+      //        result = mrime * result + ((name == null) ? 0 : name.hashCode());
+      //        return result;
+      //      }
+
+      @Override
+      public boolean equals(Object obj) {
+        if (this == obj)
+          return true;
+        if (obj == null)
+          return false;
+        if (getClass() != obj.getClass())
+          return false;
+        Member other = (Member) obj;
+        if (age != other.age)
+          return false;
+        if (name == null) {
+          if (other.name != null)
+            return false;
+        } else if (!name.equals(other.name))
+          return false;
+        return true;
+      }
     }
-    System.out.println();
+
+    Member m1 = new Member("홍길동", 20);
+    Member m2 = new Member("임꺽정", 30);
+    Member m3 = new Member("유관순", 17);
+
+    ArrayList<Member> list = new ArrayList<>();
+    list.add(m1);
+    list.add(m2);
+    list.add(m3);
+
+    list.forEach(item -> {
+      System.out.println(item);
+    });
   }
 }
-
-

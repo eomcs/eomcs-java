@@ -1,32 +1,32 @@
-// HashMap vs Hashtable
+// HashMap과 Set 키 목록
 package com.eomcs.basic.ex08;
 
 import java.util.HashMap;
-import java.util.Hashtable;
+import java.util.Set;
 
 public class Exam0310 {
   public static void main(String[] args) {
 
-    HashMap map = new HashMap();
-    map.put(null, "홍길동"); // 1) null을 key로 사용할 수 있다.
-    map.put("s01", null); // 2) value가 null이 될 수 있다.
-    // 3) 동기화를 지원하지 않는다.
-    // 멀티스레드가 동시에 사용할 때 문제가 발생할 수 있다.
-    // => 대신 실행 속도가 빠르다.
+    HashMap<String,Member> map = new HashMap<>();
+    map.put("s01", new Member("홍길동", 20));
+    map.put("s02", new Member("임꺽정", 30));
+    map.put("s03", new Member("유관순", 16));
+    map.put("s04", new Member("안중근", 20));
+    map.put("s05", new Member("윤봉길", 30));
 
-    System.out.println(map.get(null));
-    System.out.println(map.get("s01"));
-    System.out.println("--------------------------------");
+    Set<String> keys = map.keySet();
 
-    Hashtable table = new Hashtable();
-    // table.put(null, "홍길동"); // 실행 오류! key가 null이 될 수 없다.
-    // table.put("s02", null); // 실행 오류! value가 null이 될 수 없다.
-    // 동기화 지원
+    // 키목록을 얻은 후에 값을 삭제한다.
+    map.remove("s01");
+    map.remove("s02");
+    map.remove("s03");
 
-    // 결론!
-    // => key나 value에 null을 사용하고 싶다면 HashMap을 사용하라.
-    // => key나 value가 null이 되어서는 안된다면 Hashtable을 사용하라.
-
+    // Set 객체를 통해 key 를 꺼낼 때,
+    // 그 순간의 HashSet에 있는 key를 꺼낸다.
+    // 즉 keySet()을 호출할 때 모든 key를 미리 목록을 만들어 리턴하지 않는다.
+    for (Object key : keys) {
+      System.out.println(key);
+    }
   }
 
 }

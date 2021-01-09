@@ -1,43 +1,31 @@
-// java.util.HashMap - key/value 한쌍으로 묶어 꺼내기 
+// java.util.HashMap - value 목록만 꺼내기
 package com.eomcs.basic.ex08;
 
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map.Entry;
-import java.util.Set;
 
 public class Exam0220 {
   public static void main(String[] args) {
-    Member v1 = new Member("홍길동", 20);
-    Member v2 = new Member("임꺽정", 30);
-    Member v3 = new Member("유관순", 16);
-    Member v4 = new Member("안중근", 20);
-    Member v5 = new Member("윤봉길", 25);
 
-    HashMap map = new HashMap();
-    map.put("s01", v1);
-    map.put("s02", v2);
-    map.put("s03", v3);
-    map.put("s04", v4);
-    map.put("s05", v5);
+    HashMap<String,Member> map = new HashMap<>();
+    map.put("s01", new Member("홍길동", 20));
+    map.put("s02", new Member("임꺽정", 30));
+    map.put("s03", new Member("유관순", 16));
+    map.put("s04", new Member("안중근", 20));
+    map.put("s05", new Member("윤봉길", 30));
 
-    Set entrySet = map.entrySet(); // key/value가 한쌍으로 묶여있는 객체들이 들어있다.
-
-    for (Object obj : entrySet) {
-      // Set 컬렉션에 들어있는 개체는 원래 Entry 객체이다.
-      // Entry 객체에서 key와 값을 꺼내려면 
-      // 원래의 타입으로 형변환 해야 한다. 
-      Entry entry = (Entry) obj;
-      System.out.printf("%s ===> %s\n", 
-          entry.getKey(), entry.getValue());
+    // key 객체는 중복되어서는 안되기 때문에
+    // key 객체 목록은 Set 에 담아서 리턴한다.
+    // value 객체는 중복 저장될 수 있기 때문에
+    // value 객체 목록은 Collection 에 담아서 리턴한다.
+    //
+    Collection<Member> values = map.values();
+    for (Member value : values) {
+      System.out.println(value);
     }
 
   }
 
 }
-
-
-
-
-
 
 

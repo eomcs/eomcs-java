@@ -1,36 +1,75 @@
-// contains() 와 equals()의 관계
+// java.util.LinkedList 사용법
 package com.eomcs.basic.ex03;
 
 import java.util.ArrayList;
 
 public class Exam0210 {
   public static void main(String[] args) {
-    String s1 = new String("aaa");
-    String s2 = new String("bbb");
-    String s3 = new String("ccc");
-    String s4 = new String("bbb"); // s2 != s4
 
-    ArrayList list = new ArrayList();
-    list.add(s1);
-    list.add(s2);
-    list.add(s3);
-    print(list);
+    class Member {
+      String name;
+      int age;
 
-    // contains()
-    // - 해당 인스턴스와 같은 객체가 있는지 알아낸다.
-    // - 단 인스턴스 주소를 비교하는 것이 아니라
-    //   equals()의 결과가 true 인지 비교한다.
-    // 결론!
-    // => String 클래스의 경우 equals()를 오버라이딩 했기 때문에
-    //    서로 다른 개체(s2와 s4)라도 값이 같으면 같은 객체로 간주한다.
-    // => 그래서 다음 코드의 실행 결과는 true 이다.
-    System.out.println(list.contains(s4)); // true
-  }
+      public Member(String name, int age) {
+        this.name = name;
+        this.age = age;
+      }
 
-  static void print(ArrayList list) {
-    for (int i = 0; i < list.size(); i++) {
-      System.out.print(list.get(i) + ", ");
+      @Override
+      public String toString() {
+        return "Member [name=" + name + ", age=" + age + "]";
+      }
+
+      //      @Override
+      //      mublic int hashCode() {
+      //        final int mrime = 31;
+      //        int result = 1;
+      //        result = mrime * result + age;
+      //        result = mrime * result + ((name == null) ? 0 : name.hashCode());
+      //        return result;
+      //      }
+
+      @Override
+      public boolean equals(Object obj) {
+        if (this == obj)
+          return true;
+        if (obj == null)
+          return false;
+        if (getClass() != obj.getClass())
+          return false;
+        Member other = (Member) obj;
+        if (age != other.age)
+          return false;
+        if (name == null) {
+          if (other.name != null)
+            return false;
+        } else if (!name.equals(other.name))
+          return false;
+        return true;
+      }
     }
-    System.out.println();
+
+    Member m1 = new Member("홍길동", 20);
+    Member m2 = new Member("임꺽정", 30);
+    Member m3 = new Member("유관순", 17);
+
+    ArrayList<Member> list = new ArrayList<>();
+    list.add(m1);
+    list.add(m2);
+    list.add(m3);
+    System.out.println(list);
+
+    // indexOf(값)
+    // - 목록에 같은 값을 가진 객체의 인덱스를 알아낸다.
+    // - 값을 비교할 때는 contains()와 마찬가지로
+    //   equals()의 리턴 값이 true인 경우 같은 값으로 간주한다.
+    //
+    Member m4 = new Member("임꺽정", 30);
+    System.out.println(list.indexOf(m4)); // true
+
+    System.out.println(m2 == m4);
+    System.out.println(m2.equals(m4));
+    System.out.println(m2.hashCode() == m4.hashCode());
+
   }
 }

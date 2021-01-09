@@ -1,30 +1,34 @@
-// anonymous class - 수퍼 클래스와 인터페이스를 동시에 지정할 수 있을까?
+// anonymous class - 생성자 II
 package com.eomcs.oop.ex11.e;
 
 public class Exam0220 {
-  // 클래스는 스태틱으로 선언해야만 스태틱 멤버에서 접근할 수 있다.
-  static abstract class A {
-    public abstract void print();
-  }
 
-  interface B {
-    String getName();
+  static class A {
+    public A() {
+      System.out.println("A() 호출!");
+    }
   }
 
   public static void main(final String[] args) {
-    // 클래스도 상속 받고 인터페이스도 구현하는 익명 클래스를 만들 수 있을까?
-    // => 안된다.
-    // => 둘 중 하나만 상속 받거나 구현해야지, 동시에 다 할 수 없다.
-    //
-    A obj = new A implements B() { // 컴파일 오류!
-      @Override
-      public void print() {
-        System.out.println("Hello!");
-      }
-      public String getName() {
-        return "부질없는 짓";
+
+    A obj = new A() {
+
+      // 1) 익명 클래스는 생성자를 직접 정의할 수 없다.
+      // - 그러나 컴파일러가 컴파일할 때 익명 클래스의 생성자를 만든다.
+      //
+      // 2) 대신 인스턴스 블록으로 생성자를 대신한다.
+      // - 인스턴스 블록에 작성한 코드는
+      //   결국 컴파일러가 자동 생성한 생성자에 들어간다.
+      // - 그래서 인스턴스 블록에 작성한 코드가 실행될 것이다.
+      //
+      // 3) 물론 그전에 먼저 수퍼 클래스의 생성자가 호출될 것이다.
+      {
+        System.out.println("익명 클래스의 인스턴스 블록 실행!");
       }
     };
-    obj.print();
   }
 }
+
+// 수퍼 클래스 생성자 호출
+// - 모든 클래스의 생성자는 항상 수퍼 클래스의 생성자를 먼저 호출한다.
+//

@@ -1,4 +1,4 @@
-// Stack 구현과 사용
+// Stack 클래스 사용법 
 package com.eomcs.basic.ex05;
 
 import java.util.Stack;
@@ -6,63 +6,22 @@ import java.util.Stack;
 public class Exam0110 {
 
   public static void main(String[] args) {
-    String s1 = new String("aaa");
-    String s2 = new String("bbb");
-    String s3 = new String("ccc");
-    String s4 = new String("ddd");
-    String s5 = new String("eee");
-
-    Stack stack = new Stack();
-    stack.push(s1); // aaa
-    stack.push(s2); // aaa, bbb
-    stack.push(s3); // aaa, bbb, ccc
-    print(stack);
-
-    System.out.println("==>" + stack.pop()); // ccc
-    System.out.println("==>" + stack.pop()); // bbb
-    print(stack); // aaa
-
-    stack.push(s4); // aaa, ddd
-    stack.push(s5); // aaa, ddd, eee
-    print(stack);
-
-    System.out.println("-----------------");
-
-    String value;
-    try {
-      while (true) {
-        System.out.println(stack.pop());
-      }
-    } catch (Exception e) {
-      System.out.println("스택에서 더이상 꺼낼 데이터가 없습니다.");
-    }
+    Stack<String> stack = new Stack<>();
+    
+    // push() - 스택의 맨 마지막에 값을 추가한다.
+    stack.push("aaa");
+    stack.push("bbb");
+    stack.push("ccc");
+    
+    // pop() - 스택의 맨 마지막에 입력된 값부터 꺼낸다.
+    // => 그래서 스택은 LIFO(Last In First Out) 방식으로 데이터를 다룬다.
+    System.out.println(stack.pop());
+    System.out.println(stack.pop());
+    System.out.println(stack.pop());
+    
+    // 값이 없는데 꺼내려 하면 EmptyStackException 예외가 발생한다.
+    System.out.println(stack.pop());
   }
 
-  static void print(Stack list) {
-    for (int i = 0; i < list.size(); i++) {
-      System.out.print(list.get(i) + ", ");
-    }
-    System.out.println();
-  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

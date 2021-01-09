@@ -60,23 +60,15 @@ public class Exam0340 {
 
     System.out.printf("equals(): %b\n", v3.equals(v5));
     System.out.printf("hashCode(): %d, %d\n", v3.hashCode(), v5.hashCode());
-    System.out.println("-----------------------------------");
 
-    HashSet set = new HashSet();
+    HashSet<Member> set = new HashSet<>();
     set.add(v1);
     set.add(v2);
     set.add(v3);
     set.add(v4);
-    set.add(v5);
+    set.add(v5); // 중복 저장되지 않는다.
 
-    print(set);
-  }
-
-  static void print(HashSet set) {
-    Object[] values = set.toArray();
-    for (Object value : values) {
-      System.out.println(value);
-    }
+    System.out.println(set);
   }
 }
 
