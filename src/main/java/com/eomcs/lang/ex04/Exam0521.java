@@ -25,6 +25,11 @@ public class Exam0521 {
     
     // 배열 변수에 들어 있는 값의 합계를 구해 보자!
     int sum2 = 0;
+    /*
+    for (int i = 0; i < arr1.length; i++) {
+      sum2 = sum2 + arr1[i];
+    }
+    */
     for (int item : arr1) {
       sum2 = sum2 + item;
     }
