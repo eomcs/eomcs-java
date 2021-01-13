@@ -16,7 +16,7 @@ public class Exam0130 {
     System.out.printf("%1$tY, %1$ty\n", today);
     
     // B : 날짜 및 시각 데이터에서 월을 추출하여 전체 이름으로 표현한다. ex) January
-    // B : 날짜 및 시각 데이터에서 월을 추출하여 단축 이름으로 표현한다. ex) Jan
+    // b : 날짜 및 시각 데이터에서 월을 추출하여 단축 이름으로 표현한다. ex) Jan
     System.out.printf("%1$tB, %1$tb\n", today);
     
     // m : 날짜 및 시각 데이터에서 월을 추출하여 2자리 숫자로 표현한다. ex) 12, 01
