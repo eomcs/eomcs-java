@@ -6,6 +6,10 @@ public class Exam0671 {
   public static void main(String[] args) {
     int a = 5;
     int r = --a;
+    // 위의 문장은 다음 두 문장으로 변경된다.
+    // a = a - 1;
+    // int r = a;
+    
     System.out.printf("%d, %d\n", a, r);
     // r = --a 연산 순서
     // 1) --a를 먼저 실행 => a = 4

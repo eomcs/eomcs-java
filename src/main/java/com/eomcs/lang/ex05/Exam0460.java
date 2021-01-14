@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex05;
 
-//# 비트 이동 연산자 : 응용 III
+//# 비트 연산자 : 응용 III
 //
 public class Exam0460 {
   public static void main(String[] args) {
