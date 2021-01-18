@@ -9,12 +9,11 @@ public class Exam0221 {
   }
 
   public static void main(String[] args) {
-    // 메서드 호출 코드
-    hello("홍길동", 20);
+    // 파라미터의 타입, 개수, 순서가 일치해야 한다.
 
-    hello("임꺽정", 30);
-
-    hello("유관순", 17);
+    //    hello("윤봉길"); // 컴파일 오류!
+    //    hello(20, "윤봉길"); // 컴파일 오류!
+    //    String r = hello("안중근", 30); // 컴파일 오류!
+    //    void r = hello("안중근", 30); // 컴파일 오류!
   }
 }
-
