@@ -1,5 +1,6 @@
 package com.eomcs.io.ex08;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 public class DataInputStream {
@@ -44,10 +45,15 @@ public class DataInputStream {
   }
 
   public boolean readBoolean() throws Exception {
-    // 상속 받은 read() 메서드를 사용하여 boolean 값 값을 읽어서 리턴한다.
+    // 생성자에서 받은 InputStream 객체의 read() 메서드를 사용하여 boolean 값을 읽어서 리턴한다.
     if (in.read() == 1)
       return true;
     else
       return false;
+  }
+
+  public void close() throws IOException {
+    // 생성자에서 받은 InputStream 객체의 close() 메서드를 사용하여 close() 한다.
+    in.close();
   }
 }

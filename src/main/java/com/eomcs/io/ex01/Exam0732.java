@@ -2,9 +2,8 @@
 package com.eomcs.io.ex01;
 
 import java.io.File;
-import java.io.FileFilter;
 
-public class Exam0731 {
+public class Exam0732 {
 
   public static void main(String[] args) throws Exception {
 
@@ -20,16 +19,8 @@ public class Exam0731 {
 
   static void printClasses(File dir, String packageName) {
 
-    File[] files = dir.listFiles(new FileFilter() {
-      @Override
-      public boolean accept(File pathname) {
-        if (pathname.isDirectory()
-            || (pathname.isFile() && pathname.getName().endsWith(".class"))) {
-          return true;
-        }
-        return false;
-      }
-    });
+    File[] files = dir.listFiles(f -> f.isDirectory()
+        || (f.isFile() && f.getName().endsWith(".class")));
 
     if (packageName.length() > 0) {
       packageName += ".";

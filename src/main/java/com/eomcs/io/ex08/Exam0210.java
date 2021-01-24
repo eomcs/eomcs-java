@@ -1,33 +1,38 @@
-// 포함 관계로 기능 확장하기 - FileInputStream + BufferedInputStream
+// 포함 관계로 기능 확장하기 - FileOutputStream + DataOutputStream
 package com.eomcs.io.ex08;
 
-import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
 
-    FileInputStream in = new FileInputStream("temp/jls11.pdf");
+    // FileInputStream
+    // - 파일 저장소에서 데이터를 읽는 일을 한다.
+    FileOutputStream out1 = new FileOutputStream("temp/member.data");
 
-    // 기존의 FileInputStream에 버퍼 기능을 덧붙이기 위해서 상속 대신 포함하는 방식을 사용한다.
-    // 다음 BufferedInputStream 은 FileInputStream을 포함한다.
-    // 즉 파일에서 데이터를 읽을 때 FileInputStream을 사용한다.
-    BufferedInputStream in2 = new BufferedInputStream(in);
+    // FileInputStream + DataInputStream
+    // - 문자열이나 자바 기본 타입의 데이터를 좀 더 쉽게 읽기
+    // - 그러나 안타깝게도 이런 식으로 기능을 확장할 수 없다.
+    //   왜?
+    //   - DataInputStream 생성자에는 InputStream 객체만 넘겨줄 수 있다.
+    //   - 즉 DataInputStream은 InputStream 객체에만 연결할 수 있다.
+    //   - BufferedInputStream은 InputStream 의 자식이 아니기 때문에
+    //     DataInputStream에 연결할 수 없다.
+    DataOutputStream out2 = new DataOutputStream(out1);
 
-    int b;
+    Member member = new Member();
+    member.name = "AB가각간";
+    member.age = 27;
+    member.gender = true;
 
-    long startTime = System.currentTimeMillis(); // 밀리초
+    out2.writeUTF(member.name);
+    out2.writeInt(member.age);
+    out2.writeBoolean(member.gender);
 
-    int callCount = 0;
-    while ((b = in2.read()) != -1)
-      callCount++; // 파일을 끝까지 읽는다.
+    out2.close();
 
-    long endTime = System.currentTimeMillis();
-
-    System.out.println(endTime - startTime);
-    System.out.println(callCount);
-
-    in.close();
+    System.out.println("출력 완료!");
   }
 
 }

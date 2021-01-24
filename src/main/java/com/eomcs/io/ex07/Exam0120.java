@@ -1,10 +1,10 @@
-// DataFileOutputStream을 이용하여 객체 출력
+// DataBufferedFileOutputStream을 이용하여 객체 출력
 package com.eomcs.io.ex07;
 
-public class Exam0110 {
+public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
-    DataFileOutputStream out = new DataFileOutputStream("temp/members.data");
+    DataBufferedFileOutputStream out = new DataBufferedFileOutputStream("temp/members.data");
 
     Member member = new Member();
     member.name = "AB가각간";

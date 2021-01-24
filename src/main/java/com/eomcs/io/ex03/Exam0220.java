@@ -1,4 +1,4 @@
-// Character Stream - 문자 배열 읽기 
+// Character Stream - 문자 배열 읽기
 package com.eomcs.io.ex03;
 
 import java.io.FileReader;
@@ -22,12 +22,15 @@ public class Exam0220 {
     // => JVM의 문자코드표가 UTF-8이라면,
     //    파일을 읽을 때, 영어나 숫자, 특수기호는 1바이트를 읽어 UCS2으로 변환할 것이고
     //    한글은 3바이트를 읽어 UCS2으로 변환할 것이다.
-    int count = in.read(buf); 
+    int count = in.read(buf);
 
-    // File(UTF-8)  JVM(UCS2)    
+    // File(UTF-8)  JVM(UCS2)
     // 41       ==> 00 41
     // 42       ==> 00 42
     // 43       ==> 00 43
+    // 30       ==> 00 30
+    // 31       ==> 00 31
+    // 32       ==> 00 32
     // ea b0 80 ==> ac 00
     // ea b0 81 ==> ac 01
     // ea b0 84 ==> ac 04

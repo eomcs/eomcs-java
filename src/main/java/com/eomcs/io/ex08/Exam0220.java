@@ -1,37 +1,27 @@
-// 포함 관계로 기능 확장하기 - BufferedInputStream, BufferedOutputStream
+// 포함 관계로 기능 확장하기 - FileInputStream + DataInputStream
 package com.eomcs.io.ex08;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 
 public class Exam0220 {
 
   public static void main(String[] args) throws Exception {
 
-    FileInputStream in = new FileInputStream("temp/jls11.pdf");
-    BufferedInputStream in2 = new BufferedInputStream(in);
+    FileInputStream in1 = new FileInputStream("temp/member.data");
 
-    FileOutputStream out = new FileOutputStream("temp/jls11_3.pdf");
-    BufferedOutputStream out2 = new BufferedOutputStream(out);
+    // 문자열, int, long, boolean 값을 읽는 것은 DataInputStream 에 맡긴다.
+    // => FileInputStream에 DataInputStream의 기능을 덧붙인다.
+    DataInputStream in2 = new DataInputStream(in1);
 
-    int b;
+    Member member = new Member();
 
-    long startTime = System.currentTimeMillis(); // 밀리초
+    member.name = in2.readUTF();
+    member.age = in2.readInt();
+    member.gender = in2.readBoolean();
 
-    while ((b = in2.read()) != -1)
-      out2.write(b);
+    in2.close();
 
-    // 아직 파일로 출력되지 않고 버퍼 남아 있는 데이터를
-    // 마무리로 출력한다.
-    out2.flush();
-
-    long endTime = System.currentTimeMillis();
-
-    System.out.println(endTime - startTime);
-
-    in.close();
-    out.close();
+    System.out.println(member);
   }
+
 }
-
-

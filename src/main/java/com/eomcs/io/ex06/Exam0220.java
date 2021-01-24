@@ -1,52 +1,36 @@
-// 버퍼 사용 후 - 파일 복사 및 시간 측정
 package com.eomcs.io.ex06;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 public class Exam0220 {
-
   public static void main(String[] args) throws Exception {
-    FileInputStream in = new FileInputStream("temp/jls11.pdf");
-    FileOutputStream out = new FileOutputStream("temp/jls11_3.pdf");
+    FileOutputStream out = new FileOutputStream("temp/data.bin");
 
-    byte[] buf = new byte[8192]; // 보통 8KB 정도 메모리를 준비한다.
-    int len = 0;
+    System.out.println("데이터 쓰는 중...");
 
-    long startTime = System.currentTimeMillis(); // 밀리초
+    long start = System.currentTimeMillis();
 
-    while ((len = in.read(buf)) != -1)
-      out.write(buf, 0, len);
+    byte[] buf = new byte[1024];
+    int size = 0;
 
-    long endTime = System.currentTimeMillis();
+    for (int i = 0; i < 1000000; i++) {
+      // 일단 바이트 버퍼에 저장한다.
+      buf[size++] = 0x55;
 
-    System.out.println(endTime - startTime);
+      if (size >= 1024) {
+        out.write(buf); // 버퍼가 꽉 차면 파일로 내보낸다.
+        size = 0; // 다시 버퍼를 쓸 수 있도록 size를 0으로 초기화 한다.
+      }
+    }
 
-    in.close();
+    // 마지막으로 버퍼에 남아 있는 바이트를 출력한다.
+    out.write(buf, 0, size);
+
+    long end = System.currentTimeMillis();
+
     out.close();
+
+    System.out.println("출력 완료!");
+    System.out.printf("경과된 시간: %d\n", end - start);
   }
-
 }
-
-// 데이터 읽기 시간 = average seek time + data transfer time
-// 퀀텀 HDD 예)
-// average seek time = 0.0105 초
-// data trasfer time = 0.00000005 초 / 1 byte
-//
-// 1000 바이트를 읽을 때
-// 1) 1바이트를 1000 번 읽는 경우
-// 0.01050005초 * 1000 byte = 10.50005초
-// 2) 1000바이트 1번 읽는 경우
-// 0.0105 * 0.00000005초 * 1000 byte = 0.01055초
-// 1바이트를 여러 번 읽을 경우 매번 바이트의 위치를 찾아야 하기 때문에
-// 평균 탐색시간이 누적되어 한 번에 1000 바이트를 읽는 것 보다 시간이 오래 걸린다.
-//
-// 그러면 RAM에 배열의 크기를 크게 잡으면 좋지 않겠는가?
-// => PC 처럼 소수의 프로그램이 동시에 실행될 때는 상관없지만,
-// 서버처럼 데이터를 읽는 코드가 동시에 수천개에서 수십만개일 때는
-// 아무리 작은 크기의 메모리라도 매우 많아지게 된다.
-// 그래서 보통 8KB 정도의 버퍼 크기를 유지하고 있다.
-// => 물론 프로그램의 용도나 목적에 따라 버퍼의 크기가 이보다 더 작아지거나
-// 커질 수 있다.
-
-

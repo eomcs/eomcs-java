@@ -15,13 +15,14 @@ public class Exam0431 {
     File dir = file.getParentFile(); // 위의 코드와 같다.
     System.out.println(dir.getCanonicalPath());
 
+    // 먼저 디렉토리를 생성한다.
     if (dir.mkdirs()) {
       System.out.println("디렉토리를 생성하였습니다.");
     } else {
       System.out.println("디렉토리를 생성할 수 없습니다.");
     }
 
-    // 위에서 폴더를 생성한 후에 파일을 생성한다.
+    // 그런 후 파일을 생성한다.
     if (file.createNewFile()) { // 파일 생성
       System.out.println("파일을 생성하였습니다.");
     } else {

@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
-    FileOutputStream fileOut = new FileOutputStream("temp/test9.data");
+    FileOutputStream fileOut = new FileOutputStream("temp/members.data");
     BufferedOutputStream bufOut = new BufferedOutputStream(fileOut);
     DataOutputStream out = new DataOutputStream(bufOut);
 

@@ -6,8 +6,8 @@ import java.io.FileWriter;
 public class Exam0110 {
   public static void main(String[] args) throws Exception {
 
-    // JVM의 문자열을 파일로 출력할 때 
-    // FileOutputStream 과 같은 바이트 스트림 클래스를 사용하면 
+    // JVM의 문자열을 파일로 출력할 때
+    // FileOutputStream 과 같은 바이트 스트림 클래스를 사용하면
     // 문자집합을 지정해야 하는 번거로움이 있었다.
     // => 이런 번거로움을 해결하기 위해 만든 스트림 클래스가 있으니,
     //    문자 스트림 클래스이다.
@@ -17,14 +17,32 @@ public class Exam0110 {
     FileWriter out = new FileWriter("temp/test2.txt");
 
     // 2) 문자 출력하기
-    // => 자바는 문자 데이터를 다룰 때 UCS2(2바이트) 유니코드를 사용한다.
-    // => 그래서 출력할 때 UCS2 유니코드값을
-    //    JVM에 설정된 기본 문자코드표의 값으로 변환하여 출력한다.
-    // => JVM을 실행할 때 출력 데이터의 문자 코드표를 지정하지 않으면
-    //    OS의 기본 문자코드표에 따라 변환한다.
-    //    예) Windows OS(MS949), Unix(UTF-8)
-    // => JVM을 실행할 때 출력 데이터의 문자 코드표를 지정하는 방법
-    // > java -Dfile.encoding=문자코드표 -cp 클래스경로 클래스명
+    // - JVM은 문자 데이터를 다룰 때 UCS2(UTF16BE, 2바이트) 유니코드를 사용한다.
+    // - character stream 클래스 FileWriter는 문자 데이터를 출력할 때
+    //   UCS2 코드를 OS의 기본 character set 코드로 변환하여 출력한다.
+    //
+    //   Linux, macOS 의 기본 character set => UTF-8
+    //   Windows 의 기본 character set => MS-949
+    //
+    // - 따라서 같은 프로그램을 어느 OS에서 실행하느냐에 따라
+    //   출력되는 코드 값이 달라진다.
+    //   만약 이클립스에서 실행한다면,
+    //   무조건 UTF-8로 인코딩(코드 값으로 변환) 되어 출력된다.
+    //   명령창(콘솔창)에서 실행한다면,
+    //   위에서 설명한대로 OS에 따라 다르게 인코딩 된다.
+    //
+    // - OS에 상관없이 동일한 character set으로 출력하고 싶다면
+    //   JVM을 실행할 때 file.encoding 프로퍼티에 character set 이름을 지정하라.
+    //
+    // - JVM을 실행할 때 출력 데이터의 문자 코드표를 지정하는 방법
+    //       java -Dfile.encoding=문자코드표 -cp 클래스경로 클래스명
+    //   예) java -Dfile.encoding=UTF-8 -cp bin/main com.eomcs.io.ex03.Exam0110
+    //
+    // - 단, character set을 지정할 때는 해당 OS에서 사용가능한 문자표이어야 한다.
+    //   MS Windows에서는 ms949 문자표를 사용할 수 있지만,
+    //   리눅스나 macOS에서는 ms949 문자표를 사용할 수 없다.
+    //   왜?
+    //   국제 표준이 아니기 때문이다.
     //
     // [이클립스에서 실행]
     // - JVM을 실행할 때 '-Dfile.encoding=UTF-8' 옵션을 자동으로 붙인다.
@@ -58,15 +76,15 @@ public class Exam0110 {
     //    -Dfile.encoding=UTF-8 옵션을 붙여 실행하기 때문이다.
     // => OS의 기본 문자표로 출력하고 싶다면,
     //    콘솔창에서 위 옵션 없이 직접 이 클래스를 실행하라.
-    // 
+    //
     // UCS2에서 한글 '가'는 ac00이다.
-    out.write(0x7a6bac00); 
+    out.write(0x7a6bac00);
     // - 앞의 2바이트(7a6b)는 버린다.
     // - 뒤의 2바이트(ac00)은 UTF-8(eab080) 코드 값으로 변환되어 파일에 출력된다.
 
     // UCS2에서 영어 A는 0041이다.
     // 출력하면, UTF-8 코드 값(41)이 파일에 출력된다.
-    out.write(0x7a5f0041);  // 
+    out.write(0x7a5f0041);  //
     // - 앞의 2바이트(7a5f)는 버린다.
     // - 뒤의 2바이트는 UTF-8(41) 코드 값으로 변환되어 파일에 출력된다.
 

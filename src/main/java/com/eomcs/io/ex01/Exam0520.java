@@ -10,13 +10,15 @@ public class Exam0520 {
     File dir = new File(".");
 
     // 파일이나 디렉토리 정보를 File 객체로 받기
+    // => File은 디렉토리와 파일을 통칭하는 용어다.
+    //
     File[] files = dir.listFiles();
 
     for (File file : files) {
-      System.out.printf("%s %12d %s\n", 
-          file.isDirectory() ? "d" : "-", 
-          file.length(),
-          file.getName());
+      System.out.printf("%s %12d %s\n",
+          file.isDirectory() ? "d" : "-",
+              file.length(),
+              file.getName());
     }
 
   }

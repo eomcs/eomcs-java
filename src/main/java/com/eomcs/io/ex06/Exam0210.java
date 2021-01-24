@@ -1,29 +1,24 @@
-// 버퍼 사용 전 - 파일 복사 및 시간 측정
 package com.eomcs.io.ex06;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 public class Exam0210 {
-
   public static void main(String[] args) throws Exception {
-    FileInputStream in = new FileInputStream("temp/jls11.pdf");
-    FileOutputStream out = new FileOutputStream("temp/jls11_2.pdf");
+    FileOutputStream out = new FileOutputStream("temp/data.bin");
 
-    int b;
+    System.out.println("데이터 쓰는 중...");
 
-    long startTime = System.currentTimeMillis(); // 밀리초
+    long start = System.currentTimeMillis();
 
-    while ((b = in.read()) != -1) {
-      out.write(b);
+    for (int i = 0; i < 1000000; i++) {
+      out.write(0x55);
     }
 
-    long endTime = System.currentTimeMillis();
+    long end = System.currentTimeMillis();
 
-    System.out.println(endTime - startTime);
-
-    in.close();
     out.close();
-  }
 
+    System.out.println("출력 완료!");
+    System.out.printf("경과된 시간: %d\n", end - start);
+  }
 }

@@ -39,7 +39,7 @@ public class Exam0610 {
     for (String name : names) {
       System.out.println(name);
     }
-    
+
     // 문제점:
     // - temp.java 는 디렉토리이다.
     // - 현재의 필터는 파일 이름으로만 검사한다.

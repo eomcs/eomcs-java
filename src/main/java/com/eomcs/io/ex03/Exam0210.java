@@ -8,7 +8,7 @@ public class Exam0210 {
   public static void main(String[] args) throws Exception {
     FileWriter out = new FileWriter("temp/test2.txt");
 
-    char[] chars = new char[] {'A', 'B', 'C', '가', '각', '간', '똘', '똥'};
+    char[] chars = new char[] {'A', 'B', 'C', '0', '1', '2', '가', '각', '간', '똘', '똥'};
 
     // FileOutputStream 은 byte[] 을 출력하지만,
     // FileWriter 는 char[] 을 출력한다.
@@ -22,6 +22,9 @@ public class Exam0210 {
     // 00 41    ==> 41
     // 00 42    ==> 42
     // 00 43    ==> 43
+    // 00 30    ==> 30
+    // 00 31    ==> 31
+    // 00 32    ==> 32
     // ac 00    ==> ea b0 80
     // ac 01    ==> ea b0 81
     // ac 04    ==> ea b0 84

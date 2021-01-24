@@ -9,8 +9,10 @@ public class Exam0321 {
 
     File dir = new File("temp2/a");
 
-    // 해당 경로(./temp2)의 디렉토리가 존재하지 않을 때는
-    // 디렉토리(a)를 새로 만들 수 없다.
+    // 존재하지 않는 폴더 아래에 새 폴더를 만들 때
+    // => 존재하지 않는 폴더가 자동 생성되지 않는다.
+    // => 따라서 그 하위 폴더를 생성할 수 없다.
+    //
     if (dir.mkdir()) {
       System.out.println("temp2/a 디렉토리를 생성하였습니다.");
     } else {
