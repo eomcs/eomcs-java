@@ -33,6 +33,9 @@ public class Exam0240 {
   }
 
   // 클래스를 이용하면 성적 정보를 하나로 묶어 리턴할 수 있다.
+  // 참고!
+  // - 다음과 같이 메서드를 통해 인스턴스를 생성하는 코딩 기법을 
+  //   "팩토리 메서드(factory method)" 패턴이라 부른다.
   static Score createScore(String name, int kor, int eng, int math) {
     Score s = new Score();
 

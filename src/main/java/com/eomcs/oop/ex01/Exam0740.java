@@ -10,7 +10,7 @@ public class Exam0740 {
 
     Integer obj4; // OK!
     System obj5; // OK!
-    //File obj6; // 컴파일 오류!
+    //    File obj6; // 컴파일 오류!
 
     // java.lang 패키지에 있는 클래스는 패키지를 지정하지 않아도 된다.
     // 즉 패키지명을 명시하지 않아도 컴파일 오류가 발생하지 않는다.
