@@ -4,6 +4,7 @@ package com.eomcs.oop.ex03;
 import java.sql.Date;
 
 public class Exam0510 {
+
   static class A {
     static byte b;
     static short s;
@@ -25,8 +26,8 @@ public class Exam0510 {
     // => 논리(boolean) : false = 0
     // => 레퍼런스: null = 0
     //
-    System.out.printf("%d, %d, %d, %d, %c, %.1f, %.1f, %b, %s, %s\n", A.b, A.s, A.i, A.l, A.c, A.f,
-        A.d, A.bool, A.str, A.date);
+    System.out.printf("%d, %d, %d, %d, %c, %.1f, %.1f, %b, %s, %s\n", 
+        A.b, A.s, A.i, A.l, A.c, A.f, A.d, A.bool, A.str, A.date);
   }
 }
 

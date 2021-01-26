@@ -1,7 +1,7 @@
 // Singleton 적용 후 
 package com.eomcs.design_pattern.singleton;
 
-//인스턴스를 딱 한 개만 생성하여 공유하고 싶다면,
+// 인스턴스를 딱 한 개만 생성하여 공유하고 싶다면,
 // Singleton 설계 방식으로 클래스를 정의하라!
 //
 class Car2 {

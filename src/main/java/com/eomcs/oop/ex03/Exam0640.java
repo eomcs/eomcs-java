@@ -30,6 +30,8 @@ public class Exam0640 {
     // - 따라서 설계도가 없으면 즉시 설계도를 로딩할 것이다.
     //
     new A();
+    new A();
+    new A();
 
     System.out.println("종료!");
   }

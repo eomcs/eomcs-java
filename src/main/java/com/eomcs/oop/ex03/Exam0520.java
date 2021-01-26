@@ -28,8 +28,8 @@ public class Exam0520 {
     // => 레퍼런스: null = 0
     A obj = new A();
 
-    System.out.printf("%d, %d, %d, %d, %c, %.1f, %.1f, %b, %s, %s\n", obj.b2, obj.s2, obj.i2,
-        obj.l2, obj.c2, obj.f2, obj.d2, obj.bool2, obj.str2, obj.date2);
+    System.out.printf("%d, %d, %d, %d, %c, %.1f, %.1f, %b, %s, %s\n", 
+        obj.b2, obj.s2, obj.i2, obj.l2, obj.c2, obj.f2, obj.d2, obj.bool2, obj.str2, obj.date2);
   }
 }
 

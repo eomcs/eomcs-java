@@ -21,35 +21,39 @@ public class Exam0660 {
   }
 
   public static void main(String[] args) throws Exception {
-    
+
     // 클래스가 로딩되는 경우
     // 1) 클래스 멤버(변수와 메서드)를 사용할 때 클래스가 로딩되어 있지 않다면,
     A.a = 100;
-    A.m();
+
+    //    A.m();
+
     // 2) 해당 클래스의 인스턴스를 생성할 때 클래스가 로딩되어 있지 않다면,
-    new A();
+    //    new A();
+
     // 3) 자바에서 제공하는 도구를 사용하여 클래스를 로딩할 때 클래스가 로딩되어 있지 않다면,
-    Class.forName("com.eomcs.oop.ex03.Exam0660$A");
+    //    Class.forName("com.eomcs.oop.ex03.Exam0660$A");
     //
     // 클래스가 로딩된 후
     // 1) 클래스 필드가 생성된다.
     // 2) 클래스 블록(스태틱 블록)이 실행된다.
     //
-    
+
     // 레퍼런스를 선언할 때는 클래스가 로딩되지 않는다.
     // A obj;
-    
+    System.out.println("------------------------------");
+
     // 클래스는 중복 로딩되지 않는다.
     A.a = 100;
     A.m();
     new A();
     Class.forName("com.eomcs.oop.ex03.Exam0660$A");
     System.out.println("------");
-    
+
     // 만약 이전에 클래스가 로딩되었다면, 다시 로딩하지 않는다.
     // - 즉 static 블록을 다시 실행하지 않는다!
     new A(); 
-    
+
   }
 }
 

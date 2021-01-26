@@ -24,7 +24,6 @@ public class Exam0420 {
       this.compute();
     }
 
-
     public void compute() {
       this.sum = this.kor + this.eng + this.math;
       this.average = this.sum / 3f;
@@ -34,7 +33,7 @@ public class Exam0420 {
   public static void main(String[] args) {
     // Score 클래스에는 기본 생성자가 없기 때문에
     // 다음 문장은 컴파일 오류이다!
-    //Score s0 = new Score();
+    //    Score s0 = new Score();
 
     // Score 인스턴스를 만든 후에는 
     // 생성자를 호출할 때 그 생성자의 파라미터 값을 주어야 한다.

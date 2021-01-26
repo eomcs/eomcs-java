@@ -11,10 +11,10 @@ public class Exam0670 {
     // - 스태틱 초기화 블록에 a 에 100을 할당하는 문장을 삽입한다.
     // - 위의 문장은 다음 문장으로 바뀐다.
     //
-    // static int a;
-    // static {
-    //   a = 100;
-    // }
+    //    static int a;
+    //    static {
+    //      a = 100;
+    //    }
     // - 바이트 코드(Exam0670$A.class)를 확인해 보라!
   }
 
