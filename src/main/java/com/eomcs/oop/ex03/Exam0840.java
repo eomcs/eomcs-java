@@ -22,7 +22,6 @@ public class Exam0840 {
     }
 
     int a = 100;
-
   }
 
   public static void main(String[] args) {
