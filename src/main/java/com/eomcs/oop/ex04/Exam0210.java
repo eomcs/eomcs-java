@@ -12,7 +12,7 @@ public class Exam0210 {
 
     System.out.println(s1.compareTo("Helli"));
     System.out.println(s1.compareTo("Hello"));
-    System.out.println(s1.compareTo("Hellu"));
+    System.out.println(s1.compareTo("Hellq"));
 
     System.out.println(s1.contains("ll"));
     System.out.println(s1.contains("ee"));
@@ -23,11 +23,13 @@ public class Exam0210 {
     System.out.println(s2); // 새로 문자열을 만든다.
 
     // 두 인스턴스에 들어 있는 문자열이 같은 지 비교할 때 
-    System.out.println(s1.equals("aaa"));
-    System.out.println(s1.equals("Hello"));
+    System.out.println(s1.equals("aaa")); // false
+    System.out.println(s1.equals("Hello")); // true
+    System.out.println(s1 == "Hello"); // false
+
+    System.out.println("-------------------------");
 
     String s3 = new String("ABC가각");
-
     // 인스턴스에 들어 있는 문자 코드를 바이트 배열로 만들어 리턴한다.
     byte[] bytes = s3.getBytes(); 
     // => 인스턴스에 들어 있는 각 문자를 바이트 배열에 저장할 때 
@@ -37,12 +39,14 @@ public class Exam0210 {
     for (int i = 0; i < bytes.length; i++)
       System.out.printf("%x,", bytes[i]);
     System.out.println();
+    System.out.println("-------------------------");
 
     // 다른 인스턴스 메서드를 사용하여 바이트 배열을 추출해보자.
     bytes = s3.getBytes("EUC-KR");
     for (int i = 0; i < bytes.length; i++)
       System.out.printf("%x,", bytes[i]);
     System.out.println();
+    System.out.println("-------------------------");
 
     // String 클래스에도 특정 인스턴스가 아닌 일반용으로 
     // 문자열을 다룰 수 있는 메서드를 제공한다.

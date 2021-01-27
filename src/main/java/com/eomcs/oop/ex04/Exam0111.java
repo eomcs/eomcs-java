@@ -5,7 +5,7 @@ public class Exam0111 {
 
   public static void main(String[] args) throws Exception {
     // 생성자를 호출하여 문자열 인스턴스를 초기화시킨다.
-    
+
     // => 문자열 리터럴을 사용하여 String 인스턴스를 초기화시키기.
     String s1 = new String("Hello");
 

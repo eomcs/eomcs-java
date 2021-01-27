@@ -7,6 +7,9 @@ public class Exam0240 {
   public static void main(String[] args) throws Exception {
     Date d1 = new Date();
 
+    String str0 = d1.toString();
+    System.out.println(str0);
+
     // 인스턴스 메서드 활용
     System.out.println(d1.getYear() + 1900);
     System.out.println(d1.getMonth() + 1);
