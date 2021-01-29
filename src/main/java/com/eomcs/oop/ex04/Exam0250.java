@@ -23,9 +23,9 @@ public class Exam0250 {
     System.out.println(c.get(11)); // 시(24시)
     System.out.println(c.get(12)); // 분
     System.out.println(c.get(13)); // 초
-    
+
     System.out.println("-----------------------");
-    
+
     // 상수의 활용
     System.out.println(c.get(Calendar.YEAR)); // 년도
     System.out.println(c.get(Calendar.MONTH) + 1); // 월(0 ~ 11)
