@@ -56,8 +56,8 @@ public class Exam0211 {
     // => 즉 클래스의 멤버만 접근할 수 있고 클래스 외부에서는 접근할 수 없다.
     // => 그래서 다음과 같이 임의로 접근하여 값을 변경할 수 없다.
     //
-    //s1.sum = s1.kor + s1.eng + s1.math; // 컴파일 오류!
-    //s1.aver = s1.sum / 4f; // 컴파일 오류!
+    //    s1.sum = s1.kor + s1.eng + s1.math; // 컴파일 오류!
+    //    s1.aver = s1.sum / 4f; // 컴파일 오류!
 
     System.out.printf("%s, %d, %d, %d, %d, %.1f\n",
         s1.name, s1.kor, s1.eng, s1.math, s1.getSum(), s1.getAver());
