@@ -2,8 +2,6 @@
 // 어떻게? 상속 문법을 이용한다.
 package com.eomcs.oop.ex05.d;
 
-import com.eomcs.oop.ex05.Calculator;
-
 public class Calculator2 extends Calculator {
 
   // 새 기능을 추가한다.

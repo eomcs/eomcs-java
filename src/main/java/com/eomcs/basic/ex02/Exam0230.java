@@ -2,6 +2,7 @@
 package com.eomcs.basic.ex02;
 
 public class Exam0230 {
+
   public static void main(String[] args) {
 
     // new 명령을 사용하여 Integer 객체를 만들면

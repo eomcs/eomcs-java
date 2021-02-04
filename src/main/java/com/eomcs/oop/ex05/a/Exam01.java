@@ -1,8 +1,6 @@
 // 상속 - 사용 전
 package com.eomcs.oop.ex05.a;
 
-import com.eomcs.oop.ex05.Car;
-
 public class Exam01 {
   public static void main(String[] args) {
     Car c1 = new Car();

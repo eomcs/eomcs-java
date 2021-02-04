@@ -8,6 +8,7 @@ public class Exam0130 {
     String s2 = new String("Hello");
 
     // Object의 hashCode()는 인스턴스 마다 다르다.
+    System.out.println(s1 == s2);
     System.out.println(s1.hashCode() == s2.hashCode()); // true
     //
     // 그러나, String의 hashCode()은

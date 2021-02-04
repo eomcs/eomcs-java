@@ -1,8 +1,6 @@
 // 상속 - 사용 전
 package com.eomcs.oop.ex05.a;
 
-import com.eomcs.oop.ex05.Score;
-
 public class Exam03 {
   public static void main(String[] args) {
     Score s = new Score();
