@@ -13,7 +13,7 @@ public class Score2 extends Score {
   @Override
   public void compute() {
     this.sum = this.kor + this.eng + this.math + this.music + this.art;
-    this.aver = this.sum / 3f;
+    this.aver = this.sum / 5f;
   }
 }
 
