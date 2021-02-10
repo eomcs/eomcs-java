@@ -23,7 +23,7 @@ public class Exam01 {
     tool = new ToolC();
 
     // String 클래스는 Spec 구현체가 아니기 때문에 해당 객체를 레퍼런스에 저장할 수 없다.
-    //tool = new String("Hello"); // 컴파일 오류!
+    //    tool = new String("Hello"); // 컴파일 오류!
   }
 }
 

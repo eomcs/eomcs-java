@@ -27,10 +27,10 @@ public class Exam01 {
     // 다음 HulWorker 클래스처럼 Worker를 구현한다고 선언하지 않는다면,
     // 공식적으로 Worker 구현체가 아니기 때문에 
     // 레퍼런스에 담을 수 없다. 
-    //Worker w4 = new HulWorker(); // 컴파일 오류!
+    //    Worker w4 = new HulWorker(); // 컴파일 오류!
 
     // => 인터페이스를 구현하지 않은 클래스의 인스턴스 주소는 저장할 수 없다. 
-    //Worker w5 = new String();// 컴파일 오류!
+    //    Worker w5 = new String();// 컴파일 오류!
 
     // 사용하려는 객체가 같은 인터페이스를 구현(사용규칙에 따라 작성)하였다면,
     // 다음과 같이 동일한 사용규칙에 따라 메서드를 호출할 수 있어 편리하다.
