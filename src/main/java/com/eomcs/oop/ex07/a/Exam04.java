@@ -7,8 +7,9 @@ abstract class A4 {
   // - 서브 클래스들이 가져야할 공통 변수나 메서드를 제공하는 것이다.
   // - 그래서 다음과 같이 일반 변수나 메서드를 정의할 수 있다.
   public static int value1 = 100;
-  public String value2 = "Hello!";
   static void m1() {System.out.println("A4.m1() 호출됨!");}
+
+  public String value2 = "Hello!";
   void m2() {System.out.println("A4.m2() 호출됨!");}
 
   // 추상 클래스는 추상 메서드도 가질 수 있다.
