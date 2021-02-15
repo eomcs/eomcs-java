@@ -20,7 +20,7 @@ public class Exam0340 {
     // 즉 createRunner()의 name 파라미터가 제거된다는 것이다.
   }
 
-  Runner createRunner(final String name) {
+  Runner createRunner(String name) {
     // Exam0340 객체 주소를 받는 내장 변수 this 가 있다.
     //
     class A implements Runner {
