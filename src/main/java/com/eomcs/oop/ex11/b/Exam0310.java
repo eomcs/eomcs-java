@@ -10,6 +10,8 @@ class C {
 
   void m2() {
     // 인스턴스 멤버는 스태틱 멤버 사용 가능!
+    m1(); // OK!
+
     X obj = new X();
     obj.test();
   }

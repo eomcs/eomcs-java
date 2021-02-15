@@ -2,6 +2,11 @@
 package com.eomcs.oop.ex11.c;
 
 class E {
+
+  void m(int a) {
+    int b = 100;
+  }
+
   class X {
     // 인스턴스 메서드는 this 라는 내장 변수에 인스턴스 주소를 보관한다.
     // 그렇다면 inner class는 어디에 보관할까?

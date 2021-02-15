@@ -14,7 +14,7 @@ public class Exam0110 {
     A.X obj;
 
     // 인스턴스 생성
-    //obj = new A.X(); // 컴파일 오류!
+    //    obj = new A.X(); // 컴파일 오류!
 
     //1) 바깥 클래스의 인스턴스 준비
     A  outer = null;//new A();
