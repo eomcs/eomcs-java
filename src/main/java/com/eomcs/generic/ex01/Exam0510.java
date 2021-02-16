@@ -31,13 +31,13 @@ public class Exam0510 {
   // 예4) 견본 배열의 타입 정보를 가지고 배열을 생성하기
   @SuppressWarnings("unchecked")
   static <T> T[] create4(T[] arr) {
-    Class<?> arrayType = arr.getClass(); // 예) String[]
-    System.out.println(arrayType);
+    Class<?> arrayTypeInfo = arr.getClass(); // 예) String[]
+    System.out.println(arrayTypeInfo);
 
-    Class<?> arrayItemType = arrayType.getComponentType(); // 예) String
-    System.out.println(arrayItemType);
+    Class<?> arrayItemTypeInfo = arrayTypeInfo.getComponentType(); // 예) String
+    System.out.println(arrayItemTypeInfo);
 
-    return (T[]) Array.newInstance(arrayItemType, 10);
+    return (T[]) Array.newInstance(arrayItemTypeInfo, 10);
   }
 
   public static void main(String[] args) {
@@ -55,7 +55,7 @@ public class Exam0510 {
     System.out.println(temp == strs2);
 
     // 생성할 배열의 타입 정보를 넘긴다.
-    String[] strs3 = create3(String.class);
+    String[] strs3 = create3(Member.class);
     System.out.println(strs3.length);
 
     // 배열을 넘기면 배열의 항목 타입을 알아내어 새 배열을 만든다.
