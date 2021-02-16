@@ -39,7 +39,7 @@ public class Exam0310 {
     A<String,Integer,Member> obj = new A<>();
 
     obj.v1 = new String("Hello");
-    obj.v2 =  Integer.valueOf(100);
+    obj.v2 = Integer.valueOf(100);
     obj.v3 = new Member("홍길동", 20);
 
     // 지정된 타입이 아닌 타입의 값을 설정한다면,
