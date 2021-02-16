@@ -1,9 +1,7 @@
 // 클래스에 제네릭(generic) 적용하기 : 적용 전
 package com.eomcs.generic.ex01;
 
-import com.eomcs.generic.ex02.Member;
-
-// 제네릭 문법이 없다면 각 타입의 객체를 저장하기 위해
+// 제네릭 문법이 없다면 각 타입의 객체를 저장하고 꺼내기 위해
 // 다음과 같이 각 타입에 대한 클래스를 정의해야 한다.
 //
 class MemberBox {
@@ -49,6 +47,7 @@ public class Exam0210 {
     // Member 객체를 저장하려면 MemberBox를 사용해야 한다.
     MemberBox box1 = new MemberBox();
     box1.set(new Member("홍길동", 20)); // 값 저장
+    //box1.set(new String("Hello")); // 컴파일 오류!
     Member m = box1.get(); // 값 꺼내기
     System.out.println(m);
 
@@ -60,7 +59,7 @@ public class Exam0210 {
 
     // Integer 객체는 IntegerBox를 사용해서 저장한다.
     IntegerBox box3 = new IntegerBox();
-    box3.set(100); // auto-boxing ==> Integer.valueOf(100)
+    box3.set(100); // auto-boxing ==> box3.set(Integer.valueOf(100)) 문장으로 변경된다.
     int i = box3.get(); // auto-unboxing ==> box3.get().intValue()
     System.out.println(i);
 

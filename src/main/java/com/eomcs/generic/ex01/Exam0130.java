@@ -16,7 +16,7 @@ public class Exam0130 {
   // => 제네릭을 사용하면 특정 타입을 다루는 메서드 여러 개를 한 개의 메서드로 줄일 수 있다.
   // => 이때 "What"를 타입을 가리키는 별명으로 "타입 파라미터"라고 부른다.
   //
-  public static <What> What echo(What obj) {
+  static <What> What echo(What obj) {
     return obj;
   }
 

@@ -22,15 +22,16 @@ public class Exam0220 {
   public static void main(String[] args) {
 
     // 1) 제네릭이 적용되지 않은 ObjectBox 클래스 이용
-    ObjectBox b1 = new ObjectBox(); // <= Integer.valueOf(100)
+    ObjectBox b1 = new ObjectBox();
     ObjectBox b2 = new ObjectBox();
     ObjectBox b3 = new ObjectBox();
+    ObjectBox b4 = new ObjectBox();
 
     // ObjectBox에 값 넣기
     b1.set(new Member("홍길동", 20));
     b2.set("Hello");
-    b3.set(100);
-
+    b3.set(new Date());
+    b4.set(100); // auto-boxing ==> b4.set(Integer.valueOf(100)) 문장으로 변경된다.
     // 이렇게 ObjectBox에 다양한 타입의 값을 넣을 수 있는 이유?
     // => set()의 파라미터 타입은 Object 이기 때문이다.
     // => Object는 모든 자바 객체를 받을 수 있다.
@@ -40,14 +41,17 @@ public class Exam0220 {
     // ObjectBox 객체에서 값 꺼내기
     // => 값을 꺼낼 때마다 형변환 해야 한다.
     //
-    int v1 = (int) b1.get(); // <= 리턴값.intValue()
+    Member v1 = (Member) b1.get();
     System.out.println(v1);
 
     String v2 = (String) b2.get();
     System.out.println(v2);
 
-    Date v3 = (Date)b3.get();
+    Date v3 = (Date) b3.get();
     System.out.println(v3);
+
+    int v4 = (int) b4.get(); // auto-unboxing ==> ((Integer) b1.get()).intValue();
+    System.out.println(v4);
 
     // ObjectBox 의 이점
     // - 이전 방식에 비해 객체의 타입 별로 Box 클래스를 구분해서 쓰지 않으니 코딩이 편하다.
