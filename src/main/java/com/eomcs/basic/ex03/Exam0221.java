@@ -1,9 +1,9 @@
-// 목록 조회: 반복문과 인덱스를 이용한 목록 조회
+// 목록 조회: toArray(E[]) 사용
 package com.eomcs.basic.ex03;
 
 import java.util.ArrayList;
 
-public class Exam0210 {
+public class Exam0221 {
   public static void main(String[] args) {
 
     class Member {
@@ -58,8 +58,9 @@ public class Exam0210 {
     list.add(m2);
     list.add(m3);
 
-    for (int i = 0; i < list.size(); i++) {
-      System.out.println(list.get(i));
+    Member[] arr = list.toArray(new Member[list.size()]);
+    for (Member m : arr) {
+      System.out.printf("이름: %s, 나이: %d\n", m.name, m.age);
     }
   }
 }

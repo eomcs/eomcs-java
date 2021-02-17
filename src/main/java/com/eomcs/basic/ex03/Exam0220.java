@@ -1,9 +1,9 @@
-// java.util.Collection의 forEach() 사용법
+// 목록 조회: toArray() 사용
 package com.eomcs.basic.ex03;
 
 import java.util.ArrayList;
 
-public class Exam0310 {
+public class Exam0220 {
   public static void main(String[] args) {
 
     class Member {
@@ -58,8 +58,10 @@ public class Exam0310 {
     list.add(m2);
     list.add(m3);
 
-    list.forEach(item -> {
-      System.out.println(item);
-    });
+    Object[] arr = list.toArray();
+    for (Object obj : arr) {
+      Member m = (Member) obj;
+      System.out.printf("이름: %s, 나이: %d\n", m.name, m.age);
+    }
   }
 }

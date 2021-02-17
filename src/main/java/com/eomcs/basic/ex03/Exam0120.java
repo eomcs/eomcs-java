@@ -39,8 +39,14 @@ public class Exam0120 {
     // add(index, value)
     // - 해당 위치에 값을 삽입한다.
     list.add(1, "xxx");
+    System.out.println(list); // [bbb, xxx, ddd, null, eee, null, aaa, bbb]
+
     list.add(1, "yyy");
+    System.out.println(list); // [bbb, yyy, xxx, ddd, null, eee, null, aaa, bbb]
+
     list.add(0, "zzz");
+    System.out.println(list); // [zzz, bbb, yyy, xxx, ddd, null, eee, null, aaa, bbb]
+
     list.add(5, "ttt");
     System.out.println(list); // [zzz, bbb, yyy, xxx, ddd, ttt, null, eee, null, aaa, bbb]
 
