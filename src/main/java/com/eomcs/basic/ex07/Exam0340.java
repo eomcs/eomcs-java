@@ -47,8 +47,6 @@ public class Exam0340 {
         return false;
       return true;
     }
-
-
   }
 
   public static void main(String[] args) {
