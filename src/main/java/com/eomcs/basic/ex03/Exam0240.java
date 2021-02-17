@@ -66,7 +66,7 @@ public class Exam0240 {
         // Consumer 규칙에 따라 
         // 각 항목에 대해 이 메서드를 호출한다.
         System.out.printf("이름: %s, 나이: %d\n", m.name, m.age);
-      };
+      }
     }
 
     list.forEach(new MyConsumer());

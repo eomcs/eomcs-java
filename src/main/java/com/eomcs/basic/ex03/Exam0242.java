@@ -63,7 +63,7 @@ public class Exam0242 {
       @Override
       public void accept(Member m) {
         System.out.printf("이름: %s, 나이: %d\n", m.name, m.age);
-      };
+      }
     });
   }
 }
