@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Exam0710 {
 
-  static interface ListFactory {
+  interface ListFactory {
     List create();
   }
 

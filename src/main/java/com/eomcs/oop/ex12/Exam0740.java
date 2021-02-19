@@ -35,10 +35,24 @@ public class Exam0740 {
 
     Factory1 f1 = Message::new; // Message() 생성자를 가리킨다.
     //=> 즉 컴파일러는 Message 의 기본 생성자를 호출하는 Factory 구현체를 만들어 리턴한다.
+    //
+    //    Factory1 f1 = new Factory1() {
+    //      @Override
+    //      public Message get() {
+    //        return new Message();
+    //      }
+    //    };
 
     Factory2 f2 = Message::new; // Message(String) 생성자를 가리킨다.
     //=> 즉 컴파일러는 Message 의 생성자 중에서 
     //   String을 파라미터 받는 생성자를 호출하는 Factory 구현체를 만들어 리턴한다.
+    // 
+    //    Factory2 f2 = new Factory2() {
+    //      @Override
+    //      public Message get(String name) {
+    //        return new Message(name);
+    //      }
+    //    };
 
     // Factory(String,int) 생성자가 없기 때문에 컴파일 오류!
     //    Factory3 f3 = Message::new; // 컴파일 오류!
