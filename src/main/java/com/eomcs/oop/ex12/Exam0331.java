@@ -3,7 +3,7 @@ package com.eomcs.oop.ex12;
 
 public class Exam0331 {
 
-  static interface Calculator {
+  interface Calculator {
     int compute(int a, int b);
   }
 

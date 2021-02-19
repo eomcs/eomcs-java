@@ -22,14 +22,14 @@ public class Exam0520 {
     }
   }
 
-  static interface Calculator {
+  interface Calculator {
     int compute(int a, int b);
   }
 
   public static void main(String[] args) {
     // 스태틱 메서드 레퍼런스로 Calculator 구현체를 만드는 방법
     //
-    // Calculator c1 = MyCalculator::plus;
+    //    Calculator c1 = MyCalculator::plus;
 
     // 위의 코드는 내부적으로 다음과 같다.
     //

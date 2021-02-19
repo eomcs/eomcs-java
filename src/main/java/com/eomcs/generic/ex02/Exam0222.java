@@ -55,7 +55,6 @@ public class Exam0222 {
     //    list.add(new B2());
     //    list.add(new C());
 
-
     Object obj1 = list.get(0);
 
     // 다음의 경우도 마찬가지로 get()의 리턴 타입이 무엇인지 결정할 수 없기 때문에 

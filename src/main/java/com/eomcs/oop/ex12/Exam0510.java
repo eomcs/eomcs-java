@@ -11,7 +11,7 @@ public class Exam0510 {
     public static int divide(int a, int b) {return a / b;}
   }
 
-  static interface Calculator {
+  interface Calculator {
     int compute(int x, int y);
   }
 

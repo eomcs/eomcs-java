@@ -22,27 +22,27 @@ public class Exam0530 {
     }
   }
 
-  static interface Calculator1 {
+  interface Calculator1 {
     double compute(int a, int b);
   }
 
-  static interface Calculator2 {
+  interface Calculator2 {
     float compute(int a, int b);
   }
 
-  static interface Calculator3 {
+  interface Calculator3 {
     short compute(int a, int b);
   }
 
-  static interface Calculator4 {
+  interface Calculator4 {
     void compute(int a, int b);
   }
 
-  static interface Calculator5 {
+  interface Calculator5 {
     Object compute(int a, int b);
   }
 
-  static interface Calculator6 {
+  interface Calculator6 {
     String compute(int a, int b);
   }
 

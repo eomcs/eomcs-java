@@ -20,6 +20,7 @@ public class Exam0220 {
    */
 
   public static void main(String[] args) {
+
     // m1(ArrayList)
     // => 제네릭의 타입을 지정하지 않으면, 
     //    다음과 같이 다양한 종류의 ArrayList를 파라미터로 넘길 수 있다.

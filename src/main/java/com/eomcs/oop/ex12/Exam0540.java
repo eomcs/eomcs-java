@@ -81,7 +81,7 @@ public class Exam0540 {
     //    };
 
     // 파라미터 타입: long, long ===> int, int
-    // Calculator3 c3 = MyCalculator::plus; // 컴파일 오류!
+    //    Calculator3 c3 = MyCalculator::plus; // 컴파일 오류!
     //
     //    Calculator3 c3 = new Calculator3() {
     //      @Override
