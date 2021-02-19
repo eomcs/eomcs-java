@@ -14,12 +14,12 @@ public class Exam0920 {
     names.add("김구");
     names.add("안중근");
 
-    class MyConsumer implements Consumer<String> {
+    class MyConsumer<T> implements Consumer<T> {
       @Override
-      public void accept(String item) {
+      public void accept(T item) {
         System.out.println(item);
       }
     }
-    names.forEach(new MyConsumer());
+    names.forEach(new MyConsumer<String>());
   }
 }
