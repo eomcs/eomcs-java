@@ -31,10 +31,10 @@ public class Exam0211 {
 
     //=> 단 이 경우에는 제네릭의 타입이 명확하게 선언되어 있지 않기 때문에
     //   제네릭 검사가 필요한 코드를 컴파일 할 수 없다.
-    //list2.add(new String()); // 컴파일 오류!
-    //list2.add(new Integer(100)); // 컴파일 오류!
-    //list2.add(new java.util.Date()); // 컴파일 오류!
-    //list2.add(new Member("홍길동", 20)); // 컴파일 오류!
+    //    list2.add(new String()); // 컴파일 오류!
+    //    list2.add(new Integer(100)); // 컴파일 오류!
+    //    list2.add(new java.util.Date()); // 컴파일 오류!
+    //    list2.add(new Member("홍길동", 20)); // 컴파일 오류!
   }
 }
 

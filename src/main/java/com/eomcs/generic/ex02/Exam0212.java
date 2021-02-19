@@ -20,8 +20,8 @@ public class Exam0212 {
     list1.add(new Integer(100));
     list1.add(new StringBuffer());
 
-    //list1 = new ArrayList<String>(); // 컴파일 오류!
-    //list1 = new ArrayList<Integer>(); // 컴파일 오류!
+    //    list1 = new ArrayList<String>(); // 컴파일 오류!
+    //    list1 = new ArrayList<Integer>(); // 컴파일 오류!
   }
 }
 

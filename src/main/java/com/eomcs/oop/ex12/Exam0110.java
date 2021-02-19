@@ -4,7 +4,7 @@ package com.eomcs.oop.ex12;
 public class Exam0110 {
 
   // 다음과 같이 추상 메서드가 한 개 있는 인터페이스를 "functional interface"라고 부른다.
-  // => 이런 경우에 람다 문법으로 사용할 수 있다.
+  // => 이런 경우에 람다 문법을 사용할 수 있다.
   // => 인터페이스는 static 을 붙이지 않아도 static 멤버가 사용할 수 있다.
   interface Player {
     void play();
@@ -22,7 +22,9 @@ public class Exam0110 {
     p1.play();
 
     // 람다 문법으로 인터페이스 구현하기
-    // => 메서드 한 개짜리 인터페이스를 구현한 익명 클래스를 좀 더 간단히 표현하기 위해 만든 문법이다.
+    // => 메서드 한 개짜리 인터페이스를 구현한 익명 클래스를 
+    //    좀 더 간단히 표현하기 위해 만든 문법이다.
+    // => 뻔한 코드 생략!
     Player p2 = () -> {
       System.out.println("람다");
     };

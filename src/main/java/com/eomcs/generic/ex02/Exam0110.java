@@ -18,9 +18,9 @@ public class Exam0110 {
 
     // ArrayList를 선언할 때 지정한 타입이 아닌 경우에는 컴파일 오류가 발생한다.
     // => 컬렉션에 잘못된 값이 들어갈 상황을 없앨 수 있다.
-    //list.add(new String("Hello"));
-    //list.add(new Integer(100));
-    //list.add(new HashSet());
+    //    list.add(new String("Hello"));
+    //    list.add(new Integer(100));
+    //    list.add(new HashSet());
 
     // 특징 2: 제네릭을 지정하면 그와 관련된 메서드의 타입 정보가 자동으로 바뀐다.
     // => 형변환하는 번거로움이 없다.

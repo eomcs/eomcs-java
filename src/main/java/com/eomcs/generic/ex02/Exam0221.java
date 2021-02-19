@@ -27,10 +27,10 @@ public class Exam0221 {
     m1(new ArrayList());
     m1(new ArrayList<Object>());
 
-    //m1(new ArrayList<A>());  // 컴파일 오류!
-    //m1(new ArrayList<B1>()); // 컴파일 오류!
-    //m1(new ArrayList<B2>()); // 컴파일 오류!
-    //m1(new ArrayList<C>());  // 컴파일 오류!
+    //    m1(new ArrayList<A>());  // 컴파일 오류!
+    //    m1(new ArrayList<B1>()); // 컴파일 오류!
+    //    m1(new ArrayList<B2>()); // 컴파일 오류!
+    //    m1(new ArrayList<C>());  // 컴파일 오류!
   }
 
   static void m1(ArrayList<Object> list) {
