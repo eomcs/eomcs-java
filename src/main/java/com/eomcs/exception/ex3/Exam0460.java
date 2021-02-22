@@ -18,6 +18,7 @@ public class Exam0460 {
   }
 
   public static void main(String[] args) {
+
     try {
       // try 블록에서 예외가 발생할 수 있는 메서드를 호출한다.
       m(1);

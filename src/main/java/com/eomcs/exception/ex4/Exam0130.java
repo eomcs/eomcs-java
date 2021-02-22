@@ -26,7 +26,7 @@ public class Exam0130 {
     m4();
   }
 
-  static void m4() {
+  static void m4() /*throws RuntimeException*/ {
     // RuntimeException을 상위 호출자에게 전달할 때는
     // 굳이 메서드 선언부에 지정하지 않아도 된다.
     throw new RuntimeException("m4()에서 예외 발생!");
@@ -40,7 +40,7 @@ public class Exam0130 {
       System.out.println(e.getMessage());
     }
 
-    // RuntimeException 계열의 예외를 던지를 메서드를 사용할 때는
+    // RuntimeException 계열의 예외를 던지는 메서드를 사용할 때는
     // 그 호출 경로에 있는 모든 메서드에 굳이 throws 문장을 선언할 필요가 없다.
     // 예외를 처리하고 싶은 곳에서
     // catch 블록으로 받아 처리하면 된다.

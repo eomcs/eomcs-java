@@ -11,11 +11,12 @@ public class Exam0120 {
   // 메서드 선언부에 발생되는 예외를 명시하는 것이 좋다.
   //
   // => 그런데 조금 아쉬움이 있는 점은
-  // read() 메서드를 사용하는 개발자가
-  // 이 메서드에서 RuntimeException을 던진다는 의미에 대해
-  // 직관적으로 이해하기는 어렵다.
-  // 그냥 RuntimeException을 던진다고 하니, 예외를 던진다는 것은 이해하지만,
-  // 그 예외가 의미하는 바가 무엇인지 즉시 알아보기 힘들다는 얘기다.
+  //    read() 메서드를 사용하는 개발자가
+  //    이 메서드에서 RuntimeException을 던진다는 의미에 대해
+  //    직관적으로 이해하기는 어렵다.
+  //    그냥 RuntimeException을 던진다고 하니, 
+  //    예외를 던진다는 것은 이해하지만,
+  //    그 예외가 의미하는 바가 무엇인지 즉시 알아보기 힘들다는 얘기다.
   //
   static Board read() throws RuntimeException {
     try (Scanner keyScan = new Scanner(System.in)) {
