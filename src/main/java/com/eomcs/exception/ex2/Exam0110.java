@@ -7,6 +7,8 @@ public class Exam0110 {
     int a = 100;
     int b = 200;
 
+    // 리턴 값으로 예외 상황을 알리는 것이 아니라,
+    // 예외 정보를 던지는 방식으로 호출자에게 알린다.
     try {
       // 예외를 던질 수도 있는 메서드를 호출할 때는 try 블록 안에서 호출한다.
       int result = Calculator3.compute(op, a, b);
