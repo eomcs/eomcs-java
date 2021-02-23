@@ -31,6 +31,7 @@ public class Exam0510 {
     // => 또는 getBytes() 호출할 때 인코딩할 문자집합을 지정하라.
     //      str.getBytes("UTF-8")
     //
+    // JVM에 문자를 입출력할 때 사용하는 기본 문자 집합이 무엇인지 알아 본다.
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
     byte[] bytes = str.getBytes(); 
     // 이클립스: UCS2 ==> UTF-8

@@ -15,11 +15,11 @@ public class Exam0130 {
         b = in.read();
         if (b == -1) // 파일의 끝에 도달하면 -1을 리턴한다.
           break;
-        System.out.print(Integer.toHexString(b) + " ");
+        System.out.printf("%02x ", b);
       }
      */
     while ((b = in.read()) != -1) {
-      System.out.print(Integer.toHexString(b) + " ");
+      System.out.printf("%02x ", b);
     }
 
     in.close();
