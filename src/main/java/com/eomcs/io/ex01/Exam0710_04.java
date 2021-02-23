@@ -19,10 +19,10 @@ public class Exam0710_04 {
     // settings.gradle
     // Hello.java
     // ...
-    
+
     File dir = new File(".");
     System.out.println(dir.getCanonicalPath());
-    
+
     printList(dir);
   }
 
@@ -34,7 +34,7 @@ public class Exam0710_04 {
     for (File file : files) {
       if (file.isDirectory() && !file.isHidden()) {
         System.out.printf("%s/\n", file.getName());
-      } else {
+      } else if (file.isFile()) {
         System.out.printf("%s\n", file.getName());
       }
     }

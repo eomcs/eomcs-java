@@ -19,10 +19,10 @@ public class Exam0710_08 {
     // settings.gradle
     // Hello.java
     // ...
-    
+
     File dir = new File(".");
     System.out.println(dir.getCanonicalPath());
-    
+
     printList(dir, 1);
   }
 
@@ -33,17 +33,17 @@ public class Exam0710_08 {
     // 리턴 받은 파일 배열에서 이름을 꺼내 출력한다.
     for (File file : files) {
       printIndent(level);
-      
+
       if (file.isDirectory() && !file.isHidden()) {
         System.out.printf("%s/\n", file.getName());
         printList(file, level + 1);
-      } else {
+      } else if (file.isFile()) {
         System.out.print("\\--");
         System.out.printf("%s\n", file.getName());
       }
     }
   }
-  
+
   static void printIndent(int level) {
     for (int i = 0; i < level; i++) {
       System.out.print("  ");

@@ -1,4 +1,4 @@
-// 활용 - 클래스 파일 이름을 출력할 때 패키지 이름을 포함하라.
+// 활용 - 클래스 파일 이름을 출력할 때 패키지 이름을 포함하라. (람다 문법 활용)
 package com.eomcs.io.ex01;
 
 import java.io.File;
@@ -19,6 +19,7 @@ public class Exam0732 {
 
   static void printClasses(File dir, String packageName) {
 
+    // 기존의 익명 클래스를 람다 문법으로 교체한다.
     File[] files = dir.listFiles(f -> f.isDirectory()
         || (f.isFile() && f.getName().endsWith(".class")));
 
@@ -31,10 +32,6 @@ public class Exam0732 {
         printClasses(file, packageName + file.getName());
 
       } else {
-        // path가 파일이면 패키지 이름과 파일 이름을 합쳐 출력하고 리턴한다.
-        // => 단 파일 이름에서 .class 확장자 명은 제외한다.
-        // => 파일 명이 Hello.class 이고 패키지명이 aaa.bbb 라면
-        //    출력할 이름은 aaa.bbb.Hello 이다.
         System.out.println(packageName + file.getName().replace(".class", ""));
       }
     }
