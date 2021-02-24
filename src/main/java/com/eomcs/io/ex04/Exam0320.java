@@ -19,12 +19,12 @@ public class Exam0320 {
     value += (long)in.read() << 24;
     value += (long)in.read() << 16;
     value += (long)in.read() << 8;     
-    value += (long)in.read();            
+    value += in.read();            
 
 
     in.close();
 
-    System.out.printf("%x\n", value);
+    System.out.printf("%016x\n", value);
   }
 }
 

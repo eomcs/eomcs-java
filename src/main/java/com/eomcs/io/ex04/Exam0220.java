@@ -20,7 +20,7 @@ public class Exam0220 {
 
     in.close();
 
-    System.out.printf("%x\n", value);
+    System.out.printf("%08x\n", value);
   }
 }
 

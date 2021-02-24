@@ -10,14 +10,14 @@ public class Exam0220 {
 
     long start = System.currentTimeMillis();
 
-    byte[] buf = new byte[1024];
+    byte[] buf = new byte[8192];
     int size = 0;
 
     for (int i = 0; i < 1000000; i++) {
       // 일단 바이트 버퍼에 저장한다.
       buf[size++] = 0x55;
 
-      if (size >= 1024) {
+      if (size >= buf.length) {
         out.write(buf); // 버퍼가 꽉 차면 파일로 내보낸다.
         size = 0; // 다시 버퍼를 쓸 수 있도록 size를 0으로 초기화 한다.
       }
