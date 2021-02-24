@@ -1,4 +1,4 @@
-// Character Stream - 문자 배열 읽기 
+// Character Stream - char[] ==> String 변환하기
 package com.eomcs.io.ex03;
 
 import java.io.FileReader;

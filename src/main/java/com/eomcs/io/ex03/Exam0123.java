@@ -31,7 +31,7 @@ public class Exam0123 {
     // 3) 읽기 도구를 닫는다.
     in.close();
 
-    System.out.printf("%x, %x, %x, %x\n", ch1, ch2, ch3, ch4);
+    System.out.printf("%04x, %04x, %04x, %04x\n", ch1, ch2, ch3, ch4);
   }
 }
 

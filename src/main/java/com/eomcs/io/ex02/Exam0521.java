@@ -17,8 +17,16 @@ public class Exam0521 {
 
     in.close();
 
+    // 읽은 바이트 수를 출력해보자.
+    System.out.printf("읽은 바이트 수: %d\n", count);
+
     // 읽은 바이트를 String 객체로 만들어보자.
-    String str = new String(buf, 0, count); // => 바이트가 어떤 문자 집합으로 인코딩 되었는지 알려주지 않는다면?
+    // - 바이트 배열에 저장된 문자 코드를 
+    //   JVM이 사용하는 문자 집합(UCS2=UTF16BE)의 코드 값으로 변환한다.
+    // - 바이트 배열에 들어 있는 코드 값이 어떤 문자 집합의 값인지 알려주지 않는다면,
+    //   JVM 환경 변수 file.encoding에 설정된 문자 집합으로 가정하고 변환을 수행한다.
+    String str = new String(buf, 0, count); 
+
     System.out.println(str);
 
     // 바이트가 어떤 문자 집합으로 인코딩 되었는지 알려주지 않는다면?

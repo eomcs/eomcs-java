@@ -41,7 +41,7 @@ public class Exam0220 {
 
     System.out.printf("%d\n", count);
     for (int i = 0; i < count; i++)
-      System.out.printf("%c(%x)\n", buf[i], (int)buf[i]);
+      System.out.printf("%c(%04x)\n", buf[i], (int)buf[i]);
 
     System.out.println();
 

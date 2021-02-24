@@ -9,7 +9,7 @@ public class Exam0522 {
     // JVM 환경 변수 'file.encoding' 값
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
 
-    FileInputStream in = new FileInputStream("sample/ms949.txt");
+    FileInputStream in = new FileInputStream("sample/ms949.txt"); // 41 42 b0 a1 b0 a2(AB가각)
 
     // 파일의 데이터를 한 번에 읽어보자.
     byte[] buf = new byte[1000];

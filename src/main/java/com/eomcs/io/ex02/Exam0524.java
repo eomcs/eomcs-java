@@ -9,7 +9,7 @@ public class Exam0524 {
     // JVM 환경 변수 'file.encoding' 값
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
 
-    FileInputStream in = new FileInputStream("sample/utf16be.txt");
+    FileInputStream in = new FileInputStream("sample/utf16be.txt"); // 0041 0042 ac00 ac01(AB가각)
 
     // 파일의 데이터를 한 번에 읽어보자.
     byte[] buf = new byte[1000];
