@@ -31,7 +31,7 @@ public class Exam0310 {
       b = in.read();
       if (b == -1)
         break;
-      System.out.printf("%x ", b);
+      System.out.printf("%02x ", b);
     }
     System.out.println();
 

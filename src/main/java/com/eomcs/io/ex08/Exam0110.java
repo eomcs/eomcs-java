@@ -7,7 +7,7 @@ public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
 
-    // 실제 파일에 출력을 수행하는 객체를 준비한다.
+    // 실제 파일을 읽는 일을 수행하는 객체를 준비한다.
     FileInputStream in = new FileInputStream("temp/jls11.pdf");
 
     // 기존의 FileInputStream에 버퍼 기능을 덧붙이기 위해서
