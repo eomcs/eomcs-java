@@ -1,7 +1,6 @@
 // 인스턴스 입출력 - 'transient' modifier
 package com.eomcs.io.ex11.e;
 
-import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
@@ -9,8 +8,7 @@ public class Exam0520 {
 
   public static void main(String[] args) throws Exception {
     FileInputStream fileIn = new FileInputStream("temp/score.data");
-    BufferedInputStream bufIn = new BufferedInputStream(fileIn);
-    ObjectInputStream in = new ObjectInputStream(bufIn);
+    ObjectInputStream in = new ObjectInputStream(fileIn);
 
     Score s = (Score) in.readObject();
     // 주의!

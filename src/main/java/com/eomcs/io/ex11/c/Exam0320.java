@@ -1,7 +1,6 @@
 // 인스턴스 입출력 - 직렬화 유효성 검사
 package com.eomcs.io.ex11.c;
 
-import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
@@ -9,8 +8,7 @@ public class Exam0320 {
 
   public static void main(String[] args) throws Exception {
     FileInputStream fileIn = new FileInputStream("temp/member3.data");
-    BufferedInputStream bufIn = new BufferedInputStream(fileIn);
-    ObjectInputStream in = new ObjectInputStream(bufIn);
+    ObjectInputStream in = new ObjectInputStream(fileIn);
 
 
     Member member = (Member) in.readObject();

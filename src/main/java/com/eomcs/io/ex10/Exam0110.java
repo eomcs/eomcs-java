@@ -26,7 +26,12 @@ public class Exam0110 {
 
     long endTime = System.currentTimeMillis();
 
-    out.close();
+    out.close(); 
+    // DataOutputStream 객체를 close()하면 
+    // 이 스트림 객체와 연결된 FileOutputStream에 대해서도 
+    // 내부적으로 close() 하기 때문에 
+    // FileOutputStream 객체를 따로 close() 할 필요가 없다.
+
 
     System.out.println("데이터 출력 완료!");
     System.out.println(endTime - startTime);

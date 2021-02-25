@@ -8,7 +8,7 @@ public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
 
-    FileInputStream fileIn = new FileInputStream("temp/members.data");
+    FileInputStream fileIn = new FileInputStream("temp/member.data");
     DataInputStream in = new DataInputStream(fileIn);
 
     Member member = new Member();

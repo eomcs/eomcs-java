@@ -17,6 +17,8 @@ public class Exam0231 {
 
     Score obj = new Score();
 
+    System.out.println(obj instanceof Cloneable);
+
     Score copy = obj.clone(); // 런타임(run-time) 오류!
     // Object에서 상속 받은 clone()을 호출하려면
     // 해당 클래스에 대해 복제 기능을 활성화해야 한다.

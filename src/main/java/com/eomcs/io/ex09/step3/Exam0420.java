@@ -21,7 +21,7 @@ public class Exam0420 {
 
     long start = System.currentTimeMillis();
 
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < 1000000; i++) {
       member.name = in.readUTF();
       member.age = in.readInt();
       member.gender = in.readBoolean();

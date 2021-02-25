@@ -22,7 +22,7 @@ public class Exam0410 {
 
     long start = System.currentTimeMillis();
 
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < 1000000; i++) {
       out.writeUTF(member.name);
       out.writeInt(member.age);
       out.writeBoolean(member.gender);

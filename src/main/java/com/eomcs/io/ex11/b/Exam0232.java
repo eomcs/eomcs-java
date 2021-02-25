@@ -22,6 +22,8 @@ public class Exam0232 {
     Score obj = new Score();
     obj.name = "홍길동";
 
+    System.out.println(obj instanceof Cloneable);
+
     Score copy = obj.clone();
 
     System.out.println(obj == copy); // OK! Score3 클래스는 복제를 허락했기 때문이다.
