@@ -7,8 +7,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Server0120 {
+public class Server0121 {
   public static void main(String[] args) {
+    // 소켓을 연결한 후에 꼭 클라이언트가 먼저 데이터를 보낼 필요는 없다.
+    // 서버가 먼저 데이터를 보내도 된다.
+    // 즉 읽고 쓰기 순서만 맞으면 누가 먼저 보내든지 상관없다.
     try (Scanner keyboard = new Scanner(System.in);
         ServerSocket serverSocket = new ServerSocket(8888)) {
 
@@ -21,18 +24,20 @@ public class Server0120 {
         System.out.println("대기열에서 클라이언트 정보를 꺼내 소켓을 생성하였음.");
         System.out.println("클라이언트와 통신할 입출력 스트림이 준비되었음.");
 
-        System.out.println("클라이언트가 보낸 100바이트를 기다리고 있음!");
-        // => 클라이언트가 100바이트를 보낼 때까지 리턴하지 않는다.
-        byte[] buf = new byte[100];
-        int size = in.read(buf);
-        System.out.printf("읽은 바이트 수: %d\n", size);
+        System.out.print("데이터를 보내기 전에 잠깐!");
+        keyboard.nextLine();
 
-        for (int i = 0; i < size; i++) {
-          if (i > 0 && (i % 20) == 0) {
-            System.out.println(); // 20바이트 출력한 후 줄 바꾼다.
-          }
-          System.out.printf("%x ", buf[i]);
+        byte[] buf = new byte[100];
+        for (int i = 0; i < buf.length; i++) {
+          buf[i] =  (byte) i;
         }
+
+        // 클라이언트에서 받은 바이트 개수 만큼 배열을 출력한다.
+        out.write(buf);
+        // out.flush();
+        // byte stream 을 사용할 때는 바로 출력한다.
+        // 따라서 flush()를 호출하지 않아도 된다.
+        System.out.println("클라인트에게 데이터를 보냈음.");
 
       }
       System.out.println("클라이언트와의 연결을 끊었음.");

@@ -30,7 +30,7 @@ public class Server0210 {
         keyboard.nextLine();
 
         out.println(str);
-        out.flush();
+        //        out.flush();
         // character stream 클래스의 경우
         // 출력 데이터를 내부 버퍼에 보관하고 있다가
         // flush()가 호출되면 비로서 출력을 수행한다.
@@ -38,9 +38,6 @@ public class Server0210 {
         // 주의!
         // => 단 close()를 호출하면 close() 내부에서 flush()를 실행한다.
         System.out.println("클라인트에게 데이터를 보냈음.");
-
-        // System.out.print(">");
-        // .nextLine();
 
       }
       System.out.println("클라이언트와의 연결을 끊었음.");

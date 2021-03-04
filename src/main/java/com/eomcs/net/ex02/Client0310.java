@@ -17,7 +17,7 @@ public class Client0310 {
     System.out.println("소켓 생성됨.");
 
     // 2) 연결할 서버의 주소를 준비한다.
-    SocketAddress socketAddress = new InetSocketAddress("localhost", 8888);
+    SocketAddress socketAddress = new InetSocketAddress("192.168.0.61", 8888);
 
     // 3) 서버와의 연결을 시도한다.
     // => 타임아웃으로 지정된 시간 안에 서버와 연결되지 않으면 즉시 예외가 발생한다.

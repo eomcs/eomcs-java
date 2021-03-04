@@ -34,18 +34,6 @@ public class Client0120 {
       // 따라서 flush()를 호출하지 않아도 된다.
       System.out.println("서버에 데이터를 보냈음!");
 
-      // 서버에서 바이트 배열을 읽는다.
-      byte[] buf = new byte[100];
-      int size = in.read(buf);
-      System.out.printf("바이트 배열의 크기: %d\n", size);
-
-      for (int i = 0; i < size; i++) {
-        if (i > 0 && (i % 20) == 0) {
-          System.out.println(); // 20바이트 출력한 후 줄 바꾼다.
-        }
-        System.out.printf("%x ", buf[i]);
-      }
-
     } catch (Exception e) {
       e.printStackTrace();
     }

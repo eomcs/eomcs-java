@@ -15,7 +15,7 @@ public class Sender4 {
     FileInputStream fileIn = new FileInputStream(file);
 
     System.out.println("서버에 연결 중...");
-    Socket socket = new Socket("192.168.1.15", 8888);
+    Socket socket = new Socket("192.168.0.61", 8888);
     System.out.println("서버에 연결 완료!");
 
     DataOutputStream out = new DataOutputStream(socket.getOutputStream());

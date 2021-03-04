@@ -1,4 +1,4 @@
-// 클라이언트와 입출력 테스트 - byte stream
+// 클라이언트와 입출력 테스트 - byte stream + try with resource 문법 사용
 package com.eomcs.net.ex03;
 
 import java.io.InputStream;
