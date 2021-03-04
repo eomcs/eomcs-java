@@ -12,12 +12,20 @@ public class Receiver {
     System.out.println("서버 실행!");
 
     // 1) 다른 컴퓨터의 연결 요청을 기다린다.
+    // - new ServerSocket(포트번호)
+    // - 포트번호: 
+    //   - 1024 ~ 49151 사이의 값 사용한다.
+    //   - 같은 컴퓨터에서 이미 사용중인 포트 번호는 지정할 수 없다.
+    //   - 예) Oracle DBMS(1521), MySQL DBMS(3306) 등
     ServerSocket serverSocket = new ServerSocket(8888);
 
-    // 2) 연결하기 위해 대기하고 있는 컴퓨터 중에서 한 개를 연결 허락한다.
+    // 2) 연결하기 위해 대기하고 있는 클라이언트 중에서 한 개를 연결 허락한다.
+    // - 클라이언트가 서버에 접속을 요청하면 그 정보를 "대기열"이라고 불리는 목록으로 관리한다.
+    // - accept()를 호출하면 대기열에서 순서대로 꺼내 해당 클라이언트와 연결된 소켓을 만든다.
     Socket socket = serverSocket.accept();
 
     // 3) 소켓 객체를 통해 읽고 쓸 수 있도록 입출력 스트림을 얻는다.
+    // - 연결된 클라이언트로 데이터를 보내고 받으려면 입ㅊㅜㄹ
     PrintStream out = new PrintStream(socket.getOutputStream());
     Scanner in = new Scanner(socket.getInputStream());
 
