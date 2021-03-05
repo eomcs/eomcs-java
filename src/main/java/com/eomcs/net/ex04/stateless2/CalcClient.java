@@ -37,8 +37,7 @@ public class CalcClient {
         clientId = in.readLong();
 
         // => 서버에서 보낸 결과를 읽는다.
-        int result = in.readInt();
-        System.out.printf("계산 결과: %d\n", result);
+        System.out.println(in.readUTF());
 
       } catch (Exception e) {
         System.out.println("서버와 통신 중 오류 발생!");

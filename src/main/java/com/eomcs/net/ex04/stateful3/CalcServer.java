@@ -87,6 +87,9 @@ public class CalcServer {
             break;
           case "quit":
             break loop;
+          default:
+            out.println("해당 연산을 지원하지 않습니다.");
+            continue;
         }
 
         out.printf("계산 결과: %d\n", result);
