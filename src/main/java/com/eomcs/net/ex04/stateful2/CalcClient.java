@@ -17,7 +17,7 @@ public class CalcClient {
       System.out.print("연산자? ");
       out.writeUTF(keyScan.nextLine());
 
-      System.out.print("값1? ");
+      System.out.print("값? ");
       out.writeInt(Integer.parseInt(keyScan.nextLine()));
 
       String str = in.nextLine();

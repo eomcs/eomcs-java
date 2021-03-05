@@ -13,8 +13,7 @@ public class CalcServer {
     ServerSocket ss = new ServerSocket(8888);
 
     while (true) {
-      Socket socket = ss.accept();
-      try {
+      try (Socket socket = ss.accept()) {
         processRequest(socket);
       } catch (Exception e) {
         System.out.println("클라이언트 요청 처리 중 오류 발생!");
@@ -25,8 +24,7 @@ public class CalcServer {
   }
 
   static void processRequest(Socket socket) throws Exception {
-    try (Socket socket2 = socket;
-        DataInputStream in = new DataInputStream(socket.getInputStream());
+    try (DataInputStream in = new DataInputStream(socket.getInputStream());
         PrintStream out = new PrintStream(socket.getOutputStream());) {
 
       loop: while (true) {
@@ -50,11 +48,14 @@ public class CalcServer {
             break;
           case "quit":
             break loop;
+          default:
+            out.println("해당 연산을 지원하지 않습니다.");
+            continue;
         }
 
         out.printf("%d %s %d = %d\n", a, op, b, result);
       }
-    out.println("Goodbye!");
+      out.println("Goodbye!");
     }
   }
 }
