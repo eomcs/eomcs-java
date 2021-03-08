@@ -36,10 +36,18 @@ public class RequestProcessor {
       int result = 0;
 
       switch (op) {
-        case "+": result = a + b; Thread.sleep(10000); break;
+        case "+": result = a + b; break;
         case "-": result = a - b; break;
         case "*": result = a * b; break;
-        case "/": result = a / b; break;
+        case "/": 
+          result = a / b; 
+          // Stateless 방식의 통신이라 하더라도 결국 순차 처리 방식이기 때문에 
+          // 현재 클라이언트 작업 처리가 늦어지면 
+          // 다음 클라이언트는 무조건 기다려야 한다.
+          // 이것을 보여주기 위해 다음과 같이 일부러 / 연산에 대해 
+          // 시간을 지연시킬 것이다.
+          Thread.sleep(10000);
+          break;
         default:
           return String.format("%s 연산자를 지원하지 않습니다.", op);
       }
