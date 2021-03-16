@@ -1,17 +1,28 @@
-// 멀티 스레딩(비동기 프로그래밍)의 문제점 - 사례 1 
+// 멀티 스레딩(비동기 프로그래밍)의 문제점 - 사례 1의 문제 해결
 package com.eomcs.concurrent.ex5;
 
-public class Exam0110 {
+public class Exam0120 {
 
   static class MyList {
     int[] values = new int[100];
     int size;
 
-    public void add(int value) {
-      // 여러 스레드가 동시에 이 메서드에 진입하면 
-      // 배열의 값을 덮어쓰는 문제가 발생한다.
-      // 이렇게 여러 스레드가 동시에 접근했을 때 문제가 발생하는 코드 부분을
-      // "Critical Section" 또는 "Critical Region" 이라 부른다.
+    // Critical Section에 오직 한 개의 스레드만 접근하게 하면 
+    // 비동기로 인한 문제가 발생하지 않는다.
+    // => 즉 동기화로 처리한다.
+    // => 동기화? 
+    //    - 여러 스레드가 동시에 실행하는 것이 아니고
+    //      여러 스레드가 순차적으로 접근하는 것.
+    //    - 단 순차적으로 실행한다는 것은 동시 실행의 이점을 버리는 것이기 때문에
+    //      스레드를 사용하기 전의 상태와 같다.
+    //      기존의 실행 방식 처럼 실행 시간이 많이 걸린다.
+    // 
+    // 다음 메서드를 동기화 처리해 보자.
+    // => synchronized
+    //    - 이 키워드가 붙은 블록은 오직 한 번에 한 개의 스레드만이 접근할 수 있다.
+    //    - 먼저 접근한 스레드가 나가야만 다음 스레드가 진입할 수 있다.
+    //
+    synchronized public void add(int value) {
       if (size >= values.length) {
         delay();
         return;
