@@ -10,7 +10,7 @@ public class Exam0140 {
     class ValueBox {
       int count;
 
-      synchronized public void setCount(int count) {
+      synchronized  public void setCount(int count) {
         this.count = count;
 
         // 이 객체의 사용을 기다리는 스레드에게 작업을 시작할 것을 알린다.
