@@ -8,7 +8,7 @@ public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
 
-    // JDBC 드라이버 로딩 방법2: Driver 구현 객체 생성과 자동 등록
+    // JDBC 드라이버 등록 방법2: Driver 구현 객체 생성과 자동 등록
     // => Driver 객체를 생성하면 자동으로 DriverManager에 등록된다.
     // => 어떻게?
     // Driver 구현체가 로딩될 때 static 블록에서 인스턴스를 만들어 등록하기 때문이다.

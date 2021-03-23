@@ -7,9 +7,9 @@ public class Exam0140 {
 
   public static void main(String[] args) {
 
-    // JDBC 드라이버 로딩 방법4: Driver 구현체 자동 로딩
+    // JDBC 드라이버 등록 방법4: Driver 구현체 자동 로딩
     // => DriverManager를 사용할 때,
-    // DriverManager 는 다음 절차에 따라 Driver 구현체를 찾아서 자동으로 로딩한다.
+    //    DriverManager 는 다음 절차에 따라 Driver 구현체를 찾아서 자동으로 로딩한다.
     //
     // 1) jdbc.drivers 시스템 프로퍼티에 지정된 구현체를 찾아 로딩한다.
     // => jdbc.drivers=foo.bah.Driver:wombat.sql.Driver:bad.taste.ourDriver
@@ -18,6 +18,7 @@ public class Exam0140 {
     // => 시스템 프로퍼티를 꺼내는 방법? 다음과 같다.
     System.out.printf("java.home=%s\n", System.getProperty("java.home"));
     System.out.printf("user.home=%s\n", System.getProperty("user.home"));
+    System.out.printf("jdbc.drivers=%s\n", System.getProperty("jdbc.drivers"));
 
     // => 시스템 프로퍼티 설정 방법
     // 예1) JVM을 실행할 때 JVM 옵션을 지정하는 방법
@@ -26,7 +27,7 @@ public class Exam0140 {
     // 예2) 프로그램 코드에서 설정하는 방법
     // - System.setProperty("jdbc.drivers", "com.eomcs.jdbc.ex1.MyDriver");
     //
-    System.setProperty("jdbc.drivers", "org.mariadb.jdbc.Driver:com.eomcs.jdbc.ex1.MyDriver");
+    System.setProperty("jdbc.drivers", "com.eomcs.jdbc.ex1.MyDriver:org.mariadb.jdbc.Driver");
     System.out.printf("jdbc.drivers=%s\n", System.getProperty("jdbc.drivers"));
 
     try {

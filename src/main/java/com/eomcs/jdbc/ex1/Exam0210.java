@@ -10,6 +10,11 @@ public class Exam0210 {
     java.sql.Connection con = null;
 
     try {
+      // JVM에서 jdbc driver 파일(.jar)을 뒤져서 java.sql.Driver 를 구현한 클래스를 
+      // 자동으로 로딩하기 때문에,
+      // 다음과 같이 명시적으로 로딩할 필요가 없다.
+      // Class.forName("org.mariadb.jdbc.Driver");
+
       // DBMS에 연결하기
       // => DriverManager에게 DBMS와의 연결을 요청한다. 어느 서버에 접속할 것인지 정보를 제공해야 한다.
       // jdbc url : DBMS 서버 정보. 예) jdbc:DBMS://서버주소:포트/데이터베이스명
