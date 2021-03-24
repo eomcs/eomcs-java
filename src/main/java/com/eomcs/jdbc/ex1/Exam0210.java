@@ -23,7 +23,7 @@ public class Exam0210 {
       // password : DBMS 사용자 암호
       //
       con = DriverManager.getConnection( //
-          "jdbc:mariadb://localhost:3306/studydb", // jdbcURL
+          "jdbc:mariadb://localhost:3306/studydb2", // jdbcURL
           "study", // username
           "1111" // password
           );
