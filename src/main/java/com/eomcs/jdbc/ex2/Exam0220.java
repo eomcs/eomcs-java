@@ -92,8 +92,8 @@ public class Exam0220 {
       // - 미리 SQL 문을 작성한 다음 DBMS 프로토콜에 맞게 파싱해 놓은 후,
       //   executeUpdate() 호출한다.
       // - 따라서 executeUpdate()를 호출할 때 마다 SQL 문법을
-      //   분석하기 않으므로 반복
-      //   실행하는 경우, Statement 보다 빠르다.
+      //   분석하기 않으므로 반복해서 실행하는 경우, 
+      //   Statement 보다 실행 속도가 빠르다.
       //
     }
   }
