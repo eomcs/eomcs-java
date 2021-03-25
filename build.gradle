@@ -45,6 +45,14 @@ eclipse {
 }
 */
 
+/* eclipse 프로젝트 이름을 설정하기
+eclipse {
+    project {
+        name = "bitcamp-project-client"
+    }
+}
+*/
+
 // 프로젝트에서 사용할 자바 라이브러리를 다운로드 받을 때 접속할 서버
 repositories {
     jcenter()  // => https://jcenter.bintray.com/ 서버를 가리킨다.
@@ -82,7 +90,7 @@ dependencies {
   implementation 'org.mybatis:mybatis-spring:2.0.6'
 
   // MariaDB JDBC 드라이버
-  implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.0'
+  implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
 
 
 
