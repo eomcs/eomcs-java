@@ -18,7 +18,9 @@ public class Exam0650 {
 
     try (
         obj2 = new B(); // 컴파일 오류!
-        // 변수 선언은 반드시 괄호 안에 해야 한다.
+        // 이유: 변수 선언은 반드시 괄호 안에 해야 한다.
+
+        B obj3 = new B(); // OK
         ) {
       System.out.println("try 블록 실행...");
     }
