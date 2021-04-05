@@ -1,4 +1,4 @@
-// SQL 태그 사용법 (사용 전)
+// <sql> 태그 사용법 (사용 전)
 package com.eomcs.mybatis.ex04.a;
 
 import java.util.List;
