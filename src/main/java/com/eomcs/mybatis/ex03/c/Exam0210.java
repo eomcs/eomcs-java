@@ -13,9 +13,9 @@ public class Exam0210 {
         "com/eomcs/mybatis/ex03/c/mybatis-config.xml")).openSession();
 
     Board board = new Board();
-    board.setNo(1);
-    board.setTitle("제목 변경!!!");
-    board.setContent("내용 변경!!!");
+    board.setNo(1); // #{no} 
+    board.setTitle("제목 변경!!!"); // #{title}
+    board.setContent("내용 변경!!!"); // #{content}
 
     // update 문을 실행할 때는 update() 메서드를 호출한다.
     // - 리턴 값은 executeUpdate()의 실행 결과이다.

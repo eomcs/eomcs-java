@@ -1,4 +1,4 @@
-// SqlSession 사용법 - 결과 타입이 Map일 때
+// SqlSession.selectList() 사용법 - 결과 레코드를 Map 객체로 받기
 package com.eomcs.mybatis.ex02.e;
 
 import java.util.List;

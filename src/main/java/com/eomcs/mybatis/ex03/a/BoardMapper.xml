@@ -29,7 +29,7 @@
        ...
    -->
   <!-- selectList(sqlid, int) --> 
-  <select id="selectBoard1" resultMap="BoardMap" parameterType="int">
+  <select id="select1" resultMap="BoardMap" parameterType="int">
     select 
       board_id, 
       title,    
@@ -41,7 +41,7 @@
   </select>
   
   <!-- selectList(sqlid, string) --> 
-  <select id="selectBoard2" resultMap="BoardMap" parameterType="string">
+  <select id="select2" resultMap="BoardMap" parameterType="string">
     select 
       board_id, 
       title,    
@@ -53,7 +53,7 @@
   </select>
   
   <!-- selectList(sqlid, int) --> 
-  <select id="selectBoard3" resultMap="BoardMap" parameterType="int">
+  <select id="select3" resultMap="BoardMap" parameterType="int">
     select 
       board_id, 
       title,    
@@ -65,7 +65,7 @@
   </select>
   
   <!-- selectList(sqlid, int) --> 
-  <select id="selectBoard4" resultMap="BoardMap" parameterType="int">
+  <select id="select4" resultMap="BoardMap" parameterType="int">
   <![CDATA[
     select 
       board_id, 

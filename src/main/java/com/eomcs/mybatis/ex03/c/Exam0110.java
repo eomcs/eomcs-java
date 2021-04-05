@@ -13,12 +13,13 @@ public class Exam0110 {
         "com/eomcs/mybatis/ex03/c/mybatis-config.xml")).openSession();
 
     Board board = new Board();
-    board.setTitle("제목입니다111");
-    board.setContent("내용입니다111.");
+    board.setTitle("제목입니다111"); // #{title} 을 사용하여 SQL 문에 값을 삽입한다.
+    board.setContent("내용입니다111."); // #{content} 를 사용하여 SQL 문에 값을 삽입한다.
 
     // insert 문을 실행할 때는 insert() 메서드를 호출한다.
     // - 리턴 값은 executeUpdate()의 실행 결과이다.
     // - 즉 insert 된 데이터의 개수이다.
+    // - update(), delete()을 사용해도 결과는 같다.
     //
     // 예) 게시글을 입력한다.
     //

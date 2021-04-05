@@ -1,4 +1,4 @@
-// #{} 과 ${} 차이점 => ${} 문법의 쓰임새 II
+// ${} 문법 : 문자열 치환(string substitution) 문법의 활용 II
 package com.eomcs.mybatis.ex03.f;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class Exam0130 {
     // 정렬 방식을 파라미터로 넘기기
     // => ${} 문법은 파라미터 값을 SQL 문에 그대로 삽입한다.
     //
-    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard3", 
+    List<Board> boards = sqlSession.selectList("BoardMapper.select3", 
         "created_date desc, title asc");
 
     for (Board b : boards) {

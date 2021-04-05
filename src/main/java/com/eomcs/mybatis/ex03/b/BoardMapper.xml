@@ -16,7 +16,7 @@
     => Map에서 값을 꺼낼 때는 값을 저장할 때 사용한 key를 이용한다.
     => #{key}
   -->
-  <select id="selectBoard1" resultMap="BoardMap" parameterType="map">
+  <select id="select1" resultMap="BoardMap" parameterType="map">
   <![CDATA[
     select 
       board_id, 

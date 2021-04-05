@@ -22,7 +22,7 @@ public class Exam0130 {
     //   > => &gt;
     // 
     // 예) 특정 번호 미만의 게시글을 가져온다.
-    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard3", 10);
+    List<Board> boards = sqlSession.selectList("BoardMapper.select3", 3);
 
     for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n",

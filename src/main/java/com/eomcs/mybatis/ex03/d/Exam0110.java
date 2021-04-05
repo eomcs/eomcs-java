@@ -1,4 +1,4 @@
-// auto commit - openSession(true)
+// 트랜잭션 다루기 - openSession(true) : 자동 커밋 SqlSession 객체 얻기
 package com.eomcs.mybatis.ex03.d;
 
 import org.apache.ibatis.io.Resources;

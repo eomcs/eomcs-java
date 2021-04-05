@@ -1,4 +1,4 @@
-// auto commit - openSession() 또는 openSession(false)
+// 트랜잭션 다루기 - openSession() : 수동 커밋
 package com.eomcs.mybatis.ex03.d;
 
 import org.apache.ibatis.io.Resources;

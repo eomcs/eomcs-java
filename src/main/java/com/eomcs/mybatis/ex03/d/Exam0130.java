@@ -1,4 +1,4 @@
-// auto commit - commit()
+// 트랜잭션 다루기 - commit() : 데이터 변경 결과를 실제 테이블에 반영하기
 package com.eomcs.mybatis.ex03.d;
 
 import org.apache.ibatis.io.Resources;

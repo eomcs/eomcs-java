@@ -13,8 +13,8 @@ public class Exam0120 {
         "com/eomcs/mybatis/ex03/c/mybatis-config.xml")).openSession();
 
     HashMap<String,Object> params = new HashMap<>();
-    params.put("title", "제목입니다222");
-    params.put("content", "내용입니다222.");
+    params.put("title", "제목입니다222"); // #{title} 을 사용하여 SQL 문에 값을 삽입한다.
+    params.put("content", "내용입니다222."); // #{content} 를 사용하여 SQL 문에 값을 삽입한다.
 
     // 예) 게시글을 입력한다.
     //

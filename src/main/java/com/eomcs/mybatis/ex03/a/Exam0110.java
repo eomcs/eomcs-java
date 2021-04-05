@@ -1,4 +1,4 @@
-// SQL 문에 삽입할 파라미터 전달하기 - 한 개의 값(int) 넘기기
+// SQL 문에 삽입할 파라미터 전달하기 - 한 개의 int 값 넘기기
 package com.eomcs.mybatis.ex03.a;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class Exam0110 {
     // 도메인 객체나 Map 객체에 담아 전달하라!
 
     // 예) 특정 번호의 게시글을 가져온다.
-    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard1", 5);
+    List<Board> boards = sqlSession.selectList("BoardMapper.select1", 5); // auto-boxing 수행
 
     for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n",

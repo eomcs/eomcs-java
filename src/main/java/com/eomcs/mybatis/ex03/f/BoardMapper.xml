@@ -16,7 +16,7 @@
      #{} 을 사용하여 값이 아닌 SQL 코드를 삽입할 수 있는가?
      => 없다! 오류 발생!!!
    -->
-  <select id="selectBoard1" resultMap="BoardMap" parameterType="string">
+  <select id="select1" resultMap="BoardMap" parameterType="string">
     select 
       board_id,
       title,    
@@ -28,9 +28,9 @@
   </select>
   
   <!-- 
-     ${} 는 SQL 코드를 삽입할 수 있다.
+     문자열 치환 문법(${})으로 SQL 코드를 삽입하기
    -->
-  <select id="selectBoard2" resultMap="BoardMap" parameterType="string">
+  <select id="select2" resultMap="BoardMap" parameterType="string">
     select 
       board_id,
       title,    
@@ -44,7 +44,7 @@
   <!-- 
      ${} 는 SQL 코드를 삽입할 수 있다.
    -->
-  <select id="selectBoard3" resultMap="BoardMap" parameterType="string">
+  <select id="select3" resultMap="BoardMap" parameterType="string">
     select 
       board_id,
       title,    
@@ -58,7 +58,21 @@
   <!-- 
      ${} 는 SQL 코드를 삽입할 수 있다.
    -->
-  <select id="countRecords" resultType="int" parameterType="string">
+  <select id="select4" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title,    
+      contents,
+      created_date, 
+      view_count  
+    from x_board
+    order by ${columnName} ${sortType}
+  </select>
+  
+  <!-- 
+     ${} 는 SQL 코드를 삽입할 수 있다.
+   -->
+  <select id="count" resultType="int" parameterType="string">
     select 
       count(*)  
     from ${tableName}

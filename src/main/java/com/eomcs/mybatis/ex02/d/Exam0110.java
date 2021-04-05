@@ -1,4 +1,4 @@
-// SqlSession 사용법 - select 문 실행하기 : 자바 객체의 프로퍼티 이름과 컬럼명을 일치시키기 II
+// SqlSession.selectList() 사용법 - <resultMap>을 통해 자바 객체의 프로퍼티 이름과 일치시키기
 package com.eomcs.mybatis.ex02.d;
 
 import java.util.List;
@@ -29,5 +29,4 @@ public class Exam0110 {
   }
 
 }
-
 

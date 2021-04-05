@@ -24,10 +24,10 @@ public class Exam0110 {
     // 예) 특정 범위의 번호에 해당하는 게시글을 가져온다.
     //
     Map<String,Object> params = new HashMap<>();
-    params.put("startNo", 5);
-    params.put("endNo", 12);
+    params.put("startNo", 2);
+    params.put("endNo", 4);
 
-    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard1", params);
+    List<Board> boards = sqlSession.selectList("BoardMapper.select1", params);
 
     for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n",

@@ -1,4 +1,4 @@
-// 트랜잭션 다루기 - 트랜잭션 적용 후 => 수동 commit 상태일 때
+// 트랜잭션 다루기 - 수동 커밋의 활용
 package com.eomcs.mybatis.ex03.e;
 
 import java.util.HashMap;

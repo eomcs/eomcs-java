@@ -1,9 +1,12 @@
-// #{} 과 ${} 차이점 => ${} 문법의 쓰임새 III
+// ${} 문법 : 문자열 치환(string substitution) 문법의 활용 IV
 package com.eomcs.mybatis.ex03.f;
 
+import java.util.HashMap;
+import java.util.List;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.eomcs.mybatis.vo.Board;
 
 public class Exam0140 {
 
@@ -11,12 +14,22 @@ public class Exam0140 {
     SqlSession sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(
         "com/eomcs/mybatis/ex03/f/mybatis-config.xml")).openSession();
 
-    // 정렬 방식을 파라미터로 넘기기
-    // => ${} 문법은 파라미터 값을 SQL 문에 그대로 삽입한다.
+    // 컬럼 이름과 정렬 타입을 파라미터로 넘기기
     //
-    int count = sqlSession.selectOne("BoardMapper.countRecords", "x_board");
+    HashMap<String,Object> params = new HashMap<>();
+    params.put("columnName", "title");
+    params.put("sortType", "asc");
 
-    System.out.println(count);
+    List<Board> boards = sqlSession.selectList("BoardMapper.select4", params);
+
+    for (Board b : boards) {
+      System.out.printf("%d,%s,%s,%s,%d\n",
+          b.getNo(),
+          b.getTitle(),
+          b.getContent(),
+          b.getRegisteredDate(),
+          b.getViewCount());
+    }
 
     sqlSession.close();
   }

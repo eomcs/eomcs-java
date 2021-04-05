@@ -1,4 +1,4 @@
-// SqlSession 사용법 - select 문 실행하기 : 목록 출력 => selectList()
+// SqlSession.selectList() 사용법 - select 문 실행하기
 package com.eomcs.mybatis.ex02.b;
 
 import java.util.List;
