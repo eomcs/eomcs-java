@@ -9,15 +9,26 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
-    // mybatis 설정 파일에서 fully-qualified class name 을 사용하는 대신에
-    // 짧은 이름으로 대체할 수 있다.
+
+    // 도메인 클래스의 별명을 부여하기
+    // - SQL 매퍼 파일에서 데이터를 리턴하거나 파라미터로 데이터를 받을 때
+    //   클래스의 전체 이름(패키지 이름을 포함)을 지정해야 한다.
+    // - 패키지 이름이 길 경우 사용하기가 번거롭다.
+    // - mybatis 설정 파일에서 fully-qualified class name 을 사용하는 대신에
+    //   짧은 이름으로 대체할 수 있다.
     //
+    // 1) mybatis-config.xml 변경
+    //    - 다음과 같이 클래스 전체 이름에 대해 별명을 지정한다.
+    // 
     // <typeAliases>
     //   <typeAlias type="com.eomcs.mybatis.ex01.d.Board" alias="board"/>
     // </typeAliases>
     //
-    // 그러면 이 별명을 어디에 사용하는가?
-    // => SQL 맵퍼 파일에서 클래스를 지정할 때 사용한다.
+    // 2) BoardMapper.xml 변경
+    //    - 결과를 담을 클래스를 지정할 때 클래스 전체 이름을 사용하는 대신에 
+    //      mybatis 설정 파일에 등록된 별명을 사용할 수 있다.
+    //    - 다음과 같이 SQL 맵퍼 파일에서 클래스를 지정할 때 별명을 사용한다.
+    // 
     // <select id="selectBoard" resultType="board">
     //   select
     //       board_id as no,

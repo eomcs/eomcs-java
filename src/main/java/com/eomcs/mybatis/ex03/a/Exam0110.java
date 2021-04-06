@@ -13,10 +13,14 @@ public class Exam0110 {
     SqlSession sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(
         "com/eomcs/mybatis/ex03/a/mybatis-config.xml")).openSession();
 
-    // SQL을 실행할 때 파라미터 값을 전달하려면
-    // 두 번째 파라미터로 전달해야 한다.
-    // 여러 개의 값을 전달해야 한다면,
-    // 도메인 객체나 Map 객체에 담아 전달하라!
+    // in-parameter에 int 값 넘기기
+    // => SQL을 실행할 때 파라미터 값을 전달하려면
+    //   두 번째 파라미터로 전달해야 한다.
+    //      예) selectOne(sql, in-parameter 값)
+    // => in-parameter 값의 타입은 Object이다.
+    //    자바 원시 타입의 값을 지정하면 자동으로 오토 박싱되어 mybatis에 전달된다.
+    // => 여러 개의 값을 전달해야 한다면,
+    //    도메인 객체나 Map 객체에 담아 전달하라!
 
     // 예) 특정 번호의 게시글을 가져온다.
     List<Board> boards = sqlSession.selectList("BoardMapper.select1", 5); // auto-boxing 수행

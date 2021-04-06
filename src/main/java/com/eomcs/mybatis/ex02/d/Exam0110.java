@@ -15,7 +15,12 @@ public class Exam0110 {
 
     List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard");
 
-    // 컬러몀과 자바 객체의 프로퍼티명이 일치한다면 다음과 같이 정상적으로 데이터를 꺼내올 수 있다.
+    // select 문에서 컬럼 값을 자바 인스턴스의 프로퍼티와 맞추기 위해 
+    // 별명을 부여하는 방식은 번거롭다.
+    // 특히 컬럼 개수가 많은 경우 더더욱 번거롭다.
+    // 이를 해결하기 위해 mybatis는 컬럼의 이름과 프로퍼티 이름을 연결해주는 문법을 제공한다.
+    //    <resultMap></resultMap>
+    // 
     for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n",
           b.getNo(),

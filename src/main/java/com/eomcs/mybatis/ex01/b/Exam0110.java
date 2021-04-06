@@ -9,6 +9,11 @@ public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
 
+    // 1) jdbc.properties 파일을 추가한다.
+    //    => 이 파일에 DB 접속 정보를 저장한다.
+    // 2) mybatis-config.xml 파일을 변경한다.
+    //    => DB 접속 정보를 설정할 때 jdbc.properties 파일의 데이터를 사용한다.
+    //
     SqlSession sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(
         "com/eomcs/mybatis/ex01/b/mybatis-config.xml")).openSession();
 
