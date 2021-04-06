@@ -1,4 +1,4 @@
-package com.eomcs.mybatis.ex15x;
+package com.eomcs.mybatis.ex13;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

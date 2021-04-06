@@ -1,4 +1,4 @@
-package com.eomcs.mybatis.ex14x;
+package com.eomcs.mybatis.ex12;
 
 import java.io.Serializable;
 import java.sql.Date;

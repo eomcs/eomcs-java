@@ -1,4 +1,4 @@
-package com.eomcs.mybatis.ex16x;
+package com.eomcs.mybatis.ex13;
 
 import java.util.List;
 
