@@ -26,10 +26,15 @@ public class Exam0110 {
 
     List<Board> boards = null;
 
-    // 검색 항목 선택에 따라 SQL 문이 달라지기 때문에 
-    // 다음과 같이 where 절의 일부분만 다른,
-    // SQL문을 여러 개 작성해야 한다.
-    // 그리고 조건에 따라 실행할 SQL 문을 구분해서 호출해야 한다.
+    // dynamic sql?
+    // => 조건에 따라 SQL이 변경되는 것.
+    // => mybatis는 이를 위해 조건문, 반복문 등을 다룰 수 있도록 특별한 태그를 제공한다.
+    //
+    // dynamic sql 사용 전:
+    // - 검색 항목 선택에 따라 SQL 문이 달라지기 때문에 
+    //   다음과 같이 where 절의 일부분만 다른,
+    //   SQL문을 여러 개 작성해야 한다.
+    // - 그리고 조건에 따라 실행할 SQL 문을 구분해서 호출해야 한다.
     // 
     if (menuNo == 1) {
       boards = sqlSession.selectList("BoardMapper.select1", keyword);

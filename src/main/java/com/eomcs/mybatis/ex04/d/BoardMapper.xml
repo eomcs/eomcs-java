@@ -5,6 +5,10 @@
 
 <mapper namespace="BoardMapper">
   
+  <!-- udpate를 실행할 때 
+       값을 변경하는 컬럼에 대해서만 update를 수행하게 할 수 있다. 
+       <set>과 <if> 태그를 조합하면 된다.
+  -->
   <update id="update1" parameterType="board">
     update x_board set
       <if test="title != null">

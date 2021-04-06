@@ -73,7 +73,10 @@
     order by board_id desc
   </select>
   
-  <!-- where 태그를 사용하면 조건이 없을 때나 and, or 잔여물이 있을 때 자동으로 처리해 준다.  -->
+  <!-- where 태그를 사용하면,
+       1) 조건이 한 개도 없을 경우,  where 절을 추가하지 않는다.
+       2) 조건 앞뒤에 and, or 연산자가 있을 경우, 자동으로 제거한다. 
+  -->
   <select id="select0220" resultMap="BoardMap" parameterType="map">
     select 
       board_id,
@@ -93,6 +96,9 @@
     order by board_id desc
   </select>
   
+  <!-- <where> 태그 대신에 <trim> 태그를 사용하여 
+       문장 앞뒤에 오는 OR 나 AND 를 제거할 수 있다. 
+  -->
   <select id="select0230" resultMap="BoardMap" parameterType="map">
     select 
       board_id,
@@ -111,8 +117,13 @@
     </trim>   
     order by board_id desc
   </select>  
+  
   <!-- 특정 조건이 있을 경우에만 select를 수행할 때, 
-       1) 조건이 없으면 결과를 리턴하지 않는 방법-->
+       1) 조건이 없으면 결과를 리턴하지 않는 방법?
+          다음과 같이 where 절에 기본 조건을 명시한다.
+          where 
+            1!=1  <== 기본 조건. 예) 무조건 거짓이 되게 하기
+  -->
   <select id="select0310" resultMap="BoardMap" parameterType="map">
     select 
       board_id,

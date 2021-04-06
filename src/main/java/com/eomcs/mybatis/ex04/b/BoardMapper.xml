@@ -39,6 +39,12 @@
   </select>
   
   <!-- if 태그를 사용하면 값의 유무에 따라 SQL 문을 제어할 수 있다. -->
+  <!-- 문법: 
+       => <if test="조건">
+       => 조건은 true/false를 리턴하는 계산식이어야 한다.
+       => 파라미터 타입이 자바 원시 타입, String, 래퍼 클래스의 경우
+          값을 꺼낼 때 프로퍼티 이름은 #{아무이름} 을 쓰면 된다.
+  -->
   <select id="select3" resultMap="BoardMap" parameterType="map">
     select 
       board_id,
