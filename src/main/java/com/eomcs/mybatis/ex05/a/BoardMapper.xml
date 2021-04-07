@@ -34,7 +34,15 @@
     <collection property="attachFiles" ofType="AttachFile">
 	    <id column="board_file_id" property="fileNo"/>
 	    <result column="file_path" property="filePath"/>
+	    <!-- 조인한 자식 테이블의 데이터가 없으면 AttachFile 객체를 생성하지 않는다.
+	         size 가 0인 List 객체를 리턴할 것이다.
+	         주의!
+	         다음과 같이 자식 테이블의 값을 담을 컬럼을 지정할 때 
+	         그 컬럼의 값이 NULL 아니라면 
+	         자식 테이블의 데이터가 없더라도 그 값을 담기 위해 자바 객체는 무조건 생성된다.
+	         그래서 최소 size가 1인 List 객체를 리턴한다. 
 	    <result column="board_id" property="boardNo"/>
+	     -->
     </collection>
   </resultMap>
   

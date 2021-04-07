@@ -27,13 +27,13 @@ public class Exam0130 {
       System.out.printf("등록일: %s\n", b.getRegisteredDate());
       System.out.printf("조회수: %d\n", b.getViewCount());
 
-      System.out.println("첨부파일:");
+      System.out.printf("첨부파일(%d):\n", b.getAttachFiles().size());
 
-      if (b.getAttachFiles().size() == 1 &&
-          b.getAttachFiles().get(0).getFileNo() == 0) {
-        System.out.println("  첨부파일이 없습니다!");
-        continue;
-      }
+      //      if (b.getAttachFiles().size() == 1 &&
+      //          b.getAttachFiles().get(0).getFileNo() == 0) {
+      //        System.out.println("  첨부파일이 없습니다!");
+      //        continue;
+      //      }
 
       for (AttachFile f : b.getAttachFiles()) {
         System.out.printf("  %d - %s\n", f.getFileNo(), f.getFilePath());
