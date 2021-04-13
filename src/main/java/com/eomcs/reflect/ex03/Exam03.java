@@ -19,9 +19,11 @@ public class Exam03 {
 
     // 해당 클래스에 선언된 메서드와 상속 받은 메서드까지 포함하여
     // 파라미터가 없는 "m3" 이름을 가진 public 메서드 추출
-    // Method m = clazz.getMethod("m3"); // public이 아니기 때문에 못 찾는다.
+    //    Method m0 = clazz.getMethod("m3"); // public이 아니기 때문에 못 찾는다.
+
     Method m = clazz.getMethod("m1"); // OK!
     System.out.println(m.getName());
+
     System.out.println(clazz.getMethod("toString").getName());
     System.out.println("----------------------");
 

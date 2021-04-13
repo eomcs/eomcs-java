@@ -14,10 +14,15 @@ public class Exam11 {
       System.out.printf("%s:%s\n", f.getName(), f.getType().getName());
     }
 
-    Field makerField = clazz.getDeclaredField("maker");
 
     Constructor<Car> defaultConst = (Constructor<Car>) clazz.getConstructor();
     Car car = defaultConst.newInstance();
+
+    // 1) private 필드는 일반적인 방식으로 접근할 수 없다.
+    //    car.maker = "비트자동차"; // 컴파일 오류!
+
+    // 2) 다음과 같이 Reflection API를 사용하면 private 필드에 접근할 수 있다. 
+    Field makerField = clazz.getDeclaredField("maker");
 
     // private modifier로 선언된 필드라 하더라도
     // 다음 메서드를 통해 접근 가능하도록 만들 수 있다.

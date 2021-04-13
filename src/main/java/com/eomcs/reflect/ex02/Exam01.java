@@ -16,7 +16,7 @@ public class Exam01 {
     //1) 패키지 멤버 클래스
     Class<?> clazz = Class.forName("java.lang.String");
 
-    // 클래스의 타입 객체를 통해 클래스 정보를 추출할 수 있다.
+    // '클래스의 타입 정보를 담은 객체'를 통해 클래스 정보를 추출할 수 있다.
     System.out.println(clazz.getSimpleName()); // String
     System.out.println(clazz.getName()); // java.lang.String
     System.out.println(clazz.getCanonicalName()); // java.lang.String

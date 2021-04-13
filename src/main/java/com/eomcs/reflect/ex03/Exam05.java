@@ -18,7 +18,7 @@ public class Exam05 {
     Class<?> clazz = Exam05.class;
 
     // 메서드 호출 방법
-    // invoke(인스턴스, 아규먼트, ...);
+    // Method.invoke(인스턴스, 아규먼트, ...);
     //
 
     // 1) 스태틱 메서드를 찾아 호출하기
