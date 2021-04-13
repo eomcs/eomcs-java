@@ -5,7 +5,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
-public class Exam01 {
+public class Exam0110 {
 
   public void m1(String name, int age) {}
 
@@ -14,7 +14,7 @@ public class Exam01 {
   public void m3(File file, String name) {}
 
   public static void main(String[] ok) {
-    Class<?> clazz = Exam01.class;
+    Class<?> clazz = Exam0110.class;
 
     // 해당 클래스에 정의된 메서드를 모두 가져온다.
     Method[] methods = clazz.getDeclaredMethods();

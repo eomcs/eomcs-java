@@ -19,7 +19,7 @@ public class Exam03 {
 
     // newInstance()는 객체를 생성한 후 기본 생성자를 호출한다.
     // Exam03은 기본 생성자가 없기 때문에 실행 오류가 발생한다!
-    // Exam03 obj = (Exam03) clazz.newInstance(); // 실행 오류!
+    //    Exam03 obj0 = (Exam03) clazz.newInstance(); // 실행 오류!
 
     // 해결=> 생성자를 준비한다.
     Constructor<?> c = clazz.getConstructor(int.class);

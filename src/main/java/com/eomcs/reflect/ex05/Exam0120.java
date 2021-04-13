@@ -8,7 +8,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class Exam02 {
+public class Exam0120 {
 
   public String m1(String name, int age) {
     return null;
@@ -29,7 +29,7 @@ public class Exam02 {
   }
 
   public static void main(String[] ok) {
-    Class<?> clazz = Exam02.class;
+    Class<?> clazz = Exam0120.class;
 
     // 클래스에 정의된 메서드를 모두 가져온다.
     Method[] methods = clazz.getDeclaredMethods();
