@@ -12,10 +12,10 @@ public class Exam0110 {
     // => 인터페이스 구현체를 만드는 역할을 한다.
     // 
     // newProxyInstance(
-    //    구현체를 만들기 위해 사용하는 인터페이스의 클래스로더,
+    //    만든 인터페이스 구현체를 메모리에 로딩하는 일을 도와줄 클래스로더,
     //    구현할 인터페이스 정보 목록,
     //    실제 작업을 수행하는 객체)
-    // => 파라미터로 넘겨 받은 인터페이스를 모두 구현한 클래스를 만들어 리턴한다.
+    // => 파라미터로 넘겨 받은 인터페이스를 모두 구현한 클래스를 만들고 인스턴스를 생성해 리턴한다.
     // 
     // 클래스 로더
     // => 클래스 정보를 로딩하는 역할을 수행한다.
@@ -32,13 +32,14 @@ public class Exam0110 {
     Class<?> c1 = String.class; // 클래스의 static 변수인 class의 값을 사용할 수 있다.
     Class<?> c2 = s.getClass(); // 인스턴스로 알아낼 수 있다.
     Class<?> c3 = Class.forName("java.lang.String"); // 클래스 정보를 리턴하는 도구를 이용.
-    */
+     */
     //
     // 실제 작업을 수행하는 객체
     // => java.lang.reflect.InvocationHandler 인터페이스에 따라 동작하는 객체
     // => 즉 InvocationHandler 구현체
     // 
-    
+
+    // 1) 로컬 클래스
     class MyHandler implements InvocationHandler {
       @Override
       public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
