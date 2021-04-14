@@ -1,4 +1,4 @@
-// 생성자 : 특정 생성자 정보 가져오기
+// 생성자 : 파라미터를 가지는 생성자 알아내기 
 package com.eomcs.reflect.ex04;
 
 import java.lang.reflect.Constructor;

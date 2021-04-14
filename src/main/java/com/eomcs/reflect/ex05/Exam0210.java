@@ -1,60 +1,45 @@
-// 일반 타입과 배열 타입
+// 리턴 타입
 package com.eomcs.reflect.ex05;
 
-import java.sql.Date;
+import java.io.File;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Exam0210 {
 
-  public static void main(String[] args) throws Exception {
-    System.out.println(byte.class.getName());  // byte 타입
-    System.out.println(byte[].class.getName()); // byte 배열 타입
-    System.out.println("---------------------------");
-
-    System.out.println(short.class.getName());
-    System.out.println(short[].class.getName());
-    System.out.println("---------------------------");
-
-    System.out.println(int.class.getName());
-    System.out.println(int[].class.getName());
-    System.out.println("---------------------------");
-
-    System.out.println(long.class.getName());
-    System.out.println(long[].class.getName());
-    System.out.println("---------------------------");
-
-    System.out.println(float.class.getName());
-    System.out.println(float[].class.getName());
-    System.out.println("---------------------------");
-
-    System.out.println(double.class.getName());
-    System.out.println(double[].class.getName());
-    System.out.println("---------------------------");
-
-    System.out.println(boolean.class.getName());
-    System.out.println(boolean[].class.getName());
-    System.out.println("---------------------------");
-
-    System.out.println(char.class.getName());
-    System.out.println(char[].class.getName());
-    System.out.println("---------------------------");
-
-    System.out.println(String.class.getName());
-    System.out.println(String[].class.getName());
-    System.out.println("---------------------------");
-
-    System.out.println(Date.class.getName());
-    System.out.println(Date[].class.getName());
-    System.out.println("---------------------------");
-
-    System.out.println(ArrayList.class.getName());
-    System.out.println(ArrayList[].class.getName());
-    System.out.println("---------------------------");
-
+  public String m1(String name, int age) {
+    return null;
   }
+
+  public char[] m2() {
+    return null;
+  }
+
+  public ArrayList<String> m3(File file, String name) {
+    return null;
+  }
+
+  public void m4() {}
+
+  public Map<String,File> m5() {
+    return null;
+  }
+
+  public static void main(String[] ok) {
+    Class<?> clazz = Exam0210.class;
+
+    // 클래스에 정의된 메서드를 모두 가져온다.
+    Method[] methods = clazz.getDeclaredMethods();
+    for (Method m : methods) {
+      System.out.printf("%s:\n", m.getName());
+
+      // 메서드의 리턴 타입 가져오기
+      Class<?> returnType = m.getReturnType();
+      System.out.printf("    리턴: %s\n", returnType.getName());
+    }
+  }
+
 }
-
-
-
 
 

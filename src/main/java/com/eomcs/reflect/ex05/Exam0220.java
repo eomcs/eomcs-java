@@ -1,72 +1,55 @@
-// 배열 항목의 타입 알아내기
+// 리턴 타입 - 제네릭 타입
 package com.eomcs.reflect.ex05;
 
-import java.sql.Date;
+import java.io.File;
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class Exam0220 {
 
-  public static void main(String[] args) throws Exception {
-    // getComponentType()
-    // - 배열의 항목에 대한 타입 정보를 리턴한다.
-    // - 배열이 아니라면, 항목이 없기 때문에 리턴 값은 null이다.
-    // 
-    System.out.println(byte.class.getComponentType());
-    System.out.println("---------------------------");
+  public String m1(String name, int age) {
+    return null;
+  }
 
-    System.out.println(byte.class.getName());
-    System.out.println(byte[].class.getName());
-    System.out.println(byte[].class.getComponentType().getName());
-    System.out.println("---------------------------");
+  public char[] m2() {
+    return null;
+  }
 
-    System.out.println(short.class.getName());
-    System.out.println(short[].class.getName());
-    System.out.println(short[].class.getComponentType().getName());
-    System.out.println("---------------------------");
+  public ArrayList<String> m3(File file, String name) {
+    return null;
+  }
 
-    System.out.println(int.class.getName());
-    System.out.println(int[].class.getName());
-    System.out.println(int[].class.getComponentType().getName());
-    System.out.println("---------------------------");
+  public void m4() {}
 
-    System.out.println(long.class.getName());
-    System.out.println(long[].class.getName());
-    System.out.println(long[].class.getComponentType().getName());
-    System.out.println("---------------------------");
+  public Map<String,File> m5() {
+    return null;
+  }
 
-    System.out.println(float.class.getName());
-    System.out.println(float[].class.getName());
-    System.out.println(float[].class.getComponentType().getName());
-    System.out.println("---------------------------");
+  public static void main(String[] ok) {
+    Class<?> clazz = Exam0220.class;
 
-    System.out.println(double.class.getName());
-    System.out.println(double[].class.getName());
-    System.out.println(double[].class.getComponentType().getName());
-    System.out.println("---------------------------");
+    // 클래스에 정의된 메서드를 모두 가져온다.
+    Method[] methods = clazz.getDeclaredMethods();
+    for (Method m : methods) {
+      System.out.printf("%s:\n", m.getName());
 
-    System.out.println(boolean.class.getName());
-    System.out.println(boolean[].class.getName());
-    System.out.println(boolean[].class.getComponentType().getName());
-    System.out.println("---------------------------");
-
-    System.out.println(char.class.getName());
-    System.out.println(char[].class.getName());
-    System.out.println(char[].class.getComponentType().getName());
-    System.out.println("---------------------------");
-
-    System.out.println(String.class.getName());
-    System.out.println(String[].class.getName());
-    System.out.println(String[].class.getComponentType().getName());
-    System.out.println("---------------------------");
-
-    System.out.println(Date.class.getName());
-    System.out.println(Date[].class.getName());
-    System.out.println(Date[].class.getComponentType().getName());
-    System.out.println("---------------------------");
+      // 메서드의 제네릭 리턴 타입 가져오기
+      Type returnType = m.getGenericReturnType();
+      System.out.printf("    리턴: %s\n", returnType.getTypeName());
+      if (returnType instanceof ParameterizedType) {
+        Type[] actualTypes = ((ParameterizedType) returnType).getActualTypeArguments();
+        System.out.print("         => ");
+        for (Type actualType : actualTypes) {
+          System.out.print(actualType.getTypeName() + ", ");
+        }
+        System.out.println();
+      }
+    }
   }
 
 }
-
-
-
 
 
