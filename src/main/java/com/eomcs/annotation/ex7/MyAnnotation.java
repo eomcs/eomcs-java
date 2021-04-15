@@ -1,5 +1,5 @@
 // 애노테이션 적용 범위 - 클래스나 인터페이스
-package com.eomcs.annotation.ex6;
+package com.eomcs.annotation.ex7;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;

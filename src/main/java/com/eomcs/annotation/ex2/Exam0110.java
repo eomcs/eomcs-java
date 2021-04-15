@@ -1,4 +1,4 @@
-// 애노테이션 확인
+// 애노테이션 유지 정책 확인
 package com.eomcs.annotation.ex2;
 
 //애노테이션 유지 범위 
@@ -15,7 +15,7 @@ package com.eomcs.annotation.ex2;
 //   - 실행 중에 애노테이션을 참조해야 할 경우에 많이 사용한다.
 //
 
-public class Exam01 {
+public class Exam0110 {
 
   public static void main(String[] args) {
     // MyClass.class 파일을 편집기로 열어서 확인해보라!
@@ -27,12 +27,17 @@ public class Exam01 {
     MyAnnotation obj = clazz.getAnnotation(MyAnnotation.class);
     if (obj == null) {
       System.out.println("MyAnnotation을 추출할 수 없습니다!");
+    } else {
+      // 값을 꺼낼 때는 메서드 호출하듯이 꺼내면 된다.
+      System.out.println("MyAnnotation.value=" + obj.value());
     }
 
     // => 유지정책 : SOURCE
     MyAnnotation2 obj2 = clazz.getAnnotation(MyAnnotation2.class);
     if (obj2 == null) {
       System.out.println("MyAnnotation2를 추출할 수 없습니다!");
+    } else {
+      System.out.println("MyAnnotation2.value=" + obj2.value());
     }
 
     // => 유지정책 : RUNTIME
@@ -40,7 +45,6 @@ public class Exam01 {
     if (obj3 == null) {
       System.out.println("MyAnnotation3를 추출할 수 없습니다!");
     } else {
-      // 값을 꺼낼 때는 메서드 호출하듯이 꺼내면 된다.
       System.out.println("MyAnnotation3.value=" + obj3.value());
     }
 
