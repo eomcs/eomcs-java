@@ -1,16 +1,15 @@
-// 애노테이션 프로퍼티 타입
+// 애노테이션 중복 사용
 package com.eomcs.annotation.ex7;
 
-// @MyAnnotation은 타입(인터페이스와 클래스)에만 붙일 수 있다.
-@MyAnnotation // OK!
+@Company("비트캠프")
+//@Company("비트캠프") // 중복 사용 불가!
 public class MyClass {
 
-  //  @MyAnnotation
-  int i; // 컴파일 오류!
+  @Company("비트캠프")
+  //@Company("비트캠프") // 중복 사용 불가!
+  public void m1(int p) {}
 
-  //  @MyAnnotation
-  public void m(/*@MyAnnotation*/ int p) {
-    /*@MyAnnotationn*/ int a;
-  }
-
+  @Company("비트캠프")
+  //@Company("비트캠프") // 중복 사용 불가!
+  public void m2(int p) {}
 }
