@@ -15,7 +15,10 @@ public @interface MyAnnotation {
   String value();
 }
 
-
+//애노테이션 유지 범위
+//1) SOURCE : .class 파일에 포함 안됨.
+//2) CLASS (기본) : .class 파일에 포함. 실행할 때 로딩 안됨.
+//3) RUNTIME : .class 파일에 포함. 실행할 때도 메모리에 로딩됨.
 
 
 

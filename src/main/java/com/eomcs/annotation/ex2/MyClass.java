@@ -8,3 +8,4 @@ package com.eomcs.annotation.ex2;
 @MyAnnotation3(value="값") // 유지정책 => RUNTIME 
 public class MyClass {
 }
+
