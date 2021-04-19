@@ -43,9 +43,15 @@ public class Exam0520 {
     if (!executorService.awaitTermination(10, TimeUnit.SECONDS)) {
       System.out.println("아직 종료 안된 작업이 있다.");
       System.out.println("남아 있는 작업의 강제 종료를 시도하겠다.");
+
       // => 만약 10초가 경과될 때까지 종료되지 않으면,
-      //    수행 중인 작업을 강제 종료하라고 지시하고,
-      //    대기 중인 작업은 취소한다.
+      //    수행 중인 작업을 강제 종료하라고 지시한다.
+
+      // 강제 종료?
+      // => 일단 대기 중인 작업은 모두 취소한다.
+      // => 실행 중인 스레드 중 Not Runnable 상태에 있는 스레드는 강제 종료한다.
+      // => 그 외 running 상태의 스레드는 강제 종료할 수 없다.
+      //    예) 입.출력 대기 상태는 running 상태이다. Not Runnable 상태가 아니다.
       executorService.shutdownNow();
 
       // 그리고 다시 작업이 종료될 때까지 기다린다.

@@ -37,9 +37,9 @@ public class Exam0220 {
     // 놀고 있는 스레드가 없으면 새 스레드를 생성한다.
     //
     executorService.execute(new MyRunnable(6000));
-    executorService.execute(new MyRunnable(3000));
-    executorService.execute(new MyRunnable(9000));
     executorService.execute(new MyRunnable(2000));
+    executorService.execute(new MyRunnable(9000));
+    executorService.execute(new MyRunnable(1000));
 
     // 작업을 끝낸 스레드가 생길 때까지 일부러 기다린다.
     //

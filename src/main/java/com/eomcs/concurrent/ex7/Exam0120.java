@@ -8,8 +8,16 @@ public class Exam0120 {
 
   public static void main(String[] args) {
     ExecutorService executorService = Executors.newFixedThreadPool(3);
-    executorService.execute(() -> System.out.printf("%s - Hello!\n",
-        Thread.currentThread().getName()));
+    executorService.execute( 
+        () -> {
+          System.out.printf("%s - Hello!\n", Thread.currentThread().getName());
+
+          try { 
+            Thread.sleep(10000); // 현재 스레드를 10초 동안 멈춘다.
+          } catch (Exception e) {}
+
+          System.out.printf("%s 스레드 종료!\n", Thread.currentThread().getName());
+        });
 
     // 스레드풀에 있는 모든 스레드들이 요청한 작업을 끝내면
     // 종료하도록 지시한다.
