@@ -37,6 +37,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     return bean;
   }
 
+
   @Override
   public Object postProcessAfterInitialization(//
       Object bean, String beanName) throws BeansException {
@@ -50,4 +51,5 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     System.out.printf("    => %s\n", bean.toString());
     return bean;
   }
+
 }

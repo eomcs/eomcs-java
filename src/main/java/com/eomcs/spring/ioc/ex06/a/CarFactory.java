@@ -4,6 +4,8 @@ import com.eomcs.spring.ioc.ex06.Car;
 
 public class CarFactory {
   public static Car create(String model) {
+    System.out.printf("CarFactory.create(%s) 호출됨\n", model);
+
     Car c = new Car();
     switch (model) {
       case "티코":

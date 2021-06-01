@@ -10,7 +10,7 @@
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="890"/>
         <property name="auto" value="true"/>
-        <property name="createdDate" value="2018-5-8"/>
+        <property name="createdDate" value="2021-6-1"/>
         <property name="engine" value="비트자동차,16,4"/>
         <!-- 자바 코드 표현
 		      => 스프링 IoC 컨테이너는 String 을 Engine 객체로 변환시켜줄 프로퍼티 에디터를 찾는다.

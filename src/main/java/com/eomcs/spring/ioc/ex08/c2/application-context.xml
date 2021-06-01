@@ -13,6 +13,7 @@
     
     <!-- BeanPostProcessor 인터페이스 구현체 만들고 등록하기 -->
     <bean class="com.eomcs.spring.ioc.ex08.c2.LogBeanPostProcessor"/>
+    
 </beans>
 
 

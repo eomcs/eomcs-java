@@ -61,11 +61,11 @@ repositories {
 // 프로젝트에서 사용할 자바 라이브러리 목록
 dependencies {
   // Spring IoC 컨테이너
-  implementation 'org.springframework:spring-context:5.3.2'
+  implementation 'org.springframework:spring-context:5.3.7'
 
   // Spring JDBC 보조 라이브러리
   // - DataSource 구현체가 들어 있다.
-  implementation 'org.springframework:spring-jdbc:5.3.2'
+  implementation 'org.springframework:spring-jdbc:5.3.7'
 
   // Apache commons-dbcp 라이브러리
   // - DataSource 구현체가 들어 있다.

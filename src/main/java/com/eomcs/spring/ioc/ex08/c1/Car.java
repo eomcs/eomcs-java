@@ -16,6 +16,10 @@ public class Car {
     System.out.println("Car()");
   }
 
+  // IoC 컨테이너의 설정 파일(예:application-context.xml)에서 빈 생성 태그를 정의할 때 
+  // 다음 메서드가 인스턴스를 초기화시키는 메서드임을 지정하라.
+  //        <bean ... init-method="init">
+  // 
   public void init() {
     System.out.println("Car.init()");
   }
