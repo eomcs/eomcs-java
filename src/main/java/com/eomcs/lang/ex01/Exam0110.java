@@ -13,7 +13,7 @@ class Exam0110 {}
 //- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ex01/Exam1_1.java
 //
 //2) 생성된 클래스 파일 확인하기
-//- bin/main/com/eomcs/basic/ex01 디렉토리에 Exam1_1.class 파일이 생성된다
+//- bin/main/com/eomcs/basic/ex01 디렉토리에 Exam0110.class 파일이 생성된다
 //
 
 
