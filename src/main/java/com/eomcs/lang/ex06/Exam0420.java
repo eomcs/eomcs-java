@@ -10,7 +10,7 @@ public class Exam0420 {
 
     // 그래서 다음과 같이 i 변수의 값을 조회하려 하면 
     // 컴파일 오류가 발생한다.
-    //System.out.println(i); // 컴파일 오류!
+    //    System.out.println(i); // 컴파일 오류!
 
     System.out.println("----------------------");
 

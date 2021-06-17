@@ -26,7 +26,7 @@ public class Exam0140 {
       System.out.println("미성년입니다.");
     }
 
-    // if, else 둘 중 하나만 블록으로 묶을 수 있다.
+    // 한 문장일 때는 블록으로 묶지 않아도 된다.
     if (age >= 19) { // OK!
       System.out.println("성인입니다.");
       System.out.println("--------------------------");
@@ -34,7 +34,7 @@ public class Exam0140 {
     else
       System.out.println("미성년입니다.");
 
-    // if, else 둘 중 하나만 블록으로 묶을 수 있다.
+    // 한 문장일 때는 블록으로 묶지 않아도 된다.
     if (age >= 19)
       System.out.println("성인입니다.");
     else {
