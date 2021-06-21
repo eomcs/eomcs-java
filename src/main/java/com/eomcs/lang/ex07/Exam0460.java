@@ -5,6 +5,7 @@ package com.eomcs.lang.ex07;
 public class Exam0460 {
 
   static int sum(int value) {
+    System.out.println(value);
     if (value == 1)
       return 1;
 
@@ -23,8 +24,8 @@ public class Exam0460 {
     // 따라서 호출 단계가 깊지 않은 작은 수를 다룰 경우에는 
     // 재귀호출을 써도 되지만,
     // 호출 단계가 많은 큰 수를 다룰 때는 재귀호출 대신 반복문을 사용하라!
-    System.out.println(sum(100000));
-    
+    System.out.println(sum(10000));
+
     // 메소드 호출이 너무 깊어지는 경우는 재귀호출 대신 다른 방법을 사용하라.
     /*
     long sum = 0;
@@ -32,7 +33,7 @@ public class Exam0460 {
       sum += i;
     }
     System.out.println(sum);
-    */
+     */
   }
 }
 
