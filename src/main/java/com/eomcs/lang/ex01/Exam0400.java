@@ -2,8 +2,9 @@ package com.eomcs.lang.ex01;
 
 //# main() 메서드
 //- 다음과 같이 JVM을 통해 클래스를 실행하면, JVM은 그 클래스에서 main() 메서드를 찾아 실행한다.
-//  예) $ java -cp bin/main com.eomcs.basic.ex01.Exam4
+//  예) $ java -cp bin/main com.eomcs.basic.ex01.Exam400
 //- main() 메서드가 없으면 실행 오류가 발생한다.
+//- 프로그램을 실행하는 시작점이라는 의미에서  "entry point" 라 부른다.
 //
 //## JVM이 클래스를 실행하는 과정
 //1) 실행할 클래스 파일을 CLASSPATH에 등록된 디렉토리 경로에서 찾는다.

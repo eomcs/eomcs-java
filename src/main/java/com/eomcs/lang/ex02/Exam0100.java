@@ -26,8 +26,8 @@ public class Exam0100 {
 
 //## 실습
 //1) 컴파일하기
-//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ex02/Exam1.java
+//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ex02/Exam0100.java
 //
 //2) 실행하기
-//- $ java -cp bin/main com.eomcs.basic.ex02.Exam1
+//- $ java -cp bin/main com.eomcs.basic.ex02.Exam0100
 //
