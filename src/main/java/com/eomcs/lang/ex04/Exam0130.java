@@ -14,15 +14,13 @@ package com.eomcs.lang.ex04;
 
 public class Exam0130 {
   public static void main(String[] args) {
-    
+
     int age;
-    
-    // : =
-    //- 
+
     //- 문법
     //    변수명 = 값;
     age = 20; 
-    
+
     //표현
     //- age 변수가 가리키는 메모리에 20을 저장하라!
     //- age라는 이름의 메모리에 20을 저장하라!
