@@ -17,12 +17,16 @@ public class Exam0610 {
 
     i++; // i => 4
 
-    System.out.println(i);
+    System.out.println(i);   // 4
 
-    System.out.println(i++);
-    // System.out.println(4);
-    // i = i + 1;  ==> 5
-    System.out.println(i);
+    System.out.println(i++); // 4
+    // 위의 코드는 컴파일 할 때 다음의 코드로 바뀐다.
+    //
+    //    int temp = i; //<-- 임시 변수를 만들어 현재 i 값을 저장한다.
+    //    i = i + 1;
+    //    System.out.println(temp);
+
+    System.out.println(i); // 5
 
   }
 }

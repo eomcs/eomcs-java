@@ -13,7 +13,7 @@ public class Exam0640 {
     // 4) =
     // 
     // int result = 2 + i++ * i++;  => i = 3
-    // int result = 2 + 3 * i++; => i = 4;
+    // int result = 2 + 3 * i++; => i = 4
     // int result = 2 + 3 * 4; => i = 5
     // int result = 2 + 12;
     // int result = 14;

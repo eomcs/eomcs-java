@@ -7,6 +7,7 @@ public class Exam0351 {
 
     System.out.println(57 % 2);
     System.out.println(57 & 0b0000_0001);
+    System.out.println(57 & 1);
     // % 연산은 나누기 연산을 수행해야 한다.
     // 나누기 연산은 여러 번의 계산을 수행하게 된다.
     // 그에 비해 & 비트 연산은 한 번만 하면 된다.
@@ -26,7 +27,7 @@ public class Exam0351 {
     //  & 0000 0001
     // --------------
     //    0000 0001 (나머지는 1이다)
-
+    System.out.println("--------------------");
 
 
     System.out.println(57 % 4);
@@ -46,10 +47,10 @@ public class Exam0351 {
     //    이런 코드를 만나기 때문이다.
 
     System.out.println(57 % 8);
-    System.out.println(57 & 0b111);
+    System.out.println(57 & 0b111); // 57 & 7
 
     System.out.println(57 % 16);
-    System.out.println(57 & 0b1111);
+    System.out.println(57 & 0b1111); // 57 & 15 = 57 & 0xf
 
   }
 }
