@@ -17,7 +17,7 @@ public class Exam0161 {
     else
       if (age < 14)
         System.out.println("어린이입니다.");
-      else
+      else 
         if (age < 19)
           System.out.println("청소년입니다.");
         else
