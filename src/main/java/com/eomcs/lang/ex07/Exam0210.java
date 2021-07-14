@@ -78,15 +78,6 @@ public class Exam0210 {
     // 4) 다음 줄을 실행한다.
 
     System.out.println("hello() 실행 완료!");
-
-
-    // hello 메서드는 파라미터 변수가 없기 때문에 호출할 때 값을 넣으면
-    //    hello(100);// 컴파일 오류!
-
-    // hello 메서드는 값을 리턴하지 않기 때문에 변수로 값을 받으려 하면
-    int i;
-    //    i = hello(); // 컴파일 오류!
-
   }
 }
 
@@ -96,8 +87,13 @@ public class Exam0210 {
 // - "코드를 관리하기 쉽고 재사용하기 쉽도록 기능 단위로 묶어 놓는 문법"
 //
 // ## 용어
-// - 메서드명, 변수선언 : 메서드 시그너처(method signature)
+// - 메서드명, 파라미터 변수 선언 : 메서드 시그너처(method signature)
+//      예) hello()
 // - 메서드 블록 : 메서드 몸체(method body)
+//      예) {
+//            System.out.println("안녕하세요!");
+//            System.out.println("이 메서드는 어떤 값도 리턴하지 않습니다.");
+//          }
 //
 // ## 메서드 종류?
 // 1) 클래스 메서드

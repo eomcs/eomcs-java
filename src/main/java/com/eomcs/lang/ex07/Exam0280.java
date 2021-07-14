@@ -24,6 +24,10 @@ public class Exam0280 {
     //
     System.out.println(result);
 
+    int r = plus(100, 200);
+    System.out.printf("100 + 200 = %d\n", r);
+
+    // 위의 문장은 다음과 같다.
     System.out.printf("100 + 200 = %d\n", plus(100, 200));
   }
 

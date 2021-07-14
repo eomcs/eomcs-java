@@ -17,6 +17,11 @@ public class Exam0240 {
     String r = hello("홍길동", 20);
     System.out.println(r);
 
+    // 앞의 예제와 마찬가지로 리턴 값을 한 번만 사용한다면,
+    // 사용할 곳에 메서드 호출 코드를 둬라!
+    // => 리팩토링 기법 중에서 "replace temp with query" 라 부른다.
+    System.out.println(hello("홍길동", 20));
+
     // 리턴 값을 안 받아도 된다.
     hello("임꺽정", 30); // 리턴 값은 버려진다.
   }
