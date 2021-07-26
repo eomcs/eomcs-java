@@ -13,7 +13,7 @@ package com.eomcs.oop.ex01;
 // bin/main/com/eomcs/oop/ex01/A.class
 class A {}
 
-// => bin/main/com/eomcs/oop/ex01/Exam0420.class
+// => bin/main/com/eomcs/oop/ex01/Exam0510.class
 public class Exam0510 {
 
   // 중첩 클래스(nested class)
@@ -29,13 +29,13 @@ public class Exam0510 {
   // 1) 스태틱 중첩 클래스
   // - 이 클래스를 소유하고 있는 클래스 뿐만 아니라 다른 클래스도 사용할 수 있다.
   //
-  // bin/main/com/eomcs/oop/ex01/Exam0420$B.class
+  // bin/main/com/eomcs/oop/ex01/Exam0510$B.class
   static class B {}
 
   // 2) 논-스태틱 중첩 클래스
   // - 특정 인스턴스에 종속된 클래스인 경우 논-스태틱 중첩 클래스로 정의한다.
   //
-  // bin/main/com/eomcs/oop/ex01/Exam0420$C.class
+  // bin/main/com/eomcs/oop/ex01/Exam0510$C.class
   class C {}
 
 
@@ -44,7 +44,7 @@ public class Exam0510 {
     // - 메서드 블록 안에 정의된 클래스
     // - 오직 그 메서드 블록 안에서만 사용된다.
     //
-    // bin/main/com/eomcs/oop/ex01/Exam0420$1D.class
+    // bin/main/com/eomcs/oop/ex01/Exam0510$1D.class
     class D {}
 
     // 4) 익명 클래스(anonymouse class)
@@ -53,7 +53,7 @@ public class Exam0510 {
     // - 클래스를 정의할 때 수퍼 클래스나 인터페이스를 지정해야 한다.
     // - 클래스를 정의할 때 new 연산자를 사용하여 즉시 인스턴스를 생성해야 한다.
     //
-    // bin/main/com/eomcs/oop/ex01/Exam0420$1.class
+    // bin/main/com/eomcs/oop/ex01/Exam0510$1.class
     Object obj = new Object() {
       String name;
       int age;
@@ -84,10 +84,10 @@ public class Exam0510 {
     // 논-스태틱 멤버(인스턴스 멤버)는 스태틱 중첩 클래스를 사용할 수 있다.
     B obj2 = new B();
 
-    // 인스턴스 멤버는 다른 인스턴스 멤버(논-스태틱 중첩 클래스)를 사용할 수 없다.
+    // 인스턴스 멤버는 다른 인스턴스 멤버(논-스태틱 중첩 클래스)를 사용할 수 있다.
     C obj3 = new C(); // OK!
 
-    // 다른 메서드에 정의된 로컬 클래스도 사용할 수 없다.
+    // 다른 메서드에 정의된 로컬 클래스는 사용할 수 없다.
     // D obj4 = new D(); // 컴파일 오류!
 
   }
