@@ -5,7 +5,7 @@ package com.eomcs.oop.ex03;
 public class Exam0162 {
 
   static class Member {
-    
+
     // 클래스 변수의 활용 예: 상수 변수를 선언할 때
     // - 모든 인스턴스가 같은 값을 가질 경우,
     //   글래스 변수로 만드는 것이 바람직하다.
@@ -24,10 +24,10 @@ public class Exam0162 {
   }
 
   public static void main(String[] args) {
-    
+
     // Member와 관련된 상수라면 
     // Member 클래스에 선언하는 것이 유지보수에 더 낫다.
-    
+
     Member m4 = new Member();
     m4.id = "aaa";
     m4.password = "1111";
