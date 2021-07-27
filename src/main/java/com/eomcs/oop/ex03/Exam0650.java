@@ -29,6 +29,10 @@ public class Exam0650 {
     // - 메모리 절약을 위해, 자바는 중복해서 클래스를 메모리에 로딩하지 않는다.
     //
     Class.forName("com.eomcs.oop.ex03.Exam0650$A");
+    System.out.println("----------------------------------");
+
+    Class.forName("com.eomcs.oop.ex03.Exam0650$A"); // 클래스는 중복 로딩되지 않는다.
+    System.out.println("----------------------------------");
 
     System.out.println("종료!");
   }

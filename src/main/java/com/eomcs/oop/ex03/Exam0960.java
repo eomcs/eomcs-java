@@ -51,7 +51,7 @@ public class Exam0960 {
     Monitor m3 = new Monitor(50, 50, 1920, 1080); // Monitor(int, int, int, int) 생성자를 지정한다.
 
     // 파라미터 타입이나 개수가 일치하지 않는 생성자는 호출할 수 없다.
-    // new Monitor9(50); // 컴파일 오류!
+    //    new Monitor(50); // 컴파일 오류!
 
     m1.display();
     m2.display();

@@ -4,7 +4,7 @@ package com.eomcs.oop.ex03;
 public class Exam0680 {
 
   public static class A {
-    
+
     static int a = 100;
 
     static {
