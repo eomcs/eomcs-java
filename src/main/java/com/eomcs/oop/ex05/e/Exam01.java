@@ -7,9 +7,9 @@ public class Exam01 {
     B obj = new B();
 
     // B 인스턴스를 이용하여 B가 사용권을 획득한 A 클래스의 메서드를 호출할 수 있다.
-    obj.m1();
+    obj.m1(); // A 클래스의 m1() 호출
 
-    obj.m2();
+    obj.m2(); // B 클래스의 m2() 호출
 
     // 실험:
     // bin/main/.../A.class 파일을 제거한 후 다시 실행하라!
