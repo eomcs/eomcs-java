@@ -4,18 +4,15 @@ package com.eomcs.oop.ex06.c;
 public class Exam0140 {
 
   static class A {
-    String name = "A";
-    String tel = "A: 010-1111-1111";
-    boolean working = true;
+    String name;
+    String tel;
+    boolean working;
 
     void print() {
       System.out.println("A.print():");
-      System.out.printf("  => this.name(%s)\n",
-          this.name);
-      System.out.printf("  => this.tel(%s)\n",
-          this.tel);
-      System.out.printf("  => this.working(%s)\n",
-          this.working);
+      System.out.printf("  => this.name(%s)\n", this.name);
+      System.out.printf("  => this.tel(%s)\n", this.tel);
+      System.out.printf("  => this.working(%s)\n", this.working);
     }
   }
 
@@ -23,7 +20,7 @@ public class Exam0140 {
     // 필드 오버라이딩
     // - 필드 오버라이딩은 메서드와 달리 변수의 타입이 달라도 된다.
     //
-    String working = "미취업";
+    String working;
 
     // this.필드명
     // - 현재 클래스에서 해당 필드를 찾는다. 없으면 상위 클래스로 따라 올라가면서 찾는다.
@@ -42,8 +39,12 @@ public class Exam0140 {
 
   public static void main(String[] args) {
     A4 obj = new A4();
-    obj.print(); 
-    // A4에서 재정의한 print() 호출
+    obj.name = "홍길동"; // A의 name
+    obj.tel = "1111-1111"; // A의 tel
+    //    obj.working = true; // A4의 working : obj의 클래스에서 먼저 필드를 찾기 때문이다.
+    obj.working = "취업";
+
+    obj.print(); // A4의 print() 호출 : A4에서 상속 받은 print()를 재정의 했기 때문이다. 
 
   }
 }

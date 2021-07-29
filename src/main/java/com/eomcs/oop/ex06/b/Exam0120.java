@@ -29,12 +29,14 @@ public class Exam0120 {
     int r1 = Calculator.plus(100, 200);
     int r2 = Calculator.plus(100);
     float r3 = Calculator.plus(35.7f, 22.2f);
+    //    double f4 = Calculator.plus(35.7, 22.2); // 파라미터 타입이나 개수가 일치하는 메서드가 없다.
 
     System.out.printf("%d, %d, %.1f\n", r1, r2, r3);
 
     // 오버로딩(overloading)?
-    // => 파라미터의 형식은 다르지만 같은 기능을 수행하는 메서드에 대해
-    //    같은 이름을 부여함으로써 프로그래밍의 일관성을 제공하기 위한 문법이다.
+    // => 파라미터의 형식(타입과 개수)은 다르지만 
+    //    같은 기능을 수행하는 메서드에 대해 같은 이름을 부여함으로써 
+    //    프로그래밍의 일관성을 제공하기 위한 문법이다.
 
 
   }

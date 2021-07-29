@@ -6,8 +6,8 @@ public class Exam0410 {
   // Sedan과 Truck의 모델명과 cc를 출력하라!
 
   public static void printSedan(Sedan sedan) {
-    System.out.printf("모델명: %s\n", sedan.model);
-    System.out.printf("cc: %d\n", sedan.cc);
+    System.out.printf("모델명: %s\n", sedan.model); // Vehicle의 설계도로 만든 인스턴스 변수
+    System.out.printf("cc: %d\n", sedan.cc); // Car 설계도로 만든 인스턴스 변수
     System.out.println("-------------------------");
   }
 
