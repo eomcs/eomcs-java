@@ -1,7 +1,6 @@
 package com.eomcs.oop.ex05.l;
 
 public class Sedan extends Car {
-  @Override
   public void run() {
     System.out.println("쌩쌩 달린다.");
   }

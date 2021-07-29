@@ -8,7 +8,6 @@ package com.eomcs.oop.ex05.m;
 //    - 수퍼 클래스를 추출한 후 수퍼 클래스를 상속 받으면 된다.
 //
 public class Truck extends Car {
-  @Override
   public void run() {
     System.out.println("덜컹 덜컹 달린다.");
   }
