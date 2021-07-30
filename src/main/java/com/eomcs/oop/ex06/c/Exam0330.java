@@ -14,9 +14,9 @@ public class Exam0330 {
     // 오버라이딩 할 때(메서드를 재정의 할 때)
     // => 원본 보다 접근 범위를 좁힐 수는 없다.
     //
-    //  @Override private void m2() {} // (default) ==> private : 컴파일 오류!
-    //  @Override void m3() {} // protected ==> (default) : 컴파일 오류!
-    //  @Override protected void m4() {} // public ==> protected : 컴파일 오류!
+    //    @Override private void m2() {} // (default) ==> private : 컴파일 오류!
+    //    @Override void m3() {} // protected ==> (default) : 컴파일 오류!
+    //    @Override protected void m4() {} // public ==> protected : 컴파일 오류!
 
     // 결론!
     // 수퍼 클래스의 메서드를 자식 클래스가 재정의할 때

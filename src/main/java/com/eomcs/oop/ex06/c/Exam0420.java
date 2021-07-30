@@ -42,8 +42,8 @@ public class Exam0420 {
     }
 
     void test() {
-      this.m1(); // X4의 m1()
-      super.m1(); // X2의 m1()
+      this.m1(); // X4의 m1() : this가 실제 가리키는 인스턴스 클래스를 기준으로 메서드를 찾아 올라 간다.
+      super.m1(); // X2의 m1() : test()가 소속된 클래스를 기준으로 수퍼 클래스부터 메서드를 찾아 올라간다.
 
       this.m2(); // X3의 m2()
       super.m2(); // X3의 m2()

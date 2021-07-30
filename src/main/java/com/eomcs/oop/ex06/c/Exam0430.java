@@ -12,12 +12,9 @@ public class Exam0430 {
 
     void print() {
       System.out.println("A.print():");
-      System.out.printf("  => this.name(%s)\n",
-          this.name);
-      System.out.printf("  => this.tel(%s)\n",
-          this.tel);
-      System.out.printf("  => this.working(%s)\n",
-          this.working);
+      System.out.printf("  => this.name(%s)\n", this.name);
+      System.out.printf("  => this.tel(%s)\n", this.tel);
+      System.out.printf("  => this.working(%s)\n", this.working);
     }
   }
 
