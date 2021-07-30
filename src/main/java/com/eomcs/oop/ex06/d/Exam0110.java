@@ -31,11 +31,11 @@ public class Exam0110 {
   public static void main(String[] args) {
     A a = new A();
     a.m(); // A의 멤버 호출. OK!
-    //((A2)a).x(); // A 객체를 A2 객체라 우기면, 컴파일러는 통과! 실행은 오류!
+    //    ((A2)a).x(); // A 객체를 A2 객체라 우기면, 컴파일러는 통과! 실행은 오류!
     System.out.println("--------------------");
 
     A2 a2 = new A2();
-    a2.m(); // A2가 수퍼 클래스인 A의 메서드 호출! OK!
+    a2.m(); // A2가 오버라이딩 한 메서드 호출! 즉 A2의 m() 호출! OK!
     a2.x(); // A2의 메서드 호출! OK!
     System.out.println("----------------------");
 
