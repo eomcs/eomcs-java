@@ -1,6 +1,8 @@
 // String - String.equals() 처럼 동작하게 만들기
 package com.eomcs.basic.ex02;
 
+import java.util.Objects;
+
 public class Exam0123 {
 
   static class Member {
@@ -16,21 +18,14 @@ public class Exam0123 {
     // Object에서 상속 받은 메서드를 오버라이딩 하라.
     @Override
     public boolean equals(Object obj) {
+      if (this == obj)
+        return true;
       if (obj == null)
         return false;
-
-      if (obj.getClass() != Member.class)
+      if (getClass() != obj.getClass())
         return false;
-
       Member other = (Member) obj;
-
-      if (!this.name.equals(other.name))
-        return false;
-
-      if (this.age != other.age)
-        return false;
-
-      return true;
+      return age == other.age && Objects.equals(name, other.name);
     }
   }
 
