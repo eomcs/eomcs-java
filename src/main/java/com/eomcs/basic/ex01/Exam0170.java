@@ -64,7 +64,7 @@ public class Exam0170 {
 
     // 해결책:
     // => Object에서 상속 받은 clone()을 오버라이딩 하라!
-    // => Test0171.java 를 살펴보라!
+    // => Exam0171.java 를 살펴보라!
   }
 }
 
