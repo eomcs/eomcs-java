@@ -14,6 +14,7 @@ interface MyInterface2 {
   static final int v2 = 200;
   public final int v3 = 300;
   public static int v4 = 400;
+
   int v5 = 500; // 모두 생략된 상태!
 }
 

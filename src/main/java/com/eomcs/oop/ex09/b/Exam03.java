@@ -37,6 +37,9 @@ class MyInterface3Impl implements MyInterface3 {
   public void m2() {
     System.out.println("MyInterfaceImpl.m2()");
   }
+
+  // default 메서드는 오버라이딩 해도 되고 안해도 된다.
+  // => m3() 는 이 클래스에서 오버라이딩을 하지 않았다.
 }
 
 public class Exam03 {

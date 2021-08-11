@@ -24,7 +24,7 @@ public class Exam01 {
     // Worker 인터페이스에 선언된 메서드를 구현한다고 해서 되는 게 아니다.
     // 반드시 implements 키워드를 사용해서 
     // Worker 인터페이스를 구현한다고 선언해야 한다.
-    // 다음 HulWorker 클래스처럼 Worker를 구현한다고 선언하지 않는다면,
+    // 다음 HulWorker 클래스처럼 Worker 인터페이스 구현을 선언하지 않는다면,
     // 공식적으로 Worker 구현체가 아니기 때문에 
     // 레퍼런스에 담을 수 없다. 
     //    Worker w4 = new HulWorker(); // 컴파일 오류!

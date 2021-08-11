@@ -3,6 +3,10 @@ package com.eomcs.oop.ex09.b;
 
 interface MyInterface5 {
   // 인터페이스도 클래스처럼 static 메서드를 정의할 수 있다.
+  // => 접근 범위는 기본이 public 이다. 다른 접근 범위를 가질 수 없다.
+  // => public 을 생략할 수 있다.
+  //
+  // 다음 메서드는 public 이 생략된거지, (package-private) 접근 범위가 아니다.
   static void m1() {
     System.out.println("MyInterface5.m1()");
   }
