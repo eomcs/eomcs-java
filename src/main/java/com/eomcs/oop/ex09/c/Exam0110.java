@@ -25,33 +25,46 @@ public class Exam0110 {
     // ProtocolB 규칙 준수!
     @Override
     public void rule2() {System.out.println("rule2()");}
+
+    // 인터페이스와 상관 없이 메서드 추가
+    public void m1() {System.out.println("m1()");}
   }
 
   void test() {
 
     ProtocolImpl obj = new ProtocolImpl();
 
-    // 1) 인터페이스 레퍼런스로 구현체의 주소 받기
-    ProtocolB b = obj;
+    // 1) 클래스의 레퍼런스 사용,
+    // - 그 클래스에 정의된 메서드 호출 가능
+    // - 그 클래스의 상위 클래스에 정의된 메서드 호출 가능
+    obj.rule1(); // OK
+    obj.rule2(); // OK
+    obj.m1(); // OK
 
-    // 2) 메서드 호출
-    // - 해당 인터페이스의 규칙에 따라서만 호출할 수 있다.
-    b.rule1(); // OK
-    b.rule2(); // OK
+    System.out.println("------------------------------------");
+
+    // 2) 인터페이스의 레퍼런스 사용
+    // - 인터페이스에 정의된 메서드 호출 가능 
+    // - 상위 인터페이스에 정의된 메서드 호출 가능
+    ProtocolB b = obj;
+    b.rule2(); // OK --> ProtocolB.rule2() 
+    b.rule1(); // OK --> ProtocolA.rule1()
+    //    b.m1(); // 컴파일 오류 --> ProtocolImpl.m1() 
+
     System.out.println("-------------------------------");
 
-    // 3) 수퍼 인터페이스 레퍼런스
-    // - 해당 클래스가 ProtocolB 의 규칙에 따라 제작되었다면
+    // 3) 수퍼 인터페이스의 레퍼런스 사용
+    // - 인터페이스에 정의된 메서드 호출 가능 
+    // - 상위 인터페이스에 정의된 메서드 호출 가능
+    // - ProtocolImpl 클래스가 ProtocolB 의 규칙에 따라 제작되었다면
     //   결국 그 수퍼 인터페이스의 규칙도 준수하는 것이 된다.
     // - 따라서 수퍼 인터페이스 레퍼런스에 객체를 담을 수 있다.
     //   즉 수퍼 인터페이스 레퍼런스로 객체를 가리킬 수 있다.
     //
     ProtocolA a = obj;
-
-    // 4) 메서드 호출
-    // - 해당 인터페이스의 규칙에 따라서만 호출할 수 있다.
-    a.rule1(); // OK!
-    //    a.rule2(); // 컴파일 오류!
+    a.rule1(); // OK --> ProtocolA.rule1()
+    //    a.rule2(); // 컴파일 오류 --> ProtocolB.rule2() 
+    //    a.m1(); // 컴파일 오류 --> ProtocolImpl.m1() 
   }
 
   public static void main(String[] args) {
