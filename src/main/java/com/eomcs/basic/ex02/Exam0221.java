@@ -5,8 +5,8 @@ public class Exam0221 {
   public static void main(String[] args) {
 
     // 오토박싱
-    // - Java 1.5부터 코드의 문맥에 따라
-    //   박싱(boxing)과 언박싱(unboxing)을 자동으로 수행하는 기능을 제공한다.
+    // - Java 1.5부터 지원하는 문법이다.
+    // - 코드의 문맥에 따라 박싱(boxing)과 언박싱(unboxing)을 자동으로 수행한다.
     //
     // 즉 primitive data type 값을 Wrapper 클래스의 인스턴스에 바로 할당할 수 있다.
     //
