@@ -1,4 +1,4 @@
-// 신규 프로젝트를 위해 새로 추가한 인터페이스 구현
+// 신규 프로젝트를 위해 새로 규칙을 추가한 인터페이스를 구현
 package com.eomcs.oop.ex09.h.test2;
 
 public class WaterMarkPrinter implements Printer2 {
