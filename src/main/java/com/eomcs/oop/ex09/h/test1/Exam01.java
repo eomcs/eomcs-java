@@ -1,6 +1,6 @@
-package com.eomcs.oop.ex09.i.test1;
+package com.eomcs.oop.ex09.h.test1;
 
-import com.eomcs.oop.ex09.i.Printer;
+import com.eomcs.oop.ex09.h.Printer;
 
 public class Exam01 {
 

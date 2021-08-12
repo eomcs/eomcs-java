@@ -1,5 +1,5 @@
 // 인터페이스 : caller를 만드는 입장
-package com.eomcs.oop.ex09.k;
+package com.eomcs.oop.ex09.j;
 
 import java.util.ArrayList;
 import java.util.Iterator;

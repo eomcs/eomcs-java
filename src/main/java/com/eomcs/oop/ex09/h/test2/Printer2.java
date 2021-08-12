@@ -1,6 +1,6 @@
-package com.eomcs.oop.ex09.i.test2;
+package com.eomcs.oop.ex09.h.test2;
 
-import com.eomcs.oop.ex09.i.Printer;
+import com.eomcs.oop.ex09.h.Printer;
 
 // 신규 프로젝트에서는 워터마킹 기능을 갖는 프린터가 필요하다.
 // => 기존 인터페이스인 Printer 에 워터마팅 기능을 추가하게 되면

@@ -1,7 +1,7 @@
-package com.eomcs.oop.ex09.i.test2;
+package com.eomcs.oop.ex09.h.test2;
 
-import com.eomcs.oop.ex09.i.test1.FilmPrinter;
-import com.eomcs.oop.ex09.i.test1.PaperPrinter;
+import com.eomcs.oop.ex09.h.test1.FilmPrinter;
+import com.eomcs.oop.ex09.h.test1.PaperPrinter;
 
 public class Exam01 {
 

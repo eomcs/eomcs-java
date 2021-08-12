@@ -1,5 +1,5 @@
 // 디폴트 메서드 - 기존 코드에 영향을 미치지 않고 새 규칙을 추가하는 방법
-package com.eomcs.oop.ex09.i;
+package com.eomcs.oop.ex09.h;
 
 public interface Printer {
 

@@ -1,7 +1,7 @@
-package com.eomcs.oop.ex09.i.test3;
+package com.eomcs.oop.ex09.h.test3;
 
-import com.eomcs.oop.ex09.i.Printer;
-import com.eomcs.oop.ex09.i.test2.Printer2;
+import com.eomcs.oop.ex09.h.Printer;
+import com.eomcs.oop.ex09.h.test2.Printer2;
 
 // 기존 작성한 클래스를 새 규격에 맞춰 재활용할 수 있게 만드는 설계 기법!
 public class Printer2Adapter implements Printer2 {

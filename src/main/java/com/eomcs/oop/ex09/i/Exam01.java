@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex09.j;
+package com.eomcs.oop.ex09.i;
 
 public class Exam01 {
 

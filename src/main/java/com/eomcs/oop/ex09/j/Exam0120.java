@@ -1,5 +1,5 @@
 // 인터페이스 : callee를 만드는 입장
-package com.eomcs.oop.ex09.k;
+package com.eomcs.oop.ex09.j;
 
 import java.io.File;
 import java.io.FilenameFilter;

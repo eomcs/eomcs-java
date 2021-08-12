@@ -1,8 +1,8 @@
 // 신규 프로젝트를 위해 기존 규격에 새로 규칙(watermark())를 추가하였고
 // 이 클래스는 그 규칙을 구현하였다.
-package com.eomcs.oop.ex09.i.test4;
+package com.eomcs.oop.ex09.h.test4;
 
-import com.eomcs.oop.ex09.i.Printer;
+import com.eomcs.oop.ex09.h.Printer;
 
 // 패키지 g3처럼 새 규칙을 추가하기 위해 새 규격(interface)을 정의할 필요가 없다.
 // "디폴트 메서드"라는 문법을 사용하면 기존 클래스에 영향을 주지 않고
