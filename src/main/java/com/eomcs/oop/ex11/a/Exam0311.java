@@ -2,6 +2,7 @@
 package com.eomcs.oop.ex11.a;
 
 public class Exam0311 {
+
   static void m1() {
     // 로컬 변수처럼 로컬 클래스에는 접근 제어 modifier 를 붙일 수 없다.
     //    private class A1 {} // 컴파일 오류!

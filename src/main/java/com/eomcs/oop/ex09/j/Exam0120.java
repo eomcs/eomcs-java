@@ -10,7 +10,7 @@ public class Exam0120 {
 
     // 인터페이스를 기준으로 한 개발자 입장:
     // => File의 list() 메서드가 사용할 필터 객체를 만드는 입장이다.
-    // => 개발자는 FilenameFilter 인터페이스 규칙체 따라 클래스를 작성한다.
+    // => 개발자는 FilenameFilter 인터페이스 규칙 따라 클래스를 작성한다.
     // => 이렇게 작성한 클래스는  list() 메서드에서 사용할 것이다.
     class MyFilter implements FilenameFilter {
       @Override
