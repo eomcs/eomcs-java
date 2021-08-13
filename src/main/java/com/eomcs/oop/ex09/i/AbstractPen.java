@@ -24,7 +24,7 @@ public abstract class AbstractPen implements Pen {
     this.use = false;
   }
 
-  // write()는 어차피 서브 클래스에서 자신의 특성에 맞춰서 구현할 것이기 때문에
+  // write()는 어차피 서브 클래스에서 자신의 특성에 맞춰서 구현해야 하는 것이기 때문에
   // 수퍼 클래스에서는 구현하지 않는다.
 }
 
