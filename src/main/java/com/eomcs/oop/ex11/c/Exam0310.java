@@ -2,6 +2,7 @@
 package com.eomcs.oop.ex11.c;
 
 class C {
+
   static void m1() {
     // 스태틱 멤버는 인스턴스 멤버를 사용할 수 없다.
     //
@@ -22,7 +23,6 @@ class C {
 
     X obj2 = new X(); // 인스턴스 필드나 메서드와 마찬가지로 this를 생략할 수 있다.
     obj2.test();
-
   }
 
   class X {
