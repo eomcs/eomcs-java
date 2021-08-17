@@ -12,7 +12,7 @@ public class Exam0230 {
       name = "이름 없음";
     }
 
-    public A(final String name) {
+    public A(String name) {
       System.out.println("A(String) 호출됨!");
       this.name = name;
     }
@@ -22,7 +22,7 @@ public class Exam0230 {
     }
   }
 
-  public static void main(final String[] args) {
+  public static void main(String[] args) {
 
     // 익명 클래스를 정의할 때 호출할 수퍼 클래스의 생성자를 지정할 수 있다.
     // - 문법:
