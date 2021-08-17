@@ -1,4 +1,4 @@
-// 인스턴스 메서드에 정의된 local class : 로컬 클래스가 로컬 변수를 조회용으로만 사용하는 이유?
+// 로컬 클래스가 로컬 변수를 조회용으로만 사용하는 이유?
 package com.eomcs.oop.ex11.d;
 
 public class Exam0340 {

@@ -1,7 +1,8 @@
-// 인스턴스 메서드에 정의된 local class : 메서드에 선언된 로컬 변수 접근하기
+// 로컬 클래스에서 메서드에 선언된 로컬 변수 접근하기
 package com.eomcs.oop.ex11.d;
 
 class D3 {
+
   void m1() {
     final int v1 = 1;
     int v2 = 2;
@@ -18,7 +19,7 @@ class D3 {
         System.out.printf("v2 = %d\n", v2);
 
         // => 값을 여러 번 할당한 경우에는 접근할 수 없다.
-        //System.out.printf("v3 = %d\n", v3); // 컴파일 오류!
+        //        System.out.printf("v3 = %d\n", v3); // 컴파일 오류!
 
         // 결론!
         // - 상수 값이거나 상수에 준하는 경우(값을 한 번만 할당한 경우)

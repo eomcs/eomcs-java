@@ -2,6 +2,7 @@
 package com.eomcs.oop.ex11.d;
 
 class A {
+
   void m1() {
     // 메서드 안에 정의하는 클래스를 "local class"라 한다.
     // - 특정 메서드 안에서만 사용되는 경우 로컬 클래스로 정의한다.
