@@ -29,7 +29,7 @@ public class Exam0220 {
 
     // ObjectBox에 값 넣기
     b1.set(new Member("홍길동", 20));
-    b2.set("Hello");
+    b2.set("Hello"); // new String("Hello").intern()
     b3.set(new Date());
     b4.set(100); // auto-boxing ==> b4.set(Integer.valueOf(100)) 문장으로 변경된다.
     // 이렇게 ObjectBox에 다양한 타입의 값을 넣을 수 있는 이유?

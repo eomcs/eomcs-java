@@ -47,7 +47,7 @@ public class Exam0210 {
     // Member 객체를 저장하려면 MemberBox를 사용해야 한다.
     MemberBox box1 = new MemberBox();
     box1.set(new Member("홍길동", 20)); // 값 저장
-    //box1.set(new String("Hello")); // 컴파일 오류!
+    //    box1.set(new String("Hello")); // 컴파일 오류!
     Member m = box1.get(); // 값 꺼내기
     System.out.println(m);
 
