@@ -28,7 +28,7 @@ public class Exam0510 {
     return (T[]) Array.newInstance(type, 10);
   }
 
-  // 예4) 견본 배열의 타입 정보를 가지고 배열을 생성하기
+  // 예4) 견본 배열에서 타입 정보를 추출하여 배열을 생성하기
   @SuppressWarnings("unchecked")
   static <T> T[] create4(T[] arr) {
     Class<?> arrayTypeInfo = arr.getClass(); // 예) String[]
