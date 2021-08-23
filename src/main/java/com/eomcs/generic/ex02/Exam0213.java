@@ -41,7 +41,7 @@ public class Exam0213 {
     //list2 = new ArrayList<A>(); // 컴파일 오류!
     //list2 = new ArrayList<B1>(); // 컴파일 오류!
     list2 = new ArrayList<B2>();
-    //list2 = new ArrayList<C>(); // 컴파일 오류!
+    //    list2 = new ArrayList<C>(); // 컴파일 오류!
   }
 }
 

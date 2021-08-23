@@ -26,8 +26,8 @@ public class Exam0310 {
     // key: String
     // value: Member
     HashMap<String,Member> map3 = new HashMap<>();
-    //map3.put("aaa", "문자열"); // 컴파일 오류!
-    //map3.put(new Integer(100), new Member("홍길동", 20)); // 컴파일 오류!
+    //    map3.put("aaa", "문자열"); // 컴파일 오류!
+    //    map3.put(new Integer(100), new Member("홍길동", 20)); // 컴파일 오류!
     map3.put("aaa", new Member("홍길동", 20)); // OK!
 
     // 제네릭을 지정하면 값을 꺼낼 때 형변환할 필요가 없다.

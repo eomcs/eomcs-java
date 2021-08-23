@@ -27,13 +27,13 @@ public class Exam0231 {
     // ArrayList의 메서드 파라미터나 리턴 타입은 B1으로 설정된다.
 
     // => add(B1)
-    //list1.add(new Object()); // 컴파일 오류!
-    //list1.add(new String()); // 컴파일 오류!
-    //list1.add(new Integer(100)); // 컴파일 오류!
-    //list1.add(new Member("홍길동", 20)); // 컴파일 오류!
-    //list1.add(new A()); // 컴파일 오류!
+    //    list1.add(new Object()); // 컴파일 오류!
+    //    list1.add(new String()); // 컴파일 오류!
+    //    list1.add(new Integer(100)); // 컴파일 오류!
+    //    list1.add(new Member("홍길동", 20)); // 컴파일 오류!
+    //    list1.add(new A()); // 컴파일 오류!
     list1.add(new B1());
-    //list1.add(new B2()); // 컴파일 오류!
+    //    list1.add(new B2()); // 컴파일 오류!
     list1.add(new C());
 
     System.out.println("종료!");
