@@ -12,6 +12,7 @@ public class Exam0320 {
   }
 
   public static void main(String[] args) {
+
     // 람다 
     // 파라미터와 리턴 값이 있는 메서드 구현하기
     test((a, b) -> a + b);

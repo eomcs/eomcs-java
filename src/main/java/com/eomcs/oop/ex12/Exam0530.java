@@ -63,6 +63,8 @@ public class Exam0530 {
     Calculator2 c2 = MyCalculator::plus; // OK!
     System.out.println(c2.compute(100, 200));
 
+
+
     // 리턴 타입 int ===> short
     //    Calculator3 c3 = MyCalculator::plus; // 컴파일 오류!
     // 위 문장은 다음과 같다.
@@ -98,7 +100,7 @@ public class Exam0530 {
     System.out.println(c5.compute(100, 200));
 
     // 리턴 타입 int ===> String
-    // Calculator6 c6 = MyCalculator::plus; // 컴파일 오류!
+    //    Calculator6 c6 = MyCalculator::plus; // 컴파일 오류!
     // 위 문장은 다음과 같다.
     //    Calculator6 c6 = new Calculator6() {
     //      @Override
