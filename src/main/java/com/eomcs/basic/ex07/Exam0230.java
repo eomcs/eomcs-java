@@ -1,26 +1,32 @@
-// Iterator 의 사용
+// java.util.HashSet 클래스 사용 - 값을 꺼내는 방법 : for(:)
 package com.eomcs.basic.ex07;
 
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.HashSet;
 
 public class Exam0230 {
   public static void main(String[] args) {
-    LinkedList<String> list = new LinkedList<>();
-    list.add("aaa");
-    list.add("bbb");
-    list.add("ccc");
-    list.add("ddd");
-    list.add("eee");
 
-    Iterator<String> 컬렉션에서값을꺼내주는객체 = list.iterator();
+    HashSet<String> set = new HashSet<>();
+    set.add("aaa");
+    set.add("bbb");
+    set.add("ccc");
+    set.add("ddd");
+    set.add("eee");
 
-    while (컬렉션에서값을꺼내주는객체.hasNext()) {
-      System.out.print(컬렉션에서값을꺼내주는객체.next() + ", ");
+    // Iterable 구현체라면 다음과 같이 for(:)를 사용하여 값을 조회할 수 있다.
+    for (String s : set) {
+      System.out.print(s + ", ");
     }
     System.out.println();
-
-    // Iterator 를 사용하면,
-    // 컬렉션의 종류에 상관없이 일관된 방식으로 값을 조회할 수 있다.
   }
 }
+
+// Iterator 패턴
+// - 컬렉션에서 값을 꺼내는 기능을 객체화시키는 방법
+// - 즉 별도의 클래스로 정의하여 사용한다.
+// - 이점
+//   컬렉션의 타입에 상관없이 일관된 방식으로 값을 꺼낼 수 있다.
+//   예) ArrayList => get(), Stack => pop(), Queue => poll()
+//   Iterator를 사용하면 hasNext(), next()만 사용하면 된다.
+
+

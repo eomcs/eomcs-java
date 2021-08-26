@@ -2,6 +2,7 @@
 package com.eomcs.basic.ex08;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Exam0140 {
 
@@ -23,11 +24,7 @@ public class Exam0140 {
 
       @Override
       public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((major == null) ? 0 : major.hashCode());
-        result = prime * result + no;
-        return result;
+        return Objects.hash(major, no);
       }
     }
 
@@ -62,7 +59,9 @@ public class Exam0140 {
     System.out.printf("hashCode(): %d, %d\n", k3.hashCode(), k6.hashCode());
     System.out.println("-----------------------------------");
 
-    // hashCode()의 리턴 값이 같다고 해서 같은 key로 간주하지 않는다.
+    // hashCode()의 리턴 값이 같더라도
+    // equals()로 비교한 값이 false이면 
+    // 다른 key로 간주한다.
     System.out.println(map.get(k6));
   }
 

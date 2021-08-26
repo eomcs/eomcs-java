@@ -21,14 +21,14 @@ public class Exam0110 {
     HashSet<String> set = new HashSet<>();
 
     // Set에 값 추가하기
-    set.add("aaa");
-    set.add("bbb");
-    set.add("ccc");
+    set.add(new String("aaa"));
+    set.add(new String("bbb"));
+    set.add(new String("ccc"));
 
     // Set은 집합의 특성을 따른다.
     // 같은 값을 중복해서 넣을 수 없다.
-    set.add("aaa");
-    set.add("bbb");
+    set.add(new String("aaa")); // 위에서 입력한 "aaa"와 인스턴스가 달라도 중복된 것으로 간주.
+    set.add(new String("bbb")); // 위에서 입력한 "bbb"와 인스턴스가 달라도 중복된 것으로 간주.
 
     // null을 넣을 수 있다. 단 중복해서 넣을 수 없다.
     set.add(null);

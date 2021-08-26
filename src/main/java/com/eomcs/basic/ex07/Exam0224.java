@@ -4,7 +4,7 @@ package com.eomcs.basic.ex07;
 import java.util.Iterator;
 import java.util.concurrent.ArrayBlockingQueue;
 
-public class Exam0233 {
+public class Exam0224 {
   public static void main(String[] args) {
 
     ArrayBlockingQueue<String> queue = new ArrayBlockingQueue<>(100);

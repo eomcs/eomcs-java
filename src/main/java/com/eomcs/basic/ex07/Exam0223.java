@@ -1,13 +1,13 @@
 // Iterator 의 사용
 package com.eomcs.basic.ex07;
 
+import java.util.ArrayDeque;
 import java.util.Iterator;
-import java.util.Stack;
 
-public class Exam0231 {
+public class Exam0223 {
   public static void main(String[] args) {
 
-    Stack<String> stack = new Stack<>();
+    ArrayDeque<String> stack = new ArrayDeque<>();
     stack.push("aaa");
     stack.push("bbb");
     stack.push("ccc");
@@ -15,6 +15,7 @@ public class Exam0231 {
     stack.push("eee");
 
     Iterator<String> 컬렉션에서값을꺼내주는객체 = stack.iterator();
+
     while (컬렉션에서값을꺼내주는객체.hasNext()) {
       System.out.print(컬렉션에서값을꺼내주는객체.next() + ", ");
     }

@@ -1,20 +1,19 @@
 // Iterator 의 사용
 package com.eomcs.basic.ex07;
 
-import java.util.ArrayDeque;
 import java.util.Iterator;
+import java.util.LinkedList;
 
-public class Exam0232 {
+public class Exam0221 {
   public static void main(String[] args) {
+    LinkedList<String> list = new LinkedList<>();
+    list.add("aaa");
+    list.add("bbb");
+    list.add("ccc");
+    list.add("ddd");
+    list.add("eee");
 
-    ArrayDeque<String> stack = new ArrayDeque<>();
-    stack.push("aaa");
-    stack.push("bbb");
-    stack.push("ccc");
-    stack.push("ddd");
-    stack.push("eee");
-
-    Iterator<String> 컬렉션에서값을꺼내주는객체 = stack.iterator();
+    Iterator<String> 컬렉션에서값을꺼내주는객체 = list.iterator();
 
     while (컬렉션에서값을꺼내주는객체.hasNext()) {
       System.out.print(컬렉션에서값을꺼내주는객체.next() + ", ");

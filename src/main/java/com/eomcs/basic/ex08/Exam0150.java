@@ -2,6 +2,7 @@
 package com.eomcs.basic.ex08;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Exam0150 {
 
@@ -23,11 +24,7 @@ public class Exam0150 {
 
       @Override
       public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((major == null) ? 0 : major.hashCode());
-        result = prime * result + no;
-        return result;
+        return Objects.hash(major, no);
       }
 
       @Override
@@ -39,14 +36,7 @@ public class Exam0150 {
         if (getClass() != obj.getClass())
           return false;
         MyKey other = (MyKey) obj;
-        if (major == null) {
-          if (other.major != null)
-            return false;
-        } else if (!major.equals(other.major))
-          return false;
-        if (no != other.no)
-          return false;
-        return true;
+        return Objects.equals(major, other.major) && no == other.no;
       }
     }
 
@@ -89,7 +79,8 @@ public class Exam0150 {
     // 결론!
     // - HashMap의 key 객체로 사용할 클래스는 반드시 hashCode()와 equals()를
     //   오버라이딩 하여 같은 값을 갖는 경우 같은 해시 값을 리턴하게 하라!
-    // - 대부분 현업에서는 그냥 String을 key로 사용한다.
+    // - 개발자가 만든 클래스를 key 객체로 사용하려면 이런 번거로움이 있다.
+    // - 그래서 대부분 현업에서는 그냥 String을 key로 사용한다.
     //   또는 Wrapper 클래스인 Integer를 사용하기도 한다.
   }
 
