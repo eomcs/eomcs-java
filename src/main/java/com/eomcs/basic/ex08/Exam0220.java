@@ -1,7 +1,6 @@
 // java.util.HashMap - value 목록만 꺼내기
 package com.eomcs.basic.ex08;
 
-import java.util.Collection;
 import java.util.HashMap;
 
 public class Exam0220 {
@@ -19,7 +18,7 @@ public class Exam0220 {
     // value 객체는 중복 저장될 수 있기 때문에
     // value 객체 목록은 Collection 에 담아서 리턴한다.
     //
-    Collection<Member> values = map.values();
+    java.util.Collection<Member> values = map.values();
     for (Member value : values) {
       System.out.println(value);
     }

@@ -34,9 +34,9 @@ public class Exam0210 {
     }
     System.out.println("---------------------");
 
-    // 3) 만약 컬렉션 객체가 java.util.Collection 규칙을 따라 만든 클래스라면
+    // 3) 만약 컬렉션 객체가 java.util.Iterable 규칙을 따라 만든 클래스라면
     //    for(:) 반복문을 바로 사용할 수 있다.
-    for (String key : keys/* 배열 또는 Collection 객체 */) {
+    for (String key : keys/* 배열 또는 Iterable 객체 */) {
       System.out.println(map.get(key));
     }
     System.out.println("---------------------");

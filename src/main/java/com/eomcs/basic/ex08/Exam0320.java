@@ -26,7 +26,7 @@ public class Exam0320 {
 
     // Iterator 객체를 생성할 때,
     // 현재 목록 객체(keys)를 바탕으로 생성한다.
-    // 따라서 Iterator를 생성한 후에 목록의 값을 변경하면,
+    // 따라서 Iterator를 생성한 후에 목록을 변경하면,
     // 기존 목록에서 뽑은 Iterator는 무효한 객체가 된다.
 
     map.put("s06", new Member("김구", 50));
