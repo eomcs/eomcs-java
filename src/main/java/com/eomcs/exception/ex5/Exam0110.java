@@ -23,7 +23,7 @@ public class Exam0110 {
       board.setCreatedDate(Date.valueOf(keyScan.nextLine()));
 
       return board;
-    }
+    } 
   }
 
   public static void main(String[] args) {

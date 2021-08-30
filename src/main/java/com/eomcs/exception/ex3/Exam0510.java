@@ -19,7 +19,7 @@ public class Exam0510 {
 
   public static void main(String[] args) {
     try {
-      m(3);
+      m(5);
       System.out.println("try");
 
     } catch (RuntimeException | SQLException | IOException e) {

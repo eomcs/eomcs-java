@@ -31,7 +31,7 @@ public class BoardException extends RuntimeException {
   //    의미있는 이름을 가진 예외 클래스를 만드는 것이 목적이다.
   // => 즉 예외가 발생했을 때 클래스이름으로 어떤 예외인지 
   //    쉽게 추측할 수 있도록 하기 위함이다.
-  //
+  // => 일종의 분류표로서 사용한다.
 
 
 
