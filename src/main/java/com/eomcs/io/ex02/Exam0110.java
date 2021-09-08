@@ -30,8 +30,8 @@ public class Exam0110 {
     out.write(102);   // 0x00000066
     out.write(127);   // 0x0000007f
     out.write(255);   // 0x000000ff
-    out.write('A'); // 0x0041
-    out.write('가'); // 0xac00
+    out.write('A');   // 0x0041
+    out.write('가');  // 0xac00
 
     // 3) 출력 도구를 닫는다.
     // - OS에서 관리하는 자원 중에서 한정된 개수를 갖는 자원에 대해

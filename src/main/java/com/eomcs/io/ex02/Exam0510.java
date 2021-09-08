@@ -33,15 +33,21 @@ public class Exam0510 {
     //
     // JVM에 문자를 입출력할 때 사용하는 기본 문자 집합이 무엇인지 알아 본다.
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
-    byte[] bytes = str.getBytes(); 
-    // 이클립스: UCS2 ==> UTF-8
-    // Windows: UCS2 ==> MS949
-    // Linux: UCS2 ==> UTF-8
-    // macOS: UCS2 ==> UTF-8
+    byte[] bytes = str.getBytes();
+    //
+    // 이클립스: 
+    //      UCS2 ==> UTF-8
+    //      이클립스의 경우 자바 앱을 실행할 때 file.encoding 변수의 값을 utf-8 로 설정한다.
+    // 
+    // file.encoding JVM 환경 변수의 값이 설정되어 있지 않을 경우, 
+    //      Windows: UCS2 ==> MS949
+    //      Linux: UCS2 ==> UTF-8
+    //      macOS: UCS2 ==> UTF-8
     //
     for (byte b : bytes) {
       System.out.printf("%x ", b);
     }
+    System.out.println();
 
     // 바이트 배열 전체를 그대로 출력한다.
     FileOutputStream out = new FileOutputStream("temp/utf.txt");
