@@ -19,12 +19,7 @@ public class Exam0730 {
     File[] files = dir.listFiles(new FileFilter() {
       @Override
       public boolean accept(File pathname) {
-        if (pathname.isDirectory()
-            || (pathname.isFile() && pathname.getName().endsWith(".class"))) {
-          return true;
-        }
-
-        return false;
+        return pathname.isDirectory() || (pathname.isFile() && pathname.getName().endsWith(".class"));
       }
     });
 

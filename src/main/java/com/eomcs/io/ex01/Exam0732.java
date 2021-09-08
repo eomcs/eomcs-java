@@ -20,8 +20,8 @@ public class Exam0732 {
   static void printClasses(File dir, String packageName) {
 
     // 기존의 익명 클래스를 람다 문법으로 교체한다.
-    File[] files = dir.listFiles(f -> f.isDirectory()
-        || (f.isFile() && f.getName().endsWith(".class")));
+    File[] files = dir.listFiles(
+        f -> f.isDirectory() || (f.isFile() && f.getName().endsWith(".class")));
 
     if (packageName.length() > 0) {
       packageName += ".";
