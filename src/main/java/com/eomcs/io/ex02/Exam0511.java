@@ -19,6 +19,7 @@ public class Exam0511 {
     for (byte b : bytes) {
       System.out.printf("%x ", b);
     }
+    System.out.println();
 
     // 바이트 배열 전체를 그대로 출력한다.
     FileOutputStream out = new FileOutputStream("temp/ms949.txt");
