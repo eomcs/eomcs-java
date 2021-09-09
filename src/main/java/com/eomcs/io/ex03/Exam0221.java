@@ -10,8 +10,8 @@ public class Exam0221 {
 
     char[] buf = new char[100];
 
-    int count = in.read(buf); 
-    String str = new String(buf, 0, count);
+    int count = in.read(buf); // char 배열에 담을 때 UTF-16BE 코드 값으로 변환한다.
+    String str = new String(buf, 0, count); // 그래서 String 객체를 만들 때 문자집합을 지정할 필요가 없다.
 
     in.close();
 
