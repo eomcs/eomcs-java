@@ -1,4 +1,4 @@
-package com.eomcs.design_pattern.decorator.after;
+package com.eomcs.design_pattern.decorator.ex02.after;
 
 public class Sedan extends Car {
   @Override

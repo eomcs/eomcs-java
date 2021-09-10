@@ -1,4 +1,4 @@
-package com.eomcs.design_pattern.decorator.after;
+package com.eomcs.design_pattern.decorator.ex02.after;
 
 public class Test01 {
   public static void main(String[] args) {

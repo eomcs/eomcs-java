@@ -1,4 +1,4 @@
-package com.eomcs.design_pattern.decorator.after;
+package com.eomcs.design_pattern.decorator.ex02.after;
 
 // 자동차에 추가 기능을 덧붙이는 역할을 한다.
 // 다른 부속품의 수퍼 클래스 역할을 한다. 

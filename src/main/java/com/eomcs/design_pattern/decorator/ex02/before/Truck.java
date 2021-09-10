@@ -1,4 +1,4 @@
-package com.eomcs.design_pattern.decorator.before;
+package com.eomcs.design_pattern.decorator.ex02.before;
 
 public class Truck extends Car {
   @Override
