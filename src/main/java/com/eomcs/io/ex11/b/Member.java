@@ -11,10 +11,10 @@ package com.eomcs.io.ex11.b;
 //    단지 Serialize를 활성화시키는 기능을 수행한다.
 //    즉 serialize 가능함을 표시하는 역할을 한다.
 // => 이 인터페이스를 구현한 객체만이
-//    ObjectInputStream/ObjectOutputStream으로
+//    ObjectOutputStream/ObjectInputStream으로
 //    serialize/deserialize 할 수 있다.
 //
-public class Member implements java.io.Serializable {
+public class Member implements java.io.Serializable   {
   String name;
   int age;
   boolean gender; // true(여자), false(남자)
