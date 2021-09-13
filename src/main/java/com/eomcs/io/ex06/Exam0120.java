@@ -14,6 +14,7 @@ public class Exam0120 {
     long startTime = System.currentTimeMillis(); // 밀리초
 
     int callCount = 0;
+
     while ((len = in.read(buf)) != -1) {
       callCount++; // 파일을 끝까지 읽는다.
     }
