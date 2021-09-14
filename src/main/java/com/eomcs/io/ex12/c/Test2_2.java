@@ -11,7 +11,7 @@ public class Test2_2 {
     ObjectInputStream in = new ObjectInputStream(in0);
 
     // deserialize 할 때 
-    // private 필드의 값도 데이터를 읽어 저장한다.
+    // private 접근 제어에 상관없이 파일에서 읽은 값을 필드에 바로 저장한다.
     // 생성자나 setter를 호출하지 않는다.
     // 인스턴스를 생성한 후 직접 인스턴스의 필드 값을 저장한다.
     Score2 score = (Score2) in.readObject();

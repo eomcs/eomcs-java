@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Exam0130 {
   public static void main(String[] args) {
-    
+
     // try-with-resource 문법:
     // => java.lang.AutoCloseable 구현체인 경우 
     //    try 블록을 벗어나기 전에 자동으로 close()가 호출되게 하는 문법
@@ -19,12 +19,12 @@ public class Exam0130 {
     //    }
     //
     try (FileOutputStream out = new FileOutputStream("temp3/data.bin")) {
-      
+
       out.write(0x55);
-      
+
     } catch (IOException e) {
       System.out.println("파일 입출력 예외 발생!");
-      e.printStackTrace();
+      //      e.printStackTrace();
     }
 
     System.out.println("출력 완료!");

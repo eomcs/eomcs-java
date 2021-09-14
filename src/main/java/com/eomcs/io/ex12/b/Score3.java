@@ -6,7 +6,7 @@ import java.io.Serializable;
 // => 개발자가 serialVersionUID이 값을 직접 설정할 수 있다.
 //
 public class Score3 implements Serializable {
-  
+
   // 개발자가 다음과 같이 serialVersionUID 변수 값을 지정하면 
   // 컴파일러의 경고가 뜨지 않는다.
   // => Test3_1을 실행하여 score3.data 파일에 인스턴스를 출력한 후 
@@ -21,19 +21,19 @@ public class Score3 implements Serializable {
   //    이전 버전의 값을 그대로 읽어도 된다.
   //    이런 경우에 serialVersionUID의 값을 그대로 두는 것이다.
   private static final long serialVersionUID = 100L;
-  
+
   private String name;
-  private String tel; // Test3_1을 실행한 후에 이 필드를 추가한다.
+  //  private String tel; // Test3_1을 실행한 후에 이 필드를 추가한다.
   private int kor;
   private int eng;
   private int math;
   private int sum;
   private float aver;
-  
+
   public Score3() {
     System.out.println("Score3()");
   }
-  
+
   public Score3(String name, int kor, int eng, int math) {
     this.name = name;
     this.kor = kor;
@@ -41,20 +41,25 @@ public class Score3 implements Serializable {
     this.math = math;
     compute();
   }
-  
+
   @Override
   public String toString() {
-    return "Score3 [name=" + name + ", tel=" + tel + ", kor=" + kor + ", eng=" + eng + ", math="
-        + math + ", sum=" + sum + ", aver=" + aver + "]";
-  }
-  
-  public String getTel() {
-    return tel;
+    return "Score3 [name=" + name + 
+        //        ", tel=" + tel + 
+        ", kor=" + kor + 
+        ", eng=" + eng + 
+        ", math=" + math + 
+        ", sum=" + sum + 
+        ", aver=" + aver + "]";
   }
 
-  public void setTel(String tel) {
-    this.tel = tel;
-  }
+  //  public String getTel() {
+  //    return tel;
+  //  }
+  //
+  //  public void setTel(String tel) {
+  //    this.tel = tel;
+  //  }
 
   public String getName() {
     return name;
@@ -98,7 +103,7 @@ public class Score3 implements Serializable {
   public float getAver() {
     return aver;
   }
-  
+
   public void compute() {
     this.sum = this.kor + this.eng + this.math;
     this.aver = this.sum / 3f;
