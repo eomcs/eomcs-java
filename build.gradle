@@ -92,8 +92,8 @@ dependencies {
   // MariaDB JDBC 드라이버
   implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
 
-
-
+  // Google JSON 라이브러리
+  implementation 'com.google.code.gson:gson:2.8.8'
 
   // Apache HTTP 통신 라이브러리
   //implementation 'org.apache.httpcomponents.client5:httpclient5:5.0'
