@@ -17,13 +17,25 @@ public class Exam0110 {
     m.setTel("010-2222-1111");
     m.setRegisteredDate(new Date(System.currentTimeMillis()));
 
+    // 2) JSON 처리 객체 준비
     Gson gson = new Gson();
+
+    // 3) 객체의 값을 JSON 문자열로 얻기
     String jsonStr = gson.toJson(m);
 
     System.out.println(jsonStr);
   }
 }
 
+// JSON 객체 형식 - { 객체 정보 }
+// => { "프로퍼티명" : 값, "프로퍼티명": 값, ...}
+// 
+// 값:
+// - 문자열 => "값"
+// - 숫자   => 값
+// - 논리   => true, false
+//
+// 프로퍼티명은 반드시 문자열로 표현해야 한다.
 
 
 
