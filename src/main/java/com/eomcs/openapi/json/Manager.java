@@ -16,4 +16,10 @@ public class Manager extends Member {
   public void setFax(String fax) {
     this.fax = fax;
   }
+  @Override
+  public String toString() {
+    return "Manager [position=" + position + ", fax=" + fax + ", toString()=" + super.toString()
+    + "]";
+  }
+
 }

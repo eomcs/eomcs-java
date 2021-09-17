@@ -15,6 +15,12 @@ public class Teacher extends Member {
   public void setHourPay(int hourPay) {
     this.hourPay = hourPay;
   }
+  @Override
+  public String toString() {
+    return "Teacher [major=" + major + ", hourPay=" + hourPay + ", toString()=" + super.toString()
+    + "]";
+  }
+
 
 
 }
