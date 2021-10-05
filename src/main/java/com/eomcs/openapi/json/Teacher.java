@@ -3,6 +3,7 @@ package com.eomcs.openapi.json;
 public class Teacher extends Member {
   String major;
   int hourPay;
+
   public String getMajor() {
     return major;
   }
