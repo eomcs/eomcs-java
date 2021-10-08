@@ -70,12 +70,6 @@ dependencies {
   // Apache commons-dbcp 라이브러리
   // - DataSource 구현체가 들어 있다.
   implementation 'commons-dbcp:commons-dbcp:1.4'
-
-  // Oracle JDBC Driver
-  implementation 'com.oracle.database.jdbc:ojdbc10-production:19.8.0.0'
-  
-  // MSSQL JDBC Driver
-  implementation 'com.microsoft.sqlserver:mssql-jdbc:9.2.1.jre11'
    
   // Reflection API를 좀 더 쉽게 사용하게 도와주는 유틸리티
   //implementation 'org.reflections:reflections:0.9.12'
@@ -90,8 +84,14 @@ dependencies {
   implementation 'org.mybatis:mybatis-spring:2.0.6'
 
   // MariaDB JDBC 드라이버
-  implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
+  implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
 
+  // Oracle JDBC Driver
+  implementation 'com.oracle.database.jdbc:ojdbc11-production:21.3.0.0'
+    
+  // MSSQL JDBC Driver
+  implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
+  
   // Google JSON 라이브러리
   implementation 'com.google.code.gson:gson:2.8.8'
 
