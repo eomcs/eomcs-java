@@ -87,7 +87,7 @@ dependencies {
   implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
 
   // Oracle JDBC Driver
-  implementation 'com.oracle.database.jdbc:ojdbc11-production:21.3.0.0'
+  implementation 'com.oracle.database.jdbc:ojdbc11:21.3.0.0'
     
   // MSSQL JDBC Driver
   implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'

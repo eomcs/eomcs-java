@@ -22,7 +22,7 @@ public class Exam0120 {
       // 2) DriverManager에 등록 안함!
 
       // DriverManager에 자동으로 등록됐는지 확인해보자!
-      java.sql.Driver driver = DriverManager.getDriver("jdbc:mariadb:");
+      java.sql.Driver driver = DriverManager.getDriver("jdbc:mariadb://");
       System.out.println(driver);
       // 해당 드라이버가 등록되지 않았으면 예외가 발생할 것이다.
 

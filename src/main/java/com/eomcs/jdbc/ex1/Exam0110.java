@@ -66,10 +66,6 @@ public class Exam0110 {
       java.sql.Driver driver3 = DriverManager.getDriver("jdbc:sqlserver://");
       System.out.println(driver3);
 
-      // 다음과 같이 파라미터로 지정한 JDBC 드라이버를 못찾으면 예외가 발생한다.
-      java.sql.Driver driver4 = DriverManager.getDriver("jdbc:db2://");
-      System.out.println(driver4);
-
     } catch (SQLException e) {
       e.printStackTrace();
     }
