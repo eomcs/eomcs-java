@@ -1,5 +1,5 @@
 // 게시판 관리 - 등록 + PreparedStatement 사용
-package com.eomcs.jdbc.ex2;
+package com.eomcs.jdbc.ex3;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

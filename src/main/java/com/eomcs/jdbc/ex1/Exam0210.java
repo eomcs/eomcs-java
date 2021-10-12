@@ -17,13 +17,14 @@ public class Exam0210 {
 
       // DBMS에 연결하기
       // => DriverManager에게 DBMS와의 연결을 요청한다. 어느 서버에 접속할 것인지 정보를 제공해야 한다.
-      // jdbc url : DBMS 서버 정보. 예) jdbc:DBMS://서버주소:포트/데이터베이스명
-      // (포트번호를 지정하지 않으면 기본이 3306 이다.)
+      // jdbc url : DBMS 서버 정보. 
+      //  예) jdbc:DBMS://서버주소:포트/데이터베이스명
+      //      (포트번호를 지정하지 않으면 기본이 3306 이다.)
       // username : DBMS 사용자 아이디
       // password : DBMS 사용자 암호
       //
-      con = DriverManager.getConnection( //
-          "jdbc:mariadb://localhost:3306/studydb2", // jdbcURL
+      con = DriverManager.getConnection(
+          "jdbc:mariadb://localhost:3306/studydb", // jdbcURL
           "study", // username
           "1111" // password
           );

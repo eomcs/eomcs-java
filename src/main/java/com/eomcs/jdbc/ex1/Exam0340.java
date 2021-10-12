@@ -15,6 +15,7 @@ public class Exam0340 {
         ) {
 
       // 반복문을 사용하면 서버에서 여러 개의 데이터를 가져올 수 있다.
+      // - next()는 서버에서 레코드 1개를 가져온다.
       while (rs.next()) {
         System.out.printf("%d, %s, %s, %s, %d\n", //
             rs.getInt("board_id"), //

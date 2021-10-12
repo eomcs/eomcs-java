@@ -18,13 +18,13 @@ public class Exam0361 {
       //
       // => 게시글을 참조하는 첨부 파일 데이터를 먼저 지운다.
       int count = stmt.executeUpdate(
-          "delete from x_board_file where board_id = 4");
+          "delete from x_board_file where board_id = 1");
       System.out.printf("x_board_file 테이블 : %d 개 삭제 성공!\n", count);
 
       // => 부모 테이블의 데이터를 지운다.
-      count = stmt.executeUpdate(
-          "delete from x_board where board_id = 4");
-      System.out.printf("x_board 테이블 : %d 개 삭제 성공!\n", count);
+      int count2 = stmt.executeUpdate(
+          "delete from x_board where board_id = 1");
+      System.out.printf("x_board 테이블 : %d 개 삭제 성공!\n", count2);
     }
   }
 }

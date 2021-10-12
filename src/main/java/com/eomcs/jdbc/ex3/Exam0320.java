@@ -1,5 +1,5 @@
 // 게시물 관리 - 목록 + PreparedStatement
-package com.eomcs.jdbc.ex2;
+package com.eomcs.jdbc.ex3;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

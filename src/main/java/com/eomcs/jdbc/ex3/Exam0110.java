@@ -1,62 +1,58 @@
-// 게시판 관리 - JDBC 코드를 별도의 클래스로 캡슐화시킴. DAO 적용.
+// Statement 와 SQL 삽입 공격
 package com.eomcs.jdbc.ex3;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.Scanner;
 
 public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
+    String no = null;
+    String title = null;
+    String contents = null;
 
-    Board board = new Board();
+    try (Scanner keyboard = new Scanner(System.in)) {
+      System.out.print("번호? ");
+      no = keyboard.nextLine();
 
-    try (Scanner keyScan = new Scanner(System.in)) {
-
-      // 사용자로부터 제목, 내용을 입력 받는다.
       System.out.print("제목? ");
-      board.setTitle(keyScan.nextLine());
+      title = keyboard.nextLine();
 
       System.out.print("내용? ");
-      board.setContent(keyScan.nextLine());
-
-      System.out.print("입력하시겠습니까?(Y/n) ");
-      String input = keyScan.nextLine();
-
-      if (!input.equalsIgnoreCase("y") && input.length() != 0) {
-        System.out.println("등록을 취소 하였습니다.");
-        return;
-      }
+      contents = keyboard.nextLine();
     }
 
-    try {
-      BoardDao boardDao = new BoardDao();
-      int count = boardDao.insert(board);
-      System.out.printf("%d 개 입력 성공!", count);
+    try (Connection con = DriverManager.getConnection( //
+        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        Statement stmt = con.createStatement()) {
 
-      // 이렇게 DBMS 작업을 별도의 클래스로 분리하여 캡슐화하면
-      // 데이터 처리를 요구하는 쪽에서는
-      // 데이터의 구체적인 처리 방식을 몰라도 되기 때문에
-      // 코드가 간결해진다.
-      // 또한 데이터 처리 방식이 바뀌더라도 영향을 받지 않는다.
+      // SQL 삽입 공격
+      // => 입력 문자열에 SQL 명령을 삽입하여 프로그램의 의도와 다르게 데이터를 조작하는 행위.
+      // => 사용자가 입력한 값을 가지고 SQL 문장을 만들 때 이런 문제가 발생한다.
+      // => 예를 들어 이 예제를 실행할 때 다음과 같이 입력해 보라!
+      // 번호? 1
+      // 제목? okok
+      // 내용? test', view_count = 300, created_date = '2019-3-3
       //
-      // [데이터처리를 사용하는 측]......[데이터를 처리하는 측(DAO)]
-      // .........|.....................................|
-      // .........|..생성...............................|
-      // .........|------> [도메인 객체]................|
-      // .........|.....................................|
-      // .........|........메서드 호출..................|
-      // .........|------------------------------------>|
-      // .........|.....................................|
+      int count = stmt.executeUpdate( 
+          "update x_board set title = '" + title + 
+          "', contents = '" + contents + 
+          "' where board_id = " + no);
+
+      // 위에서 사용자가 입력한 값을 가지고 SQL 문장을 만들면 다음과 같다.
       //
-      // 도메인 객체(예: Board)
-      // => 두 객체 사이에 데이터를 실어 나르는 역할을 한다고 해서
-      // "DTO(Data Transfer Object)"라고도 부른다.
-      // => 두 객체 사이에 전달되는 값을 표현한다고 해서
-      // "VO(Value Object)"라고도 부른다.
+      // update x_board set title = 'okok',
+      // contents = 'test', view_count = 300, created_date = '2019-3-3'
+      // where board_id = 1
       //
-    } catch (Exception e) {
-      e.printStackTrace();
+
+      if (count == 0) {
+        System.out.println("해당 번호의 게시물이 존재하지 않습니다.");
+      } else {
+        System.out.println("변경하였습니다.");
+      }
     }
   }
 }
-
-

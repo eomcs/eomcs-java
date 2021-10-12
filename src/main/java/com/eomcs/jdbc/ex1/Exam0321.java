@@ -16,14 +16,15 @@ public class Exam0321 {
 
       boolean isReceived = rs.next();
       if (isReceived) {
-        System.out.printf("%d, %s, %s, %s, %d\n", 
+        System.out.printf("%d, %s, %s, %s, %s, %d\n", 
             rs.getInt(1), // board_id
             rs.getString(2), // title
             rs.getString(3), // contents
             rs.getDate(4), // created_date
+            rs.getTime(4), // created_date
             rs.getInt(5)); // view_count
 
-        // getXxx():
+        // getXxx(컬럼번호):
         // => DBMS에 설정된 컬럼의 타입에 따라 값을 변환해서 받고 싶다면,
         //    다음과 같이 해당 타입의 값을 리턴하는 getXxx()를 호출한다.
         // => int, number: getInt()

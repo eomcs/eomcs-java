@@ -20,8 +20,7 @@ public class Exam0140 {
     }
 
     try {
-      DataSource dataSource = new DefaultDataSource();
-      BoardDao boardDao = new BoardDao(dataSource);
+      BoardDao boardDao = new BoardDao();
       int count = boardDao.update(board);
 
       if (count == 0) {

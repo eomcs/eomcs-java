@@ -17,7 +17,7 @@ public class Exam0360 {
       // => DBMS 서버에 delete 문을 보낸다.
       // => 리턴 값: 삭제된 레코드의 개수이다.
       int count = stmt.executeUpdate(
-          "delete from x_board where board_id = 1");
+          "delete from x_board where board_id = 7");
       System.out.printf("%d 개 삭제 성공!", count);
     }
   }

@@ -1,26 +1,32 @@
 // 게시판 관리 - JDBC 코드를 별도의 클래스로 캡슐화시킴. DAO 적용.
-package com.eomcs.jdbc.ex4;
+package com.eomcs.jdbc.ex2;
 
 import java.util.Scanner;
 
-public class Exam0150 {
+public class Exam0240 {
 
   public static void main(String[] args) throws Exception {
-    int no = 0;
+    Board board = new Board();
 
     try (Scanner keyScan = new Scanner(System.in)) {
       System.out.print("번호? ");
-      no = Integer.parseInt(keyScan.nextLine());
+      board.setNo(Integer.parseInt(keyScan.nextLine()));
+
+      System.out.print("제목? ");
+      board.setTitle(keyScan.nextLine());
+
+      System.out.print("내용? ");
+      board.setContent(keyScan.nextLine());
     }
 
     try {
       BoardDao boardDao = new BoardDao();
-      int count = boardDao.delete(no);
+      int count = boardDao.update(board);
 
       if (count == 0) {
         System.out.println("해당 번호의 게시물이 존재하지 않습니다.");
       } else {
-        System.out.println("삭제하였습니다.");
+        System.out.println("변경하였습니다.");
       }
     } catch (Exception e) {
       e.printStackTrace();

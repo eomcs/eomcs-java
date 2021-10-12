@@ -7,8 +7,7 @@ public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
     try {
-      DataSource dataSource = new DefaultDataSource();
-      BoardDao boardDao = new BoardDao(dataSource);
+      BoardDao boardDao = new BoardDao();
       List<Board> list = boardDao.findAll();
       System.out.println("번호, 제목, 등록일, 조회수");
       for (Board b : list) {
