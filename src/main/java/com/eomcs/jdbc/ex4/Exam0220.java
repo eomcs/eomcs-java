@@ -1,5 +1,5 @@
 // 트랜잭션 다루기 - commit & rollback
-package com.eomcs.jdbc.ex3;
+package com.eomcs.jdbc.ex4;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Exam0520 {
+public class Exam0220 {
 
   public static void main(String[] args) {
     String title = null;
@@ -45,7 +45,7 @@ public class Exam0520 {
         PreparedStatement fileStmt = con.prepareStatement(
             "insert into x_board_file(file_path,board_id) values(?,?)")) {
 
-      // 한 단위로 수행해야 할 작업이 있다면,
+      // 여러 개의 데이터 변경 작업을 한 단위로 묶어 수행해야 한다면,
       // commit 할 때까지 실제 테이블에 적용하지 않도록
       // auto commit을 취소하고 수동 커밋 상태로 만든다.
       //
@@ -61,7 +61,8 @@ public class Exam0520 {
       //
       // 1) 트랜잭션 시작 - 커넥션 객체의 오토커밋을 false로 지정한다.
       // 이후부터 이 커넥션으로 실행하는 모든 SQL은
-      // commit을 요청하기 전에는 테이블에 그 결과를 적용하지 않는다.
+      // commit을 요청하기 전에는 테이블에 그 결과를 적용하지 않고 
+      // 임시 데이터베이스에 따로 보관한다.
       con.setAutoCommit(false);
 
       // 게시글 입력
@@ -103,15 +104,16 @@ public class Exam0520 {
       // 만약에 입력 도중에 실패했다면,
       // 현재까지 작업한 결과를 모두 취소하라고 DBMS에게 통보한다.
       // => commit()을 호출하지 않고 커넥션 객체를 닫으면,
-      //    DBMS는 그 커넥션을 통해 수행한 모든 작업을 rollback 한다.
-      // => 따라서 따로 커넥션 객체에 대해 rollback() 을 호출할 필요가 없다.
+      //    DBMS는 그 커넥션을 통해 수행했던 모든 작업 결과를 삭제한다.
+      // => 따라서 따로 커넥션 객체에 대해 rollback() 을 호출할 필요는 없다.
       //
       // => 만약 커넥션을 공유하는 상황이라면,
-      //    명시적으로 작업 취소(rollback)를 명령을 실행해야 한다.
+      //    명시적으로 작업 취소(rollback)를 명령해야 한다.
       // => 왜냐하면 같은 커넥션으로 다른 작업을 처리하는 경우에
       //    이전에 수행한 작업이 취소되지 않고 남아 있어서
       //    새 작업에 영향을 주기 때문이다.
-      //
+      // 결론,
+      // => 예외가 발생하면 rollback()을 명시적으로 호출하라!!!!!!
     }
   }
 }

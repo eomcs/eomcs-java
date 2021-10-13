@@ -3,7 +3,7 @@
 // => data 영속성(지속성)
 // - 데이터를 저장하고 유지하는 것.
 // - "데이터 퍼시스턴스(persistence)"라 부른다.
-package com.eomcs.jdbc.ex4;
+package com.eomcs.jdbc.ex3;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

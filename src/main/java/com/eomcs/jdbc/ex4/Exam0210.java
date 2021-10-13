@@ -1,5 +1,5 @@
 // auto commit 의 문제점
-package com.eomcs.jdbc.ex3;
+package com.eomcs.jdbc.ex4;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Exam0510 {
+public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
     String title = null;

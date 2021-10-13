@@ -1,7 +1,7 @@
 // DAO와 서비스 객체 사이에서 데이터를 실어나르는 용도로 사용한다.
 // => DTO(Data Transfer Object)라 부른다.
 // => "도메인 객체(domain)"라고도 부른다.
-package com.eomcs.jdbc.ex4;
+package com.eomcs.jdbc.ex3;
 
 import java.io.Serializable;
 import java.sql.Date;

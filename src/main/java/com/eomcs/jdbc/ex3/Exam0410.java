@@ -1,75 +1,60 @@
-// 자식 테이블의 데이터를 함께 입력할 때 문제점
+// 게시판 관리 - JDBC 코드를 별도의 클래스로 캡슐화시킴. DAO 적용.
 package com.eomcs.jdbc.ex3;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Exam0410 {
 
   public static void main(String[] args) throws Exception {
-    String title = null;
-    String contents = null;
-    ArrayList<String> files = new ArrayList<>();
+
+    Board board = new Board();
 
     try (Scanner keyScan = new Scanner(System.in)) {
 
+      // 사용자로부터 제목, 내용을 입력 받는다.
       System.out.print("제목? ");
-      title = keyScan.nextLine();
+      board.setTitle(keyScan.nextLine());
 
       System.out.print("내용? ");
-      contents = keyScan.nextLine();
+      board.setContent(keyScan.nextLine());
 
-      // 사용자로부터 첨부파일 입력 받기
-      while (true) {
-        System.out.print("첨부파일:(완료는 그냥 엔터!) ");
-        String filename = keyScan.nextLine();
-        if (filename.length() == 0) {
-          break;
-        }
-        files.add(filename);
+      System.out.print("입력하시겠습니까?(Y/n) ");
+      String input = keyScan.nextLine();
+
+      if (!input.equalsIgnoreCase("y") && input.length() != 0) {
+        System.out.println("등록을 취소 하였습니다.");
+        return;
       }
     }
 
-    try (Connection con = DriverManager.getConnection( //
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+    try {
+      BoardDao boardDao = new BoardDao();
+      int count = boardDao.insert(board);
+      System.out.printf("%d 개 입력 성공!", count);
 
-        // 게시글 입력 처리 객체
-        PreparedStatement boardStmt = con.prepareStatement(
-            "insert into x_board(title,contents) values(?,?)");
-
-        // 첨부파일 입력 처리 객체
-        PreparedStatement fileStmt = con.prepareStatement(
-            "insert into x_board_file(file_path,board_id) values(?,?)")) {
-
-      // 게시글 입력
-      boardStmt.setString(1, title);
-      boardStmt.setString(2, contents);
-      int count = boardStmt.executeUpdate();
-      System.out.printf("%d 개 게시글 입력 성공!\n", count);
-
-      // 첨부파일 입력
-      int fileCount = 0;
-      for (String filename : files) {
-        fileStmt.setString(1, filename);
-        fileStmt.setInt(2, /* 어? 앞에서 입력한 게시글의 번호가 뭐지? */ 0);
-        // 첨부파일 테이블에 데이터를 입력하려면,
-        // 게시글 테이블의 게시글 번호를 알아야 한다.
-        // 문제는 바로 위에서 입력한 게시글의 PK가 자동 생성되는 컬럼이기 때문에
-        // 입력한 후 그 PK 값이 뭔지 알 수가 없다는 것이다.
-        // 그래서 첨부파일 테이블에 데이터를 입력할 수 없다!
-        //
-        // 해결책!
-        // - 데이터를 입력할 때 자동 생성된 PK 값을 알 수 있다면
-        //   이 문제를 해결할 수 있다.
-        // - 다음 예제를 확인해보라!
-        //
-        fileStmt.executeUpdate();
-        fileCount++;
-      }
-      System.out.printf("%d 개 첨부파일 입력 성공!", fileCount);
+      // 이렇게 DBMS 작업을 별도의 클래스로 분리하여 캡슐화하면
+      // 데이터 처리를 요구하는 쪽에서는
+      // 데이터의 구체적인 처리 방식을 몰라도 되기 때문에
+      // 코드가 간결해진다.
+      // 또한 데이터 처리 방식이 바뀌더라도 영향을 받지 않는다.
+      //
+      // [데이터처리를 사용하는 측]......[데이터를 처리하는 측(DAO)]
+      // .........|.....................................|
+      // .........|..생성...............................|
+      // .........|------> [도메인 객체]................|
+      // .........|.....................................|
+      // .........|........메서드 호출..................|
+      // .........|------------------------------------>|
+      // .........|.....................................|
+      //
+      // 도메인 객체(예: Board)
+      // => 두 객체 사이에 데이터를 실어 나르는 역할을 한다고 해서
+      // "DTO(Data Transfer Object)"라고도 부른다.
+      // => 두 객체 사이에 전달되는 값을 표현한다고 해서
+      // "VO(Value Object)"라고도 부른다.
+      //
+    } catch (Exception e) {
+      e.printStackTrace();
     }
   }
 }

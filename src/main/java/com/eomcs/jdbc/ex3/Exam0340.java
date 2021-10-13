@@ -24,9 +24,9 @@ public class Exam0340 {
       contents = keyScan.nextLine();
     }
 
-    try (Connection con = DriverManager.getConnection( //
+    try (Connection con = DriverManager.getConnection(
         "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
-        PreparedStatement stmt = con.prepareStatement( //
+        PreparedStatement stmt = con.prepareStatement(
             "update x_board set title = ?, contents = ? where board_id = ?")) {
 
       stmt.setString(1, title);
