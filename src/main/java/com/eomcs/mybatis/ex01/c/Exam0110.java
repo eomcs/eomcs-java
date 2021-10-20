@@ -21,7 +21,7 @@ public class Exam0110 {
     // 2) select 결과를 저장할 클래스 정의
     //  - Board 클래스 생성
     // 3) BoardMapper.xml 파일에 보관된 select 문 실행하기
-    //  - 관련 객체를 생성하고 사용하여 SQL을 실행한다.
+    //  - SQL을 실행하고 결과 데이터를 객체에 담아 리턴한다.
     //  - mybatis 문서 페이지를 참조한다.
     //  - SqlSession.selectList("네임스페이스명.SQL아이디")
     //

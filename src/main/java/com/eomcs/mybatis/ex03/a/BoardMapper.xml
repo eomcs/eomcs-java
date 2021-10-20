@@ -28,7 +28,7 @@
        Board    => board
        ...
    -->
-  <!-- selectList(sqlid, int) --> 
+  <!-- selectOne(sqlid, int) --> 
   <select id="select1" resultMap="BoardMap" parameterType="int">
     select 
       board_id, 
@@ -49,7 +49,7 @@
       created_date, 
       view_count  
     from x_board
-    where title=#{value}
+    where title=#{okok}
   </select>
   
   <!-- selectList(sqlid, int) --> 
@@ -61,7 +61,7 @@
       created_date, 
       view_count  
     from x_board
-    where board_id &lt; #{no}
+    where board_id &lt; #{hul}
   </select>
   
   <!-- selectList(sqlid, int) --> 

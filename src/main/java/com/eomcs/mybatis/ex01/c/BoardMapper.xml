@@ -24,7 +24,7 @@
           SQL문을 찾을 때 사용할 식별자.
        => resultType 속성: 
           select 결과(한 개의 레코드 값)를 담을 객체의 타입이다. 
-          클래스명은 반드시 패키지 이름을 포함(fully-qualified name)해야 한다.                 
+          클래스명은 반드시 패키지 이름을 포함(fully-qualified name=FQName=QName)해야 한다.                 
    -->
   <select id="selectBoard" resultType="com.eomcs.mybatis.ex01.c.Board">
     select 
@@ -34,6 +34,7 @@
       created_date,
       view_count
     from x_board
+    order by board_id desc
   </select>
 </mapper>
 

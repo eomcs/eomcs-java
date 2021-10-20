@@ -8,7 +8,7 @@
   <!-- 자동으로 등록된 클래스의 별명은 클래스 이름과 같다. 
        별명은 대소문자를 구분하지 않지만 
        가능한 클래스 이름을 그대로 사용한다. -->
-  <select id="selectBoard" resultType="Board">
+  <select id="selectBoard" resultType="board">
     select 
       board_id,
       title,

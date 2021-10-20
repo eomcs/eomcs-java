@@ -15,8 +15,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 // - DBMS마다 미미하게 다른 SQL을 작성해야 하는 번거로움이 있다.
 // - 예) Mybatis 등
 // 2) OR Mapper
-// - 전용언어 및 문법(Domain-Specific Language;DSL)을 사용하여 작성
-//   실행할 때 DBMS에 맞춰서 SQL을 생성하여 실행한다.
+// - 전용언어 및 문법(Domain-Specific Language;DSL)을 사용하여 작성하고,
+//   실행할 때 DBMS에 맞춰서 자동으로 SQL로 변환하여 실행한다.
 // - DBMS 마다 SQL문을 작성할 필요가 없어 편리하다.
 // - DBMS에 최적화된 SQL을 실행할 수 없다.
 //   즉 DBMS의 특징을 최대로 활용할 수 없다.

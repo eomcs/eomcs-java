@@ -41,7 +41,7 @@ public class Exam0110 {
     //
     // 참고!
     // => 자바 primitive type과 wrapper 클래스, String 클래스,
-    //     일부 유틸리티 클래스 등에 대해서는 mybatis가 미리 별명을 지정하였다.
+    //    일부 유틸리티 클래스 등에 대해서는 mybatis가 미리 별명을 지정하였다.
     // => 예)
     //     int       ->  _int
     //     float     ->  _float
