@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex03</title>
+</head>
+<body>
+<h1>자바스크립트 글로벌 함수 - setTimeout()</h1>
+<script>
+"use strict"
+// 일정 시간이 경과한 후 특정 함수를 호출하게 할 수 있다. 
+// => window.setTimeout(함수, 경과시간);
+function f1() { 
+    console.log("f1().....")
+}
+
+console.log("-------------------");
+// f1() 함수를 5초 후에 호출하라!
+window.setTimeout(f1, 5000);
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

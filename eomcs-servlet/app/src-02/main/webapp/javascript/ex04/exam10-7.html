@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>객체 - 객체 생성과 초기화 VI</h1>
+<script>
+"use strict"
+
+function createScore() {
+	// 함수를 생성자처럼 new 다음에 호출하면,
+	// 빈 객체에 필수 프로퍼티(변수와 함수)를 추가한다.   
+	// 즉 Object()라는 함수를 먼저 호출한다.
+	// 꼭 자바에서 수퍼 클래스의 생성자를 호출하는 것과 같다!
+	// this.Object();
+}
+
+var obj1 = new createScore(); 
+console.log(obj1);
+console.log("-----------------------");
+
+// 기본 프로퍼티가 들어 있는지 확인해보자.
+console.log(obj1.toString());
+console.log(obj1.valueOf());
+console.log("-----------------------");
+
+// Object()가 아닌 개발자가 정의한 생성자를 사용했기 때문에 
+// 객체 프로퍼티에 생성자가 정보가 추가로 들어 있다.
+var obj2 = new Object();
+var obj3 = new createScore();
+console.log(obj2);
+console.log(obj3);
+console.log("-----------------------");
+
+console.log(typeof obj2);
+console.log(typeof obj3);
+console.log("-----------------------");
+
+console.log(obj2 instanceof Object);
+console.log(obj3 instanceof Object);
+console.log("-----------------------");
+
+console.log(obj2 instanceof createScore);
+console.log(obj3 instanceof createScore);
+console.log("-----------------------");
+</script>
+</body>
+</html>
+
+
+
+
+

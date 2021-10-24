@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>객체 - 생성자 객체에 직접 추가하는 함수와 prototype에 추가하는 함수</h1>
+<script>
+"use strict"
+
+// prototype에 추가하는 함수는 객체가 공유하는 함수이다.
+// 생성자에 직접 추가하는 함수는 자바의 static 메서드와 같다.
+//
+function Score(name, kor, eng, math) {
+    this.name = name;
+    this.kor = kor;
+    this.eng = eng;
+    this.math = math;
+}
+
+// 자바로 표현하면 "인스턴스 함수"
+Score.prototype.sum = function() { 
+    return this.kor + this.eng + this.math
+}
+Score.prototype.aver = function() { 
+    return this.sum() / 3
+}
+
+// 자바로 표현하면 "스태틱 함수" 
+Score.count = 0;
+Score.f = function() {
+	console.log("Hello!");
+};
+
+// 객체 생성 및 초기화
+var s = new Score("홍길동", 100, 100, 100);
+
+// 인스턴스 함수 호출
+console.log(s.sum())
+console.log(s.aver())
+
+// f()는 prototype에 저장된 함수가 아니다. 
+// 따라서 객체를 통해 호출할 수 없다.
+//s.f(); // 실행 오류!
+
+// count와 f()는 생성자를 통해 직접 사용해야 한다.
+Score.count = 100;
+console.log(Score.count);
+Score.f();
+
+// 자바의 경우를 생각하면 어떤 함수를 prototype에 넣고 
+// 어떤 함수를 생성자에 넣는지 알 수 있다.
+// 인스턴스 메서드 => prototype 에 저장하라!
+// 스태틱 메서드 => 생성자에 직접 저장하라!
+
+</script>
+</body>
+</html>
+
+
+
+
+

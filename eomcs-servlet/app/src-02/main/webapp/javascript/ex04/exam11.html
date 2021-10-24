@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>객체 - 인스턴스 함수를 공유하는 방법</h1>
+<script>
+"use strict"
+
+// 객체가 사용할 함수를 공유하기
+//
+function Score(name, kor, eng, math) {
+	// 생성자로 호출되는 경우, 상위 생성자를 먼저 호출하는 다음 코드가 자동으로 추가된다. 
+	// this.Object(); 
+	
+    this.name = name;
+    this.kor = kor;
+    this.eng = eng;
+    this.math = math;
+    
+    // 자바스크립트는 자바처럼 설계도(클래스)를 기반으로 객체를 만드는 것이 아니라 
+    // 기본 객체에 필요한 변수나 함수를 추가하는 방식으로 객체를 만든다.
+    // 그러다보니 sum()과 aver() 함수처럼 객체가 사용하는 함수는 
+    // 객체를 만들 때 마다 매번 정의하여 객체에 추가해야 한다.
+    // 즉 메모리 낭비가 발생한다.
+    // 해결책?
+    // => 객체가 사용하는 함수를 공유하면 메모리 낭비 문제를 해결할 수 있다.
+    /*
+    this.sum = function() { 
+        return this.kor + this.eng + this.math
+    };
+    this.aver = function() { 
+        return this.sum() / 3
+    }
+    */
+}
+
+// 1) 자바스크립트 함수는 객체이다. 즉 "함수 = 객체 + 함수코드" 이다.
+// 2) 각각의 함수 객체는 prototype 이라는 공용 저장소를 갖고 있다.
+// 3) prototype에 저장된 프로퍼티는 그 함수를 통해 초기화된 모든 객체가 공통으로 사용할 수 있다.
+Score.prototype.sum = function() { 
+    return this.kor + this.eng + this.math
+}
+
+Score.prototype.aver = function() { 
+    return this.sum() / 3
+}
+
+
+var scores = []; //new Array();
+scores[0] = new Score("홍길동", 100, 100, 100);
+scores[1] = new Score("임꺽정", 90, 90, 90);
+scores[2] = new Score("유관순", 80, 80, 80);
+
+// Score() 생성자가 초기화시킨 객체에 어떤 프로퍼티가 있는지 알아보자!
+console.log(scores[0]);
+
+console.log("----------------------------");
+
+for (var score of scores) {
+    // Score() 함수로 초기화시킨 객체에는 sum()과 aver() 함수가 들어 있지 않다.
+    // 그런데도 오류없이 함수가 호출된다.
+    // 이유는?
+    // 객체에 대해 함수를 호출할 때 다음의 절차에 따라 함수를 찾는다.
+    // 1) 객체에 찾는다. 
+    // 2) 없으면 그 객체를 초기화시킨 생성자 함수의 prototype 저장소에서 찾는다.
+    // 3) 없으면 상위 생성자의 prototype 저장소에서 찾는다.
+    // 4) 그래도 없으면 실행 오류!
+    console.log(score.name, score.kor, score.eng, score.math, 
+    		score.sum(), score.aver());
+}
+
+// 없는 함수를 호출해 보자!
+//scores[0].okok();
+
+console.log(scores[0]);
+console.log(scores[1]);
+console.log(scores[2]);
+</script>
+</body>
+</html>
+
+
+
+
+

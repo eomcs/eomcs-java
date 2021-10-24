@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex07</title>
+</head>
+<body>
+<h1>AJAX 라이브러리 만들기 - myQuery</h1>
+<table border="1">
+<thead>
+    <tr><th>번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<button id="btn1">데이터 가져오기!</button>
+
+<script src="myquery-03.js"></script>
+<script>
+"use strict"
+
+var tbody = document.querySelector("tbody");
+
+document.querySelector("#btn1").onclick = () => {
+  _.ajax(
+    'test6.jsp', 
+    function(result) {
+      var arr = JSON.parse(result);
+      for (var b of arr) {
+         var tr = document.createElement("tr");
+         tr.innerHTML = "<td>" + b.no + "</td>" + 
+            "<td>" + b.title + "</td>" + 
+            "<td>" + b.writer + "</td>" +
+            "<td>" + b.viewCnt + "</td>";
+         tbody.appendChild(tr);
+       }
+    }, function() { 
+      alert("서버에서 데이터를 가져오는 중에 오류 발생!");
+    });
+};
+
+</script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex06</title>
+</head>
+<body>
+<h1>이벤트 - 이벤트가 발생된 태그 알아내기</h1>
+<button id="btn1" data-no="100">버튼1</button><br>
+
+<script>
+"use strict"
+
+// 리스너가 일반 함수나 익명 함수일 경우,
+// this가 가리키는 객체가 이벤트가 발생된 객체이다.
+//
+document.getElementById("btn1").addEventListener("click", function(e) {
+	console.log(this);
+
+	// 이벤트가 발생한 객체의 속성 값 알아내기
+	console.log(this.getAttribute("data-no"));
+	
+	// 태그에 직접 추가한 속성은 다음과 같이 일반적인 방법으로 꺼낼 수 없다. 
+	console.log(this["data-no"]); // undefined
+});
+</script>
+</body>
+</html>
+
+
+
+
+

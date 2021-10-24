@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex03</title>
+</head>
+<body>
+<h1>함수 - 익명 함수</h1>
+<script>
+// 함수 이름없이 함수를 정의할 수 있다. 
+// => 이름없는 함수를 정의한 후 사용하려면 그 함수의 주소를 어딘가에 저장해야 한다.
+var f1;
+
+f1 = function(a) { 
+	console.log(a + "님, 안녕!");
+};
+
+// 함수 주소가 저장되어 있는 변수는 함수처럼 사용하면 된다.
+f1("홍길동");
+window.f1("홍길동");
+
+</script>
+</body>
+</html>
+
+
+
+
+

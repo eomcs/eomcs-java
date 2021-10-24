@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex03</title>
+</head>
+<body>
+<h1>함수 - 아규먼트로 함수를 전달하기</h1>
+<script>
+"use strict"
+// 함수는 객체이기 때문에 주소를 주고 받을 수 있다.
+// 
+
+// 함수 객체를 아규먼트로 넘길 때 
+// 보통 파라미터 이름을 fn 또는 cb(callback)로 한다. 
+function play(cb) {
+    console.log("계산 결과 =", cb(100, 200));
+}
+
+function plus(a, b) {return a + b;}
+function minus(a, b) {return a - b;}
+
+play(plus);
+play(minus);
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

@@ -55,7 +55,6 @@ eclipse {
 
 // 프로젝트에서 사용할 자바 라이브러리를 다운로드 받을 때 접속할 서버
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 

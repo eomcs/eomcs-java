@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'eclipse-wtp'   // 'eclipse' 대신에 'eclipse-wtp' 플러그인 사용 
+    id 'war'  // 웹 애플리케이션 배포 파일을 다루기 위해 'war' 플러그인 추가
+}
+
+// 자바 소스를 컴파일 할 때 적용할 옵션을 설정한다.
+tasks.withType(JavaCompile) {
+    // 프로젝트의 소스 파일 인코딩을 gradle에게 알려준다.
+    options.encoding = 'UTF-8' 
+
+    // 소스 파일을 작성할 때 사용할 자바 버전
+    sourceCompatibility = '1.8'
+
+    // 자바 클래스를 실행시킬 JVM의 최소 버전
+    targetCompatibility = '1.8'
+}
+
+// 이클립스에서 출력할 프로젝트 이름을 설정한다.
+eclipse {
+    project {
+        name = "eomcs-servlet"
+    }
+}
+
+// .war 파일을 생성할 때 사용할 파일명을 설정한다.
+// 이 이름은 웹 애플리케이션 이름으로도 사용한다.
+war {
+  archiveBaseName = "web"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  // 의존라이브러리 옵션
+  // => compileOnly 또는 providedCompile : 컴파일한 후 생성되는 빌드 파일에 포함되지 않는다.
+  //    예) 컵
+  // => implementation : 컴파일한 후 생성되는 빌드 파일에 포함된다.
+  //    예) 텀블러
+  // => testImplementation : 단위 테스트를 실행할 때만 사용하는 라이브러리이다.
+  
+  
+  // Servlet-API
+  // => 컴파일 할 때만 사용한다.
+  // => 배치할 때는 포함하지 않는다.
+  // => 왜? 서버에 이미 이 라이브러리가 있기 때문이다.
+  // 
+  providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+
+  implementation 'com.google.guava:guava:28.1-jre'
+  
+  testImplementation 'junit:junit:4.12'
+}
