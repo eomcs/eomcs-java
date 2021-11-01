@@ -19,56 +19,68 @@
    */
 
 /* = 0 */
-  
+/*  
   * { 
     border: 1px solid black;
     background-color: gray;
     margin: 20px;
   }
+*/
 
+/*
+*/
   body {
-    background-color: blue;
+    font-size: 30px;
+    /*background-color: blue;*/
   }
 
-
 /* = 1 */
+/*
+*/
   div { 
     width: 100px;
     height: 100px;
     margin: 10px;
   }
 
+/* = 1 */
+/* 같은 점수일 때 나중에 지정된 스타일이 기존 스타일을 덮어쓴다 */
+/*
+*/
+div { 
+  width: 200px; 
+  background-color: green;
+}
+
 
 /* = 1 */
-  div { 
-    width: 200px; /* 같은 점수일 때 나중에 지정된 스타일이 기존 스타일을 덮어쓴다 */
-    background-color: green;
-  }
-
-
-
-/* = 1 */
-  div { 
-    background-color: navy;
-  }
-
+/*
+*/
+div { 
+  background-color: navy;
+}
 
 /* = 10 */
-  .c1 { 
-    background-color: orange;
-  }
+/*
+.c1 { 
+  background-color: orange;
+}
+*/
 
 /* = 100 */
-  #d2, #d3 { 
-    background-color: red;
-  }
-
+/*
+#d2, #d3 { 
+  background-color: red;
+  color: blue;
+}
+*/
 
 /* = 1 + 100 = 101 */
-  div#d3 {  
-    background-color: ivory;
-  }
-
+/*
+div#d3 {  
+  background-color: skyblue;
+}
+*/
 
 
   </style>

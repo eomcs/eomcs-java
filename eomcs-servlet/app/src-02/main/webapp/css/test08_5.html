@@ -13,7 +13,12 @@
     background-color: white;
   }
 
-  div {
+  .box {
+    border: 1px solid red;
+    display: inline-block;
+  }
+
+  .content {
     border-style: solid;
     border-width: 1px;
     border-color: lightgray;
@@ -45,10 +50,21 @@
   </style>
 </head>
 <body>
-  <div id="d1">d1 a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</div>
-  <div id="d2">d2 a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</div>
-  <div id="d3">d3 a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</div>
-  <div id="d4">d4 a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</div>
+<div class="box">
+  <div id="d1" class="content">d1 a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</div>
+</div>
+
+<div class="box">
+  <div id="d2" class="content">d2 a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</div>
+</div>
+
+<div class="box">
+  <div id="d3" class="content">d3 a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</div>
+</div>
+
+<div class="box">
+  <div id="d4" class="content">d4 a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</div>
+</div>
 
 </body>
 </html>
