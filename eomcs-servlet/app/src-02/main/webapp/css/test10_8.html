@@ -9,7 +9,7 @@
     => absolute나 fixed와 달리 공중부양시키지 않는다.
     => 현재 자리를 유지한 상태에서 상,하,좌,우로 위치를 조정하고 싶을 때
        사용한다.
-    => absolute 타입의 자식 태그의 기준으로 만들고 싶을 때
+    => absolute 자식 태그에 대해 기준 태그로 설정하고 싶을 때
       부모 태그를 relative로 지정한다.
   */
   body {
@@ -92,8 +92,8 @@
   #menu > img {
     border: 1px solid navy;
     position: relative;
-    left: -20px;
-    top: 10px;
+    left: -50px;
+    top: 100px;
   }
 
   #ad > img:hover {
@@ -107,7 +107,7 @@
 <body>
 
   <div id="menu">
-  <img src='https://www.bitcamp.co.kr/images/logo.png'>
+  <img src='https://www.bitcamp.co.kr/theme/basic/img/blue_logo.png'>
   <ul>
     <li class="c1">BITCamp</li>
     <li class="c1">교육안내</li>

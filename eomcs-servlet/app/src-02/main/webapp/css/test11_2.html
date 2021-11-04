@@ -42,13 +42,11 @@ CDN 방식?
        그래야 이 HTML을 제어하기 위해 추가한 코드가
        외부 파일에 의해 덮어지는 현상을 막을 수 있다.
    -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
-        rel="stylesheet" 
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
-        crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" 
-        href="../node_modules/sweetalert2/dist/sweetalert2.css">
-  <link rel="stylesheet" type="text/css" href="test11_1.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="test11_1.css">
+   
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <div id="main" class="container">
@@ -109,8 +107,6 @@ CDN 방식?
     <li>빅데이터 프로페셔널 과정</li>
   </ul>
   비트캠프는 우수한 개발자를 양성합니다.
-  .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>
-  .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>
   </div>
 
   <div id="footer">
@@ -129,16 +125,11 @@ CDN 방식?
 <img src="http://data.siwonschool.com/banner/img/www/2017/04/04/bimg_src_1491271205.jpg">
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
-        crossorigin="anonymous"></script>
-<script src="../node_modules/sweetalert2/dist/sweetalert2.js"></script>
 <script src="test11_1.js"></script>
 <script>
   var onlineBtn = document.getElementById("onlineBtn");
   onlineBtn.addEventListener('click', function() {
     alert("웹브라우저 기본 경고창!");
-    
     Swal.fire(
     		  '새콤 달콤 경고창?',
     		  '모양이 이쁜 경고창!',
