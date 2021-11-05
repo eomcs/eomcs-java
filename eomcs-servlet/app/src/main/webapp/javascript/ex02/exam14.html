@@ -19,8 +19,10 @@ function f1() {
     	console.log("임꺽정입니다.");
     	var v1 = "유관순"; // 기존의 로컬 변수인 v1을 덮어쓴다.
     	var v2 = 200; // 새 로컬 변수 v2를 선언한다.
+    	//let v3 = true; // 현재 if 블록에서만 사용할 수 있다.
     }
     console.log("f1():", v1, v2);
+    //console.log(v3); // 오류!
 }
 
 f1();

@@ -24,6 +24,7 @@ function interestCalculator(type) {
 }
 
 // interestCalculator() 함수가 리턴하는 것은 내부에서 정의한 함수의 주소이다.
+// => 이렇게 함수 안에서 정의한 함수를 '클로저(closure)'라 부른다.
 var fn = interestCalculator("보통예금");
 
 console.log("100억 7달 =", fn(10000000000, 7));

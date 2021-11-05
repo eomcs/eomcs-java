@@ -26,6 +26,12 @@ scores[0] = createScore("홍길동", 100, 100, 100);
 scores[1] = createScore("임꺽정", 90, 90, 90);
 scores[2] = createScore("유관순", 80, 80, 80);
 
+for (var score of scores) {
+    console.log(score.name, score.kor, score.eng, score.math, score.sum, score.aver);
+}
+
+console.log("---------------------------------------------");
+
 // 아직 부족한 점!
 // => 특정 과목의 점수가 바뀌면 다시 합계와 평균을 계산해야 한다.
 scores[2].kor = 100;

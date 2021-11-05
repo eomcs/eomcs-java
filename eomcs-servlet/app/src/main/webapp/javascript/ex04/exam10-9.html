@@ -19,7 +19,7 @@
 // 즉 자바스크립트는 생성자 문법이 따로 없기 때문에 
 // 일반 용도의 함수와 생성자 용도의 함수를 구분하기 위해 
 // 생성자 함수는 보통 대문자로 이름을 시작한다. 
-function Score(name, kor, eng, math) {
+function CreateScore(name, kor, eng, math) {
 	  // 생성자로 호출될 경우, 상위 생성자를 먼저 호출하는 코드가 자동 추가된다.
 	  // this.Object(); 
 	  
@@ -40,13 +40,14 @@ function Score(name, kor, eng, math) {
 }
 
 var scores = []; //new Array();
-scores[0] = new Score("홍길동", 100, 100, 100);
-scores[1] = new Score("임꺽정", 90, 90, 90);
-scores[2] = new Score("유관순", 80, 80, 80);
+scores[0] = new CreateScore("홍길동", 100, 100, 100);
+scores[1] = new CreateScore("임꺽정", 90, 90, 90);
+scores[2] = new CreateScore("유관순", 80, 80, 80);
+
 // 함수 이름이 대문자로 시작하면 
 // 생성자로 사용하라는 의미이므로 
 // 개발자들이 다음과 같은 실수를 하지 않을 것이다. 
-// scores[3] = Score("안중근", 70, 70, 70);
+//scores[3] = CreateScore("안중근", 70, 70, 70);
 
 for (var score of scores) {
     console.log(score.name, score.kor, score.eng, score.math, 

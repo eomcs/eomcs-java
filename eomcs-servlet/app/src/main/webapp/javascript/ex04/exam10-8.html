@@ -34,6 +34,13 @@ for (var score of scores) {
     		score.sum(), score.aver());
 }
 
+// 기본 객체를 만든 후에 호출해야 하는 메서드를 
+// 다음과 같이 일반 메서드처럼 호출하면
+// 예외가 발생한다!
+var x = createScore("오호라!", 100, 100, 100);
+console.log(x);
+
+
 </script>
 </body>
 </html>

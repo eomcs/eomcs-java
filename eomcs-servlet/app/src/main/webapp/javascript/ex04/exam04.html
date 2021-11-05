@@ -28,13 +28,11 @@ obj.toString = function() {
 console.log(obj.toString()); 
 
 console.log(obj); 
-console.log(obj.valueOf());
 // 자바에서는 println()에 객체 주소를 주면 
 // println()에서 내부적으로 해당 객체의 toString() 호출한다.
 // 그리고 그 리턴 값을 출력한다.
 // 그러나 자바스크립트의 console.log()는 
-// 자바와 달리 toString()의 리턴 값이 아니라 
-// valueOf()의 리턴 값을 출력한다.
+// 자바와 달리 toString()의 리턴 값을 출력하지 않는다.
 
 obj.sum = function() {
 	return this.kor + this.eng + this.math; // 항상 같은 객체의 멤버를 가리킬 때는 this를 붙여야 한다. 

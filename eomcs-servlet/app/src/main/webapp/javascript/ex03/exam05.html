@@ -26,6 +26,11 @@ f2 = f1; // f1에 저장된 함수 주소를 f2에 복사한다.
 f2();
 window.f2();
 
+// 함수도 객체이기 때문에 객체처럼 사용할 수 있다.
+f1.age = 20;
+f1.working = true;
+console.log(f1.age, f1.working); // OK!
+
 </script>
 </body>
 </html>
