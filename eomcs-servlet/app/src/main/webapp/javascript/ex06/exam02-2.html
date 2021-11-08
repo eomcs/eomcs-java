@@ -16,6 +16,7 @@
 // => 물론 event 객체를 함수를 호출할 때 넘겨줘야 한다.
 //    당연히 함수에서는 event 객체를 받는 파라미터가 있어야 한다.
 function btn1Click(e) {
+  console.log(e);
   console.log(e.constructor.name);
   console.log(e instanceof MouseEvent);
 	console.log(

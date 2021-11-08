@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>이벤트 - 리스너 등록하기</h1>
-<button id="btn1-1" onclick="var str='Hello'; window.alert(str);">버튼1-1</button><br>
+<button id="btn1-1"  onclick="var str='Hello'; window.alert(str);">버튼1-1</button><br>
 <button id="btn1-2" onclick="btn1Click()">버튼1-2</button><br>
 <button id="btn2">버튼2</button><br>
 <button id="btn3">버튼3</button><br>
@@ -55,13 +55,14 @@ function btn1Click() {
 var btn2 = document.getElementById("btn2");
 //var btn2 = document.querySelector("#btn2"); // 둘 중 아무거나 사용하면 된다.
 
+/*
 function f1() {
     var str = "Hello2a!";
     window.alert(str);
     console.log(this); // this는 이 함수가 소속된 객체를 통해 호출될 때 그 객체를 가리킨다.
 }
 btn2.onclick = f1; // 함수의 주소를 객체 프로퍼티로 저장하는 순간 그 객체에 소속된다.
-
+*/
 /*
 btn2.onclick = function() {
     var str = "Hello2b!";
@@ -70,13 +71,13 @@ btn2.onclick = function() {
 };
 */
 
-/*
+
 btn2.onclick = () => {
   var str = "Hello2c!";
   window.alert(str);
   console.log(this); // arrow function에서 this는 window 객체이다.
 };
-*/
+
 
 // 방법3:
 // => addEventListener(이벤트명, 리스너);

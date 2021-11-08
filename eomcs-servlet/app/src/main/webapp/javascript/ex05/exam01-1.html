@@ -21,7 +21,7 @@
 // 그 도구를 "DOM(Document Object Model) API"라 부른다.
 //
 // document 객체
-// => 자바스크립트에서 기본으로 제공하는 객체이다.
+// => 웹브라우저에서 기본으로 제공하는 객체이다.
 // => 태그를 찾고 생성하는 것과 관련된 함수를 갖고 있다.
 // => var document = new Document();
 //
@@ -29,6 +29,7 @@
 // => Element 객체 리턴
 var e1 = document.getElementById("header4");
 
+console.log(e1);
 console.log(e1.name); // undefined
 console.log(e1.localName); // 태그명
 console.log(e1.constructor.name); // 객체의 생성자 이름

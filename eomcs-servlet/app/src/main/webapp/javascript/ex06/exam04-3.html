@@ -46,8 +46,8 @@ document.getElementById("btn1").addEventListener("click", function(e) {
 //=> target에 등록된 함수라도 즉시 현 함수에서 실행을 마감한다.
 //
 document.getElementById("btn2").addEventListener("click", function(e) {
-    e.stopImmediatePropagation(); // 이 리스너까지만 실행한다.
     console.log("버튼2...1");
+    e.stopImmediatePropagation(); // 이 리스너까지만 실행한다.
 });
 document.getElementById("btn2").addEventListener("click", function(e) {
     console.log("버튼2...2");

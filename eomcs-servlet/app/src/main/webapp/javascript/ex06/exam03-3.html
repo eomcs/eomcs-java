@@ -20,7 +20,8 @@
 var el = document.querySelectorAll(".b1");
 var el2 = document.querySelectorAll(".b2");
 
-var btnClick = (e) => {
+var btnClick = function(e) {
+	alert("===> " + this.getAttribute("data-no"));
 	alert("===> " + e.target.getAttribute("data-no"));
 	for (var e of el2) {
 		e.style["background-color"] = "yellow";
