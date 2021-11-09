@@ -2,6 +2,7 @@ package com.eomcs.web.ex02;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
 // 서블릿 컨테이너가 관리하는 컴포넌트
 // => 서블릿, 필터, 리스너
@@ -19,8 +20,13 @@ import javax.servlet.ServletContextListener;
 //    - 기타 다양한 인터페이스가 있다. 문서를 참고하라.
 //
 // 리스너 배포하기
-// => DD 파일(web.xml)에 설정하거나
-//    @WebListener 애노테이션으로 설정하면 된다.
+//=> DD 파일(web.xml)에 설정하기
+//      <listener>
+//          <listener-class>com.eomcs.web.ex02.Listener01</listener-class>
+//      </listener>
+//
+//=> 애노테이션으로 설정하기
+//      @WebListener
 //
 // 리스너의 용도
 // => 서블릿 컨테이너나, 세션 등이 특별한 상태일 때 필요한 작업을 수행한다.
@@ -32,8 +38,12 @@ import javax.servlet.ServletContextListener;
 //    - 요청이 들어 올 때 로그 남기기
 //
 //
-//@WebListener
+@WebListener
 public class Listener01 implements ServletContextListener {
+
+  public Listener01() {
+    System.out.println("Listener01() 호출됨!");
+  }
 
   @Override
   public void contextInitialized(ServletContextEvent sce) {

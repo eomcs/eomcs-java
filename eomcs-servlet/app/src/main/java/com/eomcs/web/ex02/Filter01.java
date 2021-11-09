@@ -7,6 +7,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 
 // 서블릿 컨테이너가 관리하는 컴포넌트
 // => 서블릿, 필터, 리스너
@@ -42,6 +43,7 @@ import javax.servlet.ServletResponse;
 // - 클라이언트로 보낼 데이터를 압축하기
 // - 클라이언트로 보낼 데이터를 암호화시키기
 //
+@WebFilter("/ex02/*")
 public class Filter01 implements Filter {
 
   @Override

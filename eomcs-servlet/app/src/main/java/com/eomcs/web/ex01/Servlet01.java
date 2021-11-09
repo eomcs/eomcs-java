@@ -8,10 +8,12 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 // 서블릿 클래스를 만든 후, 서블릿 컨테이너에 등록해야만 사용할 수 있다.
 // 등록 방법 1)
-//   웹 애플리케이션 배치 파일(web.xml; DD 파일)에 서블릿 정보를 등록한다.
+//   웹 애플리케이션 배치 파일(web.xml; DD(Deploy Description) 파일)에 서블릿 정보를 등록한다.
 //   => WEB-INF/web.xml
 //   => DD File: Deployment Descriptor File
 //   => 배치 예:
@@ -87,6 +89,8 @@ public class Servlet01 implements Servlet {
   @Override
   public void service(ServletRequest req, ServletResponse res)
       throws ServletException, IOException {
+    HttpServletRequest req2 = (HttpServletRequest)req;
+    HttpServletResponse res2 = (HttpServletResponse)res;
     // 클라이언트가 이 서블릿의 실행을 요청할 때마다 호출된다.
     // 클라이언트가 요청한 작업을 수행한다.
     System.out.println("Servlet01.service(ServletRequest,ServletResponse)");

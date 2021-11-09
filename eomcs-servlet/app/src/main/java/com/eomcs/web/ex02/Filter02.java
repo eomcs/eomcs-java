@@ -7,6 +7,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 
 // 서블릿 컨테이너가 관리하는 컴포넌트
 // => 서블릿, 필터, 리스너
@@ -23,7 +24,7 @@ import javax.servlet.ServletResponse;
 // => 필터를 정의할 때 순서에 의존하는 방식으로 프로그래밍 하지 말라.
 // => 필터의 실행 순서에 상관없이 각 필터가 독립적으로 동작하도록 작성하라.
 
-//@WebFilter("/ex02/*")
+@WebFilter("/ex02/a/*")
 public class Filter02 implements Filter {
 
   @Override
