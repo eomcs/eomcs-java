@@ -2,7 +2,6 @@ package com.eomcs.web.ex02;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 
 // 서블릿 컨테이너가 관리하는 컴포넌트
 // => 서블릿, 필터, 리스너
@@ -38,7 +37,7 @@ import javax.servlet.annotation.WebListener;
 //    - 요청이 들어 올 때 로그 남기기
 //
 //
-@WebListener
+//@WebListener
 public class Listener01 implements ServletContextListener {
 
   public Listener01() {

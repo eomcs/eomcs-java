@@ -24,7 +24,7 @@ public class Servlet02 extends GenericServlet {
     // => 반드시 출력 스트림을 얻기 전에 설정해야 한다.
     //      res.setContentType("MIME Type;charset=문자표이름");
     //
-    res.setContentType("text/html;charset=UTF-8"); // UCS2(UTF-16) ==> UTF-8
+    res.setContentType("text/plain;charset=UTF-8"); // UCS2(UTF-16) ==> UTF-8
     PrintWriter out = res.getWriter();
 
     out.println("Hello!");

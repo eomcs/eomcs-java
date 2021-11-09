@@ -1,9 +1,9 @@
 // 클라이언트로 출력하기 - 바이너리 데이터 출력하기
 package com.eomcs.web.ex03;
 
-import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class Servlet04 extends GenericServlet {
   public void service(ServletRequest req, ServletResponse res)
       throws ServletException, IOException {
 
-    // /webapp/photo.jpeg 파일의 실제 경로 알아내기
+    // photo.jpeg 파일의 실제 경로 알아내기
     // 1) 서블릿의 환경 정보를 다루는 객체를 먼저 얻는다.
     ServletContext ctx = req.getServletContext();
 
@@ -33,10 +33,10 @@ public class Servlet04 extends GenericServlet {
 
     // 바이너리를 출력할 때 MIME 타입을 지정해야 웹 브라우저가 제대로 출력할 수 있다.
     // => 웹 브라우저가 모르는 형식을 지정하면 웹 브라우저는 처리하지 못하기 때문에
-    // 그냥 다운로드 대화상자를 띄운다.
+    //    그냥 다운로드 대화상자를 띄운다.
     res.setContentType("image/jpeg");
 
-    BufferedOutputStream out = new BufferedOutputStream(res.getOutputStream());
+    OutputStream out = res.getOutputStream();
 
     int b;
     while ((b = in.read()) != -1) {

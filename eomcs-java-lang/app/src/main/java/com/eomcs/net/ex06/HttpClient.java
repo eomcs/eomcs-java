@@ -18,17 +18,18 @@ import java.util.Scanner;
 //
 public class HttpClient {
   public static void main(String[] args) throws Exception {
-    Socket socket = new Socket("itempage3.auction.co.kr", 80);
+    Socket socket = new Socket("corners.auction.co.kr", 80);
     PrintStream out = new PrintStream(socket.getOutputStream());
     Scanner in = new Scanner(socket.getInputStream());
 
     // HTTP 요청 프로토콜에 따라 서버에 데이터 전송
     // => macOS에서 JVM을 실행할 때, println()은 문자열 뒤에 0a(LF) 코드만 붙인다.
     // => 이를 해결하려면, 다음과 같이 명확하게 CRLF 코드를 붙여라.
-    //
-    out.print("GET /DetailView.aspx?itemno=C204190906 HTTP/1.1\r\n");
-    out.print("Host: itempage3.auction.co.kr\r\n");
+    // 
+    out.print("GET /AllKill/AllDay.aspx?SelectedItemno=C266641719 HTTP/1.1\r\n");
+    out.print("Host: corners.auction.co.kr\r\n");
     out.print("\r\n");
+    out.flush();
 
     // HTTP 응답 프로토콜에 따라 서버가 보낸 데이터를 수신
     while (true) {

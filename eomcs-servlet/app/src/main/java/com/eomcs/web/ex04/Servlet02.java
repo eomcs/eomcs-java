@@ -36,7 +36,8 @@ public class Servlet02 extends GenericServlet {
     // 클라이언트가 보낸 한글을 읽을 때 깨지는 문제 해결?
     // => 다음 코드의 주석을 풀고 테스트 해보라!
     //    정상적으로 잘 출력될 것이다.
-    // req.setCharacterEncoding("UTF-8");
+    req.setCharacterEncoding("UTF-8");
+
     // => 원리
     //    getParameter()를 최초로 호출하기 전에 먼저
     //    클라이언트 보낸 데이터의 인코딩 형식이 어떤 문자표로 되어 있는지 알려줘야 한다.
@@ -56,7 +57,7 @@ public class Servlet02 extends GenericServlet {
 
     char[] chars = name.toCharArray();
     for (char c : chars) {
-      out.printf("%x\n", (int) c);
+      out.printf("%04x\n", (int) c);
     }
   }
 }
