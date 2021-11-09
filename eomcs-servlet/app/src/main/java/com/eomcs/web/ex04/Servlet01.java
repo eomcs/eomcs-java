@@ -26,7 +26,7 @@ public class Servlet01 extends GenericServlet {
     // 테스트
     // - http://localhost:8080/web/ex04/test01.html 실행
     //
- 
+
     // 웹 브라우저가 보낸 데이터 읽기
     // ServletRequest.getParameter("파라미터이름")
     //
