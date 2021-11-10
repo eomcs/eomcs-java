@@ -55,12 +55,14 @@ public class Servlet08 extends GenericServlet {
 
     // 파일 데이터는 getPart()를 이용한다.
     Part photoPart = httpReq.getPart("photo");
-    String filename = "";
-    if (photoPart.getSize() > 0) {
-      // 파일을 선택해서 업로드 했다면,
-      filename = UUID.randomUUID().toString();
-      photoPart.write(this.uploadDir + "/" + filename);
+    if (photoPart.getSize() == 0) {
+      out.println("</body></html>");
+      return;
     }
+
+    // 파일을 선택해서 업로드 했다면,
+    String filename = UUID.randomUUID().toString();
+    photoPart.write(this.uploadDir + "/" + filename);
 
     // 원본 사진을 가지고 특정 크기의 썸네일 이미지를 만들기
     // 1) 썸네일 이미지를 생성해주는 자바 라이브러리 추가
@@ -113,6 +115,7 @@ public class Servlet08 extends GenericServlet {
     });
 
     out.printf("사진=%s<br>\n", filename);
+    out.printf("<img src='../upload/thumbnail.%s.jpg'><br>\n", filename);
     out.printf("<img src='../upload/%s_20x20.jpg'><br>\n", filename);
     out.printf("<img src='../upload/%s_80x80.jpg'><br>\n", filename);
     out.printf("<img src='../upload/%s' height='80'><br>\n", filename);

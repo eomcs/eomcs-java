@@ -64,7 +64,7 @@ public class Servlet02 extends GenericServlet {
 
 // HTTP 요청 형식
 // method sp request-URI sp http_version CRLF
-// *(general header | request header | entity header) CRLF
+// *((general header | request header | entity header) CRLF)
 // CRLF
 // message-body
 //
@@ -168,6 +168,13 @@ public class Servlet02 extends GenericServlet {
 //         => AB가각
 //
 // GET 요청 vs POST 요청
+// 0) 데이터 전송 방식
+// => GET
+//    - request uri(URL 주소)에 데이터를 포함한다.
+//      예) /java-web/ex04/s1?name=AB%EA%B0%80%EA%B0%81&age=20
+// => POST
+//    - message body에 데이터를 포함한다.
+//      예) name=AB%EA%B0%80%EA%B0%81&age=20
 // 1) 전송 데이터 용량
 // => GET
 //    - 대부분의 웹서버가 request-line과 헤더의 크기를 8KB로 제한하고 있다.

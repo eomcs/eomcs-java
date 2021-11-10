@@ -64,7 +64,7 @@ public class Servlet01 extends GenericServlet {
 // HTTP 요청 형식
 // 
 // method sp request-URI sp http_version CRLF
-// *(general header | request header | entity header) CRLF
+// *((general header | request header | entity header) CRLF)
 // CRLF
 // message-body
 //
