@@ -45,7 +45,7 @@ public class Servlet11 extends HttpServlet {
     // => include()는 다른 서블릿으로 실행을 위임하더라도
     //    현재 서블릿의 실행 결과를 유지한다.
     // => 인클루드의 경우 현재 서블릿에서 setContentType()을 설정해야 한다.
-    // => 포워드는 현재 서블릿에서 설정한 setContextType()이 무시된다.
+    // => 포워드는 현재 서블릿에서 설정한 setContentType()이 무시된다.
     요청배달자.include(request, response);
 
     // including 서블릿을 실행한 후에 리턴되면
