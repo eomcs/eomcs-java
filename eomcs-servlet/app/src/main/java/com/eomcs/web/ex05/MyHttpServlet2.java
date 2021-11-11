@@ -60,8 +60,8 @@ public abstract class MyHttpServlet2 extends GenericServlet {
   // => 클라이언트 요청이 들어오면
   // 서블릿 컨테이너
   // ==> service(ServletRequest,ServletResponse) 호출
-  // ==> service(HttpServletRequest,HttpServletResponse) 호출
-  // ==> doXxx(HttpServletRequest,HttpServletResponse) 호출
+  //     ==> service(HttpServletRequest,HttpServletResponse) 호출
+  //         ==> doXxx(HttpServletRequest,HttpServletResponse) 호출
   //
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {

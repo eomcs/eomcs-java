@@ -35,9 +35,9 @@ public abstract class MyHttpServlet extends GenericServlet {
     // 웹브라우저가 요청하면
     // => 서블릿 컨테이너가 service(ServletRequest,ServletResponse)를 호출한다.
     // => service(ServletRequest,ServletResponse)는
-    // 다시 오버로딩한 이 메서드를 호출한다.
-    // 현재 아무런 일을 하지 않는다.
-    // 이 클래스를 상속 받는 서브 클래스 쪽에서 이 메서드를 오버라이딩 하면 된다.
+    //    다시 오버로딩한 이 메서드를 호출한다.
+    //    현재 이 메서드는 아무런 일을 하지 않는다.
+    //    이 클래스를 상속 받는 서브 클래스 쪽에서 이 메서드를 오버라이딩 하면 된다.
   }
 
 }

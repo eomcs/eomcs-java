@@ -9,7 +9,7 @@
 <!-- 컨텍스트(웹 애플리케이션 환경) 초기화 파라미터 
   => Servlet, Listener, Filter 에서 모두 사용할 수 있다.
 -->
-<!--  
+
   <context-param>
     <param-name>jdbc2.driver</param-name>
     <param-value>org.mariadb.jdbc.Driver</param-value>
@@ -26,17 +26,16 @@
     <param-name>jdbc2.password</param-name>
     <param-value>1111</param-value>
   </context-param>
--->
 
-	<context-param>
-	  <param-name>encoding</param-name>
-	  <param-value>UTF-8</param-value>
-	</context-param>
-	
-	<context-param>
-	  <param-name>aaa</param-name>
-	  <param-value>hohoho</param-value>
-	</context-param> 
+  <context-param>
+    <param-name>encoding</param-name>
+    <param-value>UTF-8</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>aaa</param-name>
+    <param-value>hohoho</param-value>
+  </context-param> 
  
 <!-- 리스너 등록 -->
 <!--  
@@ -143,7 +142,7 @@
   </servlet-mapping>
 -->
 
-<!--  
+<!--   
   <servlet>
     <servlet-name>ex06.Servlet04</servlet-name>
     <servlet-class>com.eomcs.web.ex06.Servlet04</servlet-class>
