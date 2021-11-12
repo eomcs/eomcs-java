@@ -43,17 +43,18 @@ public class Servlet21 extends HttpServlet {
     //
     // 사용 범위를 지정하지 않은 쿠키
     // => 쿠키를 발급한 서블릿과 같은 경로이거나 하위 경로의 서블릿을 요청할 때만
-    // 웹 브라우저가 서버에 쿠키를 보낸다.
+    //    웹 브라우저가 서버에 쿠키를 보낸다.
+    // => 기본: /web/ex10
     Cookie c1 = new Cookie("v1", "aaa");
 
     // 사용 범위 지정
     // => 쿠키를 발급한 서블릿의 경로에 상관없이 지정된 경로의 서블릿을 요청할 때
     // 웹 브라우저가 서버에 쿠키를 보낸다.
     Cookie c2 = new Cookie("v2", "bbb");
-    c2.setPath("/eomcs-web-project/ex10/a");
+    c2.setPath("/web/ex10/a");
 
     Cookie c3 = new Cookie("v3", "ccc");
-    c3.setPath("/eomcs-web-project");
+    c3.setPath("/web");
 
     // 어~ 왜 쿠키의 경로를 적을 때 웹 애플리케이션 루트(컨텍스트 루트)까지 적나요?
     // => 쿠키 경로는 서블릿 컨테이너가 사용하는 경로가 아니다.
