@@ -16,7 +16,7 @@ public class Exam0310 {
 
     // 2) 클래스 정보를 가지고 인스턴스 생성
     // => 클래스 정보를 로딩한다.
-    Class clazz = Class.forName("com.eomcs.reflect.ex01.Exam05$A");
+    Class clazz = Class.forName("com.eomcs.reflect.ex01.Exam0310$A");
 
     // 타입(클래스) 정보만 있다면 인스턴스 생성할 수 있다.
     A obj = (A) clazz.newInstance();

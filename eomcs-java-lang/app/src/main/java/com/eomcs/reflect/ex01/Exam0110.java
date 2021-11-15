@@ -6,10 +6,15 @@ class A {
 
   static void m() {
     i = 100;
+    System.out.println(i);
   }
 
   static {
     System.out.println("A 클래스 로딩!");
+  }
+
+  public A() {
+    System.out.println("A() 생성자 호출!");
   }
 }
 
@@ -18,7 +23,7 @@ public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
     // 클래스 로딩
-    // => 클래스가 로딩되어 있지 않다는 조건
+    // => 클래스가 로딩되어 있지 않을 때 다음을 수행하면 클래스가 로딩된다.
     // 1) 클래스의 스태틱 멤버(변수,메서드)를 사용할 때
     // 2) new 명령을 사용하여 인스턴스를 생성하려 할 때
     // 3) Class.forName()을 이용하여 임의로 클래스를 로딩할 때

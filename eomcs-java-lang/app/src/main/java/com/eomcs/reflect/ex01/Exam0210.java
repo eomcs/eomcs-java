@@ -41,6 +41,7 @@ public class Exam0210 {
     Class clazz2 = String.class;
     Class clazz3 = System.class;
     Class clazz4 = File.class;
+    Class clazz5 = int.class;
 
     System.out.println("실행 완료!");
   }
