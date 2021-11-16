@@ -24,7 +24,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
   }
 
   @Override
-  public Object postProcessBeforeInitialization( //
+  public Object postProcessBeforeInitialization( 
       Object bean, String beanName) throws BeansException {
     // XML 설정에서 init-method 속성에 지정된 메서드가 호출되기 전에
     // 이 메서드가 먼저 호출된다.
@@ -39,7 +39,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 
 
   @Override
-  public Object postProcessAfterInitialization(//
+  public Object postProcessAfterInitialization(
       Object bean, String beanName) throws BeansException {
     // XML 설정에서 init-method 속성에 지정된 메서드가 호출된 후에
     // 이 메서드가 호출된다.

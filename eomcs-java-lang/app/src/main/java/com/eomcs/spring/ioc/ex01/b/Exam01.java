@@ -13,8 +13,8 @@ public class Exam01 {
     // => 예) file://설정파일경로
     // => URL 형식에서는 파일 시스템을 가리킬 때 접두어 'file://'를 붙인다.
     //
-    ApplicationContext iocContainer = new FileSystemXmlApplicationContext(//
-        "file:///Users/eomjinyoung/git/eomcs-java/src/main/java/com/eomcs/spring/ioc/ex01/b/application-context.xml");
+    ApplicationContext iocContainer = new FileSystemXmlApplicationContext(
+        "file:///c:/Users/bitcamp/git/eomcs-java/eomcs-java-lang/app/bin/main/com/eomcs/spring/ioc/ex01/b/application-context.xml");
 
     System.out.println("실행 완료!");
   }

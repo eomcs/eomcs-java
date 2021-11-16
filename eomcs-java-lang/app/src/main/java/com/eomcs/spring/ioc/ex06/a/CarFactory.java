@@ -3,6 +3,11 @@ package com.eomcs.spring.ioc.ex06.a;
 import com.eomcs.spring.ioc.ex06.Car;
 
 public class CarFactory {
+
+  public CarFactory() {
+    System.out.println("CarFactory() 생성자 호출!");
+  }
+
   public static Car create(String model) {
     System.out.printf("CarFactory.create(%s) 호출됨\n", model);
 

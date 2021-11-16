@@ -9,7 +9,7 @@ public class Exam01 {
     // IoC(Inversion Of Control) 컨테이너
     // => bean container 라고도 부른다.
     // => 인스턴스의 생성과 관리를 담당한다.
-    // => 각 객체가 의존하는 객체(dependency)를 주입한다.
+    // => 각 객체가 의존하는 객체(dependency)를 자동으로 주입해 준다.
     //    "의존 객체 주입(dependency injection; DI)"이라 부른다.
     //    그래서 "DI 컨테이너"라고도 부른다.
     //
@@ -37,13 +37,13 @@ public class Exam01 {
 
     // 1) 자바 CLASSPATH 에서 설정 파일을 찾는 IoC 컨테이너
     // => 자바 CLASSPATH?
-    //    예를 들면 /Users/eomjinyoung/git/bitcamp-study/java-basic/bin/main
-    //    즉, JVM이 자바 클래스 파일(.class)을 로딩하기 위해 찾는 경로이다.
-    //    보통 JVM을 실행할 때 -classpath 옵션이나 -cp 옵션으로 경로를 지정한다.
-    //    물론 JVM이 클래스 파일을 찾을 때
-    //    JVM의 기본 경로($JAVA_HOME/lib)를 가장 먼저 뒤진다.
-    // => 설정 파일 경로를 지정할 때 자바 패키지 경로를 지정한다.
-    //    파일 경로이기 때문에 패키지와 패키지 사이에는 . 대신에 /를 사용해야 한다.
+    //    1) JVM을 실행할 때 -classpath 옵션으로 지정한 경로
+    //       예) $java -class c:\a\b;d:\xxx\yyy\zzz;c:\bb\x.jar Hello
+    //    2) 만약 -classpath 경로가 지정되어 있지 않으면,
+    //       OS에서 CLASSPATH 환경 변수로 등록한 경로
+    //
+    // => 파일 경로이기 때문에 패키지와 패키지 사이에는 . 대신에 /를 사용해야 한다.
+    // 
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
         "com/eomcs/spring/ioc/ex01/a/application-context.xml");
 

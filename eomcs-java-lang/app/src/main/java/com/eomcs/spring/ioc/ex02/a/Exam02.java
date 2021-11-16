@@ -19,7 +19,7 @@ public class Exam02 {
 
     System.out.println(obj1 == obj2);
 
-    //Car obj3 = iocContainer.getBean(Car.class);  // 같은 타입의 객체가 여러 개일 경우 예외 발생!
+    //    Car obj3 = iocContainer.getBean(Car.class);  // 같은 타입의 객체가 여러 개일 경우 예외 발생!
   }
 
 }

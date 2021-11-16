@@ -1,9 +1,14 @@
 package com.eomcs.spring.ioc.ex01;
 
+//@Component
 public class Car {
   String model;
   String maker;
   int cc;
+
+  public Car() {
+    System.out.println("Car() 생성자 호출!");
+  }
 
   @Override
   public String toString() {

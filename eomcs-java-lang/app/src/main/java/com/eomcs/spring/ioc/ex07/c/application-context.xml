@@ -32,9 +32,10 @@
 	                 => 스프링 IoC 컨테이너가 프로퍼티 값을 설정할 때 
 	                    특히 String 값을 java.sql.Date 객체로 바꿔야 할 때 
 	                    이 클래스를 사용하여 값을 바꾸라는 뜻이다.-->
-	            
+	      
 	            <entry key="java.sql.Date" 
 	                   value="com.eomcs.spring.ioc.ex07.c.CustomDateEditor"/>
+	          
 	        </map>
 	    </property>
 	</bean>
