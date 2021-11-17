@@ -2,14 +2,12 @@ package com.eomcs.spring.ioc.ex12.a;
 
 import java.util.HashMap;
 import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.stereotype.Component;
-
+import org.springframework.stereotype.Repository;
 import com.eomcs.spring.ioc.ex12.Board;
 
-@Component
+@Repository
 public class BoardDao {
 
   SqlSessionFactory sqlSessionFactory;

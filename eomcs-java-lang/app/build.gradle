@@ -75,11 +75,11 @@ dependencies {
 
   // Spring JDBC 보조 라이브러리
   // - DataSource 구현체가 들어 있다.
-  //implementation 'org.springframework:spring-jdbc:5.3.7'
+  implementation 'org.springframework:spring-jdbc:5.3.13'
 
   // Apache commons-dbcp 라이브러리
   // - DataSource 구현체가 들어 있다.
-  //implementation 'commons-dbcp:commons-dbcp:1.4'
+  implementation 'commons-dbcp:commons-dbcp:1.4'
    
   // Reflection API를 좀 더 쉽게 사용하게 도와주는 유틸리티
   //implementation 'org.reflections:reflections:0.9.12'

@@ -12,7 +12,7 @@ public class Exam01 {
 
   public static void main(String[] args) {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex12/d/application-context2.xml");
+        "com/eomcs/spring/ioc/ex12/d/application-context.xml");
 
     SpringUtils.printBeanList(iocContainer);
 
