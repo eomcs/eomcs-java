@@ -29,7 +29,7 @@ public class Exam01 {
 
     // private 멤버는 직접 접근 불가!
     Car c2 = new Car();
-    //c2.model = "비트비트"; // private 멤버이기 때문에 접근 불가! 컴파일 오류!
+    //    c2.model = "비트비트"; // private 멤버이기 때문에 접근 불가! 컴파일 오류!
     c2.setModel("비트비트"); 
     System.out.println(c2);
 

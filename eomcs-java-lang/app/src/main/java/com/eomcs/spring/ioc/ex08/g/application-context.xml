@@ -7,7 +7,7 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
-    
+     
     <!-- 
       클래스에 붙은 특정 애노테이션을 처리할 BeanPostProcessor 등록하기
          @Autowired => AutowiredAnnotationBeanPostProcessor
@@ -34,12 +34,12 @@
          이 태그는 context 네임스페이스 들어 있다. 
          이 태그를 사용하려면 먼저 context 네임스페이스를 선언해야 한다.
     -->
-    <!--
+    <!--  
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
     -->
-
+    
     <context:annotation-config/>
-
+    
     <!-- 같은 타입(Engine)의 의존 객체가 여러 개 있을 때? 
        => 어떤 것을 꼽아야 할 지 알 수 없기 때문에 Car 객체를 생성하지 못한다. 오류 발생!
        => 해결책! 
@@ -57,12 +57,13 @@
         <property name="valve" value="16"/>
         <property name="cylinder" value="4"/>
     </bean>
-    
+
     <bean id="e2" class="com.eomcs.spring.ioc.ex08.g.Engine">
         <property name="maker" value="캠프자동차"/>
         <property name="valve" value="16"/>
         <property name="cylinder" value="8"/>
     </bean>
+
 </beans>
 
 
