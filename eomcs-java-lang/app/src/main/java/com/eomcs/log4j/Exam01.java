@@ -32,7 +32,7 @@ public class Exam01 {
     System.out.println("고전적인 방법으로 기록을 남기기!");
 
     // 로깅 도구를 사용하여 기록을 남기는 방법
-    logger.fatal("내용 ==> FATAL");
+    logger.fatal("내용 ==> {}, {}, {}", "FATAL", "aaa", 100);
     logger.error("내용 ==> ERROR");
     logger.warn("내용 ==> WARN");
     logger.info("내용 ==> INFO");
@@ -40,6 +40,30 @@ public class Exam01 {
     logger.trace("내용 ==> TRACE");
   }
 }
+
+
+// 로그 레벨 중요도
+//      trace < debug < info < warn < error < fatal
+// 
+// 1) trace
+//    - 실행 과정을 순서대로 자세하게 확인하고 싶을 때 사용한다.
+// 2) debug
+//    - 개발자 입장에서 변수의 값을 확인하고 싶을 때 사용한다.
+// 3) info
+//    - 주요 메서드의 호출이나 실행 흐름을 확인하고 싶을 때 사용한다.
+// 4) warn
+//    - 시스템 실행에는 문제가 없으나 향후 예외가 발생할 수 있는 상황을 기록하고 싶을 때 사용한다.
+// 5) error
+//    - 실행 중 발생한 오류를 기록하고 싶을 때 사용한다.
+// 6) fatal
+//    - 복구가 불가능한, 즉 시스템을 즉시 종료해야 하는 상황을 기록할 때 사용한다.
+//
+// 출력 레벨 설정
+// - 출력할 로그 레벨을 설정할 수 있다.
+// - 출력 레벨을 지정하면 그 레벨 이상에 대해 출력을 허락한다.
+// - 예) trace : trace < debug < info < warn < error < fatal
+// - 예) debug : debug < info < warn < error < fatal
+// - 예) error : error < fatal
 
 
 
