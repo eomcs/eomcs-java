@@ -166,6 +166,14 @@
   </servlet>
 -->
 
+  <servlet>
+    <servlet-name>ex12.s01</servlet-name>
+    <servlet-class>com.eomcs.web.ex12.Servlet01</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex12.s01</servlet-name>
+    <url-pattern>/ex12/s01</url-pattern>
+  </servlet-mapping>
 
   <!-- 세션의 타임아웃 설정하기 
        => 단위는 분(minute)이다. -->
