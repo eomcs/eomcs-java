@@ -133,7 +133,7 @@ gradle 을 실행하여 이클립스 IDE 용 웹 프로젝트 관련 파일을 �
   - contextConfigLocation의 값을 빈채로 두어라.
 
 ## src-05 : ContextLoaderListener와 DispatcherServlet의 IoC 컨테이너
-
+ 
 - /WEB-INF/config/app-context.xml 로 위치 이동 및 이름 변경
   - <mvc:annotation-driven/> 태그 추가
   - ContextLoaderListener는 WebMVC 관련 애노테이션을 처리할 객체가 없기 때문에

@@ -2,17 +2,11 @@
 <Configuration>
   <Appenders>
     <Console name="STDOUT">
-      <PatternLayout pattern="%d %-5level [%logger] %msg%n%xThrowable" />
+        <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd} [%t] %c{1} - %msg%n" />
     </Console>
   </Appenders>
   <Loggers>
-    <Logger name="org.apache.hc.client5.http" level="DEBUG">
-      <AppenderRef ref="Console"/>
-    </Logger>
-    <Logger name="org.apache.hc.client5.http.wire" level="DEBUG">
-      <AppenderRef ref="Console"/>
-    </Logger>
-    <Root level="INFO">
+    <Root level="debug">
       <AppenderRef ref="STDOUT" />
     </Root>
   </Loggers>
