@@ -58,7 +58,7 @@ dependencies {
     // => MappingJackson2HttpMessageConverter를 사용하려면
     //    다음과 같이 의존하는 라이브러리를 추가해야 한다.
     //
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
 
     // => 그런데 JSON 데이터를 처리할 때
     //    MappingJackson2HttpMessageConverter 대신 GsonHttpMessageConverter 를 사용할 수 있다.
@@ -66,7 +66,7 @@ dependencies {
     //    다음과 같이 이 클래스가 들어있는 의존 라이브러리를 추가해야 한다.
     // => 만약 동시에 추가한다면 기본으로 Jackson 라이브러리를 사용한다.
     //
-    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.9'
 
     implementation 'com.google.guava:guava:28.2-jre'
     testImplementation 'junit:junit:4.12'

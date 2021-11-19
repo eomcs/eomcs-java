@@ -100,7 +100,7 @@ dependencies {
   implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
   
   // Google JSON 라이브러리
-  implementation 'com.google.code.gson:gson:2.8.8'
+  implementation 'com.google.code.gson:gson:2.8.9'
 
   // Apache HTTP 통신 라이브러리
   //implementation 'org.apache.httpcomponents.client5:httpclient5:5.0'

@@ -14,6 +14,19 @@ import org.springframework.web.servlet.support.AbstractDispatcherServletInitiali
 public class WebApplicationInitializerImpl
 extends AbstractDispatcherServletInitializer {
 
+  // AbstractDispatcherServletInitializer 클래스에서 
+  // 이미 DispatcherServlet 객체를 생성하여 등록했다.
+  // 따라서 이 클래스를 상속 받는 서브 클래스에서 해야 할 일은 
+  // 1) ContextLoaderListener 가 사용할 IoC 컨테이너를 설정한다.
+  //    => createRootApplicationContext() 메서드 오버라이딩
+  // 2) DispatcherServlet이 사용할 IoC 컨테이너를 설정한다.
+  //    => createServletApplicationContext() 메서드 오버라이딩
+  // 3) DispatcherServlet에 적용할 URL 매핑을 설정한다.
+  //    => getServletMappings() 메서드 오버라이딩
+  
+  // 다음 메서드들은 수퍼 클래스에서 상속 받은 onStartup()에서 호출한다.
+  // 즉 onStartup()은 DispatcherServlet 을 준비할 때 다음 메서드의 리턴 값을 참조한다.
+  
   @Override
   protected WebApplicationContext createRootApplicationContext() {
     // ContextLoaderListener 가 사용할 IoC 컨테이너를 리턴한다.
