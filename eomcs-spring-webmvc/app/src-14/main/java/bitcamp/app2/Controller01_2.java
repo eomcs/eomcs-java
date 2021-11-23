@@ -33,7 +33,7 @@ public class Controller01_2 {
     // View?
     // => 뷰를 실행하는 일을 한다.
     // => 템플릿 엔진을 실행하여 실제 클라이언트로 보낼 콘텐트를 생성한다.
-    // => FreeMarker, JSP/JSTL, Tiles, RSS/Atom, PDF, Excel 등의
+    // => Thymeleaf, FreeMarker, JSP/JSTL, Tiles, RSS/Atom, PDF, Excel 등의
     //    엔진을 이용하여 콘텐트를 생성하는 뷰가 있다.
     //
     // ViewResolver 교체
@@ -93,7 +93,7 @@ public class Controller01_2 {
     // Map 객체에 값을 담아 리턴하면
     // 프론트 컨트롤러는 Map 객체에 보관되어 있는 값들을 ServletRequest 보관소로 옮긴다.
     // 그리고 view URL은 request handler의 URL을 사용한다.
-    // => "/WEB-INF/jsp2" + "/c01_2/h3" + ".jsp" = "/WEB-INF/jsp2/c01_2/h3.jsp
+    // => "/WEB-INF/jsp2" + "/c01_2/h3" + ".jsp" = "/WEB-INF/jsp2/c01_2/h3.jsp"
     return map;
   }
 

@@ -23,7 +23,7 @@ public class Controller01_1 {
     return "/jsp/c01_1.jsp";
     // 기본 ViewResolver는 리턴 값으로 URL을 받아
     // 웹 애플리케이션 디렉토리에서 JSP를 찾는다.
-    // 웹 애프리케이션이 경로가 /eomcs-spring-webmvc 라면,
+    // 웹 애플리케이션이 경로가 /eomcs-spring-webmvc 라면,
     // JSP 경로는 다음과 같다.
     // ==> /eomcs-spring-webmvc/jsp/c01_1.jsp
     //

@@ -41,12 +41,13 @@ extends AbstractAnnotationConfigDispatcherServletInitializer {
     // DispatcherServlet에 설정을 추가해야 한다.
     // => 즉 멀티파트 데이터를 Part 객체로 받을 때는
     //    이 설정을 추가해야 한다.
-    // => 단 이 설정을 추가하면 Spring WebMVC의 MultipartResolver가 작동되지 않는다.
+
     //
     // 만약 Spring의 방식으로 파일 업로드를 처리하고 싶다면,
     // AppConfig.java의 MultipartResolver를 추가해야 한다.
     // => 즉 멀티파트 데이터를 MultipartFile 객체로 받으려면
     //    AppConfig에 별도로 MultipartResolver를 추가해야 한다.
+    // => 단 이 설정을 추가하면 Servlet 3.0 API의 멀티파트 처리 기능이 동작되지 않는다.
     //
     // DispatcherServlet 이 multipart/form-data 으로 전송된 데이터를 처리하려면
     // 해당 콤포넌트를 등록해야 한다.

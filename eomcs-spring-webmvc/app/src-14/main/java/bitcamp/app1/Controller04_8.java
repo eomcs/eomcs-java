@@ -121,6 +121,35 @@ public class Controller04_8 {
     return out0.toString();
   }
 
+
+  // 테스트:
+  // http://.../html/app1/c04_8.html
+  @PostMapping(value = "h4", produces = "text/html;charset=UTF-8")
+  @ResponseBody
+  public String handler4(
+      String name,
+      int age,
+      // 같은 이름으로 전송된 여러 개의 파일은 배열로 받으면 된다.
+      MultipartFile[] photo
+      ) throws Exception {
+
+    StringWriter out0 = new StringWriter();
+    PrintWriter out = new PrintWriter(out0);
+    out.println("<html><head><title>c04_8/h3</title></head><body>");
+    out.println("<h1>업로드 결과</h1>");
+    out.printf("<p>이름:%s</p>\n", name);
+    out.printf("<p>나이:%s</p>\n", age);
+
+    for (MultipartFile f : photo) {
+      String filename = UUID.randomUUID().toString();
+      String path = sc.getRealPath("/html/app1/" + filename);
+      f.transferTo(new File(path));
+      out.printf("<p><img src='../../html/app1/%s'></p>\n", filename);
+    }
+    out.println("</body></html>");
+
+    return out0.toString();
+  }
 }
 
 
