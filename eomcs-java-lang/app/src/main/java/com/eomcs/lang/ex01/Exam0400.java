@@ -15,16 +15,16 @@ package com.eomcs.lang.ex01;
 //
 
 public class Exam0400 {
-  public static void main(String[] args) {
-  }
+  //  public static void main(String[] args) {
+  //  }
 }
 
 //## 실습
 //1) 컴파일하기
-//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ex01/Exam4.java
+//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex01/Exam0400.java
 //
 //2) 실행하기
-//- $ java -cp bin/main com.eomcs.basic.ex01.Exam4
+//- $ java -cp bin/main com.eomcs.lang.ex01.Exam0400
 //
 //* main() 메서드를 주석으로 막은 다음에 컴파일하고 실행해 보자.
 //- 실행 오류 메시지를 확인할 수 있다.
