@@ -1,5 +1,5 @@
 // 리터럴: 정수 리터럴이 표현할 수 있는 값의 범위
-package com.eomcs.study.lang.leteral;
+package com.eomcs.study.lang.literal;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

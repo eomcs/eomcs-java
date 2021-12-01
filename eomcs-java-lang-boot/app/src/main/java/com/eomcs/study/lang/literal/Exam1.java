@@ -1,5 +1,5 @@
 // 리터럴 : 자바에서 값을 표현한 것
-package com.eomcs.study.lang.leteral;
+package com.eomcs.study.lang.literal;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

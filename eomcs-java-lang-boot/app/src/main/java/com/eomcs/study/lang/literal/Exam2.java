@@ -1,5 +1,5 @@
 // 리터럴: 숫자를 표현하는 다양한 방법 - 진수법
-package com.eomcs.study.lang.leteral;
+package com.eomcs.study.lang.literal;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
