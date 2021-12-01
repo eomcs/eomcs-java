@@ -1,0 +1,31 @@
+plugins {
+  id 'org.springframework.boot' version '2.6.0'
+  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'java'
+  id 'eclipse'
+}
+
+group = 'com.eomcs'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+  useJUnitPlatform()
+}
+
+// eclipse 프로젝트 이름을 설정하기
+eclipse {
+    project {
+        name = "eomcs-java-lang-boot"
+    }
+}
