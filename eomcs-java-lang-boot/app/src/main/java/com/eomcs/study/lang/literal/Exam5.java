@@ -30,6 +30,11 @@ public class Exam5 {
     return "문자2: " + (char)65 + "," + (char)44032; // 문자의 코드 값은 그냥 정수 값이다. 
     // 대신 문자를 가리키는 코드임을 표시해야 한다.
   }
+
+  @GetMapping("/test5")
+  public String test5() {
+    return "문자2: " + '\u4eba' + '\u00a9' + '\u03c0' + '\u03a3'; // 키보드에서 입력 불가능한 특수 문자를 가리킬 때 주로 유니코드를 사용한다.
+  }
 }
 
 
