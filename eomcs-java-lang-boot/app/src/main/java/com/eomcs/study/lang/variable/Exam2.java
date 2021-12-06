@@ -18,7 +18,7 @@ public class Exam2 {
 
   //여러 개의 값을 받는 방법: 배열 사용 후
   //=> 배열 메모리에 값을 넘길 때는 같은 파라미터 이름을 사용해야 한다.
-  //=> http://localhost:8080/lang/variable/exam2/test1?name=홍길동&name=임꺽정&name=...
+  //=> http://localhost:8080/lang/variable/exam2/test2?name=홍길동&name=임꺽정&name=...
   @GetMapping("/test2")
   public String test2(String[] name) {
     return "=> " + name[0] + ", " + name[1] + ", " + name[2] + ", " + name[3] + ", " + name[4] + ", " + name[5] + ", " + name[6];
