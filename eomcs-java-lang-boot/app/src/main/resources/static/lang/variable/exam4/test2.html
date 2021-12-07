@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수 활용</title>
+</head>
+<body>
+
+<h1>계산기 : client-side rendering</h1>
+<form>
+<input type="text" name="v1">
+<select name="op">
+  <option>+</option>
+  <option>-</option>
+  <option>*</option>
+  <option>/</option>
+  <option>%</option>
+</select>
+<input type="text" name="v2">
+<button type="button" id="x-btn">=</button>
+<input id="x-result" type="text">
+</form>
+
+<script>
+// 입력폼의 각 태그를 찾는다.
+var xV1 = document.querySelector("input[name='v1']");
+var xV2 = document.querySelector("input[name='v2']");
+var xOp = document.querySelector("select[name='op']");
+var xBtn = document.querySelector("#x-btn");
+var xResult = document.querySelector("#x-result");
+
+// 버튼을 클릭하면 웹브라우저에서 별도의 요청을 수행한다.
+
+// 1) 버튼을 클릭했을 때 수행할 작업을 등록한다.
+xBtn.onclick = function() {
+	
+  // 서버에 요청할 때 사용할 도구를 준비한다.
+  var xhr = new XMLHttpRequest();
+  
+  // 서버에서 응답을 받았을 때(load 이벤트 발생) 호출될 함수를 등록한다.
+  xhr.addEventListener("load", function() {
+    xResult.value = xhr.responseText;
+  });
+  
+  // 서버와 연결한다.
+  // 주의!
+  // - 웹브라우저에서 직접 요청할 대는 'URL 인코딩'을 따로 처리하지 않아도 된다.
+  //   왜? 웹브라우저가 알아서 URL 인코딩을 해준다.
+  // - 자바스크립트를 이용해서 요청할 때는 개발자가 직접 'URL 인코딩'을 처리해야 한다.
+  //   즉 URL 인코딩을 하지 않았을 때 문제가 발생할 문자에 대해 반드시 URL 인코딩을 처리해야 한다.
+  //
+  //     encodeURIComponent(문자열)   
+  //     ==> 한글 뿐만 아니라 URL에서 특별한 의미로 사용되는 문자(?,+,# 등)도 URL 인코딩한다.
+  // 
+  xhr.open(
+    "GET",  // HTTP 요청 방식
+    "/lang/variable/exam4/test2?v1=" + xV1.value 
+      + "&v2=" + xV2.value
+      + "&op=" + encodeURIComponent(xOp.value),  // 요청 URL 
+    true);  // 비동기 여부 지정
+  
+  // 서버에 요청 정보를 보낸다.
+  xhr.send();
+};
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

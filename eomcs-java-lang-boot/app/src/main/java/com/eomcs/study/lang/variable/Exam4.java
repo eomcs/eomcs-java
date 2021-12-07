@@ -45,7 +45,11 @@ public class Exam4 {
   // 테스트:
   // => /static/lang/literal/variable/exam4/test2.html
   @GetMapping("/test2")
-  public String test2(int v1, int v2, String op) {
+  public Object test2(int v1, int v2, String op) {
+    System.out.println(">" + v1 + "<");
+    System.out.println(">" + v2 + "<");
+    System.out.println(">" + op + "<");
+
     int result = 0;
     switch (op) {
       case "+": result = v1 + v2; break;
@@ -56,7 +60,7 @@ public class Exam4 {
       default: return "해당 연산을 수행할 수 없습니다.";
     }
 
-    return  result;
+    return result;
   }
 
 }
