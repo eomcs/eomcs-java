@@ -46,10 +46,6 @@ public class Exam4 {
   // => /static/lang/literal/variable/exam4/test2.html
   @GetMapping("/test2")
   public Object test2(int v1, int v2, String op) {
-    System.out.println(">" + v1 + "<");
-    System.out.println(">" + v2 + "<");
-    System.out.println(">" + op + "<");
-
     int result = 0;
     switch (op) {
       case "+": result = v1 + v2; break;
@@ -61,6 +57,14 @@ public class Exam4 {
     }
 
     return result;
+  }
+
+  // 테스트:
+  // => /static/lang/literal/variable/exam4/test3.html
+  @GetMapping("/test3")
+  public Object test3() {
+    String[] names = {"홍길동", "임꺽정", "유관순", "안중근", "윤봉길"};    
+    return names; // 스프링부트는 이 메서드가 리턴한 배열을 JSON 형식의 문자열로 바꿔 응답한다.
   }
 
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수 활용</title>
+</head>
+<body>
+
+<h1>배열 다루기</h1>
+<button type="button" id="x-btn">배열 가져오기</button>
+<ul>
+  <li>홍길동</li>
+  <li>임꺽정</li>
+  <li>유관순</li>
+</ul>
+
+<script>
+var xBtn = document.querySelector("#x-btn");
+
+xBtn.addEventListener("click", function() {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    console.log(xhr.responseText);
+  };
+  xhr.open("GET", "/lang/variable/exam4/test3", true);
+  xhr.send();
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
