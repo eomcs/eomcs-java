@@ -21,11 +21,11 @@ xBtn.addEventListener("click", function() {
       return response.json();
     })
     .then(function(jsonData) {
-      jsonData.forEach(function(name) {
-        var li = document.createElement("li");
-        li.innerHTML = name;
-        xNamelist.appendChild(li);
-    	})
+      for (var name of jsonData) {
+          var li = document.createElement("li");
+          li.innerHTML = name;
+          xNamelist.appendChild(li);
+      }
     });
 });
 </script>

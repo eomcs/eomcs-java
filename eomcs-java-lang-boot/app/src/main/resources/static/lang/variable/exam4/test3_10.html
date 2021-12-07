@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수 활용</title>
+</head>
+<body>
+
+<h1>배열 다루기</h1>
+<button type="button" id="x-btn">배열 가져오기</button>
+<ul id="x-namelist">
+</ul>
+
+<script>
+var xNamelist = document.querySelector("#x-namelist");
+var xBtn = document.querySelector("#x-btn");
+
+xBtn.addEventListener("click", function() {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    // 서버에서 받은 JSON 형식의 배열을 자바스크립트 배열로 변환한다.
+    var names = JSON.parse(xhr.responseText);
+    for (var name of names) {
+      var li = document.createElement("li"); // <li></li>
+      li.innerHTML = name; // <li>홍길동</li>
+      xNamelist.appendChild(li);
+    }
+  };
+  xhr.open("GET", "/lang/variable/exam4/test3", true);
+  xhr.send();
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
