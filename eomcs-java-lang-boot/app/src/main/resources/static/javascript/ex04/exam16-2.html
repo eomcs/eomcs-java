@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>객체 - 상속 II : call()을 사용한 상속 구현</h1>
+<script>
+"use strict"
+
+// 생성자를 정의할 때 상위 생성자를 지정하면 
+// 자바의 상속 효과를 가질 수 있다.
+
+function Member(id, pwd) {
+  // 호출할 상위 생성자를 따로 지정하지 않으면
+  // 기본으로 Object()를 호출한다.
+  // this.Object();
+  
+	this.id = id;
+	this.pwd = pwd;
+} 
+
+function Student(id, pwd, school, working) {
+  
+  // 호출할 상위 생성자를 따로 지정하지 않으면
+  // 기본으로 Object()를 호출한다.
+  // this.Object();
+  
+  // 다른 생성자의 코드를 실행하여 간접적으로 상속을 구현하기
+  // => 생성자.call(객체주소, 파라미터, ...)
+  // 이 방식은 실제 상위 생성자를 교체한 것은 아니다.
+  // 단지 다른 생성자를 호출하여 해당 코드를 실행한 것에 불과하다.
+  // 그래서 instanceof 연산자로 검사해보면 
+  // Student의 상위 생성자가 Member가 아니라 Object로 나온다.
+  //
+  Member.call(this, id, pwd);
+  
+  this.school = school;
+  this.working = working;
+} 
+
+
+var obj1 = new Member("hong", "1111");
+var obj2 = new Student("park", "1111", "대학교", true);
+
+console.log(obj1);
+console.log(obj2);
+
+console.log("---------------------------");
+
+// 객체가 지정된 생성자를 통해 초기화 되었는 지 검사
+console.log(obj1 instanceof Object);  // true
+console.log(obj1 instanceof Member);  // true
+console.log(obj1 instanceof Student);  // false
+
+console.log("---------------------------")
+console.log(obj2 instanceof Object);  // true
+console.log(obj2 instanceof Member);  // false
+console.log(obj2 instanceof Student);  // true
+
+</script>
+</body>
+</html>
+
+
+
+
+

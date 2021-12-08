@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex03</title>
+</head>
+<body>
+<h1>자바스크립트 글로벌 함수 - JSON.stringify()</h1>
+<textarea id="ta" cols="80" rows="10"></textarea>
+<button id="btn1">실행</button>
+<script>
+"use strict"
+// 자바스크립트 객체를 JSON 문자열로 바꾸로 싶을 때 사용한다.
+//
+// 용도:
+// => 웹브라우저에서 단순한 형식(name=aaa&age=20&tel=1111-1111)이 아닌 
+//    데이터가 다른 데이터를 포함하는 복잡한 구조의 데이터를 서버에 보내고 싶을 때
+//    JSON 형식의 문자열로 만들어 보낸다.
+// => 서버는 클라이언트가 보낸 JSON 형식의 문자열을 자바 객체로 만들어 사용한다.
+//    물론 JSON 형식의 문자열을 다루는 자바 라이브러리가 많이 있다.
+//    자세한 것은 www.json.org 사이트를 보라!
+// 
+var ta = document.getElementById("ta");
+
+document.getElementById("btn1").onclick = () => {
+	var obj = new Object();
+	obj.name = "홍길동";
+	obj["age"] = 20;
+	obj.tel = '111-2222';
+	
+	ta.value = JSON.stringify(obj);
+};
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

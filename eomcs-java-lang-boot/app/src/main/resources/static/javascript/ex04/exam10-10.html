@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>객체 - 객체 생성과 초기화 VII</h1>
+<script>
+"use strict"
+
+// 생성자 함수는 일반 함수와 다르게 
+// 메서드 이름을 명사구 형태로 짓는다.
+function Score(name, kor, eng, math) {
+    this.name = name;
+    this.kor = kor;
+    this.eng = eng;
+    this.math = math;
+    this.sum = function() { 
+        return this.kor + this.eng + this.math
+    };
+    this.aver = function() { 
+        return this.sum() / 3
+    }
+}
+
+var scores = []; 
+scores[0] = new Score("홍길동", 100, 100, 100);
+scores[1] = new Score("임꺽정", 90, 90, 90);
+scores[2] = new Score("유관순", 80, 80, 80);
+
+for (var score of scores) {
+    console.log(score.name, score.kor, score.eng, score.math, 
+    		score.sum(), score.aver());
+    console.log(score);
+}
+</script>
+</body>
+</html>
+
+
+
+
+

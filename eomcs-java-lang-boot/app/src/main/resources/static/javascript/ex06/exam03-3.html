@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex06</title>
+</head>
+<body>
+<h1>이벤트 - 이벤트가 발생된 태그 알아내기 III</h1>
+<button id="btn1" class="b1" data-no="100">버튼1</button><br>
+<button id="btn2" class="b1" data-no="200">버튼2</button><br>
+<button id="btn3" class="b2" data-no="300">버튼3</button><br>
+<button id="btn4" class="b2" data-no="400">버튼4</button><br>
+
+<script>
+"use strict"
+
+// 여러 개의 태그에 같은 리스너를 등록했을 경우
+// 리스너가 호출될 때 어떤 태그인지 알아내는 방법!
+
+var el = document.querySelectorAll(".b1");
+var el2 = document.querySelectorAll(".b2");
+
+var btnClick = function(e) {
+	alert("===> " + this.getAttribute("data-no"));
+	alert("===> " + e.target.getAttribute("data-no"));
+	for (var e of el2) {
+		e.style["background-color"] = "yellow";
+	}
+};
+
+for (var e of el) {
+	  e.addEventListener("click", btnClick);
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>객체 - 객체 생성과 초기화 VI</h1>
+<script>
+"use strict"
+
+// 함수를 생성자처럼 사용하기  
+function createScore() {
+	// 자바스크립트는 생성자를 정의하는 문법이 따로 없다. 
+	// 일반 함수를 생성자처럼 사용한다.
+	// => new 명령을 사용하여 외부에서 빈 객체를 생성한 후, 
+	// => 일반 함수를 호출한다.
+	// => 외부에서 생성한 객체는 this를 통해 접근할 수 있다.
+	// => 만약 new 명령없이 이 함수를 호출한다면 this는 undefined 이다.
+	console.log(this);
+}
+
+//일반 함수를 생성자로서 사용한다는 의미?
+// => new 명령 다음에 즉시 호출하는 것을 의미한다.
+// => 예) new createScore();
+var obj1 = new createScore(); 
+console.log("-----------------------");
+
+//일반 함수로 사용한다면 this에는 어떤 주소도 들어 있지 않다.
+var obj2 = createScore(); 
+
+
+</script>
+</body>
+</html>
+
+
+
+
+

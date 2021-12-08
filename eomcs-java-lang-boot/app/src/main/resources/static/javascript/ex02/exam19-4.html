@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex02</title>
+</head>
+<body>
+<h1>반복문 - for(... of 배열)</h1>
+<script>
+"use strict"
+// 배열을 처음부터 끝까지 반복하여 값을 꺼낼 때 유용하다.
+
+var arr = ["aaa", "bbb", true, 100];
+var v;
+for (v of arr) { 
+  // v 변수에는 인덱스가 아니라 배열에서 꺼낸 값이 저장된다.
+	console.log(v);
+}
+console.log("---------------------");
+
+for (var x of arr) {
+    console.log(x);
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
