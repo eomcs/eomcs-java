@@ -7,6 +7,7 @@
 <body>
 
 <h1>배열 다루기</h1>
+<a href="/lang/variable/exam4/test3">서버에 요청하기</a>
 <button type="button" id="x-btn">배열 가져오기</button>
 <ul>
   <li>홍길동</li>
@@ -18,6 +19,7 @@
 var xBtn = document.querySelector("#x-btn");
 
 xBtn.addEventListener("click", function() {
+  // 별도의 요청 작업을 실행한다. 
   var xhr = new XMLHttpRequest();
   xhr.onload = function() {
     console.log(xhr.responseText);

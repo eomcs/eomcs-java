@@ -20,12 +20,12 @@ xBtn.addEventListener("click", function() {
     .then(function(response) {
       return response.json();
     })
-    .then(function(jsonData) {
-      jsonData.forEach(function(name) {
+    .then(function(names) {
+      names.forEach(function(name) {
         var li = document.createElement("li");
         li.innerHTML = name;
         xNamelist.appendChild(li);
-    	})
+      });
     });
 });
 </script>
