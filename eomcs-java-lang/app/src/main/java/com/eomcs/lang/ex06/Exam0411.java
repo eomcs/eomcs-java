@@ -8,7 +8,7 @@ public class Exam0411 {
     // for (변수선언 및 초기화; 조건; 증감문) {문장1; 문장2; ...}
 
     // 증감문 제거
-    for (int i = 1; i <= 5;) {
+    for (int i = 1; i <= 5;    ) {
       System.out.println(i);
       i++;
     }

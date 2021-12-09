@@ -9,7 +9,7 @@ public class Exam0412 {
 
     // 변수 선언 및 초기화 문장 제거
     int i = 1;
-    for (; i <= 5;) {
+    for (    ; i <= 5;    ) {
       System.out.println(i);
       i++;
     }
