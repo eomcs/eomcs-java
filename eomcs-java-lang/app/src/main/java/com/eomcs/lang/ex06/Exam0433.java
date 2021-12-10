@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex06;
 
-// # 흐름 제어문 - for 중첩과 break
+// # 흐름 제어문 - for 중첩과 continue
 //
 public class Exam0433 {
   public static void main(String[] args) {
