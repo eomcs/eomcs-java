@@ -3,56 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>exam</title>
+  <style>
+    div {
+      border: 1px solid red;
+      min-height: 100px;
+    }
+  </style>
+
 </head>
 <body>
-  <h1>요점 정리 - 7.JSON과 동적 UI</h1>
+  <h1>요점 정리 - 7.AJAX : 클라이언트측 렌더링 방식</h1>
   <div>
-  <table id="ta1" border="1">
-  <thead>
-    <th>번호</th>
-    <th>제목</th>
-    <th>조회수</th>
-    <th>등록일</th>
-  </thead>
-  <tbody></tbody>
-  </table>
+    <ul id="x-name-list">
+    </ul>
   </div>
   <button id="btn1">데이터 가져오기</button>
-  
+
 <script>
 var tag1 = document.getElementById("btn1");
 
 tag1.onclick = function() {
   // 서버에 요청
-  var xhr = new XMLHttpRequest;
-  xhr.open("GET", "exam07.jsp", false);
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/javascript/ex00/exam07", false);
   xhr.send();
-  
-  // JSON 형식의 문자열 데이터 ==> JavaScript 객체
-  console.log(xhr.responseText);
-  var arr = JSON.parse(xhr.responseText);
-  
-  var trList = "";
-  for (var item of arr) {
-    trList += "<tr><td>" + item.no + "</td>" +
-              "<td>" + item.title + "</td>" +
-              "<td>" + item.viewCount + "</td>" +
-              "<td>" + item.createdDate + "</td></tr>\n";
+
+  // 서버에서 보낸 JSON 형식의 데이터를 자바스크립트 객체로 변환한다.
+  var names = JSON.parse(xhr.responseText);
+
+  // 서버가 보낸 데이터를 가지고 <li></li> 태그로 만들어 <ul></ul> 태그에 넣기
+  var ul = document.getElementById("x-name-list");
+
+  for (var name of names) {
+    var li = document.createElement("li");
+    li.innerHTML = name;
+    ul.appendChild(li);
   }
-  
-  var tag2 = document.querySelector("#ta1 > tbody");
-  tag2.innerHTML = trList;
-  
 };
 
-</script>  
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
