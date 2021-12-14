@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex01</title>
+</head>
+<body>
+<h1>script 태그를 나중에 실행하는 예</h1>
+
+<p>이번 달 이용 금액은 <span id="bill"></span> 원입니다.</p>
+
+<script>
+// 서버에서 이용 금액 데이터를 가져와서 화면에 출력한다.
+var xhr = new XMLHttpRequest();
+xhr.onload = function() {
+  document.getElementById("bill").innerHTML = xhr.responseText;
+};
+xhr.open("GET", "/javascript/ex01/exam05_x", true);
+xhr.send();
+</script>
+</body>
+</html>
