@@ -5,13 +5,13 @@
 <title>ex03</title>
 </head>
 <body>
-<h1>자바스크립트 글로벌 함수 - setInterval()</h1>
+<h1>자바스크립트 주요 함수 - setInterval()</h1>
 <script>
 "use strict"
-// 일정 시간이 경과할 때마다 특정 함수를 계속 호출하게 할 수 있다. 
+// 일정 시간이 경과할 때마다 특정 함수를 반복적으로 호출할 수 있다.
 // => window.setInterval(함수, 경과시간);
 var count = 0;
-function f1() { 
+function f1() {
     console.log("f1()....." + (++count));
     if (count >= 10) {
       clearInterval(timerId); // 지정한 interval 타이머를 멈추게 한다.
@@ -19,14 +19,11 @@ function f1() {
 }
 
 // f1() 함수를 2초 마다 호출하라!
+// => setInterval()을 통해 함수를 등록하면 리턴 값으로 등록 번호를 알려준다.
+// => 이 등록번호를 보관해 두었다가, 타이머를 멈추고 싶을 때 사용하면 된다.
 var timerId = window.setInterval(f1, 2000);
 
 </script>
 
 </body>
 </html>
-
-
-
-
-
