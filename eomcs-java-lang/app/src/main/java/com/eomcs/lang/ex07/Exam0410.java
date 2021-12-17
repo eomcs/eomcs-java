@@ -19,7 +19,7 @@ public class Exam0410 {
   }
 }
 // 실행 순서와 메모리
-// 1) java -classpath bin com.eomcs.basic.ex07.Exam0410
+// 1) java -classpath bin com.eomcs.lang.ex07.Exam0410
 //    => JVM은 클래스 정보를 Method Area 영역에 로드한다.
 // 2) main() 호출
 //    => JVM Stack 영역에 main() 메서드가 사용할 로컬 변수를 준비한다.
@@ -53,6 +53,6 @@ public class Exam0410 {
 //   맨마지막에 호출한 메서드가 먼저 삭제된다고 해서
 //   "스택(stack)" 메모리라 부른다.
 //   스택? 접시 쌓는 것을 생각하라!
-// - 스택 방식을 "Last In First Out(LIFO;후입선출)"라 부른다. 
+// - 스택 방식을 "Last In First Out(LIFO;후입선출, FILO;선입후출)"라 부른다. 
 //
 // JVM이 종료하면 JVM이 사용했던 모든 메모리를 OS가 회수한다.

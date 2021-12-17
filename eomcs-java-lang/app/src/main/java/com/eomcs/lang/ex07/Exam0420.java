@@ -6,6 +6,10 @@ public class Exam0420 {
 
   static int[] getArray() {
     int[] arr = new int[] {100, 200, 300};
+    // => int 배열 주소를 담을 arr 변수를 JVM Stack 영역에 준비하라!
+    // => 100, 200, 300 값을 담은 배열을 Heap 영역에 준비하라.
+    // => Heap 영역에 준비한 배열 메모리의 주소를 JVM Stack 메모리에 있는 arr 변수에 넣어라.
+
     return arr;
   }
 
