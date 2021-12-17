@@ -27,7 +27,6 @@ public class Exam0260 {
 
     // => 또는 다음과 같이 배열에 담아서 전달할 수도 있다.
     String[] arr = {"김구", "안중근", "윤봉길", "유관순"};
-
     hello(arr);
     System.out.println("-------------------");
 
