@@ -9,17 +9,17 @@
 <script>
 "use strict"
 
-// {} 표기법을 이용하여 객체 생성과 초기화를 수행한다.  
+// {} 표기법을 이용하여 객체 생성과 초기화를 수행한다. 
 function createScore(name, kor, eng, math) {
     return {
         "name": name,
         'kor': kor,
         'eng': eng,
         math: math,
-        sum() { 
+        sum() {
             return this.kor + this.eng + this.math
         },
-        aver() { 
+        aver() {
             return this.sum() / 3
         }
     }
@@ -34,14 +34,9 @@ scores[2] = createScore("유관순", 80, 80, 80);
 scores[2].kor = 100;
 
 for (var score of scores) {
-    console.log(score.name, score.kor, score.eng, score.math, 
+    console.log(score.name, score.kor, score.eng, score.math,
     		score.sum(), score.aver());
 }
 </script>
 </body>
 </html>
-
-
-
-
-

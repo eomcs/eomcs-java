@@ -8,7 +8,7 @@
 <h1>객체 - 프로퍼티 추가</h1>
 <script>
 "use strict"
-// 생성자를 이용하여 기본 객체를 준비한 후에 
+// 생성자를 이용하여 기본 객체를 준비한 후에
 // 필요한 프로퍼티(변수와 함수)를 추가할 수 있다.
 //
 
@@ -21,7 +21,7 @@ console.log(obj.toString());
 console.log(obj.valueOf());
 console.log(obj.hasOwnProperty("toString")); // false
 console.log(obj.hasOwnProperty("hashCode")); // false
-// => hasOwnProperty()는 기본 객체를 생성한 이후에 
+// => hasOwnProperty()는 기본 객체를 생성한 이후에
 //    개발자가 추가한 프로퍼티인지 검사한다.
 
 console.log("----------------------");
@@ -34,13 +34,13 @@ console.log("----------------------");
 // 객체에 값을 저장할 수 있다.
 obj.title = "제목입니다.";
 obj["content"] = "내용입니다.";
-obj['viewCount'] = 120; 
+obj['viewCount'] = 120;
 
 // 물론 그 값으로 함수 객체의 주소를 저장할 수 있다.
 function f1(a, b) {
-  return a + b; 
+  return a + b;
 }
-obj.plus1 = f1; // 함수명은 그 자체가 함수 객체의 주소를 갖고 있는 변수이다. 
+obj.plus1 = f1; // 함수명은 그 자체가 함수 객체의 주소를 갖고 있는 변수이다.
 
 obj.plus2 = function(a, b) {
   return a + b;
@@ -67,8 +67,3 @@ obj['plus3'](100, 200);
 </script>
 </body>
 </html>
-
-
-
-
-
