@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>생성자7 - typeof와 instanceof</h1>
+<script>
+"use strict"
+
+function f1() {}
+function f2() {}
+function f3() {}
+
+var obj1 = new f1();
+var obj2 = new f2();
+var obj3 = new f3();
+console.log("-----------------------");
+
+// 객체를 초기화시킨 생성자가 무엇인지 상관없이
+// 모든 객체의 타입은 "object" 이다.
+console.log(typeof obj1);
+console.log(typeof obj2);
+console.log(typeof obj3);
+console.log("-----------------------");
+
+// instanceof 를 사용하면 그 객체를 초기화시킨 생성자를 확인할 수 있다.
+console.log(obj1 instanceof f1); // true
+console.log(obj1 instanceof f2); // false
+console.log(obj1 instanceof f3); // false
+console.log("-----------------------");
+
+// 모든 생성자의 최상위 생성자는 Object() 이다.
+console.log(obj1 instanceof Object); // true
+console.log(obj2 instanceof Object); // true
+console.log(obj3 instanceof Object); // true
+console.log("-----------------------");
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>생성자6 - 생성자 상속과 prototype 연결</h1>
+<script>
+"use strict"
+
+function f1(n) {
+  this.name = n;
+}
+
+f1.prototype.printName = function() {
+  console.log("이름: " + this.name);
+};
+
+function f2(n, k, e, m) {
+  // 상위 생성자를 명시적으로 호출한다.
+  f1.call(this, n);
+
+  this.kor = k;
+  this.eng = e;
+  this.math = m;
+}
+
+// f2() 생성자가 f1() 생성자를 상속 받을 때는
+// f2의 prototype이 f1의 prototype도 상속 받아야 한다.
+// 그래야만 f2()로 초기화시킨 객체에서 f1.prototype에 들어 있는 함수를 사용할 수 있다.
+f2.prototype = Object.create(f1.prototype);
+
+var obj1 = new f2("홍길동", 100, 90, 80);
+console.log(obj1);
+
+obj1.printName();
+
+
+</script>
+</body>
+</html>
