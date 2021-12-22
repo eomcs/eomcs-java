@@ -5,46 +5,40 @@
 <title>ex04</title>
 </head>
 <body>
-<h1>객체 - 객체 생성과 초기화 VI</h1>
+<h1>객체 - 객체 생성과 초기화 VII</h1>
 <script>
 "use strict"
 
-function createScore(name, kor, eng, math) {
-    // => 외부에서 생성한 객체는 this를 통해 접근할 수 있다.
-    // => 만약 new 명령없이 이 함수를 호출한다면 this는 undefined 이다.
-    //console.log(this);
+// 7) 생성자 역할을 하는 함수의 이름은 대문자로 시작한다.
+//    생성자 이름은 객체의 용도를 표현하는 명사 형태로 짓는다.
 
-	  // 생성자를 사용하여 객체를 초기화시키기
-	  // 다음과 같이 기본 객체에 프로퍼티를 추가한다.
-    this.name = name;
-    this.kor = kor;
-    this.eng = eng;
-    this.math = math;
-    this.sum = function() {
-        return this.kor + this.eng + this.math
-    };
-    this.aver = function() {
-        return this.sum() / 3
-    }
+// 자바스크립트는 생성자 문법이 따로 없기 때문에
+// 함수의 이름을 대문자로 시작하여 다른 개발자에게 알려준다.
+function Score(name, kor, eng, math) {
+	this.name = name;
+	this.kor = kor;
+	this.eng = eng;
+	this.math = math;
+	this.sum = function() {
+		return this.kor + this.eng + this.math;
+	};
+	this.aver = function() {
+		return this.sum() / 3;
+	};
 }
 
 var scores = []; //new Array();
-scores[0] = new createScore("홍길동", 100, 100, 100);
-scores[1] = new createScore("임꺽정", 90, 90, 90);
-scores[2] = new createScore("유관순", 80, 80, 80);
+scores[0] = new Score("홍길동", 100, 100, 100);
+scores[1] = new Score("임꺽정", 90, 90, 90);
+scores[2] = new Score("유관순", 80, 80, 80);
+
+// 위와 같이 함수 이름이 대문자로 시작하면
+// 생성자 역할을 하는 함수임을 직관적으로 알 수 있어 유지보수에 좋다.
 
 for (var score of scores) {
     console.log(score.name, score.kor, score.eng, score.math,
-    		score.sum(), score.aver());
+            score.sum(), score.aver());
 }
-
-// 기본 객체를 만든 후에 호출해야 하는 메서드를
-// 다음과 같이 일반 메서드처럼 호출하면
-// 예외가 발생한다!
-// 일반 함수로 사용한다면 this에는 어떤 주소도 들어 있지 않다.
-var x = createScore("오호라!", 100, 100, 100);
-console.log(x);
-
 
 </script>
 </body>

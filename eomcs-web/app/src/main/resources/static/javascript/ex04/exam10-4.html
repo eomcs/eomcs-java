@@ -9,6 +9,8 @@
 <script>
 "use strict"
 
+// 4) 객체 프로퍼티에 함수 저장 
+
 // 객체의 값을 다루는 함수를 객체에 추가한다.
 function createScore(name, kor, eng, math) {
 	var obj = new Object();
@@ -38,7 +40,7 @@ for (var score of scores) {
 console.log("--------------------------------------------");
 
 // 과목의 점수를 변경하더라도 합계와 평균은 다시 계산되기 때문에 편하다!
-scores[2].kor = 100; 
+scores[2].kor = 100;
 
 for (var score of scores) {
     console.log(score.name, score.kor, score.eng, score.math,

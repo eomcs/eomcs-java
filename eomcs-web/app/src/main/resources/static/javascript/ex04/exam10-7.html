@@ -5,48 +5,41 @@
 <title>ex04</title>
 </head>
 <body>
-<h1>객체 - 객체 생성과 초기화 VI</h1>
+<h1>객체 - 객체 생성과 초기화 VII</h1>
 <script>
 "use strict"
 
-// 함수를 생성자로서 실행할 때 수행하는 특별한 동작!
+// 7) 생성자 역할을 하는 함수의 이름은 대문자로 시작한다.
+//    생성자 이름은 객체의 용도를 표현하는 명사 형태로 짓는다.
 
-function createScore() {
-  // new 명령 다음에 이 함수를 호출하면 생성자로서 역할을 수행한다.
-  // 생성자인 경우 다음 문장이 자동으로 수행된다.
-  //   this.Object();
-	// 이때 this 변수에는 new 명령으로 만든 객체의 주소가 들어 있다.
+// 자바스크립트는 생성자 문법이 따로 없기 때문에
+// 함수의 이름을 대문자로 시작하여 다른 개발자에게 알려준다.
+function Score(name, kor, eng, math) {
+	this.name = name;
+	this.kor = kor;
+	this.eng = eng;
+	this.math = math;
+	this.sum = function() {
+		return this.kor + this.eng + this.math;
+	};
+	this.aver = function() {
+		return this.sum() / 3;
+	};
 }
 
-var obj1 = new createScore();
-console.log(obj1);
-console.log("-----------------------");
+var scores = []; //new Array();
+scores[0] = new Score("홍길동", 100, 100, 100);
+scores[1] = new Score("임꺽정", 90, 90, 90);
+scores[2] = new Score("유관순", 80, 80, 80);
 
-// 기본 프로퍼티가 들어 있는지 확인해보자.
-console.log(obj1.toString());
-console.log(obj1.valueOf());
-console.log("-----------------------");
+// 위와 같이 함수 이름이 대문자로 시작하면
+// 생성자 역할을 하는 함수임을 직관적으로 알 수 있어 유지보수에 좋다.
 
-// 객체를 출력해보면,
-// 그 객체를 초기화시킨 생성자 정보를 알 수 있다.
-var obj2 = new Object();
-console.log(obj2);
+for (var score of scores) {
+    console.log(score.name, score.kor, score.eng, score.math,
+            score.sum(), score.aver());
+}
 
-console.log("-----------------------");
-
-// 생성자와 상관없이 모든 객체의 타입은 object 이다.
-console.log(typeof obj1);
-console.log(typeof obj2);
-console.log("-----------------------");
-
-// instanceof 를 사용하면 그 객체를 초기화시킨 생성자를 확인할 수 있다.
-console.log(obj1 instanceof Object); // true => createScore() 내부에서 Object() 생성자를 호출한다.
-console.log(obj2 instanceof Object); // true
-console.log("-----------------------");
-
-console.log(obj1 instanceof createScore); // true
-console.log(obj2 instanceof createScore); // false
-console.log("-----------------------");
 </script>
 </body>
 </html>
