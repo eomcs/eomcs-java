@@ -19,7 +19,7 @@
 
   /* selected 속성의 값에 상관없이 해당 속성이 있는 경우*/
 
-  input[value][type="text"] { 
+  input[type="text"][value] {
     border: 3px solid red;
   }
 
@@ -29,8 +29,9 @@
 <form action="http://www.naver.com" method="get">
 번호: <input><br>
 이름: <input type="text" name="name" value="예)홍길동"><br>
+아이디: <input type="text" name="id"><br>
 암호: <input type="password" name="pwd"><br>
-이메일: <input type="text" name="email" placeholder="예)hong@test.com"><br>
+이메일: <input type="email" name="email" placeholder="예)hong@test.com"><br>
 전화번호: <input type="tel" name="tel" placeholder="예)010-xxxx-xxxx"><br>
 재직여부: <input type="checkbox" name="working" checked> 재직중<br>
 결혼여부: <input type="radio" name="married">기혼

@@ -14,31 +14,32 @@
         대상자[속성명] {...}
    */
   h1 {
+    border: 1px solid red;
     padding-left: 10px;
   }
-  
+
   /* 첫 번째 대상을 지정한다 */
-  h1:nth-child(1) { 
+  h1:nth-child(1) {
     background-color: gray;
   }
   h1:nth-child(10) {
     background-color: red;
-  } 
+  }
   h1:nth-child(2n) {
     border-left: 20px solid violet;
-  } 
-  
+  }
+
   h1:nth-child(2n + 1) {
     border-right: 10px solid royalblue;
   }
-  
+
   h1:first-child {
     text-decoration: underline;
   }
-  
+
   h1:last-child {
     text-decoration: overline;
-  } 
+  }
 
   </style>
 </head>
@@ -53,7 +54,6 @@
 <h1>제목7</h1>
 <h1>제목8</h1>
 <h1>제목9</h1>
-
 </body>
 </html>
 
