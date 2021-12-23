@@ -5,17 +5,43 @@
 <title>ex04</title>
 </head>
 <body>
-<h1>생성자8 - 생성자 상속과 instanceof</h1>
+<h1>생성자8 - 생성자 상속과 prototype</h1>
 <script>
 "use strict"
+
+console.log("---------------------------------")
+console.log("Object() 생성자:")
+
+Object.prototype.test0 = function() {
+  console.log("test0() 호출됨!")
+}
+var obj0 = new Object();
+console.log(obj0);
+console.log(obj0.constructor);
+console.log(Object.prototype);
+obj0.test0();
+
+
+console.log("---------------------------------")
+console.log("f1() 생성자:")
 
 function f1() {
   this.name = "홍길동";
 }
 f1.prototype.test1 = function() {
-  console.log("test1()...");
+  console.log("test1() 호출됨!");
 };
+var obj1 = new f1();
+console.log(obj1);
+console.log(obj1.constructor);
+console.log(f1.prototype);
+obj1.test1();  // obj1 ---> f1.prototype
+obj1.test0();  // obj1 ---> f1.prototype ---> Object.prototype
+// obj1.testx();  // obj1 ---> f1.prototype ---> Object.prototype ---> null
 
+
+console.log("---------------------------------")
+console.log("f2() 생성자:")
 function f2() {
   f1.call(this); // 상위 생성자를 호출해야 한다.
   this.email = "hong@test.com";
@@ -23,9 +49,21 @@ function f2() {
 f2.prototype = Object.create(f1.prototype);
 f2.prototype.constructor = f2;
 f2.prototype.test2 = function() {
-  console.log("test2()...");
+  console.log("test2() 호출됨!");
 };
 
+var obj2 = new f2();
+console.log(obj2);
+console.log(obj2.constructor);
+console.log(f2.prototype);
+obj2.test2();  // obj2 ---> f2.prototype
+obj2.test1();  // obj2 ---> f2.prototype ---> f1.prototype
+obj2.test0();  // obj2 ---> f2.prototype ---> f1.prototype ---> Object.prototype
+// obj2.testx();  // obj2 ---> f2.prototype ---> f1.prototype ---> Object.prototype ---> null
+
+
+console.log("---------------------------------")
+console.log("f3() 생성자:")
 function f3() {
   f2.call(this); // 상위 생성자를 호출해야 한다.
   this.tel = "010-1111-2222";
@@ -33,44 +71,19 @@ function f3() {
 f3.prototype = Object.create(f2.prototype);
 f3.prototype.constructor = f3;
 f3.prototype.test3 = function() {
-  console.log("test3()...");
+  console.log("test3() 호출됨!");
 };
 
-var obj1 = new f1();
-var obj2 = new f2();
 var obj3 = new f3();
-
-console.log(obj1);
-console.log(obj2);
 console.log(obj3);
-console.log("-----------------------");
-
-obj3.test1();
-obj3.test2();
-obj3.test3();
-console.log("-----------------------");
-
-console.log(obj3 instanceof f3);
-console.log(obj3 instanceof f2);
-console.log(obj3 instanceof f1);
-console.log(obj3 instanceof Object);
-console.log("-----------------------");
-
-console.log(obj2 instanceof f3);
-console.log(obj2 instanceof f2);
-console.log(obj2 instanceof f1);
-console.log(obj2 instanceof Object);
-console.log("-----------------------");
-
-console.log(obj1 instanceof f3);
-console.log(obj1 instanceof f2);
-console.log(obj1 instanceof f1);
-console.log(obj1 instanceof Object);
-console.log("-----------------------");
-
 console.log(obj3.constructor);
-console.log(obj2.constructor);
-console.log(obj1.constructor);
+console.log(f3.prototype);
+obj3.test3();  // obj3 ---> f3.prototype
+obj3.test2();  // obj3 ---> f3.prototype ---> f2.prototype
+obj3.test1();  // obj3 ---> f3.prototype ---> f2.prototype ---> f1.prototype
+obj3.test0();  // obj3 ---> f3.prototype ---> f2.prototype ---> f1.prototype ---> Object.prototype
+obj3.testx();  // obj3 ---> f3.prototype ---> f2.prototype ---> f1.prototype ---> Object.prototype ---> null
+
 </script>
 </body>
 </html>

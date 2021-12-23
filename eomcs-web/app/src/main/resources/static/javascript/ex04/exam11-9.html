@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>생성자8 - 생성자 상속과 instanceof</h1>
+<script>
+"use strict"
+
+function f1() {
+  this.name = "홍길동";
+}
+
+function f2() {
+  f1.call(this); // 상위 생성자를 호출해야 한다.
+  this.email = "hong@test.com";
+}
+f2.prototype = Object.create(f1.prototype);
+f2.prototype.constructor = f2;
+
+function f3() {
+  f2.call(this); // 상위 생성자를 호출해야 한다.
+  this.tel = "010-1111-2222";
+}
+f3.prototype = Object.create(f2.prototype);
+f3.prototype.constructor = f3;
+
+var obj0 = new Object();
+var obj1 = new f1();
+var obj2 = new f2();
+var obj3 = new f3();
+
+console.log(obj0 instanceof Object);
+console.log(obj0 instanceof f1);
+console.log(obj0 instanceof f2);
+console.log(obj0 instanceof f3);
+console.log("-----------------------");
+
+console.log(obj1 instanceof Object);
+console.log(obj1 instanceof f1);
+console.log(obj1 instanceof f2);
+console.log(obj1 instanceof f3);
+console.log("-----------------------");
+
+console.log(obj2 instanceof Object);
+console.log(obj2 instanceof f1);
+console.log(obj2 instanceof f2);
+console.log(obj2 instanceof f3);
+console.log("-----------------------");
+
+console.log(obj3 instanceof Object);
+console.log(obj3 instanceof f1);
+console.log(obj3 instanceof f2);
+console.log(obj3 instanceof f3);
+console.log("-----------------------");
+</script>
+</body>
+</html>
