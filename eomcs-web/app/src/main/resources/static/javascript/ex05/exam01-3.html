@@ -17,12 +17,13 @@
 <script>
 "use strict"
 
-// getElementsByClassName("분류명")
+// Document.prototype.getElementsByClassName("분류명")
 // => HTMLCollection 객체 리턴
 // => HTMLCollection은 배열이 아니다!
+// => 찾지 못하더라도 HTMLCollection 객체를 리턴한다.
 //
 var el = document.getElementsByClassName("g3");
-
+console.log(el);
 for (var e of el) {
     console.log(e.innerHTML);
 }
@@ -30,8 +31,3 @@ for (var e of el) {
 </script>
 </body>
 </html>
-
-
-
-
-
