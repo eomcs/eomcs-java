@@ -30,18 +30,24 @@ console.log(document.constructor.name);
 // => 상속 관계
 //    Document() --> Node() ---> EventTarget() ---> Object()
 
+console.log(document);
 
-// Object() 생성자가 추가한 함수 존재 여부 확인
-console.log(document.toString);
+console.log(Document.prototype);
 
-// EventTarget() 생성자가 추가한 함수 존재 여부 확인
-console.log(document.addEventListener);
+// Document()의 함수
+console.log(document.createElement); // document ---> Document.prototype
 
-// Node() 생성자가 추가한 함수 존재 여부 확인
-console.log(document.appendChild);
+// Node()의 함수
+console.log(document.appendChild); // document ---> Document.prototype ---> Node.prototype
 
-// Document() 생성자가 추가한 함수 존재 여부 확인
-console.log(document.createElement);
+// EventTarget()의 함수
+console.log(document.addEventListener); // document ---> Document.prototype ---> Node.prototype ---> EventTarget.prototype
+
+// Object()의 함수
+console.log(document.toString); // document ---> Document.prototype ---> Node.prototype ---> EventTarget.prototype ---> Object.prototype
+
+
+
 
 </script>
 </body>
