@@ -12,10 +12,10 @@
 "use strict"
 
 // 한 태그에 세가지 방법으로 등록된 리스너가 있을 때 호출되는 순서는?
-// => 만약 태그 객체에 대해 onclick 프로퍼티로 리스너를 등록했다면, 
+// => 만약 태그 객체에 대해 onclick 프로퍼티로 리스너를 등록했다면,
 //    태그의 onclick 속성에 등록된 자바스크립트 코드는 실행되지 않는다.
 // => 태그 객체에 대해 onclick 프로퍼티로 등록한 리스너가 먼저 실행된다.
-//    그런 후에 addEventListener()로 등록한 태그가 있다면 그 리스너를 호출한다.
+//    그런 후에 addEventListener()로 등록한 리스너를 호출한다.
 // => 주의!
 //    이 호출 순서에 의존하여 코드를 작성하지 말라!
 //    또한 세가지 방법 중에 한 가지 방법으로 리스너를 등록하라!
@@ -24,7 +24,7 @@
 var btn1 = document.querySelector("#btn1");
 
 // 태그의 onclick 속성에 자바스크립트가 있든
-// 태그 객체의 onclick 프로퍼티에 리스너를 등록하였든 상관없이 
+// 태그 객체의 onclick 프로퍼티에 리스너를 등록하였든 상관없이
 // 리스너를 추가한다.
 btn1.addEventListener("click", () => {
     var str = "Hello3";
@@ -33,7 +33,7 @@ btn1.addEventListener("click", () => {
 
 
 // 태그의 onclick 속성 값을 설정했다면 그 값을 대체한다.
-// 
+//
 btn1.onclick = () => {
     var str = "Hello2";
     window.alert(str);
@@ -43,8 +43,3 @@ btn1.onclick = () => {
 </script>
 </body>
 </html>
-
-
-
-
-

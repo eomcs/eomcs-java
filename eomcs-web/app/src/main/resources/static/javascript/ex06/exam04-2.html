@@ -6,7 +6,7 @@
 <style>
 body, div {
     border: 1px solid red;
-    padding: 30px; 
+    padding: 30px;
 }
 button {padding: 30px;}
 </style>
@@ -28,26 +28,27 @@ button {padding: 30px;}
 // addEventListener(이벤트타입, 리스너, 캡쳐여부)에서
 // 세 번째 파라미터의 값을 true로 설정하라. 기본은 false이다.
 // => true : target 또는 capture 단계에서 호출된다.
-// => false(기본) : target 또는 bubble 단계에서 호출된다. 
+// => false(기본) : target 또는 bubble 단계에서 호출된다.
 document.getElementById("btn1").addEventListener("click", function(e) {
 	console.log("버튼1...");
 }, true);
 
+// target, bubble  단계에서 호출되도록 설정한다.
 document.getElementById("btn2").addEventListener("click", function(e) {
     console.log("버튼2...");
 });
 
-// 캡쳐 단계에서 호출되도록 설정한다.
+// capture, target 단계에서 호출되도록 설정한다.
 document.getElementById("d2").addEventListener("click", function(e) {
     console.log("d2...");
-});
+}, true);
 
-//캡쳐 단계에서 호출되도록 설정한다.
+// capture, target 단계에서 호출되도록 설정한다.
 document.getElementById("d1").addEventListener("click", function(e) {
     console.log("d1...");
-});
+}, true);
 
-//캡쳐 단계에서 호출되도록 설정한다.
+// capture, target  단계에서 호출되도록 설정한다.
 document.body.addEventListener("click", function(e) {
     console.log("body...");
 }, true);
@@ -60,8 +61,3 @@ document.body.addEventListener("click", function(e) {
 </script>
 </body>
 </html>
-
-
-
-
-

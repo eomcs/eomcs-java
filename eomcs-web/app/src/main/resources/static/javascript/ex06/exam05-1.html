@@ -6,7 +6,7 @@
 <style>
 body, div {
     border: 1px solid red;
-    padding: 30px; 
+    padding: 30px;
 }
 button {padding: 30px;}
 </style>
@@ -24,12 +24,12 @@ button {padding: 30px;}
 
 // 사용자의 행위가 아닌 프로그래밍으로 특정 이벤트를 발생시킬 수 있다.
 //
-// 
+//
 document.getElementById("btn1").addEventListener("click", function(e) {
 	// #btn1을 눌렀을 때 #btn2에 click 이벤트 발생시키기
 	// 1) MouseEvent 만들기
 	var myEvent = new MouseEvent("click");
-	
+
 	// 2) 위에서 생성한 이벤트 객체를 #btn2에 보낸다.
 	document.getElementById("btn2").dispatchEvent(myEvent);
 });
@@ -42,8 +42,3 @@ document.getElementById("btn2").addEventListener("click", function(e) {
 </script>
 </body>
 </html>
-
-
-
-
-
