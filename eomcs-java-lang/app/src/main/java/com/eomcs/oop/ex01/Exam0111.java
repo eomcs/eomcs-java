@@ -4,12 +4,11 @@ package com.eomcs.oop.ex01;
 //
 public class Exam0111 {
   public static void main(String[] args) {
+
     String name;
     int kor;
     int eng;
     int math;
-    int sum;
-    float aver;
 
     name = "홍길동";
     kor = 100;
