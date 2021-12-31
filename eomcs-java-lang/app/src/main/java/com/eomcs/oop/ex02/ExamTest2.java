@@ -1,7 +1,5 @@
 package com.eomcs.oop.ex02;
 
-import com.eomcs.oop.ex02.util.Calculator2;
-
 // 1) 관련 메서드를 클래스로 묶는다.
 // 2) 메서드에서 계산한 결과를 클래스 변수에 저장한다.
 // 3) 인스턴스 변수로 바꿔서 결과를 개별적으로 관리한다.
@@ -11,27 +9,31 @@ import com.eomcs.oop.ex02.util.Calculator2;
 public class ExamTest2 {
 
   public static void main(String[] args) {
+    int result = 0;
 
-    // 2 + 3 - 1 * 7 / 3 = ?
-    // 3 * 100 / 2 - 17 = ?
+    result = plus(2, 3);
+    result = minus(result, 1);
+    result = multiple(result, 7);
+    result = divide(result, 3);
 
-    Calculator2 c1 = new Calculator2();
-    Calculator2 c2 = new Calculator2();
-
-    c1.plus(2);
-    c2.plus(3);
-    c1.plus(3);
-    c2.multiple(100);
-    c1.minus(1);
-    c2.divide(2);
-    c1.multiple(7);
-    c2.minus(17);
-    c1.divide(3);
-
-    System.out.printf("result = %d\n", c1.getResult());
-    System.out.printf("result = %d\n", c2.getResult());
+    System.out.printf("result = %d\n", result);
   }
 
+  static int plus(int a, int b) {
+    return a + b;
+  }
+
+  static int minus(int a, int b) {
+    return a - b;
+  }
+
+  static int multiple(int a, int b) {
+    return a * b;
+  }
+
+  static int divide(int a, int b) {
+    return a / b;
+  }
 }
 
 
