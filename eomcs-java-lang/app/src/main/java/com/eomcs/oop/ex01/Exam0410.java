@@ -3,8 +3,8 @@ package com.eomcs.oop.ex01;
 // # 패키지 멤버 클래스
 //
 public class Exam0410 {
-  public static void main(String[] args) {
 
+  public static void main(String[] args) {
     // 바깥 쪽에 별도 선언한 클래스를 사용하기
     Score s = new Score();
 

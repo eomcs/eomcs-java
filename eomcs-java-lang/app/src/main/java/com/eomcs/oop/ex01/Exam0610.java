@@ -15,7 +15,7 @@ public class Exam0610 {
     //
     // - X2 클래스는 public 이 아니다.
     // - 따라서 다른 패키지의 클래스는 X2를 사용할 수 없다.
-    //com.eomcs.oop.ex01.sub.X2 obj3; // 컴파일 오류!
+    //    com.eomcs.oop.ex01.sub.X2 obj3; // 컴파일 오류!
 
     // - Y2 클래스는 public으로 공개된 클래스이다.
     com.eomcs.oop.ex01.sub.Y2 obj4;
