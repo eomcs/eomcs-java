@@ -21,7 +21,7 @@ public class Exam0110 {
 
     // A 클래스에 대해 new 명령을 사용하기 전에는 v1, v2 메모리는 존재하지 않는다.
     // 단지 설계도일 뿐이다.
-    A obj1 = new A();
+    A obj1 = new A(); // A 클래스에서 변수 선언 명령을 실행한다. 주의! 메서드 정의는 실행하지 않는다!
     A obj2 = new A();
     A obj3 = new A();
 
