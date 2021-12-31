@@ -5,7 +5,7 @@ package com.eomcs.oop.ex02;
 public class Exam0250 {
 
   static class Calculator {
-    // 인스턴스 변수
+    // 인스턴스 변수(= non-static 변수)
     // - 작업 결과를 개별적으로 관리하고 싶을 때 인스턴스 변수로 선언한다.
     // - 인스턴스 변수는 클래스가 로딩 될 때 만들어지지 않는다.
     // - new 명령을 사용해서 만들어야 한다.

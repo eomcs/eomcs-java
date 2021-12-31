@@ -8,11 +8,11 @@ public class Exam0110 {
   // - 인스턴스 변수를 사용하여 학생의 성적 데이터를 담을 메모리를 설계한다.
   //
   static class Score {
-    // 인스턴스 변수
+    // 인스턴스 변수(instance variable; instance field)
     // - new 명령으로 생성되는 변수이다.
     // - 데이터를 개별적으로 다루고 싶을 때 인스턴스 변수로 선언한다.
     //
-    String name;
+    String name; // 변수 또는 필드
     int kor;
     int eng;
     int math;
@@ -21,7 +21,6 @@ public class Exam0110 {
   }
 
   public static void main(String[] args) {
-
     // 사용자 정의 데이터 타입을 사용하는 방법
     // - new 명령을 사용하여 설계도에 기술된 대로 메모리를 준비한다.
     // - 메모리는 Heap 영역에 생성된다.

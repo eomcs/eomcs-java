@@ -38,7 +38,6 @@ public class Exam0510 {
   // bin/main/com/eomcs/oop/ex01/Exam0510$C.class
   class C {}
 
-
   public static void main(String[] args) {
     // 3) 로컬 클래스(local class)
     // - 메서드 블록 안에 정의된 클래스

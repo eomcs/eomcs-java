@@ -26,4 +26,8 @@ public class Calculator {
   public static int abs(int a) {
     return a >= 0 ? a : a * -1;
   }
+
+  public int getResult() {
+    return this.result;
+  }
 }
