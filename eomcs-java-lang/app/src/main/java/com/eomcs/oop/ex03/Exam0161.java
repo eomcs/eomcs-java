@@ -7,7 +7,7 @@ public class Exam0161 {
   static class Member {
     String id;
     String password;
-    int type; // 0: 손님, 1: 회원, 2: 관리자
+    int type; 
   }
 
   public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class Exam0161 {
     Member m4 = new Member();
     m4.id = "aaa";
     m4.password = "1111";
-    m4.type = GUEST;
+    m4.type = GUEST; // 숫자로 타입을 지정하는 대신 변수명을 사용했기 때문에 따로 주석을 달 필요가 없다.
 
     Member m5 = new Member();
     m5.id = "bbb";
