@@ -11,10 +11,11 @@ public class Exam0420 {
     int sum;
     float average;
 
-    // 생성자가 한 개라도 있으면 컴파일러는 기본 생성자를 만들어주지 않는다.
+    // 생성자가 한 개라도 있으면 컴파일러는 자동으로 기본 생성자를 만들어주지 않는다.
+    //      Score() {}
+
     Score(String name, int kor, int eng, int math) {
       System.out.println("Score(String,int,int,int) 호출!");
-
       // 파라미터로 받은 값을 새로 만든 인스턴스 변수에 저장한다.
       // => 이렇게 생성자는 새로 만든 인스턴스 변수를 초기화시키는 일을 한다.
       this.name = name;

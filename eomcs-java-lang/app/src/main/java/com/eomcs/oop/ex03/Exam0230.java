@@ -18,6 +18,7 @@ public class Exam0230 {
   }
 
   public static void main(String[] args) {
+
     // Heap에 인스턴스 변수가 생성된다.
     // 인스턴스 메서드가 생성되는 것이 아니다!
     Calculator c1 = new Calculator();
@@ -29,8 +30,8 @@ public class Exam0230 {
     // c1이 가리키는 인스턴스를 가지고 Method Area에 있는 plus()를 호출한다.
     c1.plus(123);
 
-    // c2가 가리키는 인스턴스를 가지고 Method Area에 있는 minus()를 호출한다.
-    c2.minus(30);
+    // c2가 가리키는 인스턴스를 가지고 Method Area에 있는 plus()를 호출한다.
+    c2.plus(30);
   }
 }
 

@@ -29,10 +29,10 @@ public class Exam0310 {
     // 다음과 같이 인스턴스를 만든 후에 호출해야 한다.
     // abs()는 인스턴스 변수를 사용하지도 않는데 
     // 이렇게 인스턴스를 생성해야 한다면 얼마나 낭비적인가!
-    /*
-        Math m = new Math();
-        int result = m.abs(value);
-     */
+    //
+    //    Math m = new Math();
+    //    int result = m.abs(value);
+    //
 
     System.out.printf("절대값=%d\n", result);
   }

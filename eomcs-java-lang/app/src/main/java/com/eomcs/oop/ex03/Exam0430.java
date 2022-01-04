@@ -37,7 +37,7 @@ public class Exam0430 {
 
   public static void main(String[] args) {
 
-    // 생성자가 여러 개 일 때 파라미터에 전달하는 값으로 구분한다.
+    // 생성자가 여러 개 일 때 파라미터에 전달하는 값으로 호출될 생성자를 구분한다.
     Score s1 = new Score();
 
     // 인스턴스 생성 후에 나중에 따로 생성자를 호출할 수 없다!
