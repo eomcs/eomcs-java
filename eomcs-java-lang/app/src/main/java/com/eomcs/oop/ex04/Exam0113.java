@@ -29,6 +29,7 @@ public class Exam0113 {
 
     String s1 = new String(bytes);
     System.out.println(s1);
+    System.out.println("-------------------------------------");
 
     // 생성자에 바이트 배열을 넘길 때
     // 바이트 배열에 들어 있는 데이터의 문자 코드표를 알려주지 않으면,

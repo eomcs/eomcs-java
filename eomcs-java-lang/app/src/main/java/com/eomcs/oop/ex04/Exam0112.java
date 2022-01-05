@@ -10,13 +10,17 @@ public class Exam0112 {
 
     // 한글 문자 코드의 바이트 배열을 가지고 String 인스턴스 초기화시키기.
     byte[] bytes = {
-        (byte)0xb0, (byte)0xa1, // 가
-        (byte)0xb0, (byte)0xa2, // 각
-        (byte)0xb6, (byte)0xca, // 똘
-        (byte)0xb6, (byte)0xcb  // 똥
+        (byte)0xb0, (byte)0xa1, // 가 (EUC-KR 코드)
+        (byte)0xb0, (byte)0xa2, // 각 (EUC-KR 코드)
+        (byte)0xb6, (byte)0xca, // 똘 (EUC-KR 코드)
+        (byte)0xb6, (byte)0xcb  // 똥 (EUC-KR 코드)
     };
-    String s1 = new String(bytes);
+    String s1 = new String(bytes); 
+    // 바이트 배열에 들어 있는 문자 코드가 어떤 문자집합에 맞춰 작성되었는지 알려주지 않으면
+    // String 클래스는 JVM이 가정하는 문자집합으로 작성되었을 거라고 생각하고 Unicode로 변환한다.
+
     System.out.println(s1);
+    System.out.println("----------------------------");
     // 결과: 
     // => 한글 출력이 깨진다.
     //
@@ -27,8 +31,10 @@ public class Exam0112 {
     // => OS 마다 기본으로 사용하는 문자 코드표(Character Set)가 다르다.
     //    Windows : MS949
     //    Unix/Linux/macOS : UTF-8
+    //    이클립스에서 실행할 경우: OS에 상관없이 UTF-8 이라고 가정한다.
     // => 그런데 위 예제의 바이트 배열은 EUC-KR 코드이다.
     //    그래서 String 클래스는 바이트 배열을 제대로 해석하지 못한 것이다.
+
     //
     // 해결책?
     // => String 클래스의 생성자를 호출할 때
