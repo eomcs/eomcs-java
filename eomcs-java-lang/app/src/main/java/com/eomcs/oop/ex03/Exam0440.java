@@ -37,6 +37,7 @@ public class Exam0440 {
     }
 
     public void compute() {
+      //      this("오호라"); // 일반 메서드에서 생성자를 호출할 수 없다!
       this.sum = this.kor + this.eng + this.math;
       this.average = this.sum / 3f;
     }
@@ -48,7 +49,7 @@ public class Exam0440 {
     Score s1 = new Score();
 
     // 인스턴스 생성 후에 나중에 따로 생성자를 호출할 수 없다!
-    // s1.Score("홍길동", 100, 90, 77); // 컴파일 오류!
+    //    s1.Score("홍길동", 100, 90, 77); // 컴파일 오류!
     System.out.println("--------------------------------");
 
 

@@ -13,6 +13,7 @@ public class Exam0430 {
 
     Score() {
       System.out.println("Score()");
+      this.name = "이름없음";
     }
 
     Score(String name) {
