@@ -13,6 +13,7 @@ public class Exam0970 {
     Monitor() {
       // 다른 생성자를 호출할 수 있다.
       // 단 첫 문장으로 와야 한다.
+      // => 이 경우 변수 초기화 문장이 삽입되지 않는다.
       this(50, 50, 2560, 1200);
       System.out.println("Monitor()");
     }
@@ -20,11 +21,17 @@ public class Exam0970 {
     Monitor(int bright, int contrast) {
       // 다른 생성자를 호출할 수 있다.
       // 단 첫 문장으로 와야 한다.
+      // => 이 경우 변수 초기화 문장이 삽입되지 않는다.
       this(bright, contrast, 2560, 1200);
       System.out.println("Monitor(int, int)");
     }
 
     Monitor(int bright, int contrast, int widthRes, int heightRes) {
+      // 다른 생성자를 호출하는 코드가 없다면 
+      // 변수 초기화 문장이 생성자 맨 앞에 삽입된다.
+      //      this.contrast = 50;
+      //      this.heightRes = 1080;
+
       this.bright = bright;
       this.contrast = contrast;
       this.widthRes = widthRes;
