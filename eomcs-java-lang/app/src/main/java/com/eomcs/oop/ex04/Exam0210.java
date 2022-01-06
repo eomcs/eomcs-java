@@ -61,9 +61,9 @@ public class Exam0210 {
     System.out.println(s5);
 
     // => primitive 값을 문자열로 만든다.
-    String s6 = String.valueOf(true);
-    String s7 = String.valueOf(3.14f);
-    String s8 = String.valueOf(100);
+    String s6 = String.valueOf(true); // "true"
+    String s7 = String.valueOf(3.14f); // "3.14"
+    String s8 = String.valueOf(100); // "100"
     System.out.println(s6);
     System.out.println(s7);
     System.out.println(s8);
