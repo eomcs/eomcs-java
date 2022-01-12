@@ -2,6 +2,7 @@
 package com.eomcs.oop.ex06.e;
 
 class G {
+
   public void m1(final int a) {
     // 파라미터는 메서드가 호출될 때 외부의 값을 받는 용도의 변수다.
     // 메서드 안에서 파라미터 값을 임의로 변경하게 되면
