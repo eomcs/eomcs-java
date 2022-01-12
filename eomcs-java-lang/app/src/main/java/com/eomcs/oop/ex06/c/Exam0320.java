@@ -14,7 +14,7 @@ public class Exam0320 {
 
     // 오버라이딩 메서드의 접근 범위를 확대하는 것은 괜찮다.
     // => private 은 오버라이딩 자체가 불가능하기 때문에 접근 범위를 확대할 수 없다.
-    //    @Override public m() {}
+    //    @Override public void m1() {}
 
     //    @Override private void m2() {} // 컴파일 오류! 원래 접근 범위 보다 좁힐 수 없다.
     //    @Override  void m2() {} // 접근 범위를 원래 대로 지정하는 것. OK!

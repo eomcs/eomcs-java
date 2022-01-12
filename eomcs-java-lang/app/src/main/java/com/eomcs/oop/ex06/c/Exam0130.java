@@ -31,7 +31,7 @@ public class Exam0130 {
     //    obj.working = true; // A4의 working : obj의 클래스에서 먼저 필드를 찾기 때문이다.
     obj.working = "취업";
 
-    obj.print(); 
+    obj.print();
     // A의 print() 호출 
     // - A4 가 오버라이딩 한 필드를 사용하지 않는다.
     // - 필드 오버라이딩은 그냥 새 필드를 추가한 것과 같다.
