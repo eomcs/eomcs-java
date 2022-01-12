@@ -11,7 +11,8 @@ public class Exam0410 {
     System.out.println("-------------------------");
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
+
     Sedan sedan = new Sedan();
     sedan.model = "티코";
     sedan.cc = 800;
