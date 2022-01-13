@@ -2,7 +2,7 @@ package com.eomcs.oop.ex05.x3.app1;
 
 // 자동차를 만들기
 //
-// 1) 기존 코드를 복사해 온 후 기능 덧붙이기
+// 2) 기존 코드를 복사해 온 후 기능 덧붙이기
 //
 public class CarTest1 {
 

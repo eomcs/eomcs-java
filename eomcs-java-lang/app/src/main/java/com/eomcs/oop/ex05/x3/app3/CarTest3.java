@@ -2,7 +2,7 @@ package com.eomcs.oop.ex05.x3.app3;
 
 // 트레일러 만들기
 //
-// 1) app1에서 복제해 온 Engine에 기능 덧붙이기
+// 2) app1에서 복제해 온 Engine에 기능 덧붙이기
 //
 public class CarTest3 {
 
