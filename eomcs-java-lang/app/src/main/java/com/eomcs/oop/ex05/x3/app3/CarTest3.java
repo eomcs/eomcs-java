@@ -18,7 +18,7 @@ public class CarTest3 {
     CampingTrailer trailer = new CampingTrailer();
 
     Engine car = new Engine();
-    car.setTrailer(trailer);
+    //car.setTrailer(trailer);
     car.start();
     car.run();
     car.stop();

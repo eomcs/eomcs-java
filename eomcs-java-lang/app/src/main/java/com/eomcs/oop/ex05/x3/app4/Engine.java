@@ -9,7 +9,7 @@ public class Engine {
     if (kwh > 0) {
       System.out.println("전기로 간다!");
     } else {
-      System.out.println("엔진이 돈다!");
+      System.out.println("씽씽 달리다!");
     }
   }
 

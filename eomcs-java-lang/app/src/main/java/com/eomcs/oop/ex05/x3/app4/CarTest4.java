@@ -1,7 +1,5 @@
 package com.eomcs.oop.ex05.x3.app4;
 
-import com.eomcs.oop.ex05.x2.Engine;
-
 // 하이브리드 자동차 만들기
 //
 // 1) app1의 Engine 클래스를 복제해 온 후 하이브리드 기능 덧붙이기
@@ -15,7 +13,7 @@ public class CarTest4 {
     // => run() 메서드 변경
     //
     Engine car = new Engine();
-    car.chargeBattery(100);
+    //car.chargeBattery(100);
     car.start();
     car.run();
     car.stop();
