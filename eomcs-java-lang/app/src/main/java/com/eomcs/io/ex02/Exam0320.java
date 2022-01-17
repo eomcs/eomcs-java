@@ -24,8 +24,8 @@ public class Exam0320 {
 
     System.out.printf("%d\n", count);
 
-    for (int i = 0; i < 20; i++)
-      System.out.printf("%02x ", buf[i]);
+    for (int i = 0; i < 100; i++)
+      System.out.printf("%d: %02x \n", i, buf[i]);
 
     System.out.println();
 

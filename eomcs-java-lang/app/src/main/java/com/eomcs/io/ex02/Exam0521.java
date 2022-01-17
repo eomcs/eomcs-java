@@ -26,6 +26,8 @@ public class Exam0521 {
     // - 바이트 배열에 들어 있는 코드 값이 어떤 문자 집합의 값인지 알려주지 않는다면,
     //   JVM 환경 변수 file.encoding에 설정된 문자 집합으로 가정하고 변환을 수행한다.
     String str = new String(buf, 0, count); 
+    // 바이트 배열이 어떤 문자집합으로 인코딩 된 것인지 알려주지 않으면, 
+    // file.encoding에 설정된 문자집합으로 인코딩된 것으로 간주한다.
 
     System.out.println(str);
 
