@@ -16,6 +16,7 @@ public class Exam0120 {
     int callCount = 0;
 
     while ((len = in.read(buf)) != -1) {
+      System.out.printf("읽은 바이트 수: %d\n", len);
       callCount++; // 파일을 끝까지 읽는다.
     }
 
