@@ -16,6 +16,8 @@ public class BufferedFileInputStream extends FileInputStream {
   // 파일에서 버퍼로 왕창 읽어 온 횟수
   int readCount = 0;
 
+  // 버퍼를 사용하는 서브 클래스의 특징에 맞춰서 
+  // 상속 받은 메서드를 재정의 한다. 
   @Override
   public int read() throws IOException {
     if (cursor == size) { // 바이트 배열에 저장되어 있는 데이터를 모두 읽었다면,

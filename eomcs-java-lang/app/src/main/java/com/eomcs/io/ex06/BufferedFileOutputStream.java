@@ -11,6 +11,8 @@ public class BufferedFileOutputStream extends FileOutputStream {
     super(filename);
   }
 
+  // 오버라이딩: 상속 받은 메서드를 서브 클래스의 역할에 맞춰서 재정의 한다.
+  // 즉 버퍼를 사용하는 특징에 맞춰서 데이터를 파일에 출력하도록 변경한다.
   @Override
   public void write(int b) throws IOException {
     if (cursor == buf.length) { // 버퍼가 다차면
@@ -22,27 +24,24 @@ public class BufferedFileOutputStream extends FileOutputStream {
     buf[cursor++] = (byte) b;
   }
 
-  @Override
-  public void write(byte[] buf) throws IOException {
-    for (byte b : buf) {
-      this.write(b & 0x000000ff);
-    }
-  }
-
-
-  @Override
-  public void close() throws IOException {
-    this.flush();
-    super.close();
-  }
-
-
+  // 버퍼를 사용할 때는 특히 주의해야 한다.
+  // 버퍼가 꽉 찼을 때만 파일로 내보내기 때문에
+  // 버퍼에 잔여 데이터가 남아 있을 수 있다.
+  // 버퍼의 잔여 데이터를 강제로 출력하도록 상속 받은 다음 메서드를 재정의 한다.
   @Override
   public void flush() throws IOException {
     if (cursor > 0) {
       this.write(buf, 0, cursor);
       cursor = 0;
     }
+  }
+
+  // 항상 입출력 스트림을 사용한 다음에는 자원 해제를 위해 close()를 호출해야 한다.
+  // close()가 호출될 때 버퍼의 잔여 데이터를 내보내도록 상속 받은 메서드를 재정의 한다.
+  @Override
+  public void close() throws IOException {
+    this.flush();
+    super.close();
   }
 
 }

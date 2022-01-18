@@ -14,7 +14,7 @@ public class Exam0130 {
     while ((b = in.read()) != -1)
       callCount++; // 파일을 끝까지 읽는다.
 
-    // => BufferedInputStream의 read() 메서드는
+    // => BufferedFileInputStream의 read() 메서드는
     //    FileInputStream에서 상속 받은 메서드를 이용하여
     //    바이트 배열로 데이터를 왕창 가져온 다음
     //    그 배열에서 1바이트를 리턴한다.
