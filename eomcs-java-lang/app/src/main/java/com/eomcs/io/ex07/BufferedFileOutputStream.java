@@ -29,7 +29,6 @@ public class BufferedFileOutputStream extends FileOutputStream {
     }
   }
 
-
   @Override
   public void close() throws IOException {
     this.flush();
