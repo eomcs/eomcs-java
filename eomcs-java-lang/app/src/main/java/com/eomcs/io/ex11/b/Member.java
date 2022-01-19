@@ -14,7 +14,7 @@ package com.eomcs.io.ex11.b;
 //    ObjectOutputStream/ObjectInputStream으로
 //    serialize/deserialize 할 수 있다.
 //
-public class Member implements java.io.Serializable    {
+public class Member implements java.io.Serializable {
   String name;
   int age;
   boolean gender; // true(여자), false(남자)
