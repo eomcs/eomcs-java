@@ -33,7 +33,7 @@ public class Member implements java.io.Serializable {
   boolean gender; // true(여자), false(남자)
 
   // Exam0420의 두 번째 테스트를 실행할 때 주석을 풀라!
-  //  String tel;
+  String tel;
 
   @Override
   public String toString() {
@@ -42,7 +42,7 @@ public class Member implements java.io.Serializable {
         ", age=" + age +
         ", gender=" + gender +
         // Exam0420의 두 번째 테스트를 실행할 때 주석을 풀라!
-        //        ", tel=" + tel +
+        ", tel=" + tel +
         "]";
   }
 }

@@ -17,6 +17,8 @@ public class Exam0510 {
     s.math = 92;
     s.compute();
 
+    System.out.println(s);
+
     // serialize 대상에서 제외된 필드(transient가 붙은 필드)는 
     // 다음과 같이 임의로 값을 설정해봐야 소용없다.
     s.sum = 300;
