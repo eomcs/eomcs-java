@@ -14,7 +14,7 @@ public class Member implements java.io.Serializable {
   // 필드를 추가하거나 변경하더라도 버전 번호가 같다면
   // JVM은 같은 형식으로 판단한다.
   //
-  private static final long serialVersionUID = 1280L;
+  private static final long serialVersionUID = 1280;
 
   // serialVersionUID의 사용법
   // => 클래스를 변경하더라도 기존 데이터를 읽는데 문제가 없다면

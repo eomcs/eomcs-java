@@ -5,10 +5,10 @@ import java.util.HashMap;
 
 
 public class Exam0153 {
-  
+
   static class MyKey2 {
     String contents;
-    
+
     public MyKey2(String contents) {
       this.contents = contents;
     }
@@ -18,13 +18,13 @@ public class Exam0153 {
       return "MyKey2 [contents=" + contents + "]";
     }
 
-    @Override
-    public int hashCode() {
-      final int prime = 31;
-      int result = 1;
-      result = prime * result + ((contents == null) ? 0 : contents.hashCode());
-      return result;
-    }
+    //    @Override
+    //    public int hashCode() {
+    //      final int prime = 31;
+    //      int result = 1;
+    //      result = prime * result + ((contents == null) ? 0 : contents.hashCode());
+    //      return result;
+    //    }
 
     @Override
     public boolean equals(Object obj) {
@@ -45,21 +45,21 @@ public class Exam0153 {
   }
   public static void main(String[] args) {
     HashMap<MyKey2,Student> map = new HashMap<>();
-    
+
     MyKey2 k1 = new MyKey2("ok");
     MyKey2 k2 = new MyKey2("no");
     MyKey2 k3 = new MyKey2("haha");
     MyKey2 k4 = new MyKey2("ohora");
     MyKey2 k5 = new MyKey2("hul");
-    
+
     map.put(k1, new Student("홍길동", 20, false));
     map.put(k2, new Student("임꺽정", 30, true));
     map.put(k3, new Student("유관순", 17, true));
     map.put(k4, new Student("안중근", 24, true));
     map.put(k5, new Student("윤봉길", 22, false));
-    
+
     System.out.println(map.get(k3));
-    
+
     // 다른 key 객체를 사용하여 값을 꺼내보자.
     MyKey2 k6 = new MyKey2("haha");
 

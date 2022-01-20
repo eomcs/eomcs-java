@@ -32,7 +32,7 @@ public class Exam0170 {
     }
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
 
     Score s1 = new Score("홍길동", 100, 100, 100);
     System.out.println(s1);
@@ -56,15 +56,29 @@ public class Exam0170 {
     // Object에서 상속 받은 clone()은 protected 이다. 
     // 따라서 같은 패키지에 소속된 클래스이거나 상속 받은 서브 클래스가 아니면 호출할 수 없다.
     // 비록 Object의 서브 클래스라 할지라도 남의 인스턴스로 protected 멤버를 사용할 수 없다.
+    // 자신이 상속 받은 protected 멤버인 경우에만 접근할 수 있다.
 
     // 서브 클래스이면서, 자신의 인스턴스로 접근할 때는 
     // protected 멤버를 사용할 수 있다.
-    //    Exam0170 obj = new Exam0170();
-    //    obj.clone(); // 접근 가능! 단, 호출할 때 예외 상황을 처리해야 한다.
+    Exam0170 obj = new Exam0170();
+    obj.clone(); // 접근 가능! 단, 호출할 때 예외 상황을 처리해야 한다.
 
     // 해결책:
     // => Object에서 상속 받은 clone()을 오버라이딩 하라!
     // => Exam0171.java 를 살펴보라!
+  }
+
+  // 테스트용 인스턴스 메서드
+  void m1() throws Exception {
+    Score score = new Score();
+
+    // Exam0170이 상속 받은 clone()이 아니다.
+    // protected 멤버는 오직 자신이 상속 받은 경우에만 접근할 수 있다.
+    //
+    //    score.clone(); // 컴파일 오류!
+
+    // Exam0170 클래스가 상속 받은 clone()은 접근 가능!
+    this.clone(); // OK!
   }
 }
 
