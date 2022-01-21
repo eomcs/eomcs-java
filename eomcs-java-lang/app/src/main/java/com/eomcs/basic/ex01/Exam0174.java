@@ -42,8 +42,8 @@ public class Exam0174 {
     @Override
     public Car clone() throws CloneNotSupportedException {
       // deep copy
-      // => 포함하고 있는 하위 객체에 대한 복제를 수행하려면 다음과 같이 
-      //    개발자가 직접 하위 객체를 복제하는 코드를 작성해야 한다.
+      // => 포함하고 있는 객체에 대한 복제를 수행하려면 다음과 같이 
+      //    개발자가 직접 포함하는 객체를 복제하는 코드를 작성해야 한다.
       // 
       Car copy = (Car) super.clone();
       copy.engine = this.engine.clone();
