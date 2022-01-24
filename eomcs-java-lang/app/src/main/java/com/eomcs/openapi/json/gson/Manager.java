@@ -1,4 +1,4 @@
-package com.eomcs.openapi.json;
+package com.eomcs.openapi.json.gson;
 
 public class Manager extends Member {
   String position;

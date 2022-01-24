@@ -1,5 +1,5 @@
 // JSON 문자열 --> 객체 : 다른 객체를 여러 개 포함하는 경우
-package com.eomcs.openapi.json;
+package com.eomcs.openapi.json.gson;
 
 import java.util.Map;
 import com.google.gson.Gson;

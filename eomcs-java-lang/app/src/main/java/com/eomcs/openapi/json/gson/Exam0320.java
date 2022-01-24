@@ -1,5 +1,5 @@
 // JSON 문자열 --> 객체 : 컬렉션 다루기
-package com.eomcs.openapi.json;
+package com.eomcs.openapi.json.gson;
 
 import java.lang.reflect.Type;
 import java.util.Collection;

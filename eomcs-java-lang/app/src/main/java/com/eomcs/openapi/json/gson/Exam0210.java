@@ -1,5 +1,5 @@
 // 객체 --> JSON 문자열 : 배열 다루기
-package com.eomcs.openapi.json;
+package com.eomcs.openapi.json.gson;
 
 import java.sql.Date;
 import com.google.gson.Gson;

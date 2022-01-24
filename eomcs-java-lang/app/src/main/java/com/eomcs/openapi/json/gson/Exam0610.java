@@ -1,5 +1,5 @@
 // 객체 --> JSON 문자열 : 다양한 타입의 객체를 목록에 포함하는 경우
-package com.eomcs.openapi.json;
+package com.eomcs.openapi.json.gson;
 
 import java.sql.Date;
 import java.util.ArrayList;

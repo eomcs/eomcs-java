@@ -1,5 +1,5 @@
 // JSON 문자열 --> 객체 : 배열 다루기
-package com.eomcs.openapi.json;
+package com.eomcs.openapi.json.gson;
 
 import com.google.gson.Gson;
 

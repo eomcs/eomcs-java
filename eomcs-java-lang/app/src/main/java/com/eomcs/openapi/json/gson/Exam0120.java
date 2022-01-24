@@ -1,5 +1,5 @@
 // JSON 문자열 --> 객체 : JSON 문자열을 해석하여 객체를 생성하기
-package com.eomcs.openapi.json;
+package com.eomcs.openapi.json.gson;
 
 import com.google.gson.Gson;
 
