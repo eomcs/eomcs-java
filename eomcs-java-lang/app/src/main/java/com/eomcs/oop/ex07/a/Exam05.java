@@ -47,6 +47,8 @@ class LoveLetter extends Letter {
     System.out.println("♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪");
 
   }
+
+  public void x() {}
 }
 
 class ReportLetter extends Letter {

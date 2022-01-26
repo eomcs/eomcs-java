@@ -11,6 +11,9 @@ public class Exam01 {
     //
     //    display(new Sorter(), values); // 컴파일 오류!
 
+    //    display(new BubbleSort(), values); // OK!
+    //    display(new QuickSort(), values); // OK!
+
     // Sorter 클래스처럼
     // 서브 클래스에게 공통 필드나 기능을 상속해주는 용도로 만든 클래스인 경우
     // 직접 사용하지 못하게 abstract 클래스로 선언하면
