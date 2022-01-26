@@ -2,6 +2,8 @@
 package com.eomcs.oop.ex09.b;
 
 interface MyInterface3 {
+  int a = 100;
+
   void m1();
 
   // default method:
