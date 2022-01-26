@@ -13,6 +13,11 @@ public class Exam02 {
     // 새로 추가한 도구(클래스 ToolC)도 Spec 규칙에 따라 만들었기 때문에
     // use() 메서드에 그대로 넘길 수 있다.
     use(new ToolC());
+
+    //    use(new ToolD()); // 컴파일 오류!
+    // 비록 ToolD 클래스에 Spec에 정의된 m1() 메서드가 있다 하더라도
+    // 문법적으로 ToolD 클래스는 Spec 인터페이스를 구현한 것이 아니기 때문에
+    // use 파라미터 값으로 넘길 수 없다.
   }
 
   static void use(Spec tool) {
