@@ -14,13 +14,18 @@ public class Receiver {
     // 1) 다른 컴퓨터의 연결 요청을 기다린다.
     // - new ServerSocket(포트번호)
     // - 포트번호: 
+    //   - 호스트에서 실행 중인 서버 프로그램을 구분하는 번호이다.
     //   - 1024 ~ 49151 사이의 값 사용한다.
-    //   - 같은 컴퓨터에서 이미 사용중인 포트 번호는 지정할 수 없다.
-    //   - 예) Oracle DBMS(1521), MySQL DBMS(3306) 등
+    //      - 1 ~ 1023 사이의 포트 번호는 특정 서버가 사용하기 위해 미리 예약된 번호다.
+    //      - 가능한 이 범위의 포트 번호는 사용하지 않는 것이 좋다.
+    //   - 유명 프로그램의 포트 번호도 가능한 사용하지 말라.
+    //      - 예) Oracle DBMS(1521), MySQL DBMS(3306) 등
+    //   - 같은 컴퓨터에서 다른 프로그램이 이미 사용중인 포트 번호는 지정할 수 없다.
+    //      - 포트 번호는 중복으로 사용될 수 없다.
     ServerSocket serverSocket = new ServerSocket(8888);
     System.out.println("ServerSocket 생성!");
 
-    // 2) 연결하기 위해 대기하고 있는 클라이언트 중에서 한 개를 연결 허락한다.
+    // 2) 연결을 기다리고 있는 클라이언트가 있다면 맨 먼저 접속한 클라이언트의 연결을 승인한다. 
     // - 클라이언트가 서버에 접속을 요청하면 그 정보를 "대기열"이라고 불리는 목록으로 관리한다.
     // - accept()를 호출하면 대기열에서 순서대로 꺼내 해당 클라이언트와 연결된 소켓을 만든다.
     Socket socket = serverSocket.accept();
@@ -47,8 +52,8 @@ public class Receiver {
     out.close();
 
     // 7) 네트워크 연결도 닫는다.
-    socket.close();
-    serverSocket.close();
+    socket.close(); // 클라이언트와 연결을 끊는다.
+    serverSocket.close(); // 클라이언트의 연결 요청을 받지 않는다.
 
   }
 
