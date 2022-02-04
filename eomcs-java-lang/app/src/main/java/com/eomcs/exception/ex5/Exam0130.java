@@ -40,19 +40,12 @@ public class Exam0130 {
   }
 
   public static void main(String[] args) {
-    try {
-      Board board = read();
-      System.out.println("---------------------");
-      System.out.printf("번호: %d\n", board.getNo());
-      System.out.printf("제목: %s\n", board.getTitle());
-      System.out.printf("내용: %s\n", board.getContent());
-      System.out.printf("등록일: %s\n", board.getCreatedDate());
-
-    } catch (BoardException e) {
-      System.out.println(e.getMessage());
-      e.printStackTrace();
-    }
-
+    Board board = read();
+    System.out.println("---------------------");
+    System.out.printf("번호: %d\n", board.getNo());
+    System.out.printf("제목: %s\n", board.getTitle());
+    System.out.printf("내용: %s\n", board.getContent());
+    System.out.printf("등록일: %s\n", board.getCreatedDate());
   }
 }
 

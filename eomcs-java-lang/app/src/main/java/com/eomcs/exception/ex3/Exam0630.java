@@ -23,7 +23,7 @@ public class Exam0630 {
         //        String s = "Hello"; // 컴파일 오류!
 
         // 변수 선언만 올 수 있다.
-        //                if (true) {} // 컴파일 오류!
+        //        if (true) {} // 컴파일 오류!
 
         ) {
       System.out.print("입력> ");

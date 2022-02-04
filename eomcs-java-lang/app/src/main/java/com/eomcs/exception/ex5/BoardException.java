@@ -1,6 +1,7 @@
 package com.eomcs.exception.ex5;
 
 public class BoardException extends RuntimeException {
+  private static final long serialVersionUID = 1L;
 
   public BoardException() {
     super();
@@ -29,7 +30,7 @@ public class BoardException extends RuntimeException {
   // 아니, 기능을 추가할 것도 아니면서 왜 RuntimeException을 상속 받았는가?
   // => 이 클래스는 기존의 예외 클래스 기능을 확장하기 위함이 아니라,
   //    의미있는 이름을 가진 예외 클래스를 만드는 것이 목적이다.
-  // => 즉 예외가 발생했을 때 클래스이름으로 어떤 예외인지 
+  // => 즉 예외가 발생했을 때 클래스 이름으로 어떤 예외인지 
   //    쉽게 추측할 수 있도록 하기 위함이다.
   // => 일종의 분류표로서 사용한다.
 

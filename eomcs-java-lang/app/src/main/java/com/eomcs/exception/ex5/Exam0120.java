@@ -18,7 +18,7 @@ public class Exam0120 {
   //    예외를 던진다는 것은 이해하지만,
   //    그 예외가 의미하는 바가 무엇인지 즉시 알아보기 힘들다는 얘기다.
   //
-  static Board read() throws RuntimeException {
+  static Board read() {
     try (Scanner keyScan = new Scanner(System.in)) {
       Board board = new Board();
 
