@@ -1,6 +1,7 @@
 // 클라이언트와 입출력 테스트 - byte stream
 package com.eomcs.net.ex03;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
@@ -79,11 +80,13 @@ public class Server0110 {
 
 
     } catch (Exception e) {
+      System.out.println("상세 예외 정보:");
       e.printStackTrace();
 
     } finally {
-      try { keyboard.close(); } catch (Exception e) {}
-      try { serverSocket.close();} catch (Exception e) {}
+      System.out.println("키보드 자원 해제 및 서버 소켓 자원 해제!");
+      keyboard.close();
+      try { serverSocket.close();} catch (IOException e) {}
     }
     System.out.println("서버 종료!");
   }
