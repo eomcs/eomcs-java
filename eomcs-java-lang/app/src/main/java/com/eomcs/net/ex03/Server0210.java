@@ -30,7 +30,7 @@ public class Server0210 {
         keyboard.nextLine();
 
         out.println(str);
-        //        out.flush();
+        out.flush();
         // character stream 클래스의 경우
         // 출력 데이터를 내부 버퍼에 보관하고 있다가
         // flush()가 호출되면 비로서 출력을 수행한다.
