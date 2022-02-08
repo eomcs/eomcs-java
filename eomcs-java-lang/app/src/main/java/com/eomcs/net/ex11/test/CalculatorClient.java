@@ -25,6 +25,11 @@ public class CalculatorClient {
         System.out.print("계산식> ");
         String input = keyScan.nextLine();
 
+        if (!input.equals("quit") && input.split(" ").length != 3) {
+          System.out.println("입력 형식이 올바르지 않습니다. 예) 23 + 5");
+          continue;
+        }
+
         out.println(input);
         out.flush();
 
