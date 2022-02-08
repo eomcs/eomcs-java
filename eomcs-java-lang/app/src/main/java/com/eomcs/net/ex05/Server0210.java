@@ -46,12 +46,24 @@ public class Server0210 {
 
     // 빈 패킷에 저장된 클라이언트가 보낸 데이터를 꺼낸다.
     // 패킷에 저장된 UTF-8로 인코딩된 바이트 배열을 가지고 String 객체(UTF-16)를 만든다.
-    String message = new String(//
-        emptyPacket.getData(), // ==> buf, 패킷에서 바이트 배열을 꺼낸다.
-        0, // 버퍼에서 데이터를 꺼낼 때 0번째부터 꺼낸다.
-        emptyPacket.getLength(), // 패킷에서 받은 바이트의 개수만큼 데이터를 꺼낸다.
-        "UTF-8" // 바이트 배열로 인코딩된 문자표의 이름을 지정한다.
-        );
+
+    // 1) 패킷 객체에 보관된 바이트 배열을 꺼낸다.
+    byte[] bytes = emptyPacket.getData();
+
+    // 2) 바이트 배열에 보관된 데이터의 개수를 알아낸다.
+    int len = emptyPacket.getLength();
+
+    // 3) 클라이언트에서 받은 바이트 배열을 가지고 String 객체를 생성한다.
+    String message = new String(bytes, 0, len, "UTF-8");
+
+    // 실무에서는 다음과 같이 로컬 변수를 사용하지 않고 직접 패킷 객체를 사용하는 방식으로 코딩한다.
+    //    String message = new String(//
+    //        emptyPacket.getData(), // ==> buf, 패킷에서 바이트 배열을 꺼낸다.
+    //        0, // 버퍼에서 데이터를 꺼낼 때 0번째부터 꺼낸다.
+    //        emptyPacket.getLength(), // 패킷에서 받은 바이트의 개수만큼 데이터를 꺼낸다.
+    //        "UTF-8" // 바이트 배열로 인코딩된 문자표의 이름을 지정한다.
+    //        );
+
     System.out.println(message);
 
   }
