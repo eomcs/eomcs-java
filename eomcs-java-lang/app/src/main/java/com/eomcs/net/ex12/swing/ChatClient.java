@@ -1,4 +1,4 @@
-package com.eomcs.net.ex12.awt;
+package com.eomcs.net.ex12.swing;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
