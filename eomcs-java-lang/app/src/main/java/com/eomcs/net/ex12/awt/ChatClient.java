@@ -14,7 +14,7 @@ public class ChatClient extends Frame {
   private static final long serialVersionUID = 1L;
 
   public ChatClient() {
-    super("계산기");
+    super("채팅!");
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosing(WindowEvent e) {

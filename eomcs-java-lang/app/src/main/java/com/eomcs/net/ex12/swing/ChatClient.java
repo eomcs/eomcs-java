@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
@@ -30,7 +31,7 @@ public class ChatClient extends JFrame {
   JTextField messageTf = new JTextField(35);
 
   public ChatClient() {
-    super("계산기2");
+    super("채팅!!");
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosing(WindowEvent e) {
@@ -52,8 +53,8 @@ public class ChatClient extends JFrame {
     topPanel.add(connectBtn);
     contentPane.add(topPanel, BorderLayout.NORTH);
 
-
-    contentPane.add(messageListTa, BorderLayout.CENTER);
+    JScrollPane scrollPane = new JScrollPane(messageListTa);
+    contentPane.add(scrollPane, BorderLayout.CENTER);
 
     JPanel bottomPanel = new JPanel();
     bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT)); // 기본 레이아웃 관리자를 교체
@@ -62,6 +63,8 @@ public class ChatClient extends JFrame {
     sendBtn.addActionListener(this::sendMessage);
     bottomPanel.add(sendBtn);
     contentPane.add(bottomPanel, BorderLayout.SOUTH);
+
+    messageTf.addActionListener(this::sendMessage);
 
     setVisible(true);
   }
@@ -89,15 +92,28 @@ public class ChatClient extends JFrame {
       in = new DataInputStream(socket.getInputStream());
       out = new DataOutputStream(socket.getOutputStream());
 
+      String welcomeMessage = in.readUTF();
+      messageListTa.append(welcomeMessage + "\n");
+
     } catch (Exception ex) {
       JOptionPane.showMessageDialog(this, "서버 연결 오류!", "통신 오류!", JOptionPane.ERROR_MESSAGE);
     }
   }
 
   public void sendMessage(ActionEvent e) {
-    System.out.println("메시지 보내기");
+    if (messageTf.getText().length() == 0) {
+      return;
+    }
+
     try {
       out.writeUTF(messageTf.getText());
+      out.flush();
+      messageTf.setText("");
+
+      String response = in.readUTF();
+      messageListTa.append(response + "\n");
+
+
     } catch (Exception ex) {
       JOptionPane.showMessageDialog(this, "메서지 전송 오류!", "통신 오류!", JOptionPane.ERROR_MESSAGE);
     }
