@@ -1,60 +1,110 @@
 package com.eomcs.net.ex12.swing;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
+import java.awt.Container;
 import java.awt.FlowLayout;
-import java.awt.Frame;
-import java.awt.Panel;
-import java.awt.TextArea;
-import java.awt.TextField;
+import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
 
-public class ChatClient extends Frame {
+public class ChatClient extends JFrame {
   private static final long serialVersionUID = 1L;
 
   public ChatClient() {
-    super("계산기");
+    super("계산기2");
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosing(WindowEvent e) {
         System.exit(0);
       }
     });
-    setSize(400, 300);
+    setSize(500, 400);
 
-    Panel topPanel = new Panel();
+    Container contentPane = this.getContentPane();
+
+    JPanel topPanel = new JPanel();
     topPanel.setLayout(new FlowLayout(FlowLayout.LEFT)); // 기본 레이아웃 관리자를 교체
 
-    TextField addressTf = new TextField(30);
+    JTextField addressTf = new JTextField(30);
     topPanel.add(addressTf);
 
-    TextField portTf = new TextField(4);
+    JTextField portTf = new JTextField(4);
     topPanel.add(portTf);
 
-    Button connectBtn = new Button("연결");
+    JButton connectBtn = new JButton("연결");
+
+    // 1) 로컬 클래스
+    //    class MyActionListener implements ActionListener {
+    //      @Override
+    //      public void actionPerformed(ActionEvent e) {
+    //      }
+    //    }
+    //    connectBtn.addActionListener(new MyActionListener());
+
+    // 2) 익명 클래스
+    //    connectBtn.addActionListener(new ActionListener() {
+    //      @Override
+    //      public void actionPerformed(ActionEvent e) {
+    //      }
+    //    });
+
+    // 3) 람다(lambda) 문법
+    //    connectBtn.addActionListener(e -> System.out.println("연결 버튼 눌렀음!"));
+
+    // 4) 메서드 레퍼런스
+    connectBtn.addActionListener(this::connectChatServer);
+
     topPanel.add(connectBtn);
 
-    add(topPanel, BorderLayout.NORTH);
+    contentPane.add(topPanel, BorderLayout.NORTH);
 
-    TextArea messageListTa = new TextArea();
-    add(messageListTa, BorderLayout.CENTER);
+    JTextArea messageListTa = new JTextArea();
+    contentPane.add(messageListTa, BorderLayout.CENTER);
 
-    Panel bottomPanel = new Panel();
+    JPanel bottomPanel = new JPanel();
     bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT)); // 기본 레이아웃 관리자를 교체
 
-    TextField messageTf = new TextField(40);
+    JTextField messageTf = new JTextField(35);
     bottomPanel.add(messageTf);
 
-    Button sendBtn = new Button("보내기");
+    JButton sendBtn = new JButton("보내기");
     bottomPanel.add(sendBtn);
 
-    add(bottomPanel, BorderLayout.SOUTH);
+    contentPane.add(bottomPanel, BorderLayout.SOUTH);
 
     setVisible(true);
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
+    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+    //    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    //    UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+    //    UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+    //    UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+    //    UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel"); // 리눅스 OS 만 가능
+    //    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"); // Windows OS 만 가능
+    //    UIManager.setLookAndFeel("com.apple.laf.AquaLookAndFeel"); // macOS 만 가능
     new ChatClient();
   }
+
+  public void connectChatServer(ActionEvent e) {
+    System.out.println("서버에 연결하기!");
+  }
+
+  public void sendMessage(ActionEvent e) {
+    System.out.println("메시지 보내기");
+  }
 }
+
+
+
+
+
+
+
