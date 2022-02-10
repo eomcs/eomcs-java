@@ -60,7 +60,7 @@ public class ChatServer {
         while (true) {
           String message = in.readUTF();
           if (message.equals("\\quit")) {
-            out.writeUTF("Goodbye!");
+            out.writeUTF("<![QUIT[]]>"); // 연결을 끊겠다는 특별한 메시지를 클라이언트에게 보낸다.
             out.flush();
             break;
           }
