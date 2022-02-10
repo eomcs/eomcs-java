@@ -20,6 +20,10 @@ public class MyStack extends MyList {
     return new StackIterator(this);
   }
 
+  // static nested class(스태틱 중첩 클래스)
+  // - StackIterator는 MyStack 클래스에서만 직접 사용된다.
+  // - 중첩 클래스 문법을 사용하여 명학하게 StackIterator의 사용범위를 제한한다.
+  //
   static class StackIterator implements Iterator {
 
     MyStack stack;

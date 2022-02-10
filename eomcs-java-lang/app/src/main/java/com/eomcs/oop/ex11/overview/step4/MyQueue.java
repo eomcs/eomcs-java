@@ -18,6 +18,10 @@ public class MyQueue extends MyList {
     return new QueueIterator(this);
   }
 
+  // static nested class(스태틱 중첩 클래스)
+  // - QueueIterator는 MyQueue 클래스에서만 직접 사용된다.
+  // - 중첩 클래스 문법을 사용하여 명학하게 QueueIterator의 사용범위를 제한한다.
+  //
   static class QueueIterator implements Iterator {
 
     MyQueue queue;
