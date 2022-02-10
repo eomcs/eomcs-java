@@ -13,5 +13,6 @@ public class Test2 {
     while (myStack.size() > 0) {
       System.out.println(myStack.pop());
     }
+    System.out.println(myStack.size());
   }
 }
