@@ -32,6 +32,21 @@ public class ChatClient extends JFrame {
 
   public ChatClient() {
     super("채팅!!");
+
+    String title = "대화명을 입력하세요.\n(2자 이상)";
+    String nickname = null;
+
+    while (true) {
+      nickname = JOptionPane.showInputDialog(title);
+      if (nickname == null) {
+        System.exit(0);
+      } else if (nickname != null && nickname.length() >= 2) {
+        break;
+      }
+      title = "대화명을 다시 입력하세요!\n(2자 이상)";
+    }
+
+
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosing(WindowEvent e) {
