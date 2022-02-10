@@ -10,7 +10,7 @@ public class Test2 {
     myStack.push("윤봉길");
     myStack.push("김구");
 
-    StackIterator iterator = new StackIterator(myStack);
+    Iterator iterator = myStack.iterator();
     while (iterator.hasNext()) {
       System.out.println(iterator.next());
     }

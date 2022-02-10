@@ -10,7 +10,7 @@ public class Test1 {
     myList.add("윤봉길");
     myList.add("김구");
 
-    ListIterator iterator = new ListIterator(myList);
+    Iterator iterator = myList.iterator();
     while (iterator.hasNext()) {
       System.out.println(iterator.next());
     }

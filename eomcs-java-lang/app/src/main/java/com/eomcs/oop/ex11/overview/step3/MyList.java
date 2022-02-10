@@ -39,6 +39,10 @@ public class MyList {
     arr[--size] = null; // 배열의 크기를 줄이고, 마지막 항목에 들어 있는 값을 null로 초기화하여 객체의 레퍼런스를 줄인다.
     return old;
   }
+
+  public Iterator iterator() {
+    return new ListIterator(this);
+  }
 }
 
 

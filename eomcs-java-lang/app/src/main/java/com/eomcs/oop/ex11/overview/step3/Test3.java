@@ -10,7 +10,7 @@ public class Test3 {
     myQueue.offer("윤봉길");
     myQueue.offer("김구");
 
-    QueueIterator iterator = new QueueIterator(myQueue);
+    Iterator iterator = myQueue.iterator();
     while (iterator.hasNext()) {
       System.out.println(iterator.next());
     }
