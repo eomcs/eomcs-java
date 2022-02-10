@@ -52,7 +52,9 @@ public class ChatServer {
 
         clientOutputStreams.add(out);
 
-        out.writeUTF("환영합니다!");
+        String nickname = in.readUTF();
+
+        out.writeUTF(nickname + " 님 환영합니다!");
         out.flush();
 
         while (true) {
@@ -62,7 +64,7 @@ public class ChatServer {
             out.flush();
             break;
           }
-          sendMessage(message);
+          sendMessage(String.format("[%s] %s", nickname, message));
         }
       } catch (Exception e) {
         System.out.println("클라이언트와의 통신 오류! - " + e.getMessage());

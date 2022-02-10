@@ -24,6 +24,7 @@ public class ChatClient extends JFrame {
   Socket socket;
   DataInputStream in;
   DataOutputStream out;
+  String nickname;
 
   JTextField addressTf = new JTextField(30);
   JTextField portTf = new JTextField(4);
@@ -31,21 +32,20 @@ public class ChatClient extends JFrame {
   JTextField messageTf = new JTextField(35);
 
   public ChatClient() {
-    super("채팅!!");
 
     String title = "대화명을 입력하세요.\n(2자 이상)";
-    String nickname = null;
 
     while (true) {
       nickname = JOptionPane.showInputDialog(title);
       if (nickname == null) {
         System.exit(0);
-      } else if (nickname != null && nickname.length() >= 2) {
+      } else if (nickname.length() >= 2) {
         break;
       }
       title = "대화명을 다시 입력하세요!\n(2자 이상)";
     }
 
+    setTitle("채팅!! - " + nickname);
 
     addWindowListener(new WindowAdapter() {
       @Override
@@ -99,6 +99,9 @@ public class ChatClient extends JFrame {
 
       in = new DataInputStream(socket.getInputStream());
       out = new DataOutputStream(socket.getOutputStream());
+
+      out.writeUTF(nickname);
+      out.flush();
 
       new MessageReceiver(in).start();
 
