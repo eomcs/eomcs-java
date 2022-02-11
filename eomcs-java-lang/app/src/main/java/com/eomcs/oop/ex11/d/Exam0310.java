@@ -1,80 +1,40 @@
 // local class에서 바깥 메서드의 로컬 변수 접근
 package com.eomcs.oop.ex11.d;
 
-class D {
+// 계산기 사용법을 정의한다.
+interface Calculator {
+  double compute(int money);
+}
 
-  void m1() {
-    int a = 100;
-    int b = 200;
+class CalculatorFactory {
 
-    class X {
-      // 로컬 클래스에서 바깥 메서드(m1())의 로컬 변수(a,b) 값을 사용한다면 
-      // 1) 다음과 같이 컴파일 할 때 그 값을 저장할 필드(a)를 자동으로 추가한다.
-      //    => 사용하는 변수에 대해서만 필드를 생성한다.
-      //    => 로컬 변수 b는 사용하지 않기 때문에 b 값을 받을 필드는 생성하지 않는다.
-      //      int a;
-      //      D outer;
-      // 
-      // 2) 또한 로컬 클래스의 객체를 생성할 때 그 값을 사용할 수 있도록 
-      //    생성자에 파라미터를 추가한다.
-      //      public X(D outer, int a) {
-      //        this.a = a;
-      //        this.outer = outer;
-      //      }
-      // 
-      // .class 파일의 코드:
-      //      class com.eomcs.oop.ex11.d.D$1X {
-      //        
-      //        final synthetic com.eomcs.oop.ex11.d.D this$0;
-      //        
-      //        private final synthetic int val$a;
-      //        
-      //        D$1X(com.eomcs.oop.ex11.d.D arg0, int arg1);
-      //        ...
-      //
-      void f1() {
-        // 그래서 다음과 같이 
-        // 로컬 클래스에서는 바깥 메서드의 로컬 변수를 자기것인양 사용할 수 있는 것이다.
-        System.out.println(a); // m1() 에 선언된 로컬 변수를 가리킨다.
+  static Calculator create(float interest) {
+
+    class CalculatorImpl implements Calculator {
+      @Override
+      public double compute(int money) {
+        return money + (money * interest);
+        // interest는 create() 함수의 로컬 변수이다.
+        // CalculatorImpl 객체를 생성하여 리턴한 후에는 interest 로컬 변수는 스택에서 사라진 상태일 것이다.
+        // 나중에 compute()를 호출할 때 interest 변수는 없을텐데, 어떻게 된 것인가?
+        // => 로컬 클래스에서 메서드의 로컬 변수를 사용한다면
+        //    컴파일러는 로컬 클래스에 바깥 메서드의 로컬 변수 값을 저장할 필드를 추가한다.
+        //    또한 로컬 클래스의 객체를 생성할 때 생성자에 로컬 변수의 값을 넘겨 줄 것이다.
       }
     }
 
-    X obj = new X();
-    obj.f1();
-  }
-
-  static void m2() {
-    int a = 100;
-    int b = 200;
-
-    // 스태틱 메서드의 로컬 클래스도 인스턴스 메서드의 로컬 클래스와 같다.
-    // 단, 스태틱이기 때문에 바깥 클래스의 인스턴스 주소를 받는 필드는 
-    // 자동으로 생성되지 않는다.
-    // 
-    // .class 파일의 코드:
-    //    class com.eomcs.oop.ex11.d.D$2X {
-    //      
-    //      private final synthetic int val$b;
-    //      
-    //      D$2X(int arg0);
-    //      ..
-    class X {
-      void f1() {
-        System.out.println(b);
-      }
-    }
-
-    X obj = new X();
-    obj.f1();
+    return new CalculatorImpl();
   }
 }
 
 public class Exam0310 {
 
   public static void main(String[] args) {
-    D obj = new D();
-    obj.m1();
-    obj.m2();
+    Calculator c1 = CalculatorFactory.create(0.02f);
+    Calculator c2 = CalculatorFactory.create(0.08f);
+
+    System.out.printf("%.2f\n", c1.compute(1235_0000));
+    System.out.printf("%.2f\n", c2.compute(1235_0000));
   }
 
 }

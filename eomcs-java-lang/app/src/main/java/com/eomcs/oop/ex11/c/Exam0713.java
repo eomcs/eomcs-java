@@ -18,7 +18,7 @@ public class Exam0713 {
 
     // 바깥 클래스의 인스턴스를 사용하는 inner 클래스라면
     // inner 클래스의 객체를 만드는 역할도 
-    // 바깥 클래스가 하는데 유지보수에 더 낫다.
+    // 바깥 클래스가 하는게 유지보수에 더 낫다.
     // => GRASP 설계 기법에서 "정보를 가진자가 그 일을 하라.(Information Expert)"를 적용.
     Musics3.Player p1 = m1.createPlayer();
     Musics3.Player p2 = m2.createPlayer();
