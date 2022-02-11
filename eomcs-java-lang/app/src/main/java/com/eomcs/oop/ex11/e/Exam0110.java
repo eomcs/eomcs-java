@@ -8,6 +8,10 @@ public class Exam0110 {
     void print();
   }
 
+  class X {}
+
+  static class Y {}
+
   public static void main(final String[] args) {
 
     // 1) 로컬 클래스로 인터페이스 구현하기

@@ -1,10 +1,10 @@
 // 중첩 클래스 요약 정리
 package com.eomcs.oop.ex11.f;
 
-// 패키지 멤버 클래스
+// 패키지 멤버 클래스 = Top Level Class
 class A {}
 
-// 패키지 멤버 클래스
+// 패키지 멤버 클래스 = Top Level Class
 public class Exam0210 {
 
   // static nested class
