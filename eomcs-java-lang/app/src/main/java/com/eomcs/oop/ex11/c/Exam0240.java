@@ -26,21 +26,21 @@ class B4 {
 public class Exam0240 {
 
   public static void main(String[] args) {
-    B3 outer = new B3();
+    B4 outer = new B4();
     outer.v1 = 11;
 
-    B3.X x1 = outer.new X();
+    B4.X x1 = outer.new X();
     x1.test();
     System.out.println("--------------------");
 
-    B3.X x2 = outer.new X();
+    B4.X x2 = outer.new X();
     x2.test();
     System.out.println("--------------------");
 
-    B3 outer2 = new B3();
+    B4 outer2 = new B4();
     outer2.v1 = 22;
 
-    B3.X x3 = outer2.new X();
+    B4.X x3 = outer2.new X();
     x3.test();
     System.out.println("--------------------");
   }
