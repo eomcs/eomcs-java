@@ -11,6 +11,7 @@ class CalculatorFactory {
   static Calculator create(float interest) {
 
     class CalculatorImpl implements Calculator {
+
       @Override
       public double compute(int money) {
         return money + (money * interest);
