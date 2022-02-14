@@ -3,6 +3,7 @@ package com.eomcs.oop.ex12;
 
 public class Exam0120 {
 
+  // "functional interface" = 추상 메서드가 한 개만 있는 인터페이스
   interface Player {
     void play();
   }
