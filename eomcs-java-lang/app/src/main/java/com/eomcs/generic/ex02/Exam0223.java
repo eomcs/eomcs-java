@@ -39,6 +39,7 @@ public class Exam0223 {
     //    m1(new ArrayList<Object>()); // 컴파일 오류!
     //    m1(new ArrayList<A>()); // 컴파일 오류!
     m1(new ArrayList<B1>()); // OK!
+    m1(new ArrayList<>()); // OK! B1 생락 가능!
     //    m1(new ArrayList<B2>()); // 컴파일 오류!
     //    m1(new ArrayList<C>()); // 컴파일 오류!
   }
@@ -47,10 +48,10 @@ public class Exam0223 {
     // 컴파일러는 파라미터로 넘어온 ArrayList가  어떤 타입이든 간에 
     // 문법적으로 B1 타입의 값만 다룬다.
 
-    //list.add(new Object()); // 컴파일 오류!
-    //list.add(new A()); // 컴파일 오류!
+    //    list.add(new Object()); // 컴파일 오류!
+    //    list.add(new A()); // 컴파일 오류!
     list.add(new B1());
-    //list.add(new B2()); // 컴파일 오류!
+    //    list.add(new B2()); // 컴파일 오류!
     list.add(new C());
 
     // list에 B1 타입이 아닌 다른 타입을 저장할 때는 아무런 문제가 발생하지 않았지만,

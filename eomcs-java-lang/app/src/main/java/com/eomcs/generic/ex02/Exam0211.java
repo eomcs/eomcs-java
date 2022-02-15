@@ -5,32 +5,38 @@ import java.util.ArrayList;
 
 public class Exam0211 {
   public static void main(String[] args) {
-    // 만약 <타입명> 을 생략한다면, 제네릭이 적용된 객체를 담을 수 있다.
+    // 레퍼런스를 선언할 때 제네릭 타입을 지정하지 않으면 
+    // 객체 생성시 어떤 제네릭 타입을 지정하더라도 상관없다.
     ArrayList list1; 
-    list1 = new ArrayList();
-    list1 = new ArrayList<>();
-    list1 = new ArrayList<Object>();
-    list1 = new ArrayList<String>();
+    //    list1 = new ArrayList();
+    //    list1 = new ArrayList<>();
+    //    list1 = new ArrayList<Object>();
+    //    list1 = new ArrayList<String>();
     list1 = new ArrayList<Member>();
 
-    //=> 단  ArrayList에 적용된 제네릭 문법은 무용지물이 된다.
+    //=> 레퍼런스를 선언할 때 제네릭 타입을 지정하지 않으면 
+    //   ArrayList 객체를 생성할 때 지정한 제네릭 타입은 무시된다.
     list1.add(new String());
     list1.add(new Integer(100));
     list1.add(new java.util.Date());
     list1.add(new Member("홍길동", 20));
 
 
-    // ArrayList가 다루는 타입에 상관없이 ArrayList 레퍼런스를 선언하고 싶다면,
-    // list1 처럼 선언하지 말고 다음과 같이 명확하게 <?> 를 붙여라!
+    // 레퍼런스를 선언할 때 제네릭 타입을 <?> 로 선언하면
+    // 객체 생성시 어떤 제네릭 타입을 지정하더라도 상관없다.
+    // 단, 메서드를 사용할 때 주의해야 한다.
     ArrayList<?> list2; 
-    list2 = new ArrayList(); // 이렇게 사용하지 말고, 명확히 제네릭의 타입을 지정하라.
-    list2 = new ArrayList<>();
+    //    list2 = new ArrayList();
+    //    list2 = new ArrayList<>();
     list2 = new ArrayList<Object>();
-    list2 = new ArrayList<String>();
-    list2 = new ArrayList<Member>();
+    //    list2 = new ArrayList<String>();
+    //    list2 = new ArrayList<Member>();
 
-    //=> 단 이 경우에는 제네릭의 타입이 명확하게 선언되어 있지 않기 때문에
-    //   제네릭 검사가 필요한 코드를 컴파일 할 수 없다.
+    //=> 레퍼런스 선언할 때 제네릭 타입을 ? 로 설정했기 때문에
+    //   add() 메서드의 파라미터 타입은 ? 가 된다.
+    //   즉 파라미터 타입이 뭔지 정확하게 설정되지 않았기 때문에
+    //   컴파일러는 문법의 유효여부를 검사할 수 없다.
+    // 
     //    list2.add(new String()); // 컴파일 오류!
     //    list2.add(new Integer(100)); // 컴파일 오류!
     //    list2.add(new java.util.Date()); // 컴파일 오류!
