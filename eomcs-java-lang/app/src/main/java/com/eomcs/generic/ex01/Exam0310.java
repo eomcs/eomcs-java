@@ -45,6 +45,6 @@ public class Exam0310 {
     // 지정된 타입이 아닌 타입의 값을 설정한다면,
     //    obj.v1 = new Member("홍길동", 20); // 컴파일 오류!
     //    obj.v2 = new String("Hello"); // 컴파일 오류!
-    //    obj.v3 =  Integer.valueOf(100); // 컴파일 오류!
+    //    obj.v3 = Integer.valueOf(100); // 컴파일 오류!
   }
 }

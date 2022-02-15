@@ -44,23 +44,23 @@ public class Exam0510 {
     // 제네릭을 사용하는 메서드를 이용하여 배열 만들기
 
     // 파라미터로 빈 배열을 넘기면,
-    String[] strs = create2(new String[0]);
-    System.out.println(strs.length);
+    String[] arr1 = create2(new String[0]);
+    System.out.println(arr1.length);
 
     // 내부에서 생성할 배열 크기 보다 더 큰 배열을 파라미터로 넘긴다면?
     // copyOf() 그래도 새 크기에 맞춰 새 배열을 생성한다.
     String[] temp = new String[100];
-    String[] strs2 = create2(temp);
-    System.out.println(strs2.length);
-    System.out.println(temp == strs2);
+    String[] arr2 = create2(temp);
+    System.out.println(arr2.length);
+    System.out.println(temp == arr2);
 
     // 생성할 배열의 타입 정보를 넘긴다.
-    String[] strs3 = create3(Member.class);
-    System.out.println(strs3.length);
+    String[] arr3 = create3(String.class);
+    System.out.println(arr3.length);
 
     // 배열을 넘기면 배열의 항목 타입을 알아내어 새 배열을 만든다.
-    String[] strs4 = create4(new String[0]);
-    System.out.println(strs4.length);
+    String[] arr4 = create4(new String[0]);
+    System.out.println(arr4.length);
   }
 
 
