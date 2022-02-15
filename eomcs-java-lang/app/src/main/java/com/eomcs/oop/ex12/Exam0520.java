@@ -20,6 +20,10 @@ public class Exam0520 {
     public static int divide(int a, int b) {
       return a / b;
     }
+
+    public static int power(int a) {
+      return a * 2;
+    }
   }
 
   interface Calculator {
@@ -29,7 +33,11 @@ public class Exam0520 {
   public static void main(String[] args) {
     // 스태틱 메서드 레퍼런스로 Calculator 구현체를 만드는 방법
     //
-    //    Calculator c1 = MyCalculator::plus;
+    Calculator c01 = MyCalculator::plus;
+    Calculator c02 = MyCalculator::minus;
+    Calculator c03 = MyCalculator::multiple;
+    Calculator c04 = MyCalculator::divide;
+    // Calculator c05 = MyCalculator::power; // 해당 메서드를 가지고 구현체를 만들 수 없다.
 
     // 위의 코드는 내부적으로 다음과 같다.
     //
