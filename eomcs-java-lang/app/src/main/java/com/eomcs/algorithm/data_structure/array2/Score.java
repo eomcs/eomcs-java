@@ -1,12 +1,12 @@
 package com.eomcs.algorithm.data_structure.array2;
 
 public class Score {
-  String name;
-  int kor;
-  int eng;
-  int math;
-  int sum;
-  float aver;
+  public String name;
+  public int kor;
+  public int eng;
+  public int math;
+  public int sum;
+  public float aver;
 
   public Score(String name, int kor, int eng, int math) {
     this.name = name;
