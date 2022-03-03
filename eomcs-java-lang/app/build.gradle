@@ -97,13 +97,13 @@ dependencies {
   implementation 'org.mybatis:mybatis-spring:2.0.6'
 
   // MariaDB JDBC 드라이버
-  implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
+  implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.3'
 
   // Oracle JDBC Driver
-  implementation 'com.oracle.database.jdbc:ojdbc11:21.3.0.0'
+  //implementation 'com.oracle.database.jdbc:ojdbc11:21.3.0.0'
     
   // MSSQL JDBC Driver
-  implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
+  //implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
   
   // Google JSON 라이브러리
   implementation 'com.google.code.gson:gson:2.8.9'
