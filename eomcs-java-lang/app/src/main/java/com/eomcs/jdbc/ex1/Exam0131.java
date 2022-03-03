@@ -14,6 +14,8 @@ public class Exam0131 {
       System.out.println(props.getProperty("jdbc.driverClassName"));
       System.out.println(props.getProperty("jdbc.url"));
 
+      // 위의 방식을 사용하면 다음과 같이, 
+      // Driver 구현체를 소스 파일에 직접 명시할 필요가 없다.
       Class.forName(props.getProperty("jdbc.driverClassName"));
       java.sql.Driver driver = DriverManager.getDriver(props.getProperty("jdbc.url"));
       System.out.println(driver);

@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class MyDriver implements java.sql.Driver {
 
   static {
-    System.out.println("com.eomcs.jdbc.ex1.MyDriver 클래스 로딩!");
+    System.out.println("MyDriver 클래스가 로딩됨!");
   }
 
   @Override
@@ -54,5 +54,4 @@ public class MyDriver implements java.sql.Driver {
     // TODO Auto-generated method stub
     return null;
   }
-
 }

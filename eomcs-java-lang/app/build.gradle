@@ -100,10 +100,10 @@ dependencies {
   implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.3'
 
   // Oracle JDBC Driver
-  //implementation 'com.oracle.database.jdbc:ojdbc11:21.3.0.0'
+  implementation 'com.oracle.database.jdbc:ojdbc11:21.5.0.0'
     
   // MSSQL JDBC Driver
-  //implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
+  implementation 'com.microsoft.sqlserver:mssql-jdbc:10.2.0.jre11'
   
   // Google JSON 라이브러리
   implementation 'com.google.code.gson:gson:2.8.9'

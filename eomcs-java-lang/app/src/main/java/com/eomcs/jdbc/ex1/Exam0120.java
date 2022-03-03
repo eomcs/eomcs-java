@@ -16,7 +16,7 @@ public class Exam0120 {
     try {
       // 1) Driver 구현체의 인스턴스 생성
       // => Driver 구현체가 로딩될 때 인스턴스가 생성되기 때문에
-      // 굳이 다음과 같이 인스턴스를 생성할 필요가 없다.
+      //    굳이 다음과 같이 인스턴스를 생성할 필요가 없다.
       new org.mariadb.jdbc.Driver();
 
       // 2) DriverManager에 등록 안함!
