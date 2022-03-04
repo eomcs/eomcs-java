@@ -8,7 +8,7 @@ public class Exam0321 {
   public static void main(String[] args) throws Exception {
     try (
         java.sql.Connection con = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+            "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
         java.sql.Statement stmt = con.createStatement();
         java.sql.ResultSet rs = stmt.executeQuery(//
             "select * from x_board order by board_id desc");
@@ -29,7 +29,7 @@ public class Exam0321 {
         //    다음과 같이 해당 타입의 값을 리턴하는 getXxx()를 호출한다.
         // => int, number: getInt()
         // => char, varchar, text: getString()
-        // => date, datetime: getDate()
+        // => date, time, datetime: getDate(), getTime()
         // => float: getFloat()
         //
 

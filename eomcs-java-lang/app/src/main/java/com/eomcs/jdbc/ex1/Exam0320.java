@@ -8,7 +8,7 @@ public class Exam0320 {
   public static void main(String[] args) throws Exception {
     try (
         java.sql.Connection con = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+            "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
         java.sql.Statement stmt = con.createStatement();
 
         // executeQuery()
@@ -24,7 +24,10 @@ public class Exam0320 {
 
         ) {
 
-      // ResultSet 객체를 사용하여 서버에서 select의 결과 한 레코드(row)를 가져온다.
+      System.out.println(rs.getClass().getName());
+
+      // ResultSet 객체를 사용하여 
+      // select의 실행 결과 중에서 한 레코드(row)를 서버에서 가져온다.
       //
       boolean isReceived = rs.next(); // 가져왔으면 true, 가져올 게 없다면 false
       // 용어정리

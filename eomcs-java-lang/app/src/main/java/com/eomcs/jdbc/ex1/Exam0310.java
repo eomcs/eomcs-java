@@ -8,7 +8,7 @@ public class Exam0310 {
   public static void main(String[] args) throws Exception {
 
     try (java.sql.Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
 
         // java.sql.Statement 구현 객체를 얻는다.
         // - SQL문을 DBMS의 형식에 따라 인코딩하여 서버에 전달하는 일을 하는 객체.
