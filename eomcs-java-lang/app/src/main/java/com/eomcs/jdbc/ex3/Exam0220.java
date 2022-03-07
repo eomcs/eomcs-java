@@ -25,7 +25,7 @@ public class Exam0220 {
     }
 
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
 
         // PreparedStatement는 미리 SQL 문장을 준비하여 값을 삽입하는 기법이다.
         PreparedStatement stmt = con.prepareStatement(

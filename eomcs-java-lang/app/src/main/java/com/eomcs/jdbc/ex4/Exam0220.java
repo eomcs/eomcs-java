@@ -35,7 +35,7 @@ public class Exam0220 {
     }
 
     try (Connection con = DriverManager.getConnection( //
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
 
         // => 게시글을 입력할 때 자동 생성된 PK 값을 받겠다고 설정한다.
         PreparedStatement boardStmt = con.prepareStatement(
@@ -92,8 +92,8 @@ public class Exam0220 {
       // DBMS에게 작업 결과를 실제 테이블에 적용하라고 요청한다.
       con.commit();
       // 데이터를 변경하는 모든 작업은(insert|update|delete)
-      // DBMS의 임시 테이블에 보관된다.
-      // 연결이 끊어지면 임시 테이블에 보관된 데이터는 버려진다.
+      // DBMS의 임시 데이터베이스에 보관된다.
+      // 연결이 끊어지면 임시 데이터베이스에 보관된 데이터는 버려진다.
       // 따라서 연결을 끊기 전에 작업한 내용을 적용하고 싶다면,
       // 반드시 commit을 요청해야 한다.
       //

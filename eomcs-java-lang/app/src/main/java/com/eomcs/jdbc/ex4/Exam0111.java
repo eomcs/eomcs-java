@@ -25,7 +25,7 @@ public class Exam0111 {
     }
 
     try (Connection con = DriverManager.getConnection( 
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
 
         // 입력 후 PK 값을 리턴 받고 싶다면,
         // PreparedStatement 객체를 얻을 때 다음과 같은 옵션을 지정하라!
@@ -47,9 +47,9 @@ public class Exam0111 {
         rs.next();
 
         // 자동 생성된 PK 값을 꺼낼 때는 컬럼 이름이나 PK 컬럼의 인덱스로 꺼낸다.
-        int no = rs.getInt("board_id");
+        //        int no = rs.getInt("board_id"); // MariaDB JDBC Driver에서는 오류 발생!
         int no2 = rs.getInt(1);
-        System.out.printf("입력된 게시글 번호: %d,%d\n", no, no2);
+        System.out.printf("입력된 게시글 번호: %d\n", no2);
       }
     }
   }

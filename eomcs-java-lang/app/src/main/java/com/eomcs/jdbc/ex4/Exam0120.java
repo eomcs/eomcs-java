@@ -35,7 +35,7 @@ public class Exam0120 {
     }
 
     try (Connection con = DriverManager.getConnection( //
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
 
         // => 게시글을 입력할 때 자동 생성된 PK 값을 받겠다고 설정한다.
         PreparedStatement boardStmt = con.prepareStatement(
@@ -54,7 +54,8 @@ public class Exam0120 {
       // 위에서 입력한 게시글의 PK 값을 알아내기
       ResultSet keyRS = boardStmt.getGeneratedKeys();
       keyRS.next(); // PK가 들어있는 레코드를 한 개 가져온다.
-      int boardId = keyRS.getInt("board_id"); // PK 값이 들어있는 레코드에서 컬럼 값을 꺼낸다.
+      //      int boardId = keyRS.getInt("board_id"); // PK 값이 들어있는 레코드에서 컬럼 값을 꺼낸다. MariaDB에서 오류 발생!
+      int boardId = keyRS.getInt(1); 
 
       // 첨부파일 입력
       int fileCount = 0;
