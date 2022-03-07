@@ -15,7 +15,7 @@ import java.util.List;
 public class BoardDao {
   public int delete(int no) throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
         Statement stmt = con.createStatement()) {
 
       // 첨부파일 삭제
@@ -28,7 +28,7 @@ public class BoardDao {
 
   public List<Board> findAll() throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("select * from x_board order by board_id desc")) {
 
@@ -48,7 +48,7 @@ public class BoardDao {
 
   public int insert(Board board) throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
         Statement stmt = con.createStatement();) {
 
       String sql = String.format(
@@ -62,7 +62,7 @@ public class BoardDao {
 
   public int update(Board board) throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
         Statement stmt = con.createStatement()) {
 
       String sql = String.format(
@@ -77,21 +77,22 @@ public class BoardDao {
 
   public Board findBy(String no) throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("select * from x_board where board_id = " + no)) {
 
-      if (!rs.next())
+      if (rs.next()) {
+        Board board = new Board();
+        board.setNo(rs.getInt("board_id"));
+        board.setTitle(rs.getString("title"));
+        board.setContent(rs.getString("contents"));
+        board.setRegisteredDate(rs.getDate("created_date"));
+        board.setViewCount(rs.getInt("view_count"));
+        return board;
+
+      } else {
         return null;
-
-      Board board = new Board();
-      board.setNo(rs.getInt("board_id"));
-      board.setTitle(rs.getString("title"));
-      board.setContent(rs.getString("contents"));
-      board.setRegisteredDate(rs.getDate("created_date"));
-      board.setViewCount(rs.getInt("view_count"));
-
-      return board;
+      }
     }
   }
 }

@@ -24,13 +24,13 @@ public class Exam0150 {
     }
 
     try (Connection con = DriverManager.getConnection( //
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
         Statement stmt = con.createStatement()) {
 
       // delete 문장은 executeUpdate()를 사용하여 서버에 전달한다.
       // => 게시글 첨부 파일 삭제
-      stmt.executeUpdate(
-          "delete from x_board_file where board_id = " + no);
+      //      stmt.executeUpdate(
+      //          "delete from x_board_file where board_id = " + no);
 
       // => 게시글 삭제
       int count = stmt.executeUpdate(

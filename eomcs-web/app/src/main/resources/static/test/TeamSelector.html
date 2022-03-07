@@ -17,7 +17,7 @@ div {
   background-color: #F9E79F;
   border: 3px solid #85C1E9 ;
   width: 150px;
-  height: 160px;
+  height: 180px;
 }
 
 .x-selected {
@@ -49,7 +49,7 @@ div {
 </div>
 <div class="x-team">
   <header>deVela</header>
-  <ul>     
+  <ul>
     <li>장창훈</li>
     <li>오승지</li>
     <li>최리나</li>
@@ -60,7 +60,7 @@ div {
 </div>
 <div class="x-team">
   <header>NULL</header>
-  <ul>    
+  <ul>
     <li>허정윤</li>
     <li>오민현</li>
     <li>채다해</li>
@@ -71,7 +71,7 @@ div {
 </div>
 <div class="x-team">
   <header>BTS</header>
-  <ul>     
+  <ul>
     <li>정요섭</li>
     <li>곽민규</li>
     <li>박경현</li>
@@ -82,7 +82,7 @@ div {
 </div>
 <div class="x-team">
   <header>Debugger</header>
-  <ul>     
+  <ul>
     <li>김지현</li>
     <li>한상은</li>
     <li>김규범</li>
@@ -102,18 +102,18 @@ var presentationTeamsDiv = document.querySelector("#x-presentation-teams");
 var currIndex = -1;
 
 document.querySelector("#x-start-btn").addEventListener("click", function() {
-	
+
 	var teamDivs = document.querySelectorAll("#x-teams .x-team");
 	if (teamDivs.length == 0) {
 		return;
 	}
-	
+
 	console.log(teamDivs.length)
 	counter.innerHTML = "2";
-	
+
 	var intervalId = window.setInterval(function() {
 		  var index = parseInt((Math.random() * teamDivs.length));
-		  
+
 		  if (currIndex != index) {
 		    if (currIndex != -1) {
 		      teamDivs[currIndex].classList.remove("x-selected");
@@ -122,7 +122,7 @@ document.querySelector("#x-start-btn").addEventListener("click", function() {
 		    currIndex = index;
 		  }
 		}, 100);
-	
+
 	var intervalId2 = window.setInterval(function() {
 		  counter.innerHTML = parseInt(counter.innerHTML) - 1;
 		  if (counter.innerHTML == "0") {
