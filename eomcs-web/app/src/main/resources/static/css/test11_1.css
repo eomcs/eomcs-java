@@ -24,7 +24,7 @@
   #menu {
     background-color: lightgray;
     font-size: 1.2em;
-    width: 180px;
+    width: 220px;
     /*border: 1px solid red;*/
     position: absolute;
   }
@@ -40,7 +40,7 @@
   #content {
     font-family: 바탕체, 궁서체, AppleMyungjo, serif;
     /*border: 1px solid red;*/
-    margin-left: 190px;
+    margin-left: 230px;
     min-height: 430px;
   }
 
