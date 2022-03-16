@@ -8,8 +8,8 @@
     position: fixed
     => 웹브라우저의 클라이언트 영역을 기준으로 위치를 지정한다.
     => 클라이언트 영역?
-       웹브라우저의 툴바 아래에 위치한 내용이 출력되는 화면이다.
-    => 내용을 위,아래로 스크롤하더라도 fixed 타입의 태그를 움직이지 않는다.
+       웹브라우저의 툴바 아래에 내용이 출력되는 영역이다.
+    => 내용을 위,아래로 스크롤하더라도 fixed 타입의 태그는 움직이지 않는다.
     => 화면 스크롤과 상관없이 웹브라우저의 특정 영역에
        내용을 띄우고 싶을 때 사용한다.
   */
@@ -75,7 +75,7 @@
   #ad {
     border: 5px solid orange;
     position: fixed;
-    left: 35%;
+    left: 30%;
     top: 20%;
     background-color: white;
   }
@@ -96,7 +96,7 @@
 <body>
 
   <div id="menu">
-  <img src='http://bitcamp.co.kr/resources/images/logo/head_logo.gif'>
+  <img src='https://www.bitcamp.co.kr/theme/basic/img/blue_logo.png'>
   <ul>
     <li class="c1">BITCamp</li>
     <li class="c1">교육안내</li>
@@ -144,17 +144,18 @@
   </div>
 
 <div id="ad">
-<button id="closeBtn" type="button">X</button>
-<img src="http://data.siwonschool.com/banner/img/www/2017/03/31/bimg_src_1490956508.jpg">
-<img src="http://data.siwonschool.com/banner/img/www/2017/03/31/bimg_src_1490927237.jpg">
-<img src="http://data.siwonschool.com/banner/img/www/2017/04/04/bimg_src_1491271205.jpg">
+	<button id="closeBtn" type="button">X</button>
+	<img src="http://data.siwonschool.com/banner/img/www/2017/03/31/bimg_src_1490956508.jpg">
+	<img src="http://data.siwonschool.com/banner/img/www/2017/03/31/bimg_src_1490927237.jpg">
+	<img src="http://data.siwonschool.com/banner/img/www/2017/04/04/bimg_src_1491271205.jpg">
 </div>
 
 <script>
 var btn = document.getElementById("closeBtn");
 btn.addEventListener('click', function() {
   var adDiv = document.getElementById("ad");
-  adDiv.style.display = "none";
+  //adDiv.style.display = "none";
+  adDiv.style["display"] = "none";
 });
 </script>
 </body>
