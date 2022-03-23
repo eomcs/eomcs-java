@@ -44,4 +44,21 @@ public class FormController {
 
     return "ok!"; 
   }
+
+  @RequestMapping("/html/form/exam12")
+  public Object exam12(String name, int age, MultipartFile[] photo) {
+    System.out.println(name);
+    System.out.println(age);
+
+    for (MultipartFile part : photo) {
+      try {
+        File photoFile = new File("c:/upload/" + part.getOriginalFilename());
+        part.transferTo(photoFile);
+      } catch (Exception e) {
+        e.printStackTrace();
+        return "error!";
+      }
+    }
+    return "ok!"; 
+  }
 }

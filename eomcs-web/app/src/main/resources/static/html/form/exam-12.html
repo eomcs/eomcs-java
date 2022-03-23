@@ -5,20 +5,20 @@
 <title>파일 업로드</title>
 </head>
 <body>
-<h1>한 개의 파일 업로드</h1>
+<h1>여러 개의 파일 업로드</h1>
 
-<form action="/html/form/exam11" method="post" enctype="multipart/form-data">
+<form action="/html/form/exam12" method="post" enctype="multipart/form-data">
   이름: <input type="text" name="name"><br>
   나이: <input type="number" name="age"><br>
-  사진: <input type="file" name="photo"><br>
+  사진: <input type="file" name="photo" multiple><br>
   <button>요청</button>
 </form>
 
 <hr>
 <pre>
-POST /html/form/exam11 HTTP/1.1
+POST /html/form/exam12 HTTP/1.1
 Host: 192.168.0.23:8080
-Content-Length: 3950
+Content-Length: 19398
 Cache-Control: max-age=0
 Upgrade-Insecure-Requests: 1
 Origin: http://192.168.0.23:8080
@@ -40,6 +40,21 @@ Content-Disposition: form-data; name="age"
 20
 ------WebKitFormBoundaryPdToBBn7j4mdDf8X
 Content-Disposition: form-data; name="photo"; filename="photo1.jpg"
+Content-Type: image/jpeg
+
+......
+------WebKitFormBoundaryPdToBBn7j4mdDf8X
+Content-Disposition: form-data; name="photo"; filename="photo2.jpg"
+Content-Type: image/jpeg
+
+......
+------WebKitFormBoundaryPdToBBn7j4mdDf8X
+Content-Disposition: form-data; name="photo"; filename="photo3.jpg"
+Content-Type: image/jpeg
+
+......
+------WebKitFormBoundaryPdToBBn7j4mdDf8X
+Content-Disposition: form-data; name="photo"; filename="photo4.jpg"
 Content-Type: image/jpeg
 
 ......
