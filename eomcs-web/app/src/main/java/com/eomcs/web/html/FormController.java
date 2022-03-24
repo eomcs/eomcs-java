@@ -63,18 +63,30 @@ public class FormController {
   }
 
   @RequestMapping("/html/form/exam21")
-  public Object exam21(String name, int age) {
+  public Object exam21(String name, int age) throws Exception {
     System.out.println(name);
     System.out.println(age);
-    //    System.out.println(photo.getOriginalFilename());
-    //
-    //    try {
-    //      File photoFile = new File("c:/upload/" + photo.getOriginalFilename());
-    //      photo.transferTo(photoFile);
-    //    } catch (Exception e) {
-    //      e.printStackTrace();
-    //      return "error!";
-    //    }
+
+    //    Thread.sleep(10000);
+
+    return "ok!"; 
+  }
+
+  @RequestMapping("/html/form/exam31")
+  public Object exam31(String name, int age, MultipartFile photo) {
+    System.out.println(name);
+    System.out.println(age);
+
+    if (photo != null && photo.getSize() > 0) {
+      System.out.println(photo.getOriginalFilename());
+      try {
+        File photoFile = new File("c:/upload/" + photo.getOriginalFilename());
+        photo.transferTo(photoFile);
+      } catch (Exception e) {
+        e.printStackTrace();
+        return "error!";
+      }
+    }
 
     return "ok!"; 
   }
