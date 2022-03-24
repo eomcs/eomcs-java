@@ -2,6 +2,7 @@ package com.eomcs.web.html;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.UUID;
 import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -85,6 +86,77 @@ public class FormController {
       } catch (Exception e) {
         e.printStackTrace();
         return "error!";
+      }
+    }
+
+    return "ok!"; 
+  }
+
+  @RequestMapping("/html/form/exam32")
+  public Object exam32(String name, int age, MultipartFile[] photo) {
+    System.out.println(name);
+    System.out.println(age);
+
+    if (photo != null) {
+      for (MultipartFile part : photo) {
+        try {
+          File photoFile = new File("c:/upload/" + part.getOriginalFilename());
+          part.transferTo(photoFile);
+        } catch (Exception e) {
+          e.printStackTrace();
+          return "error!";
+        }
+      }
+    }
+
+    return "ok!"; 
+  }
+
+  @RequestMapping("/html/form/exam41")
+  public Object exam41(String name, int age, MultipartFile[] photo) {
+    System.out.println(name);
+    System.out.println(age);
+
+    if (photo != null) {
+      for (MultipartFile part : photo) {
+        if (part.getSize() == 0) 
+          continue;
+
+        try {
+          File photoFile = new File("c:/upload/" + part.getOriginalFilename());
+          part.transferTo(photoFile);
+        } catch (Exception e) {
+          e.printStackTrace();
+          return "error!";
+        }
+      }
+    }
+
+    return "ok!"; 
+  }
+
+  @RequestMapping("/html/form/exam51")
+  public Object exam51(String name, int age, MultipartFile[] photo) {
+    System.out.println(name);
+    System.out.println(age);
+
+    if (photo != null) {
+      for (MultipartFile part : photo) {
+        if (part.getSize() == 0) 
+          continue;
+
+        try {
+          String filename = UUID.randomUUID().toString();
+          int dotIndex = part.getOriginalFilename().lastIndexOf(".");
+          if (dotIndex != -1) {
+            filename += part.getOriginalFilename().substring(dotIndex);
+          }
+          File photoFile = new File("c:/upload/" + filename);
+          part.transferTo(photoFile);
+        } catch (Exception e) {
+          e.printStackTrace();
+          return "error!";
+        }
       }
     }
 
