@@ -5,9 +5,12 @@
 <title>세션다루기</title>
 </head>
 <body>
-<h1>1단계</h1>
+<h1>3단계</h1>
 <form name="form1">
-이름: <input name="name"><br>
+재직여부: 
+<input type="radio" name="working" value="true"> 직장인
+<input type="radio" name="working" value="false" checked> 미취업자  
+<br>
 <button id="btn1" type="button">다음</button><br>
 </form>
 
@@ -15,16 +18,15 @@
 document.querySelector("#btn1").onclick = function() {
 	var fd = new FormData(document.forms.namedItem("form1"));
 	
-	fetch("/session/step1", {
+	fetch("/session/step3", {
 		method: "POST",
 		body: new URLSearchParams(fd)
 	}).then(function(response){
 		  return response.text();		
 	}).then(function(text){
 		console.log(text);
-		location.href = "session-step2.html";
+		location.href = "session-step4.html";
 	});
-
 };
 
 </script>

@@ -1,5 +1,6 @@
 package com.eomcs.web.session;
 
+import java.util.HashMap;
 import javax.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,11 +29,12 @@ public class Controller2 {
 
   @RequestMapping("/session/step4")
   public Object step4(HttpSession session) {
-    String name = (String) session.getAttribute("name");
-    int age = (int) session.getAttribute("age");
-    boolean working = (boolean) session.getAttribute("working");
+    HashMap<String,Object> map = new HashMap<>();
+    map.put("name", session.getAttribute("name"));
+    map.put("age", session.getAttribute("age"));
+    map.put("working", session.getAttribute("working"));
 
-    return String.format("step4() 실행: %s, %d, %b\n", name, age, working);
+    return map;
   }
 
 }
