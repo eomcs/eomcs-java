@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>페이스북 API</title>
 </head>
 <body>
 <h1>페이스북 로그인</h1>
@@ -27,12 +27,11 @@ function checkLoginState() {
 
 
 window.fbAsyncInit = function() {
-  console.log("window.fbAsyncInit() 호출됨!");
   FB.init({
-    appId      : '1130286854106486', // 개발자가 등록한 앱 ID
+    appId      : '272674241595180', // 개발자가 등록한 앱 ID
     cookie     : true,  
     xfbml      : true,  
-    version    : 'v9.0' 
+    version    : 'v13.0' 
   });
   FB.AppEvents.logPageView();
 };
