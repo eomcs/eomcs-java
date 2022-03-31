@@ -17,7 +17,7 @@
 // - 웹브라우저는 당연히 동적으로 생성된 script 태그를 실행할 것이다.
 
 (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
+  var js, fjs = document.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
   js = d.createElement(s); js.id = id;
   js.src = "https://connect.facebook.net/en_US/sdk.js";

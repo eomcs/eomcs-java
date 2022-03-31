@@ -7,26 +7,19 @@
 <body>
 <h1>페이스북 로그인</h1>
 
-<fb:login-button scope="public_profile,email" 
-                 onlogin="checkLoginState();">
-</fb:login-button>
+<fb:login-button scope="public_profile,email"></fb:login-button>
 
 <script type="text/javascript">
 // 페이스북 로그인 버튼을 화면에 붙인다.
 // => 로그인 버튼을 누르면 페이스북 사이트의 로그인 페이지가 출력된다.
-// => 그 페이지에서 로그인을 수행한 후 onlogin에 등록한 코드가 실행된다.
-//    즉 checkLoginState() 함수가 실행된다.
-function checkLoginState() {
-    console.log("로그인을 수행했음!");
-}
 
 window.fbAsyncInit = function() {
   console.log("window.fbAsyncInit() 호출됨!");
   FB.init({
-    appId      : '1130286854106486', // 개발자가 등록한 앱 ID
+    appId      : '272674241595180', // 개발자가 등록한 앱 ID
     cookie     : true,  
     xfbml      : true,  
-    version    : 'v9.0' 
+    version    : 'v13.0' 
   });
   //FB.AppEvents.logPageView();
 };
