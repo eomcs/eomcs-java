@@ -1,6 +1,5 @@
 package com.eomcs.web.facebook;
 
-import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -26,6 +25,6 @@ public class LoginController {
         "id,name,email,gender" // 페이스북 측에 요청하는 로그인 사용자 정보
         );
 
-    return StringEscapeUtils. result;
+    return result;
   }
 }
