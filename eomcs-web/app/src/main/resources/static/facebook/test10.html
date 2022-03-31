@@ -21,7 +21,8 @@ onlogin="checkLoginState();"></div>
 // 로그인 성공한 후 서버에 자동으로 로그인 하기
 // => 페이스북으로부터 사용자 정보 가져오기
 function autoServerLogin(accessToken) {
-    location.href = "login09.jsp?accessToken=" + accessToken;
+  //location.href = "login09.jsp?accessToken=" + accessToken;
+	location.href = "/facebook/login2?accessToken=" + accessToken;
 }
 
 function checkLoginState() {
@@ -38,10 +39,10 @@ function checkLoginState() {
 window.fbAsyncInit = function() {
   console.log("window.fbAsyncInit() 호출됨!");
   FB.init({
-    appId      : '1130286854106486', // 개발자가 등록한 앱 ID
+    appId      : '272674241595180', // 개발자가 등록한 앱 ID
     cookie     : true,  
     xfbml      : true,  
-    version    : 'v9.0' 
+    version    : 'v13.0' 
   });
   FB.AppEvents.logPageView();
 };
