@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기작업</title>
+</head>
+<body>
+<h1>Promise</h1>
+<script type="module">
+const promise = new Promise((resolve, reject) => {
+    console.log("1111");
+});
+
+console.log("2222");
+
+const promise2 = promise.then(() => {
+    console.log("3333");
+});
+
+console.log("3333");
+
+promise2.then(() => {
+    console.log("4444");
+});
+
+</script>
+</body>
+</html>
