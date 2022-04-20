@@ -1,17 +1,11 @@
 public class Test {
 
+
   public static void main(String[] args) {
-    int x = 100;
-
-    test(x++);
-
-    int temp = x;
-    x = x + 1;
-    test(temp);
-  }
-
-  static void test(int a) {
-    System.out.println(a);
+    String str = "2000원";
+    System.out.println(str.length());
+    int i = Integer.parseInt(str.replace("원", ""));
+    System.out.println(i + 100);
   }
 
 }

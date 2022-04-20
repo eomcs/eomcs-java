@@ -5,8 +5,16 @@
 <title>비동기작업</title>
 </head>
 <body>
-<h1>Promise - 작업 함수(executor)와 비동기 작업</h1>
+<h1>Promise - 비동기 작업의 완료를 통지하기</h1>
 <script>
+function onFulfilled() {
+  console.log("fulfilled!")
+}
+
+function onRejected() {
+  console.log("rejected!")
+}
+
 const promise = new Promise((resolve, reject) => {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -18,9 +26,12 @@ const promise = new Promise((resolve, reject) => {
   xhr.send(); // 비동기 요청을 수행한다. 즉, 요청하는 즉시 리턴한다.
 });
 
-// Promise 생성자는 작업 함수(executor) 호출이 끝나는 즉시 Promise 객체를 리턴한다.
-// => 작업 함수에서 실행하는 비동기 작업이 끝날 때까지 기다리지 않는다.
 console.log("1111");
+
+// 비동기 작업에 대한 결과를 통지 받으면  
+// 그 다음으로 수행할 함수를 설정한다.
+//   then(성공적으로 완료되었을 때 호출될 함수, )
+promise.then(onFulfillment, onRejection);
 
 </script>
 </body>

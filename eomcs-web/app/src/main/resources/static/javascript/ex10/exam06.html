@@ -5,14 +5,18 @@
 <title>비동기작업</title>
 </head>
 <body>
-<h1>Promise - 비동기 작업의 완료를 통지하기</h1>
+<h1>Promise - 작업 거절 통보를 받았을 때 수행할 함수를 등록하기</h1>
 <script>
+function onRejected() {
+  console.log("rejected!")
+}
+
 const promise = new Promise((resolve, reject) => {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       console.log(xhr.responseText);
-      resolve(); // 작업이 완료되었다고 통지한다.
+      resolve(); // 작업 수행을 정상적으로 완료하지 못했음을 통지한다.
     }
   };
   xhr.open("GET", "exam01", true); 
@@ -21,9 +25,8 @@ const promise = new Promise((resolve, reject) => {
 
 console.log("1111");
 
-// promise 객체가 작업 완료 통지를 받았다 하더라도 
-// 다음으로 수행할 작업이 등록되어 있지 않다면 
-// 아무런 일도 수행하지 않는다.
+//비동기 작업을 수행하는 중 오류가 발생했다고 통보 받았을 때 실행할 함수를 등록한다.
+promise.then(undefined, onRejected);
 
 
 </script>

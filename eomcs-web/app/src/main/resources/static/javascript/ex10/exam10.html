@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기작업</title>
+</head>
+<body>
+<h1>Promise - then()의 리턴 값</h1>
+<script>
+const promise = new Promise((resolve, reject) => {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      console.log(xhr.responseText);
+      
+      resolve(); // 작업이 완료되었다고 통지한다.
+    }
+  };
+  xhr.open("GET", "exam01", true); 
+  xhr.send();
+});
+
+console.log("1111");
+
+// then()
+// - 작업을 정상적으로 수행했다는 통보가 왔을 때 호출될 함수를 등록한다.
+// - 새로운 Promise 객체를 리턴한다.
+// - then()에 등록된 함수의 실행이 정상적으로 끝나면 새로 리턴한 Promise 객체에 통보할 것이다. 
+var promise2 = promise.then(() => console.log("fulfilled...1"));
+
+console.log("2222");
+
+// promise.then()에 등록한 함수 다음으로 실행될 함수를 등록한다.
+// 물론 이전에 등록한 함수의 호출이 완료된 후에 호출될 것이다.
+promise2.then(() => console.log("fulfilled...2"));
+
+
+</script>
+</body>
+</html>
