@@ -5,24 +5,23 @@
 <title>비동기작업</title>
 </head>
 <body>
-<h1>Promise</h1>
-<script type="module">
+<h1>Promise - 생성자</h1>
+<script>
 const promise = new Promise((resolve, reject) => {
-    console.log("1111");
+	console.log("1");
+	setTimeout(() => {console.log("2")}, 3000);
+	for (var i = 0; i < 10000000; i++) {
+		var t = document.querySelector("h1");
+		var s = t.innerHTML + "===>";
+	}
+	console.log("3");
 });
 
-console.log("2222");
+console.log("=>");
 
-const promise2 = promise.then(() => {
-    console.log("3333");
-});
+promise.then(() => {console.log("2222")});
 
-console.log("3333");
-
-promise2.then(() => {
-    console.log("4444");
-});
-
+console.log("==>");
 </script>
 </body>
 </html>

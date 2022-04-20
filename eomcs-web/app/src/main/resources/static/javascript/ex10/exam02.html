@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기작업</title>
+</head>
+<body>
+<h1>Promise - reject()</h1>
+<script type="module">
+// 비동기 실행
+const promise1 = Promise.reject("aaa");
+
+console.log("1111");
+
+// 비동기 실행
+const promise2 = promise1.then((value) => {
+  console.log("1 ==> ", value);
+  return "bbb";
+});
+
+console.log("2222");
+
+// 비동기 실행
+const promise3 = promise2.then((value) => {
+  console.log("2 ==> ", value);
+});
+
+console.log("3333");
+
+// 비동기 실행
+promise3.catch((error) => {
+  console.log(error);
+}); 
+
+</script>
+</body>
+</html>

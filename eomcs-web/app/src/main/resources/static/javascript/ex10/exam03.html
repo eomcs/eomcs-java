@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기작업</title>
+</head>
+<body>
+<h1>Promise - then(resolve,reject)</h1>
+<script type="module">
+// 비동기 실행
+const promise1 = Promise.resolve("ok!");
+
+console.log("1111");
+
+// 비동기 실행
+const promise2 = promise1.then(value => {
+  console.log("정상 수행: ", value);
+}, error => {
+  console.log("오류 발생: ", error);
+});
+
+console.log("2222");
+
+</script>
+</body>
+</html>
