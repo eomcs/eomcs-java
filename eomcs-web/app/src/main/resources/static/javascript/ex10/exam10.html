@@ -30,8 +30,9 @@ var promise2 = promise.then(() => console.log("fulfilled...1"));
 
 console.log("2222");
 
-// promise.then()에 등록한 함수 다음으로 실행될 함수를 등록한다.
-// 물론 이전에 등록한 함수의 호출이 완료된 후에 호출될 것이다.
+// 다음과 같이 promise2.then()을 사용하여 작업 함수를 등록해두면,
+// 이전에 약속(promise)한 작업(executor)이 끝나면 자동으로 호출될 것이다. 
+// 즉, promise.then()으로 등록한 작업 함수의 실행이 끝난 후 다음 순서로 호출될 것이다.
 promise2.then(() => console.log("fulfilled...2"));
 
 
