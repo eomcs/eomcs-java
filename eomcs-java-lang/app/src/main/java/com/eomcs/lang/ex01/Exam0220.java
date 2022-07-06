@@ -8,5 +8,5 @@ public class Exam2_2x {}
 
 //## 실습
 //1) 컴파일하기
-//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ex01/Exam2_2.java
+//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex01/Exam2_2.java
 //- 컴파일 오류가 발생한다.
