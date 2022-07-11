@@ -5,9 +5,9 @@ package com.eomcs.lang.ex05;
 public class Exam0351 {
   public static void main(String[] args) {
 
-    System.out.println(57 % 2);
-    System.out.println(57 & 0b0000_0001);
-    System.out.println(57 & 1);
+    System.out.println(54 % 2);
+    System.out.println(54 & 0b0000_0001);
+    System.out.println(54 & 1);
     // % 연산은 나누기 연산을 수행해야 한다.
     // 나누기 연산은 여러 번의 계산을 수행하게 된다.
     // 그에 비해 & 비트 연산은 한 번만 하면 된다.
