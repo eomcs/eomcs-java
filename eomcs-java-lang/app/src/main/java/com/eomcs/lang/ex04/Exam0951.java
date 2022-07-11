@@ -15,7 +15,7 @@ public class Exam0951 {
     double d = Double.valueOf("9876.54321");
     boolean bool1 = Boolean.valueOf("TRUE");   // 문자열 ==> boolean
     boolean bool2 = Boolean.parseBoolean("TRUE");   // 문자열 ==> boolean
-    char c = "가".charAt(0);
+    char c = "가나다".charAt(1); // => 나
 
     System.out.println(b);
     System.out.println(s);

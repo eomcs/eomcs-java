@@ -9,8 +9,8 @@ package com.eomcs.lang.ex04;
 // - 변수를 선언한 후 바로 그 이름을 사용하여 메모리에 접근하고 값을 넣고 꺼낸다.
 // - 보통 "변수를 생성한다"라고 표현하기도 한다.
 // - 문법
-// 메모리의종류 메모리이름;
-// int a;
+//     메모리의종류 메모리이름;
+//     int a;
 //
 public class Exam0110 {
   public static void main(String[] args) {

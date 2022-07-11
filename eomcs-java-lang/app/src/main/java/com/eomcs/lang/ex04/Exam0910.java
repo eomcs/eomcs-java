@@ -14,7 +14,7 @@ public class Exam0910 {
     int i = 98765678; // 4byte
     long v3 = i; // 4byte ==> 8byte
 
-    long l = 98765678; // 8byte
+    long l = 98765678; // 4byte 리터럴 ==> 8byte
 
     char c = 100; // 2byte(0 ~ 65535)
     //    short x1 = c; // char(0 ~ 65535) ==> short(-32768 ~ 32767), 값의 범위가 맞지 않아 컴파일 오류!

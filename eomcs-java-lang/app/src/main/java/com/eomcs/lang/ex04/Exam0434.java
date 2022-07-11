@@ -16,7 +16,9 @@ public class Exam0434 {
       // 정수가 문자 코드임을 알려줘야만 println()은 해당 코드의 문자를 출력한다.
       // 문법
       //   (char) 정수
-      System.out.print(v + i);
+      //System.out.print(v + i);
+      System.out.print((char)(v + i));
+      System.out.print(' ');
     }
   }
 }
