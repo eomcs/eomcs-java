@@ -14,18 +14,18 @@ public class Exam0161 {
     // if ~ else ~ 만 있다면 블록으로 묶지 않아도 된다.
     if (age < 8)
       System.out.println("아동입니다.");
-    else
+    else 
       if (age < 14)
         System.out.println("어린이입니다.");
       else 
         if (age < 19)
           System.out.println("청소년입니다.");
-        else
+        else 
           if (age < 65)
             System.out.println("성인입니다.");
           else
             System.out.println("노인입니다.");
-
+    
     keyScan.close();
   }
 }

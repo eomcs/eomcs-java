@@ -15,7 +15,7 @@ public class Exam0162 {
     // 주의!
     // else if 라는 문법은 없다.
     // 그냥 다음과 같이 정렬한 것이다.
-    if (age < 8)
+    if (age < 8) 
       System.out.println("아동입니다.");
     else if (age < 14)
       System.out.println("어린이입니다.");
