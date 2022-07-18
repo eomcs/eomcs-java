@@ -28,6 +28,20 @@ public class Exam0113 {
     // 성적 데이터를 클래스로 묶어 놓으면 값을 다루기가 편하다.
     // => 다음과 같이 성적 데이터를 한 번에 넘길 수 있다.
     printScore(s);
+
+    Score s2 = new Score();
+    s2.name = "임꺾정";
+    s2.kor = 90;
+    s2.eng = 80;
+    s2.math = 70;
+    printScore(s2);
+
+    Score s3 = new Score();
+    s3.name = "유관순";
+    s3.kor = 80;
+    s3.eng = 70;
+    s3.math = 60;
+    printScore(s3);
   }
 
   static void printScore(Score s) {

@@ -31,5 +31,23 @@ public class Exam0110 {
     aver = (float) sum / 3;
 
     System.out.printf("%s: %d, %d, %d, %d, %.1f\n", name, kor, eng, math, sum, aver);
+
+    name = "임꺽정";
+    kor = 90;
+    eng = 80;
+    math = 75;
+    sum = kor + eng + math;
+    aver = (float) sum / 3;
+
+    System.out.printf("%s: %d, %d, %d, %d, %.1f\n", name, kor, eng, math, sum, aver);
+
+    name = "유관순";
+    kor = 80;
+    eng = 70;
+    math = 65;
+    sum = kor + eng + math;
+    aver = (float) sum / 3;
+
+    System.out.printf("%s: %d, %d, %d, %d, %.1f\n", name, kor, eng, math, sum, aver);
   }
 }

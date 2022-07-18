@@ -14,7 +14,7 @@ public class Exam0450 {
   public static void main(String[] args) {
     // 다음과 같이 작은 수를 계산 할 때는 재귀호출을 사용하는 것이
     // 코드도 간단하고 이해하기도 쉽다.
-    System.out.println(sum(500000));
+    System.out.println(sum(18289));
   }
 }
 // JVM Stack 메모리의 사용

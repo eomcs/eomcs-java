@@ -17,7 +17,12 @@ public class Exam0114 {
 
     // 클래스를 이용하면 성적 정보와 같은 여러 개의 값을 한 번에 리턴 받을 수 있다.
     Score s = createScore("홍길동", 100, 100, 100);
+    printScore(s);
 
+    Score s2 = createScore("임꺽정", 90, 80, 70);
+    printScore(s);
+
+    Score s3 = createScore("유관순", 80, 70, 60);
     printScore(s);
   }
 

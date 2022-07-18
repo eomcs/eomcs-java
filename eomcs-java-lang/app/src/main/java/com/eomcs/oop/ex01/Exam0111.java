@@ -21,6 +21,20 @@ public class Exam0111 {
     // - 출력 형식을 바꾸고 싶으면 그 블록으로 가서 변경하면 된다.
     //
     printScore(name, kor, eng, math);
+
+    name = "임꺽정";
+    kor = 90;
+    eng = 80;
+    math = 75;
+
+    printScore(name, kor, eng, math);
+
+    name = "유관순";
+    kor = 80;
+    eng = 70;
+    math = 65;
+
+    printScore(name, kor, eng, math);
   }
 
   static void printScore(String name, int kor, int eng, int math) {
