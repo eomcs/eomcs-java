@@ -2,7 +2,10 @@ package com.eomcs.oop.ex01;
 
 // # import - 사용 후 II
 //
-import com.eomcs.oop.ex01.sub.*; 
+import com.eomcs.oop.ex01.sub.*;
+import java.util.*; 
+import java.net.*;
+import java.io.*;
 
 public class Exam0730 {
   public static void main(String[] args) {
@@ -12,7 +15,7 @@ public class Exam0730 {
     // 문법:
     //      import 패키지명.*;
     //
-    // - 이 경우 해당 패키지에 있는 모든 클래스를 패키지명을 지정하지 않고 사용할 수 있다.
+    // - 이 경우 사용하는 클래스 마다 import를 따로 지정할 필요가 없다.
     // - (주의!) 서브 패키지는 해당이 안된다.
     // - 단 소스 코드를 읽을 때 어떤 클래스가 어떤 패키지 있는지 바로 확인할 수 없는 불편함이 있다.
     //   그래서 대부분의 자바 개발자들은 널리 알려진 클래스가 아닌 경우
@@ -20,6 +23,9 @@ public class Exam0730 {
     //
     Y2 obj;
     obj = new Y2();
+
+    Z2 obj2;
+    obj2 = new Z2();
   }
 }
 // 결론!

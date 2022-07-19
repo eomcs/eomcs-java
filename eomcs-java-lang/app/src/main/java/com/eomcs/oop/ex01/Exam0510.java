@@ -32,7 +32,7 @@ public class Exam0510 {
   // bin/main/com/eomcs/oop/ex01/Exam0510$B.class
   static class B {}
 
-  // 2) 논-스태틱 중첩 클래스
+  // 2) 논-스태틱 중첩 클래스 = inner class
   // - 특정 인스턴스에 종속된 클래스인 경우 논-스태틱 중첩 클래스로 정의한다.
   //
   // bin/main/com/eomcs/oop/ex01/Exam0510$C.class
