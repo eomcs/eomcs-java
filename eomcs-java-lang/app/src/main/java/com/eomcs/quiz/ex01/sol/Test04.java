@@ -1,4 +1,4 @@
-package com.eomcs.algorithm.quiz;
+package com.eomcs.quiz.ex01.sol;
 
 // 출처: codefights.com
 //
@@ -7,8 +7,12 @@ package com.eomcs.algorithm.quiz;
 // 1010 => 2
 // 123 => 1
 //
-//한 줄에 버그가 있다. 고쳐라!
-public class Test001 {
+public class Test04 {
+
+  public static void main(String[] args) {
+    System.out.println(countEvenNumber(1238694636) == 6);
+    System.out.println(countEvenNumber(2567884) == 5);
+  }
 
   static int countEvenNumber(int value) {
     int result = 0;
@@ -17,14 +21,8 @@ public class Test001 {
       if ((n % 2) == 0) {
         result++;
       }
-      n %= 10;
+      n /= 10;
     }
     return result;
   }
-
-  public static void main(String[] args) {
-    System.out.println(countEvenNumber(1238694636));
-
-  }
-
 }
