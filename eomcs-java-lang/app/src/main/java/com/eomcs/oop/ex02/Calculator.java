@@ -1,5 +1,7 @@
 package com.eomcs.oop.ex02;
 
+// 여러 곳에서 사용할 클래스라면 패키지 멤버로 만드는 것이 유지보수에 좋다.
+// => 패키지 멤버 클래스
 class Calculator {
 
   int result = 0;

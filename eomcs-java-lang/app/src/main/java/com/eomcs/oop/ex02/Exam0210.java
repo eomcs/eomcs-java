@@ -1,6 +1,7 @@
 package com.eomcs.oop.ex02;
 
-// # 관련된 기능(메서드)을 묶어 분류하기 : 분류 전
+// # 관련된 기능(메서드)을 묶어 분류하기
+// 1) 분류 전
 //
 public class Exam0210 {
 
