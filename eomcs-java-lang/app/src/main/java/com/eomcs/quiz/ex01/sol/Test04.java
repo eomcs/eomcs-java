@@ -7,6 +7,9 @@ package com.eomcs.quiz.ex01.sol;
 // 1010 => 2
 // 123 => 1
 //
+// [시간 복잡도]
+// - O(k) : k는 입력 값의 10진수 자릿수이다.
+//
 public class Test04 {
 
   public static void main(String[] args) {

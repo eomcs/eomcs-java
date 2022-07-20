@@ -6,7 +6,9 @@ package com.eomcs.quiz.ex01.sol;
 // 예)
 // [2, 4, 1, 0] => 3
 // 
-
+// [시간 복잡도]
+// - O(n) : n은 배열의 개수이다.
+//
 public class Test05 {
 
   public static void main(String[] args) {

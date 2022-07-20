@@ -11,6 +11,9 @@ package com.eomcs.quiz.ex01.sol;
 // - 반복문 활용
 // - 메서드 파라미터 및 리턴 값 다루기
 //
+// [시간 복잡도]
+// - O(1) : 시간 복잡도는 입력 크기와 상관없다.
+//
 public class Test03 {
 
   public static void main(String[] args) {
