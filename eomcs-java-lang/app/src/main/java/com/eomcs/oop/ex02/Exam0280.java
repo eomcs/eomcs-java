@@ -45,8 +45,8 @@ public class Exam0280 {
     c1.divide(3); // + 2 + 3 - 1 * 7 / 3 = ?
     c2.minus(5); // + 3 * 2 + 7 / 4 - 5 = ?
 
-    System.out.printf("c1.result = %d\n", c1.getResult());
-    System.out.printf("c2.result = %d\n", c2.getResult());
+    System.out.printf("c1.result = %d\n", c1.result);
+    System.out.printf("c2.result = %d\n", c2.result);
   }
 }
 
