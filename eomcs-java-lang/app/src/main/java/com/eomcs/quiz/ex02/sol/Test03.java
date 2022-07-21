@@ -1,4 +1,4 @@
-package com.eomcs.quiz.ex01.sol;
+package com.eomcs.quiz.ex02.sol;
 
 // 출처: codefights.com
 //
@@ -8,7 +8,7 @@ package com.eomcs.quiz.ex01.sol;
 // [시간 복잡도]
 // - O(n) : n은 배열의 개수이다.
 //
-public class Test07 {
+public class Test03 {
 
   public static void main(String[] args) {
     int[] values = {2, 4, 8};

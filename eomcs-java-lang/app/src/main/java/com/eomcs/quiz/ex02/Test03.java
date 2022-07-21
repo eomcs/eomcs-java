@@ -1,4 +1,4 @@
-package com.eomcs.quiz.ex01;
+package com.eomcs.quiz.ex02;
 
 // 출처: codefights.com
 //
@@ -8,7 +8,7 @@ package com.eomcs.quiz.ex01;
 // [시간 복잡도]
 // - ?
 //
-public class Test07 {
+public class Test03 {
 
   public static void main(String[] args) {
     int[] values = {2, 4, 8};
