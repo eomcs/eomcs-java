@@ -24,7 +24,7 @@ public class Test03 {
 
   static int swapBits(int value, int i, int j) {
     // 이 메서드를 완성하시오!
-    return 0;
+    return value;
   }
 
 }
