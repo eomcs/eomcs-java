@@ -22,6 +22,7 @@ public class Exam0620 {
   }
 
   public static void main(String[] args) throws Exception {
+    System.out.println("main() 호출됨!");
 
     // 클래스가 로딩되는 경우,
     // 1) 클래스 멤버(필드와 메서드)를 사용할 때,

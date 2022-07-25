@@ -1,6 +1,7 @@
 // 스태틱 초기화 블록(static initializer) - Class.forName()
 package com.eomcs.oop.ex03;
 
+
 public class Exam0650 {
 
   public static class A {
@@ -30,6 +31,9 @@ public class Exam0650 {
     //
     Class.forName("com.eomcs.oop.ex03.Exam0650$A"); 
     // import 하는 것과 상관없이 반드시 패키지 이름을 포함해서 클래스 이름을 지정해야 한다.
+    // 주의!
+    // => import 문장에서는 $ 대신 .을 써야 한다.
+    //    예) import com.eomcs.oop.ex03.Exam0650.A;
 
     System.out.println("----------------------------------");
 

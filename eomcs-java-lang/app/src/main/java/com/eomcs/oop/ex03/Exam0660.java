@@ -57,9 +57,9 @@ public class Exam0660 {
 
     // 클래스는 중복 로딩되지 않는다.
     A.a = 100;
-    A.m();
-    new A();
-    Class.forName("com.eomcs.oop.ex03.Exam0660$A");
+    //    A.m();
+    //    new A();
+    //    Class.forName("com.eomcs.oop.ex03.Exam0660$A");
     System.out.println("------");
 
     // 만약 이전에 클래스가 로딩되었다면, 다시 로딩하지 않는다.

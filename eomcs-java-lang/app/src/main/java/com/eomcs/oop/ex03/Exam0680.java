@@ -8,7 +8,7 @@ public class Exam0680 {
       b = 400;
     }
 
-    static int a = 100;
+    static int a = 100; 
 
     static {
       a = 200;

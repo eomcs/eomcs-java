@@ -12,7 +12,7 @@ public class Exam0420 {
     float average;
 
     // 생성자가 한 개라도 있으면 컴파일러는 자동으로 기본 생성자를 만들어주지 않는다.
-    //      Score() {}
+    //      public Score() {}
 
     Score(String name, int kor, int eng, int math) {
       System.out.println("Score(String,int,int,int) 호출!");

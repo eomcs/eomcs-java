@@ -14,8 +14,8 @@ public class Exam0440 {
     Score() {
       // 다른 생성자를 호출할 때는 this()를 사용한다.
       // 단, 생성자의 첫 문장으로 와야 한다.
-      this("이름없음"); // Score(String) 생성자 호출
 
+      this("이름없음"); // Score(String) 생성자 호출
       System.out.println("Score()");
     }
 
