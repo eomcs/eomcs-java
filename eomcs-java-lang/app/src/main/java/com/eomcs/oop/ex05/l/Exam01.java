@@ -18,8 +18,22 @@ package com.eomcs.oop.ex05.l;
 public class Exam01 {
 
   public static void main(String[] args) {
+    // Sedan과 Truck 두 클래스의 공통점을 추출하여 수퍼 클래스를 정의한 후에
+    // 두 클래스의 사용법이 크게 바뀌는 것은 아니다.
+    // 단지 유지보수가 좋아질 뿐이다.
     Sedan s = new Sedan();
+    s.run();
+
     Truck t = new Truck();
+    t.run();
+
+
+    // 이렇게 Car 클래스가 존재하면 
+    // 어떤 개발자는 Car 클래스를 사용하려고 시도할 것이다.
+    // 문제는, Car 클래스의 목적이 소스 코드를 보다 쉽게 관리하기 위해 만든 클래스이지,
+    // 직접 사용하려고 만든 클래스가 아니다.
+    // 그럼에도 불구하고 다른 개발자가 다음과 같이 Car 클래스를 사용한다면
+    // 이를 막을 수 없다.
     Car c = new Car();
     // 사실 Car 클래스는 Sedan과 Truck에 공통으로 들어가는 코드를 
     // 좀 더 쉽게 관리하기 위해 추출하여 클래스로 만든 것이다.

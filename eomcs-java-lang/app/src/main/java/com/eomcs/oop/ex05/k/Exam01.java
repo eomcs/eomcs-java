@@ -1,6 +1,9 @@
 // 상속 - Generalization 수행 전
 package com.eomcs.oop.ex05.k;
 
+import com.eomcs.oop.ex05.j.Sedan;
+import com.eomcs.oop.ex05.j.Truck;
+
 // 상속의 종류
 // 1) specialization
 //    => 가장 많이 사용하는 방법으로 수퍼 클래스를 상속 받아 서브 클래스를 만드는 것이다.
@@ -17,6 +20,15 @@ package com.eomcs.oop.ex05.k;
 public class Exam01 {
 
   public static void main(String[] args) {
+    // 이렇게 Sedan과 Truck 클래스를 만들어 쓰다가 보니
+    // 두 클래스 사이에 공통 코드가 발견되었다.
+    // => 유지보수를 쉽게하기 위해 공통 코드를 추출하여 중복 코드를 없앨 필요가 있었다.
+    // => 다음 예제를 보라!
+    Sedan s = new Sedan();
+    Truck t = new Truck();
+
+    s.doSunroof(true);
+    t.dump();
   }
 
 }
