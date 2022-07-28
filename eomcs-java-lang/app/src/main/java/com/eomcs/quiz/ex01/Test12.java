@@ -47,7 +47,7 @@ true, if the point (xa, ya) lies inside the circle (xc, yc, rc), false otherwise
  */
 //
 // [시간 복잡도]
-// - O(1): 시간 복잡도는 일정하다.
+// - ?
 //
 public class Test12 {
   public static void main(String[] args) {
