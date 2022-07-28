@@ -38,7 +38,7 @@ an integer from 0 to n-1
 public class Test10 {
 
   public static void main(String[] args) {
-    System.out.println(circleOfNumbers(10, 2)); 
+    System.out.println(circleOfNumbers(10, 2) == 7); 
 
   }
 
