@@ -30,7 +30,7 @@ public class Test11 {
 
     int result = 0;
 
-    for (int i = 0; i <= 26; i++) {
+    for (int i = 0; i < 26; i++) {
       boolean found = false;
       for (int j = 0; j < s.length(); j++) {
         if (s.charAt(j) == 'a' + i) {
