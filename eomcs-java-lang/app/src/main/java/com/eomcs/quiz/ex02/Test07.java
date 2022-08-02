@@ -27,11 +27,11 @@ maximal even element of inputArray
 public class Test07 {
 
   public static void main(String[] args) {
-    System.out.println(maximalEven(new int[]{4, 3, 6, 8, 2, 4}) == 8);
+    System.out.println(maximalEven(new int[]{9, 3, 6, 7, 2, 4}) == 6);
   }
 
   static int maximalEven(int[] inputArray) {
-    int answer = inputArray[0];
+    int answer = 0; // 양의 정수만 고려하기에 시작 값을 0으로 설정한다.
     // 이 메서드를 완성하시오!
     return answer;
   }
