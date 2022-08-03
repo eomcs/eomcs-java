@@ -17,7 +17,7 @@ largest digit of n
  */
 //
 // [시간 복잡도]
-// - O(1) : 시간 복잡도는 일정하다. 
+// - O(10) = O(1) : int 값 최대 자릿수이다.  
 //
 public class Test20 {
 
