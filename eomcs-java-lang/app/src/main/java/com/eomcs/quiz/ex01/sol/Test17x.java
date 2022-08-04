@@ -1,10 +1,10 @@
-package com.eomcs.quiz.ex01;
+package com.eomcs.quiz.ex01.sol;
 // copyright by codefights.com
 // 
 // 주어진 수 보다 큰 수 중에서
 // 한 개 이상의 0으로 끝나는 가장 작은 수를 구하라!
 // 예)
-//   nearestRoundNumber(122) = 130
+//    nearestRoundNumber(122) = 130
 //
 /*
 A round number is informally considered to be an integer that ends with one or more zeros.
@@ -21,9 +21,9 @@ nearestRoundNumber(122) = 130
  */
 //
 // [시간 복잡도]
-// - ?
+// - O(10) = O(1) : 시간 복잡도는 일정하다.
 //
-public class Test17 {
+public class Test17x {
 
   public static void main(String[] args) {
     System.out.println(nearestRoundNumber(122) == 130);
@@ -31,14 +31,10 @@ public class Test17 {
   }
 
   static int nearestRoundNumber(int value) {
-    // 이 메서드를 완성하시오!
+    // value 보다 큰 수를 찾는다.
+    while (value % 10 != 0) { // value의 끝자리가 0으로 끝날 때까지
+      value++;
+    }
     return value;
   }
 }
-
-
-
-
-
-
-

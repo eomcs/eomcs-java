@@ -1,4 +1,4 @@
-package com.eomcs.quiz.ex01;
+package com.eomcs.quiz.ex01.sol;
 // copyright by codefights.com
 // 
 // 주어진 수의 범위 안에서 특정 수의 배수 중에서 가장 큰 값을 구하라!
@@ -31,17 +31,15 @@ by divisor or -1 if there in no such number
  */
 //
 // [시간 복잡도]
-// - ?
+// - O(n) : n은 오른쪽 수 - 왼쪽 수 
 //
-public class Test18 {
+public class Test18x {
 
   public static void main(String[] args) {
     System.out.println( maxDivisor(2, 17, 4));
   }
 
   static int maxDivisor(int left, int right, int divisor) {
-    // 이 메서드를 완성하시오!
-
     // 큰 수를 찾는 것이기 때문에 반복문을 돌릴 때 큰 수에서 작은 수로 돌린다.
     for (int i = right; i >= left; i--) {
 
