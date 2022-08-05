@@ -1,4 +1,4 @@
-package com.eomcs.design_pattern.iterator.after2;
+package com.eomcs.design_pattern.iterator.after3;
 
 public class Stack<E> {
 
@@ -41,28 +41,33 @@ public class Stack<E> {
 
   // Iterator 구현체를 제공한다.
   public Iterator<E> iterator() {
-    return new StackIterator<E>(this);
+    return new StackIterator<E>();
   }
 
-  // 스태틱 중첩 클래스로 정의한다.
-  static class StackIterator<E> implements Iterator<E> {
-
-    Stack<E> list;
-
-    public StackIterator(Stack<E> list) {
-      this.list = list;
-    }
-
+  // 논스태틱 중첩 클래스로 정의하면 
+  // 바깥 클래스의 인스턴스 주소를 받는 필드가 자동으로 추가된다.
+  // 또한 바깥 클래스의 인스턴스 주소를 받는 파라미터가 가각의 생성자에 자동으로 추가된다.
+  // 
+  class StackIterator<T> implements Iterator<T> {
     @Override
     public boolean hasNext() {
-      return !list.empty();
+      return !Stack.this.empty();
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public E next() {
-      return list.pop();
+    public T next() {
+      return (T) Stack.this.pop();
     }
   }
 }
+
+
+
+
+
+
+
+
 
 

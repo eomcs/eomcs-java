@@ -1,4 +1,4 @@
-package com.eomcs.design_pattern.iterator.after2;
+package com.eomcs.design_pattern.iterator.after4;
 
 public class Stack<E> {
 
@@ -41,28 +41,31 @@ public class Stack<E> {
 
   // Iterator 구현체를 제공한다.
   public Iterator<E> iterator() {
-    return new StackIterator<E>(this);
+    class StackIterator<T> implements Iterator<T> {
+      @Override
+      public boolean hasNext() {
+        return !Stack.this.empty();
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T next() {
+        return (T) Stack.this.pop();
+      }
+    }
+
+    return new StackIterator<E>();
   }
 
-  // 스태틱 중첩 클래스로 정의한다.
-  static class StackIterator<E> implements Iterator<E> {
 
-    Stack<E> list;
-
-    public StackIterator(Stack<E> list) {
-      this.list = list;
-    }
-
-    @Override
-    public boolean hasNext() {
-      return !list.empty();
-    }
-
-    @Override
-    public E next() {
-      return list.pop();
-    }
-  }
 }
+
+
+
+
+
+
+
+
 
 

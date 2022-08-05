@@ -1,4 +1,4 @@
-package com.eomcs.design_pattern.iterator.after2;
+package com.eomcs.design_pattern.iterator.after3;
 
 public class LinkedList<E> {
 
@@ -174,37 +174,28 @@ public class LinkedList<E> {
 
   // Iterator 구현체를 제공한다.
   public Iterator<E> iterator() {
-    return new LinkedListIterator<E>(this);
+    return new LinkedListIterator<E>();
   }
 
-  // 스태틱 중첩 클래스로 정의한다. 
-  static class LinkedListIterator<E> implements Iterator<E> {
+  // 논스태틱 중첩 클래스로 정의하여 바깥 클래스의 인스턴스 주소를 받는 
+  // 필드와 생성자 파라미터를 자동으로 추가하게 한다.
+  // 
+  class LinkedListIterator<T> implements Iterator<T> {
 
-    LinkedList<E> list;
     int index = 0;
-
-    public LinkedListIterator(LinkedList<E> list) {
-      this.list = list;
-    }
 
     @Override
     public boolean hasNext() {
-      return index < list.size();
+      return index < LinkedList.this.size();
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public E next() {
-      return list.get(index++);
+    public T next() {
+      return (T) LinkedList.this.get(index++);
     }
   }
 }
-
-
-
-
-
-
-
 
 
 

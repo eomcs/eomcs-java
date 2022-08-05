@@ -40,5 +40,3 @@ public class Queue<E> extends LinkedList<E> {
     }
   }
 }
-
-
