@@ -1,4 +1,4 @@
-package com.eomcs.quiz.ex01;
+package com.eomcs.quiz.ex01.sol;
 // copyright by codefights.com
 // 
 // 세 개의 수 중에서 가장 큰 수를 찾으시오!
@@ -18,9 +18,9 @@ max of a,b and c
  */
 //
 // [시간 복잡도]
-// - ? 
+// - O(1) : 시간 복잡도는 일정하다. 
 //
-public class Test19 {
+public class Test19x {
 
   public static void main(String[] args) {
     System.out.println( myMaxOfThree(8, 7, 5) == 8); 
@@ -31,13 +31,15 @@ public class Test19 {
   }
 
   static int myMaxOfThree(int a, int b, int c) {
-    // 이 메서드를 완성하시오!
+    if (a > b) {
+      if (a > c) {
+        return a;
+      }
+    } else {
+      if (b > c) {
+        return b;
+      }
+    }
     return c;
   }
 }
-
-
-
-
-
-
