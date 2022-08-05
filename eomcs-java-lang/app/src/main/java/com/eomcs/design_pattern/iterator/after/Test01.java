@@ -1,5 +1,5 @@
 // iterator 디자인 패턴 : 데이터 목록에서 값을 꺼내는 것을 별도의 객체로 분리하는 설계 방식 
-package com.eomcs.design_pattern.iterator;
+package com.eomcs.design_pattern.iterator.after;
 
 // Iterator 디자인 패턴
 // => 데이터 목록을 관리하는 방식에 상관없이 일관된 방식으로 데이터를 꺼낼 수 있게 해주는 설계 기법

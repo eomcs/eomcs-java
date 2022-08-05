@@ -1,4 +1,4 @@
-package com.eomcs.design_pattern.iterator;
+package com.eomcs.design_pattern.iterator.after;
 
 public class Stack<E> {
   
