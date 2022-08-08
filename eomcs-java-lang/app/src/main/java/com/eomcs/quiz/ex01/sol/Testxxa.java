@@ -9,7 +9,7 @@ package com.eomcs.quiz.ex01.sol;
 // [시간 복잡도]
 // - O(n) : y가 1일 때 최대 n 번 반복한다.
 //
-public class Test23b {
+public class Testxxa {
 
   public static void main(String[] args) {
     System.out.println(divide(57, 5) == 11); // true
