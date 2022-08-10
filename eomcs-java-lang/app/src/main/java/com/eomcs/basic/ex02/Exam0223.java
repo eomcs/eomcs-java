@@ -11,7 +11,7 @@ public class Exam0223 {
     // 컴파일러가 printInt(obj.intValue())로 바꾼다.
     // 즉 "오토 언박싱"을 수행한다.
 
-    printObject(100);
+    printObject(i1);
     // 컴파일러가 printObject(Integer.valueOf(100)) 으로 바꾼다.
     // 즉 "오토 박싱"을 수행한다.
   }
