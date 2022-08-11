@@ -4,7 +4,8 @@ package com.eomcs.quiz.ex01;
 // 정수 l과 r 사이의 있는 두 수를 더했을 때 n이 될 수 있는 
 // 경우가 모두 몇 가지인지 찾아라!
 // 단, n, l, r 은 모두 양의 정수이다.
-//
+// 두 수 A, B는 다음 조건을 만족해야 한다.
+//    l <= A <= B <= r
 // 형식)
 //   countSumOfTwoRepresentations(n, l, r)
 // 예) 
