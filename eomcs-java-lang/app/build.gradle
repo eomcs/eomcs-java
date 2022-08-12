@@ -116,7 +116,7 @@ dependencies {
   //implementation 'org.apache.httpcomponents.client5:httpclient5-fluent:5.0'
 
   // AOP 라이브러리
-  //implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
+  implementation 'org.aspectj:aspectjweaver:1.9.9.1'
 
   // log4j 2.x 라이브러리
   implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
