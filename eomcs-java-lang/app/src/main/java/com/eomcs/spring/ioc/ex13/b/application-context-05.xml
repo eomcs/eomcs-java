@@ -13,18 +13,15 @@
     
     <context:component-scan base-package="com.eomcs.spring.ioc.ex13.b"/>
     
-    <!-- AOP 필터 객체 생성 -->
     <bean id="myAdvice" class="com.eomcs.spring.ioc.ex13.b.MyAdvice"/> 
     <bean id="myAdvice2" class="com.eomcs.spring.ioc.ex13.b.MyAdvice2"/>
     
-    <!-- AOP 적용 -->
     <aop:config>
-        <!-- 한 포인트컷에 여러 필터를 꼽을 때는 
-             포인터컷을 별도로 정의하여 재사용하는 것이 좋다  -->
+
+        <!-- 포인트컷을 여러 aspect에서 재사용 할 수 있다. -->
         <aop:pointcut id="pointcut1"
                     expression="execution(* com.eomcs.spring.ioc.ex13.b.*.m2(..))" />
 
-        <!-- 포인트컷을 여러 aspect에서 재사용 할 수 있다. -->
         <aop:aspect id="aspect1" ref="myAdvice">
             <aop:before pointcut-ref="pointcut1" 
                         method="advice1"/>

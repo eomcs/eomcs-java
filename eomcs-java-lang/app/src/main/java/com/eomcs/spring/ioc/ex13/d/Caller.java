@@ -11,6 +11,7 @@ public class Caller {
   public void test() {
     int result = x.m1(10, 2);
     System.out.printf("result: %d\n", result);
+    System.out.println("-------------------------------");
 
     result = x.m1(10, 0);
     System.out.printf("result: %d\n", result);

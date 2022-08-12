@@ -1,14 +1,14 @@
-// AOP(Aspect-Oriented Programming) - Java Config로 AOP 설정
+// AOP(Aspect-Oriented Programming) - 애노테이션으로 AOP 설정하기
 package com.eomcs.spring.ioc.ex13.f;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.eomcs.spring.ioc.SpringUtils;
 
 public class Exam01 {
 
   public static void main(String[] args) {
-    AnnotationConfigApplicationContext iocContainer =
-        new AnnotationConfigApplicationContext(AppConfig.class);
+    ClassPathXmlApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
+        "com/eomcs/spring/ioc/ex13/f/application-context.xml");
 
     SpringUtils.printBeanList(iocContainer);
 

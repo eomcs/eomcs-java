@@ -13,12 +13,10 @@
     
     <context:component-scan base-package="com.eomcs.spring.ioc.ex13.b"/>
     
-    <!-- AOP 필터 객체 생성 -->
     <bean id="myAdvice" class="com.eomcs.spring.ioc.ex13.b.MyAdvice"/> 
     
-    <!-- AOP 적용 -->
     <aop:config>
-        <!-- 어느 pointcut에 어떤 advice를 끼워 넣을 지 설정한다. -->
+    
         <aop:aspect id="aspect1" ref="myAdvice">
             
             <!-- 한 포인트 컷에 여러 개의 필터 꼽기(advice 지정하기)  -->

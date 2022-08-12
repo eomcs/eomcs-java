@@ -13,20 +13,30 @@
     
     <context:component-scan base-package="com.eomcs.spring.ioc.ex13.b"/>
     
-    <!-- AOP 필터 객체 생성 -->
+    <!-- AOP 필터 객체 생성 
+       => 충고를 수행할 객체를 준비한다. 
+       => Pointcut 패턴에 해당하는 메서드를 호출할 때
+          호출 전후에 삽입될 객체이다.
+    -->
     <bean id="myAdvice" 
           class="com.eomcs.spring.ioc.ex13.b.MyAdvice"/> 
     
-    <!-- AOP 적용 -->
+    <!-- AOP 설정하기 -->
     <aop:config>
-        <!-- 어느 pointcut에 어떤 advice를 끼워 넣을 지 설정한다. -->
+    
+        <!-- myAdvice 필터 설정 -->
         <aop:aspect id="aspect1" ref="myAdvice">
             
-            <!-- 필터를 끼워 넣을 위치를 지정한다. -->
+            <!-- 먼저 myAdvice 필터를 끼워 넣을 위치를 지정한다. 
+                => 메서드를 명확하게 지정할 수도 있고,
+                => 메서드에 대한 패턴을 지정할 수 있다.
+            -->
             <aop:pointcut id="pointcut1"
                 expression="execution(* com.eomcs.spring.ioc.ex13.b.X.m1(..))"/>
             
-            <!-- 해당 포인트컷을 실행하기 전에 필터의 어떤 메서드를 먼저 실행할 것인지 지정한다. -->
+            <!-- 포인트컷에 해당하는 메서드를 실행할 때 
+                 어떤 시점에 어떤 메서드를 삽입할 것인지 설정한다.
+            -->
             <aop:before pointcut-ref="pointcut1" method="advice1"/>
             
         </aop:aspect>

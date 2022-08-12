@@ -30,7 +30,7 @@
             <aop:before pointcut-ref="pointcut1" method="advice1"/>
             
             <!-- 해당 포인트컷을 실행한 후에 필터의 어떤 메서드를 먼저 실행할 것인지 지정한다. -->
-            <aop:before pointcut-ref="pointcut1" method="advice2"/>
+            <aop:after pointcut-ref="pointcut1" method="advice2"/>
             
         </aop:aspect>
     </aop:config>
