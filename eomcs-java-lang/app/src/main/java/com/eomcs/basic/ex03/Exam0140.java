@@ -67,9 +67,9 @@ public class Exam0140 {
     Member m4 = new Member("유관순", 17);
     System.out.println(list.indexOf(m4)); // 2
 
-    System.out.println(m2 == m4);
-    System.out.println(m2.equals(m4));
-    System.out.println(m2.hashCode() == m4.hashCode());
+    System.out.println(m3 == m4);
+    System.out.println(m3.equals(m4));
+    System.out.println(m3.hashCode() == m4.hashCode());
 
   }
 }

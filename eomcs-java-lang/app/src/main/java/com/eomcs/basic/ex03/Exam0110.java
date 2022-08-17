@@ -24,7 +24,7 @@ public class Exam0110 {
     ArrayList list = new ArrayList();
     list.add("Hello");
     list.add(Integer.valueOf(100));
-    list.add(100);
+    list.add(100); // auto-boxing => list.add(Integer.valueOf(100)) 
     list.add(new Date());
 
     // ArrayList는 제네릭이 적용되어 있기 때문에

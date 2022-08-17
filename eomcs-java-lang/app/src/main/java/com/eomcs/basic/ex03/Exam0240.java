@@ -84,6 +84,14 @@ public class Exam0240 {
   }
 }
 
+// forEach() 메서드의 내부:
+// 
+// void forEach(Consumer<Member> consumer) {
+//   for (Member m : list) {
+//     consumer.accept(m);
+//   }
+// }
+
 
 
 
