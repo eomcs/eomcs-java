@@ -1,7 +1,7 @@
 package com.eomcs.quiz.ex01.sol;
 // copyright by codefights.com
 // 
-// 양의 정수 값이 주어질 때, 가장 자릿수를 알아내라!
+// 양의 정수 값이 주어질 때, 가장 큰 자릿수를 알아내라!
 //
 // 형식:
 //   maxDigit(정수값)

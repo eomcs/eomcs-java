@@ -36,6 +36,7 @@ public class Test27 {
 
   public static void main(String[] args) {
     System.out.println(evenNumbersBeforeFixed(new int[] {1, 4, 2, 6, 3, 2}, 6) == 2);
+    System.out.println(evenNumbersBeforeFixed(new int[] {1, 4, 2, 6, 3, 2}, 7) == -1);
   }
 
   static int evenNumbersBeforeFixed(int[] sequence, int fixedElement) {
