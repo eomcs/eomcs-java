@@ -42,6 +42,7 @@ public class Exam0320 {
     Member v4 = new Member("안중근", 20);
     Member v5 = new Member("유관순", 16);
 
+    System.out.println(v3.hashCode() == v5.hashCode());
     System.out.println(v3.equals(v5)); // true
 
     HashSet<Member> set = new HashSet<>();

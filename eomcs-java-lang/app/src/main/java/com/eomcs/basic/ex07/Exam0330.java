@@ -41,6 +41,9 @@ public class Exam0330 {
     System.out.println(v4.hashCode());
     System.out.println(v5.hashCode());
 
+    System.out.println(v3.hashCode() == v5.hashCode()); // true
+    System.out.println(v3.equals(v5)); 
+
     HashSet<Member> set = new HashSet<>();
     set.add(v1);
     set.add(v2);

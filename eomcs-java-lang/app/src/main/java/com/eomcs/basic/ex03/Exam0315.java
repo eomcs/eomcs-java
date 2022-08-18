@@ -17,7 +17,7 @@ public class Exam0315 {
 
         @Override
         public boolean hasNext() {
-          return cursor < size;
+          return cursor < MyList.this.size;
         }
         @Override
         public E next() {
