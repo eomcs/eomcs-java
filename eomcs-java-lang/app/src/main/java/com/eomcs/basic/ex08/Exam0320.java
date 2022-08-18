@@ -22,15 +22,14 @@ public class Exam0320 {
     Iterator<String> 키를꺼내주는객체 = keys.iterator();
 
     // Iterator를 얻은 후에 새 값을 넣기
-    map.put("s06", new Member("김구", 50));
+    //    map.put("s06", new Member("김구", 50));
 
     // Iterator 객체를 생성할 때,
     // 현재 목록 객체(keys)를 바탕으로 생성한다.
     // 따라서 Iterator를 생성한 후에 목록을 변경하면,
     // 기존 목록에서 뽑은 Iterator는 무효한 객체가 된다.
 
-    map.put("s06", new Member("김구", 50));
-    map.remove("s01");
+    //    map.remove("s01");
 
     // 해결책?
     // - 값을 변경하면 다시 Iterator를 얻어야 한다.

@@ -14,6 +14,7 @@ public class Exam0111 {
     map.put(100, new Member("홍길동", 20));
     // 100은 객체가 아니다.
     // 그러나 auto-boxing을 통해서 Integer 객체로 전환된다.
+    // => map.put(Integer.valueOf(100), new Member("홍길동", 20));
 
     map.put(200, new Member("임꺽정", 30));
     map.put(300, new Member("유관순", 16));
