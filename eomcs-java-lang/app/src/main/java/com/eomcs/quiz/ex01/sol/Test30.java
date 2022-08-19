@@ -39,6 +39,7 @@ public class Test30 {
 
   public static void main(String[] args) {
     System.out.println(visitsOnCircularRoad(4, new int[] {1, 3, 2, 3, 1}) == 6);
+    System.out.println(visitsOnCircularRoad(6, new int[] {1, 3, 2, 6, 5}) == 6);
   }
 
   static int visitsOnCircularRoad(int N, int[] visitsOrder) {
