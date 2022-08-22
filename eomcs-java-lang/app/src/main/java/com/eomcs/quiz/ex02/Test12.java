@@ -40,6 +40,6 @@ public class Test12 {
 
   static int[] swapArrayHalves(int[] inputArray) {
     // 이 메서드를 완성하시오!
-    return new int[] {2, 1, 1, 3};
+    return inputArray;
   }
 }
