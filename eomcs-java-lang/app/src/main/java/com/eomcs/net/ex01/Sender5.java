@@ -12,12 +12,12 @@ import java.util.Scanner;
 public class Sender5 {
 
   public static void main(String[] args) throws Exception {
-    File file = new File("temp/jls11.pdf");
+    File file = new File("temp/jls18.pdf");
 
     BufferedInputStream fileIn = new BufferedInputStream(new FileInputStream(file));
 
     System.out.println("서버에 연결 중...");
-    Socket socket = new Socket("192.168.0.76", 8888);
+    Socket socket = new Socket("192.168.0.3", 8888);
     System.out.println("서버에 연결 완료!");
 
     DataOutputStream out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
