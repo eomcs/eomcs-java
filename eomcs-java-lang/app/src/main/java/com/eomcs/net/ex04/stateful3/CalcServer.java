@@ -9,7 +9,7 @@ import java.net.Socket;
 
 public class CalcServer {
 
-  // 클라이언트와 통신하는 부분을 별도의 분리하여
+  // 클라이언트와 통신하는 부분을 별도의 스레드(실행흐름)로 분리하여
   // 독립적으로 실행하게 한다.
   static class RequestHandler extends Thread {
 
@@ -87,7 +87,7 @@ public class CalcServer {
       RequestHandler requestHandler = new RequestHandler(socket);
       requestHandler.start();
       // 스레드를 실행하려면 start() 를 호출하라.
-      // start()에 내부에서 run()을 호출할 것이다.
+      // start() 내부에서 run()을 호출할 것이다.
       // start() 호출한 후에 즉시 리턴한다.
       System.out.printf("%s 클라이언트와의 대화를 별도의 스레드에서 담당합니다!\n", //
           remoteAddr.getAddress());
