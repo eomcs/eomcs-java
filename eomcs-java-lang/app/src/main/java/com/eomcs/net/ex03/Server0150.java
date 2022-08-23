@@ -1,4 +1,4 @@
-// 클라이언트와 입출력 테스트 - byte stream
+// 클라이언트와 입출력 테스트 - byte stream: 문자열 주고 받기 
 package com.eomcs.net.ex03;
 
 import java.io.PrintStream;
