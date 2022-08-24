@@ -74,7 +74,7 @@ public class CalcServer {
           result *= value;
           break;
         case "/":
-          Thread.sleep(10000);
+          Thread.sleep(30000);
           result /= value;
           break;
         default:

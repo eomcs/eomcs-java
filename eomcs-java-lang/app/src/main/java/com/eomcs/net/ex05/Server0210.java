@@ -50,6 +50,9 @@ public class Server0210 {
     // 1) 패킷 객체에 보관된 바이트 배열을 꺼낸다.
     byte[] bytes = emptyPacket.getData();
 
+    // getData()가 리턴한 배열은 DatagramPacket 을 만들 당시 넘겨준 배열이다.
+    System.out.println(buf == bytes);
+
     // 2) 바이트 배열에 보관된 데이터의 개수를 알아낸다.
     int len = emptyPacket.getLength();
 
