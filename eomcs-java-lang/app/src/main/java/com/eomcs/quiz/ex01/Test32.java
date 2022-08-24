@@ -43,6 +43,7 @@ public class Test32 {
     System.out.println(tennisSet(3, 6) == true);
     System.out.println(tennisSet(8, 5) == false);
     System.out.println(tennisSet(6, 5) == false);
+    System.out.println(tennisSet(6, 7) == true);
   }
 
   static boolean tennisSet(int score1, int score2) {
@@ -50,3 +51,10 @@ public class Test32 {
     return false;
   }
 }
+
+
+
+
+
+
+
