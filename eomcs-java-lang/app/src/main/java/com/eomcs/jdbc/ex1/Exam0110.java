@@ -17,6 +17,8 @@ import java.sql.SQLException;
 //    > gradle eclipse
 //    - 다운로드 받지 않은 라이브러리가 있다면 자동으로 서버에서 받을 것이다.
 //    - 라이브러리 정보가 변경되었다면 해당 라이브러리를 서버에서 받을 것이다.
+//    - .classpath(이클립스 자바 프로젝트의 classpath 정보를 담고 있는 파일) 파일에 
+//      다운로드 받은 JDBC Driver 파일의 경로를 추가할 것이다.
 // 4) 이클립스 프로젝트를 리프래시 한다.
 //    - 프로젝트에 mariadb jdbc driver 라이브러리가 추가되었는지 확인한다.
 //

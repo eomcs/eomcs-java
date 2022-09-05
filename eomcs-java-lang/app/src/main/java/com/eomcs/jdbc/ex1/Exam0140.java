@@ -27,8 +27,8 @@ public class Exam0140 {
     // 예2) 프로그램 코드에서 설정하는 방법
     // - System.setProperty("jdbc.drivers", "com.eomcs.jdbc.ex1.MyDriver");
     //
-    System.setProperty("jdbc.drivers", "com.eomcs.jdbc.ex1.MyDriver");
-    System.out.printf("jdbc.drivers=%s\n", System.getProperty("jdbc.drivers"));
+    //    System.setProperty("jdbc.drivers", "com.eomcs.jdbc.ex1.MyDriver");
+    //    System.out.printf("jdbc.drivers=%s\n", System.getProperty("jdbc.drivers"));
 
     try {
       // Driver 구현체를 로딩하지 않는다!
@@ -42,7 +42,7 @@ public class Exam0140 {
       //    2) 등록된 Driver 구현체 목록에서 해당 드라이버를 찾아 리턴한다.
       //    
       java.sql.Driver driver = DriverManager.getDriver("jdbc:mariadb://");
-      //      System.out.println(driver);
+      System.out.println(driver);
 
     } catch (Exception e) {
       e.printStackTrace();

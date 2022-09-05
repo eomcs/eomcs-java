@@ -9,7 +9,7 @@ public class Exam0111 {
   public static void main(String[] args) {
 
     try {
-      java.sql.Driver mariadbDriver = new org.mariadb.jdbc.Driver();
+      java.sql.Driver mariadbDriver = new org.mariadb.jdbc.Driver(); 
       DriverManager.registerDriver(mariadbDriver);
       System.out.println("JDBC 드라이버 로딩 및 등록 완료!");
 
