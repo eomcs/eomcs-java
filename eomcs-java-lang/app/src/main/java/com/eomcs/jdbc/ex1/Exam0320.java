@@ -21,7 +21,6 @@ public class Exam0320 {
         //
         java.sql.ResultSet rs = stmt.executeQuery(
             "select * from x_board order by board_id desc");
-
         ) {
 
       System.out.println(rs.getClass().getName());

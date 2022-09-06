@@ -27,10 +27,10 @@ public class Exam0130 {
       no = keyScan.nextLine();
     }
 
-    try (Connection con = DriverManager.getConnection( //
+    try (Connection con = DriverManager.getConnection( 
         "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
         Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery( //
+        ResultSet rs = stmt.executeQuery( 
             "select * from x_board where board_id = " + no)) {
 
       if (rs.next()) {
