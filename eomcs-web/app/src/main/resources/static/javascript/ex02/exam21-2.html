@@ -30,8 +30,12 @@ v2.tel = "1111-2222";
 console.log(v2);
 
 // const 변수의 값은 변경할 수 없다.
-v2 = new Object(); // 예외 발생!
+//v2 = new Object(); // 예외 발생!
 
+// 그러나 const 변수가 가리키는 객체의 프로퍼티는 바꿀 수 있다.
+v2.name = "임꺽정";
+v2.working = true;
+console.log(v2);
 
 
 </script>
