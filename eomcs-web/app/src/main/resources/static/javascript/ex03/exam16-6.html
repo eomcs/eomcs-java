@@ -27,6 +27,7 @@ document.getElementById("btn1").onclick = () => {
 	obj.name = "홍길동";
 	obj["age"] = 20;
 	obj['tel'] = '111-2222';
+	obj.plus = function(a, b) {return a + b;}; // 함수는 JSON 포맷으로 만들 때 제외된다.
 
 	ta.value = JSON.stringify(obj);
 };

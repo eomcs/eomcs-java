@@ -29,7 +29,10 @@ window.f2();
 // 함수도 객체이기 때문에 객체처럼 사용할 수 있다.
 f1.age = 20;
 f1.working = true;
+f1.plus = function (a, b) {return a + b;}
+
 console.log(f1.age, f1.working); // OK!
+console.log(f1.plus(100, 200)); // OK!
 
 </script>
 </body>

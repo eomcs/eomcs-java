@@ -21,7 +21,7 @@ function closureMaker(fnType, count) {
 	        console.log("합계 =", sum);
 	    };
 	case "factorial":
-        return () => {
+      return () => {
 	        var sum = 1;
 	        for (var i = 1; i <= count; i++) {
 	            sum *= i;
