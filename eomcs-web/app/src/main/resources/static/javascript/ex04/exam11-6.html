@@ -29,6 +29,7 @@ function f2(n, k, e, m) {
 // f2() 생성자가 f1() 생성자를 상속 받을 때는
 // f2의 prototype이 f1의 prototype도 상속 받아야 한다.
 // 그래야만 f2()로 초기화시킨 객체에서 f1.prototype에 들어 있는 함수를 사용할 수 있다.
+// => f1의 prototype 객체를 복제해서 f2의 prototype 객체로 등록한다.
 f2.prototype = Object.create(f1.prototype);
 
 var obj1 = new f2("홍길동", 100, 90, 80);

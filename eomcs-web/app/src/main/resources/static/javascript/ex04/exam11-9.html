@@ -12,6 +12,9 @@
 function f1() {
   this.name = "홍길동";
 }
+// 모든 생성자의 기본은 Object의 prototype을 복제한다.
+//f1.prototype = Object.create(Object.prototype);
+//f1.prototype.constructor = f1;
 
 function f2() {
   f1.call(this); // 상위 생성자를 호출해야 한다.
