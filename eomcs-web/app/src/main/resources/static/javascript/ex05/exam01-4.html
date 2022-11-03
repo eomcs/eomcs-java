@@ -22,31 +22,31 @@
 // => 만약 여러 개를 찾았다 할 지라도 그 중 첫 번째 것만 리턴한다.
 //
 // 1) 아이디로 찾기
-var e = document.querySelector("#header3");
+var e = document.querySelector("#header3"); // $("#header3")
 console.log(e);
 console.log("---------------------");
 
 // 2) 태그 이름으로 찾기
 // => 조건에 해당하는 태그가 여러 개일지라도 그 중 첫 번째 것만 리터한다.
-e = document.querySelector("h2");
+e = document.querySelector("h2"); // $("h2")
 console.log(e);
 console.log("---------------------");
 
 //3) 분류명으로 찾기
 //=> 조건에 해당하는 태그가 여러 개일지라도 그 중 첫 번째 것만 리터한다.
-e = document.querySelector(".g2");
+e = document.querySelector(".g2"); // $(".g2")
 console.log(e);
 console.log("---------------------");
 
 //4) CSS selector 문법을 사용하기 때문에 복잡한 조건을 기술할 수 있다.
 //=> 조건에 해당하는 태그가 여러 개일지라도 그 중 첫 번째 것만 리터한다.
-e = document.querySelector(".g2.g3");
+e = document.querySelector(".g2.g3"); // $(".g2.g3")
 console.log(e);
 console.log("---------------------");
 
 //5) 조건에 해당하는 태그를 찾지 못했다면?
 // => 리턴 값은 null이다.
-e = document.querySelector(".g2.g3.g1");
+e = document.querySelector(".g2.g3.g1"); // $(".g2.g3.g1")
 console.log(e);
 </script>
 </body>
