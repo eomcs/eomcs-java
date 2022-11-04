@@ -8,7 +8,7 @@
 <h1>AJAX - POST 요청</h1>
 
 <h2>일반 POST 요청</h2>
-<form action="test2.jsp" method="post">
+<form action="test4" method="post">
 이름: <input type="text" name="name"><br>
 나이: <input type="text" name="age"><br>
 <button type="submit">등록</button> 
@@ -30,7 +30,7 @@ document.querySelector("#btn1").onclick = () => {
     var xhr = new XMLHttpRequest();
     
     // POST 요청은 데이터를 send()를 호출할 때 넘긴다. 
-    xhr.open("POST", "test2.jsp", false);
+    xhr.open("POST", "test4", false);
     
     // 주의! 
     // 서버에 POST 요청으로 데이터를 보낼 때는 반드시 Content-Type 헤더를 설정하여 
@@ -42,10 +42,10 @@ document.querySelector("#btn1").onclick = () => {
         "Content-Type", 
         "application/x-www-form-urlencoded");
     
-    var queryString = "name=" + window.encodeURIComponent("홍길동") + "&age=20";
-    console.log(queryString);
+    var messageBody = "name=" + window.encodeURIComponent("홍길동") + "&age=20";
+    console.log(messageBody);
     
-    xhr.send(queryString);
+    xhr.send(messageBody);
     
     ta.value = xhr.responseText;
 };
