@@ -19,6 +19,7 @@
    */
 
 /* = 0 */
+/* 모든 태그 각각에 대해 기본 스타일을 지정한다.*/
 * { 
   /* font-size: 10px; */
   border: 1px solid black;
@@ -26,7 +27,10 @@
   margin: 20px;
 }
 
-/* = 0 : body는 * 와 같은 점수를 갖는다 */
+/* = 1  */
+/* font-size 스타일은 자식 태그가 상속 받을 수 있는 스타일이다.
+   자식 태그는 자체적으로 지정된 스타일이 없으면
+   부모 태그로부터 상속 받은 스타일을 사용한다.*/
 body {
   font-size: 30px;
   background-color: blue;
