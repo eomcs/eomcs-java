@@ -14,29 +14,28 @@
 <body>
   <h1>요점 정리 - 7.AJAX : 클라이언트측 렌더링 방식</h1>
   <div>
-    <ul id="x-name-list">
-    </ul>
+    <header>웹 프로그래밍 기초</header>
+    <ul id="title-list"></ul>
   </div>
   <button id="btn1">데이터 가져오기</button>
 
 <script>
 var tag1 = document.getElementById("btn1");
+var ul = document.getElementById("title-list");
 
 tag1.onclick = function() {
   // 서버에 요청
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/javascript/ex00/exam07", false);
+  xhr.open("GET", "exam07.json", false);
   xhr.send();
 
   // 서버에서 보낸 JSON 형식의 데이터를 자바스크립트 객체로 변환한다.
-  var names = JSON.parse(xhr.responseText);
+  var titleList = JSON.parse(xhr.responseText);
 
   // 서버가 보낸 데이터를 가지고 <li></li> 태그로 만들어 <ul></ul> 태그에 넣기
-  var ul = document.getElementById("x-name-list");
-
-  for (var name of names) {
+  for (var i = 0; i < titleList.length; i++) {
     var li = document.createElement("li");
-    li.innerHTML = name;
+    li.innerHTML = titleList[i];
     ul.appendChild(li);
   }
 };
