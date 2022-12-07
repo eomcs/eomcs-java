@@ -17,8 +17,11 @@ obj.name = "홍길동";
 obj.age = 20;
 obj.tel = "1111-1111";
 obj.working = true;
+obj.print = function() {
+  console.log(this.name, this.age, this.tel, this.working);
+};
 
-var i;
+let i;
 for (i in obj) {
   // 반복문의 대상이 객체일 경우,
   // i 변수에 저장되는 것은 객체에 저장된 프로퍼티 이름이다.

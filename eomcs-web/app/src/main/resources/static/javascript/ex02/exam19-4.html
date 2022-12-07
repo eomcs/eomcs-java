@@ -10,17 +10,21 @@
 "use strict"
 // 배열을 처음부터 끝까지 반복하여 값을 꺼낼 때 유용하다.
 
-var arr = ["aaa", "bbb", true, 100];
-var v;
+const arr = ["aaa", "bbb", true, 100];
+let v;
 for (v of arr) {
   // v 변수에는 인덱스가 아니라 배열에서 꺼낸 값이 저장된다.
 	console.log(v);
 }
 console.log("---------------------");
 
-for (var x of arr) {
+for (let x of arr) {
     console.log(x);
 }
+console.log("---------------------");
+
+console.log(v);
+console.log(x);
 </script>
 </body>
 </html>
