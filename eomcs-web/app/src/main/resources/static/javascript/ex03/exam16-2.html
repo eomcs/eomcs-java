@@ -9,12 +9,16 @@
 <script>
 "use strict"
 // 일정 시간이 경과할 때마다 특정 함수를 반복적으로 호출할 수 있다.
-// => window.setInterval(함수, 경과시간);
+//   => window.setInterval(함수, 경과시간); 
+//
+// setInterval()로 가동시킨 타이머를 멈추기
+//   => window.clearInterval(타이머아이디); 
+
 var count = 0;
 function f1() {
     console.log("f1()....." + (++count));
     if (count >= 10) {
-      clearInterval(timerId); // 지정한 interval 타이머를 멈추게 한다.
+      window.clearInterval(timerId); // 지정한 interval 타이머를 멈추게 한다.
     }
 }
 

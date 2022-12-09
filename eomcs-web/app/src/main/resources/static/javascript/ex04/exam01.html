@@ -15,6 +15,7 @@
 //
 
 //1) 객체를 만들 때 기본 틀(원형 객체)없이 빈 객체를 만들기
+// var obj = new; // 문법 오류!
 var obj = Object.create(null);
 console.log(obj);
 // console.log(obj.toString()); // 예외 발생! 틀 없이 객체를 생성했기 때문에
@@ -30,6 +31,8 @@ var obj2 = Object.create(Object.prototype);
 console.log(obj2);
 console.log(obj2.toString()); // 객체를 만들 때 사용한 틀에 toString()이 정의되어 있다.
                  // 따라서 이 틀로 만든 객체에도 틀에 정의된 모든 메서드가 똑 같이 들어 있다.
+
+// 자동차.타이어교체(자동차.타이어);
 
 //3) 다음은 객체를 만드는 좀 더 간략한 표현법이다.
 // => new 명령을 사용하여 빈 객체를 만든다.

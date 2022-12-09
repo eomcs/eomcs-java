@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>ex03</title>
+<style>
+	textarea {font-size: 200%;}
+</style>
 </head>
 <body>
 <h1>자바스크립트 주요 함수 - JSON.parse(JSON형식문자열)</h1>
-<textarea id="ta" cols="80" rows="10"></textarea>
+<textarea id="ta" cols="40" rows="10"></textarea>
 <button id="btn1">실행</button>
 <script>
 "use strict"
@@ -46,18 +49,36 @@ document.getElementById("btn1").onclick = () => {
 	// 1) 단일 객체 생성
 	// => eval과 달리 객체 생성 문법인 중괄호{}를 괄호 ()로 감쌀 필요가 없다.
 	/* 입력 값 예)
-	{
-	"name": "홍길동",
-	"age": 20,
-	"tel": "1111-1111"
-	}
+{
+  "name": "홍길동",
+  "age": 20,
+  "working": true
+}
     */
 
     // 2) 배열 객체 생성
     // => 배열 코드는 괄호 안에 넣을 필요가 없다.
     /* 입력 값 예)
-    ["홍길동", "임꺽정",100,true,null]
+["홍길동", "임꺽정",100,true,null]
     */
+
+		// 3) 복합 객체 생성
+		/* 입력 값 예)
+{
+  "name": "홍길동",
+  "age": 20,
+  "working": true,
+  "tel": ["1111", "2222"],
+  "company": {
+    "name": "비트캠프",
+    "fax": "3333"
+  },
+  "schools": [
+    {"name":"비트초등","state":"졸업"},
+    {"name":"비트중등","state":"졸업"}
+  ]
+}
+		*/
 };
 
 </script>
