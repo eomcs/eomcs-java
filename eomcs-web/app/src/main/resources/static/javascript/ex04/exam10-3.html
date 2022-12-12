@@ -12,8 +12,16 @@
 // 3) 함수를 이용해 객체 생성
 
 // 함수를 이용하여 객체를 초기화시키기
+// 참고: 
+// 팩토리 메서드 패턴(factory method design patterns)
+// => 함수를 통해 객체를 생성하는 기법
+// => 객체 생성 과정이 복잡할 경우 
+//    직접 객체를 생성하고 초기화시키기 보다 
+//    함수를 통해 객체를 생성하고 초기화시키는 것이 
+//    코드를 더 간결하게 만든다.
+//
 function createScore(name, kor, eng, math) {
-	var obj = new Object();
+	const obj = new Object();
 	obj.name = name;
 	obj.kor = kor;
 	obj.eng = eng;

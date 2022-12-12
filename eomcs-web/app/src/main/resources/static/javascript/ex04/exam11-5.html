@@ -9,21 +9,29 @@
 <script>
 "use strict"
 
-function f1(n) {
-  this.name = n;
+function Engine(va, cy, cc) {
+  // 상위 생성자를 호출하지 않으면
+  // 기본으로 Object() 생성자를 호출한다.
+  //Object.call(this);
+
+  this.valve = va; // 밸브 
+  this.cylinder = cy; // 실린더
+  this.cc = cc; // cc
 }
 
-function f2(n, k, e, m) {
+var e1 = new Engine(16, 4, 2000);
+console.log(e1);
+
+function Car(va, cy, cc, ca, au) {
   // 상위 생성자를 명시적으로 호출한다.
-  f1.call(this, n);
+  Engine.call(this, va, cy, cc);
 
-  this.kor = k;
-  this.eng = e;
-  this.math = m;
+  this.capacity = ca; // 수용인원
+  this.auto = au; // 오토미션
 }
 
-var obj1 = new f2("홍길동", 100, 90, 80);
-console.log(obj1);
+var c1 = new Car(16, 4, 2000, 5, true);
+console.log(c1);
 
 </script>
 </body>
