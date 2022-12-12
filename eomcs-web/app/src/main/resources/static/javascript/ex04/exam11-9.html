@@ -5,59 +5,61 @@
 <title>ex04</title>
 </head>
 <body>
-<h1>생성자8 - 생성자 상속과 instanceof</h1>
+<h1>생성자6 - 생성자 상속과 prototype 연결</h1>
 <script>
 "use strict"
 
-function f1() {
-  this.name = "홍길동";
+// 생성자 정의
+function Engine(valve, cylinder, cc) {
+  //Object.call(this);
+  this.valve = valve;
+  this.cylinder = cylinder;
+  this.cc = cc;
 }
-// 모든 생성자의 기본은 Object의 prototype을 복제한다.
-//f1.prototype = Object.create(Object.prototype);
-//f1.prototype.constructor = f1;
 
-function f2() {
-  f1.call(this); // 상위 생성자를 호출해야 한다.
-  this.email = "hong@test.com";
+function Car(valve, cylinder, cc, capacity, auto) {
+  Engine.call(this, valve, cylinder, cc);
+
+  this.light = false;
+  this.capacity = capacity;
+  this.auto = auto;
 }
-f2.prototype = Object.create(f1.prototype);
-f2.prototype.constructor = f2;
+// Car.prototype을 상위 생성자인 Engine.prototype과 연결한다.
+Object.setPrototypeOf(Car.prototype, Engine.prototype);
 
-function f3() {
-  f2.call(this); // 상위 생성자를 호출해야 한다.
-  this.tel = "010-1111-2222";
-}
-f3.prototype = Object.create(f2.prototype);
-f3.prototype.constructor = f3;
+// prototype에 프로퍼티 추가
+Object.prototype.test = function() {
+  console.log("Object.test() 호출됨!");
+}; 
+Engine.prototype.print = function() {
+  console.log("Engine.prototype.print():");
+  console.log("  밸브: " + this.valve);
+  console.log("  실린더: " + this.cylinder);
+  console.log("  cc: " + this.cc);
+};
+Car.prototype.setLight = function(light) {
+  console.log("Car.prototype.setLight():");
+  this.light = light;
+};
 
-var obj0 = new Object();
-var obj1 = new f1();
-var obj2 = new f2();
-var obj3 = new f3();
+// Car 객체 생성
+var c1 = new Car(16, 4, 2000, 5, true);
 
-console.log(obj0 instanceof Object);
-console.log(obj0 instanceof f1);
-console.log(obj0 instanceof f2);
-console.log(obj0 instanceof f3);
-console.log("-----------------------");
+c1.setLight(true);
+// c1.setLight();
+// --> Car.prototype.setLight()
 
-console.log(obj1 instanceof Object);
-console.log(obj1 instanceof f1);
-console.log(obj1 instanceof f2);
-console.log(obj1 instanceof f3);
-console.log("-----------------------");
+c1.print();
+// c1.print();
+// --> Car.prototype.print()
+//     --> Engine.prototype.print()
 
-console.log(obj2 instanceof Object);
-console.log(obj2 instanceof f1);
-console.log(obj2 instanceof f2);
-console.log(obj2 instanceof f3);
-console.log("-----------------------");
+c1.test();
+// c1.test();
+// --> Car.prototype.test()
+//     --> Object.prototype.test() 
 
-console.log(obj3 instanceof Object);
-console.log(obj3 instanceof f1);
-console.log(obj3 instanceof f2);
-console.log(obj3 instanceof f3);
-console.log("-----------------------");
+console.log(c1);
 
 </script>
 </body>
