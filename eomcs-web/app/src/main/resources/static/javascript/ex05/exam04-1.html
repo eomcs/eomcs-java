@@ -17,6 +17,7 @@
     <a href='http://www.spring.io'>스프링 프레임워크</a>는 자바 백-엔드 개발 프레임워크입니다.</p>
   </article>
 </section>
+<button id="btn1">추가하라!</button>
 <script>
 "use strict"
 
@@ -43,11 +44,12 @@ h1.appendChild(text); // <h1>제목입니다.</h1>
 // h1.innerHTML = "제목입니다."; // innerHTML에 직접 값을 넣을 수 도 있다.
 
 p.appendChild(text2); // <p>내용입니다.</p>
+// p.innerHTML = "내용입니다.";
 
 article.appendChild(h1); // <article><h1>제목입니다.</h1></article>
 article.appendChild(p); // <article><h1>제목입니다.</h1><p>내용입니다.</p></article>
 
-if (confirm("article 태그를 추가하겠습니까?")) {
+document.querySelector('#btn1').onclick = function() {
   // 새로 만든 article 태그를 section 태그의 막내 자식태그로 붙인다.
   section.appendChild(article);
   // <section>
@@ -55,7 +57,7 @@ if (confirm("article 태그를 추가하겠습니까?")) {
   //   <article>...</article>
   //   <article><h1>제목입니다.</h1><p>내용입니다.</p></article>
   // </section>
-}
+};
 </script>
 </body>
 </html>

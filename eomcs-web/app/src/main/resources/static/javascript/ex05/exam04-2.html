@@ -17,6 +17,7 @@
     <a href='http://www.spring.io'>스프링 프레임워크</a>는 자바 백-엔드 개발 프레임워크입니다.</p>
   </article>
 </section>
+<button id="btn1">추가하라!</button>
 <script>
 "use strict"
 
@@ -24,13 +25,14 @@
 // 
 var section = document.querySelector("section");
 
-// 태그 객체를 만들지 않고 텍스트를 사용하여 자식 태그를 추가할 수 있다.
-var originContent = section.innerHTML;
-console.log(originContent);
+document.querySelector('#btn1').onclick = function() {
+  // 태그 객체를 만들지 않고 텍스트를 사용하여 자식 태그를 추가할 수 있다.
+  var originContent = section.innerHTML;
+  console.log(originContent);
 
-section.innerHTML = originContent + 
-    "<article><h1>제목이래요!</h1><p>내용이지요!</p></article>";
-
+  section.innerHTML = originContent + 
+      "<article><h1>제목이래요!</h1><p>내용이지요!</p></article>";
+};
 </script>
 </body>
 </html>
