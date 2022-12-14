@@ -26,39 +26,28 @@ button {padding: 30px;}
 <script>
 "use strict"
 
-// 이벤트가 발생하면 다음 3단계로 전달 된다.
-// 1) capture phase
-//    => 부모 태그에서 자식 태그로 내려가는 단계
-// 2) target phase
-//    => 이벤트가 발생된 목적지에 도달한 단계
-// 3) bubble phase
-//    => 다시 목적지에서 부모 태그로 올라가는 단계
+// 세번째 파라미터를 true로 설정하면,
+// capture 단계와 target 단계에서만 호출된다.
 //
-// 일반적인 방법으로 이벤트 리스너를 등록하면,
-// 이벤트가 발생했을 때
-// target과 bubble 단계에서 호출된다.
-// => 따라서 #btn1이나 #btn2를 클릭하면,
-//    버튼에 등록된 함수 뿐만 아니라
-//    그 부모들에 등록된 함수가 있다면 그 함수들도 호출된다.
 document.getElementById("btn1").addEventListener("click", function(e) {
 	console.log("버튼1...");
-});
+}, true);
 
 document.getElementById("btn2").addEventListener("click", function(e) {
     console.log("버튼2...");
-});
+}, true);
 
 document.getElementById("d2").addEventListener("click", function(e) {
     console.log("d2...");
-});
+}, true);
 
 document.getElementById("d1").addEventListener("click", function(e) {
     console.log("d1...");
-});
+}, true);
 
 document.body.addEventListener("click", function(e) {
     console.log("body...");
-});
+}, true);
 </script>
 </body>
 </html>

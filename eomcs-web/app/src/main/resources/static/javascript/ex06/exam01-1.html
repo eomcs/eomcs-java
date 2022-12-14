@@ -7,7 +7,8 @@
 <body>
 <h1>이벤트 - 리스너 등록하기</h1>
 <button id="btn1-1" onclick="var str='Hello'; window.alert(str);">버튼1-1</button><br>
-<button id="btn1-2" onclick="btn1Click()">버튼1-2</button><br>
+<input id="input1" type="text">
+<button id="btn1-2" onclick="btn1Click();">버튼1-2</button><br>
 <button id="btn2">버튼2</button><br>
 <button id="btn3">버튼3</button><br>
 
@@ -47,8 +48,12 @@
 
 // 방법1:
 function btn1Click() {
-  var str = "Hello";
-  window.alert(str);
+  var msg = document.getElementById('input1'); 
+  if (msg.value == 'ok') {
+    console.log('하하하');
+  } else {
+    console.log('-.-');
+  }
 }
 
 // 방법2:
@@ -72,6 +77,8 @@ btn2.onclick = function() {
     console.log(this); // 일반 함수에서 this는 그 함수가 소속된 객체이다.
 };
 */
+
+
 
 btn2.onclick = () => {
   var str = "Hello2c!";
