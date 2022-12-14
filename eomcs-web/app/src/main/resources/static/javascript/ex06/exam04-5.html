@@ -34,21 +34,21 @@ a {
 <tbody>
   <tr data-no="1">
     <td>1</td>
-    <td><a href="#">제목</a></td>
+    <td><a href="https://www.daum.net" onclick="return false;">제목</a></td>
     <td>홍길동</td>
     <td>2019-4-29</td>
     <td>100</td>
   </tr>
   <tr data-no="2">
     <td>2</td>
-    <td><a href="#">제목</a></td>
+    <td><a href="https://www.daum.net" onclick="return false;">제목</a></td>
     <td>임꺽정</td>
     <td>2019-4-29</td>
     <td>800</td>
   </tr>
   <tr data-no="3">
     <td>3</td>
-    <td><a href="#">제목입니다.</a></td>
+    <td><a href="https://www.daum.net" onclick="return false;">제목입니다.</a></td>
     <td>유관순</td>
     <td>2019-4-29</td>
     <td>900</td>
@@ -67,8 +67,8 @@ var el = document.querySelectorAll("tbody tr");
 for (var e of el) {
   e.addEventListener("click", function(e) {
     // e.target 은 이벤트가 발생한 객체를 가리킨다.
-    console.log(e.target);
-    console.log(e.target.getAttribute("data-no") + " 번 게시물의 제목을 눌렀음!");
+    // console.log(e.target);
+    // console.log(e.target.getAttribute("data-no") + " 번 게시물의 제목을 눌렀음!");
     
     // 리스너가 등록된 태그를 가리키고 싶다면,
     // e.currentTarget 프로퍼티의 값을 사용하라!
@@ -76,7 +76,9 @@ for (var e of el) {
     console.log(e.currentTarget.getAttribute("data-no") + " 번 게시물의 제목을 눌렀음!");
     console.log("-------------------------------");
 
-  });
+    // 자바스크립트에서 다른 페이지로 이동시킨다.
+    window.location.href = "https://www.daum.net/board?no=" + e.currentTarget.getAttribute("data-no");
+  });   
 }
 </script>
 </body>

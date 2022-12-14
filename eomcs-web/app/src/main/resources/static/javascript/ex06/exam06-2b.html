@@ -8,23 +8,6 @@
 <h1>이벤트 - form의 submit 동작을 중단시키기</h1>
 <p>form의 submit 버튼을 클릭하면 서버에 요청을 한다.</p>
 
-<form action="https://www.daum.net">
-  <input type="text" name="title">
-  <button>전송1</button>
-</form>
-
-<form action="https://www.daum.net">
-  <input type="text" name="title">
-  <button type="submit">전송2</button>
-</form>
-
-<form action="https://www.daum.net">
-  <input type="text" name="title">
-  <input type="submit" value="전송3">
-</form>
-
-<hr>
-
 <form action="https://www.daum.net" onsubmit="return false">
   <input type="text" name="title">
   <button>전송 막기1</button>
@@ -60,6 +43,10 @@
 <script>
 "use strict"
 
+// "submit" 이벤트가 발생했을 때 호출될 리스너를 등록한다.
+// "submit" 이벤트는 언제 발생하는가?
+// - submit 버튼을 클릭할 때 발생한다!
+// 
 document.querySelector("#form2").onsubmit = () => {
   return false;
 };
@@ -73,7 +60,8 @@ document.querySelector("#form4").addEventListener("submit", (e) => {
 });
 
 document.querySelector("#form5").addEventListener("submit", (e) => {
-  return false; // addEventListener()로 이벤트 핸들러를 등록할 때는
+  return false; 
+  // addEventListener()로 이벤트 핸들러를 등록할 때는
   // return false 가 의미없다. 동작되지 않는다.
   // 반드시 e.preventDefault()를 호출하라!
 });
