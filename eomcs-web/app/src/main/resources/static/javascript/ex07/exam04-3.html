@@ -29,6 +29,7 @@ document.querySelector("#btn1").onclick = () => {
                 console.log(xhr.responseText);
 
                 // 서버에서 받은 JSON 문자열을 자바스크립트 객체로 변환한다.
+                // => deserialization(역직렬화)
                 var arr = JSON.parse(xhr.responseText);
                 console.log(arr);
                 
@@ -49,7 +50,7 @@ document.querySelector("#btn1").onclick = () => {
             }
         }
     };
-    xhr.open("GET", "test6.jsp", true);
+    xhr.open("GET", "http://localhost:3000/exam04-3", true);
     xhr.send();
 };
 

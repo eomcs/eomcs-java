@@ -24,10 +24,17 @@ div {
 var header = document.querySelector("#header"),
     footer = document.querySelector("#footer");
 
-document.getElementById("btn1").onclick = () => {
-  prepareHeader();
-  prepareFooter();
-};
+// document.getElementById("btn1").onclick = () => {
+//   prepareHeader();
+//   prepareFooter();
+// };
+
+// 서버에서 HTML을 받는 즉시 
+// AJAX로 header에 들어갈 HTML과 
+// footer에 들어갈 HTML 요청하여 
+// HTML을 받아서 header와 footer 넣는다.
+prepareHeader();
+prepareFooter();
 
 function prepareHeader() {
     var xhr = new XMLHttpRequest();
@@ -38,7 +45,7 @@ function prepareHeader() {
             }
         }
     };
-    xhr.open("GET", "test5.jsp", true);
+    xhr.open("GET", "http://localhost:3000/header", true);
     xhr.send();
 };
 
@@ -51,7 +58,7 @@ function prepareFooter() {
             }
         }
     };
-    xhr.open("GET", "footer.html", true);
+    xhr.open("GET", "http://localhost:3000/footer", true);
     xhr.send();
 };
 

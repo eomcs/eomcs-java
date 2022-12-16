@@ -38,7 +38,7 @@ document.querySelector("#btn1").onclick = () => {
         console.log("현재 요청 상태: ", xhr.readyState);
     };
     
-    xhr.open("GET", "test5", true);
+    xhr.open("GET", "http://localhost:3000/exam03-1", true);
     console.log("open() 리턴함.");
     
     xhr.send();

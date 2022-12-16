@@ -24,7 +24,7 @@ document.querySelector("#btn1").onclick = () => {
 
     // 클라이언트 쪽의 반응을 확인해 보기 위해 
     // test3.jsp는 일부로 응답시간을 지연시킬 것이다. 
-    xhr.open("GET", "test5", false);
+    xhr.open("GET", "http://localhost:3000/exam03-1", false);
     xhr.send();
     // 서버에서 응답할 때 까지 send()는 리턴하지 않기 때문에 
     // 다음 라인을 실행할 수 없다. 

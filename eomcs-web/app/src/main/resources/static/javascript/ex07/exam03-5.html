@@ -31,8 +31,10 @@ document.querySelector("#btn1").onclick = () => {
 
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4) {
+
         	// 서버의 실행이 정상적인지 여부에 따라 처리를 분리하기
         	if (xhr.status == 200) {
+
         	  // a와 b 값을 정상적으로 입력했을 때 서버는 정상적으로 실행한다. 
         	  r.value = xhr.responseText;
         	  
@@ -51,7 +53,7 @@ document.querySelector("#btn1").onclick = () => {
         }
     };
     
-    xhr.open("GET", "test6?a=" + a.value + "&b=" + b.value, true);
+    xhr.open("GET", "http://localhost:3000/exam03-5?a=" + a.value + "&b=" + b.value, true);
     xhr.send();
     console.log("send() 리턴함.");
 };

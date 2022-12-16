@@ -27,6 +27,7 @@ document.querySelector("#btn1").onclick = () => {
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = () => {
+        console.log(xhr.readyState);
         if (xhr.readyState == 4) {
         	// 서버에 존재하지 않는 자원을 요청했을 때,
         	// 또는 서버의 자원을 실행 중에 오류가 발생했을 때
@@ -40,7 +41,7 @@ document.querySelector("#btn1").onclick = () => {
         }
     };
     
-    xhr.open("GET", "test6?a=" + a.value + "&b=" + b.value, true);
+    xhr.open("GET", "http://localhost:3000/exam03-5?" + a.value + "&b=" + b.value, true);
     xhr.send();
     console.log("send() 리턴함.");
 };

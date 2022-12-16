@@ -23,7 +23,7 @@ document.querySelector("#btn1").onclick = () => {
     var xhr = new XMLHttpRequest();
     
     // 비동기 요청을 하려면 3번 파라미터를 true로 설정해야 한다.
-    xhr.open("GET", "test5", true);
+    xhr.open("GET", "http://localhost:3000/exam03-1", true);
     xhr.send();
     console.log("send() 리턴함.");
     
@@ -40,7 +40,7 @@ document.querySelector("#btn1").onclick = () => {
       console.log("13초가 지났다.")
       console.log("xhr.responseText 변수의 값을 꺼내 보자!")
       ta.value = xhr.responseText;
-    }, 13000);
+    }, 20000);
     
     // 이 해결 방식의 문제점은
     // 서버의 응답 시간이 13초보다 늦어지면 
