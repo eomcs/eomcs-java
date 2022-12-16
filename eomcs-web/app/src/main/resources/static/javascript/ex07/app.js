@@ -114,14 +114,14 @@ app.get('/proxy2', (req, res) => {
   res.set('Content-Type', 'application/json; charset=UTF-8');
 
   let openApiUrl = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?" +
-    "serviceKey=swGnUeGbwJTEP%2FoOuEZsMstoBza7CSMZhJ%2FQGdasAbhNX5oUrxUn8sSJ3YjY3H0Og39RlBLPXtKWmxqRKjHAwQ%3D%3D" + 
+    "serviceKey=이 자리에 각자가 받은 인증코드 넣을 것" + 
     "&pageNo=1" + 
     "&numOfRows=1000" + 
     "&dataType=JSON" + 
-    "&base_date=" + req.query.base_date +
+    "&base_date=" + req.query.base_date + // 조회 날짜 
     "&base_time=0600" + 
-    "&nx=" + req.query.nx +  
-    "&ny=" + req.query.ny;
+    "&nx=" + req.query.nx +  // 지역 X 좌표
+    "&ny=" + req.query.ny;  // 지역 Y 좌표
 
     request.get({
       uri: openApiUrl
