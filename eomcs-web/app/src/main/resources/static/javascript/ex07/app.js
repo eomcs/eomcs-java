@@ -1,5 +1,9 @@
 // express 라이브러리 로딩하기
 const express = require('express');
+
+// HTTP 요청을 다루는 라이브러리 로딩하기
+const request = require('request');
+
 const port = 3000; // 웹서버 포트 번호
 
 // express()를 호출하여 웹서버를 준비한다.
@@ -11,10 +15,42 @@ app.get(                 // GET 요청이 들어 왔을 때 호출될 메서드 
   (req, res) => {        // 요청 핸들러: 요청이 들어 왔을 때 호출되는 메서드
     res.set('Access-Control-Allow-Origin', '*');  // CORS 문제 해결
     res.set('Content-Type', 'text/plain; charset=UTF-8');
-    res.send('Hello!');
+    res.send('Hello!(강사)');
   } 
 ); 
 
+app.get('/exam02-1', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'text/plain; charset=UTF-8');
+
+  var payload = `이름: ${req.query.name}\n`;
+  payload += `나이: ${req.query.age}\n`;
+
+  res.send(payload);
+}); 
+
+app.post('/exam02-2', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'text/plain; charset=UTF-8');
+
+  var payload = `이름: ${req.query.name}\n`;
+  payload += `나이: ${req.query.age}\n`;
+
+  res.send(payload);
+}); 
+
+// 클라이언트 요청을 다른 서버에게 보낸다.
+app.get('/proxy', (req, res) => {    
+
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'text/plain; charset=UTF-8');
+
+  request.get({
+      uri: req.query.url
+    }, (error, response, body) => {
+      res.send(body);
+  });
+}); 
 
 // 웹서버 실행하기
 app.listen(

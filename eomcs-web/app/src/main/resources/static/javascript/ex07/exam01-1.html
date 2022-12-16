@@ -22,7 +22,7 @@
 var ta = document.querySelector("#ta");
 
 document.querySelector("#btn1").onclick = () => {
-
+    
     //1) AJAX 객체 준비 
     var xhr = new XMLHttpRequest();
     
@@ -36,7 +36,7 @@ document.querySelector("#btn1").onclick = () => {
     // => 동기 방식으로 연결되었을 경우 서버에서 응답할 때까지 리턴하지 않는다.
     xhr.send();
     
-    //4) 서버가 응답한 콘텐트를 꺼낸다.
+    //4) 서버가 응답한 콘텐트(payload = message-body)를 꺼낸다.
     ta.value = xhr.responseText;
 };
 

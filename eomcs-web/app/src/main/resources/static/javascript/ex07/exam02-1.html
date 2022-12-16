@@ -8,7 +8,7 @@
 <h1>AJAX - GET 요청</h1>
 
 <h2>일반 GET 요청</h2>
-<form action="test4" method="get">
+<form action="http://127.0.0.1:3000/exam02-1" method="get">
 이름: <input type="text" name="name"><br>
 나이: <input type="text" name="age"><br>
 <button type="submit">등록</button> 
@@ -30,7 +30,7 @@ document.querySelector("#btn1").onclick = () => {
     var xhr = new XMLHttpRequest();
     
     // GET 요청은 데이터를 URL에 붙인다. 
-    xhr.open("GET", "test4?name=홍길동&age=20", false);
+    xhr.open("GET", "http://127.0.0.1:3000/exam02-1?name=홍길동&age=20", false);
     xhr.send();
     ta.value = xhr.responseText;
 };
