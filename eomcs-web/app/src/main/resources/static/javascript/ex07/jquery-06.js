@@ -2,6 +2,8 @@
 //2. 태그 만들기
 //3. append() 
 //4. 리팩토링
+//5. html()
+//6. on()
 function jQuery(selector) {
   let el = []; // 생성한 태그나 찾은 태그를 담는 배열
 
@@ -21,7 +23,6 @@ function jQuery(selector) {
 
       // 자식들이 들어있는 상자에서 자식을 한 개씩 꺼내 복제하여 각 부모의 자식으로 붙인다.
       for (let child of childBox) {
-        console.log(child);
         parent.appendChild(child.cloneNode(true));
       }
     }
@@ -34,6 +35,17 @@ function jQuery(selector) {
     }
   };
 
+  el.html = function(content) {
+    for (let e of el) {
+      e.innerHTML = content;
+    }
+  };
+
+  el.on = function(eventName, listener) {
+    for (let e of el) {
+      e.addEventListener(eventName, listener);
+    }
+  };
 
   return el;
 }
