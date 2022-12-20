@@ -16,7 +16,7 @@ const promise = new Promise((resolve, reject) => {
       resolve(); // 작업이 완료되었다고 통지한다.
     }
   };
-  xhr.open("GET", "exam01", true); 
+  xhr.open("GET", "http://localhost:3000/hello", true); 
   xhr.send();
 });
 

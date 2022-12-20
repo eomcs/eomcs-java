@@ -5,12 +5,8 @@
 <title>비동기작업</title>
 </head>
 <body>
-<h1>Promise - then(onFulfilled, onRejected)</h1>
+<h1>Promise - 작업 거절 통보를 받았을 때 수행할 함수를 등록하기</h1>
 <script>
-function onFulfilled() {
-  console.log("fulfilled!")
-}
-
 function onRejected() {
   console.log("rejected!")
 }
@@ -20,20 +16,17 @@ const promise = new Promise((resolve, reject) => {
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       console.log(xhr.responseText);
-      
-      //resolve(); // 작업이 완료되었다고 통지한다.
       reject(); // 작업 수행을 정상적으로 완료하지 못했음을 통지한다.
     }
   };
-  xhr.open("GET", "exam01", true); 
+  xhr.open("GET", "http://localhost:3000/hello", true); 
   xhr.send();
 });
 
 console.log("1111");
 
-// 작업 약속의 정상적으로 이행했을 때 호출될 함수와 
-// 작업 약속을 거절했을 때 호출될 함수를 한 번에 등록할 수 있다.
-promise.then(onFulfilled, onRejected);
+// executor로부터 작업 거절을 통지받았을 때 호출될 함수를 등록한다.
+promise.then(undefined, onRejected);
 
 
 </script>

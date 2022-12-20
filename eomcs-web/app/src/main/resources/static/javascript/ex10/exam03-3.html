@@ -5,31 +5,26 @@
 <title>비동기작업</title>
 </head>
 <body>
-<h1>Promise - 비동기 작업을 완료한 후 다음 작업 실행하기</h1>
+<h1>Promise - Method Chaining</h1>
 <script>
-function onFulfilled() {
-  console.log("fulfilled!")
-}
-
 const promise = new Promise((resolve, reject) => {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       console.log(xhr.responseText);
+      
       resolve(); // 작업이 완료되었다고 통지한다.
     }
   };
-  xhr.open("GET", "exam01", true); 
+  xhr.open("GET", "http://localhost:3000/hello", true); 
   xhr.send();
-});
+})
+.then(() => console.log("fulfilled...1"))
+.then(() => console.log("fulfilled...2")) 
+.then(() => console.log("fulfilled...3"))
+.then(() => console.log("fulfilled...4"));
 
-console.log("1111");
-
-// 비동기 작업 수행을 완료했다고 통보 받았을 때
-// 그 다음으로 수행할 작업을 등록한다.
-promise.then(onFulfilled);
-
-
+console.log("작업 함수 연결 완료!");
 </script>
 </body>
 </html>

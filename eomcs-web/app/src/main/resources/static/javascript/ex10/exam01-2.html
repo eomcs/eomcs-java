@@ -8,14 +8,15 @@
 <h1>Promise - 작업 함수(executor)와 비동기 작업</h1>
 <script>
 const promise = new Promise((resolve, reject) => {
+  // 시간이 오래 걸리는 비동기 작업 수행
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       console.log(xhr.responseText);
     }
   };
-  xhr.open("GET", "exam01", true); // 비동기로 HTTP 요청을 수행하도록 설정한다.
-  xhr.send(); // 비동기 요청을 수행한다. 즉, 요청하는 즉시 리턴한다.
+  xhr.open("GET", "http://localhost:3000/hello", true); 
+  xhr.send();
 });
 
 // Promise 생성자는 작업 함수(executor) 호출이 끝나는 즉시 Promise 객체를 리턴한다.

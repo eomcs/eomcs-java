@@ -15,14 +15,14 @@ const promise = new Promise((resolve, reject) => {
       reject(); // 작업 수행을 정상적으로 완료하지 못했음을 통지한다.
     }
   };
-  xhr.open("GET", "exam01", true); 
+  xhr.open("GET", "http://localhost:3000/hello", true); 
   xhr.send();
 });
 
 console.log("1111");
 
-// promise 객체가 작업 거절 통지를 받았다 하더라도 
-// 그 거절에 대한 처리를 수행할 함수가 등록되어 있지 않다면 
+// executor로부터 작업 거절 통지를 받았을 때
+// 그것을 처리할 함수가 등록되어 있지 않다면 
 // 예외가 발생한다.
 
 
