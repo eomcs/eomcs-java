@@ -12,6 +12,7 @@
 //12. ajax() 코드 정리
 //13. getJSON()
 //14. val(), html()
+//15. submit(), ajax() 변경
 function jQuery(selector) {
   return new ElementBox(selector);
 }
@@ -109,6 +110,10 @@ ElementBox.prototype.val = function(value) {
   }
 };
 
+ElementBox.prototype.submit = function(handler) {
+  return this.on('submit', handler);
+};
+
 jQuery.ajax = function(settings) {
   if (settings.method == undefined) settings.method = "GET";
   if (settings.async == undefined) settings.async = true;
@@ -137,8 +142,28 @@ jQuery.ajax = function(settings) {
       }
     }
   };
+
   xhr.open(settings.method, settings.url, settings.async);
-  xhr.send();
+
+  if (settings.method == "POST") {
+    xhr.setRequestHeader(
+      "Content-Type", 
+      "application/x-www-form-urlencoded");
+
+    let payload = "";
+    if (settings.data != undefined && settings.data != null) {
+      for (let key in settings.data) {
+        if (payload.length > 0) {
+          payload += "&";
+        }
+        payload += key + "=" + window.encodeURIComponent(settings.data[key]);
+      }
+    }
+    xhr.send(payload);
+
+  } else {
+    xhr.send();
+  }
 };
 
 jQuery.getJSON = function(url, success) {
