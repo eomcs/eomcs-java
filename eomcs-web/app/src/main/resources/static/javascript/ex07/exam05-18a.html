@@ -10,7 +10,7 @@
 </style>
 </head>
 <body>
-<h1>jQuery 만들기 - 15. submit(), ajax() : POST 요청</h1>
+<h1>jQuery 만들기 - 18. 오리지널 jQuery 사용하기</h1>
 <form id="login-form">
 이메일: <input type="email" name="email"><br>
 암호: <input type="password" name="password"><br>
@@ -18,25 +18,19 @@
 <button type="reset">취소</button>
 </form>
 
-<script src="jquery-15.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 "use strict"
 
 var tbody = $("tbody");
 
 $("#login-form").submit((e) => {
-    $.ajax({
-        url: "http://localhost:3000/login",
-        method: "POST",
-        dataType: "text",
-        data: {
+    $.post("http://localhost:3000/login", {
             email: $("#login-form > input[name='email']").val(),
             password: $("#login-form > input[name='password']").val()
-        },
-        success: function(result) {
+        }, (result) => {
             console.log(result);
-        }
-    });
+        });
 
     // 따로 AJAX 요청을 할 것이기 때문에,
     // 웹브라우저가 서버에 요청하는 것은 막는다.
