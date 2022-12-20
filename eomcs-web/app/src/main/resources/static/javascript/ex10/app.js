@@ -13,7 +13,7 @@ app.get('/hello', (req, res) => {
 
   setTimeout(()=> {
     res.send("Hello!");
-  }, 10000);
+  }, 3000);
 }); 
 
 app.get('/header', (req, res) => {

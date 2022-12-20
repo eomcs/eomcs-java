@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기작업</title>
+</head>
+<body>
+<h1>Promise - 예외처리</h1>
+<script>
+const promise = new Promise((resolve, reject) => {
+  // var xhr = new XMLHttpRequest();
+  // xhr.onreadystatechange = function() {
+  //   if (xhr.readyState == 4) {
+  //     console.log(xhr.responseText);
+  //     throw '오류 발생!';
+  //   }
+  // };
+  // xhr.open("GET", "http://localhost:3000/hello", true); 
+  // xhr.send();
+  throw '오류 발생!!!';
+})
+.then(() => console.log("fulfilled...1"), 
+      () => console.log("rejected...2"));
+
+console.log("작업 함수 연결 완료!");
+
+// executor에서 오류가 발생하면 
+// then()으로 등록한 reject 함수가 호출된다.
+</script>
+</body>
+</html>
