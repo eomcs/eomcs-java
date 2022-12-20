@@ -9,6 +9,8 @@
 //9. click()
 //10. 리팩토링
 //11. ajax()
+//12. ajax() 코드 정리
+//13. getJSON()
 function jQuery(selector) {
   return new ElementBox(selector);
 }
@@ -75,10 +77,16 @@ ElementBox.prototype.click = function(handler) {
 
 
 jQuery.ajax = function(settings) {
+  if (settings.method == undefined) settings.method = "GET";
+  if (settings.async == undefined) settings.async = true;
+
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
+        if (settings.success == undefined) {
+          return;
+        }
         let result;
         if (settings.dataType == "json") {
           // json string ---> javascript object (deserialize)
@@ -89,12 +97,23 @@ jQuery.ajax = function(settings) {
         settings.success(result);
 
       } else {
+        if (settings.error == undefined) {
+          return;
+        }
         settings.error();
       }
     }
   };
   xhr.open(settings.method, settings.url, settings.async);
   xhr.send();
+};
+
+jQuery.getJSON = function(url, success) {
+  jQuery.ajax({
+    url: url,
+    dataType: "json",
+    success: success
+  });
 };
 
 var $ = jQuery;
