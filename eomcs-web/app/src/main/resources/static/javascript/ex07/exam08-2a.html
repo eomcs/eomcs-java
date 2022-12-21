@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex07</title>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+  // $(document).ready(handler)
+  // - HTML을 실행(자바스크립트 포함)하여 DOM Tree를 완성한 후
+  // - 화면에 콘텐츠를 출력하기 전에 ready()로 등록한 함수가 호출된다.
+  $(document).ready(() => {
+    console.log("ready() 호출됨!");
+    // 콘텐츠가 화면에 출력되기 전이기 때문에
+    // 태그를 추가하거나 변경, 삭제하더라도 
+    // 화면 깜박거림이 발생하지 않는다.
+  });
+
+  window.onload = function() {
+    console.log("load 이벤트 발생!");
+  };
+</script>
+</head>
+<body>
+<h1>load 이벤트 - $(document).ready()</h1>
+
+<script>
+  console.log("1111");
+</script>
+
+<script src="exam08.js"></script>
+
+<script>
+  console.log("2222");
+</script>
+
+</body>
+</html>
+
+
+
+
+

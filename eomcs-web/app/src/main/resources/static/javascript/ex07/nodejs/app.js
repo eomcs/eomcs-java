@@ -83,11 +83,11 @@ app.get('/exam04-3', (req, res) => {
   res.set('Content-Type', 'text/html; charset=UTF-8');
 
   let arr = [
-    {no:1,title:'제목1',writer:'홍길동',viewCnt:19},
-    {no:2,title:'제목2',writer:'임꺽정',viewCnt:312},
-    {no:3,title:'제목3',writer:'유관순',viewCnt:31},
-    {no:4,title:'제목4',writer:'안중근',viewCnt:100},
-    {no:5,title:'제목5',writer:'윤봉길',viewCnt:200}
+    {no:1,title:'제목11111',writer:'홍길동',viewCnt:19},
+    {no:2,title:'제목22222222',writer:'임꺽정',viewCnt:312},
+    {no:3,title:'제목3333',writer:'유관순',viewCnt:31},
+    {no:4,title:'제목444444444444',writer:'안중근',viewCnt:100},
+    {no:5,title:'제목5555555555555555555',writer:'윤봉길',viewCnt:200}
   ];
 
   // 배열 객체를 JSON 문자열로 변환하여 클라이언트에게 보낸다.

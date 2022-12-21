@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex07</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+  window.onload = function() {
+    let tbody = $("tbody");
+
+    $.getJSON("http://localhost:3000/exam04-3", (result) => {
+        result.forEach((b) => {
+            $("<tr>")
+            .html("<td>" + b.no + "</td>" + 
+                    "<td>" + b.title + "</td>" + 
+                    "<td>" + b.writer + "</td>" +
+                    "<td>" + b.viewCnt + "</td>")
+            .appendTo(tbody);
+        });
+    });
+  };
+</script>
+</head>
+<body>
+<h1>load 이벤트 - window.onload</h1>
+
+<table border="1">
+<thead>
+    <tr><th>번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</body>
+</html>
+
+
+
+
+
