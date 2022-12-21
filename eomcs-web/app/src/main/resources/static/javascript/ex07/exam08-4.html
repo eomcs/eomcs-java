@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex07</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+// HTML 콘텐츠가 화면에 출력되기 전에 태그를 변경하기
+
+// $(document).ready(handler)
+// - HTML을 실행(자바스크립트 포함)하여 DOM Tree를 완성한 후
+// - 콘텐츠를 화면에 출력하기 전에 ready()로 등록한 함수가 먼저 호출된다.
+
+$(document).ready(() => {
+    // 아직 화면에 콘텐츠를 출력한 상태는 아니지만,
+    // HTML 콘텐츠를 모두 로딩한 후에 이 메서드가 호출되기 때문에
+    // tbody 태그를 찾을 수 있다.
+    let tbody = $("tbody"); 
+
+    $.getJSON("http://localhost:3000/exam04-3", (result) => {
+        result.forEach((b) => {
+            $("<tr>")
+            .html("<td>" + b.no + "</td>" + 
+                    "<td>" + b.title + "</td>" + 
+                    "<td>" + b.writer + "</td>" +
+                    "<td>" + b.viewCnt + "</td>")
+            .appendTo(tbody);
+        });
+    });
+    // 그런데 왜 화면은 깜박일까?
+    // - 서버에서 데이터를 가져오는 작업은 비동기로 실행된다.
+    // - 즉 서버가 데이터를 가져오는 동안, 이 메서드의 호출은 끝나기 때문에 
+    //   화면 출력이 먼저 이루어 진다.
+    // - 그런 후에 서버에서 가져온 데이터를 가지고 tr 태그를 만들어 
+    //   tbody에 붙이게 되니 화면 깜박거림이 발생할 수 밖에 없다.
+});
+
+</script>
+</head>
+
+<body>
+<h1>load 이벤트 - $(document).ready(handler)</h1>
+
+<table border="1">
+<thead>
+    <tr><th>번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<hr>
+<p>비트캠프@2022</p>
+
+</body>
+</html>
+
+
+
+
+

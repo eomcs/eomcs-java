@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex07</title>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+  $(() => {
+    console.log("ready() 호출됨! 111");
+  });
+
+  $(document).ready(() => {
+    console.log("ready() 호출됨! 222");
+  });
+
+  $(() => {
+    console.log("ready() 호출됨! 333");
+  });
+
+  window.onload = function() {
+    console.log("load 이벤트 발생!");
+  };
+</script>
+</head>
+<body>
+<h1>load 이벤트 - 실행 순서 확인</h1>
+
+<script>
+  console.log("1111");
+</script>
+
+<script src="exam08.js"></script>
+
+<script>
+  console.log("2222");
+</script>
+
+</body>
+</html>
+
+
+
+
+
