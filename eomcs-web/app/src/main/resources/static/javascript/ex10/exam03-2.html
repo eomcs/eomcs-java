@@ -7,7 +7,7 @@
 <body>
 <h1>Promise - 작업 함수를 체인 방식으로 연결하기</h1>
 <script>
-const promise = new Promise((resolve, reject) => {
+const promise1 = new Promise((resolve, reject) => {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
@@ -21,18 +21,26 @@ const promise = new Promise((resolve, reject) => {
 });
 
 console.log("1111");
-var promise2 = promise.then(() => console.log("fulfilled...1")); // 이전 함수 다음에 실행할 작업 함수를 등록하기
+
+// 이전 작업 다음에 실행할 작업 함수를 등록하기
+var promise2 = promise1.then(() => console.log("fulfilled...1")); 
 
 console.log("2222");
-var promise3 = promise2.then(() => console.log("fulfilled...2")); // 이전 함수 다음에 실행할 작업 함수를 등록하기
 
-console.log("333");
-var promise4 = promise3.then(() => console.log("fulfilled...3")); // 이전 함수 다음에 실행할 작업 함수를 등록하기
+// 이전 작업 다음에 실행할 작업 함수를 등록하기
+var promise3 = promise2.then(() => console.log("fulfilled...2")); 
 
-console.log("444");
-promise4.then(() => console.log("fulfilled...4")); // 이전 함수 다음에 실행할 작업 함수를 등록하기
+console.log("3333");
 
-console.log("작업 함수 연결 완료!");
+// 이전 작업 다음에 실행할 작업 함수를 등록하기
+var promise4 = promise3.then(() => console.log("fulfilled...3")); 
+
+console.log("4444");
+
+// 이전 작업 다음에 실행할 작업 함수를 등록하기
+promise4.then(() => console.log("fulfilled...4")); 
+
+console.log("끝!");
 </script>
 </body>
 </html>

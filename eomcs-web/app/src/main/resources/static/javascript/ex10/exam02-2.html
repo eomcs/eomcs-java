@@ -16,17 +16,18 @@ const promise = new Promise((resolve, reject) => {
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       console.log(xhr.responseText);
-      resolve(); // 작업이 완료되었다고 통지한다.
+      resolve(); // 약속된 작업을 처리했다고 통지한다.
     }
   };
   xhr.open("GET", "http://localhost:3000/hello", true); 
   xhr.send();
 });
 
-console.log("1111");
-
 // 작업 완료를 통보 받았을 때 호출될 함수를 등록한다.
 promise.then(onFulfilled);
+
+console.log("끝!");
+
 
 
 </script>

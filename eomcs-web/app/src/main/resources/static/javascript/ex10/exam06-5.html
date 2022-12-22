@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기작업</title>
+</head>
+<body>
+<h1>Promise - 예외처리: then(onFulfillment, undefined)</h1>
+<script>
+const promise = new Promise((resolve, reject) => {
+  throw '오류 발생!!!';
+});
+
+// then()으로 핸들러를 등록할 때 
+// reject를 다루는 핸들러를 등록하지 않으면,
+// 오류가  발생했을 때 그 오류를 처리할 수 없어서 예외가 발생한다.
+promise.then(() => console.log("fulfilled!"));
+
+// 따로 오류를 다루는 핸들러를 등록하면
+// 그것은 그것대로 오류가 발생했을 때 호출된다.
+promise.catch(() => console.log("catched!"));
+
+console.log("끝!");
+
+</script>
+</body>
+</html>

@@ -5,31 +5,27 @@
 <title>비동기작업</title>
 </head>
 <body>
-<h1>Promise - 작업 거절 통보를 받았을 때 수행할 함수를 등록하기</h1>
+<h1>Promise - 비동기 작업에서 발생한 예외처리</h1>
 <script>
-function onRejected() {
-  console.log("rejected!")
-}
-
 const promise = new Promise((resolve, reject) => {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       console.log(xhr.responseText);
-      reject(); // 문제가 발생하여 약속된 작업을 거절한다고 알린다.
+      throw '오류 발생!';
     }
   };
   xhr.open("GET", "http://localhost:3000/hello", true); 
   xhr.send();
-});
-
-// executor로부터 작업 거절을 통지받았을 때 호출될 함수를 등록한다.
-promise.then(undefined, onRejected);
+})
+.catch(() => console.log("catched!"));
 
 console.log("끝!");
 
-
-
+// executo에서 비동기 작업을 실행하는 중에 오류가 발생했을 때,
+// 오류 핸들러가 호출되지 않는다.
+// 해결책?
+// 다음 예제!
 </script>
 </body>
 </html>

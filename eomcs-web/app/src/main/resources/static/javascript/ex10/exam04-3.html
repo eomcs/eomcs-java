@@ -5,28 +5,19 @@
 <title>비동기작업</title>
 </head>
 <body>
-<h1>Promise - 예외처리</h1>
+<h1>Promise - Promise(executor)의 작업 결과 받기</h1>
 <script>
 const promise = new Promise((resolve, reject) => {
-  // var xhr = new XMLHttpRequest();
-  // xhr.onreadystatechange = function() {
-  //   if (xhr.readyState == 4) {
-  //     console.log(xhr.responseText);
-  //     throw '오류 발생!';
-  //   }
-  // };
-  // xhr.open("GET", "http://localhost:3000/hello", true); 
-  // xhr.send();
-  throw '오류 발생!!!';
+  resolve("결과!");
 });
-promise.then(() => console.log("fulfilled!"), 
-             () => console.log("rejected!"));
-promise.catch(() => console.log("catched!"));
 
-console.log("작업 함수 연결 완료!");
+// promise의 작업 결과를 다루는 핸들러를 여러 개 붙일 수 있다.
+promise.then((result) => console.log("1:", result)); 
+promise.then((result) => console.log("2:", result)); 
+promise.then((result) => console.log("3:", result)); 
 
-// executor에서 오류가 발생했을 때,
-// then()으로 등록한 reject 함수와 catch()로 등록한 함수 둘 다 호출된다.
+console.log("끝!");
+
 </script>
 </body>
 </html>

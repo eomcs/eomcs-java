@@ -13,17 +13,18 @@ const promise = new Promise((resolve, reject) => {
     if (xhr.readyState == 4) {
       console.log(xhr.responseText);
       
-      resolve(); // 작업이 완료되었다고 통지한다.
-      //reject(); // 작업 수행을 정상적으로 완료하지 못했음을 통지한다.
+      resolve();
+      //reject();
     }
   };
   xhr.open("GET", "http://localhost:3000/hello", true); 
   xhr.send();
 });
 
-console.log("1111");
-
 promise.then(function() {console.log("fulfilled!")}, function() {console.log("rejected!")});
+
+console.log("끝!");
+
 
 
 </script>
