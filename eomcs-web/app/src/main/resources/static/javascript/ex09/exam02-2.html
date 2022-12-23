@@ -2,35 +2,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비동기작업</title>
+<title>ex07</title>
 </head>
 <body>
-<h1>Promise - 비동기 작업을 완료한 후 다음 작업 실행하기</h1>
+<h1>fetch() 사용하기</h1>
+<table border="1">
+<thead>
+    <tr><th>번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
 <script>
-function onFulfilled() {
-  console.log("fulfilled!")
-}
+"use strict"
+var tbody = document.querySelector("tbody");
 
-const promise = new Promise((resolve, reject) => {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4) {
-      console.log(xhr.responseText);
-      resolve(); // 약속된 작업을 처리했다고 통지한다.
-    }
-  };
-  xhr.open("GET", "http://localhost:3000/hello", true); 
-  xhr.send();
+let promise = fetch("http://localhost:3000/boards");
+let promise2 = promise.then((response) => {
+    return response.json(); // 응답에서 텍스트를 추출하여 객체로 deserialization를 수행하는 Promise 객체
 });
-
-// 작업 완료를 통보 받았을 때 호출될 함수를 등록한다.
-// => resolve()로 통지했을 때 호출된다.
-promise.then(onFulfilled);
-
-console.log("끝!");
-
-
+promise2.then((arr) => {
+    for (var b of arr) {
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + b.no + "</td>" + 
+            "<td>" + b.title + "</td>" + 
+            "<td>" + b.writer + "</td>" +
+            "<td>" + b.viewCnt + "</td>";
+        tbody.appendChild(tr);
+    }
+});
 
 </script>
 </body>
 </html>
+
+
+
+
+
