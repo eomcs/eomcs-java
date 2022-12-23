@@ -12,7 +12,9 @@ const promise = new Promise((resolve, reject) => {
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       console.log(xhr.responseText);
-      throw '오류 발생!';
+
+      // #btn 태그가 없기 때문에 다음 코드는 예외를 발생시킬 것이다.
+      document.getElementById("#btn").onclick = () => {};
     }
   };
   xhr.open("GET", "http://localhost:3000/hello", true); 
