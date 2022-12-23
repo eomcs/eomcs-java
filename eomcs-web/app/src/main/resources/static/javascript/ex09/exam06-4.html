@@ -13,12 +13,14 @@ const promise = new Promise((resolve, reject) => {
 
 // promise 오류에 대해 여러 개의 reject 핸들러가 등록되어 있으면 
 // 순차적으로 모두 호출된다.
-promise.then(undefined, 
+const p2 = promise.then(undefined, 
              () => console.log("rejected!"));
-promise.catch(() => console.log("catched!"));
+const p3 = promise.catch(() => console.log("catched!"));
 
 console.log("끝!");
 
+// then(), catch()가 리턴한 promise 객체는 서로 다른 객체이다.
+console.log(p2 == p3);
 </script>
 </body>
 </html>
