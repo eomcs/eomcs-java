@@ -15,6 +15,8 @@ const promise = new Promise((resolve, reject) => {
 })
 .then((text) => {
   console.log(text)
+  // 핸들러에서 리턴한 값은 
+  // 다음 핸들러에게 그대로 전달된다.
   return JSON.parse(text); 
 })
 .then((obj) => console.log(obj));
