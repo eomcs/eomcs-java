@@ -7,6 +7,9 @@
 <body>
 <h1>Promise - 생성자와 작업 함수(executor)</h1>
 <script>
+// Primise 문법
+// - 시간이 오래 걸리는 비동기 작업들을 순서대로 묶어서 실행하고 싶을 때 사용한다.
+// 
 // new Promise(executor)
 // - executor: 생성자가 실행시킬 함수다. 
 // - executor의 호출이 완료되어야만 Promise 객체를 리턴한다.
@@ -19,13 +22,15 @@
 // - 어떤 이유로 작업 수행을 거절(reject)했다는 통지를 받으면, 
 //   reject 상태일 때 호출하기로 약속한 함수를 실행한다.
 //
-const promise = new Promise((resolve, reject) => {
+let executor = (resolve, reject) => {
   // 시간이 오래 걸리는 동기 작업 수행
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://localhost:3000/hello", false); 
   xhr.send();
   console.log(xhr.responseText);
-});
+};
+
+const promise = new Promise(executor);
 // Promise 생성자의 executor 호출이 끝날 때까지 리턴하지 않는다.
 
 console.log("끝!");
