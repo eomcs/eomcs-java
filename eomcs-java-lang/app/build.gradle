@@ -18,11 +18,12 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8' 
 
     // 소스 파일을 작성할 때 사용할 자바 버전
-    sourceCompatibility = '11'
+    sourceCompatibility = '17'
 
     // 자바 클래스를 실행시킬 JVM의 최소 버전
-    targetCompatibility = '11'
+    targetCompatibility = '17'
 }
+
 
 // .class 파일을 둘 폴더를 지정하지 않으면 
 // Gradle 은 기본 출력 폴더의 경로로 'bin/default' 를 사용한다.
@@ -58,10 +59,9 @@ eclipse {
         name = "eomcs-java-lang"
     }
     jdt {
-      //if you want to alter the java versions (by default they are configured with gradle java plugin settings):
-      sourceCompatibility = 11
-      targetCompatibility = 11
-      javaRuntimeName = "JavaSE-11"
+      sourceCompatibility = 17
+      targetCompatibility = 17
+      javaRuntimeName = "JavaSE-17"
     }
 }
 
@@ -97,13 +97,13 @@ dependencies {
   // implementation 'org.mybatis:mybatis-spring:2.0.6'
 
   // MariaDB JDBC 드라이버
-  implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.7'
+  //   implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.7'
 
   // Oracle JDBC Driver
-  implementation 'com.oracle.database.jdbc:ojdbc11-production:21.7.0.0'
+  //   implementation 'com.oracle.database.jdbc:ojdbc11-production:21.7.0.0'
     
   // MSSQL JDBC Driver
-  implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
+  //   implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
   
   // Google JSON 라이브러리
   // implementation 'com.google.code.gson:gson:2.8.9'
@@ -121,9 +121,6 @@ dependencies {
   // log4j 2.x 라이브러리
   // implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
 
-  // Use JUnit test framework.
   testImplementation 'junit:junit:4.13.2'
-
-  // This dependency is used by the application.
-  implementation 'com.google.guava:guava:30.1.1-jre'
+  implementation 'com.google.guava:guava:31.1-jre'
 }
