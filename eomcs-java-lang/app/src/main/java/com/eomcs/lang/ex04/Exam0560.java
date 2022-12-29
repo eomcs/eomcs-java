@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex04;
 
-//# 배열 - 배열 메모리의 기본 값
+//# 배열 - 배열 인스턴스 메모리의 기본 값
 //
 public class Exam0560 {
   public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Exam0560 {
     // 따라서 배열 메모리 또한 생성되는 순간 기본 값으로 자동 초기화 된다.
     // - 정수 배열(byte[], short[], int[], long[]) : 0
     // - 부동소수점 배열(float[], double[]) : 0.0
-    // - 논리 배열(boolean[]) : false 
+    // - 논리 배열(boolean[]) : false
     // - 문자 배열(char[]) : '\u0000'
     // - 주소 변수(Object[]) : null
     //
