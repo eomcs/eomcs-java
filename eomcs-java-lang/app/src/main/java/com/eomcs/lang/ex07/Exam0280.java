@@ -24,6 +24,8 @@ public class Exam0280 {
     //
     System.out.println(result);
 
+    System.out.println(plus(plus(plus(2, 3), 4), 5));
+
     int r = plus(100, 200);
     System.out.printf("100 + 200 = %d\n", r);
 
