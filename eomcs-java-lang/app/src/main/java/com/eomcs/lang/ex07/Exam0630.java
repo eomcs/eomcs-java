@@ -16,11 +16,11 @@ public class Exam0630 {
 
     // 이름이 들어 있는 집합에서 한 개의 이름을 가져와서 그 이름으로 저장된 값을 꺼낸다.
     // => 집합에서 꺼낸 이름이 실제는 String 타입이지만,
-    //    문법 상으로는 Object로 되어 있어서 
+    //    문법 상으로는 Object로 되어 있어서
     //    변수를 선언할 때 Object 타입으로 변수를 선언해야 한다.
     for (Object key : keySet) {
       // getProperty()에 이름을 전달할 때는 String 을 전달해야 한다.
-      // 물론 key에 들어 있는 것은 String 이 맞지만 
+      // 물론 key에 들어 있는 것은 String 이 맞지만
       // 문법 상으로는 key 변수가 Object로 되어 있다.
       // 따라서 getProperty()에 key 변수에 들어 있는 값을 전달할 때
       // String 이라고 컴파일러에게 알려줄 필요가 있다.
