@@ -20,10 +20,10 @@ public class Exam0122 {
     printScore(s);
 
     Score s2 = createScore("임꺽정", 90, 80, 70);
-    printScore(s);
+    printScore(s2);
 
     Score s3 = createScore("유관순", 80, 70, 60);
-    printScore(s);
+    printScore(s3);
   }
 
   static void printScore(Score s) {
@@ -46,7 +46,7 @@ public class Exam0122 {
 
     return s; // s에 저장된 인스턴스의 주소를 리턴한다.
     // 강사님! 로컬 변수는 메서드 호출이 끝난 다음에 삭제된다고 했는데
-    // 위에서 생성한 s 변수도 삭제되고, 
+    // 위에서 생성한 s 변수도 삭제되고,
     // 파라미터 name, kor, eng, math도 삭제되는게 아닌가요?
     // => 예 삭제됩니다.
     // => 모든 로컬 변수는 메서드 호출이 끝나면 스택 메모리에서 삭제됩니다.
@@ -54,7 +54,7 @@ public class Exam0122 {
     // 하나 더요?
     // Score 인스턴스도 삭제되는게 아닌가요?
     // => 삭제되지 않습니다. 인스턴스는 힙(heap) 메모리에 생성됩니다.
-    //    어떤 메서드에서 인스턴스를 생성하든지 간에 
+    //    어떤 메서드에서 인스턴스를 생성하든지 간에
     //    힙에 생성된 것은 메서드 호출이 끝나더라도 삭제되지 않습니다.
     //    오직 스택(stack) 메모리에 생성된 로컬 변수만이 삭제됩니다.
   }
