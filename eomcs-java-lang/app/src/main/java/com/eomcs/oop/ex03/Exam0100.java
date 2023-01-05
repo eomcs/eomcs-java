@@ -23,6 +23,7 @@ public class Exam0100 {
     // - 메서드가 호출될 때 JVM Stack 영역에 생성된다.
     // - 메서드 호출이 끝나면 제거된다.
     int c;
+    c = 100;
 
     // <=== 현재 실행 시점
     // - Method Area: a 변수 존재
@@ -31,7 +32,6 @@ public class Exam0100 {
 
     Exam0100 obj; // obj는 main()을 호출할 때 시작 시점에 JVM Stack에 생성된 상태이다.
 
-
     obj = new Exam0100();
 
     // <=== 현재 실행 시점
@@ -39,7 +39,7 @@ public class Exam0100 {
     // - JVM Stack: args, c, obj 변수 존재
     // - Heap: b 변수 존재
 
-
+    System.out.println(c);
 
   }
 }
