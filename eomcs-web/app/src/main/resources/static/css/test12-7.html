@@ -8,16 +8,30 @@
     border: 1px solid black;
 
     width: 300px;
-    /* height: 200px; */
+    height: 300px;
 
     display: flex;   
     
     /* 플렉스 항목이 여러 줄로 표시될 때 정렬 방법 지정하기 */
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 
     /* => 교차축의 시작점에 맞추기 */
     /* align-content: flex-start; */
 
+    /* => 교차축의 끝점에 맞추기 */
+    /* align-content: flex-end; */
+
+    /* => 교차축의 중앙에 배치하기 */
+    /* align-content: center; */
+
+    /* => 교차축의 양쪽 끝점에 맞추고 나머지 항목은 그 사이에 배치하기 */
+    /* align-content: space-between; */
+
+    /* => 교차축에 같은 간격으로 배치하기 */
+    /* align-content: space-around; */
+
+    /* => 교차축에 가득차게 늘리기  */
+    align-content: stretch;
   }
 
   .box {
