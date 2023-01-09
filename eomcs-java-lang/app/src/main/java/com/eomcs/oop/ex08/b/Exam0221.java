@@ -16,7 +16,7 @@ class Car {
   //   유지보수할 때 편하다.
   // - 즉 인스턴스를 생성해 주는 메서드를 통해
   //   인스턴스를 생성하면 인스턴스를 사용하고픈 개발자는 코드가 간결해진다
-  //   이런 설계 방식에 대해 이름을 붙였으니 
+  //   이런 설계 방식에 대해 이름을 붙였으니
   //   그 이름도 유명한 "factory method" 설계 패턴이다.
   //
   public static Car create(String name) {
@@ -58,7 +58,7 @@ public class Exam0221 {
     // => 개발자가 직접 인스턴스를 생성하면 너무 복잡하니,
     //    다른 메서드를 통해 인스턴스를 생성하라는 의미다!
     //
-    Car c2 = Car.create("티코"); // 팩토리 일을 하는 메서드를 통해 인스턴스를 생성한다. 
+    Car c2 = Car.create("티코"); // 팩토리 일을 하는 메서드를 통해 인스턴스를 생성한다.
 
     System.out.printf("%s,%s,%d,%d\n",
         c2.model, c2.maker, c2.cc, c2.valve);

@@ -12,7 +12,7 @@ public class Exam0213 extends com.eomcs.oop.ex08.b.sub.Y {
     //    obj.privateVar = 100; // 접근 불가! 오직 그 클래스 안에서만 사용 가능.
     //    obj.defaultVar = 100; // 접근 불가! 같은 패키지까지만 접근 가능.
 
-    //    obj.protectedVar = 100; // 접근 불가! 같은 패키지 또는 자식 클래스 접근 가능
+    //    obj.protectedVar = 100; // 접근 불가! 같은 패키지 또는 자식 클래스를 통해 만든 경우 접근 가능
     // 자식 클래스인데 접근 불가?
     // 이유 => 서브 클래스를 통해 만든 인스턴스 변수가 아니다.
 

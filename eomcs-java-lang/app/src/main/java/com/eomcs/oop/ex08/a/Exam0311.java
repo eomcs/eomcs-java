@@ -47,7 +47,6 @@ class Score3 {
     return this.math;
   }
 
-
   private int sum;
   private float aver;
 
