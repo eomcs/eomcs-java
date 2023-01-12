@@ -1,9 +1,12 @@
 // 생성자 활용 예 - 자바에서 제공하는 클래스 사용을 통해 생성자 활용을 익혀보자!
 package com.eomcs.oop.ex04;
 
+import java.nio.charset.Charset;
+
 public class Exam0113 {
 
   public static void main(String[] args) throws Exception {
+    System.out.println(Charset.defaultCharset());
 
     // UTF-8 문자 코드의 바이트 배열을 사용하여 String 인스턴스 초기화시키기.
     byte[] bytes = {
@@ -34,8 +37,8 @@ public class Exam0113 {
     // 생성자에 바이트 배열을 넘길 때
     // 바이트 배열에 들어 있는 데이터의 문자 코드표를 알려주지 않으면,
     // String 생성자는 OS의 기본 문자 코드표로 간주하여 변환한다.
-    // 따라서 위 예제를 Linux, macOS, Unix 의 
-    // CLI(Command Line Interface; 콘솔창/명령창)에서 실행하면 
+    // 따라서 위 예제를 Linux, macOS, Unix 의
+    // CLI(Command Line Interface; 콘솔창/명령창)에서 실행하면
     // 정상적으로 한글 문자열이 출력되지만,
     // Windows에서 실행하면 한글 문자열이 깨진다.
     //
@@ -53,7 +56,7 @@ public class Exam0113 {
     // => PowerShell 이 아닌 Command 창에서 실행하라!
     //    PowerShell 에서는 -Dfile.encoding 옵션을 제대로 처리하지 못한다.
     //    도트(.)를 분리 문자로 인식한다.
-    // 
+    //
   }
 }
 

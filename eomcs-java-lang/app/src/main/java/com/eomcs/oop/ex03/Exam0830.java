@@ -28,7 +28,7 @@ public class Exam0830 {
       // a = 100;
       // b = 200;
 
-      this.a = a;
+      this.a = a; //111
       c = 300;
     }
 
@@ -38,8 +38,8 @@ public class Exam0830 {
       // a = 100;
       // b = 200;
 
-      this.a = a;
-      this.b = b;
+      this.a = a; // 111
+      this.b = b; // 222
       c = 300;
     }
   }

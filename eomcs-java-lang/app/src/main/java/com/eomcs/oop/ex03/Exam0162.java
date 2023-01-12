@@ -6,7 +6,7 @@ public class Exam0162 {
 
   static class Member {
 
-    // Member와 관련된 값을 갖고 있는 변수라면 
+    // Member와 관련된 값을 갖고 있는 변수라면
     // 다음과 같이 Member 클래스에 두는 것이 유지보수에 좋다.
     // - 여러 인스턴스에서 공통으로 사용할 값을 담는 변수라면 static 필드로 선언하라!
     // - 조회용으로 사용할 변수이면서 외부에서도 사용해야 할 변수라면 public 으로 공개하라!
@@ -22,7 +22,7 @@ public class Exam0162 {
 
   public static void main(String[] args) {
 
-    // Member와 관련된 상수라면 
+    // Member와 관련된 상수라면
     // Member 클래스에 선언하는 것이 유지보수에 더 낫다.
     //    final int GUEST = 0;
     //    final int MEMBER = 1;
