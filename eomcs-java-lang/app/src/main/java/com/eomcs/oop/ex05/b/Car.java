@@ -31,6 +31,10 @@ public class Car {
     this.sunroof = sunroof;
     this.auto = auto;
   }
+
+  public void run() {
+    System.out.println("달린다!");
+  }
 }
 
 
