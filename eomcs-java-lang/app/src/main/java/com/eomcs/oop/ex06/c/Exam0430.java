@@ -49,6 +49,14 @@ public class Exam0430 {
       System.out.printf("  => this.working(%s), super.working(%s)\n", this.working, super.working);
       System.out.printf("  => this.age(%s), super.age(컴파일 오류!) \n", this.age /*, super.age*/);
     }
+
+    void print2() {
+      System.out.println("A3.print2():");
+      System.out.printf("  => this.name(%s), super.name(%s)\n", this.name, super.name);
+      System.out.printf("  => this.tel(%s), super.tel(%s)\n", this.tel, super.tel);
+      System.out.printf("  => this.working(%s), super.working(%s)\n", this.working, super.working);
+      System.out.printf("  => this.age(%s), super.age(컴파일 오류!) \n", this.age /*, super.age*/);
+    }
   }
 
 
@@ -81,6 +89,16 @@ public class Exam0430 {
 
     A4 obj4 = new A4();
     obj4.print();
+    System.out.println("--------------------------------");
+
+    A3 obj5 = new A4();
+    obj5.print();
+    // 레퍼런스가 실제 자식 객체를 가리킨다면,
+    // 메서드를 찾을 때 자식 클래스의 오버라이딩 메서드를 먼저 찾는다.
+    // 따라서 obj5의 print()는 실제 obj5가 가리키는 A4의 print()를 호출한다.
+    System.out.println("--------------------------------");
+
+    obj5.print2(); // A.print2();
     System.out.println("--------------------------------");
   }
 }
