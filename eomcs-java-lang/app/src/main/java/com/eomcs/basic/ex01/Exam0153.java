@@ -18,13 +18,13 @@ public class Exam0153 {
       return "MyKey2 [contents=" + contents + "]";
     }
 
-    //    @Override
-    //    public int hashCode() {
-    //      final int prime = 31;
-    //      int result = 1;
-    //      result = prime * result + ((contents == null) ? 0 : contents.hashCode());
-    //      return result;
-    //    }
+    @Override
+    public int hashCode() {
+      final int prime = 31;
+      int result = 1;
+      result = prime * result + ((contents == null) ? 0 : contents.hashCode());
+      return result;
+    }
 
     @Override
     public boolean equals(Object obj) {

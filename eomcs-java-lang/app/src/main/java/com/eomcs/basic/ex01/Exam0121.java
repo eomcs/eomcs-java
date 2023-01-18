@@ -1,4 +1,4 @@
-// Object 클래스 - toString() 을 오버라이딩 할 때 
+// Object 클래스 - toString() 을 오버라이딩 할 때
 package com.eomcs.basic.ex01;
 
 
@@ -15,6 +15,7 @@ public class Exam0121 {
     public String toString() {
       return "My [name=" + name + ", age=" + age + "]";
     }
+
   }
 
   public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class Exam0121 {
     System.out.println(obj1.toString());
 
     // println()의 파라미터 값으로 문자열을 넘겨주지 않으면,
-    // println() 내부에서 파라미터로 넘어온 객체에 대해 toString() 호출한 후 
+    // println() 내부에서 파라미터로 넘어온 객체에 대해 toString() 호출한 후
     // 그 리턴 값을 출력한다.
     // 따라서 그냥 객체(주소)를 넘겨줘도 된다.
     System.out.println(obj1);
