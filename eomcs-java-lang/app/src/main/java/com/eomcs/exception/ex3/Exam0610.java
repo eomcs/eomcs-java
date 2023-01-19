@@ -38,7 +38,7 @@ public class Exam0610 {
     // 항상 자원을 사용한 후 해제시키는 것을 습관적으로 해야 한다.
     //
     keyScan.close();
-
+    System.out.println("Scanner 객체를 해제하였음!");
     // 문제는 close()를 호출하기 전에 예외가 발생한다면,
     // 제대로 자원을 해제시키지도 못한다는 것이다.
     // 이것을 해결하는 방법은 finally 블록을 사용하는 것이다.

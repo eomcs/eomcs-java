@@ -19,9 +19,9 @@ public class Exam0510 {
 
   public static void main(String[] args) {
     try {
-      m(4);
       System.out.println("try");
-      return; 
+      m(0);
+      return;
     } catch (RuntimeException | SQLException | IOException e) {
       System.out.println("catch 1");
 
@@ -39,6 +39,8 @@ public class Exam0510 {
       //
       System.out.println("finally");
     }
+
+    System.out.println("안녕히 가세요!");
   }
 
 }

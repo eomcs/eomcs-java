@@ -17,7 +17,7 @@ public class Exam0310 {
     Date d3 = new Date(System.currentTimeMillis());
     System.out.println(d3);
 
-    Date d4 = new Date(121, 0, 15);
+    Date d4 = new Date(123, 0, 19);
     System.out.println(d4);
 
     // java.sql.Date
@@ -25,7 +25,7 @@ public class Exam0310 {
     System.out.println(d5);
 
     // 간접적으로 객체를 생성하기
-    java.sql.Date d6 = java.sql.Date.valueOf("2021-2-4");
+    java.sql.Date d6 = java.sql.Date.valueOf("2023-1-19");
     System.out.println(d6);
   }
 }

@@ -11,8 +11,10 @@ public class Exam0220 {
   // Exception의 서브 클래스임에도 불구하고
   // RuntimeException 객체를 던질 경우,
   // 메서드 선언부에 예외를 던진다고 표시하지 않아도 된다.
-  // 왜?
-  // => 스텔스 모드(비유!) 를 지원하기 위해 만든 예외이다.
+  // => "Unchecked Exception"이라 부른다.
+  //    즉, 해당 메서드를 예외를 던지는지 검사하지 않는 예외라는 뜻이다.
+  // => 보통 스텔스 모드(비유!)로 예외를 전달할 때 사용한다.
+  //
   static void m2() {
     throw new RuntimeException();
   }
