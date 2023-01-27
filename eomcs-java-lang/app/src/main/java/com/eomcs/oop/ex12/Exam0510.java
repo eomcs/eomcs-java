@@ -36,7 +36,13 @@ public class Exam0510 {
     // => 규격? 메서드의 파라미터 타입/개수/순서, 리턴 타입
     // => 문법:
     //    클래스명::메서드명
-    Calculator c1 = MyCalculator::plus;
+    Calculator c1 = MyCalculator::plus; // MyCalculator의 스태틱 메서드인 plus()를 가지고 구현체를 자동 생성!
+    //    Calculator c = new Calculator() {
+    //      @Override
+    //      public int compute(int x, int y) {
+    //        return MyCalculator.plus(x, y);
+    //      }
+    //    };
     Calculator c2 = MyCalculator::minus;
     Calculator c3 = MyCalculator::multiple;
     Calculator c4 = MyCalculator::divide;

@@ -14,5 +14,12 @@ public class Exam0923 {
     names.add("안중근");
 
     names.forEach(System.out::println);
+    //
+    //    names.forEach(new Consumer<String>() {
+    //      @Override
+    //      public void accept(String t) {
+    //        System.out.println(t);
+    //      };
+    //    });
   }
 }
