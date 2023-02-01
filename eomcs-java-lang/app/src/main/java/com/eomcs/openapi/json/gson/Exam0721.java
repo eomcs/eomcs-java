@@ -11,7 +11,7 @@ public class Exam0721 {
 
     Map<String,String> map = new Gson().fromJson(jsonStr, Map.class);
 
-    int v1 = Integer.parseInt(map.get("no"));
+    String v1 = map.get("no");
     String v2 = map.get("title");
     String v3 = map.get("manager");
 

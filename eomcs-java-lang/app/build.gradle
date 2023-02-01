@@ -106,10 +106,10 @@ dependencies {
   //   implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
   
   // Google JSON 라이브러리
-  // implementation 'com.google.code.gson:gson:2.8.9'
+  implementation 'com.google.code.gson:gson:2.10.1'
   
   // jackson-databind JSON 라이브러리
-  // implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
 
   // Apache HTTP 통신 라이브러리
   //implementation 'org.apache.httpcomponents.client5:httpclient5:5.0'
