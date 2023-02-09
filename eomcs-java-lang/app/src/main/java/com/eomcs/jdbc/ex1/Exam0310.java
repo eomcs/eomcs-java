@@ -1,13 +1,11 @@
 // JDBC 프로그래밍 - DBMS에 SQL문 보내기 : insert
 package com.eomcs.jdbc.ex1;
 
-import java.sql.DriverManager;
-
 public class Exam0310 {
 
   public static void main(String[] args) throws Exception {
 
-    try (java.sql.Connection con = DriverManager.getConnection(
+    try (java.sql.Connection con = java.sql.DriverManager.getConnection(
         "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
 
         // java.sql.Statement 구현 객체를 얻는다.
@@ -34,7 +32,7 @@ public class Exam0310 {
       // => select처럼 data를 조회하는 sql 명령을 말한다.
       //
       int count = stmt.executeUpdate(
-          "insert into x_board(title,contents) values('제목10','내용')");
+          "insert into x_board(title,contents) values('제목10','내용'),('제목11','내용')");
       System.out.printf("%d 개 입력 성공!", count);
     }
   }
