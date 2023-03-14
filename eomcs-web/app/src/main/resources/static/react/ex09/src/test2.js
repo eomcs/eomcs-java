@@ -1,7 +1,6 @@
 "use strict";
 
 // State 끌어 올리기 - 여러 컴포넌트에서 데이터를 공유하는 방법
-
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
     return <p>The water would boil.</p>;
@@ -9,25 +8,41 @@ function BoilingVerdict(props) {
   return <p>The water would not boil.</p>;
 }
 
-class Calculator extends React.Component {
+const scaleNames = {
+  c: "Celsius",
+  f: "Fahrenheit",
+};
+
+class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = { temperature: "" };
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ temperature: event.target.value });
+  handleChange(e) {
+    this.setState({ temperature: e.target.value });
   }
 
   render() {
     const temperature = this.state.temperature;
+    const scale = this.props.scale;
     return (
       <fieldset>
-        <legend>섭씨 온도:</legend>
-        <input type="number" value={temperature} onChange={this.handleChange} />
-        <BoilingVerdict celsius={parseFloat(temperature)} />
+        <legend>Enter temperature in {scaleNames[scale]}:</legend>
+        <input value={temperature} onChange={this.handleChange} />
       </fieldset>
+    );
+  }
+}
+
+class Calculator extends React.Component {
+  render() {
+    return (
+      <div>
+        <TemperatureInput scale="c" />
+        <TemperatureInput scale="f" />
+      </div>
     );
   }
 }
