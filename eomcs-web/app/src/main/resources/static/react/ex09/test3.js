@@ -1,6 +1,7 @@
 "use strict";
 
 // State 끌어 올리기 - 여러 컴포넌트에서 데이터를 공유하는 방법
+// 3단계
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -29,8 +30,8 @@ function toCelsius(fahrenheit) {
   return (fahrenheit - 32) * 5 / 9;
 }
 
-function toFahrenheit(celsius) {
-  reutrn(censius * 9 / 5) + 32;
+function toFahrenheit(censius) {
+  return censius * 9 / 5 + 32;
 }
 
 function tryConvert(temperature, convert) {
@@ -105,11 +106,13 @@ var Calculator = function (_React$Component2) {
   _createClass(Calculator, [{
     key: "handleCelsiusChange",
     value: function handleCelsiusChange(temperature) {
+      console.log(temperature);
       this.setState({ scale: "c", temperature: temperature });
     }
   }, {
     key: "handleFahrenheitChange",
     value: function handleFahrenheitChange(temperature) {
+      console.log(temperature);
       this.setState({ scale: "f", temperature: temperature });
     }
   }, {

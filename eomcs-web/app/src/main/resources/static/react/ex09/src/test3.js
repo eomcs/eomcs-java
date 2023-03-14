@@ -1,6 +1,8 @@
 "use strict";
 
 // State 끌어 올리기 - 여러 컴포넌트에서 데이터를 공유하는 방법
+// 3단계
+
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
     return <p>The water would boil.</p>;
@@ -12,8 +14,8 @@ function toCelsius(fahrenheit) {
   return ((fahrenheit - 32) * 5) / 9;
 }
 
-function toFahrenheit(celsius) {
-  reutrn((censius * 9) / 5) + 32;
+function toFahrenheit(censius) {
+  return (censius * 9) / 5 + 32;
 }
 
 function tryConvert(temperature, convert) {
@@ -62,10 +64,12 @@ class Calculator extends React.Component {
   }
 
   handleCelsiusChange(temperature) {
+    console.log(temperature);
     this.setState({ scale: "c", temperature });
   }
 
   handleFahrenheitChange(temperature) {
+    console.log(temperature);
     this.setState({ scale: "f", temperature });
   }
 

@@ -1,6 +1,7 @@
 "use strict";
 
 // State 끌어 올리기 - 여러 컴포넌트에서 데이터를 공유하는 방법
+// 1단계
 
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
