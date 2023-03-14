@@ -17,7 +17,16 @@ class Reservation extends React.Component {
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
-    this.setState({ [name]: value });
+    // ES6의 computed property name 문법
+    //this.setState({ [name]: value });
+
+    // ES5의 문법
+    let partialState = {};
+    partialState[name] = value;
+    this.setState(partialState);
+
+    // setState()는 기존 state에 바뀐 부분만 병합한다.
+    // 따라서 바뀐 부분만 설정하면 된다.
   }
 
   render() {
