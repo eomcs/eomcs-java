@@ -106,13 +106,11 @@ var Calculator = function (_React$Component2) {
   _createClass(Calculator, [{
     key: "handleCelsiusChange",
     value: function handleCelsiusChange(temperature) {
-      console.log({ scale: "c", temperature: temperature });
       this.setState({ scale: "c", temperature: temperature });
     }
   }, {
     key: "handleFahrenheitChange",
     value: function handleFahrenheitChange(temperature) {
-      console.log({ scale: "f", temperature: temperature });
       this.setState({ scale: "f", temperature: temperature });
     }
   }, {
