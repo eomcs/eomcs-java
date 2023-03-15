@@ -12,13 +12,25 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState((prevState) => ({
-      isToggleOn: !prevState.isToggleOn,
+    // 방법1)
+    // this.setState({
+    //   isToggleOn: !this.state.isToggleOn,
+    // });
+    // 방법2) setState()에 객체를 넘기지 않고 함수를 넘긴다.
+    // setState()가 함수를 파라미터로 받으면
+    // 해당 함수 호출하여 그 리턴 값을 사용한다.
+    // 함수를 호출할 때 현재 state 객체를 아규먼트로 넘겨준다.
+    this.setState((currState) => ({
+      isToggleOn: !currState.isToggleOn,
     }));
   }
 
   render() {
-    return <button onClick={this.handleClick}>{this.state.isToggleOn ? "ON" : "OFF"}</button>;
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? "ON" : "OFF"}
+      </button>
+    );
   }
 }
 
