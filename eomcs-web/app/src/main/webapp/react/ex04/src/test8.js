@@ -3,6 +3,10 @@
 // 8단계: 클래스 컴포넌트 사용 + State + Lifecycle(타이머설정/해제) + 자식 컴포넌트 + 여러 개
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
+function FormattedDate(props) {
+  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
+}
+
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +14,10 @@ class Clock extends React.Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
+    this.timerID = setInterval(
+      () => this.tick(),
+      parseInt(Math.random() * 3000)
+    );
   }
 
   componentWillUnmount() {
@@ -31,10 +38,6 @@ class Clock extends React.Component {
       </div>
     );
   }
-}
-
-function FormattedDate(props) {
-  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
 }
 
 // 모든 컴포넌트가 독립적이다!

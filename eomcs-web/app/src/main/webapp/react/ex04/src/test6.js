@@ -7,7 +7,7 @@ class Clock extends React.Component {
   constructor(props) {
     super(props);
 
-    // 오직 생성자에서만 컴포넌트에 state를 추가할 수 있다.
+    // 보통 생성자에서 객체의 상태를 초기화시킨다.
     this.state = { date: new Date() };
   }
 
@@ -22,13 +22,16 @@ class Clock extends React.Component {
   }
 
   tick() {
+    console.log("tick!!!");
     // 직접 state의 프로퍼티 값을 변경하면 다시 렌더링하지 않는다.
-    // this.state.date = new Date();
+    this.state.date = new Date();
 
     // 반드시 setState()를 호출하여 state의 프로퍼티를 변경해야만 다시 렌더링 한다.
-    this.setState({
-      date: new Date(),
-    });
+    // setState()를 UI 컴포넌트 상태를 변경하면 render() 메서드가 다시 호출된다.
+    // => 컴포넌트 상태를 변경하면 UI에 반영하기 위해 render()가 자동 호출된다.
+    // this.setState({
+    //   date: new Date(),
+    // });
   }
 
   render() {

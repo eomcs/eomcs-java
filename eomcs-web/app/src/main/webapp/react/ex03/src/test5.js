@@ -9,14 +9,12 @@ function Welcome(props) {
 function App() {
   return (
     <div>
-      <Welcome name='홍길동' />
-      <Welcome name='임꺽정' />
-      <Welcome name='유관순' />
+      <Welcome name="홍길동" />
+      <Welcome name="임꺽정" />
+      <Welcome name="유관순" />
     </div>
   );
 }
-
-const element = <Welcome name='홍길동' />;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(App());

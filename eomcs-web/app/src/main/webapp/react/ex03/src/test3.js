@@ -8,7 +8,8 @@ class Welcome extends React.Component {
   }
 }
 
-const element = <Welcome name='임꺽정' />;
+// Welcome 클래스의 설계도에 따라 React element 객체를 생성한다.
+const element = <Welcome name="임꺽정" />;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(element);
