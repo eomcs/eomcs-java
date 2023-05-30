@@ -43,28 +43,12 @@ public class Exam0130 {
     System.out.printf("%1$tS %1$tL %1$tN\n", today);
 
     // p : 오전 오후 출력하기
-    //     소문자 p를 사용하면 am 또는 pm으로 출력하고, 
-    //     대문자 P를 사용하면 AM 또는 PM으로 출력한다.
-    //     한글은 대소문자가 없기 때문에 의미없다.
+    // 소문자 p를 사용하면 am 또는 pm으로 출력하고,
+    // 대문자 P를 사용하면 AM 또는 PM으로 출력한다.
+    // 한글은 대소문자가 없기 때문에 의미없다.
     System.out.printf("%1$tp\n", today);
 
     // 년-월-일 시:분:초를 출력하라! 예) 2019-01-04 12:04:30
     System.out.printf("%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS\n", today);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
