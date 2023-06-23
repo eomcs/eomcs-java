@@ -2,6 +2,7 @@
 package com.eomcs.basic.ex01;
 
 import java.util.HashSet;
+import java.util.Objects;
 
 public class Exam0151 {
 
@@ -18,12 +19,7 @@ public class Exam0151 {
 
     @Override
     public int hashCode() {
-      final int prime = 31;
-      int result = 1;
-      result = prime * result + age;
-      result = prime * result + ((name == null) ? 0 : name.hashCode());
-      result = prime * result + (working ? 1231 : 1237);
-      return result;
+      return Objects.hash(age, name, working);
     }
 
     @Override
@@ -35,18 +31,8 @@ public class Exam0151 {
       if (getClass() != obj.getClass())
         return false;
       Student other = (Student) obj;
-      if (age != other.age)
-        return false;
-      if (name == null) {
-        if (other.name != null)
-          return false;
-      } else if (!name.equals(other.name))
-        return false;
-      if (working != other.working)
-        return false;
-      return true;
+      return age == other.age && Objects.equals(name, other.name) && working == other.working;
     }
-
   }
 
   public static void main(String[] args) {
@@ -65,20 +51,20 @@ public class Exam0151 {
 
     // 해시셋(집합)에 객체를 보관한다.
     HashSet<Student> set = new HashSet<Student>();
-    set.add(s1);
-    set.add(s2); // 이미 s2의 해시값과 같은 객체(s1)가 들어 있기 때문에 중복을 막기 위해 s2는 저장되지 않는다. 
-    set.add(s3);
     set.add(s4);
+    set.add(s3);
+    set.add(s1);
+    set.add(s2); // 이미 s2의 해시값과 같은 객체(s1)가 들어 있기 때문에 중복을 막기 위해 s2는 저장되지 않는다.
 
     // 해시셋에 보관된 객체를 꺼낸다.
     Object[] list = set.toArray();
     for (Object obj : list) {
       Student student = (Student) obj;
-      System.out.printf("%s, %d, %s\n", 
+      System.out.printf("%s, %d, %s\n",
           student.name, student.age, student.working ? "재직중" : "실업중");
     }
 
-    // 인스턴스가 다르더라도 인스턴스의 필드 값이 같을 경우 
+    // 인스턴스가 다르더라도 인스턴스의 필드 값이 같을 경우
     // HashSet에 중복 저장되지 않도록 하려면,
     // hashCode()와 equals() 모두 오버라이딩 하라!
     // => hashCode()는 같은 필드 값을 갖는 경우 같은 해시코드를 리턴하도록 변경하고,

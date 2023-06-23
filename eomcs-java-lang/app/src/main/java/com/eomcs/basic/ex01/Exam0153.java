@@ -2,6 +2,7 @@
 package com.eomcs.basic.ex01;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 
 public class Exam0153 {
@@ -20,10 +21,7 @@ public class Exam0153 {
 
     @Override
     public int hashCode() {
-      final int prime = 31;
-      int result = 1;
-      result = prime * result + ((contents == null) ? 0 : contents.hashCode());
-      return result;
+      return Objects.hash(contents);
     }
 
     @Override
@@ -35,13 +33,10 @@ public class Exam0153 {
       if (getClass() != obj.getClass())
         return false;
       MyKey2 other = (MyKey2) obj;
-      if (contents == null) {
-        if (other.contents != null)
-          return false;
-      } else if (!contents.equals(other.contents))
-        return false;
-      return true;
+      return Objects.equals(contents, other.contents);
     }
+
+
   }
   public static void main(String[] args) {
     HashMap<MyKey2,Student> map = new HashMap<>();

@@ -62,6 +62,8 @@ public class Exam0230 {
     //   매번 비교할 때 마다 범위의 유효성을 생각하는 것이 번거롭다.
     // - 그냥 equals() 메서드를 사용하여 값을 비교하라!
     // - 더 좋은 방법은 auto-unboxing 하여 primitive type 의 값으로 바꾼후에 == 연산자로 비교하라.
+
+    System.out.println(obj7.intValue() == obj8.intValue());
   }
 }
 
