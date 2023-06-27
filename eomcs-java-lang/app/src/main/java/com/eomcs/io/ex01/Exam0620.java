@@ -18,9 +18,7 @@ public class Exam0620 {
         // true 이면 배열에 포함시키고,
         // false 이면 배열에서 제외한다.
         //
-        if (file.isFile() && file.getName().endsWith(".java"))
-          return true; // 조회 결과에 포함시켜라!
-        return false; // 조회 결과에서 제외하라!
+        return file.isFile() && file.getName().endsWith(".java");
       }
     }
 
@@ -34,8 +32,8 @@ public class Exam0620 {
     File[] files = dir.listFiles(javaFilter);
 
     for (File file : files) {
-      System.out.printf("%s %12d %s\n", 
-          file.isDirectory() ? "d" : "-", 
+      System.out.printf("%s %12d %s\n",
+          file.isDirectory() ? "d" : "-",
               file.length(),
               file.getName());
     }

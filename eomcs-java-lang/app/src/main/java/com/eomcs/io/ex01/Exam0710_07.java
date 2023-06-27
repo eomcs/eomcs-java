@@ -31,8 +31,10 @@ public class Exam0710_07 {
     File[] files = dir.listFiles();
 
     // 리턴 받은 파일 배열에서 이름을 꺼내 출력한다.
+    String indent = getIndent(level);
+
     for (File file : files) {
-      printIndent(level);
+      System.out.print(indent);
 
       if (file.isDirectory() && !file.isHidden()) {
         System.out.printf("%s/\n", file.getName());
@@ -43,10 +45,12 @@ public class Exam0710_07 {
     }
   }
 
-  static void printIndent(int level) {
+  static String getIndent(int level) {
+    StringBuilder strBuilder = new StringBuilder();
     for (int i = 0; i < level; i++) {
-      System.out.print("  ");
+      strBuilder.append("  ");
     }
+    return strBuilder.toString();
   }
 }
 
