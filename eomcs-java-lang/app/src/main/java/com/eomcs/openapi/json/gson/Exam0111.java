@@ -3,8 +3,9 @@ package com.eomcs.openapi.json.gson;
 
 import java.sql.Date;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
-public class Exam0110 {
+public class Exam0111 {
   public static void main(String[] args) {
 
     // 1) 객체 준비
@@ -18,7 +19,12 @@ public class Exam0110 {
     m.setRegisteredDate(new Date(System.currentTimeMillis()));
 
     // 2) JSON 처리 객체 준비
-    Gson gson = new Gson();
+
+    //    GsonBuilder builder = new GsonBuilder();
+    //    builder.setDateFormat("yyyy-MM-dd");
+    //    Gson gson = builder.create();
+
+    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 
     // 3) 객체의 값을 JSON 문자열로 얻기
     String jsonStr = gson.toJson(m);
