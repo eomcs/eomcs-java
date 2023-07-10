@@ -43,7 +43,7 @@ public class Exam0130 {
     try {
       Board board = read();
       // read() 메서드의 선언부를 보면 BoardException 던진다고 되어 있다.
-      // 
+      //
 
       System.out.println("---------------------");
       System.out.printf("번호: %d\n", board.getNo());
@@ -51,11 +51,11 @@ public class Exam0130 {
       System.out.printf("내용: %s\n", board.getContent());
       System.out.printf("등록일: %s\n", board.getCreatedDate());
 
-    } catch (BoardException ex) {
+    } catch (Exception ex) {
       ex.printStackTrace();
       // 예외 내용이 출력된 것을 보면,
       // BoardException 클래스 이름이 나온다.
-      // 자세한 내용을 파악하기 전에 
+      // 자세한 내용을 파악하기 전에
       // 대략적으로 어떤 작업을 하다가 오류가 발생했는지 빠르게 파악할 수 있어 좋다.
     }
   }
