@@ -1,4 +1,4 @@
-// character stream - 문자 단위로 읽기 
+// character stream - 문자 단위로 읽기
 package com.eomcs.io.ex03;
 
 import java.io.FileReader;
@@ -7,13 +7,13 @@ import java.nio.charset.Charset;
 public class Exam0121 {
 
   public static void main(String[] args) throws Exception {
-    // 1) 파일의 데이터를 읽을 객체를 준비한다. 
+    // 1) 파일의 데이터를 읽을 객체를 준비한다.
     // => 파일의 문자집합을 명시할 수 있다.
     Charset charset = Charset.forName("UTF-8");
     FileReader in = new FileReader("sample/utf8.txt", charset); // 41 42 ea b0 81 ea b0 81
 
-    // 2) 출력 스트림 객체를 생성할 때 파일의 문자 집합을 지정하면 
-    //    JVM 환경 변수 'file.encoding'에 설정된 값은 무시한다. 
+    // 2) 출력 스트림 객체를 생성할 때 파일의 문자 집합을 지정하면
+    //    JVM 환경 변수 'file.encoding'에 설정된 값은 무시한다.
 
     // 현재 JVM 환경 변수 'file.encoding' 값 알아내기
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
@@ -31,6 +31,7 @@ public class Exam0121 {
     in.close();
 
     System.out.printf("%04x, %04x, %04x, %04x\n", ch1, ch2, ch3, ch4);
+    System.out.printf("%c, %c, %c, %c\n", ch1, ch2, ch3, ch4);
   }
 }
 
