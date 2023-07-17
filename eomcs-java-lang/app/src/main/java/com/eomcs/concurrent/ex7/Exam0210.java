@@ -16,12 +16,12 @@ public class Exam0210 {
     @Override
     public void run() {
       try {
-        System.out.printf("[%s] - 스레드 실행 중...\n",
+        System.out.printf("[%s] - 스레드에서 작업 실행 중...\n",
             Thread.currentThread().getName());
 
         Thread.sleep(millisec);
 
-        System.out.printf("[%s] - 스레드 종료!\n",
+        System.out.printf("[%s] - 작업 종료 후 스레드 대기!\n",
             Thread.currentThread().getName());
       } catch (Exception e) {
         System.out.printf("[%s] 스레드 실행 중 오류 발생!\n", Thread.currentThread().getName());
