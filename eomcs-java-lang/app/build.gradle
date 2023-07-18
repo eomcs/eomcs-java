@@ -108,6 +108,9 @@ dependencies {
   // MSSQL JDBC Driver
   //   implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
   
+  // MySQL JDBC Driver
+  implementation 'mysql:mysql-connector-java:8.0.33'
+  
   // Google JSON 라이브러리
   implementation 'com.google.code.gson:gson:2.10.1'
   
