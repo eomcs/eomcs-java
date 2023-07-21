@@ -8,7 +8,7 @@ public class Exam0330 {
   public static void main(String[] args) throws Exception {
     try (
         java.sql.Connection con = DriverManager
-        .getConnection("jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
+        .getConnection("jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
         java.sql.Statement stmt = con.createStatement();
         java.sql.ResultSet rs = stmt.executeQuery(//
             "select * from x_board order by board_id desc");
@@ -17,12 +17,12 @@ public class Exam0330 {
       boolean isReceived = rs.next();
 
       if (isReceived) {
-        System.out.printf("%d, %s, %s, %s, %d\n", 
-            rs.getInt("board_id"), 
-            rs.getString("title"), 
-            rs.getString("contents"), 
-            rs.getDate("created_date"), 
-            rs.getInt("view_count")); 
+        System.out.printf("%d, %s, %s, %s, %d\n",
+            rs.getInt("board_id"),
+            rs.getString("title"),
+            rs.getString("contents"),
+            rs.getDate("created_date"),
+            rs.getInt("view_count"));
 
         // getXxx(컬럼명):
         // => 컬럼의 번호를 지정하는 방식은 소스 코드를 읽을 때 매우 불편하다.

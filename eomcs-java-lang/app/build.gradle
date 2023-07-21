@@ -100,13 +100,13 @@ dependencies {
   // implementation 'org.mybatis:mybatis-spring:2.0.6'
 
   // MariaDB JDBC 드라이버
-  //   implementation 'org.mariadb.jdbc:mariadb-java-client:3.1.2'
+  implementation 'org.mariadb.jdbc:mariadb-java-client:3.1.2'
 
   // Oracle JDBC Driver
-  //   implementation 'com.oracle.database.jdbc:ojdbc11-production:21.7.0.0'
+  implementation 'com.oracle.database.jdbc:ojdbc11-production:21.7.0.0'
     
   // MSSQL JDBC Driver
-  //   implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
+  implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
   
   // MySQL JDBC Driver
   implementation 'mysql:mysql-connector-java:8.0.33'

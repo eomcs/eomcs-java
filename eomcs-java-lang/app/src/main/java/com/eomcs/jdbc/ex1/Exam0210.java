@@ -10,23 +10,23 @@ public class Exam0210 {
     java.sql.Connection con = null;
 
     try {
-      // JVM에서 jdbc driver 파일(.jar/META-INF/services/java.sql.Driver 파일)을 뒤져서 
+      // JVM에서 jdbc driver 파일(.jar/META-INF/services/java.sql.Driver 파일)을 뒤져서
       // java.sql.Driver 를 구현한 클래스를 알아내어 자동으로 로딩하기 때문에,
       // 다음과 같이 명시적으로 로딩할 필요가 없다.
       //      Class.forName("org.mariadb.jdbc.Driver");
 
       // DBMS에 연결하기
       // => Driver 객체를 직접 사용하여 DBMS에 연결하지 않고 대신 DriverManager를 통해 연결한다.
-      // => DriverManager에게 연결할 DBMS의 정보(jdbc URL)를 주면 
+      // => DriverManager에게 연결할 DBMS의 정보(jdbc URL)를 주면
       //    해당 DBMS의 Driver 객체를 찾아 connect()를 호출한다.
-      // jdbc url : DBMS 서버 정보. 
+      // jdbc url : DBMS 서버 정보.
       //  예) jdbc:DBMS://서버주소:포트/데이터베이스명
       //      (포트번호를 지정하지 않으면 mysql인 경우 3306번이 포트번호로 사용된다.)
       // username : DBMS 사용자 아이디
       // password : DBMS 사용자 암호
       //
       con = DriverManager.getConnection(
-          "jdbc:mariadb://localhost:3306/studydb", // jdbcURL
+          "jdbc:mysql://localhost:3306/studydb", // jdbcURL
           "study", // username
           "1111" // password
           );
