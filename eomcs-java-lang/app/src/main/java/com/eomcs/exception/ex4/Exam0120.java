@@ -35,7 +35,8 @@ public class Exam0120 {
     try {
       m1();
     } catch (Exception e) {
-      e.printStackTrace();
+      System.out.println(e.getMessage());
+      //e.printStackTrace();
     }
 
     // Exception 계열의 예외를 상위 호출자에게 전달하려면,

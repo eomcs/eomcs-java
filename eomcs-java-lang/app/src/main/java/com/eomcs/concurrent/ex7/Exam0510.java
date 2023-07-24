@@ -35,7 +35,7 @@ public class Exam0510 {
     executorService.execute(new MyRunnable(6000));
     executorService.execute(new MyRunnable(2000));
     executorService.execute(new MyRunnable(4000));
-    executorService.execute(new MyRunnable(5000));
+    executorService.execute(new MyRunnable(15000));
 
     executorService.shutdown();
 

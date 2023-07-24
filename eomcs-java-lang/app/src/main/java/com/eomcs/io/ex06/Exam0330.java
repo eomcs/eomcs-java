@@ -4,8 +4,8 @@ package com.eomcs.io.ex06;
 public class Exam0330 {
 
   public static void main(String[] args) throws Exception {
-    BufferedFileInputStream in = new BufferedFileInputStream("temp/jls11.pdf");
-    BufferedFileOutputStream out = new BufferedFileOutputStream("temp/jls11_4.pdf");
+    BufferedFileInputStream in = new BufferedFileInputStream("temp/jls17.pdf");
+    BufferedFileOutputStream out = new BufferedFileOutputStream("temp/jls17_4.pdf");
 
     int b;
 

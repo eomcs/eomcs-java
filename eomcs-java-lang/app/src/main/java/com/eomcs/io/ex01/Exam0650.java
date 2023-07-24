@@ -22,9 +22,7 @@ public class Exam0650 {
     //      () -> {문장1; 문장2; 문장3;}
     //
     File[] files = dir.listFiles(file -> {
-      if (file.isFile() && file.getName().endsWith(".java"))
-        return true;
-      return false;
+      return file.isFile() && file.getName().endsWith(".java");
     });
 
     for (File file : files) {

@@ -1,4 +1,4 @@
-// 제네릭(generic) 적용 전 - 메서드에 제네릭 적용하기
+// 제네릭(generic) 적용 후 - 메서드에 제네릭 적용하기
 package com.eomcs.generic.ex01;
 
 import java.io.File;

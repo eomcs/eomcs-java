@@ -37,5 +37,3 @@ public class Exam0280 {
     return a + b;
   }
 }
-
-

@@ -21,7 +21,7 @@ public class Exam0120 {
     // 스레드 종료 후 다시 시작시킨다면?
     // => IllegalThreadStateException 발생!
     // => 즉 종료된 스레드는 다시 running 할 수 없다.
-    //t.start();
+    //    t.start();
 
   }
 

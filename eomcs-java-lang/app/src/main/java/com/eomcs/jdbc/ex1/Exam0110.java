@@ -17,7 +17,7 @@ import java.sql.SQLException;
 //    > gradle eclipse
 //    - 다운로드 받지 않은 라이브러리가 있다면 자동으로 서버에서 받을 것이다.
 //    - 라이브러리 정보가 변경되었다면 해당 라이브러리를 서버에서 받을 것이다.
-//    - .classpath(이클립스 자바 프로젝트의 classpath 정보를 담고 있는 파일) 파일에 
+//    - .classpath(이클립스 자바 프로젝트의 classpath 정보를 담고 있는 파일) 파일에
 //      다운로드 받은 JDBC Driver 파일의 경로를 추가할 것이다.
 // 4) 이클립스 프로젝트를 리프래시 한다.
 //    - 프로젝트에 mariadb jdbc driver 라이브러리가 추가되었는지 확인한다.
@@ -47,11 +47,13 @@ public class Exam0110 {
       java.sql.Driver mariadbDriver = new org.mariadb.jdbc.Driver();
       java.sql.Driver oracleDriver = new oracle.jdbc.OracleDriver();
       java.sql.Driver mssqlDriver = new com.microsoft.sqlserver.jdbc.SQLServerDriver();
+      java.sql.Driver mysqlDriver = new com.mysql.jdbc.Driver();
 
       // 2) java.sql.Driver 구현체의 인스턴스를 드라이버 관리자에 등록한다.
       DriverManager.registerDriver(mariadbDriver);
       DriverManager.registerDriver(oracleDriver);
       DriverManager.registerDriver(mssqlDriver);
+      DriverManager.registerDriver(mysqlDriver);
 
       System.out.println("JDBC 드라이버 로딩 및 등록 완료!");
 
@@ -67,6 +69,9 @@ public class Exam0110 {
 
       java.sql.Driver driver3 = DriverManager.getDriver("jdbc:sqlserver://");
       System.out.println(driver3);
+
+      java.sql.Driver driver4 = DriverManager.getDriver("jdbc:mysql://");
+      System.out.println(driver4);
 
     } catch (SQLException e) {
       e.printStackTrace();

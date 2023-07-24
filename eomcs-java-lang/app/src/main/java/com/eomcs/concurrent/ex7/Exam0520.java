@@ -37,6 +37,7 @@ public class Exam0520 {
     executorService.execute(new MyRunnable(4000));
     executorService.execute(new MyRunnable(20000));
 
+    // 실행 중인 작업 및 대기 중인 작업이 모두 끝나면 스레드풀을 종료하라!
     executorService.shutdown();
 
     // 스레드풀의 모든 스레드가 종료될 때까지 기다린다.
@@ -45,7 +46,7 @@ public class Exam0520 {
       System.out.println("남아 있는 작업의 강제 종료를 시도하겠다.");
 
       // => 만약 10초가 경과될 때까지 종료되지 않으면,
-      //    수행 중인 작업을 강제 종료하라고 지시한다.
+      //    대기 중인 작업은 강제 종료하라고 지시한다.
 
       // 강제 종료?
       // => 일단 대기 중인 작업은 모두 취소한다.

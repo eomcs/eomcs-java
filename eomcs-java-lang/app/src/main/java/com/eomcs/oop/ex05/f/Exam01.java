@@ -8,8 +8,8 @@ public class Exam01 {
     //   A 클래스의 설계도에 따라 A 클래스에 선언된 인스턴스 변수도 함께 생성된다.
     B obj = new B();
 
-    obj.v2 = 200; // B 클래스 설계도에 따라 만든 변수
     obj.v1 = 100; // A 클래스 설계도에 따라 만든 변수
+    obj.v2 = 200; // B 클래스 설계도에 따라 만든 변수
 
     System.out.printf("v2=%d, v1=%d\n", obj.v2, obj.v1);
     System.out.println("---------------------------------");
@@ -18,8 +18,8 @@ public class Exam01 {
     // - 그래서 static 블록도 위에서 한 번 실행되면 다시 실행하지 않는다.
     //
     B obj2 = new B();
-    obj2.v2 = 2000;
     obj2.v1 = 1000;
+    obj2.v2 = 2000;
     System.out.printf("v2=%d, v1=%d\n", obj2.v2, obj2.v1);
 
     // B 클래스의 인스턴스 생성 과정
