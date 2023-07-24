@@ -21,7 +21,7 @@ public class Exam0110 {
     }
 
     try (Connection con = DriverManager.getConnection( //
-        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
         Statement stmt = con.createStatement()) {
 
       // SQL 삽입 공격
@@ -31,7 +31,7 @@ public class Exam0110 {
       // 제목? aaaa
       // 내용? bbbb'), ('haha', 'hoho'), ('hehe', 'puhul
       //
-      int count = stmt.executeUpdate( 
+      int count = stmt.executeUpdate(
           "insert into x_board(title, contents) values('" + title + "','" + contents + "')");
 
       // 위에서 사용자가 입력한 값을 가지고 SQL 문장을 만들면 다음과 같다.

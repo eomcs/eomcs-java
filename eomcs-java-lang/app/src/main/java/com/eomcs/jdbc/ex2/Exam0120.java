@@ -17,7 +17,7 @@ public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery(
             "select board_id, title, created_date, view_count from x_board order by board_id desc")) {
