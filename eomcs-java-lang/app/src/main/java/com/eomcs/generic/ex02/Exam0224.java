@@ -26,14 +26,14 @@ public class Exam0224 {
     //
     //    m1(new ArrayList<Object>()); // 컴파일 오류!
     //    m1(new ArrayList<A>()); // 컴파일 오류!
-    m1(new ArrayList<B1>()); // OK 
+    m1(new ArrayList<B1>()); // OK
     //    m1(new ArrayList<B2>()); // 컴파일 오류!
-    m1(new ArrayList<C>()); // OK 
+    m1(new ArrayList<C>()); // OK
     m1(new ArrayList<D>()); // OK
   }
 
   static void m1(ArrayList<? extends B1> list) {
-    // 파라미터로 받은 ArrayList가 구체적으로 어떤 타입의 값을 다루는 것인지 
+    // 파라미터로 받은 ArrayList가 구체적으로 어떤 타입의 값을 다루는 것인지
     // 결정되지 않았기 때문에 컴파일러는 다음 코드가 옳은지 검사할 수 없다.
     // 그래서 컴파일 오류가 발생한다.
     //
