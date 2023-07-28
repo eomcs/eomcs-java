@@ -1,8 +1,6 @@
 package com.eomcs.netty.ex01;
 
-
 import io.netty.bootstrap.ServerBootstrap;
-
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -50,13 +48,14 @@ public class DiscardServer {
   }
 
   public static void main(String[] args) throws Exception {
-    int port;
-    if (args.length > 0) {
-      port = Integer.parseInt(args[0]);
-    } else {
-      port = 8888;
-    }
-    new DiscardServer(port).run();
-
+    new DiscardServer(8888).run();
   }
 }
+
+// Netty 라이브러리 준비
+// - https://central.sonatype.com/ 사이트에서 'netty-all' 라이브러리 검색
+// - Gradle 빌드 스크립트 파일(build.gradle)에 등록
+//   예) implementation 'io.netty:netty-all:4.1.96.Final'
+// - 'gradle eclipse' 실행
+// - Eclipse IDE에서 프로젝트 refresh
+//

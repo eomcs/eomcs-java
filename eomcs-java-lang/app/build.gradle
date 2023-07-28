@@ -127,6 +127,9 @@ dependencies {
   // log4j 2.x 라이브러리
   // implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
 
+  // Netty 라이브러리
+  implementation 'io.netty:netty-all:4.1.96.Final'
+  
   testImplementation 'junit:junit:4.13.2'
   implementation 'com.google.guava:guava:31.1-jre'
 }
