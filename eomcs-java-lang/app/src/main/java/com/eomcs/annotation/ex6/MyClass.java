@@ -10,7 +10,7 @@ public class MyClass {
 
   //  @MyAnnotation
   public void m(/*@MyAnnotation*/ int p) {
-    /*@MyAnnotationn*/ int a;
+    /*@MyAnnotation*/ int a;
   }
 
 }
