@@ -40,7 +40,7 @@ public class Exam0110 {
         .setTcpNoDelay(true) //
         .build();
 
-    final HttpServer server = ServerBootstrap.bootstrap()//
+    final ServerApp server = ServerBootstrap.bootstrap()//
         .setListenerPort(9999) // 웹서버 포트 번호 설정
         .setSocketConfig(socketConfig) // 기본 소켓 동작 설정
         .setSslContext(null) // SSL 설정
