@@ -219,7 +219,7 @@ public class Servlet01 extends GenericServlet {
 // => 웹 자원의 위치를 가리키는 식별자
 // => 종류
 //    URL(Uniform Resource Locator)
-//      scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
+//      scheme:[//[user:password@]host[:port]][/]path[?query string][#fragment]
 //      예) http://localhost:8080/ex04/s1?name=홍길동&age=20
 //
 //    URN(Uniform Resource Name)
