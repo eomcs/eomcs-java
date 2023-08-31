@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e6220ed-46a9-4d42-abae-8cd1daad9c6e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../eomcs-servlet/app/src/main/webapp/el/ex03.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../eomcs-servlet/app/src/main/webapp/el/ex03.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eomcs-servlet/app/src/main/webapp/jsp/ex07.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../eomcs-servlet/app/src/main/webapp/jsp/ex07.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eomcs-servlet/app/src/main/webapp/jsp/ex08.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../eomcs-servlet/app/src/main/webapp/jsp/ex08.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2UjBqqxgvO5lenAe5NPp53lyhh3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/eomjinyoung/git/eomcs-java/eomcs-java-lang/settings.gradle"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Hello" />
+      <module name="eomcs-java-lang.app.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Hello" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e6220ed-46a9-4d42-abae-8cd1daad9c6e" name="Changes" comment="" />
+      <created>1693443304709</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693443304709</updated>
+    </task>
+    <servers />
+  </component>
+</project>

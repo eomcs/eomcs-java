@@ -10,6 +10,7 @@
          즉시 해당 객체를 찾아 생성한다.
     -->
     
+
     <bean id="c1" class="com.eomcs.spring.ioc.ex04.Car">
         <property name="model" value="티코A"/>
         <property name="engine" ref="e1"/>

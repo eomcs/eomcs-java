@@ -38,17 +38,18 @@ public class Exam01 {
     // 1) 자바 CLASSPATH 에서 설정 파일을 찾는 IoC 컨테이너
     // => 자바 CLASSPATH?
     //    1) JVM을 실행할 때 -classpath 옵션으로 지정한 경로
-    //       예) $java -class c:\a\b;d:\xxx\yyy\zzz;c:\bb\x.jar Hello
+    //       예) $java -classpath c:\a\b;d:\xxx\yyy\zzz;c:\bb\x.jar Hello
     //    2) 만약 -classpath 경로가 지정되어 있지 않으면,
     //       OS에서 CLASSPATH 환경 변수로 등록한 경로
     //
     // => 파일 경로이기 때문에 패키지와 패키지 사이에는 . 대신에 /를 사용해야 한다.
-    // 
+    //
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
         "com/eomcs/spring/ioc/ex01/a/application-context.xml");
 
     System.out.println("실행 완료!");
   }
 }
+
 
 

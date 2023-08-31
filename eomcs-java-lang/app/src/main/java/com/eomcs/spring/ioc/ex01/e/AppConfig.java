@@ -7,7 +7,7 @@ import com.eomcs.spring.ioc.ex01.Car;
 public class AppConfig {
 
   // 객체 생성
-  @Bean 
+  @Bean
   public Car c1() {
     return new Car();
   }

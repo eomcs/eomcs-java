@@ -1,6 +1,8 @@
 package com.eomcs.spring.ioc.ex01;
 
-//@Component
+import org.springframework.stereotype.Component;
+
+@Component
 public class Car {
   String model;
   String maker;

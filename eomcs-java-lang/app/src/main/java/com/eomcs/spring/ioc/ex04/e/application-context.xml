@@ -36,12 +36,21 @@
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="1980"/>
         <property name="engine">
-            <bean class="com.eomcs.spring.ioc.ex04.Engine">
+            <bean id="e1" class="com.eomcs.spring.ioc.ex04.Engine">
                 <property name="maker" value="비트자동차"/>
                 <property name="valve" value="16"/>
                 <property name="cylinder" value="8"/>
             </bean>
         </property>
     </bean>
-
+    
+    <!-- 프로퍼티 설정 중에 만든 객체를 다른 객체에 주입할 수 없다.-->
+    <!--
+    <bean id="c3" class="com.eomcs.spring.ioc.ex04.Car">
+        <property name="model" value="소나타"/>
+        <property name="maker" value="비트자동차"/>
+        <property name="cc" value="1980"/>
+        <property name="engine" ref="e1"/>
+    </bean>
+    -->
 </beans>

@@ -18,8 +18,8 @@
 </pre> 
 <%
 // 세션이나 서블릿 컨텍스트 보관소에 저장된 데이터를 초기화시킨다.
-session.setAttribute("name", null);
-application.setAttribute("name", null);
+session.removeAttribute("name");
+application.removeAttribute("name");
 
 //pageContext.setAttribute("name", "홍길동");
 //request.setAttribute("name", "임꺽정");
