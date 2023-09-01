@@ -18,7 +18,7 @@
          그 애노테이션을 처리할 객체를 등록해야 한다.
          문제는, 
          각각의 애노테이션에 대해 어떤 클래스가 처리하는지 암기를 해야하고,
-         또한 다음 AutowiredAnnotationBeanPostProcessor의 경우와 같이 
+         AutowiredAnnotationBeanPostProcessor 클래스처럼 
          <bean> 태그를 이용하여 그 객체를 등록해야 한다.
       => 결론! 
          매우 번거롭고 불편하다.

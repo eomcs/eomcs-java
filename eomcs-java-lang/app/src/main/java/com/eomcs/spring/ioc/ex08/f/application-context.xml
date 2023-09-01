@@ -14,13 +14,13 @@
         <property name="auto" value="true"/>
     </bean>
     
-    <!--  
+     
     <bean id="e1" class="com.eomcs.spring.ioc.ex08.f.Engine">
         <property name="maker" value="비트자동차"/>
         <property name="valve" value="16"/>
         <property name="cylinder" value="4"/>
     </bean>
-    -->
+   
 </beans>
 
 

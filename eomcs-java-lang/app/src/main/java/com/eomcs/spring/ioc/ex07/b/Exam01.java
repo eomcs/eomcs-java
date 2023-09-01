@@ -11,6 +11,8 @@ public class Exam01 {
         "com/eomcs/spring/ioc/ex07/b/application-context.xml");
 
     System.out.println(iocContainer.getBean("c1"));
+
+    //java.sql.Date date = java.sql.Date.valueOf("2023-9-1");
   }
 
 }

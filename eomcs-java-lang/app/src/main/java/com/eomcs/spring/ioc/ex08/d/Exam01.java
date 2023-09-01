@@ -1,7 +1,6 @@
 // 의존 객체 주입 자동화하기 - 인스턴스 필드에 @Autowired 애노테이션 붙이기
 package com.eomcs.spring.ioc.ex08.d;
 
-import java.lang.reflect.Field;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.eomcs.spring.ioc.SpringUtils;
@@ -25,21 +24,6 @@ public class Exam01 {
 
     // Car 객체를 꺼내 Engine 객체가 주입되었는지 확인해보자!
     System.out.println(iocContainer.getBean("c1"));
-
-
-    // private 멤버는 직접 접근 불가!
-    Car c2 = new Car();
-    //    c2.model = "비트비트"; // private 멤버이기 때문에 접근 불가! 컴파일 오류!
-    c2.setModel("비트비트"); 
-    System.out.println(c2);
-
-
-    // 정말?
-    // => Reflection API 사용하면 private 멤버도 접근할 수 있다.
-    Field f = Car.class.getDeclaredField("model");
-    f.setAccessible(true); // private 멤버이지만 난 접근할래!!!
-    f.set(c2, "오호라2");
-    System.out.println(c2);
 
   }
 
