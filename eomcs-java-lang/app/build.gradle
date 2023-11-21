@@ -6,24 +6,11 @@ plugins {
     // 예) .classpath, .settings/*
     id 'java'  
 
+
     // 이클립스 관련 파일을 다룰 때 사용할 도구를 추가한다.
     // 예) .project
     id 'eclipse' 
 }
-
-// 자바 소스를 컴파일 할 때 적용할 옵션
-tasks.withType(JavaCompile) {
-    // 프로젝트의 소스 파일 인코딩을 gradle에게 알려준다.
-    // $javac -encoding UTF-8 ..
-    options.encoding = 'UTF-8' 
-
-    // 소스 파일을 작성할 때 사용할 자바 버전
-    sourceCompatibility = '17'
-
-    // 자바 클래스를 실행시킬 JVM의 최소 버전
-    targetCompatibility = '17'
-}
-
 
 // .class 파일을 둘 폴더를 지정하지 않으면 
 // Gradle 은 기본 출력 폴더의 경로로 'bin/default' 를 사용한다.
@@ -59,9 +46,9 @@ eclipse {
         name = "eomcs-java-lang"
     }
     jdt {
-      sourceCompatibility = 17
-      targetCompatibility = 17
-      javaRuntimeName = "JavaSE-17"
+      sourceCompatibility = 21
+      targetCompatibility = 21
+      javaRuntimeName = "JavaSE-21"
     }
 }
 
@@ -77,10 +64,10 @@ dependencies {
   // implementation 'com.drewnoakes:metadata-extractor:2.18.0'
   
   // Spring IoC 컨테이너
-  implementation 'org.springframework:spring-context:6.0.11'
+  //implementation 'org.springframework:spring-context:6.0.11'
 
   // @Resource 애노테이션이 들어 있는 API
-  implementation 'javax.annotation:javax.annotation-api:1.3.2'
+  //implementation 'javax.annotation:javax.annotation-api:1.3.2'
   
   // Spring JDBC 보조 라이브러리
   // - DataSource 구현체가 들어 있다.
@@ -100,22 +87,22 @@ dependencies {
   // implementation 'org.mybatis:mybatis-spring:2.0.6'
 
   // MariaDB JDBC 드라이버
-  implementation 'org.mariadb.jdbc:mariadb-java-client:3.1.2'
+  //implementation 'org.mariadb.jdbc:mariadb-java-client:3.1.2'
 
   // Oracle JDBC Driver
-  implementation 'com.oracle.database.jdbc:ojdbc11-production:21.7.0.0'
+  //implementation 'com.oracle.database.jdbc:ojdbc11-production:21.7.0.0'
     
   // MSSQL JDBC Driver
-  implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
+  //implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
   
   // MySQL JDBC Driver
-  implementation 'mysql:mysql-connector-java:8.0.33'
+  //implementation 'mysql:mysql-connector-java:8.0.33'
   
   // Google JSON 라이브러리
-  implementation 'com.google.code.gson:gson:2.10.1'
+  //implementation 'com.google.code.gson:gson:2.10.1'
   
   // jackson-databind JSON 라이브러리
-  implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+  //implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
 
   // Apache HTTP 통신 라이브러리
   //implementation 'org.apache.httpcomponents.client5:httpclient5:5.0'
@@ -131,10 +118,43 @@ dependencies {
   // implementation 'io.netty:netty-all:4.1.96.Final'
   
   // Reactor Netty 라이브러리
-  implementation platform('io.projectreactor:reactor-bom:2022.0.9') 
-  implementation 'io.projectreactor.netty:reactor-netty-core' 
-  implementation 'io.projectreactor.netty:reactor-netty-http'
+  //implementation platform('io.projectreactor:reactor-bom:2022.0.9') 
+  //implementation 'io.projectreactor.netty:reactor-netty-core' 
+  //implementation 'io.projectreactor.netty:reactor-netty-http'
   
-  testImplementation 'junit:junit:4.13.2'
-  implementation 'com.google.guava:guava:31.1-jre'
+    // 단위 테스트 할 때 사용할 라이브러리
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+
+    // 단위 테스트와 관련된 라이브러리
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // 일반적으로 애플리케이션을 개발할 때 많이 사용하는 라이브러리
+    // 구글 개발자들이 만든 라이브러리이다.
+    implementation 'com.google.guava:guava:32.1.1-jre'
+}
+
+// 소스 파일이 어떤 자바 버전으로 되어 있는지 Gradle 에게 알려준다.
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// 단위 테스트를 수행할 때 사용할 설정
+tasks.named('test') {
+    useJUnitPlatform() // 단위 테스트를 수행할 때 JUnit 도구를 사용하도록 지정한다.
+}
+
+// 자바 소스를 컴파일 할 때 적용할 옵션
+tasks.withType(JavaCompile).configureEach {
+    // 프로젝트의 소스 파일 인코딩을 gradle에게 알려준다.
+    // $javac -encoding UTF-8 ..
+    options.encoding = 'UTF-8' 
+    
+    
+    // 소스 파일을 작성할 때 사용할 자바 버전
+    //sourceCompatibility = '21'
+
+    // 자바 클래스를 실행시킬 JVM의 최소 버전
+    //targetCompatibility = '21'
 }

@@ -9,7 +9,7 @@ public class Exam0230 {}
 
 //## 실습
 //1) 컴파일하기
-//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex01/Exam2_3.java
+//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex01/Exam0230.java
 //
 //2) 생성된 클래스 파일 확인하기
-//- bin/main/com/eomcs/lang/ex01 디렉토리에 Exam2_3.class가 생성된다.
+//- bin/main/com/eomcs/lang/ex01 디렉토리에 Exam0230.class가 생성된다.
