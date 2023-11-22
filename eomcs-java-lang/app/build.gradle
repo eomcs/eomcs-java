@@ -40,19 +40,6 @@ eclipse {
 }
 */
 
-// eclipse 프로젝트 이름을 설정하기
-eclipse {
-    project {
-        name = "eomcs-java-lang"
-    }
-    jdt {
-      sourceCompatibility = 21
-      targetCompatibility = 21
-      javaRuntimeName = "JavaSE-21"
-    }
-}
-
-
 // 프로젝트에서 사용할 자바 라이브러리를 다운로드 받을 때 접속할 서버
 repositories {
     mavenCentral()
@@ -136,7 +123,7 @@ dependencies {
 // 소스 파일이 어떤 자바 버전으로 되어 있는지 Gradle 에게 알려준다.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -158,3 +145,16 @@ tasks.withType(JavaCompile).configureEach {
     // 자바 클래스를 실행시킬 JVM의 최소 버전
     //targetCompatibility = '21'
 }
+
+// eclipse 프로젝트 이름을 설정하기
+eclipse {
+    project {
+        name = "eomcs-java-lang"
+    }
+    jdt {
+      sourceCompatibility = 17
+      targetCompatibility = 17
+      javaRuntimeName = "JavaSE-17"
+    }
+}
+
