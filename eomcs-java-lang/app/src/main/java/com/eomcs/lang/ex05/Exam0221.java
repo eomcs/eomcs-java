@@ -45,6 +45,7 @@ public class Exam0221 {
     System.out.println(x);
     System.out.println(y);
     System.out.println(x + y); 
+    System.out.println(13.421f);
     // 11.221
     // => 11: 1011
     // => 0.221: 00111000100100110111
