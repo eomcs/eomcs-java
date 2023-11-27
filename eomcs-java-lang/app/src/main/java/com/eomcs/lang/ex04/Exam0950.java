@@ -20,5 +20,18 @@ public class Exam0950 {
     //    char v2 = (char) "가"; // 컴파일 오류!
     //    int v3 = (int) "123"; // 컴파일 오류!
     //    float v4 = (int) "3.14f"; // 컴파일 오류!
+
+    // 예) boolean ==/==> 정수
+    bool = true;
+    //    byte b1 = (byte) bool;
+    //    short s1 = (byte) bool;
+    //    int i1 = (byte) bool;
+    //    long l1 = (byte) bool;
+    //    char c1 = (byte) bool;
+
+    // 예) bool ==/==> 부동소수점
+    //    float f1 = (byte) bool;
+    //    double d1 = (byte) bool;
+
   }
 }

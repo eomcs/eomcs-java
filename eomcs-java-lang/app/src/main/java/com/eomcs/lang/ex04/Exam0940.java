@@ -19,6 +19,14 @@ public class Exam0940 {
     byte b2 = (byte)s; // 명시적 형변환
     System.out.println(b2);
 
+    // 만약 메모리의 크기를 벗어나는 큰 수의 값을 넣으려 한다면?
+    // => 뒤의 바이트를 저장한다.
+    // 200(int) ==> 00000000 00000000 00000000 11001000
+    // temp <== 11001000(-56)
+    short temp = 200;
+    b2 = (byte)temp;
+    System.out.println(b2); // -56
+
     // int ==> byte
     b2 = (byte)i; // 명시적 형변환
     System.out.println(b2);
