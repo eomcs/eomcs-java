@@ -7,6 +7,12 @@ public class Exam0410 {
     // for (변수선언 및 초기화; 조건; 증감문) 문장;
     // for (변수선언 및 초기화; 조건; 증감문) {문장1; 문장2; ...}
 
+    // while 문을 사용할 경우,
+    //    int a = 1;
+    //    while (a <= 5) { 
+    //      System.out.println(a++);
+    //    }
+
     // for 문의 전형적인 예
     for (int i = 1; i <= 5; i++)
       System.out.println(i);

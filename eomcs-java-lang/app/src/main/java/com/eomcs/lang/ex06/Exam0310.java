@@ -24,6 +24,13 @@ public class Exam0310 {
     while (count < 5)
       System.out.println(count++);
 
+    //
+    // while (count < 5) {
+    //   int temp = count;
+    //   count = count + 1;
+    //   System.out.println(temp);
+    // }
+
 
     System.out.println("---------------------------");
 
