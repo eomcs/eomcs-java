@@ -8,6 +8,7 @@ public class Exam0230 {
 
     System.out.print("int: ");
     int i = keyScan.nextInt();
+
     // nextInt()는 한 개의 토큰(token)을 읽을 때가지 기다린다.
     // 한 개의 token을 읽으면 4바이트 정수 값으로 바꾼 다음에 리턴한다.
     // 토큰(token)?
