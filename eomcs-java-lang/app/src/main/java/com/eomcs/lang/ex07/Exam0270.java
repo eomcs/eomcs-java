@@ -31,6 +31,9 @@ public class Exam0270 {
   //  static void m2(boolean b, String... names, int a) {} // 컴파일 오류!
   static void m2(int a, String... names) {} // OK!
 
+  static void m3(int a, String[] names) {} // OK!
+  static void m3(String[] names, int a) {} // OK!
+
   public static void main(String[] args) {
     // 컴파일 확인하라!
 

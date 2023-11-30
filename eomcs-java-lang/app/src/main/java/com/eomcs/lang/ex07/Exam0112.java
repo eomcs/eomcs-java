@@ -33,7 +33,6 @@ public class Exam0112 {
     while (starLen <= len) {
       printSpaces((len - starLen) / 2);
 
-      // 별 출력
       printStars(starLen);
 
       // 출력 줄 바꾸기

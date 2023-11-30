@@ -7,6 +7,7 @@ public class Exam0240 {
   // 4) 메서드 : 리턴값(O), 파라미터(O)
   // => "이 돈 갖고 과자좀 사와!"
   static String hello(String name, int age) {
+    //    String retVal = age + "살 " + name + "님을 환합니다.";
     String retVal = String.format("%d살 %s님을 환영합니다!", age, name);
     return retVal;
   }
