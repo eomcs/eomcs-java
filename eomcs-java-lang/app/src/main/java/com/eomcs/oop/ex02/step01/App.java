@@ -1,9 +1,9 @@
-package com.eomcs.oop.ex02;
+package com.eomcs.oop.ex02.step01;
 
 // # 관련된 기능(메서드)을 묶어 분류하기
 // 1) 분류 전
 //
-public class Exam0210 {
+public class App {
 
   public static void main(String[] args) {
     // 다음 식을 연산자 우선 순위를 고려하지 않고 순서대로 계산하라!
