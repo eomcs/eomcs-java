@@ -27,6 +27,7 @@ public class Calculator {
   // Calculator의 인스턴스 주소를 받을 필요가 없다. 
   public static int abs(int a) {
     // 스태틱 메서드는 this라는 내장 변수가 없다.
+    //this.result = 100; //컴파일 오류!
     return a >= 0 ? a : a * -1;
   }
 }
