@@ -35,18 +35,18 @@ import com.eomcs.oop.ex02.step18.vo.Score;
 public class App {
   public static void main(String[] args) {
 
-    Score s1 = new Score();
-    Score s2 = new Score();
-    Score s3 = new Score();
+    // 1) Score 설계도(클래스 정의)에 따라 인스턴스 변수를 Heap 영역에 만든다.
+    // 2) 생성자를 호출한다.
+    //    - 생성자에 넘겨주는 아규먼트의 타입과 개수, 순서에 따라 호출할 생성자를 결정한다.
+    //    - 만약 해당 아규먼트를 받을 수 있는 생성자가 없다면 컴파일 오류가 발생한다.
+    //
+    Score s1 = new Score("홍길동", 100, 90, 85);
+    Score s2 = new Score("임꺽정", 90, 80, 75);
+    Score s3 = new Score("유관순", 80, 70, 65);
 
-    s1.init("홍길동", 100, 90, 85);
-    s1.compute();
-
-    s2.init("임꺽정", 90, 80, 75);
+    // 변수의 값이 바뀌면 명시적으로 compute()를 호출하여 합계와 평균을 다시 계산한다.
+    s2.kor = 100;
     s2.compute();
-
-    s3.init("유관순", 80, 70, 65);
-    s3.compute();
 
     printScore(s1);
     printScore(s2);
