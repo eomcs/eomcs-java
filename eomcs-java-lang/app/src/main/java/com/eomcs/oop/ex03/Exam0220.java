@@ -1,4 +1,4 @@
-// 인스턴스 메서드 - 내장 변수 this
+// 인스턴스 메서드 - 내장 변수(Built-in) this
 package com.eomcs.oop.ex03;
 
 public class Exam0220 {

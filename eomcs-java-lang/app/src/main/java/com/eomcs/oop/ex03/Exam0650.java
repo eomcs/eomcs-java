@@ -34,6 +34,8 @@ public class Exam0650 {
     // 주의!
     // => import 문장에서는 $ 대신 .을 써야 한다.
     //    예) import com.eomcs.oop.ex03.Exam0650.A;
+    // => 변수 선언문에서도 $ 대신 .을 써야 한다.
+    //    예) com.eomcs.oop.ex03.Exam0650.A obj;
 
     System.out.println("----------------------------------");
 

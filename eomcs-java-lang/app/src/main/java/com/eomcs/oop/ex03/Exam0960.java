@@ -12,6 +12,9 @@ public class Exam0960 {
 
     // 여러 개의 생성자를 정의할 수 있다.
     Monitor() {
+      // 변수 초기화 문장(variable initializer)은 생성자의 앞부분으로 복사된다.
+      //      contrast = 50;
+      //      heightRes = 1080;
       this.bright = 50;
       this.contrast = 50;
       this.widthRes = 2560;
@@ -20,12 +23,18 @@ public class Exam0960 {
     }
 
     Monitor(int bright, int contrast) {
+      // 변수 초기화 문장(variable initializer)은 생성자의 앞부분으로 복사된다.
+      //      contrast = 50;
+      //      heightRes = 1080;
       this.bright = bright;
       this.contrast = contrast;
       System.out.println("Monitor(int, int)");
     }
 
     Monitor(int bright, int contrast, int widthRes, int heightRes) {
+      // 변수 초기화 문장(variable initializer)은 생성자의 앞부분으로 복사된다.
+      //      contrast = 50;
+      //      heightRes = 1080;
       this.bright = bright;
       this.contrast = contrast;
       this.widthRes = widthRes;

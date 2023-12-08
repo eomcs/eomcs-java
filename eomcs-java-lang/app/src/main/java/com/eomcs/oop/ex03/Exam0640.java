@@ -22,6 +22,7 @@ public class Exam0640 {
   }
 
   public static void main(String[] args) throws Exception {
+    System.out.println("main() 호출됨!");
 
     // 클래스가 로딩되는 경우,
     // 3) 해당 클래스의 인스턴스를 생성할 때

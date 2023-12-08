@@ -13,6 +13,9 @@ public class Exam0950 {
     // 만약 생성자가 한 개라도 있으면 컴파일러는 기본 생성자를 추가하지 않는다.
     //
     Monitor(int bright, int contrast) {
+      // 변수 초기화 문장(variable initializer)은 생성자의 앞부분으로 복사된다.
+      //      contrast = 50;
+      //      heightRes = 1080;
       this.bright = bright;
       this.contrast = contrast;
     }

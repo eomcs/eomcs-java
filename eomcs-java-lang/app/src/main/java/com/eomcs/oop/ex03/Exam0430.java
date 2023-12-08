@@ -47,6 +47,7 @@ public class Exam0430 {
     Score s2 = new Score("유관순");
     Score s3 = new Score("홍길동", 100, 90, 77);
     //    Score s4 = new Score(true); // 논리 값을 받는 생성자는 없다!
+    //    Score s5 = new Score("홍길동", 100); // 컴파일 오류!
 
     System.out.printf("%s, %d, %d, %d, %d, %.1f\n",
         s1.name, s1.kor, s1.eng, s1.math, s1.sum, s1.average);
