@@ -37,7 +37,7 @@ public class Exam0220 {
     boolean b = Boolean.parseBoolean("true");
     System.out.printf("%f, %b\n", f, b);
 
-    float f2 = Float.valueOf("3.14f");
+    Float f2 = Float.valueOf("3.14f");
     System.out.printf("%f\n", f2);
   }
 }

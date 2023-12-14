@@ -29,7 +29,7 @@ public class Exam0210 {
 
     System.out.println("-------------------------");
 
-    String s3 = new String("ABC가각");
+    String s3 = new String("ABC가각똘똠똥");
     // 인스턴스에 들어 있는 문자 코드를 바이트 배열로 만들어 리턴한다.
     byte[] bytes = s3.getBytes(); 
     // => 인스턴스에 들어 있는 각 문자를 바이트 배열에 저장할 때 
