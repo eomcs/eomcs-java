@@ -26,7 +26,6 @@ public class Exam0140 {
     // - 현재 클래스에서 해당 필드를 찾는다. 없으면 상위 클래스로 따라 올라가면서 찾는다.
     // super.필드명
     // - 상위 클래스에서부터 해당 필드를 찾는다. 없으면 계속 상위 클래스로 따라 올라간다.
-    @Override
     void print() {
       System.out.println("A4.print():");
       System.out.printf("  => this.name(%s)\n", this.name);
