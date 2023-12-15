@@ -13,7 +13,7 @@ package com.eomcs.oop.ex05.l;
 // Sedan과 Truck은 이 클래스의 서브클래스가 된다.
 //
 // start()와 shutdown() 은
-// Sedan이나 Truck 모두 같은 작업을 수행하기 때문에 상속 받은 것을 그대로 사용하며 되지만,
+// Sedan이나 Truck 모두 같은 작업을 수행하기 때문에 상속 받은 것을 그대로 사용하면 되지만,
 // run()은 Sedan과 Truck이 서로 다르게 작업하기 때문에 재정의(오버라이딩) 해야 한다.
 public class Exam01 {
 
