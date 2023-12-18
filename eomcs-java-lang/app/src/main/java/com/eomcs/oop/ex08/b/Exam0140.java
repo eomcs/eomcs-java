@@ -57,7 +57,7 @@ public class Exam0140 {
     // 그래서 값을 꺼내 출력해보면 입력된 값 그대로 출력될 것이다.
     c1.setName("홍길동");
     c1.setAge(300);
-    c1.setWeight(100);
+    c1.setWeight(-100);
     c1.setHeight(-50);
 
     System.out.printf("%s, %d, %d, %d\n",
