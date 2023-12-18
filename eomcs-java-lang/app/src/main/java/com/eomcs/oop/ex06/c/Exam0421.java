@@ -40,7 +40,7 @@ public class Exam0421 {
   }
 
   public static void main(String[] args) {
-    X5 obj = new X5();
+    X4 obj = new X5();
     obj.test();
   }
 }

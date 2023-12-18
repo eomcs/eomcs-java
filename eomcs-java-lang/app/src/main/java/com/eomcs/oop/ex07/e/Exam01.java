@@ -8,8 +8,8 @@ public class Exam01 {
     int[] values2 = {23, 7, 12, 15, 9, 2, 22, 8, 11, 25, 13, 5};
     int[] values3 = {23, 7, 12, 15, 9, 2, 22, 8, 11, 25, 13, 5};
 
-    // Sorter 클래스의 sort() 메서드를 추상 메서드이기 때문에
-    // Sorter 클래스를 상속 받은 서브 클래스가 무엇이든 간에
+    // Sorter 클래스의 sort() 메서드를 추상 메서드로 선언했기 때문에
+    // Sorter 클래스를 상속 받아 만든 서브 클래스는
     // sort() 메서드가 반드시 구현되어 있을 것이다.
     // 따라서 display() 메서드에서는 파라미터로 넘어오는 Sorter가
     // BubbleSort 인지, QuickSort 인지, MergeSort 인지 따질 필요 없이,
