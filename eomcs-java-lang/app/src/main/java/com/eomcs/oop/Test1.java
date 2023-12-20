@@ -1,8 +1,14 @@
 package com.eomcs.oop;
 
+import java.util.ArrayList;
+
 public class Test1 {
 
   public static void main(String[] args) {
+
+    ArrayList l;
+
+
     Member m = new Member();
     m.setNo(1);
     m.setName("홍길동");
