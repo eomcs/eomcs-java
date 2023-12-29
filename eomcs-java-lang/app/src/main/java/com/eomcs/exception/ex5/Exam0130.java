@@ -50,7 +50,7 @@ public class Exam0130 {
       System.out.printf("제목: %s\n", board.getTitle());
       System.out.printf("내용: %s\n", board.getContent());
       System.out.printf("등록일: %s\n", board.getCreatedDate());
-
+      java.util.LinkedList l;
     } catch (Exception ex) {
       ex.printStackTrace();
       // 예외 내용이 출력된 것을 보면,

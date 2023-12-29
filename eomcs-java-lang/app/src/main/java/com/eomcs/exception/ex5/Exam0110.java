@@ -32,7 +32,6 @@ public class Exam0110 {
     //    무조건 close()가 실행되게 만들라!
     // => 어떻게?
     //    finally {} 에 자원 해제시키는 코드를 담아라!
-
     return board;
   }
 

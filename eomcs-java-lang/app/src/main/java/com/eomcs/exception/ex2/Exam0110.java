@@ -3,7 +3,7 @@ package com.eomcs.exception.ex2;
 
 public class Exam0110 {
   public static void main(String[] args) {
-    String op = "+";
+    String op = "#";
     int a = 100;
     int b = 200;
 

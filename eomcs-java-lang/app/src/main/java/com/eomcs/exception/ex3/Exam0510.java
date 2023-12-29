@@ -20,7 +20,7 @@ public class Exam0510 {
   public static void main(String[] args) {
     try {
       System.out.println("try");
-      m(20);
+      m(1);
       return;
     } catch (RuntimeException | SQLException | IOException e) {
       System.out.println("catch 1");
