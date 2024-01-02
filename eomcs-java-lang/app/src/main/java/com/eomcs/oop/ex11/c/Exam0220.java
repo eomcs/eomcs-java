@@ -9,6 +9,15 @@ class B2 {
     System.out.println("B2.v2 = " + this.v2);
   }
 
+  static class Y {
+    // 스태틱 중첩 클래스는 바깥 클래스의 인스턴스 주소를 저장하는 코드가 없다.
+    // 따라서 B2.this 라는 변수를 사용할 수 없다.
+    void test() {
+      //B2.this.v2 = 100;
+      //B2.this.m2();
+    }
+  }
+
   class X {
     // 바깥 객체의 주소를 저장할 빌트인 필드
     //    B2 this$0;

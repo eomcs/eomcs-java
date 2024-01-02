@@ -21,8 +21,8 @@ class H {
       System.out.printf("this.v1 = %d\n", this.v1);
       System.out.printf("H.this.v1 = %d\n", H.this.v1);
 
-      System.out.printf("v2 = %d\n", v2);
-      System.out.printf("v3 = %d\n", v3);
+      System.out.printf("v2 = %d\n", v2); // ==> 컴파일러는 this.v2 로 변경한다.
+      System.out.printf("v3 = %d\n", v3); // ==> 컴파일러는 H.this.v3 로 변경한다.
     }
   }
 }

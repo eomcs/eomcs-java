@@ -7,7 +7,18 @@ class B3 {
   int v1 = 10;
 
   class X {
+    // non-static nested class 는 바깥 클래스의 인스턴스 주소를 저장할 변수를 갖고 있다.
+    // 예) 
+    //    B3 this$0;
+
     int v1 = 100;
+
+    // non-static nested class 는 바깥 클래스의 인스턴스 주소를 받는 생성자를 갖고 있다.
+    // 예)
+    //    X(B3 obj) {
+    //      this$0 = obj;
+    //    }
+
 
     void test() {
       int v1 = 1000;

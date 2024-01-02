@@ -43,7 +43,7 @@ class Musics3 {
 
   // inner 클래스의 객체를 생성하는 역할을 바깥 클래스가 맡는다.
   public Player createPlayer() {
-    return new Player(); // ==> this.new Player();  // 바깥 클래스의 객체 주소 생략!
+    return this.new Player(); // ==> this.new Player();  // 바깥 클래스의 객체 주소 생략!
   }
 
   class Player {

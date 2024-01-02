@@ -14,8 +14,8 @@ public class Exam0730 {
     // ArrayList 도 Iterator 구현체를 inner class 로 갖고 있다.
     // iterator() 메서드는 이 구현체를 생성하여 리턴한다.
     //
-    final Iterator i1 = m1.iterator();
-    final Iterator i2 = m1.iterator();
+    final Iterator<String> i1 = m1.iterator();
+    final Iterator<String> i2 = m1.iterator();
 
     while (i1.hasNext()) {
       System.out.println(i1.next());
