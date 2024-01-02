@@ -34,7 +34,11 @@ public class Exam0122 {
     //
     A obj2 = new A("오호라!", 100) {
       // bytecode를 확인해 보라!
+      //      $1(String arg0, int arg1) {
+      //        super(arg0, arg1);
+      //      }
     };
+
     obj2.print();
 
   }

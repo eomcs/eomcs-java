@@ -22,7 +22,7 @@ class D2 {
       }
     }
 
-    X obj = new X();
+    X obj = new X(); // ==> X obj = new X(this, v2);
     obj.f();
   }
 }

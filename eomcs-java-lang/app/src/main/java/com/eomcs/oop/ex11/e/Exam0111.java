@@ -4,6 +4,7 @@ package com.eomcs.oop.ex11.e;
 public class Exam0111 {
   // 인터페이스의 경우 static으로 선언하지 않아도 스태틱 멤버에서 사용할 수 있다.
   // => 인터페이스는 규칙을 정의한 것이기 때문에 인스턴스 멤버라는 개념이 존재하지 않는다.
+  // => 바깥 클래스(outer class)의 인스턴스 주소를 저장할 필드를 추가할 수 없다.
   interface A {
     void print();
   }

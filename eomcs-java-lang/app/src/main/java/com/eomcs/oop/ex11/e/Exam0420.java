@@ -14,4 +14,25 @@ public class Exam0420 {
       System.out.println("Hello!");
     }
   };
+  int v1 = 100;
+
+  // 컴파일 할 때 위의 문장은 다음의 문장으로 변환한다.
+  //  class Exam0420$1 extends A {
+  //    Exam0410 this$0;
+  //    public Exam0420$1(Exam0420 obj) {
+  //      this$0 = obj;
+  //    }
+  //    @Override
+  //    public void print() {
+  //      System.out.println("Hello!");
+  //    }
+  //  }
+  //  
+  //  A obj;
+  //  int v1;
+  //  
+  //  public Exam0420() {
+  //    this.obj = new Exam0420$1(this);
+  //    this.v1 = 100;
+  //  }
 }

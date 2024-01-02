@@ -15,7 +15,7 @@ public class Exam0230 {
     public A(String name) {
       System.out.println("A(String) 호출됨!");
       this.name = name;
-    }
+    } 
 
     public void print() {
       System.out.println(name);
@@ -32,7 +32,12 @@ public class Exam0230 {
     // 1) 수퍼 클래스의 기본 생성자 호출하기
     // - 컴파일러는 익명 클래스에 기본 생성자를 추가한다.
     //
-    A obj = new A() {};
+    A obj = new A() {
+      // 컴파일러는 다음과 같이 익명 클래스의 생성자를 추가한다.
+      //      $1() { // 생성자를 추가한다.
+      //        super(); // 수퍼 클래스의 기본 생성자를 호출한다.
+      //      }
+    };
     obj.print();
 
     System.out.println("-----------------------------");
@@ -42,7 +47,12 @@ public class Exam0230 {
     //   그 타입의 값을 받는 수퍼 클래스의 생성자가 호출된다.
     // - 컴파일러는 익명 클래스에 String 파라미터를 가진 생성자를 추가한다.
     //
-    obj = new A("홍길동") {};
+    obj = new A("홍길동") {
+      // 컴파일러는 다음과 같이 익명 클래스의 생성자를 추가한다.
+      //      $1(String arg0) { // 문자열을 받는 생성자를 추가한다.
+      //        super(arg0); // 수퍼 클래스의 생성자 중에서 문자열을 받는 생성자를 호출한다.
+      //      }
+    };
     obj.print();
 
     // 물론 다음과 같이 해당 타입의 값을 받을 생성자가 없으면

@@ -39,5 +39,15 @@ public class Exam0440 {
       }
     });
 
+    // 위의 코드는 컴파일러가 다음 코드로 바꾼다.
+    //    class Exam0440$2 implements A {
+    //      @Override
+    //      public void print() {
+    //        System.out.println("안녕!!!");
+    //      }
+    //    }
+    //    A temp = new Exam0440$2();
+    //    m1(temp);
+
   }
 }
