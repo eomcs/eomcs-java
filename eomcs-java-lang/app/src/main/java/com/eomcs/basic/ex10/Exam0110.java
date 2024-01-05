@@ -6,5 +6,6 @@ public class Exam0110 {
     System.out.println(d.toString());
     System.out.printf("%tY-%tm-%td\n", d, d, d);
     System.out.printf("%tY-%1$tm-%1$td\n", d);
+    System.out.printf("1970-1-1 0:0:0 = %d(millis)\n", d.getTime());
   }
 }
