@@ -39,3 +39,22 @@ public class Exam0410 {
 //    ...
 // }
 //
+// 예)
+//{ 
+//  "no":1,
+//  "title":"제목",
+//  "content":"내용",
+//  "writer":{
+//    "no":100,
+//    "fullname":"홍길동",
+//    "email":"hong@test.com",
+//    "password":"1111",
+//    "photo":"hong.gif",
+//    "tel":"010-2222-1111",
+//    "registeredDate":"1월 8, 2024"
+//  },
+//  "registeredDate":"1월 8, 2024",
+//  "viewCount":98,
+//  "like":5
+//}
+

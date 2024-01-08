@@ -35,3 +35,9 @@ public class Exam0610 {
   }
 }
 
+//// 예)
+//[
+//  {"position":"대리","fax":"02-1111-2222","no":101,"fullname":"홍길동","email":"hong@test.com","registeredDate":"1월 8, 2024"},
+//  {"major":"컴퓨터공학","hourPay":10000,"no":103,"fullname":"안창호","email":"ahn@test.com","registeredDate":"1월 8, 2024"}
+//]
+

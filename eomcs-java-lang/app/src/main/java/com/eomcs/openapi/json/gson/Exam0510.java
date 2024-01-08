@@ -55,3 +55,38 @@ public class Exam0510 {
 //    ...
 // }
 //
+// 예)
+//{  
+//  "no":11,
+//  "title":"제목",
+//  "content":"내용",
+//  "startDate":"1월 1, 2021",
+//  "endDate":"2월 2, 2021",
+//  "owner":{
+//    "no":102,
+//    "fullname":"임꺽정",
+//    "email":"leem@test.com",
+//    "registeredDate":"1월 8, 2024"
+//  },
+//  "members":[
+//    {
+//      "no":101,
+//      "fullname":"홍길동",
+//      "email":"hong@test.com",
+//      "registeredDate":"1월 8, 2024"
+//    },
+//    {
+//      "no":102,
+//      "fullname":"임꺽정",
+//      "email":"leem@test.com",
+//      "registeredDate":"1월 8, 2024"
+//    },
+//    {
+//      "no":103,
+//      "fullname":"안창호",
+//      "email":"ahn@test.com",
+//      "registeredDate":"1월 8, 2024"
+//    }
+//  ],
+//  "tasks":[]
+//}

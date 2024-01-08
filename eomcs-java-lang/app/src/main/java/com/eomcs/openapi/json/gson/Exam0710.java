@@ -18,7 +18,7 @@ public class Exam0710 {
     mgr.setFax("02-1111-2222");
 
     HashMap<String,Object> params = new HashMap<>();
-    params.put("no", String.valueOf(100));
+    params.put("no", 100);
     params.put("title", "Hello");
     params.put("manager", mgr);
 
@@ -27,4 +27,19 @@ public class Exam0710 {
     System.out.println(jsonStr);
   }
 }
+
+// 예)
+//{
+//  "no":100,
+//  "manager":{
+//    "position":"대리",
+//    "fax":"02-1111-2222",
+//    "no":101,
+//    "fullname":"홍길동",
+//    "email":"hong@test.com",
+//    "registeredDate":"1월 8, 2024"
+//  },
+//  "title":"Hello"
+//}
+
 
