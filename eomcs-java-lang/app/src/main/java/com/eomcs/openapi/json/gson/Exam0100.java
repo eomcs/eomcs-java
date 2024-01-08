@@ -8,7 +8,7 @@ public class Exam0100 {
     // Gson 라이브러리를 프로젝트에 추가한다.
     // 1) `build.gradle` 빌드 스크립트 파일 변경
     //   - Gson 라이브러리 정보를 dependecies {} 블록에 추가한다.
-    //     - https://search.maven.org/ 사이트에 방문한다.
+    //     - https://search.maven.org/ 또는 https://central.sonatype.com/ 사이트에 방문한다.
     //     - `gson` 검색어로 라이브러리를 찾는다.
     //     - `com.google.code.gson` 라이브러리를 선택한다.
     //     - 검색 결과에서 최신 버전을 선택한다.

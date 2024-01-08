@@ -24,6 +24,7 @@ public class Exam0112 {
     m.setPhoto("hong.gif");
     m.setTel("010-2222-1111");
     m.setRegisteredDate(new Date(System.currentTimeMillis()));
+    m.setSchool(new School("학사", "비트대학교"));
 
     // 2) JSON 처리 객체 준비
     // Date 타입의 값을 내보내고 가져올 때 사용할 변환 도구를 준비
@@ -40,6 +41,18 @@ public class Exam0112 {
       }
     }
 
+    class GsonSchoolFormatAdapter implements JsonSerializer<School> {
+
+      private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+      @Override
+      public JsonElement serialize(School src, Type typeOfSrc, JsonSerializationContext context) {
+        // 객체를 JSON 문자열로 변환할 때 호출된다.
+        // 그 중 School 타입의 프로퍼티 값을 JSON 문자열로 바꿀 때 호출된다.
+        return new JsonPrimitive(String.format("%s(%s)", src.level, src.name));
+      }
+    }
+
     // Gson 객체를 만들어 줄 도우미 객체
     GsonBuilder builder = new GsonBuilder();
 
@@ -49,6 +62,10 @@ public class Exam0112 {
         new GsonDateFormatAdapter() // Date 형식의 데이터를 JSON 문자열로 바꿔줄 변환기
         );
 
+    builder.registerTypeAdapter(
+        School.class, // 원래 데이터의 타입
+        new GsonSchoolFormatAdapter() // Date 형식의 데이터를 JSON 문자열로 바꿔줄 변환기
+        );
     Gson gson = builder.create();
 
     // 3) 객체의 값을 JSON 문자열로 얻기

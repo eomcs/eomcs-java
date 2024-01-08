@@ -86,10 +86,10 @@ dependencies {
   //implementation 'mysql:mysql-connector-java:8.0.33'
   
   // Google JSON 라이브러리
-  //implementation 'com.google.code.gson:gson:2.10.1'
+  implementation 'com.google.code.gson:gson:2.10.1'
   
   // jackson-databind JSON 라이브러리
-  //implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
 
   // Apache HTTP 통신 라이브러리
   //implementation 'org.apache.httpcomponents.client5:httpclient5:5.0'
@@ -123,7 +123,7 @@ dependencies {
 // 소스 파일이 어떤 자바 버전으로 되어 있는지 Gradle 에게 알려준다.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -152,9 +152,9 @@ eclipse {
         name = "eomcs-java-lang"
     }
     jdt {
-      sourceCompatibility = 17
-      targetCompatibility = 17
-      javaRuntimeName = "JavaSE-17"
+      sourceCompatibility = 21
+      targetCompatibility = 21
+      javaRuntimeName = "JavaSE-21"
     }
 }
 
