@@ -24,14 +24,23 @@ public class Exam0114 {
     m.setPhoto("hong.gif");
     m.setTel("010-2222-1111");
     m.setRegisteredDate(new Date(System.currentTimeMillis()));
+    m.setSchool(new School("학사", "비트대학교"));
 
     // 2) JSON 처리 객체 준비
+    // - 메서드를 호출할 때 체인 방식으로 처리하기
+    // 
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     Gson gson = new GsonBuilder()
         .registerTypeAdapter(Date.class, new JsonSerializer<Date>() {
           @Override
           public JsonElement serialize(Date src, Type typeOfSrc, JsonSerializationContext context) {
             return new JsonPrimitive(dateFormat.format(src));
+          }
+        })
+        .registerTypeAdapter(School.class, new JsonSerializer<School>() {
+          @Override
+          public JsonElement serialize(School src, Type typeOfSrc, JsonSerializationContext context) {
+            return new JsonPrimitive(String.format("%s(%s)", src.level, src.name));
           }
         })
         .create();

@@ -24,12 +24,22 @@ public class Exam0115 {
       public void setWorking(boolean working) {this.working = working;}
     }
 
-    Member m = new Member();
-    m.setNo(100);
-    m.setName("홍길동");
-    m.setEmail("hong@test.com");
-    m.setPassword("1111");
-    m.setWorking(true);
+    // 필드에 값을 직접 주입하는 방식
+    Member m1 = new Member();
+    m1.no = 100;
+    m1.name = "홍길동";
+    m1.email = "hong@test.com";
+    m1.password = "1111";
+    m1.working = true;
+
+
+    // 셋터를 이용하여 값을 주입하는 방식
+    Member m2 = new Member();
+    m2.setNo(100);
+    m2.setName("홍길동");
+    m2.setEmail("hong@test.com");
+    m2.setPassword("1111");
+    m2.setWorking(true);
 
   }
 }
