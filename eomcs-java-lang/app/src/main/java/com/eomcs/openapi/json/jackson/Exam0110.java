@@ -16,6 +16,7 @@ public class Exam0110 {
     m.setPhoto("hong.gif");
     m.setTel("010-2222-1111");
     m.setRegisteredDate(new Date(System.currentTimeMillis()));
+    m.setSchool(new School("학사", "비트대학교"));
 
     // 2) JSON 처리 객체 준비
     ObjectMapper mapper = new ObjectMapper();
