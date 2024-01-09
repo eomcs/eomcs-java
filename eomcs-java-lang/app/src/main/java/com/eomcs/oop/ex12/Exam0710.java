@@ -18,6 +18,7 @@ public class Exam0710 {
     //
     // 1) 익명 클래스로 인터페이스 구현
     //    ListFactory f1 = new ListFactory() {
+    //      @Override
     //      public List create() {
     //        return new ArrayList();
     //      }

@@ -15,6 +15,7 @@ public class Exam0720 {
     // 생성자 레퍼런스를 지정하는 것은
     // 다음과 같이 익명 클래스를 만드는 것과 같다.
     // => ListFactory f1 = ArrayList::new;
+    // => ListFactory f1 = () -> new ArrayList();
 
     ListFactory f1 = new ListFactory() {
       @Override
