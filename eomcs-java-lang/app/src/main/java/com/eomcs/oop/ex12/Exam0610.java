@@ -21,6 +21,10 @@ public class Exam0610 {
     public double day(int money) {
       return money * rate / 100 / 365;
     }
+
+    public double bonus() {
+      return 100000;
+    }
   }
 
   static interface Interest {
@@ -66,6 +70,9 @@ public class Exam0610 {
 
     i2 = 정기예금::day;
     System.out.printf("일 이자: %.1f\n", i2.compute(10_0000_0000));
+
+    //    i2 = 보통예금::bonus; //컴파일 오류! 
+    // => i2 = (int money) -> {return 보통예금.bonus(money);};
   }
 }
 
