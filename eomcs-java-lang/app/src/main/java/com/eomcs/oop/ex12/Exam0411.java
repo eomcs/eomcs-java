@@ -10,7 +10,7 @@ public class Exam0411 {
   static Interest getInterest(final double rate) {
     // 로컬 클래스로 인터페이스 구현한 후 객체 리턴하기
     class InterestImpl implements Interest {
-      // 로컬(또는 익명 로컬) 클래스 안에서 바깥 메서드의 로컬 변수를 사용하면
+      // 로컬(또는 익명 로컬) 클래스 안에서 바깥 메서드(enclosing method)의 로컬 변수를 사용하면
       // 컴파일러는 자동으로 그 값을 보관하기 위해
       // 필드를 추가한다.
       // 또한 그 값을 받을 수 있도록 생성자를 변경한다.

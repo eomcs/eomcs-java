@@ -12,10 +12,10 @@ public class Exam0410 {
   // 
   static Interest getInterest(final double rate) {
     // 로컬 클래스로 인터페이스 구현한 후 객체 리턴하기
-    class InterestImpl implements Interest {
+    class MyInterest implements Interest {
       double rate;
 
-      public InterestImpl(double rate) {
+      public MyInterest(double rate) {
         this.rate = rate;
       }
 
@@ -24,7 +24,7 @@ public class Exam0410 {
         return money + (money * rate / 100);
       }
     }
-    return new InterestImpl(rate);
+    return new MyInterest(rate);
   }
 
   public static void main(String[] args) {

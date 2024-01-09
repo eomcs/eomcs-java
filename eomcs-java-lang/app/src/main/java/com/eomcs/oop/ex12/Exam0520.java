@@ -37,7 +37,15 @@ public class Exam0520 {
     Calculator c02 = MyCalculator::minus;
     Calculator c03 = MyCalculator::multiple;
     Calculator c04 = MyCalculator::divide;
-    // Calculator c05 = MyCalculator::power; // 해당 메서드를 가지고 구현체를 만들 수 없다.
+
+    //    Calculator c05 = MyCalculator::power; // 컴파일 오류! 해당 메서드를 가지고 구현체를 만들 수 없다.
+    // 
+    // 컴파일러는 위의 문장을 다음의 코드로 변환하려고 했는데,
+    // MyCalculator에는 power(int,int) 규격을 가진 메서드가 없기 때문에 
+    // 컴파일 오류를 발생시킨 것이다.
+    // 즉 인터페이스의 메서드와 규격이 다르면 다음과 같은 코드를 생성할 수 없기 때문에
+    // 컴파일 오류가 발생한다.
+    //    Calculator c05 = (a, b) -> MyCalculator.power(a, b);
 
     // 위의 코드는 내부적으로 다음과 같다.
     //
