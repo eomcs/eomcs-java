@@ -31,7 +31,7 @@ public class Exam0213 {
     //    list1 = new ArrayList<B2>(); // 컴파일 오류!
     //    list1 = new ArrayList<C>(); // 컴파일 오류!
 
-    list1.add(new B2());
+    list1.add(new B2()); // 컴파일러는 레퍼런스의 형식을 따져서 문법의 옳고 그름을 판단한다.
 
     ArrayList<B2> list2;
 
