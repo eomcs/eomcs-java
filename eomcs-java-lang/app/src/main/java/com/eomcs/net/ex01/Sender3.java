@@ -12,7 +12,7 @@ public class Sender3 {
 
     Scanner keyScan = new Scanner(System.in);
 
-    Socket socket = new Socket("192.168.0.19", 8888);
+    Socket socket = new Socket("192.168.0.46", 8888);
 
     PrintStream out = new PrintStream(socket.getOutputStream());
     Scanner in = new Scanner(socket.getInputStream());

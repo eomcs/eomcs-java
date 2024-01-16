@@ -21,7 +21,7 @@ public class Receiver {
     //      - 1 ~ 1023 사이의 포트 번호는 특정 서버가 사용하기 위해 미리 예약된 번호다.
     //      - 가능한 이 범위의 포트 번호는 사용하지 않는 것이 좋다.
     //   - 유명 프로그램의 포트 번호도 가능한 사용하지 말라.
-    //      - 예) Oracle DBMS(1521), MySQL DBMS(3306) 등
+    //      - 예) Oracle DBMS(1521), MySQL DBMS(3306), 프록시 서버(8080) 등
     //   - 같은 컴퓨터에서 다른 프로그램이 이미 사용중인 포트 번호는 지정할 수 없다.
     //      - 포트 번호는 중복으로 사용될 수 없다.
     ServerSocket serverSocket = new ServerSocket(8888);
@@ -40,7 +40,7 @@ public class Receiver {
     Scanner in = new Scanner(socket.getInputStream());
     System.out.println("데이터 송수신을 위한 입출력 스트림 준비!");
 
-    keyscan.nextLine(); // 클라이언트가 보낸 문자열을 읽지 않고 대기함!
+    //    keyscan.nextLine(); // 클라이언트가 보낸 문자열을 읽지 않고 대기함!
 
     // 4) 상대편이 보낸 문자열을 한 줄 읽는다.
     // => 상대편이 한 줄의 데이터를 보낼 때까지 리턴하지 않는다.
@@ -51,7 +51,7 @@ public class Receiver {
     // 5) 상대편으로 문자열을 한 줄 보낸다.
     // => 클라이언트가 데이터를 받을 때까지 기다리지 않는다.
     //    NIC의 메모리에 데이터를 전달한 후 즉시 리턴한다.
-    out.println("나는 엄진영입니다. 반갑습니다!");
+    out.println("나는 홍길동입니다. 반갑습니다!");
     System.out.println("클라이언트로 데이터 보냈음!");
 
     // 6) 항상 입출력 도구는 사용 후 닫아야 한다.
