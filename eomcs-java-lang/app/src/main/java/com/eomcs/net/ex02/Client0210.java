@@ -10,7 +10,7 @@ public class Client0210 {
     Scanner keyScan = new Scanner(System.in);
     System.out.println("클라이언트 실행!");
 
-    Socket socket = new Socket("192.168.0.15", 8888);
+    Socket socket = new Socket("localhost", 8888);
     System.out.println("서버에 연결됨!");
     // 서버의 대기열에 접속 순서대로 대기한다.
     // 서버에서 연결이 승인되면, 비로서 입출력을 할 수 있다.

@@ -25,8 +25,9 @@ public class Client0121 {
         if (i > 0 && (i % 20) == 0) {
           System.out.println(); // 20바이트 출력한 후 줄 바꾼다.
         }
-        System.out.printf("%x ", buf[i]);
+        System.out.printf("%02x ", buf[i]);
       }
+
 
     } catch (Exception e) {
       e.printStackTrace();
