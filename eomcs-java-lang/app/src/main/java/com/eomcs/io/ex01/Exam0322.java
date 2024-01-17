@@ -7,7 +7,7 @@ public class Exam0322 {
 
   public static void main(String[] args) throws Exception {
 
-    File dir = new File("temp2/a/b");
+    File dir = new File("temp3/a/b");
 
     // 디렉토리를 생성할 때 존재하지 않는 중간 디렉토리도 만들고 싶다면,
     // mkdirs()를 호출하라.

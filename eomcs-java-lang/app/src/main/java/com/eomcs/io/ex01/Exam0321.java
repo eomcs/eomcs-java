@@ -7,7 +7,7 @@ public class Exam0321 {
 
   public static void main(String[] args) throws Exception {
 
-    File dir = new File("temp2/a");
+    File dir = new File("temp3/a");
 
     // 존재하지 않는 폴더 아래에 새 폴더를 만들 때
     // => 존재하지 않는 폴더가 자동 생성되지 않는다.

@@ -7,7 +7,7 @@ public class Exam0330 {
 
   public static void main(String[] args) throws Exception {
 
-    File dir = new File("temp");
+    File dir = new File("temp2");
 
     if (dir.delete()) {
       System.out.println("temp 디렉토리를 삭제하였습니다.");

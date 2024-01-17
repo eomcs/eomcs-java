@@ -7,7 +7,7 @@ public class Exam0431 {
 
   public static void main(String[] args) throws Exception {
     // 생성할 파일의 경로 설정
-    File file = new File("temp/b/test.txt");
+    File file = new File("temp2/b/test.txt");
 
     // 파일을 생성하기 전에 존재하지 않는 폴더를 생성하고 싶다면,
     //    String path = file.getParent(); // => temp/b
