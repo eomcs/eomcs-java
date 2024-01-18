@@ -9,7 +9,7 @@ public class Exam0521 {
     // JVM 환경 변수 'file.encoding' 값
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
 
-    FileInputStream in = new FileInputStream("sample/utf8.txt");
+    FileInputStream in = new FileInputStream("temp/utf8.txt");
 
     // 파일의 데이터를 한 번에 읽어보자.
     byte[] buf = new byte[1000]; 

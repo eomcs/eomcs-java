@@ -48,7 +48,7 @@ repositories {
 // 프로젝트에서 사용할 자바 라이브러리 목록
 dependencies {
   // 미디어 파일에서 메타 정보(위도/경도, 해상도 등) 추출
-  // implementation 'com.drewnoakes:metadata-extractor:2.18.0'
+  implementation 'com.drewnoakes:metadata-extractor:2.19.0'
   
   // Spring IoC 컨테이너
   //implementation 'org.springframework:spring-context:6.0.11'
