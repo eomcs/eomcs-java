@@ -60,7 +60,7 @@ public class Client0210 {
       }
 
       // 요청할 때 마다 서버와 연결한다.
-      try (Socket socket = new Socket("localhost", 8888);
+      try (Socket socket = new Socket("192.168.0.19", 8888);
           PrintWriter out = new PrintWriter(socket.getOutputStream());
           BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 

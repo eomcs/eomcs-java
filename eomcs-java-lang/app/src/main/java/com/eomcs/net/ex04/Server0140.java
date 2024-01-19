@@ -34,12 +34,14 @@ public class Server0140 {
               out.println("Goodbye!");
               out.flush();
               break;
-            } else if (name.equalsIgnoreCase("stop")
-                // localhost 에서만 서버를 멈출 수 있다.
-                && inetAddr.getHostAddress().equals("127.0.0.1")) { // 서버 종료하기
+            } else if (name.equalsIgnoreCase("stop")) {
               out.println("Goodbye!");
               out.flush();
-              break loop;
+              if (inetAddr.getHostAddress().equals("127.0.0.1")) {
+                break loop; // 서버 종료
+              } else {
+                break; // 클라이언트와 연결 끊기
+              }
             }
 
             out.printf("%s 님 반갑습니다!\n", name);
