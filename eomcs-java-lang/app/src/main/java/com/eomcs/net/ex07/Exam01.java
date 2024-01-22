@@ -1,6 +1,7 @@
 // URL(Uniform Resource Locator) - URL을 다루는 클래스
 package com.eomcs.net.ex07;
 
+import java.net.URI;
 import java.net.URL;
 
 public class Exam01 {
@@ -23,7 +24,11 @@ public class Exam01 {
     //   - 메일 조회, 게시물 변경, 주문 등의 웹 프로그램을 가리킨다.
     //   - 예) index.php, index.jsp, /board/list 등
     //
-    URL url = new URL("https://search.naver.com:443/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=bitcamp");
+    // version: Java19까지 
+    //    URL url = new URL("https://search.naver.com:443/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=bitcamp");
+
+    // version: Java20부터
+    URL url = new URI("https://search.naver.com:443/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=bitcamp").toURL();
 
     // URL 분석
     System.out.printf("프로토콜: %s\n", url.getProtocol());

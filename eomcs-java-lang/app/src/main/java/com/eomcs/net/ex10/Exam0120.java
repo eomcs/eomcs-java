@@ -13,6 +13,7 @@ public class Exam0120 {
 
     FileInputStream in = new FileInputStream(file);
     byte[] bytes = in.readAllBytes();
+    System.out.println(bytes.length);
     in.close();
 
     Encoder encoder = Base64.getEncoder();

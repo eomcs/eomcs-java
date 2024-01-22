@@ -1,6 +1,7 @@
 // URL(Uniform Resource Locator) - 문서 내의 위치 지정
 package com.eomcs.net.ex07;
 
+import java.net.URI;
 import java.net.URL;
 
 public class Exam03 {
@@ -8,7 +9,7 @@ public class Exam03 {
   public static void main(String[] args) throws Exception {
     // 자원의 내부 위치를 표현하는 방법
     // - http://서버주소:포트/자원의경로/../xxx#문서의 내부 위치
-    URL url = new URL("https://tools.ietf.org/html/rfc2616#section-5.1");
+    URL url = new URI("https://tools.ietf.org/html/rfc2616#section-5.1").toURL();
 
     // URL 분석
     System.out.printf("프로토콜: %s\n", url.getProtocol());

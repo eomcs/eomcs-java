@@ -1,6 +1,7 @@
 // URL(Uniform Resource Locator) - 유닉스 OS의 로컬 파일 경로
 package com.eomcs.net.ex07;
 
+import java.net.URI;
 import java.net.URL;
 
 public class Exam06 {
@@ -11,7 +12,7 @@ public class Exam06 {
     // - 자원의 경로
     //      /드라이브명:/디렉토리 또는 파일 경로  (Windows)
     //      /루트디렉토리/디렉토리 또는 파일 경로 (Linux/macOS/Unix)
-    URL url = new URL("file:///Users/eomjinyoung/git/bitcamp-study/Hello.java");
+    URL url = new URI("file:///Users/eomjinyoung/git/bitcamp-study/Hello.java").toURL();
 
     // URL 분석
     System.out.printf("프로토콜: %s\n", url.getProtocol());
