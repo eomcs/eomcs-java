@@ -12,7 +12,7 @@ public class Exam0110 {
     }
 
     for (int i = 0; i < 1000; i++) {
-      System.out.println(">>> " + i);
+      System.out.println(">>>>>>>>> " + i);
     }
   }
 }
