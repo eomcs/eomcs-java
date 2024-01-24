@@ -41,11 +41,5 @@ public class Exam0530 {
         e.printStackTrace();
       }
     }
-
-    private void delay() {
-      int delayCount = (int)(Math.random() * 1000);
-      for (int i = 0; i < delayCount; i++)
-        Math.asin(45.765); // CPU를 뺏길 기회를 제공
-    }
   }
 }
