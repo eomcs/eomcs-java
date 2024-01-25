@@ -45,10 +45,16 @@ public class Exam0220 {
     //
     Thread.sleep(3000);
 
-    // 그러면 새 스레드를 생성하지 않고
-    // 작업을 끝낸 스레드가 요청한 작업을 처리한다.
-    //
+    // 다음 두 개의 작업은 새 스레드를 생성하지 않고
+    // 작업을 끝낸 스레드가 처리한다.
     executorService.execute(new MyRunnable(4000));
+    executorService.execute(new MyRunnable(7000));
+
+    // 다음 작업은 놀고 있는 스레드가 없기 때문에
+    // 새 스레드를 생성하여 실행한다.
+    executorService.execute(new MyRunnable(9000));
+
+    executorService.shutdown();
 
     System.out.println("main() 종료!");
   }

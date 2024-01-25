@@ -39,6 +39,9 @@ public class Exam0310 {
     // => 수행한 작업의 종료 여부를 확인할 수 없다.
     executorService.execute(new MyRunnable(6000));
 
+    // '더이상 맡은 작업이 없으면 스레드풀을 종료하라!'고 지시한다.
+    executorService.shutdown(); 
+
     System.out.println("main() 종료!");
   }
 }
