@@ -42,7 +42,7 @@ public class Exam0510 {
     // 스레드풀의 모든 스레드가 종료되면 즉시 true를 리턴한다.
     // 만약 지정된 시간(예: 10초)이 경과할 때까지 종료되지 않았다면 false를 리턴한다.
     //
-    if (!executorService.awaitTermination(10, TimeUnit.SECONDS)) {
+    if (!executorService.awaitTermination(20, TimeUnit.SECONDS)) {
       System.out.println("아직 종료 안된 작업이 있다.");
     } else {
       System.out.println("모든 작업을 종료하였다.");
