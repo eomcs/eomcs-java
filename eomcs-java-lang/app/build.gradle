@@ -74,16 +74,16 @@ dependencies {
   // implementation 'org.mybatis:mybatis-spring:2.0.6'
 
   // MariaDB JDBC 드라이버
-  //implementation 'org.mariadb.jdbc:mariadb-java-client:3.1.2'
+  implementation 'org.mariadb.jdbc:mariadb-java-client:3.3.2'
 
   // Oracle JDBC Driver
-  //implementation 'com.oracle.database.jdbc:ojdbc11-production:21.7.0.0'
+  implementation 'com.oracle.database.jdbc:ojdbc11:21.11.0.0'
     
   // MSSQL JDBC Driver
-  //implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
+  implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.3.jre17'
   
   // MySQL JDBC Driver
-  //implementation 'mysql:mysql-connector-java:8.0.33'
+  implementation 'mysql:mysql-connector-java:8.0.33'
   
   // Google JSON 라이브러리
   implementation 'com.google.code.gson:gson:2.10.1'
