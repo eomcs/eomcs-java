@@ -8,7 +8,7 @@ public class Exam0361 {
   public static void main(String[] args) throws Exception {
     try (
         java.sql.Connection con = DriverManager.getConnection(
-            "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
+            "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
         java.sql.Statement stmt = con.createStatement();
 
         ) {
@@ -18,12 +18,12 @@ public class Exam0361 {
       //
       // => 게시글을 참조하는 첨부 파일 데이터를 먼저 지운다.
       int count = stmt.executeUpdate(
-          "delete from x_board_file where board_id = 1");
+          "delete from x_board_file where board_id = 2");
       System.out.printf("x_board_file 테이블 : %d 개 삭제 성공!\n", count);
 
       // => 부모 테이블의 데이터를 지운다.
       int count2 = stmt.executeUpdate(
-          "delete from x_board where board_id = 1");
+          "delete from x_board where board_id = 2");
       System.out.printf("x_board 테이블 : %d 개 삭제 성공!\n", count2);
     }
   }

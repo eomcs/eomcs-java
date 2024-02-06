@@ -8,7 +8,7 @@ public class Exam0350 {
   public static void main(String[] args) throws Exception {
     try (
         java.sql.Connection con = DriverManager.getConnection(
-            "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
+            "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
         java.sql.Statement stmt = con.createStatement();
         ) {
 
