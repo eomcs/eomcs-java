@@ -25,7 +25,7 @@ public class Exam0111 {
     }
 
     try (Connection con = DriverManager.getConnection( 
-        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
 
         // 입력 후 PK 값을 리턴 받고 싶다면,
         // PreparedStatement 객체를 얻을 때 다음과 같은 옵션을 지정하라!
