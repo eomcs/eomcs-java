@@ -24,8 +24,8 @@ public class Exam0120 {
       contents = keyboard.nextLine();
     }
 
-    try (Connection con = DriverManager.getConnection( //
-        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
+    try (Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
         Statement stmt = con.createStatement()) {
 
       // SQL 삽입 공격
