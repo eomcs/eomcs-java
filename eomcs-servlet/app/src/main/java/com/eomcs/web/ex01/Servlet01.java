@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 // 서블릿 클래스를 만든 후, 서블릿 컨테이너에 등록해야만 사용할 수 있다.
 // 등록 방법 1)
-//   웹 애플리케이션 배치 파일(web.xml; DD(Deploy Description) 파일)에 서블릿 정보를 등록한다.
+//   웹 애플리케이션 배치 파일(web.xml; DD(Deployment Descriptor) 파일)에 서블릿 정보를 등록한다.
 //   => WEB-INF/web.xml
 //   => DD File: Deployment Descriptor File
 //   => 배치 예:
