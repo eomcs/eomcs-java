@@ -1,14 +1,15 @@
 // Gradle 도구에 추가할 작업이 있으면 플러그인을 장착하라!
 plugins {
-    id 'java' 
+    id 'application'
+    //id 'java'
+    //id 'war' // 웹 애플리케이션의 배포 파일을 만들 때 사용할 도구가 들어 있는 플러그인 장착
     //id 'eclipse'
-    id 'eclipse-wtp' // 이클립스 IDE 용 웹 프로젝트 관련 파일을 만들 때 사용할 도구가 들어 있는 플러그인 장착
-    id 'war' // 웹 애플리케이션의 배포 파일을 만들 때 사용할 도구가 들어 있는 플러그인 장착
+    //id 'eclipse-wtp' // 이클립스 IDE 용 웹 프로젝트 관련 파일을 만들 때 사용할 도구가 들어 있는 플러그인 장착
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     // 프로젝트의 소스 파일 인코딩을 gradle에게 알려준다.
-    options.encoding = 'UTF-8' 
+    options.encoding = 'UTF-8'
 
     // 소스 파일을 작성할 때 사용할 자바 버전
     sourceCompatibility = '11'
@@ -19,11 +20,15 @@ tasks.withType(JavaCompile) {
 
 // 웹 애플리케이션 배포 파일(.war)을 만들 때 사용할 기본 파일 이름을 설정한다.
 // 이 이름은 웹 애플리케이션 context root 경로로도 사용된다.
+/*
 war {
     archiveBaseName = "web"
 }
+*/
+
 
 // 이클립스 IDE 에서 사용할 값을 설정한다.
+/*
 eclipse {
 
     // 이클립스 IDE로 임포트하는 프로젝트의 이름을 설정한다.
@@ -54,34 +59,41 @@ eclipse {
         }
     }
 }
-
+*/
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-  // 의존라이브러리 옵션
-  // => implementation : 컴파일한 후 생성되는 빌드 파일에 포함된다.
-  // => compileOnly : 컴파일한 후 생성되는 빌드 파일에 포함되지 않는다.
-  //
-  
-  // Thumbnailator 썸네일 생성 라이브러리
-  implementation 'net.coobird:thumbnailator:0.4.14'
-  
-  // Apache의 파일업로드 처리 라이브러리
-  implementation 'commons-fileupload:commons-fileupload:1.4'
-  
-  // Servlet-API
-  // => 컴파일 할 때만 사용한다.
-  // => 배치할 때는 포함하지 않는다.
-  // => 왜? 서버에 이미 이 라이브러리가 있기 때문이다.
-  // 
-  compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+    // 임베디드 Tomcat 서버
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.82'
 
-  implementation 'jstl:jstl:1.2'
+    // 의존라이브러리 옵션
+    // => implementation : 컴파일한 후 생성되는 빌드 파일에 포함된다.
+    // => compileOnly : 컴파일한 후 생성되는 빌드 파일에 포함되지 않는다.
+    //
 
-  implementation 'com.google.guava:guava:28.1-jre'
+    // Thumbnailator 썸네일 생성 라이브러리
+    implementation 'net.coobird:thumbnailator:0.4.20'
 
-  testImplementation 'junit:junit:4.12'
+    // Apache의 파일업로드 처리 라이브러리
+    implementation 'commons-fileupload:commons-fileupload:1.5'
+
+    // Servlet-API
+    // => 컴파일 할 때만 사용한다.
+    // => 배치할 때는 포함하지 않는다.
+    // => 왜? 서버에 이미 이 라이브러리가 있기 때문이다.
+    //
+    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+
+    implementation 'jstl:jstl:1.2'
+
+    implementation 'com.google.guava:guava:32.1.3-jre'
+
+    testImplementation 'junit:junit:4.12'
+}
+
+application {
+    mainClass = 'com.eomcs.web.App'
 }
