@@ -13,8 +13,8 @@ package com.eomcs.lang.ex04;
 //        데이터타입 변수명[] = new 데이터타입[개수];
 //        ex) int arr[] = new int[5];
 //
-// 배열의 개수는 int 타입의 최대 값과 같다.
-// 즉 2147483647 개 이다. 
+// 배열의 개수는 (int 타입의 최대 값 - 2)와 같다.
+// 즉 2147483645 개 이다. 
 //
 public class Exam0510 {
   public static void main(String[] args) {

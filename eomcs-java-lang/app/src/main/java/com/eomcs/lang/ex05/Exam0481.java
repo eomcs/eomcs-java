@@ -17,7 +17,7 @@ public class Exam0481 {
     int menu5 = GENERAL | ADMIN; // 로그인 한 사용자만 접근 가능한 메뉴
 
     // 3) 접근 테스트
-    // => menu1이 로그아웃 상태에서 접근 가능한 것인지 검사한다.
+    // => 각 menu의 접근 가능 여부를 검사한다.
     System.out.println((menu2 & LOGOUT) > 0);
     System.out.println((menu2 & GENERAL) > 0);
     System.out.println((menu2 & ADMIN) > 0);
