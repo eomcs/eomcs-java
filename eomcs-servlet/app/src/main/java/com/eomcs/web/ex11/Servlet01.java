@@ -37,7 +37,7 @@ public class Servlet01 extends HttpServlet {
     // => 서버에서 클라이언트로 세션 아이디를 쿠키로 보낼 때 유효기간을 설정하지 않기 때문에
     //    웹 브라우저를 종료하면 세션 아이디 쿠키는 자동 삭제된다.
     // => 세션 아이디 쿠키의 사용 범위는 웹 애플리케이션 경로에 한정된다.
-    //    예) /eomcs-java-web
+    //    예) /컨텍스트루트 = 웹애플리케이션 루트 경로
     //    따라서 같은 웹 애플리케이션의 서블릿을 실행할 때는
     //    무조건 세션 아이디를 보낸다.
     //
@@ -46,18 +46,18 @@ public class Servlet01 extends HttpServlet {
     //
     // 언제 새 세션을 생성하는가?
     // => 세션이 없거나 유효기간이 지난 경우, 
-    //    request.getSesssion()을 호출할 때 생성한다.
+    //    request.getSesssion()을 호출하면 생성한다.
     // => 새로 세션을 생성하면 그 세션 ID를 쿠키로 웹브라우저에게 보낸다.
     // => 세션이 없는 경우?
     //    클라이언트가 세션 아이디를 보내지 않을 때
     // => 세션 유효기간이 지난 경우?
     //    세션을 생성한 후 서버에 설정된 시간이 지나도록
-    //    클라이언트의 요청이 않으면
-    //    서버는 세션을 무효화시킨다.
+    //    클라이언트의 요청이 없으면
+    //    서버는 해당 세션을 무효화시킨다.
     // => HTTP 응답 프로토콜
     //
     // HTTP/1.1 200
-    // Set-Cookie: JSESSIONID=5801C115615A2C9074AC0B78E31C5F21; Path=/eomcs-java-web; HttpOnly
+    // Set-Cookie: JSESSIONID=5801C115615A2C9074AC0B78E31C5F21; Path=/컨텍스트루트; HttpOnly
     // Content-Type: text/plain;charset=UTF-8
     // Content-Length: 44
     // Date: Wed, 08 Apr 2020 03:10:58 GMT
