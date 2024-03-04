@@ -23,10 +23,10 @@ names.add("윤봉길");
 pageContext.setAttribute("list", names);
 %>
 
-<jsp:useBean id="list" type="java.util.ArrayList<String>" scope="page"/>
+<jsp:useBean id="list" type="java.util.ArrayList" scope="page"/>
 <%-- 자바코드로 표현해보면,
-  java.util.ArrayList<String> list = 
-    (java.util.ArrayList<String>) pageContext.getAttribute("list");
+  java.util.ArrayList list = 
+    (java.util.ArrayList) pageContext.getAttribute("list");
   if (list == null) {
     throw new Exception("ArrayList 꺼내기 오류!");
   }

@@ -22,6 +22,9 @@ pageContext.setAttribute("s4", "윤봉길");
 <jsp:useBean id="s1" type="java.lang.String" scope="application"/>
 <%-- 자바코드로 표현해보면,
   String s1 = (String)application.getAttribute("s1");
+  if (s1 == null) {
+    throw new Exception("..."); // 해당 이름으로 저장된 객체가 없다면 예외를 발생시킨다.
+  }
  --%>
  
 <jsp:useBean id="s2" type="java.lang.String" scope="session"/>
@@ -58,10 +61,10 @@ jsp:useBean 문법:
    - 값을 꺼내는 보관소를 가리킨다.
 => 예) 
 태그: 
-  <jsp:useBean id="s4" type="java.lang.String" scope="page"/>
+  <jsp:useBean id="s5" type="java.lang.String" scope="page"/>
 자바코드: 
-  String s4 = (String) pageContext.getAttribute("s4");
-  if (s4 == null) {
+  String s5 = (String) pageContext.getAttribute("s5");
+  if (s5 == null) {
     throw new Exception("객체 꺼내기 오류");
   }
  --%>
