@@ -14,7 +14,7 @@
 <%--
 - 출력문을 만드는 태그이다.
   <c:out value="출력될 값" default="기본 값"/>
-  <c:out value="출력될 값>기본값<c:out>
+  <c:out value="출력될 값">기본값<c:out>
 --%>
 <%
 pageContext.setAttribute("name", "유관순");
