@@ -9,7 +9,7 @@ import com.eomcs.spring.ioc.ex02.Car;
 public class Exam02 {
 
   public static void main(String[] args) {
-    ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
+    ApplicationContext iocContainer = new ClassPathXmlApplicationContext(
         "com/eomcs/spring/ioc/ex02/a/application-context.xml");
 
     SpringUtils.printBeanList(iocContainer);

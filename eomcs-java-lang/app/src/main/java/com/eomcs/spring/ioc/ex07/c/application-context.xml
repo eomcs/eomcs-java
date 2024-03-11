@@ -13,7 +13,7 @@
         <!-- String을 java.sql.Date 객체로 바꿔주는 프로퍼티 에디터(변환기)가 
              설정되었기 때문에 
              이제 그냥 문자열을 지정해도 된다. -->
-        <property name="createdDate" value="2023-9-1"/>
+        <property name="createdDate" value="2024-3-11"/>
     </bean>
     
     <!-- String 값을 java.sql.Date 객체로 변환시키는 프로퍼티 에디터 장착하기 -->

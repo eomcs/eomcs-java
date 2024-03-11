@@ -28,8 +28,10 @@
 	        <map>
 	            <entry key="java.sql.Date" 
 	                   value="com.eomcs.spring.ioc.ex07.c.CustomDateEditor"/>
+	            
 	            <entry key="com.eomcs.spring.ioc.ex07.Engine" 
                      value="com.eomcs.spring.ioc.ex07.d.CustomEngineEditor"/>
+            
 	        </map>
 	    </property>
 	</bean>

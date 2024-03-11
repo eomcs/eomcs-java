@@ -13,7 +13,7 @@
     -->
     <bean id="d1" class="java.sql.Date"
           factory-method="valueOf">
-        <constructor-arg value="2021-11-16"/>
+        <constructor-arg value="2024-03-11"/>
     </bean>
           
 </beans>

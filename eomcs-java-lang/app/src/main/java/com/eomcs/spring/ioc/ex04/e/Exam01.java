@@ -15,6 +15,10 @@ public class Exam01 {
     Car c2 = (Car) iocContainer.getBean("c2");
 
     System.out.println(c1.getEngine() == c2.getEngine());
+
+    // 프로퍼티 생성 중에 만드는 객체는 컨테이너에 따로 보관되지 않는다.
+    // 따라서 그 객체를 선언할 때는 id를 지정할 필요가 없다.
+    //    Engine e1 = (Engine) iocContainer.getBean("e1");    
   }
 
 }
