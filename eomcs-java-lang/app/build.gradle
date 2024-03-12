@@ -54,7 +54,7 @@ dependencies {
   implementation 'org.springframework:spring-context:6.1.4'
 
   // @Resource 애노테이션이 들어 있는 API
-  //implementation 'javax.annotation:javax.annotation-api:1.3.2'
+  implementation 'javax.annotation:javax.annotation-api:1.3.2'
   
   // Spring JDBC 보조 라이브러리
   // - DataSource 구현체가 들어 있다.

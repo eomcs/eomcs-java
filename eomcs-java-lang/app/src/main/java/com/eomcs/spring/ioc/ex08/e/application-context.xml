@@ -15,9 +15,7 @@
          다음 객체를 등록해야 한다.
          AutowiredAnnotationBeanPostProcessor
     -->
-
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
-
      
     <bean id="c1" class="com.eomcs.spring.ioc.ex08.e.Car">
         <property name="model" value="티코"/>

@@ -17,6 +17,7 @@ public class Car {
   //    해당하는 의존 객체가 없으면 예외가 발생한다.
   // => 선택사항으로 바꾸고 싶으면 false로 설정하라!
   // => required를 false로 설정하면 해당 객체가 없더라도 오류가 발생하지 않는다.
+  //@Autowired
   @Autowired(required = false)
   private Engine engine;
 

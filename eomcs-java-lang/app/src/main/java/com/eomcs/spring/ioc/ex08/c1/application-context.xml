@@ -15,7 +15,6 @@
          => 그래서 이 인터페이스의 이름이 
             BeanPostProcessor(객체 생성 후 처리기) 인 것이다.
     -->
-    <bean class="com.eomcs.spring.ioc.ex08.c1.MyBeanPostProcessor"/>
     
     <bean id="c1" class="com.eomcs.spring.ioc.ex08.c1.Car" init-method="init">
         <property name="model" value="티코"/>
@@ -29,6 +28,9 @@
         <property name="valve" value="16"/>
         <property name="cylinder" value="4"/>
     </bean>
+
+    <bean class="com.eomcs.spring.ioc.ex08.c1.MyBeanPostProcessor"/>
+
 </beans>
 
 

@@ -17,7 +17,7 @@ public class Car {
   // 인스턴스 필드에 직접 값을 넣는다.
   // private 이라도 상관없다.
   // 따라서 셋터를 정의하지 않아도 된다.
-  @Autowired
+  @Autowired 
   private Engine engine;
 
   public Car() {
