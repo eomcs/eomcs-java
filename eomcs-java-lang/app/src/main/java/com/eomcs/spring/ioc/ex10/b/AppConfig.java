@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.eomcs.spring.ioc.ex10.Car;
 
-@Configuration
+//@Configuration
 // AppConfig 클래스가 스프링 설정 정보를 갖고 있는 클래스임을 선포한다!
 // 그러면 AnnotationConfigApplicationContext 에서
 // 이 클래스를 찾아 적절한 작업을 수행할 것이다.
@@ -24,6 +24,7 @@ import com.eomcs.spring.ioc.ex10.Car;
 // Java config 클래스임을 표시할 때 붙이는 애노테이션이
 // 바로 @Configuration 이다.
 //
+@Configuration
 public class AppConfig {
   @Bean
   public Car car2() {

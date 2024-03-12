@@ -37,9 +37,7 @@
        => @RestController : MVC 구조에서 REST API 컨트롤러 역할을 하는 클래스에 대해 붙인다.
        이렇게 역할에 따라 애노테이션으로 클래스를 분류해두면 나중에 통제하기가 편하다. 
     -->
-    <!--  
     <context:component-scan base-package="com.eomcs.spring.ioc.ex09"/>
-   -->
 
 </beans>
 
