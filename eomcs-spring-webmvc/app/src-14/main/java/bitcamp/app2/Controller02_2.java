@@ -44,7 +44,8 @@ public class Controller02_2 {
     // 2) Java Config 설정
     //    => @EnableWebMvc 애노테이션을 활성화시킨다.
     //    => WebMvcConfigurer 구현체를 정의한다.
-    //    => UrlPathHelper 객체의 removeSemicolonContent 프로퍼티 값을 false로 설정한다.
+    //    => configurePathMatch() 를 구현한다.
+    //      => UrlPathHelper 객체의 removeSemicolonContent 프로퍼티 값을 false로 설정한다.
 
     // 테스트1
     // http://.../app2/c02_2/name=kim;age=20

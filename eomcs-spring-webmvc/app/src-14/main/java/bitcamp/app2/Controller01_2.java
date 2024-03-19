@@ -70,12 +70,11 @@ public class Controller01_2 {
     model.addAttribute("name", "홍길동2");
     model.addAttribute("age", 30);
 
-    // InternalResourceViewResolver를 사용하는 경우,
     // request handler가 뷰 이름을 리턴하지 않으면
-    // request handler의 URL을 뷰 이름으로 사용한다.
-    // 즉 이 핸들러의 URL은 "/c01_2/h2" 이기 때문에 뷰 이름도 "/c01_2/h2"가 된다.
+    // request handler의 URL을 상대 경로로써 뷰 이름으로 사용한다.
+    // 즉 이 핸들러의 URL은 "/c01_2/h2" 이기 때문에 뷰 이름은 상대 경로로 "c01_2/h2"가 된다.
     // InternalResourceViewResolver는 바로 이 URL을 사용하여 다음과 같이 최종 URL을 만든다.
-    // => "/WEB-INF/jsp2/" + "/c01_2/h2" + ".jsp"
+    // => "/WEB-INF/jsp2/" + "c01_2/h2" + ".jsp"
     // => "/WEB-INF/jsp2/c01_2/h2.jsp"
     //
     // 실무에서는 이 방법을 많이 사용한다.
@@ -128,7 +127,7 @@ public class Controller01_2 {
     // 프론트 컨트롤러는 ModelAndView 객체에 보관되어 있는 값들을
     // ServletRequest 보관소로 옮기고,
     // 뷰 이름을 지정하지 않으면 request handler의 path를 ViewResolver에게 넘긴다.
-    // => /c01_2/h5
+    // => c01_2/h5
     // InternalResourceViewResolver 는 위 URL을 다음과 같이 바꾼다.
     // => /WEB-INF/jsp2/c01_2/h5.jsp
     // 그런 후에 해당 URL의 JSP를 실행한다.
