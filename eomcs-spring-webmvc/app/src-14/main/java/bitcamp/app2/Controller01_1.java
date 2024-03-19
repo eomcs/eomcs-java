@@ -21,11 +21,18 @@ public class Controller01_1 {
     model.addAttribute("age", 20);
 
     return "/jsp/c01_1.jsp";
-    // 기본 ViewResolver는 리턴 값으로 URL을 받아
-    // 웹 애플리케이션 디렉토리에서 JSP를 찾는다.
-    // 웹 애플리케이션이 경로가 /eomcs-spring-webmvc 라면,
-    // JSP 경로는 다음과 같다.
-    // ==> /eomcs-spring-webmvc/jsp/c01_1.jsp
+    // 기본 ViewResolver는 리턴 값으로 받은 view name으로 JSP를 찾는다.
+    // 1) 절대 경로로 시작할 때 - '/' 로 시작할 때 
+    //    예) return "/jsp/c01_1.jsp"
+    //        view URL = /웹애플리케이션루트경로(/) + view name
+    //                 = /jsp/c01_1.jsp
+    // 
+    // 2) 상대 경로로 시작할 때 - '/' 로 시작하지 않을 때
+    //    예) return "jsp/c01_1.jsp"
+    //        view URL = 현재 URL 경로 + view name
+    //                 = /웹애플리케이션경로/app2/c01_1 + jsp/c01_1.jsp
+    //                 = /app2/c01_1/jsp/c01_1.jsp
+    // 
     //
     // InternalResourceViewResolver로 교체한 다음의 JSP URL은?
     // => /WEB-INF/jsp2//jsp/c01_1.jsp.jsp
@@ -38,15 +45,22 @@ public class Controller01_1 {
     model.addAttribute("name", "홍길동2");
     model.addAttribute("age", 30);
 
-    // 기본 ViewRosolver를 사용할 때는
-    // 뷰 이름을 리턴하지 않으면 오류 발생!
+    // 뷰 이름을 리턴하지 않으면, 
+    // request handler의 URL을 상대 경로 view name으로 사용한다.
+    // 즉 다음 리턴 문과 같다.
+    //   return "c01_1/h2"
+    // 계산 방법:
+    // => view URL = 현재 URL 경로 + view name
+    //             = /웹애플리케이션경로/app2/c01_1 + c01_1/h2
+    //             = /app2/c01_1/c01_1/h2
+    //    따라서 잘못 계산된 view URL로 JSP를 찾으니까 오류가 발생한다!
+    // 
     //
     // InternalResourceViewResolver로 교체한 다음은?
     // => 리턴 값이 없으면 요청 URL(/c01_1/h2)을 리턴 값으로 사용한다.
     // => 따라서 ViewResolver가 계산한 최종 URL은
     // /WEB-INF/jsp2/c01_1/h2.jsp
     //
-
   }
 
   // 테스트:
