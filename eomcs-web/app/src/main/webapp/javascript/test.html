@@ -13,21 +13,21 @@
 <script>
   "use strict"
 
-  let a = 100;
-
-  function f1() {
-    var a = 1000;
-    console.log(a);
-    console.log(window.a);
+  function Student(name, age) {
+    this.sname = name;
+    this.age = age;
   }
 
-  f1();
-  window.f1();
+  Student.prototype.print = function() {
+    console.log(this.sname, this.age);
+  };
 
-</script>
+  let s1 = new Student("홍길동", 20);
+  let s2 = new Student("임꺽정", 30);
 
-<script>
-  console.log(a);
+  s1.print();
+  s2.print();
+
 </script>
 
 </body>
