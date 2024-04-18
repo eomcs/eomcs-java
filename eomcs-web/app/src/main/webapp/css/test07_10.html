@@ -19,14 +19,14 @@
   }
 
   #state {
-    /* border: 1px solid red; */
-    font-family: myfont; /* OS에 설치된 폰트가 아니라 외부에서 다운받은 폰트*/
-    position: relative;
-    top: 5px;
-    display: inline-block;
+    border: 1px solid red;
     width: 16px;
     height: 16px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
     margin-left: 2px;
+    font-family: myfont; /* OS에 설치된 폰트가 아니라 외부에서 다운받은 폰트*/
     font-size: 20px;
   }
 
@@ -56,7 +56,7 @@ btn.addEventListener('click', function() {
     //state.innerHTML = "\uac01"; // 이스케이프(escape) 문자를 사용하여 지정하기
     //state.innerHTML = "&#xac02;"; // HTML에 미리 정의된 상수 값(html character entity)
     //state.innerHTML = "&#44036;"; // 10진수 html character entity 값
-    state.innerHTML = "\uf00d";
+    state.innerHTML = "\uf005";
     state.style["color"] = "#ff0000";
   } else {
     state.innerHTML = "\uf00c"; //"&#61452;";

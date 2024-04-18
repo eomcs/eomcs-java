@@ -17,15 +17,15 @@
   }
 
   #state {
-    /* border: 1px solid red; */
+    xborder: 1px solid red;
     display: inline-block;
     height: 16px; 
     width: 16px; 
+    box-sizing: border-box;
     background-image: url('img03.jpg');
     background-repeat: no-repeat;
-    background-position: 20px 0px; 
     background-size: 220px;
-    box-sizing: border-box;
+    background-position: 20px 0px; 
     position: relative;
     top: 5px;
     margin: 0 0 0 3px;
@@ -65,7 +65,7 @@ btn.addEventListener('click', function() {
     messageSpan.innerHTML = "중복된 이메일입니다.";
     messageSpan.style["color"] = "red";
   } else {
-    state.style.backgroundPosition = "-167px -1px";
+    state.style["background-position"] = "-167px -1px";
     messageSpan.innerHTML = "사용할 수 있는 이메일입니다.";
     messageSpan.style["color"] = "blue";
   }
