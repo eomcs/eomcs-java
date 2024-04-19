@@ -27,11 +27,9 @@ var section = document.querySelector("section");
 
 document.querySelector('#btn1').onclick = function() {
   // 태그 객체를 만들지 않고 텍스트를 사용하여 자식 태그를 추가할 수 있다.
-  var originContent = section.innerHTML;
-  console.log(originContent);
+  console.log(section.innerHTML);
 
-  section.innerHTML = originContent + 
-      "<article><h1>제목이래요!</h1><p>내용이지요!</p></article>";
+  section.innerHTML += "<article><h1>제목이래요!</h1><p>내용이지요!</p></article>";
 };
 </script>
 </body>

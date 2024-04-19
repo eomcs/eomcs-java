@@ -26,8 +26,8 @@
 // 태그의 속성 바꾸기
 //
 var e = document.querySelector("article:nth-child(2) a");
-//console.log(e.href)
-console.log(e.getAttribute('href'));
+console.log(e.href); // 원래 태그 객체에 있는 속성인 경우,
+console.log(e.getAttribute('href')); // 원래 속성 + 개발자가 임의로 추가한 속성
 
 document.querySelector('#btn1').onclick = function() {
   // 1) 방법1
