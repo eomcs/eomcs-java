@@ -34,42 +34,26 @@ a {
 <tbody>
   <tr>
     <td>1</td>
-    <td><a href="https://www.daum.net" data-no="1">제목</a></td>
+    <td><a href="/board/view?no=1">제목</a></td>
     <td>홍길동</td>
     <td>2019-4-29</td>
     <td>100</td>
   </tr>
   <tr>
     <td>2</td>
-    <td><a href="https://www.daum.net" data-no="2">제목</a></td>
+    <td><a href="/board/view?no=2">제목</a></td>
     <td>임꺽정</td>
     <td>2019-4-29</td>
     <td>800</td>
   </tr>
   <tr>
     <td>3</td>
-    <td><a href="https://www.daum.net" data-no="3">제목입니다.</a></td>
+    <td><a href="/board/view?no=3">제목입니다.</a></td>
     <td>유관순</td>
     <td>2019-4-29</td>
     <td>900</td>
   </tr>
 </tbody>
 </table>
-<script>
-"use strict"
-
-// 자식 태그에 대해 이벤트 리스너를 등록할 때
-// 그 자식 태그를 클릭했을 때만 호출된다.
-// 예) 제목을 출력하는 a 태그에 click 리스너를 등록하면
-//     정확하게 제목을 클릭해야만 동작한다.
-var el = document.querySelectorAll("tbody a");
-
-for (var e of el) {
-  e.addEventListener("click", function(e) {
-    console.log(e.target);
-    console.log(e.target.getAttribute("data-no") + " 번 게시물의 제목을 눌렀음!");
-  });
-}
-</script>
 </body>
 </html>

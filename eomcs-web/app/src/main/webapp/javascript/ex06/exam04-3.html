@@ -47,10 +47,10 @@ document.getElementById("btn1").addEventListener("click", function(e) {
 //
 document.getElementById("btn2").addEventListener("click", function(e) {
     console.log("버튼2...1");
-    e.stopImmediatePropagation(); // 이 리스너까지만 실행한다.
 });
 document.getElementById("btn2").addEventListener("click", function(e) {
     console.log("버튼2...2");
+    e.stopImmediatePropagation(); // 이 리스너까지만 실행한다.
 });
 document.getElementById("btn2").addEventListener("click", function(e) {
     console.log("버튼2...3");
