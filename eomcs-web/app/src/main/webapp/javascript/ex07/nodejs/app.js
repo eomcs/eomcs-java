@@ -21,8 +21,10 @@ app.get(                 // GET 요청이 들어 왔을 때 호출될 메서드 
     res.set('Access-Control-Allow-Origin', '*');  // CORS 문제 해결
     res.set('Content-Type', 'text/plain; charset=UTF-8');
     res.send('Hello!(강사)');
-  } 
-); 
+  }
+);
+
+
 
 app.get('/exam02-1', (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');

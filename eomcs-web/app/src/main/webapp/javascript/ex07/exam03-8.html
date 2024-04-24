@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex07</title>
+</head>
+<body>
+<h1>AJAX - jQuery 사용하기</h1>
+<form>
+<input type="text" id="a"> + <input type="text" id="b">
+<button type="button" id="btn1">=</button>
+<input type="text" id="r"><br>
+<button id="btn2" type="reset">초기화</button>
+</form>
+
+<script src="myQuery.js"></script>
+<script>
+  "use strict"
+
+  let a = $('#a');
+  let b = $('#b');
+  let r = $('#r');
+
+  let btn1 = $('#btn1');
+  let btn2 = $('#btn2');
+
+  btn1.click(function() {
+    let result = parseInt(a.val()) + parseInt(b.val());
+    if (!isNaN(result)) {
+      r.val(result);
+    } else {
+      alert("실행 오류!");
+      btn2.click();
+    }
+
+  });
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+

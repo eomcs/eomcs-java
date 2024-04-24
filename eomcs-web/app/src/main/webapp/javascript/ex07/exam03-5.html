@@ -44,6 +44,8 @@ document.querySelector("#btn1").onclick = () => {
         	  // 
         	  alert("실행 오류 입니다!");
         	  r.value = "";
+        	  a.value = "";
+        	  b.value = "";
         	  
         	  // 현재 이 예제의 문제점은 오류가 발생한 후 
         	  // 입력 폼의 값을 초기화시키지 않는다는 것이다.
@@ -53,7 +55,7 @@ document.querySelector("#btn1").onclick = () => {
         }
     };
     
-    xhr.open("GET", "http://localhost:3000/exam03-5?a=" + a.value + "&b=" + b.value, true);
+    xhr.open("GET", "test4.jsp?a=" + a.value + "&b=" + b.value, true);
     xhr.send();
     console.log("send() 리턴함.");
 };

@@ -30,7 +30,8 @@ document.querySelector("#btn1").onclick = () => {
     // => 1번 파라미터: HTTP 요청 method. ex) GET, POST, HEAD ...
     // => 2번 파라미터: 요청 URL
     // => 3번 파라미터: 비동기 여부
-    xhr.open("GET", "http://127.0.0.1:3000/exam01-1", false);
+    xhr.open("GET", "test1.jsp", false);
+    //xhr.open("GET", "http://127.0.0.1:3000/exam01-1", false);
     
     //3) 서버에 HTTP(규칙에 따라) 요청을 보낸다.
     // => 동기 방식으로 연결되었을 경우 서버에서 응답할 때까지 리턴하지 않는다.

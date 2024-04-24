@@ -41,7 +41,7 @@ document.querySelector("#btn1").onclick = () => {
         }
     };
     
-    xhr.open("GET", "http://localhost:3000/exam03-5?" + a.value + "&b=" + b.value, true);
+    xhr.open("GET", "test4.jsp?a=" + a.value + "&b=" + b.value, true);
     xhr.send();
     console.log("send() 리턴함.");
 };

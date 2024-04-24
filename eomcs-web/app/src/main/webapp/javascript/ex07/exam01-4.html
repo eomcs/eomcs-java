@@ -28,7 +28,9 @@ var ta = document.querySelector("#ta");
 
 document.querySelector("#btn1").onclick = () => {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:3000/proxy?url=" + url.value, false);
+    //xhr.open("GET", url.value, false);
+    //xhr.open("GET", "http://localhost:3000/proxy?url=" + url.value, false);
+    xhr.open("GET", "proxy.jsp?url=" + url.value, false);
     xhr.send();
     ta.value = xhr.responseText;
 };
