@@ -1,43 +1,68 @@
 function myQuery(p) {
-  let e = document.querySelector(p);
+  let el = [];
+  if (p instanceof Element) {
+    el.push(p);
+  } else if (p.startsWith('<')) { //'<p>'
+    el.push(document.createElement(p.substring(1, p.length - 1)));
+  } else {
+    let nodeList = document.querySelectorAll(p);
+    for (let e of nodeList) {
+      el.push(e);
+    }
+  }
 
-  e.val = function(v) {
+  el.val = function(v) {
     if (v == undefined) {
-      return e.value;
+      return el.length > 0 ? el[0].value : undefined;
     } else {
-      e.value = v;
+      for (let e of el) {
+        e.value = v;
+      }
+      return this;
     }
   };
 
-  e.on = function(eventName, listener) {
-    e.addEventListener(eventName, listener);
+  el.on = function(eventName, listener) {
+    for (let e of el) {
+      e.addEventListener(eventName, listener);
+    }
+    return this;
   };
 
-  e.click = function(listener) {
+  el.click = function(listener) {
     if (listener) {
-      e.on('click', listener);
+      el.on('click', listener);
     } else {
-      e.dispatchEvent(new MouseEvent('click'));
+      for (let e of el) {
+        e.dispatchEvent(new MouseEvent('click'));
+      }
     }
+    return this;
   };
 
-  e.html = function(content) {
+  el.html = function(content) {
     if (content) {
-      e.innerHTML = content;
+      for (let e of el) {
+        e.innerHTML = content;
+      }
+      return this;
     } else {
-      return e.innerHTML;
+      return el.length > 0 ? el[0].innerHTML : undefined;
     }
   };
 
-  e.text = function(content) {
+  el.text = function(content) {
     if (content) {
-      e.textContent = content;
+      for (let e of el) {
+        e.textContent = content;
+      }
+      return this;
     } else {
-      return e.textContent;
+      el.length > 0 ? el[0].textContent : undefined;
     }
   };
 
-  e.load = function(url, p1, p2) {
+  el.load = function(url, p1, p2) {
     let settings = {
       url: url
     }
@@ -52,15 +77,49 @@ function myQuery(p) {
     }
 
     settings.success = function(result) {
-      e.innerHTML = result;
+      for (let e of el) {
+        e.innerHTML = result;
+      }
       if (complete) {
         complete();
       }
     }
     myQuery.get(settings);
+    return this;
   };
 
-  return e;
+  el.appendTo = function(value) {
+    let parents;
+    if ('string' == typeof value) {
+      parents = myQuery(value);
+    } else {
+      parents = value;
+    }
+    parents.append(el);
+    return this;
+  };
+
+  el.append = function(childs) {
+    for (let e of el) {
+      for (let child of childs) {
+        e.appendChild(child);
+      }
+    }
+    return this;
+  };
+
+  el.attr = function(name, value) {
+    if (arguments.length > 1) {
+      for (let e of el) {
+        e.setAttribute(name, value);
+      }
+      return this;
+    } else {
+      return el.length > 0 ? el[0].getAttribute(name) : undefined;
+    }
+  }
+
+  return el;
 }
 
 myQuery.ajax = function(p1, p2) {
