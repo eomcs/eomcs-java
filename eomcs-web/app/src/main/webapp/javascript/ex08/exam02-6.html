@@ -13,8 +13,8 @@ const promise = new Promise((resolve, reject) => {
     if (xhr.readyState == 4) {
       console.log(xhr.responseText);
       
-      resolve();
-      //reject();
+      //resolve();
+      reject();
     }
   };
   xhr.open("GET", "http://localhost:3000/hello", true); 

@@ -18,7 +18,8 @@ function f1(a) {
 	// => 그러나 arguments는 Array()로 만든 오리지널 배열이 아니다.
 	// => 그래서 forEach() 함수가 없다.
 	// => 그러니 arguments에 대해 배열의 메서드를 호출하지 말라!
-  /*
+	/*
+  console.log(arguments.constructor.name);
   arguments.forEach(function(value) { // 실행 오류!
     console.log(value);
   });
