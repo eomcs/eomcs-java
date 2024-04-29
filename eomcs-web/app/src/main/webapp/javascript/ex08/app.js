@@ -41,7 +41,7 @@ app.get('/boards', (req, res) => {
     {no:5,title:'제목5',writer:'윤봉길',viewCnt:200}
   ];
   res.send(JSON.stringify(arr));
-}); 
+});
 
 app.get('/proxy', (req, res) => {    
 

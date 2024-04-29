@@ -13,7 +13,7 @@ const promise1 = new Promise((resolve, reject) => {
 
 // then()의 핸들러가 처리한 작업 결과를 리턴하고 싶다면, 
 // return 문을 사용하라!
-const promise2 = promise1.then((result) => {
+const promise2 = promise1.then((result) => { // promise1 약속이 이행된 후에 수행할 작업에 대해 새 약속을 잡는다.
   console.log(result)
   return result + " => 1";
 }); 

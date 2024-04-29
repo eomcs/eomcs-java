@@ -8,7 +8,8 @@
 <h1>Promise - 예외처리: then(onFulfillment, onRejection)</h1>
 <script>
 const promise = new Promise((resolve, reject) => {
-  throw '오류 발생!!!';
+  //throw '오류 발생!!!';
+  //reject();
 })
 .then(() => console.log("fulfilled!"), 
       () => console.log("rejected!"));

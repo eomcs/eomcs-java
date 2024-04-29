@@ -5,7 +5,7 @@
 <title>ex07</title>
 </head>
 <body>
-<h1>XMLHttpRequest 사용하기</h1>
+<h1>fetch() 사용하기</h1>
 <table border="1">
 <thead>
     <tr><th>번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
@@ -14,15 +14,15 @@
 </tbody>
 </table>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 "use strict"
 var tbody = document.querySelector("tbody");
 
-
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = () => {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-        var arr = JSON.parse(xhr.responseText);
+$.ajax("http://localhost:3000/boards", {
+    method: 'get',
+    dataType: 'json',
+    success: function(arr) {
         for (var b of arr) {
             var tr = document.createElement("tr");
             tr.innerHTML = "<td>" + b.no + "</td>" +
@@ -32,9 +32,7 @@ xhr.onreadystatechange = () => {
             tbody.appendChild(tr);
         }
     }
-};
-xhr.open("GET", "http://localhost:3000/boards", true);
-xhr.send();
+});
 
 
 </script>

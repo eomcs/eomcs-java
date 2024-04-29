@@ -11,7 +11,7 @@ const promise = new Promise((resolve, reject) => {
   throw '오류 발생!!!';
 });
 
-// promise 오류에 대해 여러 개의 reject 핸들러가 등록되어 있으면 
+// promise 오류에 대해 여러 개의 reject 핸들러가 등록되어 있으면
 // 순차적으로 모두 호출된다.
 const p2 = promise.then(undefined, 
              () => console.log("rejected!"));
