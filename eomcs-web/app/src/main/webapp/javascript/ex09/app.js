@@ -40,9 +40,9 @@ app.get('/boards', (req, res) => {
     {no:4,title:'제목4',writer:'안중근',viewCnt:100},
     {no:5,title:'제목5',writer:'윤봉길',viewCnt:200}
   ];
-  setTimeout(() => {
-    res.send(JSON.stringify(arr));
-  }, 3000);
+
+  res.send(JSON.stringify(arr));
+
 }); 
 
 app.get('/proxy', (req, res) => {    
