@@ -18,10 +18,14 @@ class Exam0300 {
   }
 }
 
-//## 실습
-//1) 컴파일하기
-//- $ javac -encoding [문자집합] [소스파일명]
-//- 예) $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex01/Exam0300.java
+// ## 실습
+// 1) 컴파일하기
+// - $ javac -encoding [문자집합] [소스파일명]
+// - 예) $ javac -d bin/main -encoding UTF-8
+// src/main/java/com/eomcs/lang/ex01/Exam0300.java
 //
-//2) 실행하기
-//- $ java -cp bin/main com.eomcs.lang.ex01.Exam0300
+// 2) 실행하기
+// - $ java -cp bin/main com.eomcs.lang.ex01.Exam0300
+
+// Java SE 18 버전부터는 기본 인코딩을 UTF-8 가정한다.
+// 따라서 Windows OS에서 -encoding 옵션을 붙일 필요가 없다.
