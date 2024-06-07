@@ -4,6 +4,7 @@ package com.eomcs.lang.ex05;
 //
 public class Exam0420 {
   public static void main(String[] args) {
+
     // >> 비트 이동 연산자 사용법
     // - 왼쪽 쪽 빈자리를 원래 숫자와 같은 부호 값으로 채운다.
     // - 양수라면 0, 음수라면 1을 채운다.
