@@ -52,7 +52,7 @@ public class Exam0170 {
 
     // 방법2:
     // Object에서 상속 받은 clone()을 호출한다.
-    //    Score s3 = s1.clone(); // 컴파일 오류!
+    //    Score s3 = (Score) s1.clone(); // 컴파일 오류!
     //
     // Object에서 상속 받은 clone()은 protected 이다.
     // 따라서 같은 패키지에 소속된 클래스이거나 상속 받은 서브 클래스가 아니면 호출할 수 없다.

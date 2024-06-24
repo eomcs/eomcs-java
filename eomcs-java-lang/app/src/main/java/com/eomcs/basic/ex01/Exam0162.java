@@ -10,6 +10,11 @@ public class Exam0162 {
     Class classInfo = obj2.getClass();
     System.out.println(classInfo.getName()); //[Ljava.lang.String;
 
+    String str = new String("Hello");
+    Class classInfo2 = str.getClass();
+    System.out.println(classInfo2.getName());
+    System.out.println(String.class.getName());
+
     System.out.println(new byte[10].getClass().getName()); //[B
     System.out.println(new short[10].getClass().getName()); //[S
     System.out.println(new char[10].getClass().getName()); //[C

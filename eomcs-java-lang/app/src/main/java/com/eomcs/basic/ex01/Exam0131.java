@@ -42,12 +42,15 @@ public class Exam0131 {
 
     @Override
     public boolean equals(Object obj) {
-      if (this == obj)
+      if (this == obj) {
         return true;
-      if (obj == null)
+      }
+      if (obj == null) {
         return false;
-      if (getClass() != obj.getClass())
+      }
+      if (getClass() != obj.getClass()) {
         return false;
+      }
       My other = (My) obj;
       return age == other.age && Objects.equals(email, other.email) && gender == other.gender
           && Objects.equals(name, other.name) && Objects.equals(tel, other.tel)
