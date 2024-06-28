@@ -10,7 +10,7 @@ public class Exam02 {
     m2(new Truck());
     m2(new Sedan());
 
-    //m2(new Car()); // Error
+    //    m2(new Car()); // Error
   }
 
   static void m1(Truck car) {
