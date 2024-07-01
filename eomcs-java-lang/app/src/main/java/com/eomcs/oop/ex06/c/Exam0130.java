@@ -13,6 +13,7 @@ public class Exam0130 {
       System.out.printf("  => this.name(%s)\n", this.name);
       System.out.printf("  => this.tel(%s)\n", this.tel);
       System.out.printf("  => this.working(%s)\n", this.working);
+
       // 인스턴스 필드를 찾는 때:
       // this => 메서드가 소속된 클래스의 필드부터 찾아 올라간다.
       // super => 메서드가 소속된 클래스의 수퍼 클래스 필드부터 찾아 올라간다.
