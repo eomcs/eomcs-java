@@ -20,5 +20,16 @@ public final class Exam0510 {
   public static void main(String[] args) {
     G g = new G();
     g.m1(100);
+
+    System.out.println(sigma(10));
+  }
+
+  static int sigma(int value) {
+    // 파라미터의 값을 변경하는 예
+    int result = 0;
+    while (value > 0) {
+      result += value--;
+    }
+    return result;
   }
 }

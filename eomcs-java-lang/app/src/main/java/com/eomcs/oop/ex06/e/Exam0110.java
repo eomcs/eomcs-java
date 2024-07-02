@@ -17,7 +17,7 @@ final class 단팥빵 {
 
 // String 클래스는 final 클래스이다. 서브 클래스 정의 불가!
 //class MyString extends String {
-//  
+//
 //}
 
 // final 클래스를 상속 받을 수 없다.
@@ -27,7 +27,7 @@ public class Exam0110
     먹는다(new 단팥빵());
 
     // 단팥빵 객체 대신 단팥빵의 서브 클래스의 객체를 전달 할 수 없다.
-    //먹는다(new 크림단팥빵()); 
+    //    먹는다(new 크림단팥빵());
   }
 
   static void 먹는다(단팥빵 obj) {
