@@ -36,7 +36,7 @@ public class Exam0110 {
     // => 제한 범위
     //    private   : 클래스 내부에서만 접근 가능
     //    (default) : 클래스 내부 + 같은 패키지
-    //    protected : 클래스 내부 + 같은 패키지 + 자식클래스
+    //    protected : 클래스 내부 + 같은 패키지 + 자식클래스(자신의 것이라면)
     //    public    : 모두 접근 가능!
     //
   }
