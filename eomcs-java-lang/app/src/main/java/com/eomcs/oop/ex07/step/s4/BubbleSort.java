@@ -1,8 +1,9 @@
-package com.eomcs.oop.ex07.b;
+package com.eomcs.oop.ex07.step.s4;
 
-public class BubbleSort {
+public class BubbleSort extends Sorter {
 
-  public void run(int[] values) {
+  @Override
+  public void sort(int[] values) {
     int size = values.length;
     for (int i = 0; i < size - 1; i++) {
       for (int j = 0; j < size - i - 1; j++) {

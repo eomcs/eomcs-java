@@ -1,5 +1,5 @@
 // 수퍼 클래스를 추상 클래스로 선언하기
-package com.eomcs.oop.ex07.d;
+package com.eomcs.oop.ex07.step.s3;
 
 public class Exam01 {
 

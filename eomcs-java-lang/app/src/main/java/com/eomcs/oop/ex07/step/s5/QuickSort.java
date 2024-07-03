@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex07.f;
+package com.eomcs.oop.ex07.step.s5;
 
 public class QuickSort implements Sorter {
 

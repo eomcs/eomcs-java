@@ -1,5 +1,5 @@
 // 추상 메서드의 효용성 - 서브 클래스에서 구현하도록 강제하는 효과가 있다.
-package com.eomcs.oop.ex07.e;
+package com.eomcs.oop.ex07.step.s4;
 
 public class Exam01 {
 

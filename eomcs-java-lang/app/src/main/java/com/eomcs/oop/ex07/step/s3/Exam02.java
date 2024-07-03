@@ -1,5 +1,5 @@
 // 일반 메서드의 한계 - 서브 클래스에게 구현을 강요할 수 없다.
-package com.eomcs.oop.ex07.d;
+package com.eomcs.oop.ex07.step.s3;
 
 public class Exam02 {
 

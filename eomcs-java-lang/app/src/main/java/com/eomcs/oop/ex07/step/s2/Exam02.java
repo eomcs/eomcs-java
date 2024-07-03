@@ -1,5 +1,5 @@
 // 수퍼 클래스가 concrete 클래스일 때 문제점
-package com.eomcs.oop.ex07.c;
+package com.eomcs.oop.ex07.step.s2;
 
 public class Exam02 {
 

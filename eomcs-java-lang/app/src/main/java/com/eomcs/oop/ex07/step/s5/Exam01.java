@@ -1,5 +1,5 @@
 // 추상 클래스를 인터페이스로 전환하기
-package com.eomcs.oop.ex07.f;
+package com.eomcs.oop.ex07.step.s5;
 
 public class Exam01 {
 

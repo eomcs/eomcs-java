@@ -1,7 +1,9 @@
-package com.eomcs.oop.ex07.c;
+package com.eomcs.oop.ex07.step.s5;
 
-public class BubbleSort extends Sorter {
+public class BubbleSort implements Sorter {
 
+  // 인터페이스의 추상 메서드를 구현하는 것도 
+  // "오버라이딩" 이라 부른다.
   @Override
   public void sort(int[] values) {
     int size = values.length;

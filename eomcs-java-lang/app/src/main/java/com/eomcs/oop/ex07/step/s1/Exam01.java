@@ -1,5 +1,5 @@
 // 추상 클래스와 추상 메서드의 활용: 적용 전
-package com.eomcs.oop.ex07.b;
+package com.eomcs.oop.ex07.step.s1;
 
 import java.util.Arrays;
 

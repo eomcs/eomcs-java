@@ -1,4 +1,4 @@
-package com.eomcs.oop.ex07.b;
+package com.eomcs.oop.ex07.step.s1;
 
 public class QuickSort {
 

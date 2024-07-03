@@ -1,11 +1,8 @@
-package com.eomcs.oop.ex07.f;
+package com.eomcs.oop.ex07.step.s1;
 
-public class BubbleSort implements Sorter {
+public class BubbleSort {
 
-  // 인터페이스의 추상 메서드를 구현하는 것도 
-  // "오버라이딩" 이라 부른다.
-  @Override
-  public void sort(int[] values) {
+  public void run(int[] values) {
     int size = values.length;
     for (int i = 0; i < size - 1; i++) {
       for (int j = 0; j < size - i - 1; j++) {
