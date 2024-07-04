@@ -10,6 +10,11 @@ interface MyInterface5 {
   static void m1() {
     System.out.println("MyInterface5.m1()");
   }
+
+  //Java9 부터는 private 접근 범위도 가능하다.
+  private static void x() {
+    System.out.println("MyInterface5.m1()");
+  }
 }
 
 class Parent {
@@ -26,6 +31,8 @@ public class Exam05 {
   public static void main(String[] args) {
     // 인터페이스의 스태틱 메서드 호출하기
     MyInterface5.m1();
+
+    //    MyInterface5.x(); // private static 멤버는 호출 불가!
 
     // 클래스의 스태틱 메서드 호출하기
     Parent.m2();

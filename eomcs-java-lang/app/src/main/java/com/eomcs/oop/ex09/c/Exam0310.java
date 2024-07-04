@@ -25,6 +25,11 @@ public class Exam0310 {
   }
 
   static class ProtocolImpl implements ProtocolA, ProtocolB {
+    @Override
+    public void rule0() {
+      System.out.println("ProtocolImpl.rule1()");
+    }
+
     // ProtocolA 규칙 준수!
     @Override
     public void rule1() {
@@ -37,7 +42,7 @@ public class Exam0310 {
       System.out.println("ProtocolImpl.rule2()");
     }
 
-    // 인터페이스들에 같은 시그너처를 갖는 default 메서드가 여러 개 있을 경우,
+    // 인터페이스들에 같은 시그너처를 갖는 default 메서드가 있을 경우,
     // 어떤 메서드를 상속 받느냐에 따라 실행 결과가 달라지기 때문에
     // 다중 클래스 상속이 불가능 한 것처럼
     // 이 경우에도 다중 인터페이스 구현이 불가능 하다.
@@ -46,10 +51,10 @@ public class Exam0310 {
     // 어차피 인터페이스에서 구현한 default 메서드를 사용하지 않기 때문에
     // 이 경우에는 다중 구현이 가능한다.
     //
-    //    @Override
-    //    public void rule3() {
-    //      System.out.println("ProtocolImpl.rule3()");
-    //    }
+    //        @Override
+    //        public void rule3() {
+    //          System.out.println("ProtocolImpl.rule3()");
+    //        }
   }
 
   public static void main(String[] args) {
