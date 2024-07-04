@@ -9,9 +9,9 @@ public class Zebra {
   boolean use;
 
   public void rotate(int direction) {
-    if (direction == 1) { // 오른쪽 회전
+    if (direction == ON) { // 오른쪽 회전
       this.use = true;
-    } else if (direction == 2) { // 왼쪽 회전
+    } else if (direction == OFF) { // 왼쪽 회전
       this.use = false;
     }
   }

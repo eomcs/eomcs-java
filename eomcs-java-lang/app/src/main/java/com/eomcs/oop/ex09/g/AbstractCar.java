@@ -43,7 +43,7 @@ public abstract class AbstractCar implements Car, CarCheckInfo {
   // Car 인터페이스의 run() 메서드는 구현하지 않는다.
   // - 서브 클래스에게 구현을 맡긴다.
   // - 따라서 run() 메서드는 다음과 같이 추상 메서드로 남겨져 있다.
-  // 
+  //
   //  public abstract void run();
 
   // CarCheckInfo 규칙에 따라 기능 구현하기
@@ -59,4 +59,14 @@ public abstract class AbstractCar implements Car, CarCheckInfo {
   public int getEngineOil() {
     return engineOil;
   }
+  public void setGas(int gas) {
+    this.gas = gas;
+  }
+  public void setBrakeOil(int brakeOil) {
+    this.brakeOil = brakeOil;
+  }
+  public void setEngineOil(int engineOil) {
+    this.engineOil = engineOil;
+  }
+
 }
