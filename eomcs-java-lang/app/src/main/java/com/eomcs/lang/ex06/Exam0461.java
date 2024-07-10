@@ -2,7 +2,7 @@ package com.eomcs.lang.ex06;
 
 import java.util.ArrayList;
 
-// # 흐름 제어문 - for 반복문과 컬렉션
+// # 흐름 제어문 - for(:) enhanced for 문 - 컬렉션
 //
 public class Exam0461 {
   public static void main(String[] args) {
@@ -14,8 +14,9 @@ public class Exam0461 {
 
     // for 문에 컬렉션도 적용할 수 있다.
     // for (변수 선언 : 컬렉션객체) 문장;
-    for (Object value : list)
+    for (Object value : list) {
       System.out.println(value);
+    }
   }
 }
 

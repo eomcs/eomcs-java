@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex06;
 
-// # 흐름 제어문 - for(:) 와 배열
+// # 흐름 제어문 - for(:) enhanced for 문 - 배열
 //
 public class Exam0450 {
   public static void main(String[] args) {
@@ -9,8 +9,9 @@ public class Exam0450 {
     // 배열의 처음부터 끝까지 값을 꺼내는 것이라면
     // 다음의 for 문법을 사용하라! 아주 편하다!
     // for (배열에서 꺼낸 값을 저장할 변수 선언 : 배열주소) 문장;
-    for (String name : names)
+    for (String name : names) {
       System.out.println(name);
+    }
 
     // 위의 문장은 컴파일하면 아래의 문장으로 변경된다.
     // for (int i = 0; i < names.length; i++) {
