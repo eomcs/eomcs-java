@@ -13,8 +13,8 @@ class B2 {
     // 스태틱 중첩 클래스는 바깥 클래스의 인스턴스 주소를 저장하는 코드가 없다.
     // 따라서 B2.this 라는 변수를 사용할 수 없다.
     void test() {
-      //B2.this.v2 = 100;
-      //B2.this.m2();
+      //      B2.this.v2 = 100;
+      //      B2.this.m2();
     }
   }
 
@@ -35,9 +35,9 @@ class B2 {
       // 그래서 자바는 inner 객체에 보관된 바깥 객체를 가리키는 문법을 제공하고 있다.
       // =>   바깥클래스명.this
       // 위의 문법을 이용하여 바깥 객체에 접근할 수 있다.
-      // 즉 inner 객체를 만들 때 사용한 바깥 객체에 접근하고 싶다면 
+      // 즉 inner 객체를 만들 때 사용한 바깥 객체에 접근하고 싶다면
       // =>  B2.this  문법을 사용하라!
-      // 
+      //
       System.out.println(B2.this.v2); // ---> this$0.v2
       B2.this.m2();
     }
@@ -64,7 +64,7 @@ public class Exam0220 {
     inner2.test();
 
     B2 outer3 = null;
-    B2.X inner3 = outer3.new X(); 
+    B2.X inner3 = outer3.new X();
   }
 
 }
