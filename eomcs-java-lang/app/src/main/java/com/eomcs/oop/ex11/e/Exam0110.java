@@ -25,13 +25,17 @@ public class Exam0110 {
       }
     }
 
-    A obj = new My();
-    obj.print();
+    A a = new My();
+    a.print();
+
+    A a2 = new My();
+    A a3 = new My();
+
 
     // 2) non-static 중첩 클래스 사용?
-    // class X obj = new X(); // 컴파일 오류!
+    //    X obj2 = new X(); // 컴파일 오류!
 
     // 3) static 중첩 클래스 사용
-    Y obj2 = new Y(); // OK
+    Y obj3 = new Y(); // OK
   }
 }

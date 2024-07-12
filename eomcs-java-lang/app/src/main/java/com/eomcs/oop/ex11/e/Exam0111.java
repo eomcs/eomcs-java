@@ -26,13 +26,13 @@ public class Exam0111 {
     // => 인터페이스명 레퍼런스 = new 인터페이스명() {};
     //    - 수퍼 클래스에 존재하는 생성자를 호출한다.
     //
-    A obj2 = new A() {
+    A obj = new A() {
       @Override
       public void print() {
         System.out.println("Hello!");
       }
     };
-    obj2.print();
+    obj.print();
 
     new A() {
       @Override

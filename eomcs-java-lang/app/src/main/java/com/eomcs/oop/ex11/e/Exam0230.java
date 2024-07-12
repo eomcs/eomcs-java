@@ -15,7 +15,7 @@ public class Exam0230 {
     public A(String name) {
       System.out.println("A(String) 호출됨!");
       this.name = name;
-    } 
+    }
 
     public void print() {
       System.out.println(name);
