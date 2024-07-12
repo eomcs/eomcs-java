@@ -25,9 +25,9 @@ class CalculatorFactory {
 
     // create1()이 호출될 때 넘어 오는 interest 파라미터 값을 CalculatorImpl 객체에서 쓰고 싶으면
     // 다음과 같이 CalculatorImpl 객체를 만들 때 생성자를 통해 전달해야 한다.
-    // 왜? 
-    // - create1() 메서드 호출이 끝나면 create1()의 로컬 변수를 제거되기 때문이다. 
-    //    
+    // 왜?
+    // - create1() 메서드 호출이 끝나면 create1()의 로컬 변수를 제거되기 때문이다.
+    //
     return new CalculatorImpl(interest);
   }
 
@@ -40,7 +40,7 @@ class CalculatorFactory {
       // 따라서 create1()의 경우처럼 개발자가 직접 코드를 추가할 필요가 없다.
       // 예)
       //      float val$interest;
-      //      
+      //
       //      CalculatorImpl(float interest) {
       //        this.val$interest = interest;
       //      }

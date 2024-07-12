@@ -36,6 +36,7 @@ class D {
         // 그래서 다음과 같이
         // 로컬 클래스에서는 바깥 메서드의 로컬 변수를 자기것인양 사용할 수 있는 것이다.
         System.out.println(a); // m1() 에 선언된 로컬 변수를 가리킨다.
+        //System.out.println("Hello!");
       }
     }
 
