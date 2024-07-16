@@ -8,7 +8,14 @@ public class Exam0130 {
   }
 
   public static void main(String[] args) {
-    // 1) 파라미터는 괄호() 안에 선언한다.
+    // 0) 람다 표현으로 인터페이스 구현
+    Player p0 = (String name) -> {
+      System.out.println(name + " 님 환영합니다.");
+    };
+    p0.play("홍길동");
+
+    // 1) 메서드 body에 문장이 한 개만 있을 경우 중괄호 생략가능
+    //    또한 세미콜론 제거.
     Player p1 = (String name) -> System.out.println(name + " 님 환영합니다.");
     p1.play("홍길동");
 

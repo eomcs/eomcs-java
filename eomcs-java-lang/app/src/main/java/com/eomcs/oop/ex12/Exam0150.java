@@ -8,7 +8,13 @@ public class Exam0150 {
   }
 
   public static void main(String[] args) {
-    // 1) 리턴 값은 return 명령을 사용하여 처리한다.
+    // 0) 람다 표현
+    Calculator c0 = (int a, int b) -> {
+      return a + b;
+    };
+    System.out.println(c0.compute(10, 20));
+
+    // 1) 파라미터 타입 생략 가능
     Calculator c1 = (a, b) -> {
       return a + b;
     };

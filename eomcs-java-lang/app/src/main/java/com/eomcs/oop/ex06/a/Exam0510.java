@@ -7,7 +7,6 @@ public class Exam0510 {
     Vehicle v = new Sedan();
 
     // instanceof 연산자?
-    // => 레퍼런스에 들어있는 주소가 특정 클래스의 인스턴스인지 검사한다.
     // => 또는 그 상위/하위 클래스의 인스턴스인지 검사한다.
     //
     System.out.println(v instanceof Sedan);
@@ -17,6 +16,10 @@ public class Exam0510 {
 
     System.out.println(v instanceof Truck);
     System.out.println(v instanceof Bike);
+
+    // 비교하려는 타입이 레퍼런스의 타입과 상속 관계가 아닐 때는 컴파일 오류 발생!
+    //    System.out.println(v instanceof String);
+    //    System.out.println(v instanceof java.util.Date);
   }
 
 }
