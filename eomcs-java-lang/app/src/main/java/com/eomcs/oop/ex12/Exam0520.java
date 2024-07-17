@@ -34,15 +34,38 @@ public class Exam0520 {
     // 스태틱 메서드 레퍼런스로 Calculator 구현체를 만드는 방법
     //
     Calculator c01 = MyCalculator::plus;
+
+    //    // 1) 컴파일러야 나 대신 니가 Calculator 구현 클래스를 작성하라.
+    //    class $1 implements Calculator {
+    //      @Override
+    //      public int compute(int a, int b) {
+    //        // 2) 컴파일러야 compute() 메서드가 호출될 때 MyCalculator의 plus()를 호출하도록
+    //        //    나 대신 작성하라.
+    //        return MyCalculator.plus(a, b);
+    //      }
+    //    }
+    //
+    //    // 3) 컴파일러야 나 대신 만든 로컬 클래스의 인스턴스를 생성하여 그 주소를 c01 레퍼런스에 저장하라.
+    //    Calculator c01 = new $1();
+
+
     Calculator c02 = MyCalculator::minus;
     Calculator c03 = MyCalculator::multiple;
     Calculator c04 = MyCalculator::divide;
 
     //    Calculator c05 = MyCalculator::power; // 컴파일 오류! 해당 메서드를 가지고 구현체를 만들 수 없다.
-    // 
+    //
     // 컴파일러는 위의 문장을 다음의 코드로 변환하려고 했는데,
-    // MyCalculator에는 power(int,int) 규격을 가진 메서드가 없기 때문에 
+    // MyCalculator에는 power(int,int) 규격을 가진 메서드가 없기 때문에
     // 컴파일 오류를 발생시킨 것이다.
+    //
+    //    class $2 implements Calculator {
+    //      @Override
+    //      public int compute(int a, int b) {
+    //        return MyCalculator.power(a, b); // 문제는 여기서 오류가 발생한다.
+    //      }
+    //    }
+    //
     // 즉 인터페이스의 메서드와 규격이 다르면 다음과 같은 코드를 생성할 수 없기 때문에
     // 컴파일 오류가 발생한다.
     //    Calculator c05 = (a, b) -> MyCalculator.power(a, b);

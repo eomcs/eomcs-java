@@ -32,10 +32,26 @@ public class Exam0730 {
     // 인터페이스 메서드의 파라미터에 따라 호출할 생성자가 결정된다.
 
     Factory1 f1 = Message::new; // Message() 생성자를 가리킨다.
+
     //    Factory1 f1 = () -> new Message(); // 위의 문장과 같다.
+    //
+    //    class $1 implements Factory1 { // 즉 다음의 로컬 클래스를 자동 생성한다.
+    //      @Override
+    //      public Message get() {
+    //        return new Message();
+    //      }
+    //    }
 
     Factory2 f2 = Message::new; // Message(String) 생성자를 가리킨다.
+
     //    Factory2 f2 = n -> new Message(n); // 위의 문장과 같다.
+    //
+    //    class $1 implements Factory2 { // 즉 다음의 로컬 클래스를 자동 생성한다.
+    //      @Override
+    //      public Message get(String name) {
+    //        return new Message(name);
+    //      }
+    //    }
 
     Message msg = f1.get(); // ==> new Message()
     msg.print();

@@ -18,12 +18,14 @@ public class Exam0510 {
   public static void main(String[] args) {
     // 메서드 한 개짜리 인터페이스의 구현체를 만들 때,
 
-    Calculator obj0 = new Calculator() {
+    // 0) 로컬 클래스 활용
+    class CalcImpl implements Calculator {
       @Override
       public int compute(int x, int y) {
         return x + y;
       }
-    };
+    }
+    Calculator obj0 = new CalcImpl();
 
     // 1) 익명 클래스 활용
     Calculator obj1 = new Calculator() {
@@ -49,7 +51,7 @@ public class Exam0510 {
     Calculator c1 = MyCalculator::plus; // MyCalculator의 스태틱 메서드인 plus()를 가지고 구현체를 자동 생성!
     // 컴파일러는 위 코드를 다음의 람다 코드로 변환한다.
     // Calculator c1 = (x, y) -> MyCalculator.plus(x, y);
-    // 
+    //
 
     Calculator c2 = MyCalculator::minus; // => Calculator c2 = (x, y) -> MyCalculator.minus(x, y);
     Calculator c3 = MyCalculator::multiple; // => Calculator c3 = (x, y) -> MyCalculator.multiple(x, y);

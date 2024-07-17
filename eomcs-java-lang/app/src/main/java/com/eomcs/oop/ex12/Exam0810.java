@@ -29,12 +29,33 @@ public class Exam0810 {
 
     // 3) 람다로 인터페이스 구현체를 만든다.
     printCar(() -> new Car());
+    //    class $1 implements Factory {
+    //      @Override
+    //      public Object create() {
+    //        return new Car();
+    //      }
+    //    }
+    //    printCar(new $1());
 
     // 4) 기존에 존재하는 메서드를 인터페이스 구현체로 사용한다.
     printCar(Exam0810::createCar);
+    //    class $1 implements Factory {
+    //      @Override
+    //      public Object create() {
+    //        return Exam0810.createCar();
+    //      }
+    //    }
+    //    printCar(new $1());
 
     // 5) 기존 클래스의 생성자를 인터페이스 구현체로 사용한다.
     printCar(Car::new);
+    //    class $1 implements Factory {
+    //      @Override
+    //      public Object create() {
+    //        return new Car();
+    //      }
+    //    }
+    //    printCar(new $1());
 
     System.out.println("완료!");
   }

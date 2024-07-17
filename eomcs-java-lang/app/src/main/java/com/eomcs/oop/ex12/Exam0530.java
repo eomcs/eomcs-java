@@ -40,7 +40,7 @@ public class Exam0530 {
     Calculator1 c1 = MyCalculator::plus; // OK!
     // 위의 코드는 다음의 람다 코드로 변환된다.
     // => Calculator1 c1 = (int x, int y) -> {return MyCalculator.plus(x, y);};
-    // 
+    //
     // 위 람다 문장은 다음 문장과 같다.
     //    Calculator1 c1 = new Calculator1() {
     //      @Override
@@ -100,7 +100,7 @@ public class Exam0530 {
     // 리턴 타입 int ===> String
     //    Calculator6 c6 = MyCalculator::plus; // 컴파일 오류!
     //    // => Calculator6 c6 = (int x, int y) -> {return MyCalculator.plus(x, y);};
-    // 
+    //
     // 위 문장은 다음과 같다.
     //    Calculator6 c6 = new Calculator6() {
     //      @Override
