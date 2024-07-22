@@ -27,6 +27,7 @@ public class Exam0113 {
     box1 = new Box<Object>();
     box1 = new Box<A>();
     box1 = new Box<B1>();
+    //    box1 = new Box<B2>(); // 컴파일 오류!
     //    box1 = new Box<C>(); // 컴파일 오류!
 
   }

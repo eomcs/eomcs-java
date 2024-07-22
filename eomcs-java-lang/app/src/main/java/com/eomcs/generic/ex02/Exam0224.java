@@ -46,9 +46,10 @@ public class Exam0224 {
     //    list.add(new D()); // 컴파일 오류!
 
     Object obj1 = list.get(0);
-    B1 obj2 = list.get(0);
-    //    C obj3 = list.get(0); // 컴파일 오류!
-    //    D obj4 = list.get(0); // 컴파일 오류!
+    A obj2 = list.get(0);
+    B1 obj3 = list.get(0);
+    //    C obj4 = list.get(0); // 컴파일 오류!
+    //    D obj5 = list.get(0); // 컴파일 오류!
   }
 }
 

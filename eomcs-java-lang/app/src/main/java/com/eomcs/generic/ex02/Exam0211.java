@@ -37,6 +37,7 @@ public class Exam0211 {
     //   즉 파라미터 타입이 뭔지 정확하게 설정되지 않았기 때문에
     //   컴파일러는 문법의 유효여부를 검사할 수 없다.
     // 
+    list2.add(new Object());
     list2.add(new String()); // 컴파일 오류!
     list2.add(new Integer(100)); // 컴파일 오류!
     list2.add(new java.util.Date()); // 컴파일 오류!

@@ -6,14 +6,14 @@ import com.eomcs.generic.ex02.Member;
 public class Exam0240 {
 
   static class Box<T> {
-    T value; 
+    T value;
     public T get() {return this.value;}
     public void set(T value) {this.value = value;}
   }
 
   public static void main(String[] args) {
 
-    // 제네릭을 사용하면 한 개의 클래스를 가지고 
+    // 제네릭을 사용하면 한 개의 클래스를 가지고
     // 특정 타입만을 다루는 전용 객체를 만들 수 있다.
     Box<Member> b1 = new Box<>();
     Box<String> b2 = new Box<>();

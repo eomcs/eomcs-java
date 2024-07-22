@@ -1,4 +1,4 @@
-// 제네릭(Generic) 문법 정리 - 레퍼런스와 인스턴스 생성 
+// 제네릭(Generic) 문법 정리 - 레퍼런스와 인스턴스 생성
 package com.eomcs.generic.ex02;
 
 import java.util.ArrayList;
@@ -31,7 +31,13 @@ public class Exam0213 {
     //    list1 = new ArrayList<B2>(); // 컴파일 오류!
     //    list1 = new ArrayList<C>(); // 컴파일 오류!
 
-    list1.add(new B2()); // 컴파일러는 레퍼런스의 형식을 따져서 문법의 옳고 그름을 판단한다.
+    // ArrayList의 타입 파라미터가 A로 결정되었기 때문에
+    // add() 메서드의 파라미터 타입은 A가 된다.
+    // 따라서 A 타입 파라미터에 전달 할 수 있는 값을 모두 가능!
+    list1.add(new A());
+    list1.add(new B1());
+    list1.add(new B2());
+    list1.add(new C());
 
     ArrayList<B2> list2;
 
