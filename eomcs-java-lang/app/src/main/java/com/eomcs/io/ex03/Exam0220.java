@@ -40,8 +40,9 @@ public class Exam0220 {
     in.close();
 
     System.out.printf("%d\n", count);
-    for (int i = 0; i < count; i++)
-      System.out.printf("%c(%04x)\n", buf[i], (int)buf[i]);
+    for (int i = 0; i < count; i++) {
+      System.out.printf("%c(%04x)\n", buf[i], (int) buf[i]);
+    }
 
     System.out.println();
 
