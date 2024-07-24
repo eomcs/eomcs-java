@@ -1,4 +1,4 @@
-// 바이너리 파일을 텍스트 형식으로 저장하기 
+// 바이너리 파일을 텍스트 형식으로 저장하기
 package com.eomcs.io.ex15;
 
 import java.io.FileOutputStream;
@@ -12,7 +12,7 @@ public class Exam0120 {
     Decoder decoder = Base64.getDecoder();
 
     FileReader in = new FileReader("./temp/photo.txt");
-    FileOutputStream out = new FileOutputStream("./temp/photox.jfif");
+    FileOutputStream out = new FileOutputStream("./temp/photox.jpg");
 
     char[] buf = new char[1000000];
     int len = in.read(buf);
