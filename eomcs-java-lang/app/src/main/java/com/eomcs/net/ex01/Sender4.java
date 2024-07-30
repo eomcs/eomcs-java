@@ -10,12 +10,12 @@ import java.util.Scanner;
 public class Sender4 {
 
   public static void main(String[] args) throws Exception {
-    File file = new File("temp/test.jpeg");
+    File file = new File("temp/jls.pdf");
 
     FileInputStream fileIn = new FileInputStream(file);
 
     System.out.println("서버에 연결 중...");
-    Socket socket = new Socket("192.168.0.46", 8888);
+    Socket socket = new Socket("192.168.0.16", 8888);
     System.out.println("서버에 연결 완료!");
 
     DataOutputStream out = new DataOutputStream(socket.getOutputStream());

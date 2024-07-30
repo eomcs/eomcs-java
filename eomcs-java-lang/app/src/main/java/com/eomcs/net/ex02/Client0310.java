@@ -17,10 +17,10 @@ public class Client0310 {
     System.out.println("소켓 생성됨.");
 
     // 2) 연결할 서버의 주소를 준비한다.
-    SocketAddress socketAddress = new InetSocketAddress("192.168.0.30", 8888);
+    SocketAddress socketAddress = new InetSocketAddress("192.168.0.23", 8888);
 
     // 3) 서버와의 연결을 시도한다.
-    // => 타임아웃으로 지정된 시간 안에 서버가 승인(accept())하지 않으면 즉시 예외가 발생한다.
+    // => 타임아웃으로 지정된 시간 안에 서버의 대기열에 들어가지 못하면 예외가 발생한다.
     // => Windows의 경우,
     //    - 로컬에 접속할 때 타임아웃 설정이 정상적으로 동작되지 않는다.(확인 할 것!)
     //    - 원격 윈도우 PC에 서버를 실행하여 접속한다면 정상적으로 동작한다.
