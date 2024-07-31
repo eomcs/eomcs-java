@@ -26,8 +26,7 @@ public class Client0110 {
       in = socket.getInputStream();
       System.out.println("소켓을 통해 입출력 스트림을 준비하였음!");
 
-      // 서버에 데이터를 보내기 전에 잠깐 멈춤!
-      System.out.print("데이터를 보내기 전에 잠깐!>");
+      System.out.print("서버에 데이터를 보내기 전에 잠깐!>");
       keyScan.nextLine();
 
       // 서버에게 데이터 보내기
@@ -41,6 +40,9 @@ public class Client0110 {
       // byte stream 을 사용할 때는 바로 출력한다.
       // 따라서 flush()를 호출하지 않아도 된다.
       System.out.println("서버에 데이터를 보냈음!");
+
+      System.out.print("서버가 보낸 데이터를 읽기 전에 멈춤!>");
+      keyScan.nextLine();
 
       // 서버의 응답을 받는다.
       // - 서버가 응답을 할 때까지 리턴하지 않는다.

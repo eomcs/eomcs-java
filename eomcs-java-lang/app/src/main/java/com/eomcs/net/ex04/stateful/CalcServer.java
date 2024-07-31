@@ -13,8 +13,8 @@ public class CalcServer {
     ServerSocket ss = new ServerSocket(8888);
 
     while (true) {
-      try (Socket socket = ss.accept()) {
-        processRequest(socket);
+      try {
+        processRequest(ss.accept());
       } catch (Exception e) {
         System.out.println("클라이언트 요청 처리 중 오류 발생!");
         System.out.println("다음 클라이언트의 요청을 처리합니다.");

@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class Server0111 {
   public static void main(String[] args) {
 
-
     try (Scanner keyboard = new Scanner(System.in);
         ServerSocket serverSocket = new ServerSocket(8888)) {
 
@@ -44,9 +43,10 @@ public class Server0111 {
         System.out.print("데이터를 보내기 전에 잠깐!");
         keyboard.nextLine();
 
-        // => 클라이언트에게 받은 문자열을 그대로 보낸다.
-        // 물론 클라이언트가 보낸 데이터를 다 읽을 때까지 리턴하지 않는다.
-        out.write(request);
+        // => 클라이언트에게 받은 값을 보낸다.
+        //    NIC 메모리에 데이터를 저장하고 클라이언트로 전송한다.
+        //    전송이 완료되면 클라이언트가 읽든 말든 상관없이 리턴한다.
+        out.write(request + 1);
         // out.flush();
         // byte stream 을 사용할 때는 바로 출력한다.
         // 따라서 flush()를 호출하지 않아도 된다.
