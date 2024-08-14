@@ -36,6 +36,7 @@ public class Exam0140 {
 
       // DriverManager에 자동 등록된 것을 확인해보자!
       java.sql.Driver driver = DriverManager.getDriver("jdbc:mariadb://");
+      System.out.println(driver);
 
     } catch (Exception e) {
       e.printStackTrace();

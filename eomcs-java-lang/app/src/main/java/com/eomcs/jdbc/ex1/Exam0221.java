@@ -10,7 +10,7 @@ public class Exam0221 {
     int count = 0;
     while (true) {
       try (java.sql.Connection con = DriverManager.getConnection(
-          "jdbc:mariadb://localhost:3306/studydb", "study", "Bitcamp!@#123");) {
+          "jdbc:mariadb://localhost:3306/studydb", "study", "1111");) {
         System.out.printf("DBMS와 연결됨 = %d\n", ++count);
       }
       System.out.println("DBMS와 연결 해제됨!");
