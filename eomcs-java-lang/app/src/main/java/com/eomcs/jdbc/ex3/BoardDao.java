@@ -15,7 +15,7 @@ import java.util.List;
 public class BoardDao {
   public int delete(int no) throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+        "jdbc:mysql://localhost:3306/studydb", "study", "1111");
         PreparedStatement stmt = con.prepareStatement(
             "delete from x_board where board_id=?")) {
 
@@ -26,7 +26,7 @@ public class BoardDao {
 
   public List<Board> findAll() throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+        "jdbc:mysql://localhost:3306/studydb", "study", "1111");
         PreparedStatement stmt = con.prepareStatement(
             "select * from x_board order by board_id desc");
         ResultSet rs = stmt.executeQuery()) {
@@ -47,7 +47,7 @@ public class BoardDao {
 
   public int insert(Board board) throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+        "jdbc:mysql://localhost:3306/studydb", "study", "1111");
         PreparedStatement stmt =
             con.prepareStatement("insert into x_board(title,contents) values(?,?)");) {
 
@@ -60,7 +60,7 @@ public class BoardDao {
 
   public int update(Board board) throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+        "jdbc:mysql://localhost:3306/studydb", "study", "1111");
         PreparedStatement stmt = con.prepareStatement(
             "update x_board set title = ?, contents = ? where board_id = ?")) {
 
@@ -74,15 +74,16 @@ public class BoardDao {
 
   public Board findBy(String no) throws Exception {
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+        "jdbc:mysql://localhost:3306/studydb", "study", "1111");
         PreparedStatement stmt = con.prepareStatement(
             "select * from x_board where board_id = ?")) {
 
       stmt.setString(1, no);
 
       try (ResultSet rs = stmt.executeQuery()) {
-        if (!rs.next())
+        if (!rs.next()) {
           return null;
+        }
 
         Board board = new Board();
         board.setNo(rs.getInt("board_id"));

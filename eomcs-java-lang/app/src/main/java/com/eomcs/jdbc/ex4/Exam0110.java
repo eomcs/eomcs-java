@@ -34,7 +34,7 @@ public class Exam0110 {
     }
 
     try (Connection con = DriverManager.getConnection( //
-        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+        "jdbc:mysql://localhost:3306/studydb", "study", "1111");
 
         // 게시글 입력 처리 객체
         PreparedStatement boardStmt = con.prepareStatement(

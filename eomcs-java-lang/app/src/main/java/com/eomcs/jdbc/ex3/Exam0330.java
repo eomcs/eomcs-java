@@ -17,7 +17,7 @@ public class Exam0330 {
     }
 
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+        "jdbc:mysql://localhost:3306/studydb", "study", "1111");
         PreparedStatement stmt = con.prepareStatement(
             "select * from x_board where board_id = ?")) {
 

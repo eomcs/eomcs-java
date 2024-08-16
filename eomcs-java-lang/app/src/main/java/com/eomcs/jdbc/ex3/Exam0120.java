@@ -25,7 +25,7 @@ public class Exam0120 {
     }
 
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+        "jdbc:mysql://localhost:3306/studydb", "study", "1111");
         Statement stmt = con.createStatement()) {
 
       // SQL 삽입 공격
@@ -36,9 +36,9 @@ public class Exam0120 {
       // 제목? okok
       // 내용? test', view_count = 300, created_date = '2019-3-3
       //
-      int count = stmt.executeUpdate( 
-          "update x_board set title = '" + title + 
-          "', contents = '" + contents + 
+      int count = stmt.executeUpdate(
+          "update x_board set title = '" + title +
+          "', contents = '" + contents +
           "' where board_id = " + no);
 
       // 위에서 사용자가 입력한 값을 가지고 SQL 문장을 만들면 다음과 같다.

@@ -8,7 +8,7 @@ public class Exam0361 {
   public static void main(String[] args) throws Exception {
     try (
         java.sql.Connection con = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+            "jdbc:mysql://localhost:3306/studydb", "study", "1111");
         java.sql.Statement stmt = con.createStatement();
 
         ) {

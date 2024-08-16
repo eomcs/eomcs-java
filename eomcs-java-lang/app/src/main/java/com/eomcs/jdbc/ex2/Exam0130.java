@@ -27,10 +27,10 @@ public class Exam0130 {
       no = keyScan.nextLine();
     }
 
-    try (Connection con = DriverManager.getConnection( 
-        "jdbc:mysql://localhost:3306/studydb", "study", "Bitcamp!@#123");
+    try (Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/studydb", "study", "1111");
         Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery( 
+        ResultSet rs = stmt.executeQuery(
             "select * from x_board where board_id = " + no)) {
 
       if (rs.next()) {
