@@ -5,6 +5,7 @@ package com.eomcs.annotation.ex7;
 // 그리고 @Employee 애노테이션에 반복할 수 있음을 선언하였다.
 // 따라서 다음과 같이 중복 선언할 수 있다.
 //
+
 @Employee("홍길동")
 @Employee("임꺽정")
 public class MyClass2 {

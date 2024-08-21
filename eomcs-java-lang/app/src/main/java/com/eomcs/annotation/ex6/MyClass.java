@@ -14,3 +14,15 @@ public class MyClass {
   }
 
 }
+
+@MyAnnotation // OK
+interface MyInterface {
+
+  //@MyAnnotation
+  void m();
+}
+
+@MyAnnotation // OK
+enum MyEnum {
+
+}

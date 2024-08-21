@@ -31,7 +31,7 @@ public class Exam0310 {
   }
 
   public static void main(String[] args) throws Exception {
-    Class<?> clazz = Class.forName("com.eomcs.reflect.ex02.Exam03$A");
+    Class<?> clazz = Class.forName("com.eomcs.reflect.ex02.Exam0310$A");
 
     // public 으로 공개된 중첩 클래스 및 인터페이스 정보를 가져온다.
     Class<?>[] nestedList = clazz.getClasses();

@@ -21,7 +21,7 @@ public class Exam0510 {
     // 1) private 필드는 일반적인 방식으로 접근할 수 없다.
     //    car.maker = "비트자동차"; // 컴파일 오류!
 
-    // 2) 다음과 같이 Reflection API를 사용하면 private 필드에 접근할 수 있다. 
+    // 2) 다음과 같이 Reflection API를 사용하면 private 필드에 접근할 수 있다.
     Field makerField = clazz.getDeclaredField("maker");
 
     // private modifier로 선언된 필드라 하더라도

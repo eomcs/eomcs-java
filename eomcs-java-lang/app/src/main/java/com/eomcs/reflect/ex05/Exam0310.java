@@ -19,20 +19,25 @@ public class Exam0310 {
       System.out.printf("%s() => ", m.getName());
 
       int modifiers = m.getModifiers();
-      if (Modifier.isPublic(modifiers))//(modifiers & Modifier.PUBLIC) == Modifier.PUBLIC)
+      System.out.println(String.format("%32s", Integer.toBinaryString(modifiers)).replaceAll(" ", "0"));
+
+      if (Modifier.isPublic(modifiers)) { //(modifiers & Modifier.PUBLIC) == Modifier.PUBLIC)
         System.out.print(" public");
-      else if ((modifiers & PROTECTED) != 0)
+      } else if ((modifiers & PROTECTED) != 0) {
         System.out.print(" protected");
-      else if ((modifiers & PRIVATE) != 0)
+      } else if ((modifiers & PRIVATE) != 0) {
         System.out.print(" private");
+      }
 
 
       //if ((modifiers & STATIC) != 0)
-      if (Modifier.isStatic(modifiers))
+      if (Modifier.isStatic(modifiers)) {
         System.out.print(" static");
+      }
 
-      if ((modifiers & FINAL) != 0)
+      if ((modifiers & FINAL) != 0) {
         System.out.print(" final");
+      }
 
       System.out.println();
     }

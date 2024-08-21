@@ -25,13 +25,13 @@ public class Exam0110 {
     System.out.println("------------------------------------------");
 
     //2) 중첩 클래스
-    Class<?> clazz2 = Class.forName("com.eomcs.reflect.ex02.Exam01$A");
+    Class<?> clazz2 = Class.forName("com.eomcs.reflect.ex02.Exam0110$A");
 
     // 클래스의 타입 객체를 통해 클래스 정보를 추출할 수 있다.
     System.out.println(clazz2.getSimpleName()); // A
-    System.out.println(clazz2.getName()); // com.eomcs.reflect.ex02.Exam01$A
-    System.out.println(clazz2.getCanonicalName()); // com.eomcs.reflect.ex02.Exam01.A
-    System.out.println(clazz2.getTypeName()); // com.eomcs.reflect.ex02.Exam01$A
+    System.out.println(clazz2.getName()); // com.eomcs.reflect.ex02.Exam0110$A
+    System.out.println(clazz2.getCanonicalName()); // com.eomcs.reflect.ex02.Exam0110.A
+    System.out.println(clazz2.getTypeName()); // com.eomcs.reflect.ex02.Exam0110$A
 
     System.out.println("------------------------------------------");
 
@@ -40,9 +40,9 @@ public class Exam0110 {
 
     // 클래스의 타입 객체를 통해 클래스 정보를 추출할 수 있다.
     System.out.println(clazz3.getSimpleName()); //
-    System.out.println(clazz3.getName()); // com.eomcs.reflect.ex02.Exam01$1
+    System.out.println(clazz3.getName()); // com.eomcs.reflect.ex02.Exam0110$1
     System.out.println(clazz3.getCanonicalName()); // null
-    System.out.println(clazz3.getTypeName()); // com.eomcs.reflect.ex02.Exam01$1
+    System.out.println(clazz3.getTypeName()); // com.eomcs.reflect.ex02.Exam0110$1
   }
 
 }

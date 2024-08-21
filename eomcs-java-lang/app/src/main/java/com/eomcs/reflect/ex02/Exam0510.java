@@ -16,7 +16,7 @@ public class Exam0510 {
   }
 
   public static void main(String[] args) throws Exception {
-    Class<?> clazz = Class.forName("com.eomcs.reflect.ex02.Exam06$D");
+    Class<?> clazz = Class.forName("com.eomcs.reflect.ex02.Exam0510$D");
 
     // 해당 클래스의 패키지 정보를 가져온다.
     Package p = clazz.getPackage();
