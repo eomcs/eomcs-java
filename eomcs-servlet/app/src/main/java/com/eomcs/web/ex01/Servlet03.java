@@ -26,22 +26,16 @@ public class Servlet03 extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   // Servlet 인터페이스의 service(ServletRequest, ServletResponse)를 오버라이딩 하는 대신에
-  // HttpServlet 클래스가 추가한 service(HttpServletRequest, HttpServletResponse)를 오버라이딩 하라.
+  // HttpServlet 클래스가 추가한 service(HttpServletRequest, HttpServletResponse)를 오버라이딩
+  // 하라.
   // 호출과정:
   // => 웹브라우저
-  //   => 톰캣 서버
-  //     => Servlet03.service(ServletRequest, ServletResponse) 
-  //       => Serlvet03.service(HttpServletRequest, HttpServletResponse)
+  // => 톰캣 서버
+  // => Servlet03.service(ServletRequest, ServletResponse)
+  // => Serlvet03.service(HttpServletRequest, HttpServletResponse)
   @Override
   public void service(HttpServletRequest req, HttpServletResponse res)
       throws ServletException, IOException {
     System.out.println("Servlet03.service(HttpServletRequest,HttpServletResponse)");
   }
 }
-
-
-
-
-
-
-

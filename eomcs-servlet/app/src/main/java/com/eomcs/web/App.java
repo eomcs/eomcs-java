@@ -31,7 +31,7 @@ public class App {
     StandardContext ctx = (StandardContext) tomcat.addWebapp(
         "/", // 컨텍스트 경로(웹 애플리케이션 경로)
         new File("src/main/webapp").getAbsolutePath() // 웹 애플리케이션 파일이 있는 실제 경로
-    );
+        );
     ctx.setReloadable(true);
 
     // 웹 애플리케이션 기타 정보 설정
@@ -41,9 +41,10 @@ public class App {
     resources.addPreResources(new DirResourceSet(
         resources, // 루트 웹 애플리케이션 정보
         "/WEB-INF/classes", // 서블릿 클래스 파일의 위치 정보
-        new File("build/classes/java/main").getAbsolutePath(), // 서블릿 클래스 파일이 있는 실제 경로
+        //new File("build/classes/java/main").getAbsolutePath(), // 서블릿 클래스 파일이 있는 실제 경로
+        new File("bin/main").getAbsolutePath(),
         "/" // 웹 애플리케이션 내부 경로
-    ));
+        ));
 
     // 웹 애플리케이션 설정 정보를 웹 애플리케이션 환경 정보에 등록
     ctx.setResources(resources);

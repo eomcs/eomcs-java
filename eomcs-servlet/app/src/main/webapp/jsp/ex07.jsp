@@ -19,7 +19,7 @@
 <body>
 <h1>지시문(directive element)</h1>
 <%
-for (int i = 0; i < 1000; i++) {
+for (int i = 0; i < 5000; i++) {
   out.print(". "); 
 }
 %>

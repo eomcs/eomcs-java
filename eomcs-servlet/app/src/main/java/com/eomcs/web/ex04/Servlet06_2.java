@@ -30,14 +30,17 @@ public class Servlet06_2 extends GenericServlet {
     // 2) 같은 이름으로 값을 보낼 경우
     // => 예) genre=1&genre=2&genre=4
     // => 다음과 같이 한 번에 값을 리턴 받는다.
+    // => 만약 해당 이름으로 넘어온 값이 없으면 빈 배열이 아닌 null을 리턴한다.
     String[] genres = req.getParameterValues("genre");
-    String[] genreData = {"", "로맨틱", "스릴러", "호러", "드라마", "액션", "SF"};
+    String[] genreData = { "", "로맨틱", "스릴러", "호러", "드라마", "액션", "SF" };
 
     res.setContentType("text/plain;charset=UTF-8");
     PrintWriter out = res.getWriter();
     out.println("선택한 장르:");
-    for (String genre : genres) {
-      out.println(genreData[Integer.parseInt(genre)]);
+    if (genres != null) {
+      for (String genre : genres) {
+        out.println(genreData[Integer.parseInt(genre)]);
+      }
     }
     // 같은 값을 여러 개 입력 받아야 하는 경우
     // 같은 이름을 사용하라.
@@ -45,5 +48,3 @@ public class Servlet06_2 extends GenericServlet {
     // 배열로 받으면 반복문을 이용하여 보다 쉽고 간결하게 처리할 수 있다.
   }
 }
-
-

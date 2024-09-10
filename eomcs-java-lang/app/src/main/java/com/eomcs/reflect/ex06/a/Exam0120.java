@@ -14,7 +14,7 @@ public class Exam0120 {
     Class<?> bType = B.class;
     Class<?> cType = C.class;
 
-    Class<?>[] interfaceTypes = new Class<?>[] {aType, bType, cType}; 
+    Class<?>[] interfaceTypes = new Class<?>[] {aType, bType, cType};
 
     InvocationHandler invocationHandler = new InvocationHandler() {
       @Override
