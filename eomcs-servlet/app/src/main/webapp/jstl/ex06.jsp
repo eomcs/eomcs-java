@@ -17,7 +17,7 @@
 </pre>
 
 <c:set var="name" value="홍길동"/>
-<c:set var="age" value="26"/>
+<c:set var="age" value="76"/>
 <%--
 pageContext.setAttribute("name", "홍길동");
 pageContext.setAttribute("age", "16");
