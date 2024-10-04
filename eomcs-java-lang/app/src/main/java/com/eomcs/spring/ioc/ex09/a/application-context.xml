@@ -27,7 +27,7 @@
     -->
     <!-- component-scan 태그는 지정된 패키지에서 
          @Component, @Service, @Repository, @Controller 애노테이션이 붙은 클래스를 찾아서 
-         객체를 자동 생성하도록 명령을 내리는 태그이다.
+         객체를 자동 생성하는 일을 할 객체를 등록한다.
        => base-package 속성 
           어느 패키지의 있는 클래스를 찾아서 등록할 것인지 지정하는 속성이다.
        => @Component : 일반 클래스에 대해 붙인다.

@@ -4,6 +4,7 @@ package com.eomcs.spring.ioc.ex02.b;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.eomcs.spring.ioc.SpringUtils;
+import com.eomcs.spring.ioc.ex02.Car;
 
 public class Exam03 {
 
@@ -16,8 +17,12 @@ public class Exam03 {
 
     System.out.println("-------------------------");
 
-    System.out.println(iocContainer.getBean("c5")); // ID
-    System.out.println(iocContainer.getBean("c51")); // 별명
+    Car c1 = (Car) iocContainer.getBean("c5");
+    Car c2 = (Car) iocContainer.getBean("c51");
+
+    System.out.println(c1); // ID
+    System.out.println(c2); // 별명
+    System.out.println(c1 == c2); // 같은 객체!
   }
 
 }

@@ -48,10 +48,10 @@ repositories {
 // 프로젝트에서 사용할 자바 라이브러리 목록
 dependencies {
   // 미디어 파일에서 메타 정보(위도/경도, 해상도 등) 추출
-  implementation 'com.drewnoakes:metadata-extractor:2.19.0'
+  // implementation 'com.drewnoakes:metadata-extractor:2.19.0'
   
   // Spring IoC 컨테이너
-  implementation 'org.springframework:spring-context:6.1.4'
+  implementation 'org.springframework:spring-context:5.3.39'
 
   // @Resource 애노테이션이 들어 있는 API
   implementation 'javax.annotation:javax.annotation-api:1.3.2'
@@ -74,22 +74,22 @@ dependencies {
   // implementation 'org.mybatis:mybatis-spring:2.0.6'
 
   // MariaDB JDBC 드라이버
-  implementation 'org.mariadb.jdbc:mariadb-java-client:3.4.1'
+  // implementation 'org.mariadb.jdbc:mariadb-java-client:3.4.1'
 
   // Oracle JDBC Driver
-  implementation 'com.oracle.database.jdbc:ojdbc11:21.15.0.0'
+  // implementation 'com.oracle.database.jdbc:ojdbc11:21.15.0.0'
     
   // MSSQL JDBC Driver
-  implementation 'com.microsoft.sqlserver:mssql-jdbc:12.8.0.jre11'
+  // implementation 'com.microsoft.sqlserver:mssql-jdbc:12.8.0.jre11'
   
   // MySQL JDBC Driver
   implementation 'com.mysql:mysql-connector-j:8.4.0'
   
   // Google JSON 라이브러리
-  implementation 'com.google.code.gson:gson:2.10.1'
+  // implementation 'com.google.code.gson:gson:2.10.1'
   
   // jackson-databind JSON 라이브러리
-  implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+  // implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
 
   // Apache HTTP 통신 라이브러리
   //implementation 'org.apache.httpcomponents.client5:httpclient5:5.0'

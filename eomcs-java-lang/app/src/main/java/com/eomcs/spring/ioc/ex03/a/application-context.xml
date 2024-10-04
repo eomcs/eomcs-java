@@ -99,9 +99,9 @@
     </bean>
     
     <!-- 기본 생성자가 없으면 예외 발생! -->
-    <!--
+    
     <bean id="e1" class="com.eomcs.spring.ioc.ex03.Engine"/>
-    -->
+   
 </beans>
 
 

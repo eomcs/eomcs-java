@@ -7,7 +7,7 @@ import com.eomcs.spring.ioc.ex07.Engine;
 public class CustomEngineEditor extends PropertyEditorSupport {
   @Override
   public void setAsText(String text) throws IllegalArgumentException {
-    String[] values = text.split(",");
+    String[] values = text.split(","); // 예) "비트자동차,16,4" ==> {"비트자동차", "16", "4"}
 
     Engine engine = new Engine();
     engine.setMaker(values[0]);
