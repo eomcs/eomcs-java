@@ -9,10 +9,10 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 // 애노테이션을 이용하여 Advice 객체를 IoC 컨테이너에 등록하는 방법이다.
-// => XML 설정을 사용할 때는 이 클래스의 객체 생성을 XML에서 했기 때문에 
+// => XML 설정을 사용할 때는 이 클래스의 객체 생성을 XML에서 했기 때문에
 //    @Component 애노테이션을 붙이지 않았다.
 // => 이제는 XML에서 이 클래스의 객체를 만들지 않기 때문에 이 애노테이션을 붙여야 한다.
-// 
+//
 // XML 설정 예:
 //      <bean id="myAdvice" class="com.eomcs.spring.ioc.ex13.e.MyAdvice"/>
 //
@@ -20,12 +20,12 @@ import org.springframework.stereotype.Component;
 
 // 이 객체가 AOP Advice를 설정하는 객체임을 표시한다.
 //
-//   <bean id="myAdvice" class="com.eomcs.spring.ioc.ex13.e.MyAdvice"/>
+//   <aop:aspect id="aspect1" ref="myAdvice">
 //
 @Aspect
 public class MyAdvice {
 
-  // 
+  //
   // XML 설정 예:
   //    <aop:before
   //        pointcut="execution(* com.eomcs.spring.ioc.ex13.e.X.*(..)) and args(a,b)"
@@ -47,7 +47,7 @@ public class MyAdvice {
   }
 
   // XML 설정 예:
-  //    <aop:after-returning 
+  //    <aop:after-returning
   //        pointcut="execution(* com.eomcs.spring.ioc.ex13.e.X.*(..))"
   //        method="doAfterReturning" returning="returnValue"/>
   //
@@ -59,10 +59,10 @@ public class MyAdvice {
   }
 
   // XML 설정 예:
-  //    <aop:after-throwing 
+  //    <aop:after-throwing
   //        pointcut="execution(* com.eomcs.spring.ioc.ex13.e.X.*(..))"
   //        method="doAfterThrowing" throwing="error"/>
-  //   
+  //
   @AfterThrowing(//
       pointcut = "execution(* com.eomcs.spring.ioc.ex13.e.X.*(..))", //
       throwing = "error")
