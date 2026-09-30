@@ -824,7 +824,7 @@ import jakarta.validation.constraints.Size;
 public class SignupForm {
 
   @NotNull(message = "아이디를 입력하세요.")
-  @Pattern(regexp = "^[a-z0-9]{4,20}$", message = "아이디는 영문 소문자와 숫자 4~20자로 입력하세요.")
+  @Pattern(regexp = "^[a-z0-9]{3,20}$", message = "아이디는 영문 소문자와 숫자 3~20자로 입력하세요.")
   private String username;
 
   @NotNull(message = "비밀번호를 입력하세요.")
@@ -988,8 +988,8 @@ public class UserWebController {
 | 입력 | 결과 |
 | --- | --- |
 | 모든 항목을 비워 두고 가입 | 세 항목에 오류 메시지가 출력된다. |
-| 아이디 `Hong` (대문자) | "아이디는 영문 소문자와 숫자 4~20자로 입력하세요." |
-| 아이디 `abc` (3자) | 같은 메시지 |
+| 아이디 `Hong` (대문자) | "아이디는 영문 소문자와 숫자 3~20자로 입력하세요." |
+| 아이디 `ab` (2자) | 같은 메시지 |
 | 비밀번호 `123` (3자) | "비밀번호는 4~50자로 입력하세요." |
 | 비밀번호 `1234`, 비밀번호 확인 `12345` | "비밀번호가 일치하지 않습니다." |
 | 아이디 `user` (실습-3에서 저장) | "이미 사용 중인 아이디입니다." |
