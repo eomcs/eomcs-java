@@ -36,4 +36,3 @@ Spring Framework의 핵심 개념을 익히고 Spring Boot 기반 웹 애플리�
 | **14장** | 권한 기반 인가           | Role과 Authority, URL별 접근 제어, 사용자/관리자 권한 분리, Method Security, Thymeleaf와 Security 연동                    |
 | **15장** | 종합 실습 평가         | Spring Boot + REST API + JPA + WebMVC + Thymeleaf + Security 통합한 미니 프로젝트 구현               |
 
-[PDF 파일 다운로드](https://drive.google.com/drive/folders/15HuumNxL8Yb5ULh3BwCUUxCAy4LP1nUv?usp=sharing)
