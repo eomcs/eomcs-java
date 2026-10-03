@@ -1,4 +1,4 @@
-# 스프링 프레임워크 & 스프링 부트
+# 스프링 부트를 활용한 Backend 개발
 
 Spring Framework의 핵심 개념을 익히고 Spring Boot 기반 웹 애플리케이션을 구현하는 2일 과정이다.
 
